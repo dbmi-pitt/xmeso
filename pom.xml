@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xmeso</groupId>
+  <artifactId>xmeso</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Information Extraction for NMVB</name>
+  <description>Information Extraction for National Mesothelioma Virtual Bank</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.ctakes</groupId>
+  		<artifactId>ctakes-clinical-pipeline</artifactId>
+  		<version>3.2.2</version>
+  	</dependency>
+  </dependencies>
+</project>
