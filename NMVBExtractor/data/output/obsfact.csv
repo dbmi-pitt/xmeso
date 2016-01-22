@@ -1,0 +1,6 @@
+56	53	peritoneum (363492001)	providerID	startdate	Tumor Site	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
+56	53	2.0 x 1.0 x 0.5 cm	providerID	startdate	Number of Positive Lymph Nodes	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
+56	53	Epithelial or epithelioid mesothelioma (65278006)	providerID	startdate	Number of Lymph Nodes Examined	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
+56	53	FISH (fluorescence in situ hybridization)	providerID	startdate	Additional Dimensions	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
+56	53	chronic inflammation (84499006)	providerID	startdate	Surgical Procedure Type	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
+56	53	Calretinin	providerID	startdate	Histological Type	tval	nval	valflag	quantity	units	enddate	location	confidence	obsblob	updatedate	downdate	importdate	sourcesystemcd	uploadid	
