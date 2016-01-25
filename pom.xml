@@ -11,5 +11,10 @@
   		<artifactId>ctakes-clinical-pipeline</artifactId>
   		<version>3.2.2</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.lexicalscope.jewelcli</groupId>
+  		<artifactId>jewelcli</artifactId>
+  		<version>0.8.9</version>
+  	</dependency>
   </dependencies>
 </project>
