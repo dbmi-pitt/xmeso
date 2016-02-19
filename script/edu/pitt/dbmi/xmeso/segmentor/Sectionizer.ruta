@@ -1,0 +1,83 @@
+PACKAGE edu.pitt.dbmi.xmeso.segmentor;
+
+DECLARE EndOfDocument;
+DECLARE Annotation SectionHeader(STRING name);
+DECLARE Annotation Section(STRING name);
+DECLARE EndOfSection;
+DECLARE PartIndicator;
+DECLARE WholeNumberList;
+DECLARE Annotation PartHeader(STRING sectionName, INT partNumber);
+DECLARE Annotation Part(STRING sectionName, INT partNumber);
+
+//
+// Section Header Discovery
+// 
+BLOCK(SectionHeaderDetector) Document{} {
+    WORDLIST SectionHeaderNameList = 'twl/sections/sectionHeaderNames.twl';
+    Document {-> MARKFAST(SectionHeader, SectionHeaderNameList)};
+    CAP{REGEXP("MICROSCOPIC")} COLON {-PARTOF(SectionHeader) -> MARK(SectionHeader, 1,2)};
+    CAP{REGEXP("PRE|POST")} SPECIAL{REGEXP("\\-")} CAP{REGEXP("OP")} CAP{REGEXP("DIAGNOSIS")} COLON {-> MARK(SectionHeader, 1, 5)};
+    CAP{REGEXP("FROZEN")} CAP{REGEXP("SECTION")} CAP{REGEXP("DIAGNOSIS")} COLON {-PARTOF(SectionHeader) -> MARK(SectionHeader, 1, 4)};
+    ANY {PARTOF(SectionHeader) -> UNMARK(ANY)};
+}
+
+BLOCK(EndOfDocumentDetector) Document{} {
+    Document{->MARKLAST(EndOfDocument)};
+    SPECIAL {REGEXP("\\$"), PARTOF(EndOfDocument) -> UNMARK(SPECIAL)};
+}
+
+BLOCK(EndOfSectionDetector) Document{} {
+   ANY @SectionHeader { -> MARK(EndOfSection, 1)};
+   EndOfSection { -AFTER(SectionHeader) -> UNMARK(EndOfSection)};
+}
+
+BLOCK(SectionDetector) Document{} {
+   Document{-> RETAINTYPE(BREAK)};
+   STRING sectionHeader;
+   SectionHeader{ -> MATCHEDTEXT(sectionHeader)} 
+   ANY+? {-PARTOF(Section)}
+   (EndOfSection | EndOfDocument) 
+      { -> CREATE(Section, 2, 3, "name" = sectionHeader)};
+}
+
+BLOCK(WholeNumberListDetector) Document{} {
+    INT parsedNumber;
+    INTLIST parsedNumbers;
+    Document{-> FILTERTYPE(BREAK, COMMA)};
+    NUM[3,5] { -PARTOF(WholeNumberList) -> MARK(WholeNumberList)};
+ //   (NUM)[2,10]? {-> MARK(WholeNumberList, 2, 3), CLEAR(parsedNumbers)} COLON?;
+ //   (NUM{PARSE(parsedNumber) -> ADD(parsedNumbers, parsedNumber), LOG("Added a number")})[2,10]?
+//    (COLON{-> MARK(WholeNumberList, 2, 3), CLEAR(parsedNumbers)})?;
+}
+
+BLOCK(PartHeaderAnnotator) Document{} {
+    INT currentPartNumber = 0;
+    Document {-> RETAINTYPE(BREAK)};
+    BREAK 
+    W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)}
+    NUM {PARSE(currentPartNumber),
+         -PARTOF(PartHeader) -> CREATE(PartHeader, 2, 3, 
+                 "sectionName" = "UNASSIGNED",
+                 "partNumber" = currentPartNumber)};
+}
+
+BLOCK(PartHeaderSectionNameAssigner) Section{} {
+    STRING currentSectionName;
+    Section{ -> GETFEATURE("name", currentSectionName)};
+    PartHeader.sectionName == "UNASSIGNED" { PARTOF(Section) ->  SETFEATURE("sectionName", currentSectionName) };
+}
+
+BLOCK(PartDetector) Section{} {
+    STRING sectionNameVar;
+    INT partNumVar;  
+    PartHeader {PARTOF(Section) ->
+                    GETFEATURE("partNumber", partNumVar), 
+                    GETFEATURE("sectionName", sectionNameVar)} 
+    (ANY{PARTOF(Section)})+?
+    (PartHeader | EndOfSection) 
+       {PARTOF(Section) ->  
+            CREATE(Part, 2,
+                    "sectionName" = sectionNameVar,
+                    "partNumber" = partNumVar)};
+}
+

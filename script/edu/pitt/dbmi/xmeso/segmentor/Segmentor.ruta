@@ -1,0 +1,36 @@
+PACKAGE edu.pitt.dbmi.xmeso.segmentor;
+
+TYPESYSTEM edu.pitt.dbmi.nlp.noble.uima.types.NobleToolsTypeSystemDescriptor;
+IMPORT * FROM edu.pitt.dbmi.nlp.noble.uima.types.NobleToolsTypeSystemDescriptor;
+
+ENGINE edu.pitt.dbmi.nlp.noble.uima.NobleCoderUimaAnnotator;
+
+SCRIPT edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector;
+SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner;
+SCRIPT edu.pitt.dbmi.xmeso.segmentor.Sectionizer;
+SCRIPT edu.pitt.dbmi.xmeso.segmentor.StopWordsDetector;
+
+Document{->CALL(FloatNumberDetector.DetectFloatNum)};
+Document{->CALL(FloatNumberDetector.SizeDetection)};
+Document{->CALL(FloatNumberDetector.MaximumSizeCalculator)};
+Document{-> CALL(DeidCleaner.DetectDeId)};
+Document{-> CALL(Sectionizer.SectionHeaderDetector)};
+Document{-> CALL(Sectionizer.EndOfSectionDetector)};
+Document{-> CALL(Sectionizer.EndOfDocumentDetector)};
+Document{-> CALL(Sectionizer.SectionDetector)};
+Document{-> CALL(Sectionizer.WholeNumberListDetector)};
+Document{-> CALL(Sectionizer.PartHeaderAnnotator)};
+Section{-> CALL(Sectionizer.PartHeaderSectionNameAssigner)};
+Section{-> CALL(Sectionizer.PartDetector)};
+Part{-> CALL(StopWordsDetector.DetectStopWords)};
+Part { -> MARK(edu.pitt.dbmi.nlp.noble.uima.types.Sentence)};
+
+//Document{-> EXEC(NobleCoderUimaAnnotator, {edu.pitt.dbmi.nlp.noble.uima.types.Concept})};
+
+WORDTABLE xmesoConcepts = 'NmvbConcepts.csv';
+DECLARE Annotation XmesoConcept(STRING preferredTerm,
+ STRING cui, STRING tui,
+  STRING sty, STRING broader);
+Document{->MARKTABLE(XmesoConcept, 1, xmesoConcepts, "cui" = 2, "tui" = 3, "sty" = 4, "broader" = 5)};
+
+//Concept { -> UNMARK(Concept)};
