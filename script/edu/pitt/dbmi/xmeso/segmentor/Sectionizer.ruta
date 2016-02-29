@@ -1,24 +1,19 @@
 PACKAGE edu.pitt.dbmi.xmeso.segmentor;
 
-DECLARE EndOfDocument;
-DECLARE Annotation SectionHeader(STRING name);
-DECLARE Annotation Section(STRING name);
-DECLARE EndOfSection;
-DECLARE PartIndicator;
-DECLARE WholeNumberList;
-DECLARE Annotation PartHeader(STRING sectionName, INT partNumber);
-DECLARE Annotation Part(STRING sectionName, INT partNumber);
+SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
 
 //
 // Section Header Discovery
 // 
+WORDTABLE sectionHeaderTable = 'ruta_section_headers.csv';
 BLOCK(SectionHeaderDetector) Document{} {
-    WORDLIST SectionHeaderNameList = 'twl/sections/sectionHeaderNames.twl';
-    Document {-> MARKFAST(SectionHeader, SectionHeaderNameList)};
-    CAP{REGEXP("MICROSCOPIC")} COLON {-PARTOF(SectionHeader) -> MARK(SectionHeader, 1,2)};
-    CAP{REGEXP("PRE|POST")} SPECIAL{REGEXP("\\-")} CAP{REGEXP("OP")} CAP{REGEXP("DIAGNOSIS")} COLON {-> MARK(SectionHeader, 1, 5)};
-    CAP{REGEXP("FROZEN")} CAP{REGEXP("SECTION")} CAP{REGEXP("DIAGNOSIS")} COLON {-PARTOF(SectionHeader) -> MARK(SectionHeader, 1, 4)};
-    ANY {PARTOF(SectionHeader) -> UNMARK(ANY)};
+     Document{->MARKTABLE(SectionHeader, 1,
+         sectionHeaderTable, true, 4, ".,-", 1, "name" = 2)};
+     SectionHeader  {-> SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)};
+     INT subsumedSectionHeaders = 0;
+     SectionHeader {COUNT(SectionHeader,1,10,subsumedSectionHeaders),
+                    subsumedSectionHeaders > 1
+                    ->UNMARK(SectionHeader), ASSIGN(subsumedSectionHeaders,0)};
 }
 
 BLOCK(EndOfDocumentDetector) Document{} {
@@ -27,17 +22,17 @@ BLOCK(EndOfDocumentDetector) Document{} {
 }
 
 BLOCK(EndOfSectionDetector) Document{} {
-   ANY @SectionHeader { -> MARK(EndOfSection, 1)};
+   Document{->RETAINTYPE(BREAK)};
+   BREAK @SectionHeader { -> MARK(EndOfSection, 1)};
    EndOfSection { -AFTER(SectionHeader) -> UNMARK(EndOfSection)};
 }
 
 BLOCK(SectionDetector) Document{} {
-   Document{-> RETAINTYPE(BREAK)};
-   STRING sectionHeader;
-   SectionHeader{ -> MATCHEDTEXT(sectionHeader)} 
-   ANY+? {-PARTOF(Section)}
+   STRING sectionName;
+   SectionHeader{ -> GETFEATURE("name",sectionName)} 
+   (ANY|FloatNum|UOM|XmesoSize)+? {-PARTOF(Section)}
    (EndOfSection | EndOfDocument) 
-      { -> CREATE(Section, 2, 3, "name" = sectionHeader)};
+      { -> CREATE(Section, 2, "name" = sectionName)};
 }
 
 BLOCK(WholeNumberListDetector) Document{} {
@@ -59,6 +54,7 @@ BLOCK(PartHeaderAnnotator) Document{} {
          -PARTOF(PartHeader) -> CREATE(PartHeader, 2, 3, 
                  "sectionName" = "UNASSIGNED",
                  "partNumber" = currentPartNumber)};
+    PartHeader  {-> SHIFT(PartHeader,1,2)} COLON{-PARTOF(PartHeader)};
 }
 
 BLOCK(PartHeaderSectionNameAssigner) Section{} {
@@ -67,17 +63,17 @@ BLOCK(PartHeaderSectionNameAssigner) Section{} {
     PartHeader.sectionName == "UNASSIGNED" { PARTOF(Section) ->  SETFEATURE("sectionName", currentSectionName) };
 }
 
-BLOCK(PartDetector) Section{} {
+BLOCK(PartDetector) Document{->ADDRETAINTYPE(SPACE,BREAK)} {
     STRING sectionNameVar;
     INT partNumVar;  
-    PartHeader {PARTOF(Section) ->
+    PartHeader {->
                     GETFEATURE("partNumber", partNumVar), 
                     GETFEATURE("sectionName", sectionNameVar)} 
-    (ANY{PARTOF(Section)})+?
-    (PartHeader | EndOfSection) 
-       {PARTOF(Section) ->  
-            CREATE(Part, 2,
-                    "sectionName" = sectionNameVar,
-                    "partNumber" = partNumVar)};
+    ((BREAK|SPACE|ANY|FloatNum|XmesoSize|UOM){-PARTOF(Part)})+?
+    (PartHeader | EndOfSection | EndOfDocument) 
+       {->  CREATE(Part, 2,
+                   "sectionName" = sectionNameVar,
+                   "partNumber" = partNumVar)};
+    Part{-> TRIM(BREAK,SPACE)};
 }
 

@@ -4,6 +4,8 @@ import javax.annotation.concurrent.Immutable;
 
 import org.apache.ctakes.chunker.ae.Chunker;
 import org.apache.ctakes.clinicalpipeline.ClinicalPipelineFactory;
+import org.apache.ctakes.clinicalpipeline.ClinicalPipelineFactory.CopyNPChunksToLookupWindowAnnotations;
+import org.apache.ctakes.clinicalpipeline.ClinicalPipelineFactory.RemoveEnclosedLookupWindows;
 import org.apache.ctakes.contexttokenizer.ae.ContextDependentTokenizerAnnotator;
 import org.apache.ctakes.core.ae.SentenceDetector;
 import org.apache.ctakes.core.ae.SimpleSegmentAnnotator;
@@ -16,8 +18,11 @@ import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
+import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.metadata.TypeSystemDescription;
 
+import edu.pitt.dbmi.xmeso.ctakes.ae.NobleCoderUimaAnnotator;
 import edu.pitt.dbmi.xmeso.ctakes.ae.XMIWriter;
 import edu.pitt.dbmi.xmeso.ctakes.cr.DeIdReader;
 
@@ -77,8 +82,9 @@ final public class NmvbPipelineFactory {
 
 	public static AnalysisEngine createXMIWriter(final String outputDirectory)
 			throws ResourceInitializationException {
-		return AnalysisEngineFactory.createEngine(XMIWriter.class,
-				XMIWriter.PARAM_OUTPUTDIR, outputDirectory);
+		return null;
+//		return AnalysisEngineFactory.createEngine(XMIWriter.class,
+//				XMIWriter.PARAM_OUTPUTDIR, outputDirectory);
 	}
 
 	static private void addCoreEngines(final AggregateBuilder aggregateBuilder)
@@ -94,6 +100,12 @@ final public class NmvbPipelineFactory {
 		aggregateBuilder.add(Chunker.createAnnotatorDescription());
 		aggregateBuilder.add(ClinicalPipelineFactory
 				.getStandardChunkAdjusterAnnotator());
+		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( CopyNPChunksToLookupWindowAnnotations.class ) );
+		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( RemoveEnclosedLookupWindows.class ) );
+		
+		final TypeSystemDescription xmesoTypeSystem = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath("src/main/resources/types/XmesoSystemDescriptor.xml");
+		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( NobleCoderUimaAnnotator.class,  xmesoTypeSystem, (Object[]) null ) );
+
 	}
 
 }

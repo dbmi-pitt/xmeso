@@ -1,70 +1,57 @@
 PACKAGE edu.pitt.dbmi.xmeso.floatnumdetector;
 
-DECLARE FloatNum;
-DECLARE Size;
+SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
 
-BLOCK(DetectFloatNum) Document{} {
-  NUM PERIOD NUM {-> MARK(FloatNum,1,3), UNMARK(ANY)};
+BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
+  SPACE+ @NUM+ PERIOD NUM+{-> MARK(FloatNum, 2, 4)};
+  NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
+  PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
 
-BLOCK(DetectSize) Document{} { 
-    FloatNum W{REGEXP("x")} FloatNum  W{REGEXP("x")} FloatNum{-> MARK(Size,1,5)};
+BLOCK(DetectUom) Document{->RETAINTYPE(SPACE)} {
+    (NUM|FloatNum) SPACE+?    
+    @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
+    ANY{-PARTOF(W)};
 }
 
-
-DECLARE StageT;
-DECLARE StageN;
-DECLARE StageM;
-DECLARE StageTNM;
-
-DECLARE Annotation SizeThreeDimensional(
-    FLOAT maxDim,
-    FLOAT dimOne,   
-    FLOAT dimTwo, 
-    FLOAT dimThree,
-    STRING uom);
-DECLARE UOM;
-
-"[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
-
-//"\\d+\\.\\d{1,3}" -> FloatNum;
-
-
-FLOAT dimensionOne;
-FLOAT dimensionTwo;
-FLOAT dimensionThree;
-FLOAT dimensionMaximum = -1.0;
-STRING unitOfMeasure;
-
-BLOCK(SizeDetection) Document{} {
-   "cm|CM|mm|MM" -> UOM;
-   FloatNum {PARSE(dimensionOne)} 
-   W{REGEXP("x")} 
-   FloatNum {PARSE(dimensionTwo)} 
-   W{REGEXP("x")} 
-   FloatNum {PARSE(dimensionThree)} 
-   UOM { -> MATCHEDTEXT(unitOfMeasure), CREATE(SizeThreeDimensional, 1, 6,
-       "maxDim" = dimensionMaximum,
-       "dimOne" = dimensionOne,
-       "dimTwo" = dimensionTwo,
-       "dimThree" = dimensionThree,
-       "uom" = unitOfMeasure)};
+BLOCK(SizeDetection) Document{->RETAINTYPE(FloatNum,UOM)} {
+    FLOAT dimensionOne;
+    FLOAT dimensionTwo;
+    FLOAT dimensionThree;
+    FLOAT dimensionMaximum = -1.0;
+    STRING unitOfMeasure;
+    FloatNum{PARSE(dimensionOne)} 
+    W{REGEXP("x")} 
+    FloatNum{PARSE(dimensionTwo)} 
+    W{REGEXP("x")} 
+    FloatNum{PARSE(dimensionThree)} 
+    UOM{-> MATCHEDTEXT(unitOfMeasure), CREATE(XmesoSize, 1, 6, 
+            "maxDim" = dimensionMaximum, 
+            "dimOne" = dimensionOne, 
+            "dimTwo" = dimensionTwo, 
+            "dimThree" = dimensionThree, 
+            "uom" = unitOfMeasure)};
 }
 
-BLOCK(MaximumSizeCalculator) SizeThreeDimensional{} {
-    SizeThreeDimensional.dimOne > SizeThreeDimensional.maxDim 
-               { 
-               -> 
-                  SizeThreeDimensional.maxDim = SizeThreeDimensional.dimOne};
-    SizeThreeDimensional.dimTwo > SizeThreeDimensional.maxDim 
-               { 
-               -> 
-                  SizeThreeDimensional.maxDim = SizeThreeDimensional.dimTwo};
-    SizeThreeDimensional.dimThree > SizeThreeDimensional.maxDim 
-               { 
-               -> 
-                  SizeThreeDimensional.maxDim = SizeThreeDimensional.dimThree};     
+BLOCK(CleanBeneath) Document{->RETAINTYPE(FloatNum,UOM,SPACE)} {
+    FloatNum{PARTOF(Document)->UNMARK(FloatNum)};
+    SPACE{PARTOF(Document)->UNMARK(SPACE)};
+    W{PARTOF(Document)->UNMARK(W)};
+    UOM{PARTOF(Document)->UNMARK(UOM)};
+    COLON{PARTOF(Document)->UNMARK(COLON)};
+    NUM{PARTOF(Document)->UNMARK(NUM)};
+    PartIndicator{PARTOF(Document)->UNMARK(PartIndicator)};
 }
 
+BLOCK(MaximumSizeCalculator) XmesoSize{} {
+    XmesoSize.dimOne > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimOne};
+    XmesoSize.dimTwo > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimTwo};
+    XmesoSize.dimThree > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimThree};
+}
 
-//  CAP{REGEXP("MICROSCOPIC")} COLON {-PARTOF(SectionHeader) -> MARK(SectionHeader, 1,2)};
+BLOCK(DetectTnm) Document{} {
+   "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
+}

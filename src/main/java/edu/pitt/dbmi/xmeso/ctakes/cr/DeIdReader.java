@@ -23,7 +23,7 @@ public class DeIdReader extends CollectionReader_ImplBase {
 	public static final String PARAM_INPUT_FILE_PATH = "InputDeIdFilePath";
 	
 	final private int patternParams = Pattern.DOTALL | Pattern.MULTILINE;
-	final Pattern pattern = Pattern.compile("E_O_H|E_O_R", patternParams);
+	final private Pattern pattern = Pattern.compile("E_O_H|E_O_R", patternParams);
 	
 	private String content;
 	private Matcher matcher;
@@ -35,7 +35,14 @@ public class DeIdReader extends CollectionReader_ImplBase {
 	 * @see org.apache.uima.collection.CollectionReader_ImplBase#initialize()
 	 */
 	public void initialize() throws ResourceInitializationException {
-		String deIdFilePath = (String) getConfigParameterValue(PARAM_INPUT_FILE_PATH);
+		String deIdFilePath = null;
+		Object deIdFilePathObj =  getConfigParameterValue(PARAM_INPUT_FILE_PATH);
+		if (deIdFilePathObj instanceof String[]) {
+			deIdFilePath = ((String[])deIdFilePathObj)[0];
+		}
+		else if (deIdFilePathObj instanceof String) {
+			deIdFilePath = (String) deIdFilePathObj;
+		}
 		File deIdFile = new File(deIdFilePath);
 		if (!deIdFile.exists() || !deIdFile.isFile()) {
 			throw new ResourceInitializationException(
