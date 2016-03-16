@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonym>
+<token canonical="no">
+	<variant base="no"/>
+	<variant base="no evidence"></variant>
+	<variant base="no evidence of"></variant>
+	<variant base="no evidence of involvement"></variant>
+	<variant base="no evidence of involvement by"></variant>
+	<variant base="no definite evidence"></variant>
+	<variant base="no definite evidence of"></variant>
+	<variant base="no convincing evidence"></variant>
+    <variant base="not"/>
+	<variant base="rule out"/>
+	<variant base="ruled out"/>
+	<variant base="deny"/>
+	<variant base="denied"/>
+	<variant base="denies"/>
+	<variant base="without"/>
+	<variant base="negative"/>
+	<variant base="negative for"/>
+	<variant base="free of"/>
+	<variant base="free"/>
+	<variant base="no involvement"/>
+	<variant base="uninvolved"/>
+	<variant base="not present"/>
+	<variant base="benign"/>
+	<variant base="no residual"/>
+	<variant base="cannot identify"/>
+	<variant base="unremarkable"/>
+	<variant base="not remarkable"/>
+</token>
+</synonym>

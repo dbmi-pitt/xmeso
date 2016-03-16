@@ -27,6 +27,66 @@
          <groupId>org.drools</groupId>
          <artifactId>drools-compiler</artifactId>
          <version>${droolsVersion}</version>
-      </dependency>     
+      </dependency>
+      <dependency>
+        <groupId>org.apache.uima</groupId>
+        <artifactId>ruta-core</artifactId>
+        <version>2.4.0</version>
+    </dependency>
+     <dependency>
+        <groupId>org.apache.uima</groupId>
+        <artifactId>ruta-core-ext</artifactId>
+        <version>2.4.0</version>
+    </dependency>
+      <dependency>
+         <groupId>org.apache.uima</groupId>
+         <artifactId>uimafit-core</artifactId>
+         <version>2.1.0</version>
+    </dependency>  	
+  	<dependency>
+  		<groupId>com.google.guava</groupId>
+  		<artifactId>guava</artifactId>
+  		<version>19.0-rc1</version>
+  	</dependency>
+  	   <dependency>
+        <groupId>oracle.jdbc</groupId>
+        <artifactId>ojdbc</artifactId>
+        <version>6</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
+     </dependency>  
+     <!-- Dependencies that still need to be uploaded to Maven Central; when
+ done, the dependency versions should be moved into the parent pom 
+ 
+ <dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>4.3.1.Final</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-api</artifactId>
+  		<version>1.7.12</version>
+  	</dependency>
+  <dependency>
+        <groupId>org.semanticweb</groupId>
+        <artifactId>owlapi</artifactId>
+        <version>4.0.1</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/lib/owlapi-distribution-4.0.1.jar</systemPath>
+     </dependency>
+  
+ -->
+
+     <dependency>
+     	<groupId>org.codehaus.sonar-plugins</groupId>
+     	<artifactId>sonar-ant-task</artifactId>
+     	<version>2.2</version>
+     </dependency>
   </dependencies>
 </project>

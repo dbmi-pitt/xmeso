@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonym>
+<token canonical="origin" POS="NN">
+	<variant base="primary" POS="NN"/>
+	<variant base="metastatic" POS="NN"></variant>
+	<variant base="origin" POS="NN"></variant>
+	<variant base="originating" POS="NN"></variant>
+</token>
+</synonym>

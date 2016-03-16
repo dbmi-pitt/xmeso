@@ -1,0 +1,108 @@
+PACKAGE edu.pitt.dbmi.xmeso.ie;
+
+SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
+
+TYPE xmesoFormVar;
+
+INT numberOfParts = 0;
+BOOLEAN buildingForm = true;
+TYPELIST tumorList;
+
+BLOCK(CreateEncounterForm) Document {} {
+   Document {buildingForm -> 
+//                  LOG("Building and Placing Xmeso Encounter Form"),
+                  CREATE(XmesoEncounterForm),
+                  ASSIGN(buildingForm, false)};
+}
+BLOCK(CacheEncounterForm) XmesoEncounterForm {} {
+  XmesoEncounterForm {->
+//                        LOG("Caching Form to xmesoFormVar"),
+                        ASSIGN(xmesoFormVar, XmesoEncounterForm)};
+}
+BLOCK(CreateTumorForms) Part {} {
+   Part {SIZE(tumorList,0,3,numberOfParts) -> 
+//                  LOG("Transforming a Part to a XmesoTumorForm"),
+                  TRANSFER(XmesoTumorForm),
+                  ADD(tumorList, XmesoTumorForm)};
+}
+
+TYPE currentTumorForm;
+TYPELIST listOfSites;
+TYPELIST listOfConfigurations;
+TYPELIST listOfDifferentiations;
+TYPE dominantSite;
+TYPE dominantConfiguration;
+TYPE dominantDifferentiation;
+STRING snomedCode;
+INT currentPartNumber;
+
+
+
+BLOCK(AssignTumorSite) XmesoTumorForm{} {
+   XmesoTumorSite {-> 
+//                        LOG("Found XmesoTumorSite underneath XmesoTumorForm"),
+                      GETFEATURE("snomedCode", snomedCode), 
+                      FILL(XmesoTumorForm, "tumorSiteCode" =  snomedCode)};
+}
+BLOCK(AssignTumorConfiguration) XmesoTumorForm{} {
+   XmesoTumorConfiguration {-> 
+//   LOG("Found XmesoTumorConfiguration underneath XmesoTumorForm"),
+                      GETFEATURE("snomedCode", snomedCode), 
+                      FILL(XmesoTumorForm, "tumorConfigurationCode" = snomedCode)};
+}
+BLOCK(AssignTumorDifferentiation) XmesoTumorForm{} {
+   XmesoTumorDifferentiation {-> 
+//   LOG("Found XmesoTumorDifferentiation underneath XmesoTumorForm"),
+                      GETFEATURE("snomedCode", snomedCode), 
+                      FILL(XmesoTumorForm, "tumorDifferentiationCode" = snomedCode)};
+}
+FLOAT sizeX = -1.0;
+FLOAT sizeY = -1.0;
+FLOAT sizeZ = -1.0;
+FLOAT sizeMax = -1.0;
+BLOCK(AssignTumorSize) XmesoTumorForm{} {
+   XmesoSize {-> 
+//   LOG("Found XmesoSize underneath XmesoTumorForm"),
+                      GETFEATURE("maxDim",sizeMax),
+                      GETFEATURE("dimOne",sizeX), 
+                      GETFEATURE("dimTwo",sizeY), 
+                      GETFEATURE("dimThree",sizeZ),  
+                      FILL(XmesoTumorForm, 
+                            "tumorSizeGreatestDimension" = sizeMax,
+                            "tumorSizeOne" = sizeX,
+                            "tumorSizeTwo" = sizeY,
+                            "tumorSizeThree" = sizeZ
+                      
+                      )};
+}
+BLOCK(AssignSurgicalProcedure) XmesoEncounterForm{} {
+   XmesoSurgicalProcedure {-> 
+//   LOG("Found XmesoSurgicalProcedure underneath XmesoEncounterForm"),
+                      GETFEATURE("snomedCode", snomedCode),      
+                      FILL(XmesoEncounterForm, "surgicalProcedureCode" = snomedCode)};
+}
+BLOCK(AssignHistologicalType) XmesoEncounterForm{} {
+   XmesoHistologicalType {->
+//    LOG("Found XmesoHistopathologicalType underneath XmesoEncounterForm"),
+                      GETFEATURE("snomedCode", snomedCode), 
+                      FILL(XmesoEncounterForm, "histologicTypeCode" = snomedCode)};
+}
+
+//BLOCK(GenerateTumorFormAssignments) XmesoTumorForm{} {
+//   XmesoTumorForm {-> GETLIST(listOfSites,"XmesoTumorSite"),                    
+//                      GET(listOfSites, dominantSite, "dominant"),                   
+//                      GETLIST(listOfConfigurations,"XmesoTumorConfiguration"),
+//                      GETLIST(listOfDifferentiations,"XmesoTumorDifferentiation"),
+//                      GET(listOfConfigurations, dominantConfiguration, "dominant"),
+//                      GET(listOfDifferentiations, dominantDifferentiation, "dominant"),
+//                      CREATE(XmesoCodeAssigner, 1, "tumorForm" = XmesoTumorForm,
+//                            "tumorSite" = dominantSite,
+//                            "tumorConfiguration" = dominantConfiguration,
+//                            "tumorDifferentiation" = dominantDifferentiation)};
+//}
+//
+//BLOCK(ExerciseTumorFormAssignment) XmesoCodeAssigner {} {
+//    XmesoCodeAssigner{->LOG("Got code assigner")};
+//}
+
+

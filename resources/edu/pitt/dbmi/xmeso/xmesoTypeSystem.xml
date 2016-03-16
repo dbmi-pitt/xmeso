@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.pitt.dbmi.xmeso.xmesoTypeSystem</name>
+    <imports>
+        <import name="org.apache.uima.ruta.engine.BasicTypeSystem"/>
+        <import name="edu.pitt.dbmi.xmeso.typesystem.typesystemTypeSystem"/>
+        <import name="edu.pitt.dbmi.xmeso.deidcleaner.DeidCleanerTypeSystem"/>
+        <import name="edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetectorTypeSystem"/>
+        <import name="edu.pitt.dbmi.xmeso.ner.NerTypeSystem"/>
+        <import name="edu.pitt.dbmi.xmeso.segmentor.SectionizerTypeSystem"/>              
+        <import name="edu.pitt.dbmi.xmeso.ie.IeTypeSystem"/> 
+ <!--
+        
+        <import name="edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetectorEngine"/>
+        <import name="edu.pitt.dbmi.xmeso.ner.NerEngine"/>
+        <import name="edu.pitt.dbmi.xmeso.segmentor.SectionizerEngine"/>              
+        <import name="edu.pitt.dbmi.xmeso.ie.IeEngine"/> 
+        <import location="../../../../BasicTypeSystem.xml"/>
+        <import location="ner/NerTypeSystem.xml"/>
+        <import location="segmentor/SectionizerTypeSystem.xml"/>
+        <import location="segmentor/StopWordsDetectorTypeSystem.xml"/>
+        <import location="floatnumdetector/FloatNumberDetectorTypeSystem.xml"/>
+        <import location="deidcleaner/DeidCleanerTypeSystem.xml"/>
+        <import location="ie/IeTypeSystem.xml"/>
+          -->        
+    </imports>
+         
+        
+</typeSystemDescription>

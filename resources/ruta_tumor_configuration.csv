@@ -1,0 +1,12 @@
+Cystic;SNOMED:369746007;Tumor Configuration             
+Diffuse;TUMOR_CONFIG:DIFFUSE;Tumor Configuration        
+Endophytic;SNOMED:399711005;Tumor Configuration         
+Exophytic;SNOMED:369749000;Tumor Configuration          
+Localized;TUMOR_CONFIG:LOCALIZED;Tumor Configuration    
+Mixed;SNOMED:8145008;Tumor Configuration                
+Nodular;SNOMED:255288007;Tumor Configuration            
+Not specified;SNOMED:399740008 ;Tumor Configuration     
+Papillary;SNOMED:77526009;Tumor Configuration           
+Tumor Configuration;SNOMED:370111000;Tumor Configuration
+Unknown;TUMOR_CONFIG:UNKNOWN;Tumor Configuration        
+

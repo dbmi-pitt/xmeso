@@ -1,0 +1,8 @@
+PACKAGE edu.pitt.dbmi.xmeso.deidcleaner;
+
+SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
+
+BLOCK(DetectDeId) Document{} {
+  "^\\[Report de[^\\]]+\\]" -> DeIdBannar;
+}
+

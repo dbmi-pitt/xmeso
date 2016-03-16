@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetectorTypeSystem</name>
+    <imports>
+        <import location="BasicTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/typesystem/TypesystemTypeSystem.xml"/>
+    </imports>
+</typeSystemDescription>

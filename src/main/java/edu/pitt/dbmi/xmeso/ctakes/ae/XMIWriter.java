@@ -23,13 +23,22 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ctakes.core.util.DocumentIDAnnotationUtil;
 import org.apache.uima.UIMAFramework;
+import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.analysis_engine.metadata.AnalysisEngineMetaData;
+import org.apache.uima.analysis_engine.metadata.FlowControllerDeclaration;
+import org.apache.uima.analysis_engine.metadata.SofaMapping;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.impl.XmiCasSerializer;
@@ -37,11 +46,22 @@ import org.apache.uima.collection.CasConsumerDescription;
 import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ExternalResourceDependency;
+import org.apache.uima.resource.ResourceConfigurationException;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceManager;
 import org.apache.uima.resource.ResourceProcessException;
+import org.apache.uima.resource.ResourceSpecifier;
+import org.apache.uima.resource.metadata.MetaDataObject;
+import org.apache.uima.resource.metadata.ResourceManagerConfiguration;
 import org.apache.uima.util.InvalidXMLException;
+import org.apache.uima.util.NameClassPair;
 import org.apache.uima.util.UriUtils;
 import org.apache.uima.util.XMLInputSource;
+import org.apache.uima.util.XMLParser;
+import org.apache.uima.util.XMLParser.ParsingOptions;
+import org.w3c.dom.Element;
+import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 /**
@@ -53,7 +73,11 @@ import org.xml.sax.SAXException;
  * will be written</li>
  * </ul>
  */
-public class XMIWriter extends CasConsumer_ImplBase {
+public class XMIWriter extends CasConsumer_ImplBase  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5559390242141272034L;
 	/**
 	 * Name of configuration parameter that must be set to the path of a
 	 * directory into which the output files will be written.
@@ -201,6 +225,10 @@ public class XMIWriter extends CasConsumer_ImplBase {
 			throws InvalidXMLException {
 		InputStream descStream = XMIWriter.class
 				.getResourceAsStream("XmiWriter.xml");
+		if (descStream == null) {
+			String packageForCls =  XMIWriter.class.getPackage().toString();
+			System.err.println("Couldn't find " + XMIWriter.class.getPackage() + "/XmiWriter.xml");
+		}
 		return UIMAFramework.getXMLParser().parseCasConsumerDescription(
 				new XMLInputSource(descStream, null));
 	}
@@ -209,4 +237,5 @@ public class XMIWriter extends CasConsumer_ImplBase {
 		return XMIWriter.class.getResource("XmiWriter.xml");
 	}
 
+	
 }

@@ -82,29 +82,29 @@ final public class NmvbPipelineFactory {
 
 	public static AnalysisEngine createXMIWriter(final String outputDirectory)
 			throws ResourceInitializationException {
-		return null;
-//		return AnalysisEngineFactory.createEngine(XMIWriter.class,
-//				XMIWriter.PARAM_OUTPUTDIR, outputDirectory);
+		return AnalysisEngineFactory.createEngine(org.cleartk.util.ae.XmiWriter.class,
+				"outputDirectory", outputDirectory);
 	}
 
 	static private void addCoreEngines(final AggregateBuilder aggregateBuilder)
 			throws ResourceInitializationException {
 		aggregateBuilder.add(SimpleSegmentAnnotator
 				.createAnnotatorDescription());
-		aggregateBuilder.add(SentenceDetector.createAnnotatorDescription());
-		aggregateBuilder
-				.add(TokenizerAnnotatorPTB.createAnnotatorDescription());
-		aggregateBuilder.add(ContextDependentTokenizerAnnotator
-				.createAnnotatorDescription());
-		aggregateBuilder.add(POSTagger.createAnnotatorDescription());
-		aggregateBuilder.add(Chunker.createAnnotatorDescription());
-		aggregateBuilder.add(ClinicalPipelineFactory
-				.getStandardChunkAdjusterAnnotator());
-		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( CopyNPChunksToLookupWindowAnnotations.class ) );
-		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( RemoveEnclosedLookupWindows.class ) );
-		
-		final TypeSystemDescription xmesoTypeSystem = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath("src/main/resources/types/XmesoSystemDescriptor.xml");
-		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( NobleCoderUimaAnnotator.class,  xmesoTypeSystem, (Object[]) null ) );
+//		aggregateBuilder.add(SentenceDetector.createAnnotatorDescription());
+//		aggregateBuilder
+//				.add(TokenizerAnnotatorPTB.createAnnotatorDescription());
+//		aggregateBuilder.add(ContextDependentTokenizerAnnotator
+//				.createAnnotatorDescription());
+//		aggregateBuilder.add(POSTagger.createAnnotatorDescription());
+//		aggregateBuilder.add(Chunker.createAnnotatorDescription());
+//		aggregateBuilder.add(ClinicalPipelineFactory
+//				.getStandardChunkAdjusterAnnotator());
+//		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( CopyNPChunksToLookupWindowAnnotations.class ) );
+//		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( RemoveEnclosedLookupWindows.class ) );
+		// final String typeSystemPath = "src/main/resources/edu/pitt/dbmi/xmeso/types/xmesoTypeSystem.xml";
+		final String typeSystemPath = "descriptor/types/XmesoSystemDescriptor.xml";
+		final TypeSystemDescription xmesoTypeSystem = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath(typeSystemPath);
+//		aggregateBuilder.add( AnalysisEngineFactory.createEngineDescription( NobleCoderUimaAnnotator.class,  xmesoTypeSystem, (Object[]) null ) );
 
 	}
 

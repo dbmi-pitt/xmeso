@@ -1,0 +1,949 @@
+(laparoscopic) adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure                               
+AE1/3;LOINC:40560-5;Immunohistochemical Profile                                                                                        
+Abdominal proctopexy;ICD9:48.75;Surgical Procedure                                                                                     
+Abdominoperineal resection of rectum;ICD9:48.5;Surgical Procedure                                                                      
+Abdominoperineal resection of the rectum, not otherwise specified;ICD9:48.50;Surgical Procedure                                        
+Adrenal;SNOMED:362894002;Site of tumor                                                                                                 
+Allotransplantation of cells of islets of langerhans;ICD9:52.85;Surgical Procedure                                                     
+Anal cerclage;ICD9:49.72;Surgical Procedure                                                                                            
+Anal fistulectomy;ICD9:49.12;Surgical Procedure                                                                                        
+Anal fistulotomy;ICD9:49.11;Surgical Procedure                                                                                         
+Anastomosis of gallbladder or bile duct;ICD9:51.3;Surgical Procedure                                                                   
+Anastomosis of gallbladder to hepatic ducts;ICD9:51.31;Surgical Procedure                                                              
+Anastomosis of gallbladder to intestine;ICD9:51.32;Surgical Procedure                                                                  
+Anastomosis of gallbladder to pancreas;ICD9:51.33;Surgical Procedure                                                                   
+Anastomosis of gallbladder to stomach;ICD9:51.34;Surgical Procedure                                                                    
+Anastomosis of hepatic duct to gastrointestinal tract;ICD9:51.37;Surgical Procedure                                                    
+Anastomosis of pancreas;ICD9:52.96;Surgical Procedure                                                                                  
+Anastomosis of small intestine to rectal stump;ICD9:45.92;Surgical Procedure                                                           
+Anastomosis to anus;ICD9:45.95;Surgical Procedure                                                                                      
+Anorectal myectomy;ICD9:48.92;Surgical Procedure                                                                                       
+Anoscopy;ICD9:49.21;Surgical Procedure                                                                                                 
+Anterior basal segment of left lower lobe;SNOMED:63215004;Site of tumor                                                                
+Anterior basal segment of right lower lobe;SNOMED:11098002;Site of tumor                                                               
+Anterior resection of rectum with synchronous colostomy;ICD9:48.62;Surgical Procedure                                                  
+Antesternal anastomosis of esophagus;ICD9:42.6;Surgical Procedure                                                                      
+Antesternal esophageal anastomosis with interposition of colon;ICD9:42.65;Surgical Procedure                                           
+Antesternal esophageal anastomosis with interposition of small bowel;ICD9:42.63;Surgical Procedure                                     
+Antesternal esophagoesophagostomy;ICD9:42.61;Surgical Procedure                                                                        
+Antesternal esophagogastrostomy;ICD9:42.62;Surgical Procedure                                                                          
+Anus;SNOMED:181262009;Site of tumor                                                                                                    
+Apical segment of left upper lobe;SNOMED:245522000;Site of tumor                                                                       
+Apical segment of lung;SNOMED:245515008;Site of tumor                                                                                  
+Apical segment of right upper lobe ;SNOMED:361970001;Site of tumor                                                                     
+Appendectomy;ICD9:47.0;Surgical Procedure                                                                                              
+Appendicostomy;ICD9:47.91;Surgical Procedure                                                                                           
+Appendix;SNOMED:181255000;Site of tumor                                                                                                
+Artificial pneumothorax for collapse of lung;ICD9:33.32;Surgical Procedure                                                             
+Autotransplantation of cells of islets of langerhans;ICD9:52.84;Surgical Procedure                                                     
+Auxiliary liver transplant;ICD9:50.51;Surgical Procedure                                                                               
+Basal segment of lung;SNOMED:245516009;Site of tumor                                                                                   
+Base of left lung;SNOMED:184611002;Site of tumor                                                                                       
+Base of lung;SNOMED:314791004;Site of tumor                                                                                            
+Base of right lung;SNOMED:181416003;Site of tumor                                                                                      
+Ber-EP4;LOINC:47010-4;Immunohistochemical Profile                                                                                      
+Bilateral inguinal hernia repair with graft or prosthesis, not otherwise specified;ICD9:53.17;Surgical Procedure                       
+Bilateral lung transplantation;ICD9:33.52;Surgical Procedure                                                                           
+Bilateral repair of femoral hernia with graft or prosthesis;ICD9:53.31;Surgical Procedure                                              
+Bilateral repair of femoral hernia;ICD9:53.3;Surgical Procedure                                                                        
+Bilateral repair of inguinal hernia, not otherwise specified;ICD9:53.10;Surgical Procedure                                             
+Biopsy of abdominal wall or umbilicus;ICD9:54.22;Surgical Procedure                                                                    
+Biopsy of anus;ICD9:49.23;Surgical Procedure                                                                                           
+Biopsy of chest wall;ICD9:34.23;Surgical Procedure                                                                                     
+Biopsy of diaphragm;ICD9:34.27;Surgical Procedure                                                                                      
+Biopsy of perianal tissue;ICD9:49.22;Surgical Procedure                                                                                
+Biopsy of perirectal tissue;ICD9:48.26;Surgical Procedure                                                                              
+Biopsy of peritoneum;ICD9:54.23;Surgical Procedure                                                                                     
+Biphasic mesothelioma;SNOMED:30383009;Histological Type                                                                                
+Bones;SNOMED:123037004;Site of tumor                                                                                                   
+Brain & CNS;SNOMED:389111004;Site of tumor                                                                                             
+Breast;SNOMED:181131000;Site of tumor                                                                                                  
+Bronchial dilation;ICD9:33.91;Surgical Procedure                                                                                       
+Bronchopulmonary segment;SNOMED:72674008;Site of tumor                                                                                 
+Bronchoscopic bronchial thermoplasty, ablation of airway smooth muscle;ICD9:32.27;Surgical Procedure                                   
+Bronchoscopy through artificial stoma;ICD9:33.21;Surgical Procedure                                                                    
+CD10;LOINC:51214-5;Immunohistochemical Profile                                                                                         
+CD31;LOINC:47015-3;Immunohistochemical Profile                                                                                         
+CD44S;LOINC:17155-3;Immunohistochemical Profile                                                                                        
+CEA;LOINC:2039-6;Immunohistochemical Profile                                                                                           
+CK20;LOINC:40558-9;Immunohistochemical Profile                                                                                         
+CK5/6;LOINC:47025-2;Immunohistochemical Profile                                                                                        
+CK7;LOINC:40559-7;Immunohistochemical Profile                                                                                          
+Calretinin;MESO:010;Immunohistochemical Profile                                                                                        
+Cannulation of pancreatic duct;ICD9:52.92;Surgical Procedure                                                                           
+Cauterization of hemorrhoids;ICD9:49.43;Surgical Procedure                                                                             
+Cervical Pleura;SNOMED:202395000;Site of tumor                                                                                         
+Cervical esophagostomy;ICD9:42.11;Surgical Procedure                                                                                   
+Cervix Uteri;SNOMED:181453009;Site of tumor                                                                                            
+Cholecystectomy;ICD9:51.22;Surgical Procedure                                                                                          
+Cholecystectomy;ICD9:51.2;Surgical Procedure                                                                                           
+Cholecystotomy and cholecystostomy;ICD9:51.0;Surgical Procedure                                                                        
+Choledochoenterostomy;ICD9:51.36;Surgical Procedure                                                                                    
+Choledochoplasty;ICD9:51.72;Surgical Procedure                                                                                         
+Closed (percutaneous) [needle] biopsy of liver;ICD9:50.11;Surgical Procedure                                                           
+Closed [aspiration] [needle] [percutaneous] biopsy of pancreas;ICD9:52.11;Surgical Procedure                                           
+Closed [endoscopic] biopsy of bronchus;ICD9:33.24;Surgical Procedure                                                                   
+Closed [endoscopic] biopsy of esophagus;ICD9:42.24;Surgical Procedure                                                                  
+Closed [endoscopic] biopsy of large intestine;ICD9:45.25;Surgical Procedure                                                            
+Closed [endoscopic] biopsy of larynx;ICD9:31.43;Surgical Procedure                                                                     
+Closed [endoscopic] biopsy of pancreatic duct;ICD9:52.14;Surgical Procedure                                                            
+Closed [endoscopic] biopsy of rectum;ICD9:48.24;Surgical Procedure                                                                     
+Closed [endoscopic] biopsy of small intestine;ICD9:45.14;Surgical Procedure                                                            
+Closed [endoscopic] biopsy of stomach;ICD9:44.14;Surgical Procedure                                                                    
+Closed [endoscopic] biopsy of trachea;ICD9:31.44;Surgical Procedure                                                                    
+Closed [percutaneous] [needle] biopsy of intra-abdominal mass;ICD9:54.24;Surgical Procedure                                            
+Closed [percutaneous] [needle] biopsy of lung;ICD9:33.26;Surgical Procedure                                                            
+Closed [percutaneous] [needle] biopsy of mediastinum;ICD9:34.25;Surgical Procedure                                                     
+Closed aspiration needle percutaneous biopsy of pancreas;ICD9:52.11;Surgical Procedure                                                 
+Closed endoscopic biopsy of bronchus;ICD9:33.24;Surgical Procedure                                                                     
+Closed endoscopic biopsy of esophagus;ICD9:42.24;Surgical Procedure                                                                    
+Closed endoscopic biopsy of large intestine;ICD9:45.25;Surgical Procedure                                                              
+Closed endoscopic biopsy of larynx;ICD9:31.43;Surgical Procedure                                                                       
+Closed endoscopic biopsy of lung;ICD9:33.27;Surgical Procedure                                                                         
+Closed endoscopic biopsy of pancreatic duct;ICD9:52.14;Surgical Procedure                                                              
+Closed endoscopic biopsy of rectum;ICD9:48.24;Surgical Procedure                                                                       
+Closed endoscopic biopsy of small intestine;ICD9:45.14;Surgical Procedure                                                              
+Closed endoscopic biopsy of stomach;ICD9:44.14;Surgical Procedure                                                                      
+Closed endoscopic biopsy of trachea;ICD9:31.44;Surgical Procedure                                                                      
+Closed percutaneous needle biopsy of intra-abdominal mass;ICD9:54.24;Surgical Procedure                                                
+Closed percutaneous needle biopsy of liver;ICD9:50.11;Surgical Procedure                                                               
+Closed percutaneous needle biopsy of lung;ICD9:33.26;Surgical Procedure                                                                
+Closed percutaneous needle biopsy of mediastinum;ICD9:34.25;Surgical Procedure                                                         
+Closure of anal fistula;ICD9:49.73;Surgical Procedure                                                                                  
+Closure of appendiceal fistula;ICD9:47.92;Surgical Procedure                                                                           
+Closure of bronchial fistula;ICD9:33.42;Surgical Procedure                                                                             
+Closure of cholecystostomy;ICD9:51.92;Surgical Procedure                                                                               
+Closure of esophagostomy;ICD9:42.83;Surgical Procedure                                                                                 
+Closure of external fistula of trachea;ICD9:31.72;Surgical Procedure                                                                   
+Closure of fistula of diaphragm;ICD9:34.83;Surgical Procedure                                                                          
+Closure of fistula of duodenum;ICD9:46.72;Surgical Procedure                                                                           
+Closure of fistula of large intestine;ICD9:46.76;Surgical Procedure                                                                    
+Closure of fistula of larynx;ICD9:31.62;Surgical Procedure                                                                             
+Closure of fistula of small intestine, except duodenum;ICD9:46.74;Surgical Procedure                                                   
+Closure of gastrostomy;ICD9:44.62;Surgical Procedure                                                                                   
+Closure of intestinal stoma, not otherwise specified;ICD9:46.50;Surgical Procedure                                                     
+Closure of intestinal stoma;ICD9:46.5;Surgical Procedure                                                                               
+Closure of laceration of liver;ICD9:50.61;Surgical Procedure                                                                           
+Closure of laceration of lung;ICD9:33.43;Surgical Procedure                                                                            
+Closure of other biliary fistula;ICD9:51.93;Surgical Procedure                                                                         
+Closure of other fistula of thorax;ICD9:34.73;Surgical Procedure                                                                       
+Closure of other fistula of trachea;ICD9:31.73;Surgical Procedure                                                                      
+Closure of other gastric fistula;ICD9:44.63;Surgical Procedure                                                                         
+Closure of other rectal fistula;ICD9:48.73;Surgical Procedure                                                                          
+Closure of proctostomy;ICD9:48.72;Surgical Procedure                                                                                   
+Closure of stoma of large intestine;ICD9:46.52;Surgical Procedure                                                                      
+Closure of stoma of small intestine;ICD9:46.51;Surgical Procedure                                                                      
+Closure of thoracostomy;ICD9:34.72;Surgical Procedure                                                                                  
+Colon;SNOMED:372174009;Site of tumor                                                                                                   
+Colonoscopy;ICD9:45.23;Surgical Procedure                                                                                              
+Colostomy, not otherwise specified;ICD9:46.10;Surgical Procedure                                                                       
+Colostomy;ICD9:46.1;Surgical Procedure                                                                                                 
+Combined heart-lung transplantation;ICD9:33.6;Surgical Procedure                                                                       
+Common duct exploration for relief of other obstruction;ICD9:51.42;Surgical Procedure                                                  
+Common duct exploration for removal of calculus;ICD9:51.41;Surgical Procedure                                                          
+Complete laryngectomy;ICD9:30.3;Surgical Procedure                                                                                     
+Continent ileostomy;ICD9:46.22;Surgical Procedure                                                                                      
+Control of (postoperative) hemorrhage of anus;ICD9:49.95;Surgical Procedure                                                            
+Control of hemorrhage and suture of ulcer of stomach or duodenum;ICD9:44.4;Surgical Procedure                                          
+Control of postoperative hemorrhage of anus;ICD9:49.95;Surgical Procedure                                                              
+Corpus Uteri;SNOMED:396311006;Site of tumor                                                                                            
+Costal Pleura;SNOMED:368060008;Site of tumor                                                                                           
+Creation of cutaneoperitoneal fistula;ICD9:54.93;Surgical Procedure                                                                    
+Creation of peritoneovascular shunt;ICD9:54.94;Surgical Procedure                                                                      
+Creation of pleuroperitoneal shunt;ICD9:34.05;Surgical Procedure                                                                       
+Cystic mesothelioma;SNOMED:86562005;Histological Type                                                                                  
+Cystic;SNOMED:369746007;Tumor Configuration                                                                                            
+D2-40;LOINC:73909-4;Immunohistochemical Profile                                                                                        
+Decortication of lung;ICD9:34.51;Surgical Procedure                                                                                    
+Delayed closure of granulating abdominal wound;ICD9:54.62;Surgical Procedure                                                           
+Delayed opening of colostomy;ICD9:46.14;Surgical Procedure                                                                             
+Delayed opening of ileostomy;ICD9:46.24;Surgical Procedure                                                                             
+Delayed opening of other enterostomy;ICD9:46.31;Surgical Procedure                                                                     
+Desmoplastic mesothelioma;SNOMED:388650006;Histological Type                                                                           
+Destruction of hemorrhoids by cryotherapy;ICD9:49.44;Surgical Procedure                                                                
+Destruction of phrenic nerve for collapse of lung;ICD9:33.31;Surgical Procedure                                                        
+Destruction of rectal lesion or tissue by cryosurgery;ICD9:48.34;Surgical Procedure                                                    
+Destruction of rectal lesion or tissue by laser;ICD9:48.33;Surgical Procedure                                                          
+Diagnostic procedures of abdominal region;ICD9:54.2;Surgical Procedure                                                                 
+Diagnostic procedures on anus and perianal tissue;ICD9:49.2;Surgical Procedure                                                         
+Diagnostic procedures on biliary tract;ICD9:51.1;Surgical Procedure                                                                    
+Diagnostic procedures on chest wall, pleura, mediastinum, and diaphragm;ICD9:34.2;Surgical Procedure                                   
+Diagnostic procedures on esophagus;ICD9:42.2;Surgical Procedure                                                                        
+Diagnostic procedures on large intestine;ICD9:45.2;Surgical Procedure                                                                  
+Diagnostic procedures on larynx and trachea;ICD9:31.4;Surgical Procedure                                                               
+Diagnostic procedures on liver;ICD9:50.1;Surgical Procedure                                                                            
+Diagnostic procedures on lung and bronchus;ICD9:33.2;Surgical Procedure                                                                
+Diagnostic procedures on pancreas;ICD9:52.1;Surgical Procedure                                                                         
+Diagnostic procedures on rectum, rectosigmoid and perirectal tissue;ICD9:48.2;Surgical Procedure                                       
+Diagnostic procedures on small intestine;ICD9:45.1;Surgical Procedure                                                                  
+Diagnostic procedures on stomach;ICD9:44.1;Surgical Procedure                                                                          
+Diaphragmatic Pleura;SNOMED:202302008;Site of tumor                                                                                    
+Diffuse;TUMOR_CONFIG:DIFFUSE;Tumor Configuration                                                                                       
+Dilation and manipulation of intestine;ICD9:46.8;Surgical Procedure                                                                    
+Dilation of esophagus;ICD9:42.92;Surgical Procedure                                                                                    
+Dilation of intestine;ICD9:46.85;Surgical Procedure                                                                                    
+Dilation of pylorus by incision;ICD9:44.21;Surgical Procedure                                                                          
+Dilation of sphincter of oddi;ICD9:51.81;Surgical Procedure                                                                            
+Distal pancreatectomy;ICD9:52.52;Surgical Procedure                                                                                    
+Division of anal sphincter;ICD9:49.5;Surgical Procedure                                                                                
+Division of laryngeal nerve;ICD9:31.91;Surgical Procedure                                                                              
+Drainage of appendiceal abscess;ICD9:47.2;Surgical Procedure                                                                           
+Drainage of pancreatic cyst by catheter;ICD9:52.01;Surgical Procedure                                                                  
+Duhamel resection of rectum;ICD9:48.65;Surgical Procedure                                                                              
+E-cadherin;LOINC:29540-2;Immunohistochemical Profile                                                                                   
+Endophytic;SNOMED:399711005;Tumor Configuration                                                                                        
+Endoscopic control of gastric or duodenal bleeding;ICD9:44.43;Surgical Procedure                                                       
+Endoscopic destruction of other lesion or tissue of large intestine;ICD9:45.43;Surgical Procedure                                      
+Endoscopic dilation of ampulla and biliary duct;ICD9:51.84;Surgical Procedure                                                          
+Endoscopic dilation of pancreatic duct;ICD9:52.98;Surgical Procedure                                                                   
+Endoscopic dilation of pylorus;ICD9:44.22;Surgical Procedure                                                                           
+Endoscopic excision or destruction of lesion of biliary ducts or sphincter of oddi;ICD9:51.64;Surgical Procedure                       
+Endoscopic excision or destruction of lesion of duodenum;ICD9:45.30;Surgical Procedure                                                 
+Endoscopic excision or destruction of lesion or tissue of anus;ICD9:49.31;Surgical Procedure                                           
+Endoscopic excision or destruction of lesion or tissue of bronchus;ICD9:32.01;Surgical Procedure                                       
+Endoscopic excision or destruction of lesion or tissue of esophagus;ICD9:42.33;Surgical Procedure                                      
+Endoscopic excision or destruction of lesion or tissue of lung;ICD9:32.28;Surgical Procedure                                           
+Endoscopic excision or destruction of lesion or tissue of pancreatic duct;ICD9:52.21;Surgical Procedure                                
+Endoscopic excision or destruction of lesion or tissue of stomach;ICD9:43.41;Surgical Procedure                                        
+Endoscopic insertion of colonic stent(s);ICD9:46.86;Surgical Procedure                                                                 
+Endoscopic insertion of colonic stents;ICD9:46.86;Surgical Procedure                                                                   
+Endoscopic insertion of nasobiliary drainage tube;ICD9:51.86;Surgical Procedure                                                        
+Endoscopic insertion of nasopancreatic drainage tube;ICD9:52.97;Surgical Procedure                                                     
+Endoscopic insertion of other bronchial device or substances;ICD9:33.79;Surgical Procedure                                             
+Endoscopic insertion of stent (tube) into bile duct;ICD9:51.87;Surgical Procedure                                                      
+Endoscopic insertion of stent (tube) into pancreatic duct;ICD9:52.93;Surgical Procedure                                                
+Endoscopic insertion of stent tube into bile duct;ICD9:51.87;Surgical Procedure                                                        
+Endoscopic insertion of stent tube into pancreatic duct;ICD9:52.93;Surgical Procedure                                                  
+Endoscopic insertion or replacement of bronchial valve(s), multiple lobes;ICD9:33.73;Surgical Procedure                                
+Endoscopic insertion or replacement of bronchial valve(s), single lobe;ICD9:33.71;Surgical Procedure                                   
+Endoscopic insertion or replacement of bronchial valves, multiple lobes;ICD9:33.73;Surgical Procedure                                  
+Endoscopic insertion or replacement of bronchial valves, single lobe;ICD9:33.71;Surgical Procedure                                     
+Endoscopic polypectomy of large intestine;ICD9:45.42;Surgical Procedure                                                                
+Endoscopic pulmonary airway flow measurement;ICD9:33.72;Surgical Procedure                                                             
+Endoscopic removal of bronchial device(s) or substances;ICD9:33.78;Surgical Procedure                                                  
+Endoscopic removal of bronchial devices or substances;ICD9:33.78;Surgical Procedure                                                    
+Endoscopic removal of stone(s) from biliary tract;ICD9:51.88;Surgical Procedure                                                        
+Endoscopic removal of stone(s) from pancreatic duct;ICD9:52.94;Surgical Procedure                                                      
+Endoscopic removal of stones from biliary tract;ICD9:51.88;Surgical Procedure                                                          
+Endoscopic removal of stones from pancreatic duct;ICD9:52.94;Surgical Procedure                                                        
+Endoscopic retrograde cholangiography [erc];ICD9:51.11;Surgical Procedure                                                              
+Endoscopic retrograde cholangiography erc;ICD9:51.11;Surgical Procedure                                                                
+Endoscopic retrograde cholangiopancreatography [ercp];ICD9:51.10;Surgical Procedure                                                    
+Endoscopic retrograde cholangiopancreatography ercp;ICD9:51.10;Surgical Procedure                                                      
+Endoscopic retrograde pancreatography [erp];ICD9:52.13;Surgical Procedure                                                              
+Endoscopic retrograde pancreatography erp;ICD9:52.13;Surgical Procedure                                                                
+Endoscopic sphincterotomy and papillotomy;ICD9:51.85;Surgical Procedure                                                                
+Endoscopy of large intestine through artificial stoma;ICD9:45.22;Surgical Procedure                                                    
+Endoscopy of small intestine through artificial stoma;ICD9:45.12;Surgical Procedure                                                    
+Enterotomy;ICD9:45.0;Surgical Procedure                                                                                                
+Entire parietal pleura;SNOMED:187338008;Site of tumor                                                                                  
+Epiglottidectomy;ICD9:30.21;Surgical Procedure                                                                                         
+Epithelial Membrane Antigen ;LOINC:10479-4;Immunohistochemical Profile                                                                 
+Epithelial or epithelioid mesothelioma;SNOMED:65278006;Histological Type                                                               
+Esophagectomy, not otherwise specified;ICD9:42.40;Surgical Procedure                                                                   
+Esophagogastroduodenoscopy [egd] with closed biopsy;ICD9:45.16;Surgical Procedure                                                      
+Esophagogastroduodenoscopy egd with closed biopsy;ICD9:45.16;Surgical Procedure                                                        
+Esophagogastroplasty;ICD9:44.65;Surgical Procedure                                                                                     
+Esophagomyotomy;ICD9:42.7;Surgical Procedure                                                                                           
+Esophagoscopy through artificial stoma;ICD9:42.22;Surgical Procedure                                                                   
+Esophagostomy, not otherwise specified;ICD9:42.10;Surgical Procedure                                                                   
+Esophagostomy;ICD9:42.1;Surgical Procedure                                                                                             
+Esophagotomy;ICD9:42.0;Surgical Procedure                                                                                              
+Esophagus;SNOMED:300294009;Site of tumor                                                                                               
+Evacuation of thrombosed hemorrhoids;ICD9:49.47;Surgical Procedure                                                                     
+Excision of ampulla of vater (with reimplantation of common duct);ICD9:51.62;Surgical Procedure                                        
+Excision of ampulla of vater with reimplantation of common duct;ICD9:51.62;Surgical Procedure                                          
+Excision of anus;ICD9:49.6;Surgical Procedure                                                                                          
+Excision of cystic duct remnant;ICD9:51.61;Surgical Procedure                                                                          
+Excision of esophagus;ICD9:42.4;Surgical Procedure                                                                                     
+Excision of hemorrhoids;ICD9:49.46;Surgical Procedure                                                                                  
+Excision of larynx;ICD9:30;Surgical Procedure                                                                                          
+Excision of lesion or tissue of diaphragm;ICD9:34.81;Surgical Procedure                                                                
+Excision of lesion or tissue of large intestine;ICD9:45.41;Surgical Procedure                                                          
+Excision of lung and bronchus;ICD9:32;Surgical Procedure                                                                               
+Excision of other bile duct;ICD9:51.69;Surgical Procedure                                                                              
+Excision of perianal skin tags;ICD9:49.03;Surgical Procedure                                                                           
+Excision of perirectal tissue;ICD9:48.82;Surgical Procedure                                                                            
+Excision or destruction of lesion of chest wall;ICD9:34.4;Surgical Procedure                                                           
+Excision or destruction of lesion or tissue of abdominal wall or umbilicus;ICD9:54.3;Surgical Procedure                                
+Excision or destruction of lesion or tissue of larynx;ICD9:30.0;Surgical Procedure                                                     
+Excision or destruction of lesion or tissue of mediastinum;ICD9:34.3;Surgical Procedure                                                
+Excision or destruction of peritoneal tissue;ICD9:54.4;Surgical Procedure                                                              
+Exophytic;SNOMED:369749000;Tumor Configuration                                                                                         
+Exploration of common duct;ICD9:51.51;Surgical Procedure                                                                               
+Exploratory laparotomy;ICD9:54.11;Surgical Procedure                                                                                   
+Exploratory thoracotomy;ICD9:34.02;Surgical Procedure                                                                                  
+Exteriorization of esophageal pouch;ICD9:42.12;Surgical Procedure                                                                      
+Exteriorization of intestine;ICD9:46.0;Surgical Procedure                                                                              
+Exteriorization of large intestine;ICD9:46.03;Surgical Procedure                                                                       
+Exteriorization of small intestine;ICD9:46.01;Surgical Procedure                                                                       
+Extracorporeal hepatic assistance;ICD9:50.92;Surgical Procedure                                                                        
+Fiber-optic bronchoscopy;ICD9:33.22;Surgical Procedure                                                                                 
+Fibrous mesothelioma;SNOMED:54443001;Histological Type                                                                                 
+Fibrous pericardium;SNOMED:243953008;Site of tumor                                                                                     
+Fissure of Lung;SNOMED:278983006;Site of tumor                                                                                         
+Fissure of left lung;SNOMED:278984000;Site of tumor                                                                                    
+Fissure of right lung;SNOMED:278985004;Site of tumor                                                                                   
+Fixation of intestine, not otherwise specified;ICD9:46.60;Surgical Procedure                                                           
+Fixation of intestine;ICD9:46.6;Surgical Procedure                                                                                     
+Fixation of large intestine to abdominal wall;ICD9:46.63;Surgical Procedure                                                            
+Fixation of small intestine to abdominal wall;ICD9:46.61;Surgical Procedure                                                            
+Flexible sigmoidoscopy;ICD9:45.24;Surgical Procedure                                                                                   
+Gallbladder;SNOMED:363353009;Site of tumor                                                                                             
+Gastroenterostomy without gastrectomy;ICD9:44.3;Surgical Procedure                                                                     
+Gastropexy;ICD9:44.64;Surgical Procedure                                                                                               
+Gastroscopy through artificial stoma;ICD9:44.12;Surgical Procedure                                                                     
+Gastrostomy;ICD9:43.1;Surgical Procedure                                                                                               
+Gastrotomy;ICD9:43.0;Surgical Procedure                                                                                                
+Gracilis muscle transplant for anal incontinence;ICD9:49.74;Surgical Procedure                                                         
+HBME-1;LOINC:50319-3;Immunohistochemical Profile                                                                                       
+Head & Neck;SNOMED:255056009;Site of tumor                                                                                             
+Hemilaryngectomy;ICD9:30.1;Surgical Procedure                                                                                          
+Hepatotomy;ICD9:50.0;Surgical Procedure                                                                                                
+Heterotransplant of pancreas;ICD9:52.83;Surgical Procedure                                                                             
+High gastric bypass;ICD9:44.31;Surgical Procedure                                                                                      
+High;SNOMED:399611001;Tumor Differentiation                                                                                            
+Highly selective vagotomy;ICD9:44.02;Surgical Procedure                                                                                
+Hilum of Left Lung;SNOMED:361983000;Site of tumor                                                                                      
+Hilum of Lung;SNOMED:264017007;Site of tumor                                                                                           
+Hilum of Right Lung;SNOMED:361968005;Site of tumor                                                                                     
+Histological Type;;Histological Type                                                                                                   
+Homotransplant of pancreas;ICD9:52.82;Surgical Procedure                                                                               
+Horizontal interlobar fissure of right lung;SNOMED:83067000;Site of tumor                                                              
+ICD-9-CM Procedures;(null);Surgical Procedure                                                                                          
+Ileostomy, not otherwise specified;ICD9:46.20;Surgical Procedure                                                                       
+Ileostomy;ICD9:46.2;Surgical Procedure                                                                                                 
+Immunohistochemical Profile;;Immunohistochemical Profile                                                                               
+Implantation of diaphragmatic pacemaker;ICD9:34.85;Surgical Procedure                                                                  
+Implantation or revision of artificial anal sphincter;ICD9:49.75;Surgical Procedure                                                    
+Incidental appendectomy;ICD9:47.1;Surgical Procedure                                                                                   
+Incision and excision of stomach;ICD9:43;Surgical Procedure                                                                            
+Incision of abdominal wall;ICD9:54.0;Surgical Procedure                                                                                
+Incision of anal septum;ICD9:49.91;Surgical Procedure                                                                                  
+Incision of bile duct for relief of obstruction;ICD9:51.4;Surgical Procedure                                                           
+Incision of bronchus;ICD9:33.0;Surgical Procedure                                                                                      
+Incision of chest wall and pleura;ICD9:34.0;Surgical Procedure                                                                         
+Incision of chest wall;ICD9:34.01;Surgical Procedure                                                                                   
+Incision of duodenum;ICD9:45.01;Surgical Procedure                                                                                     
+Incision of esophageal web;ICD9:42.01;Surgical Procedure                                                                               
+Incision of intestine, not otherwise specified;ICD9:45.00;Surgical Procedure                                                           
+Incision of large intestine;ICD9:45.03;Surgical Procedure                                                                              
+Incision of lung;ICD9:33.1;Surgical Procedure                                                                                          
+Incision of mediastinum;ICD9:34.1;Surgical Procedure                                                                                   
+Incision of other bile ducts for relief of obstruction;ICD9:51.49;Surgical Procedure                                                   
+Incision of perianal abscess;ICD9:49.01;Surgical Procedure                                                                             
+Incision of perirectal tissue;ICD9:48.81;Surgical Procedure                                                                            
+Incision of peritoneum;ICD9:54.95;Surgical Procedure                                                                                   
+Incision of rectal stricture;ICD9:48.91;Surgical Procedure                                                                             
+Incision or excision of anal fistula;ICD9:49.1;Surgical Procedure                                                                      
+Incision or excision of perianal tissue;ICD9:49.0;Surgical Procedure                                                                   
+Incision or excision of perirectal tissue or lesion;ICD9:48.8;Surgical Procedure                                                       
+Incision, excision, and anastomosis of intestine;ICD9:45;Surgical Procedure                                                            
+Incisional hernia repair;ICD9:53.51;Surgical Procedure                                                                                 
+Indeterminate;SNOMED:384741006;Tumor Differentiation                                                                                   
+Injection into thoracic cavity;ICD9:34.92;Surgical Procedure                                                                           
+Injection of air into peritoneal cavity;ICD9:54.96;Surgical Procedure                                                                  
+Injection of hemorrhoids;ICD9:49.42;Surgical Procedure                                                                                 
+Injection of larynx;ICD9:31.0;Surgical Procedure                                                                                       
+Injection of locally-acting therapeutic substance into peritoneal cavity;ICD9:54.97;Surgical Procedure                                 
+Injection of locally-acting therapeutic substance into trachea;ICD9:31.94;Surgical Procedure                                           
+Insertion of choledochohepatic tube for decompression;ICD9:51.43;Surgical Procedure                                                    
+Insertion of gastric bubble (balloon);ICD9:44.93;Surgical Procedure                                                                    
+Insertion of gastric bubble balloon;ICD9:44.93;Surgical Procedure                                                                      
+Insertion of intercostal catheter for drainage;ICD9:34.04;Surgical Procedure                                                           
+Insertion of permanent tube into esophagus;ICD9:42.81;Surgical Procedure                                                               
+Insertion of subcutaneous electrical anal stimulator;ICD9:49.92;Surgical Procedure                                                     
+Intermediate;SNOMED:373377004;Tumor Differentiation                                                                                    
+Internal drainage of pancreatic cyst;ICD9:52.4;Surgical Procedure                                                                      
+Interstitial tissue of lung;SNOMED:113254000;Site of tumor                                                                             
+Intestinal anastomosis, not otherwise specified;ICD9:45.90;Surgical Procedure                                                          
+Intestinal anastomosis;ICD9:45.9;Surgical Procedure                                                                                    
+Intestinal biopsy, site unspecified;ICD9:45.27;Surgical Procedure                                                                      
+Intra-abdominal manipulation of intestine, not otherwise specified;ICD9:46.80;Surgical Procedure                                       
+Intra-abdominal manipulation of large intestine;ICD9:46.82;Surgical Procedure                                                          
+Intra-abdominal manipulation of small intestine;ICD9:46.81;Surgical Procedure                                                          
+Intraoperative manipulation of stomach;ICD9:44.92;Surgical Procedure                                                                   
+Intrathoracic anastomosis of esophagus;ICD9:42.5;Surgical Procedure                                                                    
+Intrathoracic esophageal anastomosis with interposition of colon;ICD9:42.55;Surgical Procedure                                         
+Intrathoracic esophageal anastomosis with interposition of small bowel;ICD9:42.53;Surgical Procedure                                   
+Intrathoracic esophageal anastomosis with other interposition;ICD9:42.58;Surgical Procedure                                            
+Intrathoracic esophagoesophagostomy;ICD9:42.51;Surgical Procedure                                                                      
+Intrathoracic esophagogastrostomy;ICD9:42.52;Surgical Procedure                                                                        
+Isolation of intestinal segment, not otherwise specified;ICD9:45.50;Surgical Procedure                                                 
+Isolation of intestinal segment;ICD9:45.5;Surgical Procedure                                                                           
+Isolation of segment of large intestine;ICD9:45.52;Surgical Procedure                                                                  
+Isolation of segment of small intestine;ICD9:45.51;Surgical Procedure                                                                  
+Kidney;SNOMED:363518003  ;Site of tumor                                                                                                
+LUNG;SNOMED:93880001;Site of tumor                                                                                                     
+Laparoscopic abdominoperineal resection of the rectum;ICD9:48.51;Surgical Procedure                                                    
+Laparoscopic ablation of liver lesion or tissue;ICD9:50.25;Surgical Procedure                                                          
+Laparoscopic appendectomy;ICD9:47.01;Surgical Procedure                                                                                
+Laparoscopic cholecystectomy;ICD9:51.23;Surgical Procedure                                                                             
+Laparoscopic gastric restrictive procedure;ICD9:44.95;Surgical Procedure                                                               
+Laparoscopic gastroenterostomy;ICD9:44.38;Surgical Procedure                                                                           
+Laparoscopic gastroplasty;ICD9:44.68;Surgical Procedure                                                                                
+Laparoscopic incidental appendectomy;ICD9:47.11;Surgical Procedure                                                                     
+Laparoscopic incisional hernia repair with graft or prosthesis;ICD9:53.62;Surgical Procedure                                           
+Laparoscopic liver biopsy;ICD9:50.14;Surgical Procedure                                                                                
+Laparoscopic lysis of peritoneal adhesions;ICD9:54.51;Surgical Procedure                                                               
+Laparoscopic partial cholecystectomy;ICD9:51.24;Surgical Procedure                                                                     
+Laparoscopic procedures for creation of esophagogastric sphincteric competence;ICD9:44.67;Surgical Procedure                           
+Laparoscopic pull-through resection of rectum;ICD9:48.42;Surgical Procedure                                                            
+Laparoscopic removal of gastric restrictive device(s);ICD9:44.97;Surgical Procedure                                                    
+Laparoscopic removal of gastric restrictive devices;ICD9:44.97;Surgical Procedure                                                      
+Laparoscopic repair of diaphragmatic hernia, abdominal approach;ICD9:53.71;Surgical Procedure                                          
+Laparoscopic repair of diaphragmatic hernia, with thoracic approach;ICD9:53.83;Surgical Procedure                                      
+Laparoscopic repair of umbilical hernia with graft or prosthesis;ICD9:53.42;Surgical Procedure                                         
+Laparoscopic revision of gastric restrictive procedure;ICD9:44.96;Surgical Procedure                                                   
+Laparoscopic total intra-abdominal colectomy;ICD9:45.81;Surgical Procedure                                                             
+Laparoscopic vertical (sleeve) gastrectomy;ICD9:43.82;Surgical Procedure                                                               
+Laparoscopic vertical sleeve gastrectomy;ICD9:43.82;Surgical Procedure                                                                 
+Laparoscopy;ICD9:54.21;Surgical Procedure                                                                                              
+Laparotomy;ICD9:54.1;Surgical Procedure                                                                                                
+Large Intestine;SNOMED:181254001;Site of tumor                                                                                         
+Large-to-large intestinal anastomosis;ICD9:45.94;Surgical Procedure                                                                    
+Laryngoscopy and other tracheoscopy;ICD9:31.42;Surgical Procedure                                                                      
+Larynx;SNOMED:301207000;Site of tumor                                                                                                  
+Lateral basal segment of left lower lobe;SNOMED:15512001;Site of tumor                                                                 
+Lateral basal segment of right lower lobe;SNOMED:74932000;Site of tumor                                                                
+Left lateral anal sphincterotomy;ICD9:49.51;Surgical Procedure                                                                         
+Left lower lobe medial segmental bronchus;SNOMED:76760009;Site of tumor                                                                
+Left lower lobe posterior segmental bronchus;SNOMED:43851006;Site of tumor                                                             
+Left parietal pleura;SNOMED:361998003;Site of tumor                                                                                    
+Left pleural Mesothelium;SNOMED:397383005;Site of tumor                                                                                
+Left visceral pleura;SNOMED:49310007;Site of tumor                                                                                     
+LeuM1;LOINC:10436-4;Immunohistochemical Profile                                                                                        
+Leukemia;SNOMED:93143009;Site of tumor                                                                                                 
+Ligation of bronchus;ICD9:33.92;Surgical Procedure                                                                                     
+Ligation of esophageal varices;ICD9:42.91;Surgical Procedure                                                                           
+Ligation of gastric varices;ICD9:44.91;Surgical Procedure                                                                              
+Ligation of hemorrhoids;ICD9:49.45;Surgical Procedure                                                                                  
+Liver transplant;ICD9:50.5;Surgical Procedure                                                                                          
+Liver;SNOMED:93870000;Site of tumor                                                                                                    
+Lobe of lung;SNOMED:31094006;Site of tumor                                                                                             
+Lobectomy of liver;ICD9:50.3;Surgical Procedure                                                                                        
+Lobectomy of lung;ICD9:32.4;Surgical Procedure                                                                                         
+Local excision of esophageal diverticulum;ICD9:42.31;Surgical Procedure                                                                
+Local excision of lesion or tissue of small intestine, except duodenum;ICD9:45.33;Surgical Procedure                                   
+Local excision of other lesion or tissue of esophagus;ICD9:42.32;Surgical Procedure                                                    
+Local excision of other lesion or tissue of stomach;ICD9:43.42;Surgical Procedure                                                      
+Local excision of rectal lesion or tissue;ICD9:48.35;Surgical Procedure                                                                
+Local excision or destruction of lesion or tissue of biliary ducts and sphincter of oddi;ICD9:51.6;Surgical Procedure                  
+Local excision or destruction of lesion or tissue of bronchus;ICD9:32.0;Surgical Procedure                                             
+Local excision or destruction of lesion or tissue of esophagus;ICD9:42.3;Surgical Procedure                                            
+Local excision or destruction of lesion or tissue of large intestine;ICD9:45.4;Surgical Procedure                                      
+Local excision or destruction of lesion or tissue of lung;ICD9:32.2;Surgical Procedure                                                 
+Local excision or destruction of lesion or tissue of rectum;ICD9:48.3;Surgical Procedure                                               
+Local excision or destruction of lesion or tissue of small intestine;ICD9:45.3;Surgical Procedure                                      
+Local excision or destruction of lesion or tissue of stomach;ICD9:43.4;Surgical Procedure                                              
+Local excision or destruction of lesion or tissue of trachea;ICD9:31.5;Surgical Procedure                                              
+Local excision or destruction of liver tissue or lesion;ICD9:50.2;Surgical Procedure                                                   
+Local excision or destruction of other lesion or tissue of anus;ICD9:49.3;Surgical Procedure                                           
+Local excision or destruction of pancreas and pancreatic duct;ICD9:52.2;Surgical Procedure                                             
+Local perfusion of large intestine;ICD9:46.96;Surgical Procedure                                                                       
+Local perfusion of small intestine;ICD9:46.95;Surgical Procedure                                                                       
+Localized perfusion of liver;ICD9:50.93;Surgical Procedure                                                                             
+Localized;TUMOR_CONFIG:LOCALIZED;Tumor Configuration                                                                                   
+Low;SNOMED:399415002;Tumor Differentiation                                                                                             
+Lower lobe of left lung;SNOMED:361989001;Site of tumor                                                                                 
+Lower lobe of right lung;SNOMED:361976007;Site of tumor                                                                                
+Lung parenchyma;SNOMED:201712001;Site of tumor                                                                                         
+Lung transplant;ICD9:33.5;Surgical Procedure                                                                                           
+Lung transplantation, not otherwise specified;ICD9:33.50;Surgical Procedure                                                            
+Lung volume reduction surgery;ICD9:32.22;Surgical Procedure                                                                            
+Lymph Node Dissection;ICD9:40.50;Surgical Procedure                                                                                    
+Lymph node;SNOMED:81756000;Site of tumor                                                                                               
+Lysis of adhesions of trachea or larynx;ICD9:31.92;Surgical Procedure                                                                  
+Lysis of peritoneal adhesions;ICD9:54.5;Surgical Procedure                                                                             
+Marsupialization of laryngeal cyst;ICD9:30.01;Surgical Procedure                                                                       
+Marsupialization of lesion of liver;ICD9:50.21;Surgical Procedure                                                                      
+Marsupialization of pancreatic cyst;ICD9:52.3;Surgical Procedure                                                                       
+Medial basal segment of left lower lobe of lung;SNOMED:90382001;Site of tumor                                                          
+Medial basal segment of right lower lobe of lung;SNOMED:27589003;Site of tumor                                                         
+Mediastinal Pleura;SNOMED:27416003;Site of tumor                                                                                       
+Mediastinal tracheostomy;ICD9:31.21;Surgical Procedure                                                                                 
+Mediastinoscopy;ICD9:34.22;Surgical Procedure                                                                                          
+Mesothelin;LOINC:74125-6;Immunohistochemical Profile                                                                                   
+Middle lobe of right lung;SNOMED:361973004;Site of tumor                                                                               
+Mixed;SNOMED:8145008;Tumor Configuration                                                                                               
+Multicystic mesothelioma;SNOMED:128901009;Histological Type                                                                            
+Multiple segmental resection of small intestine;ICD9:45.61;Surgical Procedure                                                          
+Myotomy of other parts of colon;ICD9:46.92;Surgical Procedure                                                                          
+Myotomy of sigmoid colon;ICD9:46.91;Surgical Procedure                                                                                 
+N-cadherin;NMVB_LAB:N-CADHERIN;Immunohistochemical Profile                                                                             
+Nodular;SNOMED:255288007;Tumor Configuration                                                                                           
+Normal accessory lobe of lung;SNOMED:76271006;Site of tumor                                                                            
+Not Applicable;ANA|SITE_OF_TUMOR:NA;Site of tumor                                                                                      
+Not Applicable;ANA|TUMOR_DIFF:NA;Tumor Differentiation                                                                                 
+Not Specified;SNOMED:399740008;Histological Type                                                                                       
+Not specified;SNOMED:399740008 ;Tumor Configuration                                                                                    
+Not specified;SNOMED:60815008 ;Tumor Differentiation                                                                                   
+OTHER;ANA|SITE_OF_TUMOR:OTHER;Site of tumor                                                                                            
+Oblique interlobar fissure of left lung;SNOMED:63914005;Site of tumor                                                                  
+Oblique interlobar fissure of right lung;SNOMED:24720008;Site of tumor                                                                 
+Open abdominoperineal resection of the rectum;ICD9:48.52;Surgical Procedure                                                            
+Open ablation of liver lesion or tissue;ICD9:50.23;Surgical Procedure                                                                  
+Open ablation of lung lesion or tissue;ICD9:32.23;Surgical Procedure                                                                   
+Open and other cecectomy;ICD9:45.72;Surgical Procedure                                                                                 
+Open and other left hemicolectomy;ICD9:45.75;Surgical Procedure                                                                        
+Open and other multiple segmental resection of large intestine;ICD9:45.71;Surgical Procedure                                           
+Open and other partial excision of large intestine;ICD9:45.7;Surgical Procedure                                                        
+Open and other partial gastrectomy;ICD9:43.89;Surgical Procedure                                                                       
+Open and other resection of transverse colon;ICD9:45.74;Surgical Procedure                                                             
+Open and other right hemicolectomy;ICD9:45.73;Surgical Procedure                                                                       
+Open and other sigmoidectomy;ICD9:45.76;Surgical Procedure                                                                             
+Open biopsy of bronchus;ICD9:33.25;Surgical Procedure                                                                                  
+Open biopsy of esophagus;ICD9:42.25;Surgical Procedure                                                                                 
+Open biopsy of gallbladder or bile ducts;ICD9:51.13;Surgical Procedure                                                                 
+Open biopsy of large intestine;ICD9:45.26;Surgical Procedure                                                                           
+Open biopsy of larynx or trachea;ICD9:31.45;Surgical Procedure                                                                         
+Open biopsy of liver;ICD9:50.12;Surgical Procedure                                                                                     
+Open biopsy of lung;ICD9:33.28;Surgical Procedure                                                                                      
+Open biopsy of pancreas;ICD9:52.12;Surgical Procedure                                                                                  
+Open biopsy of rectum;ICD9:48.25;Surgical Procedure                                                                                    
+Open biopsy of small intestine;ICD9:45.15;Surgical Procedure                                                                           
+Open biopsy of stomach;ICD9:44.15;Surgical Procedure                                                                                   
+Open mediastinal biopsy;ICD9:34.26;Surgical Procedure                                                                                  
+Open pull-through resection of rectum;ICD9:48.43;Surgical Procedure                                                                    
+Open total intra-abdominal colectomy;ICD9:45.82;Surgical Procedure                                                                     
+Operations on anus;ICD9:49;Surgical Procedure                                                                                          
+Operations on appendix;ICD9:47;Surgical Procedure                                                                                      
+Operations on chest wall, pleura, mediastinum, and diaphragm;ICD9:34;Surgical Procedure                                                
+Operations on diaphragm;ICD9:34.8;Surgical Procedure                                                                                   
+Operations on esophagus;ICD9:42;Surgical Procedure                                                                                     
+Operations on gallbladder and biliary tract;ICD9:51;Surgical Procedure                                                                 
+Operations on liver;ICD9:50;Surgical Procedure                                                                                         
+Operations on pancreas;ICD9:52;Surgical Procedure                                                                                      
+Operations on rectum, rectosigmoid and perirectal tissue;ICD9:48;Surgical Procedure                                                    
+Operations on the digestive system;ICD9:42-54.99;Surgical Procedure                                                                    
+Operations on the respiratory system;ICD9:30-34.99;Surgical Procedure                                                                  
+Operative esophagoscopy by incision;ICD9:42.21;Surgical Procedure                                                                      
+Oral Cavity;SNOMED:363505006;Site of tumor                                                                                             
+Other abdominoperineal resection of the rectum;ICD9:48.59;Surgical Procedure                                                           
+Other anal sphincterotomy;ICD9:49.59;Surgical Procedure                                                                                
+Other and open bilateral repair of direct inguinal hernia with graft or prosthesis;ICD9:53.14;Surgical Procedure                       
+Other and open bilateral repair of direct inguinal hernia;ICD9:53.11;Surgical Procedure                                                
+Other and open bilateral repair of indirect inguinal hernia with graft or prosthesis;ICD9:53.15;Surgical Procedure                     
+Other and open bilateral repair of indirect inguinal hernia;ICD9:53.12;Surgical Procedure                                              
+Other and open bilateral repair of inguinal hernia, one direct and one indirect, with graft or prosthesis;ICD9:53.16;Surgical Procedure
+Other and open bilateral repair of inguinal hernia, one direct and one indirect;ICD9:53.13;Surgical Procedure                          
+Other and open repair of diaphragmatic hernia, abdominal approach;ICD9:53.72;Surgical Procedure                                        
+Other and open repair of diaphragmatic hernia, with thoracic approach;ICD9:53.84;Surgical Procedure                                    
+Other and open repair of direct inguinal hernia with graft or prosthesis;ICD9:53.03;Surgical Procedure                                 
+Other and open repair of direct inguinal hernia;ICD9:53.01;Surgical Procedure                                                          
+Other and open repair of indirect inguinal hernia with graft or prosthesis;ICD9:53.04;Surgical Procedure                               
+Other and open repair of indirect inguinal hernia;ICD9:53.02;Surgical Procedure                                                        
+Other and open repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.69;Surgical Procedure                
+Other and open repair of umbilical hernia with graft or prosthesis;ICD9:53.41;Surgical Procedure                                       
+Other and unspecified ablation of liver lesion or tissue;ICD9:50.26;Surgical Procedure                                                 
+Other and unspecified ablation of lung lesion or tissue;ICD9:32.26;Surgical Procedure                                                  
+Other and unspecified partial excision of large intestine;ICD9:45.79;Surgical Procedure                                                
+Other and unspecified pneumonectomy;ICD9:32.59;Surgical Procedure                                                                      
+Other and unspecified segmental resection of lung;ICD9:32.39;Surgical Procedure                                                        
+Other and unspecified total intra-abdominal colectomy;ICD9:45.83;Surgical Procedure                                                    
+Other anterior resection of rectum;ICD9:48.63;Surgical Procedure                                                                       
+Other antesternal anastomosis of esophagus;ICD9:42.69;Surgical Procedure                                                               
+Other antesternal esophageal anastomosis with interposition;ICD9:42.68;Surgical Procedure                                              
+Other antesternal esophagocolostomy;ICD9:42.66;Surgical Procedure                                                                      
+Other antesternal esophagoenterostomy;ICD9:42.64;Surgical Procedure                                                                    
+Other appendectomy;ICD9:47.09;Surgical Procedure                                                                                       
+Other bilateral femoral herniorrhaphy;ICD9:53.39;Surgical Procedure                                                                    
+Other bilateral repair of inguinal hernia;ICD9:53.1;Surgical Procedure                                                                 
+Other bile duct anastomosis;ICD9:51.39;Surgical Procedure                                                                              
+Other bronchoscopy;ICD9:33.23;Surgical Procedure                                                                                       
+Other cholecystostomy;ICD9:51.03;Surgical Procedure                                                                                    
+Other cholecystotomy;ICD9:51.04;Surgical Procedure                                                                                     
+Other closed [endoscopic] biopsy of biliary duct or sphincter of oddi;ICD9:51.14;Surgical Procedure                                    
+Other closed endoscopic biopsy of biliary duct or sphincter of oddi;ICD9:51.14;Surgical Procedure                                      
+Other control of hemorrhage of stomach or duodenum;ICD9:44.49;Surgical Procedure                                                       
+Other destruction of lesion of duodenum;ICD9:45.32;Surgical Procedure                                                                  
+Other destruction of lesion of large intestine;ICD9:45.49;Surgical Procedure                                                           
+Other destruction of lesion of liver;ICD9:50.29;Surgical Procedure                                                                     
+Other destruction of lesion of small intestine, except duodenum;ICD9:45.34;Surgical Procedure                                          
+Other destruction of lesion or tissue of esophagus;ICD9:42.39;Surgical Procedure                                                       
+Other destruction of lesion or tissue of stomach;ICD9:43.49;Surgical Procedure                                                         
+Other diagnostic procedures on abdominal region;ICD9:54.29;Surgical Procedure                                                          
+Other diagnostic procedures on anus and perianal tissue;ICD9:49.29;Surgical Procedure                                                  
+Other diagnostic procedures on biliary tract;ICD9:51.19;Surgical Procedure                                                             
+Other diagnostic procedures on chest wall, pleura, and diaphragm;ICD9:34.28;Surgical Procedure                                         
+Other diagnostic procedures on esophagus;ICD9:42.29;Surgical Procedure                                                                 
+Other diagnostic procedures on intestine, site unspecified;ICD9:45.29;Surgical Procedure                                               
+Other diagnostic procedures on large intestine;ICD9:45.28;Surgical Procedure                                                           
+Other diagnostic procedures on larynx;ICD9:31.48;Surgical Procedure                                                                    
+Other diagnostic procedures on liver;ICD9:50.19;Surgical Procedure                                                                     
+Other diagnostic procedures on lung or bronchus;ICD9:33.29;Surgical Procedure                                                          
+Other diagnostic procedures on mediastinum;ICD9:34.29;Surgical Procedure                                                               
+Other diagnostic procedures on pancreas;ICD9:52.19;Surgical Procedure                                                                  
+Other diagnostic procedures on rectum, rectosigmoid and perirectal tissue;ICD9:48.29;Surgical Procedure                                
+Other diagnostic procedures on small intestine;ICD9:45.19;Surgical Procedure                                                           
+Other diagnostic procedures on stomach;ICD9:44.19;Surgical Procedure                                                                   
+Other diagnostic procedures on trachea;ICD9:31.49;Surgical Procedure                                                                   
+Other electrocoagulation of rectal lesion or tissue;ICD9:48.32;Surgical Procedure                                                      
+Other endoscopic procedures in bronchus or lung;ICD9:33.7;Surgical Procedure                                                           
+Other endoscopy of small intestine;ICD9:45.13;Surgical Procedure                                                                       
+Other enterostomy;ICD9:46.39;Surgical Procedure                                                                                        
+Other enterostomy;ICD9:46.3;Surgical Procedure                                                                                         
+Other esophagoscopy;ICD9:42.23;Surgical Procedure                                                                                      
+Other excision of bronchus;ICD9:32.1;Surgical Procedure                                                                                
+Other excision of common duct;ICD9:51.63;Surgical Procedure                                                                            
+Other excision of lung;ICD9:32.9;Surgical Procedure                                                                                    
+Other excision of perianal tissue;ICD9:49.04;Surgical Procedure                                                                        
+Other excision of pleura;ICD9:34.59;Surgical Procedure                                                                                 
+Other excision of small intestine;ICD9:45.6;Surgical Procedure                                                                         
+Other excision or destruction of lesion or tissue of larynx;ICD9:30.09;Surgical Procedure                                              
+Other excision or destruction of lesion or tissue of pancreas or pancreatic duct;ICD9:52.22;Surgical Procedure                         
+Other external fistulization of esophagus;ICD9:42.19;Surgical Procedure                                                                
+Other fixation of large intestine;ICD9:46.64;Surgical Procedure                                                                        
+Other fixation of small intestine;ICD9:46.62;Surgical Procedure                                                                        
+Other gallbladder anastomosis;ICD9:51.35;Surgical Procedure                                                                            
+Other gastroenterostomy without gastrectomy;ICD9:44.39;Surgical Procedure                                                              
+Other gastroscopy;ICD9:44.13;Surgical Procedure                                                                                        
+Other gastrostomy;ICD9:43.19;Surgical Procedure                                                                                        
+Other graft of esophagus;ICD9:42.87;Surgical Procedure                                                                                 
+Other hernia repair;ICD9:53.9;Surgical Procedure                                                                                       
+Other incidental appendectomy;ICD9:47.19;Surgical Procedure                                                                            
+Other incision of anus;ICD9:49.93;Surgical Procedure                                                                                   
+Other incision of bile duct;ICD9:51.5;Surgical Procedure                                                                               
+Other incision of esophagus;ICD9:42.09;Surgical Procedure                                                                              
+Other incision of larynx or trachea;ICD9:31.3;Surgical Procedure                                                                       
+Other incision of other bile duct;ICD9:51.59;Surgical Procedure                                                                        
+Other incision of perianal tissue;ICD9:49.02;Surgical Procedure                                                                        
+Other incision of pleura;ICD9:34.09;Surgical Procedure                                                                                 
+Other incision of small intestine;ICD9:45.02;Surgical Procedure                                                                        
+Other injection of therapeutic substance into liver;ICD9:50.94;Surgical Procedure                                                      
+Other insertion of colonic stent(s);ICD9:46.87;Surgical Procedure                                                                      
+Other insertion of colonic stents;ICD9:46.87;Surgical Procedure                                                                        
+Other intrathoracic anastomosis of esophagus;ICD9:42.59;Surgical Procedure                                                             
+Other intrathoracic esophagocolostomy;ICD9:42.56;Surgical Procedure                                                                    
+Other intrathoracic esophagoenterostomy;ICD9:42.54;Surgical Procedure                                                                  
+Other laparoscopic repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.63;Surgical Procedure            
+Other laparoscopic umbilical herniorrhaphy;ICD9:53.43;Surgical Procedure                                                               
+Other laparotomy;ICD9:54.19;Surgical Procedure                                                                                         
+Other lobectomy of lung;ICD9:32.49;Surgical Procedure                                                                                  
+Other local excision of lesion of duodenum;ICD9:45.31;Surgical Procedure                                                               
+Other local excision or destruction of lesion or tissue of anus;ICD9:49.39;Surgical Procedure                                          
+Other local excision or destruction of lesion or tissue of bronchus;ICD9:32.09;Surgical Procedure                                      
+Other local excision or destruction of lesion or tissue of lung;ICD9:32.29;Surgical Procedure                                          
+Other lysis of peritoneal adhesions;ICD9:54.59;Surgical Procedure                                                                      
+Other open incisional hernia repair with graft or prosthesis;ICD9:53.61;Surgical Procedure                                             
+Other open umbilical herniorrhaphy;ICD9:53.49;Surgical Procedure                                                                       
+Other operations of abdominal region;ICD9:54.99;Surgical Procedure                                                                     
+Other operations of abdominal region;ICD9:54.9;Surgical Procedure                                                                      
+Other operations on abdominal region;ICD9:54;Surgical Procedure                                                                        
+Other operations on anus;ICD9:49.99;Surgical Procedure                                                                                 
+Other operations on anus;ICD9:49.9;Surgical Procedure                                                                                  
+Other operations on appendix;ICD9:47.99;Surgical Procedure                                                                             
+Other operations on appendix;ICD9:47.9;Surgical Procedure                                                                              
+Other operations on biliary ducts and sphincter of oddi;ICD9:51.8;Surgical Procedure                                                   
+Other operations on biliary tract;ICD9:51.99;Surgical Procedure                                                                        
+Other operations on biliary tract;ICD9:51.9;Surgical Procedure                                                                         
+Other operations on bronchus;ICD9:33.98;Surgical Procedure                                                                             
+Other operations on diaphragm;ICD9:34.89;Surgical Procedure                                                                            
+Other operations on esophagus;ICD9:42.99;Surgical Procedure                                                                            
+Other operations on esophagus;ICD9:42.9;Surgical Procedure                                                                             
+Other operations on intestine;ICD9:46;Surgical Procedure                                                                               
+Other operations on intestines;ICD9:46.99;Surgical Procedure                                                                           
+Other operations on intestines;ICD9:46.9;Surgical Procedure                                                                            
+Other operations on larynx and trachea;ICD9:31.9;Surgical Procedure                                                                    
+Other operations on larynx and trachea;ICD9:31;Surgical Procedure                                                                      
+Other operations on larynx;ICD9:31.98;Surgical Procedure                                                                               
+Other operations on liver;ICD9:50.99;Surgical Procedure                                                                                
+Other operations on liver;ICD9:50.9;Surgical Procedure                                                                                 
+Other operations on lung and bronchus;ICD9:33.9;Surgical Procedure                                                                     
+Other operations on lung and bronchus;ICD9:33;Surgical Procedure                                                                       
+Other operations on lung;ICD9:33.99;Surgical Procedure                                                                                 
+Other operations on pancreas;ICD9:52.99;Surgical Procedure                                                                             
+Other operations on pancreas;ICD9:52.9;Surgical Procedure                                                                              
+Other operations on rectum and perirectal tissue;ICD9:48.99;Surgical Procedure                                                         
+Other operations on rectum and perirectal tissue;ICD9:48.9;Surgical Procedure                                                          
+Other operations on sphincter of oddi;ICD9:51.89;Surgical Procedure                                                                    
+Other operations on stomach;ICD9:44.99;Surgical Procedure                                                                              
+Other operations on stomach;ICD9:44.9;Surgical Procedure                                                                               
+Other operations on stomach;ICD9:44;Surgical Procedure                                                                                 
+Other operations on thorax;ICD9:34.99;Surgical Procedure                                                                               
+Other operations on thorax;ICD9:34.9;Surgical Procedure                                                                                
+Other operations on trachea;ICD9:31.99;Surgical Procedure                                                                              
+Other pancreatotomy;ICD9:52.09;Surgical Procedure                                                                                      
+Other partial cholecystectomy;ICD9:51.21;Surgical Procedure                                                                            
+Other partial gastrectomy;ICD9:43.8;Surgical Procedure                                                                                 
+Other partial laryngectomy;ICD9:30.29;Surgical Procedure                                                                               
+Other partial laryngectomy;ICD9:30.2;Surgical Procedure                                                                                
+Other partial pancreatectomy;ICD9:52.59;Surgical Procedure                                                                             
+Other partial resection of small intestine;ICD9:45.62;Surgical Procedure                                                               
+Other percutaneous procedures on biliary tract;ICD9:51.98;Surgical Procedure                                                           
+Other permanent ileostomy;ICD9:46.23;Surgical Procedure                                                                                
+Other permanent tracheostomy;ICD9:31.29;Surgical Procedure                                                                             
+Other pleural biopsy;ICD9:34.24;Surgical Procedure                                                                                     
+Other procedures for creation of esophagogastric sphincteric competence;ICD9:44.66;Surgical Procedure                                  
+Other procedures on hemorrhoids;ICD9:49.49;Surgical Procedure                                                                          
+Other proctopexy;ICD9:48.76;Surgical Procedure                                                                                         
+Other pull-through resection of rectum;ICD9:48.49;Surgical Procedure                                                                   
+Other pyloroplasty;ICD9:44.29;Surgical Procedure                                                                                       
+Other repair and plastic operations on bronchus;ICD9:33.48;Surgical Procedure                                                          
+Other repair and plastic operations on lung;ICD9:33.49;Surgical Procedure                                                              
+Other repair and plastic operations on trachea;ICD9:31.79;Surgical Procedure                                                           
+Other repair of abdominal wall and peritoneum;ICD9:54.7;Surgical Procedure                                                             
+Other repair of abdominal wall;ICD9:54.72;Surgical Procedure                                                                           
+Other repair of anal sphincter;ICD9:49.79;Surgical Procedure                                                                           
+Other repair of chest wall;ICD9:34.79;Surgical Procedure                                                                               
+Other repair of diaphragm;ICD9:34.84;Surgical Procedure                                                                                
+Other repair of esophagus;ICD9:42.89;Surgical Procedure                                                                                
+Other repair of esophagus;ICD9:42.8;Surgical Procedure                                                                                 
+Other repair of intestine;ICD9:46.79;Surgical Procedure                                                                                
+Other repair of intestine;ICD9:46.7;Surgical Procedure                                                                                 
+Other repair of larynx;ICD9:31.69;Surgical Procedure                                                                                   
+Other repair of liver;ICD9:50.69;Surgical Procedure                                                                                    
+Other repair of mesentery;ICD9:54.75;Surgical Procedure                                                                                
+Other repair of omentum;ICD9:54.74;Surgical Procedure                                                                                  
+Other repair of pancreas;ICD9:52.95;Surgical Procedure                                                                                 
+Other repair of peritoneum;ICD9:54.73;Surgical Procedure                                                                               
+Other repair of rectum;ICD9:48.79;Surgical Procedure                                                                                   
+Other repair of stomach;ICD9:44.69;Surgical Procedure                                                                                  
+Other repair of stomach;ICD9:44.6;Surgical Procedure                                                                                   
+Other resection of rectum;ICD9:48.69;Surgical Procedure                                                                                
+Other resection of rectum;ICD9:48.6;Surgical Procedure                                                                                 
+Other revision of stoma of large intestine;ICD9:46.43;Surgical Procedure                                                               
+Other selective vagotomy;ICD9:44.03;Surgical Procedure                                                                                 
+Other small-to-large intestinal anastomosis;ICD9:45.93;Surgical Procedure                                                              
+Other surgical collapse of lung;ICD9:33.39;Surgical Procedure                                                                          
+Other suture of abdominal wall;ICD9:54.63;Surgical Procedure                                                                           
+Other total gastrectomy;ICD9:43.99;Surgical Procedure                                                                                  
+Other transplant of liver;ICD9:50.59;Surgical Procedure                                                                                
+Other unilateral femoral herniorrhaphy;ICD9:53.29;Surgical Procedure                                                                   
+Other unilateral repair of inguinal hernia;ICD9:53.0;Surgical Procedure                                                                
+Other;HIST_TYPE:OTHER;Histological Type                                                                                                
+Ovary;SNOMED:363443007;Site of tumor                                                                                                   
+PERICARDIUM;SNOMED:181295003;Site of tumor                                                                                             
+PERITONEUM;SNOMED:15425007;Site of tumor                                                                                               
+PLEURAL;SNOMED:74964007;Site of tumor                                                                                                  
+PSAD;LOINC:10508-0;Immunohistochemical Profile                                                                                         
+Pancreas;SNOMED:363418001;Site of tumor                                                                                                
+Pancreatic sphincteroplasty;ICD9:51.83;Surgical Procedure                                                                              
+Pancreatic sphincterotomy;ICD9:51.82;Surgical Procedure                                                                                
+Pancreatic transplant, not otherwise specified;ICD9:52.80;Surgical Procedure                                                           
+Pancreatotomy;ICD9:52.0;Surgical Procedure                                                                                             
+Papillary mesothelioma;SNOMED:86143001;Histological Type                                                                               
+Papillary;SNOMED:77526009;Tumor Configuration                                                                                          
+Parietal Pleura;SNOMED:80338007;Site of tumor                                                                                          
+Parietal serous pericardium;SNOMED:243956000;Site of tumor                                                                             
+Parotid Gland;SNOMED:181234002;Site of tumor                                                                                           
+Partial esophagectomy;ICD9:42.41;Surgical Procedure                                                                                    
+Partial gastrectomy with anastomosis to duodenum;ICD9:43.6;Surgical Procedure                                                          
+Partial gastrectomy with anastomosis to esophagus;ICD9:43.5;Surgical Procedure                                                         
+Partial gastrectomy with anastomosis to jejunum;ICD9:43.7;Surgical Procedure                                                           
+Partial gastrectomy with jejunal transposition;ICD9:43.81;Surgical Procedure                                                           
+Partial hepatectomy;ICD9:50.22;Surgical Procedure                                                                                      
+Partial pancreatectomy;ICD9:52.5;Surgical Procedure                                                                                    
+Pelvic Peritoneum;SNOMED:362721006;Site of tumor                                                                                       
+Percutaneous (endoscopic) jejunostomy [pej];ICD9:46.32;Surgical Procedure                                                              
+Percutaneous [endoscopic] gastrojejunostomy;ICD9:44.32;Surgical Procedure                                                              
+Percutaneous [endoscopic] gastrostomy [peg];ICD9:43.11;Surgical Procedure                                                              
+Percutaneous abdominal drainage;ICD9:54.91;Surgical Procedure                                                                          
+Percutaneous ablation of liver lesion or tissue;ICD9:50.24;Surgical Procedure                                                          
+Percutaneous ablation of lung lesion or tissue;ICD9:32.24;Surgical Procedure                                                           
+Percutaneous aspiration of gallbladder;ICD9:51.01;Surgical Procedure                                                                   
+Percutaneous aspiration of liver;ICD9:50.91;Surgical Procedure                                                                         
+Percutaneous biopsy of gallbladder or bile ducts;ICD9:51.12;Surgical Procedure                                                         
+Percutaneous endoscopic gastrojejunostomy;ICD9:44.32;Surgical Procedure                                                                
+Percutaneous endoscopic gastrostomy peg;ICD9:43.11;Surgical Procedure                                                                  
+Percutaneous endoscopic jejunostomy pej;ICD9:46.32;Surgical Procedure                                                                  
+Percutaneous extraction of common duct stones;ICD9:51.96;Surgical Procedure                                                            
+Peritoneal dialysis;ICD9:54.98;Surgical Procedure                                                                                      
+Peritoneal lavage;ICD9:54.25;Surgical Procedure                                                                                        
+Permanent colostomy;ICD9:46.13;Surgical Procedure                                                                                      
+Permanent tracheostomy;ICD9:31.2;Surgical Procedure                                                                                    
+Pharynx;SNOMED:363507003;Site of tumor                                                                                                 
+Pleura;SNOMED:264148002;Site of tumor                                                                                                  
+Pleurectomy;ICD9:34.5;Surgical Procedure                                                                                               
+Plication of emphysematous bleb;ICD9:32.21;Surgical Procedure                                                                          
+Plication of the diaphragm;ICD9:53.81;Surgical Procedure                                                                               
+Pneumonectomy;ICD9:32.5;Surgical Procedure                                                                                             
+Pneumoperitoneum for collapse of lung;ICD9:33.33;Surgical Procedure                                                                    
+Posterior anal sphincterotomy;ICD9:49.52;Surgical Procedure                                                                            
+Posterior basal segment of left lower lobe;SNOMED:46148009;Site of tumor                                                               
+Posterior basal segment of right lower lobe;SNOMED:16057008;Site of tumor                                                              
+Posterior resection of rectum;ICD9:48.64;Surgical Procedure                                                                            
+Pressure measurement of sphincter of oddi;ICD9:51.15;Surgical Procedure                                                                
+Procedures on hemorrhoids;ICD9:49.4;Surgical Procedure                                                                                 
+Proctosigmoidoscopy through artificial stoma;ICD9:48.22;Surgical Procedure                                                             
+Proctostomy;ICD9:48.1;Surgical Procedure                                                                                               
+Proctotomy;ICD9:48.0;Surgical Procedure                                                                                                
+Production of subcutaneous tunnel without esophageal anastomosis;ICD9:42.86;Surgical Procedure                                         
+Prostate;SNOMED:399068003;Site of tumor                                                                                                
+Proximal pancreatectomy;ICD9:52.51;Surgical Procedure                                                                                  
+Pull-through resection of rectum, not otherwise specified;ICD9:48.40;Surgical Procedure                                                
+Pull-through resection of rectum;ICD9:48.4;Surgical Procedure                                                                          
+Pulmonary acinus;SNOMED:361365004;Site of tumor                                                                                        
+Pulmonary alveoli;SNOMED:113253006;Site of tumor                                                                                       
+Puncture of lung;ICD9:33.93;Surgical Procedure                                                                                         
+Pyloromyotomy;ICD9:43.3;Surgical Procedure                                                                                             
+Pyloroplasty;ICD9:44.2;Surgical Procedure                                                                                              
+Radical dissection of thoracic structures;ICD9:32.6;Surgical Procedure                                                                 
+Radical electrocoagulation of rectal lesion or tissue;ICD9:48.31;Surgical Procedure                                                    
+Radical laryngectomy;ICD9:30.4;Surgical Procedure                                                                                      
+Radical pancreaticoduodenectomy;ICD9:52.7;Surgical Procedure                                                                           
+Radical subtotal pancreatectomy;ICD9:52.53;Surgical Procedure                                                                          
+Reclosure of postoperative disruption of abdominal wall;ICD9:54.61;Surgical Procedure                                                  
+Reconstruction of trachea and construction of artificial larynx;ICD9:31.75;Surgical Procedure                                          
+Rectorectostomy;ICD9:48.74;Surgical Procedure                                                                                          
+Rectosigmoid;SNOMED:363414004;Site of tumor                                                                                            
+Rectum;SNOMED:363351006;Site of tumor                                                                                                  
+Reduction of anal prolapse;ICD9:49.94;Surgical Procedure                                                                               
+Reduction of hemorrhoids;ICD9:49.41;Surgical Procedure                                                                                 
+Reimplantation of pancreatic tissue;ICD9:52.81;Surgical Procedure                                                                      
+Removal of artificial anal sphincter;ICD9:49.76;Surgical Procedure                                                                     
+Removal of foreign body from peritoneal cavity;ICD9:54.92;Surgical Procedure                                                           
+Removal of gastric bubble (balloon);ICD9:44.94;Surgical Procedure                                                                      
+Removal of gastric bubble balloon;ICD9:44.94;Surgical Procedure                                                                        
+Removal of prosthetic device from bile duct;ICD9:51.95;Surgical Procedure                                                              
+Renal Pelvis;SNOMED:363457009;Site of tumor                                                                                            
+Reopening of recent laparotomy site;ICD9:54.12;Surgical Procedure                                                                      
+Reopening of recent thoracotomy site;ICD9:34.03;Surgical Procedure                                                                     
+Repair and plastic operation on lung and bronchus;ICD9:33.4;Surgical Procedure                                                         
+Repair and plastic operations on trachea;ICD9:31.7;Surgical Procedure                                                                  
+Repair of anus;ICD9:49.7;Surgical Procedure                                                                                            
+Repair of bile ducts;ICD9:51.7;Surgical Procedure                                                                                      
+Repair of chest wall;ICD9:34.7;Surgical Procedure                                                                                      
+Repair of diaphragmatic hernia with thoracic approach, not otherwise specified;ICD9:53.80;Surgical Procedure                           
+Repair of diaphragmatic hernia, abdominal approach, not otherwise specified;ICD9:53.75;Surgical Procedure                              
+Repair of diaphragmatic hernia, abdominal approach;ICD9:53.7;Surgical Procedure                                                        
+Repair of diaphragmatic hernia, thoracic approach;ICD9:53.8;Surgical Procedure                                                         
+Repair of esophageal fistula, not elsewhere classified;ICD9:42.84;Surgical Procedure                                                   
+Repair of esophageal stricture;ICD9:42.85;Surgical Procedure                                                                           
+Repair of gastroschisis;ICD9:54.71;Surgical Procedure                                                                                  
+Repair of hernia;ICD9:53;Surgical Procedure                                                                                            
+Repair of inguinal hernia with graft or prosthesis, not otherwise specified;ICD9:53.05;Surgical Procedure                              
+Repair of laceration of gallbladder;ICD9:51.91;Surgical Procedure                                                                      
+Repair of laryngeal fracture;ICD9:31.64;Surgical Procedure                                                                             
+Repair of larynx;ICD9:31.6;Surgical Procedure                                                                                          
+Repair of liver;ICD9:50.6;Surgical Procedure                                                                                           
+Repair of other bile ducts;ICD9:51.79;Surgical Procedure                                                                               
+Repair of other hernia of anterior abdominal wall (without graft or prosthesis);ICD9:53.5;Surgical Procedure                           
+Repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.6;Surgical Procedure                                
+Repair of other hernia of anterior abdominal wall without graft or prosthesis;ICD9:53.5;Surgical Procedure                             
+Repair of other hernia of anterior abdominal wall;ICD9:53.59;Surgical Procedure                                                        
+Repair of parasternal hernia;ICD9:53.82;Surgical Procedure                                                                             
+Repair of pectus deformity;ICD9:34.74;Surgical Procedure                                                                               
+Repair of pericolostomy hernia;ICD9:46.42;Surgical Procedure                                                                           
+Repair of perirectal fistula;ICD9:48.93;Surgical Procedure                                                                             
+Repair of pleura;ICD9:34.93;Surgical Procedure                                                                                         
+Repair of rectum;ICD9:48.7;Surgical Procedure                                                                                          
+Repair of umbilical hernia;ICD9:53.4;Surgical Procedure                                                                                
+Replacement of laryngeal or tracheal stent;ICD9:31.93;Surgical Procedure                                                               
+Resection of exteriorized segment of large intestine;ICD9:46.04;Surgical Procedure                                                     
+Resection of exteriorized segment of small intestine;ICD9:46.02;Surgical Procedure                                                     
+Respiratory bronchiole;SNOMED:200723008;Site of tumor                                                                                  
+Revision of anastomosis of biliary tract;ICD9:51.94;Surgical Procedure                                                                 
+Revision of anastomosis of large intestine;ICD9:46.94;Surgical Procedure                                                               
+Revision of anastomosis of small intestine;ICD9:46.93;Surgical Procedure                                                               
+Revision of gastric anastomosis;ICD9:44.5;Surgical Procedure                                                                           
+Revision of intestinal stoma, not otherwise specified;ICD9:46.40;Surgical Procedure                                                    
+Revision of intestinal stoma;ICD9:46.4;Surgical Procedure                                                                              
+Revision of laryngostomy;ICD9:31.63;Surgical Procedure                                                                                 
+Revision of stoma of small intestine;ICD9:46.41;Surgical Procedure                                                                     
+Revision of tracheostomy;ICD9:31.74;Surgical Procedure                                                                                 
+Right apical segmental bronchus;SNOMED:65359009;Site of tumor                                                                          
+Right lower lobe anterior segmental bronchus;SNOMED:90949006;Site of tumor                                                             
+Right lower lobe lateral segmental bronchus;SNOMED:41765007;Site of tumor                                                              
+Right lower lobe posterior segmental bronchus;SNOMED:64154003;Site of tumor                                                            
+Right parietal pleura;SNOMED:184304009;Site of tumor                                                                                   
+Right pleural Mesothelium;SNOMED:397382000;Site of tumor                                                                               
+Right visceral pleura;SNOMED:184204006;Site of tumor                                                                                   
+Rigid proctosigmoidoscopy;ICD9:48.23;Surgical Procedure                                                                                
+Sarcomatoid mesothelioma;SNOMED:399477001;Histological Type                                                                            
+Scarification of pleura;ICD9:34.6;Surgical Procedure                                                                                   
+Segmental resection of lung;ICD9:32.3;Surgical Procedure                                                                               
+Serous Pericardial Sac;SNOMED:362891005;Site of tumor                                                                                  
+Serous pericardium;SNOMED:243954002;Site of tumor                                                                                      
+Simple suture of common bile duct;ICD9:51.71;Surgical Procedure                                                                        
+Site of Tumor;SNOMED:371480007;Site of tumor                                                                                           
+Skin;SNOMED:402652009;Site of tumor                                                                                                    
+Small Intestine;SNOMED:181250005;Site of tumor                                                                                         
+Small-to-small intestinal anastomosis;ICD9:45.91;Surgical Procedure                                                                    
+Soave submucosal resection of rectum;ICD9:48.41;Surgical Procedure                                                                     
+Spleen;SNOMED:363499005;Site of tumor                                                                                                  
+Stomach;SNOMED:363349007;Site of tumor                                                                                                 
+Surgical collapse of lung;ICD9:33.3;Surgical Procedure                                                                                 
+Suture of abdominal wall and peritoneum;ICD9:54.6;Surgical Procedure                                                                   
+Suture of duodenal ulcer site;ICD9:44.42;Surgical Procedure                                                                            
+Suture of gastric ulcer site;ICD9:44.41;Surgical Procedure                                                                             
+Suture of laceration of anus;ICD9:49.71;Surgical Procedure                                                                             
+Suture of laceration of bronchus;ICD9:33.41;Surgical Procedure                                                                         
+Suture of laceration of chest wall;ICD9:34.71;Surgical Procedure                                                                       
+Suture of laceration of diaphragm;ICD9:34.82;Surgical Procedure                                                                        
+Suture of laceration of duodenum;ICD9:46.71;Surgical Procedure                                                                         
+Suture of laceration of esophagus;ICD9:42.82;Surgical Procedure                                                                        
+Suture of laceration of large intestine;ICD9:46.75;Surgical Procedure                                                                  
+Suture of laceration of larynx;ICD9:31.61;Surgical Procedure                                                                           
+Suture of laceration of rectum;ICD9:48.71;Surgical Procedure                                                                           
+Suture of laceration of small intestine, except duodenum;ICD9:46.73;Surgical Procedure                                                 
+Suture of laceration of stomach;ICD9:44.61;Surgical Procedure                                                                          
+Suture of laceration of trachea;ICD9:31.71;Surgical Procedure                                                                          
+Suture of peptic ulcer, not otherwise specified;ICD9:44.40;Surgical Procedure                                                          
+Suture of peritoneum;ICD9:54.64;Surgical Procedure                                                                                     
+TAG-72;LOINC:47012-0;Immunohistochemical Profile                                                                                       
+TTF;LOINC:40564-7;Immunohistochemical Profile                                                                                          
+Temporary colostomy;ICD9:46.11;Surgical Procedure                                                                                      
+Temporary ileostomy;ICD9:46.21;Surgical Procedure                                                                                      
+Temporary tracheostomy;ICD9:31.1;Surgical Procedure                                                                                    
+Terminal bronchiole;SNOMED:278981008;Site of tumor                                                                                     
+Testis;SNOMED:188219004;Site of tumor                                                                                                  
+Thoracentesis;ICD9:34.91;Surgical Procedure                                                                                            
+Thoracoplasty;ICD9:33.34;Surgical Procedure                                                                                            
+Thoracoscopic ablation of lung lesion or tissue;ICD9:32.25;Surgical Procedure                                                          
+Thoracoscopic decortication of lung;ICD9:34.52;Surgical Procedure                                                                      
+Thoracoscopic drainage of pleural cavity;ICD9:34.06;Surgical Procedure                                                                 
+Thoracoscopic excision of lesion or tissue of lung;ICD9:32.20;Surgical Procedure                                                       
+Thoracoscopic lobectomy of lung;ICD9:32.41;Surgical Procedure                                                                          
+Thoracoscopic lung biopsy;ICD9:33.20;Surgical Procedure                                                                                
+Thoracoscopic pleural biopsy;ICD9:34.20;Surgical Procedure                                                                             
+Thoracoscopic pneumonectomy;ICD9:32.50;Surgical Procedure                                                                              
+Thoracoscopic segmental resection of lung;ICD9:32.30;Surgical Procedure                                                                
+Thrombomodulin;LOINC:19146-0;Immunohistochemical Profile                                                                               
+Thyroid;SNOMED:127018007;Site of tumor                                                                                                 
+Total esophagectomy;ICD9:42.42;Surgical Procedure                                                                                      
+Total gastrectomy with intestinal interposition;ICD9:43.91;Surgical Procedure                                                          
+Total gastrectomy;ICD9:43.9;Surgical Procedure                                                                                         
+Total hepatectomy;ICD9:50.4;Surgical Procedure                                                                                         
+Total intra-abdominal colectomy;ICD9:45.8;Surgical Procedure                                                                           
+Total pancreatectomy;ICD9:52.6;Surgical Procedure                                                                                      
+Total removal of small intestine;ICD9:45.63;Surgical Procedure                                                                         
+Tracheoesophageal fistulization;ICD9:31.95;Surgical Procedure                                                                          
+Tracheoscopy through artificial stoma;ICD9:31.41;Surgical Procedure                                                                    
+Transabdominal endoscopy of large intestine;ICD9:45.21;Surgical Procedure                                                              
+Transabdominal endoscopy of small intestine;ICD9:45.11;Surgical Procedure                                                              
+Transabdominal gastroscopy;ICD9:44.11;Surgical Procedure                                                                               
+Transabdominal proctosigmoidoscopy;ICD9:48.21;Surgical Procedure                                                                       
+Transcatheter embolization for gastric or duodenal bleeding;ICD9:44.44;Surgical Procedure                                              
+Transjugular liver biopsy;ICD9:50.13;Surgical Procedure                                                                                
+Transplant of intestine;ICD9:46.97;Surgical Procedure                                                                                  
+Transplant of pancreas;ICD9:52.8;Surgical Procedure                                                                                    
+Transplantation of cells of islets of langerhans, not otherwise specified;ICD9:52.86;Surgical Procedure                                
+Transpleural thoracoscopy;ICD9:34.21;Surgical Procedure                                                                                
+Transsacral rectosigmoidectomy;ICD9:48.61;Surgical Procedure                                                                           
+Trocar cholecystostomy;ICD9:51.02;Surgical Procedure                                                                                   
+Truncal vagotomy;ICD9:44.01;Surgical Procedure                                                                                         
+Tumor Configuration;SNOMED:370111000;Tumor Configuration                                                                               
+Unilateral lung transplantation;ICD9:33.51;Surgical Procedure                                                                          
+Unilateral repair of femoral hernia with graft or prosthesis;ICD9:53.21;Surgical Procedure                                             
+Unilateral repair of femoral hernia;ICD9:53.2;Surgical Procedure                                                                       
+Unilateral repair of inguinal hernia, not otherwise specified;ICD9:53.00;Surgical Procedure                                            
+Unknown Procedure;PROC:UNKNOWN;Surgical Procedure                                                                                      
+Unknown;ANA|TUMOR_SITE:UNKNOWN;Site of tumor                                                                                           
+Unknown;HIST_TYPE:UNKNOWN;Histological Type                                                                                            
+Unknown;TUMOR_CONFIG:UNKNOWN;Tumor Configuration                                                                                       
+Upper lobe of left lung;SNOMED:361984006;Site of tumor                                                                                 
+Upper lobe of right lung;SNOMED:361969002;Site of tumor                                                                                
+Ureter;SNOMED:363458004;Site of tumor                                                                                                  
+Urinary Bladder;SNOMED:399326009;Site of tumor                                                                                         
+VISCERAL PLEURA;SNOMED:81623005;Site of tumor                                                                                          
+Vagotomy, not otherwise specified;ICD9:44.00;Surgical Procedure                                                                        
+Vagotomy;ICD9:44.0;Surgical Procedure                                                                                                  
+Vimentin;LOINC:10519-7;Immunohistochemical Profile                                                                                     
+Visceral serous pericardium;SNOMED:243955001;Site of tumor                                                                             
+Vocal cordectomy;ICD9:30.22;Surgical Procedure                                                                                         
+WT1;LOINC:50331-8;Immunohistochemical Profile                                                                                          
+[endoscopic] polypectomy of rectum;ICD9:48.36;Surgical Procedure                                                                       
+endoscopic polypectomy of rectum;ICD9:48.36;Surgical Procedure                                                                         
+laparoscopic adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure                                 
+

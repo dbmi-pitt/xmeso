@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.pitt.dbmi.xmeso.xmesoTypeSystem</name>
+    <imports>
+        <import location="../../../../BasicTypeSystem.xml"/>
+        <import location="ner/NerTypeSystem.xml"/>
+        <import location="segmentor/SectionizerTypeSystem.xml"/>
+        <import location="segmentor/StopWordsDetectorTypeSystem.xml"/>
+        <import location="floatnumdetector/FloatNumberDetectorTypeSystem.xml"/>
+        <import location="typesystem/TypesystemTypeSystem.xml"/>
+        <import location="deidcleaner/DeidCleanerTypeSystem.xml"/>
+        <import location="ie/IeTypeSystem.xml"/>
+    </imports>
+</typeSystemDescription>

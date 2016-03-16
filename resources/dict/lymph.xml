@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <synonym>
+<token canonical="intra-abdominal lymph nodes" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.2" POS="NN" >
+    <variant base="intra-abdominal lymph node" POS="NN" />
+    <variant base="intra-abdominal lymph nodes" POS="NN" />
+    <variant base="intra abdominal lymph node" POS="NN" />
+    <variant base="intra abdominal lymph nodes" POS="NN" />
+    <variant base="intraabdominal lymph node" POS="NN" />
+    <variant base="intraabdominal lymph nodes" POS="NN" />
+    <variant base="abdominal lymph node" POS="NN" />
+    <variant base="abdominal lymph nodes" POS="NN" />
+    <variant base="aortic lymph node" POS="NN" />
+    <variant base="aortic lymph nodes" POS="NN" />
+    <variant base="celiac lymph node" POS="NN" />
+    <variant base="celiac lymph nodes" POS="NN" />
+    <variant base="colic lymph node" POS="NN" />
+    <variant base="colic lymph nodes" POS="NN" />
+    <variant base="common duct lymph node" POS="NN" />
+    <variant base="common duct lymph nodes" POS="NN" />
+    <variant base="gastric lymph node" POS="NN" />
+    <variant base="gastric lymph nodes" POS="NN" />
+    <variant base="hepatic lymph node" POS="NN" />
+    <variant base="hepatic lymph nodes" POS="NN" />
+    <variant base="ileocolic lymph node" POS="NN" />
+    <variant base="ileocolic lymph nodes" POS="NN" />
+    <variant base="inferior mesenteric lymph node" POS="NN" />
+    <variant base="inferior mesenteric lymph nodes" POS="NN" />
+    <variant base="intestinal lymph node" POS="NN" />
+    <variant base="intestinal lymph nodes" POS="NN" />
+    <variant base="lumbar lymph node" POS="NN" />
+    <variant base="lumbar lymph nodes" POS="NN" />
+    <variant base="mesenteric lymph node  nos" POS="NN" />
+    <variant base="mesenteric lymph nodes  nos" POS="NN" />
+    <variant base="mesenteric lymph node" POS="NN" />
+    <variant base="mesenteric lymph nodes" POS="NN" />
+    <variant base="midcolic lymph node" POS="NN" />
+    <variant base="midcolic lymph nodes" POS="NN" />
+    <variant base="pancreatic lymph node  nos" POS="NN" />
+    <variant base="pancreatic lymph nodes  nos" POS="NN" />
+    <variant base="pancreatic lymph node" POS="NN" />
+    <variant base="pancreatic lymph nodes" POS="NN" />
+    <variant base="para-aortic lymph node" POS="NN" />
+    <variant base="para-aortic lymph nodes" POS="NN" />
+    <variant base="para aortic lymph node" POS="NN" />
+    <variant base="para aortic lymph nodes" POS="NN" />
+    <variant base="paraaortic lymph node" POS="NN" />
+    <variant base="paraaortic lymph nodes" POS="NN" />
+    <variant base="periaortic lymph node" POS="NN" />
+    <variant base="periaortic lymph nodes" POS="NN" />
+    <variant base="peripancreatic lymph node" POS="NN" />
+    <variant base="peripancreatic lymph nodes" POS="NN" />
+    <variant base="porta hepatis lymph node" POS="NN" />
+    <variant base="porta hepatis lymph nodes" POS="NN" />
+    <variant base="portal lymph node" POS="NN" />
+    <variant base="portal lymph nodes" POS="NN" />
+    <variant base="pyloric lymph node" POS="NN" />
+    <variant base="pyloric lymph nodes" POS="NN" />
+    <variant base="retroperitoneal lymph node" POS="NN" />
+    <variant base="retroperitoneal lymph nodes" POS="NN" />
+    <variant base="splenic lymph node  nos" POS="NN" />
+    <variant base="splenic lymph nodes  nos" POS="NN" />
+    <variant base="splenic lymph node" POS="NN" />
+    <variant base="splenic lymph nodes" POS="NN" />
+    <variant base="splenic hilar lymph node" POS="NN" />
+    <variant base="splenic hilar lymph nodes" POS="NN" />
+    <variant base="superior mesenteric lymph node" POS="NN" />
+    <variant base="superior mesenteric lymph nodes" POS="NN" />
+</token>
+<token canonical="intrathoracic lymph nodes" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.1" POS="NN" >
+    <variant base="intrathoracic lymph node" POS="NN" />
+    <variant base="intrathoracic lymph nodes" POS="NN" />
+    <variant base="bronchial lymph node" POS="NN" />
+    <variant base="bronchial lymph nodes" POS="NN" />
+    <variant base="bronchcopulmonary lymph node" POS="NN" />
+    <variant base="bronchcopulmonary lymph nodes" POS="NN" />
+    <variant base="diaphragmatic lymph node" POS="NN" />
+    <variant base="diaphragmatic lymph nodes" POS="NN" />
+    <variant base="esophaegeal lymph node" POS="NN" />
+    <variant base="esophaegeal lymph nodes" POS="NN" />
+    <variant base="hilar lymph node  nos" POS="NN" />
+    <variant base="hilar lymph nodes  nos" POS="NN" />
+    <variant base="hilar lymph node" POS="NN" />
+    <variant base="hilar lymph nodes" POS="NN" />
+    <variant base="innominate lymph node" POS="NN" />
+    <variant base="innominate lymph nodes" POS="NN" />
+    <variant base="intercostal lymph node" POS="NN" />
+    <variant base="intercostal lymph nodes" POS="NN" />
+    <variant base="mediastinal lymph node" POS="NN" />
+    <variant base="mediastinal lymph nodes" POS="NN" />
+    <variant base="parasternal lymph node" POS="NN" />
+    <variant base="parasternal lymph nodes" POS="NN" />
+    <variant base="pulmonary hilar lymph node" POS="NN" />
+    <variant base="pulmonary hilar lymph nodes" POS="NN" />
+    <variant base="pulmonary lymph node  nos" POS="NN" />
+    <variant base="pulmonary lymph nodes  nos" POS="NN" />
+    <variant base="pulmonary lymph node" POS="NN" />
+    <variant base="pulmonary lymph nodes" POS="NN" />
+    <variant base="thoracic lymph node" POS="NN" />
+    <variant base="thoracic lymph nodes" POS="NN" />
+    <variant base="tracheal lymph node" POS="NN" />
+    <variant base="tracheal lymph nodes" POS="NN" />
+    <variant base="tracheobronchial lymph node" POS="NN" />
+    <variant base="tracheobronchial lymph nodes" POS="NN" />
+</token>
+<token canonical="lymph node, nos" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.9" POS="NN" >
+    <variant base="lymph node  nos" POS="NN" />
+    <variant base="lymph nodes  nos" POS="NN" />
+    <variant base="lymph node" POS="NN" />
+    <variant base="lymph nodes" POS="NN" />
+    <variant base="lymphnodes" POS="NN" />
+    <variant base="l.n." POS="NN" />
+</token>
+<token canonical="lymph nodes of axilla or arm" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.3" POS="NN" >
+    <variant base="lymph node axilla or arm" POS="NN" />
+    <variant base="lymph nodes axilla or arm" POS="NN" />
+    <variant base="lymph node axilla" POS="NN" />
+    <variant base="lymph nodes axilla" POS="NN" />
+    <variant base="lymph node arm" POS="NN" />
+    <variant base="lymph nodes arm" POS="NN" />
+    <variant base="axillary lymph node" POS="NN" />
+    <variant base="axillary lymph nodes" POS="NN" />
+    <variant base="brachial lymph node" POS="NN" />
+    <variant base="brachial lymph nodes" POS="NN" />
+    <variant base="cubital lymph node" POS="NN" />
+    <variant base="cubital lymph nodes" POS="NN" />
+    <variant base="epitrochlear lymph node" POS="NN" />
+    <variant base="epitrochlear lymph nodes" POS="NN" />
+    <variant base="infraclavicular lymph node" POS="NN" />
+    <variant base="infraclavicular lymph nodes" POS="NN" />
+    <variant base="lymph node upper limb" POS="NN" />
+    <variant base="lymph nodes upper limb" POS="NN" />
+    <variant base="pectoral lymph node" POS="NN" />
+    <variant base="pectoral lymph nodes" POS="NN" />
+    <variant base="subclavicular lymph node" POS="NN" />
+    <variant base="subclavicular lymph nodes" POS="NN" />
+    <variant base="subscapular lymph node" POS="NN" />
+    <variant base="subscapular lymph nodes" POS="NN" />
+</token>
+<token canonical="lymph nodes of head, face and neck" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.0" POS="NN" >
+    <variant base="lymph node head, face and neck" POS="NN" />
+    <variant base="lymph nodes head, face and neck" POS="NN" />
+    <variant base="lymph node head" POS="NN" />
+    <variant base="lymph nodes head" POS="NN" />
+    <variant base="lymph node face" POS="NN" />
+    <variant base="lymph nodes face" POS="NN" />
+    <variant base="lymph node neck" POS="NN" />
+    <variant base="lymph nodes neck" POS="NN" />
+    <variant base="lymph node head and neck" POS="NN" />
+    <variant base="lymph nodes head and neck" POS="NN" />
+    <variant base="lymph node head neck" POS="NN" />
+    <variant base="lymph nodes head neck" POS="NN" />
+    <variant base="lymph node face and neck" POS="NN" />
+    <variant base="lymph nodes face and neck" POS="NN" />
+    <variant base="lymph node face neck" POS="NN" />
+    <variant base="lymph nodes face neck" POS="NN" />
+    <variant base="lymph node head and face" POS="NN" />
+    <variant base="lymph nodes head and face" POS="NN" />
+    <variant base="lymph node head face" POS="NN" />
+    <variant base="lymph nodes head face" POS="NN" />
+    <variant base="lymph node head, face neck" POS="NN" />
+    <variant base="lymph nodes head, face neck" POS="NN" />
+    <variant base="auricular lymph node" POS="NN" />
+    <variant base="auricular lymph nodes" POS="NN" />
+    <variant base="cervical lymph node" POS="NN" />
+    <variant base="cervical lymph nodes" POS="NN" />
+    <variant base="facial lymph node" POS="NN" />
+    <variant base="facial lymph nodes" POS="NN" />
+    <variant base="jugular lymph node" POS="NN" />
+    <variant base="jugular lymph nodes" POS="NN" />
+    <variant base="mandibular lymph node" POS="NN" />
+    <variant base="mandibular lymph nodes" POS="NN" />
+    <variant base="occipital lymph node" POS="NN" />
+    <variant base="occipital lymph nodes" POS="NN" />
+    <variant base="parotid lymph node" POS="NN" />
+    <variant base="parotid lymph nodes" POS="NN" />
+    <variant base="preauricular lymph node" POS="NN" />
+    <variant base="preauricular lymph nodes" POS="NN" />
+    <variant base="prelaryngeal lymph node" POS="NN" />
+    <variant base="prelaryngeal lymph nodes" POS="NN" />
+    <variant base="pretracheal lymph node" POS="NN" />
+    <variant base="pretracheal lymph nodes" POS="NN" />
+    <variant base="retropharyngeal lymph node" POS="NN" />
+    <variant base="retropharyngeal lymph nodes" POS="NN" />
+    <variant base="scalene lymph node" POS="NN" />
+    <variant base="scalene lymph nodes" POS="NN" />
+    <variant base="sublingual lymph node" POS="NN" />
+    <variant base="sublingual lymph nodes" POS="NN" />
+    <variant base="submandibular lymph node" POS="NN" />
+    <variant base="submandibular lymph nodes" POS="NN" />
+    <variant base="submaxillary lymph node" POS="NN" />
+    <variant base="submaxillary lymph nodes" POS="NN" />
+    <variant base="submental lymph node" POS="NN" />
+    <variant base="submental lymph nodes" POS="NN" />
+    <variant base="supraclvicular lymph node" POS="NN" />
+    <variant base="supraclvicular lymph nodes" POS="NN" />
+</token>
+<token canonical="lymph nodes of inguinal region or leg" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.4" POS="NN" >
+    <variant base="lymph node inguinal region or leg" POS="NN" />
+    <variant base="lymph nodes inguinal region or leg" POS="NN" />
+    <variant base="lymph node inguinal region" POS="NN" />
+    <variant base="lymph nodes inguinal region" POS="NN" />
+    <variant base="lymph node leg" POS="NN" />
+    <variant base="lymph nodes leg" POS="NN" />
+    <variant base="femoral lymph node" POS="NN" />
+    <variant base="femoral lymph nodes" POS="NN" />
+    <variant base="inguinal lymph node" POS="NN" />
+    <variant base="inguinal lymph nodes" POS="NN" />
+    <variant base="lymph node cloquet" POS="NN" />
+    <variant base="lymph nodes cloquet" POS="NN" />
+    <variant base="lymph node groin" POS="NN" />
+    <variant base="lymph nodes groin" POS="NN" />
+    <variant base="lymph node lower limb" POS="NN" />
+    <variant base="lymph nodes lower limb" POS="NN" />
+    <variant base="lymph node rosenmuller" POS="NN" />
+    <variant base="lymph nodes rosenmuller" POS="NN" />
+    <variant base="popliteal lymph node" POS="NN" />
+    <variant base="popliteal lymph nodes" POS="NN" />
+    <variant base="subinguinal lymph node" POS="NN" />
+    <variant base="subinguinal lymph nodes" POS="NN" />
+    <variant base="tibial lymph node" POS="NN" />
+    <variant base="tibial lymph nodes" POS="NN" />
+</token>
+<token canonical="lymph nodes of multiple regions" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.8" POS="NN" >
+    <variant base="lymph node multiple regions" POS="NN" />
+    <variant base="lymph nodes multiple regions" POS="NN" />
+</token>
+
+<token canonical="pelvic lymph nodes" SemClass="Lymph" AttributeType="ICDO" AttributeValue="C77.5" POS="NN" >
+    <variant base="pelvic lymph node" POS="NN" />
+    <variant base="pelvic lymph nodes" POS="NN" />
+    <variant base="hypogastric lymph node" POS="NN" />
+    <variant base="hypogastric lymph nodes" POS="NN" />
+    <variant base="iliac lymph node" POS="NN" />
+    <variant base="iliac lymph nodes" POS="NN" />
+    <variant base="inferior epigastric lymph node" POS="NN" />
+    <variant base="inferior epigastric lymph nodes" POS="NN" />
+    <variant base="intrapelvic lymph node" POS="NN" />
+    <variant base="intrapelvic lymph nodes" POS="NN" />
+    <variant base="obturator lymph node" POS="NN" />
+    <variant base="obturator lymph nodes" POS="NN" />
+    <variant base="paracervical lymph node" POS="NN" />
+    <variant base="paracervical lymph nodes" POS="NN" />
+    <variant base="parametrial lymph node" POS="NN" />
+    <variant base="parametrial lymph nodes" POS="NN" />
+    <variant base="presymphsial lymph node" POS="NN" />
+    <variant base="presymphsial lymph nodes" POS="NN" />
+    <variant base="sacral lymph node" POS="NN" />
+    <variant base="sacral lymph nodes" POS="NN" />
+</token>
+
+	   
+	   
+<token canonical='figo grade' AttributeValue='FIGOGrade' AttributeType='GradeType' SemClass='Grade' key='10034' POS='NN'>
+  <variant keyOffset='0' key='10034' POS='NN' parent='10034' base='figo grade'/>
+  <variant keyOffset='0' key='10035' POS='NN' parent='10034' base='figo'/>
+</token>
+<token canonical='focal grade' AttributeValue='FocalGrade' AttributeType='GradeType' SemClass='Grade' key='10037' POS='NN'>
+  <variant keyOffset='0' key='10037' POS='NN' parent='10037' base='focal grade'/>
+  <variant keyOffset='0' key='10038' POS='NN' parent='10037' base='focally'/>
+  <variant keyOffset='0' key='10039' POS='NN' parent='10037' base='grade foci'/>
+</token>
+<token canonical='fuhrman nuclear grade' AttributeValue='FuhrmanNuclearGrade' AttributeType='GradeType' SemClass='Grade' key='10031' POS='NN'>
+  <variant keyOffset='0' key='10031' POS='NN' parent='10031' base='fuhrman nuclear grade'/>
+</token>
+<token canonical='gleason&apos;s grade' AttributeValue='GleasonsGrade' AttributeType='GradeType' SemClass='Grade' key='10040' POS='NN'>
+  <variant keyOffset='0' key='10040' POS='NN' parent='10040' base='gleason&apos;s grade'/>
+  <variant keyOffset='0' key='10041' POS='NN' parent='10040' base='gleasons grade'/>
+  <variant keyOffset='0' key='10042' POS='NN' parent='10040' base='gleasons'/>
+  <variant keyOffset='0' key='10043' POS='NN' parent='10040' base='gleason grade'/>
+  <variant keyOffset='0' key='10044' POS='NN' parent='10040' base='gleason'/>
+  <variant keyOffset='0' key='10045' POS='NN' parent='10040' base='total gleason'/>
+  <variant keyOffset='0' key='10046' POS='NN' parent='10040' base='gleason score'/>
+  <variant keyOffset='0' key='10047' POS='NN' parent='10040' base='total gleason score'/>
+  <variant keyOffset='0' key='10048' POS='NN' parent='10040' base='gleasons score'/>
+  <variant keyOffset='0' key='10049' POS='NN' parent='10040' base='total gleasons score'/>
+  <variant keyOffset='0' key='10050' POS='NN' parent='10040' base='gleason&apos;s score'/>
+  <variant keyOffset='0' key='10051' POS='NN' parent='10040' base='total gleason&apos;s score'/>
+</token>
+<token canonical='grade' AttributeValue='UnknownGrade' AttributeType='GradeType' SemClass='Grade' key='10036' POS='NN'>
+  <variant keyOffset='0' key='10036' POS='NN' parent='10036' base='grade'/>
+</token>
+<token canonical='histologic grade' AttributeValue='HistologicGrade' AttributeType='GradeType' SemClass='Grade' key='10028' POS='NN'>
+  <variant keyOffset='0' key='10028' POS='NN' parent='10028' base='histologic grade'/>
+</token>
+<token canonical='intermediate grade' AttributeValue='GradeLevel' AttributeType='GradeType' SemClass='Grade' key='10020' POS='JJ'>
+  <variant keyOffset='0' key='10021' POS='JJ' parent='10020' base='low to intermediate'/>
+  <variant keyOffset='0' key='10022' POS='JJ' parent='10020' base='low to intermediate grade'/>
+  <variant keyOffset='0' key='10023' POS='JJ' parent='10020' base='intermediate'/>
+  <variant keyOffset='0' key='10020' POS='JJ' parent='10020' base='intermediate grade'/>
+</token>
+<token canonical='mayo grade' AttributeValue='MayoGrade' AttributeType='GradeType' SemClass='Grade' key='10034' POS='NN'>
+  <variant keyOffset='0' key='10034' POS='NN' parent='10034' base='mayo grade'/>
+</token>
+
+<token canonical='moderately differentiated' AttributeValue='BasicGrade' AttributeType='GradeType' SemClass='Grade' key='10002' POS='JJ'>
+  <variant keyOffset='0' key='10002' POS='JJ' parent='10002' base='moderately differentiated'/>
+  <variant keyOffset='0' key='10003' POS='JJ' parent='10002' base='moderately-differentiated'/>
+  <variant keyOffset='0' key='10004' POS='JJ' parent='10002' base='well to moderately differentiated'/>
+</token>
+<token canonical='moderately to poorly differentiated' AttributeValue='BasicGrade' AttributeType='GradeType' SemClass='Grade' key='10007' POS='JJ'>
+  <variant keyOffset='0' key='10007' POS='JJ' parent='10007' base='moderately to poorly differentiated'/>
+  <variant keyOffset='0' key='10008' POS='JJ' parent='10007' base='moderate to poorly differentiated'/>
+  <variant keyOffset='0' key='10009' POS='JJ' parent='10007' base='moderately poorly differentiated'/>
+</token>
+<token canonical='nuclear grade' AttributeValue='NuclearGrade' AttributeType='GradeType' SemClass='Grade' key='10029' POS='NN'>
+  <variant keyOffset='0' key='10029' POS='NN' parent='10029' base='nuclear grade'/>
+  <variant keyOffset='0' key='10030' POS='NN' parent='10029' base='grade nuclei'/>
+</token>
+<token canonical='panin' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10068' POS='NN'>
+  <variant keyOffset='0' key='10068' POS='NN' parent='10068' base='panin'/>
+</token>
+<token canonical='panin-1' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10069' POS='NN'>
+  <variant keyOffset='0' key='10069' POS='NN' parent='10069' base='panin-1'/>
+  <variant keyOffset='0' key='10070' POS='NN' parent='10069' base='panin1'/>
+  <variant keyOffset='0' key='10071' POS='NN' parent='10069' base='panin-i'/>
+</token>
+<token canonical='panin-1a' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10072' POS='NN'>
+  <variant keyOffset='0' key='10072' POS='NN' parent='10072' base='panin-1a'/>
+  <variant keyOffset='0' key='10073' POS='NN' parent='10072' base='panin1a'/>
+  <variant keyOffset='0' key='10074' POS='NN' parent='10072' base='panin-ia'/>
+</token>
+<token canonical='panin-1b' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10075' POS='NN'>
+  <variant keyOffset='0' key='10075' POS='NN' parent='10075' base='panin-1b'/>
+  <variant keyOffset='0' key='10076' POS='NN' parent='10075' base='panin1b'/>
+  <variant keyOffset='0' key='10077' POS='NN' parent='10075' base='panin-ib'/>
+</token>
+<token canonical='panin-2' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10078' POS='NN'>
+  <variant keyOffset='0' key='10078' POS='NN' parent='10078' base='panin-2'/>
+  <variant keyOffset='0' key='10079' POS='NN' parent='10078' base='panin2'/>
+  <variant keyOffset='0' key='10080' POS='NN' parent='10078' base='panin-ii'/>
+</token>
+<token canonical='panin-2a' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10081' POS='NN'>
+  <variant keyOffset='0' key='10081' POS='NN' parent='10081' base='panin-2a'/>
+  <variant keyOffset='0' key='10082' POS='NN' parent='10081' base='panin2a'/>
+  <variant keyOffset='0' key='10083' POS='NN' parent='10081' base='panin-iia'/>
+</token>
+<token canonical='panin-2b' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10084' POS='NN'>
+  <variant keyOffset='0' key='10084' POS='NN' parent='10084' base='panin-2b'/>
+  <variant keyOffset='0' key='10085' POS='NN' parent='10084' base='panin2b'/>
+  <variant keyOffset='0' key='10086' POS='NN' parent='10084' base='panin-iib'/>
+</token>
+<token canonical='panin-3' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10087' POS='NN'>
+  <variant keyOffset='0' key='10087' POS='NN' parent='10087' base='panin-3'/>
+  <variant keyOffset='0' key='10088' POS='NN' parent='10087' base='panin3'/>
+  <variant keyOffset='0' key='10089' POS='NN' parent='10087' base='panin-iii'/>
+</token>
+<token canonical='panin-3a' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10090' POS='NN'>
+  <variant keyOffset='0' key='10090' POS='NN' parent='10090' base='panin-3a'/>
+  <variant keyOffset='0' key='10091' POS='NN' parent='10090' base='panin3a'/>
+  <variant keyOffset='0' key='10092' POS='NN' parent='10090' base='panin-iiia'/>
+</token>
+<token canonical='panin-3b' AttributeValue='PanIN' AttributeType='GradeType' SemClass='Grade' key='10093' POS='NN'>
+  <variant keyOffset='0' key='10093' POS='NN' parent='10093' base='panin-3b'/>
+  <variant keyOffset='0' key='10094' POS='NN' parent='10093' base='panin3b'/>
+  <variant keyOffset='0' key='10095' POS='NN' parent='10093' base='panin-iiib'/>
+</token>
+<token canonical='poorly differentiated' AttributeValue='BasicGrade' AttributeType='GradeType' SemClass='Grade' key='10010' POS='JJ'>
+  <variant keyOffset='0' key='10010' POS='JJ' parent='10010' base='poorly differentiated'/>
+  <variant keyOffset='0' key='10011' POS='JJ' parent='10010' base='poorly differentiated/undifferentiated'/>
+  <variant keyOffset='0' key='10012' POS='JJ' parent='10010' base='poorly differentiated/undifferentiated.'/>
+  <variant keyOffset='0' key='10013' POS='JJ' parent='10010' base='poorly-differentiated'/>
+  <variant keyOffset='0' key='10014' POS='JJ' parent='10010' base='poorly-differentiated/undifferentiated'/>
+  <variant keyOffset='0' key='10015' POS='JJ' parent='10010' base='poorly-differentiated/undifferentiated.'/>
+</token>
+<token canonical='primary gleason&apos;s grade' AttributeValue='PrimaryGleasonsGrade' AttributeType='GradeType' SemClass='Grade' key='10052' POS='NN'>
+  <variant keyOffset='0' key='10052' POS='NN' parent='10052' base='primary gleason&apos;s grade'/>
+  <variant keyOffset='0' key='10053' POS='NN' parent='10052' base='primary gleasons grade'/>
+  <variant keyOffset='0' key='10054' POS='NN' parent='10052' base='primary gleasons'/>
+  <variant keyOffset='0' key='10055' POS='NN' parent='10052' base='primary gleason grade'/>
+  <variant keyOffset='0' key='10056' POS='NN' parent='10052' base='primary gleason'/>
+  <variant keyOffset='0' key='10057' POS='NN' parent='10052' base='primary gleason&apos;s score'/>
+  <variant keyOffset='0' key='10058' POS='NN' parent='10052' base='primary gleasons score'/>
+  <variant keyOffset='0' key='10059' POS='NN' parent='10052' base='primary gleason score'/>
+  <variant keyOffset='0' key='13124' POS='NN' parent='10052' base='gleason&apos;s grade: primary gleason grade'/>
+  <variant keyOffset='0' key='13125' POS='NN' parent='10052' base='gleasons grade: primary gleason grade'/>
+  <variant keyOffset='0' key='13126' POS='NN' parent='10052' base='gleason grade: primary gleason grade'/>
+  <variant keyOffset='0' key='13127' POS='NN' parent='10052' base='gleason&apos;s grade: primary gleason&apos;s grade'/>
+  <variant keyOffset='0' key='13128' POS='NN' parent='10052' base='gleasons grade: primary gleason&apos;s grade'/>
+  <variant keyOffset='0' key='13129' POS='NN' parent='10052' base='gleason grade: primary gleason&apos;s grade'/>
+  <variant keyOffset='0' key='13130' POS='NN' parent='10052' base='gleason&apos;s grade: primary gleasons grade'/>
+  <variant keyOffset='0' key='13131' POS='NN' parent='10052' base='gleasons grade: primary gleasons grade'/>
+  <variant keyOffset='0' key='13132' POS='NN' parent='10052' base='gleason grade: primary gleasons grade'/>
+</token>
+<token canonical='secondary gleason&apos;s grade' AttributeValue='SecondaryGleasonsGrade' AttributeType='GradeType' SemClass='Grade' key='10060' POS='NN'>
+  <variant keyOffset='0' key='10060' POS='NN' parent='10060' base='secondary gleason&apos;s grade'/>
+  <variant keyOffset='0' key='10061' POS='NN' parent='10060' base='secondary gleasons grade'/>
+  <variant keyOffset='0' key='10062' POS='NN' parent='10060' base='secondary gleasons'/>
+  <variant keyOffset='0' key='10063' POS='NN' parent='10060' base='secondary gleason grade'/>
+  <variant keyOffset='0' key='10064' POS='NN' parent='10060' base='secondary gleason'/>
+  <variant keyOffset='0' key='10065' POS='NN' parent='10060' base='secondary gleason&apos;s score'/>
+  <variant keyOffset='0' key='10066' POS='NN' parent='10060' base='secondary gleasons score'/>
+  <variant keyOffset='0' key='10067' POS='NN' parent='10060' base='secondary gleason score'/>
+</token>
+<token canonical='steiner-edmonson grade' AttributeValue='SteinerEdmonsonGrade' AttributeType='GradeType' SemClass='Grade' key='10033' POS='NN'>
+  <variant keyOffset='0' key='10033' POS='NN' parent='10033' base='steiner-edmonson grade'/>
+</token>
+<token canonical='well differentiated' AttributeValue='BasicGrade' AttributeType='GradeType' SemClass='Grade' key='10000' POS='JJ'>
+  <variant keyOffset='0' key='10000' POS='JJ' parent='10000' base='well differentiated'/>
+  <variant keyOffset='0' key='10001' POS='JJ' parent='10000' base='well-differentiated'/>
+</token>
+<token canonical='well to moderately differentiated' AttributeValue='BasicGrade' AttributeType='GradeType' SemClass='Grade' key='10005' POS='JJ'>
+  <variant keyOffset='0' key='10006' POS='JJ' parent='10005' base='well moderately differentiated'/>
+</token>
+<token canonical='who grade' AttributeValue='WHOGrade' AttributeType='GradeType' SemClass='Grade' key='10032' POS='NN'>
+  <variant keyOffset='0' key='10032' POS='NN' parent='10032' base='who grade'/>
+</token>
+<!-- <token canonical="high grade" SemClass="Grade" AttributeType="GradeType" AttributeValue="GradeLevel" POS="JJ" key="10016" >
+    <variant base="high" POS="JJ" key="10017" parent="10016" />
+    <variant base="high grade" POS="JJ" key="10016" parent="10016" />
+    <variant base="intermediate to high" POS="JJ" key="10018" parent="10016" />
+    <variant base="intermediate to high grade" POS="JJ" key="10019" parent="10016" />
+</token>
+<token canonical="low grade" SemClass="Grade" AttributeType="GradeType" AttributeValue="GradeLevel" POS="JJ" key="10026" >
+    <variant base="low" POS="JJ" key="10027" parent="10026" />
+    <variant base="low grade" POS="JJ" key="10026" parent="10026" />
+</token> -->
+
+</synonym>
