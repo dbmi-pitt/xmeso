@@ -20,7 +20,7 @@ DECLARE WholeNumberList;
 DECLARE Annotation PartHeader(STRING sectionName, INT partNumber);
 DECLARE Annotation Part(STRING sectionName, INT partNumber);
 
-DECLARE Annotation XmesoNamedEntity(STRING sectionName, INT partNumber, STRING snomedCode, STRING sty);
+DECLARE Annotation XmesoNamedEntity(STRING sectionName, INT partNumber, STRING snomedCode, STRING sty, BOOLEAN isNegated);
 
 DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree, 
     STRING uom);   

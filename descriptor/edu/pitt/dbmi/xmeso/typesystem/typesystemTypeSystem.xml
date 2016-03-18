@@ -161,6 +161,38 @@
             <supertypeName>edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoNamedEntity</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.typesystem.Typesystem</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>sectionName</name>
+                    <description>sectionName</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>partNumber</name>
+                    <description>partNumber</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>snomedCode</name>
+                    <description>snomedCode</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sty</name>
+                    <description>sty</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>isNegated</name>
+                    <description>isNegated</description>
+                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoTumorForm</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.typesystem.Typesystem</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
@@ -211,33 +243,6 @@
             <name>edu.pitt.dbmi.xmeso.typesystem.Typesystem.StageM</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.typesystem.Typesystem</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
-        </typeDescription>
-        <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoNamedEntity</name>
-            <description>Type defined in edu.pitt.dbmi.xmeso.typesystem.Typesystem</description>
-            <supertypeName>uima.tcas.Annotation</supertypeName>
-            <features>
-                <featureDescription>
-                    <name>sectionName</name>
-                    <description>sectionName</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>partNumber</name>
-                    <description>partNumber</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>snomedCode</name>
-                    <description>snomedCode</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sty</name>
-                    <description>sty</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-            </features>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.typesystem.Typesystem.StageN</name>

@@ -44,7 +44,8 @@ BLOCK(AssignSectionsAndPartsToNamedEntities)
     Part{->GETFEATURE("sectionName", sectionNameVar),
            GETFEATURE("partNumber", partNumberVar)} {          
            XmesoNamedEntity{-> SETFEATURE("sectionName", sectionNameVar), 
-                               SETFEATURE("partNumber", partNumberVar)};
+                               SETFEATURE("partNumber", partNumberVar),
+                               SETFEATURE("isNegated", false)};
 }
             
 
