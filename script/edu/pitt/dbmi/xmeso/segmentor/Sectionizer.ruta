@@ -15,7 +15,9 @@ BLOCK(SectionHeaderDetector) Document{} {
                     subsumedSectionHeaders > 1
                     ->UNMARK(SectionHeader), ASSIGN(subsumedSectionHeaders,0)};
 }
-
+BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
+    ANY{-PARTOF(BREAK)} @SectionHeader {-> UNMARK(SectionHeader)};
+}
 BLOCK(EndOfDocumentDetector) Document{} {
     Document{->MARKLAST(EndOfDocument)};
     SPECIAL {REGEXP("\\$"), PARTOF(EndOfDocument) -> UNMARK(SPECIAL)};
