@@ -245,7 +245,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
+                    <string>edu.pitt.dbmi.xmeso.model.Model</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -274,9 +274,7 @@
             <nameValuePair>
                 <name>additionalScripts</name>
                 <value>
-                    <array>
-                        <string>edu.pitt.dbmi.xmeso.model.Model</string>
-                    </array>
+                    <array/>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -312,7 +310,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="DeIdCleanerTypeSystem.xml"/>
+                <import location="ModelTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>
@@ -327,6 +325,77 @@
             <capability>
                 <inputs/>
                 <outputs/>
+                <languagesSupported/>
+            </capability>
+            <capability>
+                <inputs>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.DeIdBannarAnnotation</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.FloatNum</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Size</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageT</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SubsumableSectionHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SectionHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Section</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.EndOfSection</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.WholeNumberList</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartIndicator</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartNumber</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSize</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoHistologicalType</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorSite</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorConfiguration</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorDifferentiation</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSubsumingTumorSite</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoImmunoHistochemicalProfile</type>
+                </inputs>
+                <outputs>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.DeIdBannarAnnotation</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.FloatNum</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Size</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageT</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SubsumableSectionHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SectionHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Section</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.EndOfSection</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.WholeNumberList</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartIndicator</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartNumber</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSize</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoHistologicalType</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorSite</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorConfiguration</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorDifferentiation</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSubsumingTumorSite</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoImmunoHistochemicalProfile</type>
+                </outputs>
                 <languagesSupported/>
             </capability>
         </capabilities>

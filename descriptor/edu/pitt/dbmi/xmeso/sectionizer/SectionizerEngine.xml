@@ -245,7 +245,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
+                    <string>edu.pitt.dbmi.xmeso.sectionizer.Sectionizer</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -276,6 +276,7 @@
                 <value>
                     <array>
                         <string>edu.pitt.dbmi.xmeso.model.Model</string>
+                        <string>edu.pitt.dbmi.xmeso.utilities.Utilities</string>
                     </array>
                 </value>
             </nameValuePair>
@@ -312,7 +313,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="DeIdCleanerTypeSystem.xml"/>
+                <import location="SectionizerTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

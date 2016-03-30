@@ -245,7 +245,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
+                    <string>edu.pitt.dbmi.xmeso.Xmeso</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -275,7 +275,13 @@
                 <name>additionalScripts</name>
                 <value>
                     <array>
+                        <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
                         <string>edu.pitt.dbmi.xmeso.model.Model</string>
+                        <string>edu.pitt.dbmi.xmeso.ner.Ner</string>
+                        <string>edu.pitt.dbmi.xmeso.sectionizer.Sectionizer</string>
+                        <string>edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector</string>
+                        <string>edu.pitt.dbmi.xmeso.utilities.Utilities</string>
+                        <string>edu.pitt.dbmi.xmeso.sectionizer.Partizer</string>
                     </array>
                 </value>
             </nameValuePair>
@@ -288,7 +294,11 @@
             <nameValuePair>
                 <name>additionalUimafitEngines</name>
                 <value>
-                    <array/>
+                    <array>
+                        <string>edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine</string>
+                        <string>edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine</string>
+                        <string>edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter</string>
+                    </array>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -312,7 +322,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="DeIdCleanerTypeSystem.xml"/>
+                <import location="XmesoTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

@@ -1,9 +1,9 @@
 PACKAGE edu.pitt.dbmi.xmeso.floatnumdetector;
 
-SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
 BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
-  SPACE+ @NUM+ PERIOD NUM+{-> MARK(FloatNum, 2, 4)};
+  NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
   NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
   PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
@@ -25,23 +25,17 @@ BLOCK(SizeDetection) Document{->RETAINTYPE(FloatNum,UOM)} {
     FloatNum{PARSE(dimensionTwo)} 
     W{REGEXP("x")} 
     FloatNum{PARSE(dimensionThree)} 
-    UOM{-> MATCHEDTEXT(unitOfMeasure), CREATE(XmesoSize, 1, 6, 
-            "maxDim" = dimensionMaximum, 
-            "dimOne" = dimensionOne, 
-            "dimTwo" = dimensionTwo, 
-            "dimThree" = dimensionThree, 
-            "uom" = unitOfMeasure)};
+    UOM{-> MATCHEDTEXT(unitOfMeasure), 
+      CREATE(XmesoSize, 1, 6,
+        "codedPenalty" = 1, 
+        "maxDim" = dimensionMaximum, 
+        "dimOne" = dimensionOne, 
+        "dimTwo" = dimensionTwo, 
+        "dimThree" = dimensionThree, 
+        "uom" = unitOfMeasure)};
 }
 
-BLOCK(CleanBeneath) Document{->RETAINTYPE(FloatNum,UOM,SPACE)} {
-    FloatNum{PARTOF(Document)->UNMARK(FloatNum)};
-    SPACE{PARTOF(Document)->UNMARK(SPACE)};
-    W{PARTOF(Document)->UNMARK(W)};
-    UOM{PARTOF(Document)->UNMARK(UOM)};
-    COLON{PARTOF(Document)->UNMARK(COLON)};
-    NUM{PARTOF(Document)->UNMARK(NUM)};
-    PartIndicator{PARTOF(Document)->UNMARK(PartIndicator)};
-}
+
 
 BLOCK(MaximumSizeCalculator) XmesoSize{} {
     XmesoSize.dimOne > XmesoSize.maxDim{-> 
@@ -55,3 +49,5 @@ BLOCK(MaximumSizeCalculator) XmesoSize{} {
 BLOCK(DetectTnm) Document{} {
    "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
 }
+
+

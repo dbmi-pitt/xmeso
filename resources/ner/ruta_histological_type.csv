@@ -1,0 +1,12 @@
+Biphasic mesothelioma;SNOMED:30383009;Histological Type;1
+Cystic mesothelioma;SNOMED:86562005;Histological Type;1
+Desmoplastic mesothelioma;SNOMED:388650006;Histological Type;1
+Epithelial or epithelioid mesothelioma;SNOMED:65278006;Histological Type;1
+Epitheliod;SNOMED:65278006;Histological Type;1
+Fibrous mesothelioma;SNOMED:54443001;Histological Type;1
+Multicystic mesothelioma;SNOMED:128901009;Histological Type;1
+Not Specified;SNOMED:399740008;Histological Type;2
+Papillary mesothelioma;SNOMED:86143001;Histological Type;1
+Sarcomatoid mesothelioma;SNOMED:399477001;Histological Type;1
+Unknown;HIST_TYPE:UNKNOWN;Histological Type;2
+Other;HIST_TYPE:OTHER;Histological Type;2

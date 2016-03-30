@@ -1,0 +1,21 @@
+PACKAGE edu.pitt.dbmi.xmeso.utilities;
+
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
+
+BLOCK(CleanBeneathXmeso) Document{} {
+    FloatNum{PARTOF(Document)->UNMARK(FloatNum)};
+    UOM{PARTOF(Document)->UNMARK(UOM)};
+    PartIndicator{PARTOF(Document)->UNMARK(PartIndicator)};
+}
+
+BLOCK(CleanBeneathRutas) Document{->RETAINTYPE(CAP,COLON,COMMA,CW,PERIOD,SPACE,SPECIAL,SW)} {
+    CAP{PARTOF(Document)->UNMARK(CAP)};
+    COLON{PARTOF(Document)->UNMARK(COLON)};
+    COMMA{PARTOF(Document)->UNMARK(COMMA)};
+    CW{PARTOF(Document)->UNMARK(CW)};
+    NUM{PARTOF(Document)->UNMARK(NUM)};
+    PERIOD{PARTOF(Document)->UNMARK(PERIOD)};
+    SPACE{PARTOF(Document)->UNMARK(SPACE)};  
+    SPECIAL{PARTOF(Document)->UNMARK(SPECIAL)};
+    SW{PARTOF(Document)->UNMARK(SW)};
+}

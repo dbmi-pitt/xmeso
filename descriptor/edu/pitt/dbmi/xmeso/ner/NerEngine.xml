@@ -237,6 +237,12 @@
                 </value>
             </nameValuePair>
             <nameValuePair>
+                <name>lowMemoryProfile</name>
+                <value>
+                    <boolean>false</boolean>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
                 <name>mainScript</name>
                 <value>
                     <string>edu.pitt.dbmi.xmeso.ner.Ner</string>
@@ -256,14 +262,6 @@
                     <array>
                         <string>C:/ws/ws-xmeso/xmeso/target/classes</string>
                         <string>C:/ws/ws-xmeso/xmeso/descriptor</string>
-                        <string>C:/ws/ws-xmeso/MedKAT_NLPBase/bin</string>
-                        <string>C:/ws/ws-xmeso/MedKAT_NLPBase/desc</string>
-                        <string>C:/ws/ws-xmeso/conceptMapper/bin</string>
-                        <string>C:/ws/ws-xmeso/MedKATp/bin</string>
-                        <string>C:/ws/ws-xmeso/MedKATp/desc</string>
-                        <string>C:/ws/ws-xmeso/MedKAT_NLP/bin</string>
-                        <string>C:/ws/ws-xmeso/MedKAT_NLP/desc</string>
-                        <string>C:/ws/ws-xmeso/nobletools/bin</string>
                     </array>
                 </value>
             </nameValuePair>
@@ -277,7 +275,7 @@
                 <name>additionalScripts</name>
                 <value>
                     <array>
-                        <string>edu.pitt.dbmi.xmeso.typesystem.Typesystem</string>
+                        <string>edu.pitt.dbmi.xmeso.model.Model</string>
                     </array>
                 </value>
             </nameValuePair>

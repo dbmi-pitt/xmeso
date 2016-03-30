@@ -1,22 +1,25 @@
 package edu.pitt.dbmi.xmeso;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.cas.CAS;
-import org.apache.uima.cas.Type;
 import org.apache.uima.cas.text.AnnotationFS;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
-import org.apache.uima.fit.util.CasUtil;
+import org.apache.uima.fit.util.JCasUtil;
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.InvalidXMLException;
+import org.sonar.runner.commonsio.FileUtils;
 import org.xml.sax.SAXException;
 
-import edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoEncounterForm;
-import edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoTumorForm;
+import edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm;
 
 public class Xmeso {
+	
+	private AnalysisEngine engine;
+	private int reportNumber = 0;
 
 	public static void main(String[] args) {
 		final Xmeso xmeso = new Xmeso();
@@ -42,44 +45,51 @@ public class Xmeso {
 	public void execute() throws InvalidXMLException,
 			ResourceInitializationException, IOException,
 			AnalysisEngineProcessException, SAXException {
+		final String[] resourcePaths = {"C:\\ws\\ws-xmeso\\xmeso\\resources"};
+		engine = AnalysisEngineFactory
+				.createEngine("edu.pitt.dbmi.xmeso.XmesoEngine",
+						"resourcePaths", resourcePaths, 
+						"lowMemoryProfile", false);
+		File inputDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\reports");
+		File[] inputFiles = inputDirectory.listFiles();
+		for (File inputFile : inputFiles) {
+			processFile(inputFile);
+			reportNumber++;
+		}
 		
-		AnalysisEngine engine = AnalysisEngineFactory
-				.createEngine("edu.pitt.dbmi.xmeso.xmesoEngine");
-		CAS cas = engine.newCAS();
-		cas.setDocumentText(generateTestDocument());
-		engine.process(cas);
-		displayCas(cas);
 	}
 	
-	private void displayCas(CAS cas) {
-		// EncounterForm information
-		final Type encounterFormType = cas.getTypeSystem().getType(
-				"edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoEncounterForm");
-		for (AnnotationFS encounterFormFS : CasUtil.select(cas,
-				encounterFormType)) {
-			System.out.println("Found encounter form: "
-					+ encounterFormFS.getCoveredText());
-			XmesoEncounterForm encounterForm = (XmesoEncounterForm) encounterFormFS;
-			String surgicalProcedureCode = encounterForm
-					.getSurgicalProcedureCode();
-			String histologicTypeCode = encounterForm.getHistologicTypeCode();
+	private void processFile(File inputFile) {
+		String content;
+		try {
+			content = FileUtils.readFileToString(inputFile);
+			JCas jCas = engine.newJCas();
+			jCas.setDocumentText(content);
+			engine.process(jCas);
+			displayCas(jCas);
+			System.out.println("Report #" + reportNumber + " succeeded");
+		} catch (Exception e) {
+			System.err.println("Report #" + reportNumber + " failed");
+		}
+		
+	}
+	
+	private void displayCas(JCas jCas) {
+		
+		// TumorForm information
+	
+		for (AnnotationFS tumorFormFS : JCasUtil.select(jCas, XmesoTumorForm.class)) {
+			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
+			String surgicalProcedureCode = tumorForm.getSurgicalProcedure();
+			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			System.out.println("surgicalProcedureCode = "
 					+ surgicalProcedureCode);
 			System.out.println("histologicTypeCode = " + histologicTypeCode);
-		}
-
-		// TumorForm information
-		final Type tumorFormType = cas.getTypeSystem().getType(
-				"edu.pitt.dbmi.xmeso.typesystem.Typesystem.XmesoTumorForm");
-		for (AnnotationFS tumorFormFS : CasUtil.select(cas, tumorFormType)) {
-			// System.out.println("Found tumor form: " +
-			// tumorFormFS.getCoveredText());
-			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
-			String tumorSiteCode = tumorForm.getTumorSiteCode();
+			String tumorSiteCode = tumorForm.getTumorSite();
 			String tumorConfigurationCode = tumorForm
-					.getTumorConfigurationCode();
+					.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm
-					.getTumorDifferentiationCode();
+					.getTumorDifferentiation();
 			System.out.println("tumorSiteCode = " + tumorSiteCode);
 			System.out.println("tumorConfigurationCode = "
 					+ tumorConfigurationCode);
@@ -87,42 +97,6 @@ public class Xmeso {
 					+ tumorDifferentiationCode);
 		}
 
-	}
-
-	private String generateTestDocument() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("\n");
-		sb.append("FINAL DIAGNOSIS:\n");
-		sb.append("\n");
-		sb.append("  Part 1:\n");
-		sb.append("  \n");
-		sb.append("  Biopsy of chest wall.\n");
-		sb.append("  Desmoplastic mesothelioma. \n");
-		sb.append("  1.233 x 3.45 x 2.1 cm.\n");
-		sb.append("  Base of left lung.\n");
-		sb.append("  Cystic.\n");
-		sb.append("  Intermediate.\n");
-		sb.append("  \n");
-		sb.append("  Part 2:\n");
-		sb.append("  \n");
-		sb.append("  Biopsy of chest wall.\n");
-		sb.append("  Desmoplastic mesothelioma. \n");
-		sb.append("  Base of right lung.\n");
-		sb.append("  Endophytic.\n");
-		sb.append("  High.\n");
-		sb.append("   2.2 x 2.44 x 2.13 cm.\n");
-		sb.append("  \n");
-		sb.append("  Part 3:\n");
-		sb.append("  \n");
-		sb.append("    Biopsy of chest wall.\n");
-		sb.append("    Desmoplastic mesothelioma. \n");
-		sb.append("    Diaphragmatic Pleura.\n");
-		sb.append("    Diffuse.\n");
-		sb.append("    Low.\n");
-		sb.append("    1.7 x 1.34 x 0.45 CM.\n");
-		sb.append("  \n");
-		sb.append("  $\n");
-		return sb.toString();
 	}
 
 }

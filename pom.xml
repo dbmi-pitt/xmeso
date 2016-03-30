@@ -12,23 +12,13 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <droolsVersion>5.5.0.Final</droolsVersion>
    </properties>
-  <dependencies>
-  	<dependency>
-  		<groupId>org.apache.ctakes</groupId>
-  		<artifactId>ctakes-clinical-pipeline</artifactId>
-  		<version>3.2.2</version>
-  	</dependency>
+   <dependencies>
   	<dependency>
   		<groupId>com.lexicalscope.jewelcli</groupId>
   		<artifactId>jewelcli</artifactId>
   		<version>0.8.9</version>
   	</dependency> 
-      <dependency>
-         <groupId>org.drools</groupId>
-         <artifactId>drools-compiler</artifactId>
-         <version>${droolsVersion}</version>
-      </dependency>
-      <dependency>
+    <dependency>
         <groupId>org.apache.uima</groupId>
         <artifactId>ruta-core</artifactId>
         <version>2.4.0</version>
@@ -55,17 +45,25 @@
         <scope>system</scope>
         <systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
      </dependency>  
-   <dependency>
-        <groupId>edu.pitt.dbmi</groupId>
-        <artifactId>nobletools</artifactId>
-        <version>1.0</version>
-        <scope>system</scope>
-        <systemPath>${project.basedir}/lib/NobleTools-1.0.jar</systemPath>
-     </dependency>    
      <dependency>
      	<groupId>org.codehaus.sonar-plugins</groupId>
      	<artifactId>sonar-ant-task</artifactId>
      	<version>2.2</version>
      </dependency>
-  </dependencies>
+     <dependency>
+         <groupId>org.drools</groupId>
+         <artifactId>drools-compiler</artifactId>
+         <version>${droolsVersion}</version>
+      </dependency>
+     <dependency>
+     	<groupId>junit</groupId>
+     	<artifactId>junit</artifactId>
+     	<version>4.12</version>
+     </dependency>
+     <dependency>
+     	<groupId>org.hibernate</groupId>
+     	<artifactId>hibernate-core</artifactId>
+     	<version>4.0.0.Final</version>
+     </dependency>
+   </dependencies>
 </project>

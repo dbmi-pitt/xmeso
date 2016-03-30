@@ -1,0 +1,73 @@
+PACKAGE edu.pitt.dbmi.xmeso.model;
+
+DECLARE Annotation DeIdBannarAnnotation;
+
+DECLARE FloatNum;
+DECLARE Size;
+DECLARE StageT;
+DECLARE StageN;
+DECLARE StageM;
+DECLARE StageTNM;
+
+DECLARE UOM;
+
+DECLARE Annotation XmesoIterationController(
+    INT currentPart,
+    INT numberOfParts,
+    INT currentPenalty,
+    INT numberOfPenalties,
+    INT currentSectionLevel,
+    INT numberOfSectionLevels,
+    STRING surgicalProcedure,
+    STRING histopathologicalType,
+    STRING tumorSite,
+    STRING tumorConfiguration,
+    STRING tumorDifferentiation,
+    FLOAT sizeDimensionX,
+    FLOAT sizeDimensionY,
+    FLOAT sizeDimensionZ,
+    FLOAT sizeDimensionMax
+);
+
+DECLARE Annotation XmesoTumorForm(
+    INT currentPart,
+    STRING surgicalProcedure,
+    STRING histopathologicalType,
+    STRING tumorSite,
+    STRING tumorConfiguration,
+    STRING tumorDifferentiation,
+    FLOAT sizeDimensionX,
+    FLOAT sizeDimensionY,
+    FLOAT sizeDimensionZ,
+    FLOAT sizeDimensionMax);
+
+DECLARE XmesoIterationController EndOfDocument;
+DECLARE Annotation SubsumableSectionHeader(STRING name, INT level);
+DECLARE Annotation SectionHeader(STRING name, INT level);
+DECLARE Annotation Section(STRING name, INT level);
+DECLARE EndOfSection;
+DECLARE WholeNumberList;
+DECLARE PartIndicator;
+DECLARE Annotation PartNumber(INT partNumber, INT genNumber, INT genSeq);
+DECLARE Annotation PartHeaderGenerator(INT genNumber, INT genCount);
+DECLARE Annotation PartHeader(STRING sectionName, INT sectionLevel, INT partNumber);
+DECLARE Annotation Part(STRING sectionName, INT sectionLevel, INT partNumber);
+DECLARE Annotation XmesoPart(STRING sectionName, INT sectionLevel, INT partNumber);
+
+DECLARE Annotation SynopticCategory(STRING name);
+
+DECLARE Annotation XmesoNamedEntity(STRING sectionName, INT sectionLevel, INT partNumber, STRING snomedCode, STRING semanticType, INT codedPenalty, BOOLEAN isNegated);
+
+DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree, 
+    STRING uom);   
+DECLARE XmesoNamedEntity XmesoSurgicalProcedure;
+DECLARE XmesoNamedEntity XmesoHistologicalType;
+DECLARE XmesoNamedEntity XmesoTumorSite;
+DECLARE XmesoNamedEntity XmesoTumorConfiguration;
+DECLARE XmesoNamedEntity XmesoTumorDifferentiation;
+DECLARE XmesoNamedEntity XmesoSubsumingTumorSite;
+DECLARE XmesoNamedEntity XmesoImmunoHistochemicalProfile;
+
+
+
+                        

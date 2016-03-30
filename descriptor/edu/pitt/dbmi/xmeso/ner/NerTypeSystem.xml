@@ -3,6 +3,6 @@
     <name>edu.pitt.dbmi.xmeso.ner.NerTypeSystem</name>
     <imports>
         <import location="../../../../../BasicTypeSystem.xml"/>
-        <import location="../typesystem/TypesystemTypeSystem.xml"/>
+        <import location="../model/ModelTypeSystem.xml"/>
     </imports>
 </typeSystemDescription>

@@ -1,52 +1,48 @@
 PACKAGE edu.pitt.dbmi.xmeso.ner;
 
-SCRIPT edu.pitt.dbmi.xmeso.typesystem.Typesystem;
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
-WORDTABLE xmesoHistologicalTypeTable = 'ruta_histological_type.csv';
-WORDTABLE xmesoImmunohistochemicalProfileTable = 'ruta_immunohistochemical_profile.csv';
-WORDTABLE xmesoTumorSiteTable = 'ruta_site_of_tumor.csv';
-WORDTABLE xmesoSurgicalProcedureTable = 'ruta_surgical_procedure.csv';
-WORDTABLE xmesoTumorConfigurationTable = 'ruta_tumor_configuration.csv';
-WORDTABLE xmesoTumorDifferentiationTable = 'ruta_tumor_differentiation.csv';
+WORDTABLE xmesoHistologicalTypeTable = 'ner/ruta_histological_type.csv';
+WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner/ruta_immunohistochemical_profile.csv';
+WORDTABLE xmesoTumorSiteTable = 'ner/ruta_site_of_tumor.csv';
+WORDTABLE xmesoSurgicalProcedureTable = 'ner/ruta_surgical_procedure.csv';
+WORDTABLE xmesoTumorConfigurationTable = 'ner/ruta_tumor_configuration.csv';
+WORDTABLE xmesoTumorDifferentiationTable = 'ner/ruta_tumor_differentiation.csv';
 
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 1,
-   xmesoHistologicalTypeTable, true, 0, " -", 2, "snomedCode" = 2, "sty" = 3)};
+      xmesoHistologicalTypeTable, true, 0, " -", 2, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 BLOCK(NameEntityImmunohistochemicalProfile) Document {} { 
   Document{->MARKTABLE(XmesoImmunoHistochemicalProfile, 1,
-      xmesoImmunohistochemicalProfileTable, true, 0, " -", 10, "snomedCode" = 2, "sty" = 3)};
+      xmesoImmunohistochemicalProfileTable, true, 0, " -", 4, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 BLOCK(NameEntityTumorSite) Document {} { 
   Document{->MARKTABLE(XmesoTumorSite, 1,
-      xmesoTumorSiteTable, true, 0, " -", 10, "snomedCode" = 2, "sty" = 3)};
-  INT numSubsumed;
-  XmesoTumorSite {COUNT(XmesoTumorSite,numSubsumed), numSubsumed > 1 ->TRANSFER(XmesoSubsumingTumorSite),UNMARK(XmesoTumorSite)};
-  XmesoTumorSite {PARTOF(XmesoSubsumingTumorSite)->UNMARK(XmesoTumorSite)};
-  XmesoSubsumingTumorSite {-> TRANSFER(XmesoTumorSite), UNMARK(XmesoSubsumingTumorSite)};
+      xmesoTumorSiteTable, true, 0, " -", 0, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 BLOCK(NameEntitySurgicalProcedure) Document {} { 
   Document{->MARKTABLE(XmesoSurgicalProcedure, 1,
-      xmesoSurgicalProcedureTable, true, 0, " -", 10, "snomedCode" = 2, "sty" = 3)};
+      xmesoSurgicalProcedureTable, true, 0, " -", 0, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 BLOCK(NameEntityTumorConfiguration) Document {} { 
   Document{->MARKTABLE(XmesoTumorConfiguration, 1,
-      xmesoTumorConfigurationTable, true, 0, " -", 10, "snomedCode" = 2, "sty" = 3)};
+      xmesoTumorConfigurationTable, true, 0, " -", 0, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 BLOCK(NameEntityTumorDifferentiation) Document {} { 
   Document{->MARKTABLE(XmesoTumorDifferentiation, 1,
-      xmesoTumorDifferentiationTable, true, 0, " -", 10, "snomedCode" = 2, "sty" = 3)};
+      xmesoTumorDifferentiationTable, true, 0, " -",10, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 
 STRING sectionNameVar = "Undefined";
+INT sectionLevelVar = -1;
 INT partNumberVar = -1;
 BLOCK(AssignSectionsAndPartsToNamedEntities) 
     Part{->GETFEATURE("sectionName", sectionNameVar),
+           GETFEATURE("sectionLevel", sectionLevelVar),
            GETFEATURE("partNumber", partNumberVar)} {          
-           XmesoNamedEntity{-> SETFEATURE("sectionName", sectionNameVar), 
-                               SETFEATURE("partNumber", partNumberVar),
-                               SETFEATURE("isNegated", false)};
+           XmesoNamedEntity{-> SETFEATURE("sectionName", sectionNameVar),
+                               SETFEATURE("sectionLevel", sectionLevelVar), 
+                               SETFEATURE("partNumber", partNumberVar)};
 }
             
-
-

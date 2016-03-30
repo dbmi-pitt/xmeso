@@ -1,0 +1,40 @@
+PACKAGE edu.pitt.dbmi.xmeso;
+
+UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter;
+
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
+SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
+SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner;
+SCRIPT edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector;
+SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Sectionizer;
+SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Partizer;
+SCRIPT edu.pitt.dbmi.xmeso.ner.Ner;
+
+Document{->CALL(DeIdCleaner.DetectDeId)};
+
+Document{->CALL(FloatNumberDetector.DetectFloatNum)};
+Document{->CALL(FloatNumberDetector.DetectUom)};
+Document{->CALL(FloatNumberDetector.SizeDetection)};
+XmesoSize{->CALL(FloatNumberDetector.MaximumSizeCalculator)};
+XmesoSize{->CALL(Utilities.CleanBeneathRutas)};
+XmesoSize{->CALL(Utilities.CleanBeneathXmeso)};
+Document{->CALL(Sectionizer.SectionHeaderDetector)};
+Document{->CALL(Sectionizer.SectionHeaderFilter)};
+SectionHeader{->CALL(Utilities.CleanBeneathRutas)};    
+Document{->CALL(Sectionizer.EndOfDocumentDetector)};
+EndOfDocument{->CALL(Utilities.CleanBeneathRutas)};
+Document{->CALL(Sectionizer.EndOfSectionDetector)};
+Document{->EXEC(SectionCreatorAnnotationEngine, {Section})};
+Document{->CALL(Ner.NameEntityHistologicalType)};
+Document{->CALL(Ner.NameEntityImmunohistochemicalProfile)};
+Document{->CALL(Ner.NameEntityTumorSite)};
+Document{->CALL(Ner.NameEntitySurgicalProcedure)};
+Document{->CALL(Ner.NameEntityTumorConfiguration)};
+Document{->CALL(Ner.NameEntityTumorDifferentiation)};
+Document{->CALL(Partizer.PartIndicatorDetector)};
+Document{->CALL(Partizer.PartHeaderDetector)};
+Document{->CALL(Partizer.TallyPartHeaderGenerators)};
+Document{->EXEC(PartizerAnnotationEngine, {XmesoTumorForm,Part})};
+Document{->EXEC(I2B2DataDataWriter, {})};
