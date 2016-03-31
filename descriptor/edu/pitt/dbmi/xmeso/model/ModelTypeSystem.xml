@@ -6,9 +6,19 @@
     </imports>
     <types>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorDifferentiation</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoImmunoHistochemicalProfile</name>
@@ -335,6 +345,11 @@
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.SubsumableSectionHeader</name>

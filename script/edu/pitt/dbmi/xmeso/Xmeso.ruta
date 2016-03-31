@@ -1,8 +1,10 @@
 PACKAGE edu.pitt.dbmi.xmeso;
 
+UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter;
+
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
@@ -37,4 +39,6 @@ Document{->CALL(Partizer.PartIndicatorDetector)};
 Document{->CALL(Partizer.PartHeaderDetector)};
 Document{->CALL(Partizer.TallyPartHeaderGenerators)};
 Document{->EXEC(PartizerAnnotationEngine, {XmesoTumorForm,Part})};
-Document{->EXEC(I2B2DataDataWriter, {})};
+Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity})};
+
+//Document{->EXEC(I2B2DataDataWriter, {})};

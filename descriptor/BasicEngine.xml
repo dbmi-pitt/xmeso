@@ -260,6 +260,14 @@
           <boolean>false</boolean>
         </value>
       </nameValuePair>
+    <nameValuePair>
+        <name>resourcePaths</name>
+        <value>
+          <array>
+            <string>C:\\ws\\ws-xmeso\\xmeso\\resources</string>
+          </array>
+        </value>
+      </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>

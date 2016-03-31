@@ -9,6 +9,7 @@ DECLARE StageN;
 DECLARE StageM;
 DECLARE StageTNM;
 
+
 DECLARE UOM;
 
 DECLARE Annotation XmesoIterationController(
@@ -68,6 +69,9 @@ DECLARE XmesoNamedEntity XmesoTumorDifferentiation;
 DECLARE XmesoNamedEntity XmesoSubsumingTumorSite;
 DECLARE XmesoNamedEntity XmesoImmunoHistochemicalProfile;
 
+DECLARE Annotation XmesoSentence;
+DECLARE Annotation XmesoSentenceToken;
+DECLARE Annotation XmesoNegatedConcept;
 
 
                         

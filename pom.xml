@@ -65,5 +65,25 @@
      	<artifactId>hibernate-core</artifactId>
      	<version>4.0.0.Final</version>
      </dependency>
+     <dependency>
+     	<groupId>net.sourceforge.owlapi</groupId>
+     	<artifactId>owlapi-distribution</artifactId>
+     	<version>4.1.1</version>
+     </dependency>
+     <dependency>
+     	<groupId>com.jgoodies</groupId>
+     	<artifactId>forms</artifactId>
+     	<version>1.2.1</version>
+     </dependency>
+     <dependency>
+     	<groupId>commons-beanutils</groupId>
+     	<artifactId>commons-beanutils</artifactId>
+     	<version>1.9.2</version>
+     </dependency>
+     <dependency>
+     	<groupId>de.julielab</groupId>
+     	<artifactId>aliasi-lingpipe</artifactId>
+     	<version>4.1.0</version>
+     </dependency>
    </dependencies>
 </project>

@@ -336,6 +336,9 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Sentence</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SentenceToken</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.NegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
@@ -370,6 +373,9 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.Sentence</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.SentenceToken</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.NegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>

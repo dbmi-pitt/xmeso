@@ -295,6 +295,7 @@
                 <name>additionalUimafitEngines</name>
                 <value>
                     <array>
+                        <string>edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter</string>
