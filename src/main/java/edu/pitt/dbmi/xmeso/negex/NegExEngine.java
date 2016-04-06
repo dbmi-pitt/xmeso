@@ -188,7 +188,10 @@ public class NegExEngine {
 								}
 							}
 							if(longestMatchingSequenceKey != Integer.MIN_VALUE) {
-								NegPhrase longestNegation = commonbaseWords.get(longestMatchingSequenceKey);
+								//NegPhrase longestNegation = commonbaseWords.get(longestMatchingSequenceKey);
+								NegPhrase longestNegation = new NegPhrase();
+                                longestNegation.setNegationPhrase(commonbaseWords.get(longestMatchingSequenceKey).getNegationPhrase());
+                                longestNegation.setNegationType(commonbaseWords.get(longestMatchingSequenceKey).getNegationType());
 								longestNegation.setStartIndex(sentenceIndex);
 								longestNegation.setEndIndex(sentenceIndex+longestMatchingSequenceLength);
 								result.add(longestNegation);

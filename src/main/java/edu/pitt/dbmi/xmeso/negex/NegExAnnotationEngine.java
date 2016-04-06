@@ -57,7 +57,7 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 		for (Part part : parts) {
 			System.out.println("Section: " + part.getSectionName() + " Part: " + part.getPartNumber());
 			String scope = part.getCoveredText();
-			if(scope != null && !scope.isEmpty()) {
+			if(scope != null && !scope.trim().isEmpty()) {
 				sentenceBoundaryTokenizer(jCas, part, scope);
 			}
 		}
@@ -69,7 +69,7 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 	public void sentenceBoundaryTokenizer(JCas jCas, Part part, String scope) {
 		Map<String, String[]> tokensMap = SentenceDetectorUtils.tokenizeText(scope);
 		List<String> sentences = SentenceDetectorUtils.breakDownToSentences(boundaryDetector, tokensMap.get(SentenceDetectorUtils.TOKENS), tokensMap.get(SentenceDetectorUtils.WHITE_SPACES));
-		int spanStart = part.getBegin();
+		int spanStart = trimPartTextStart(part);
 		if(sentences != null && !sentences.isEmpty()) {
 			for(int i=0; i<sentences.size(); i++) {
 				XmesoSentence annotation = new XmesoSentence(jCas);
@@ -249,4 +249,16 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 
 		negator = new NegExEngine();
 	}
+	
+	public int trimPartTextStart(Part part) {
+        String text = part.getCoveredText();
+        int startingIndex = part.getBegin();
+        int index = 0;
+        while(Character.isWhitespace(text.charAt(index))) {
+            index++;
+            startingIndex++;
+        }
+        return startingIndex;
+    }
+
 }

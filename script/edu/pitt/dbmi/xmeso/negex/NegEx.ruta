@@ -1,0 +1,13 @@
+PACKAGE edu.pitt.dbmi.xmeso.negex;
+
+//DECLARE Annotation NegExTerm;
+//DECLARE NegExTerm NegExPre;
+//DECLARE NegExTerm NegExPost;
+//DECLARE NegExTerm NegExPseudo;
+//DECLARE NegExTerm NegExStop;
+//DECLARE NegExTerm NegExWord;
+//Document{->TRIE("pre.txt" = NegExPre,
+//    "post.txt" = NegExPost,
+//    "pseudo.txt" = NegExPseudo,
+//    "stops.txt" = NegExStop, 
+//                'negex/generated.mtwl', true, 0, false, 0, "/")};

@@ -1,11 +1,5 @@
 PACKAGE edu.pitt.dbmi.xmeso;
 
-UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter;
-
-
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
 SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner;
@@ -14,8 +8,12 @@ SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Sectionizer;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Partizer;
 SCRIPT edu.pitt.dbmi.xmeso.ner.Ner;
 
-Document{->CALL(DeIdCleaner.DetectDeId)};
+UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter;
 
+Document{->CALL(DeIdCleaner.DetectDeId)};
 Document{->CALL(FloatNumberDetector.DetectFloatNum)};
 Document{->CALL(FloatNumberDetector.DetectUom)};
 Document{->CALL(FloatNumberDetector.SizeDetection)};
@@ -39,6 +37,6 @@ Document{->CALL(Partizer.PartIndicatorDetector)};
 Document{->CALL(Partizer.PartHeaderDetector)};
 Document{->CALL(Partizer.TallyPartHeaderGenerators)};
 Document{->EXEC(PartizerAnnotationEngine, {XmesoTumorForm,Part})};
-Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity})};
+Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity,XmesoSentence,XmesoNegatedConcept,XmesoSentenceToken})};
 
 //Document{->EXEC(I2B2DataDataWriter, {})};

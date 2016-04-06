@@ -1,0 +1,282 @@
+be ruled out for	PSEUDO-NEG-PHRASES
+can be ruled out for	PSEUDO-NEG-PHRASES
+can not be ruled out	PSEUDO-NEG-PHRASES
+cannot be ruled out	PSEUDO-NEG-PHRASES
+could be ruled out for	PSEUDO-NEG-PHRASES
+gram negative	PSEUDO-NEG-PHRASES
+impossible to rule out	PSEUDO-NEG-PHRASES
+is to be ruled out for	PSEUDO-NEG-PHRASES
+may be ruled out for	PSEUDO-NEG-PHRASES
+might be ruled out for	PSEUDO-NEG-PHRASES
+must be ruled out for	PSEUDO-NEG-PHRASES
+no change	PSEUDO-NEG-PHRASES
+no definite change	PSEUDO-NEG-PHRASES
+no increase	PSEUDO-NEG-PHRASES
+no interpretation	PSEUDO-NEG-PHRASES
+no interval change	PSEUDO-NEG-PHRASES
+no significant change	PSEUDO-NEG-PHRASES
+no significant interval change	PSEUDO-NEG-PHRASES
+no suspicious change	PSEUDO-NEG-PHRASES
+not cause	PSEUDO-NEG-PHRASES
+not certain if	PSEUDO-NEG-PHRASES
+not certain whether	PSEUDO-NEG-PHRASES
+not drain	PSEUDO-NEG-PHRASES
+not evaluated	PSEUDO-NEG-PHRASES
+not extend	PSEUDO-NEG-PHRASES
+not necessarily	PSEUDO-NEG-PHRASES
+not only	PSEUDO-NEG-PHRASES
+ought to be ruled out for	PSEUDO-NEG-PHRASES
+r/o	PSEUDO-NEG-PHRASES
+ro	PSEUDO-NEG-PHRASES
+rule her out	PSEUDO-NEG-PHRASES
+rule her out for	PSEUDO-NEG-PHRASES
+rule him out	PSEUDO-NEG-PHRASES
+rule him out for	PSEUDO-NEG-PHRASES
+rule out	PSEUDO-NEG-PHRASES
+rule out for	PSEUDO-NEG-PHRASES
+rule the patient out	PSEUDO-NEG-PHRASES
+rule the patient out for	PSEUDO-NEG-PHRASES
+should be ruled out for	PSEUDO-NEG-PHRASES
+what must be ruled out is	PSEUDO-NEG-PHRASES
+will be ruled out for	PSEUDO-NEG-PHRASES
+without difficulty	PSEUDO-NEG-PHRASES
+absence of	PRE-NEG-PHRASES
+adequate to rule her out	PRE-NEG-PHRASES
+adequate to rule her out for	PRE-NEG-PHRASES
+adequate to rule him out	PRE-NEG-PHRASES
+adequate to rule him out for	PRE-NEG-PHRASES
+adequate to rule out	PRE-NEG-PHRASES
+adequate to rule out for	PRE-NEG-PHRASES
+adequate to rule the patient out	PRE-NEG-PHRASES
+adequate to rule the patient out against	PRE-NEG-PHRASES
+adequate to rule the patient out for	PRE-NEG-PHRASES
+can rule her out	PRE-NEG-PHRASES
+can rule her out against	PRE-NEG-PHRASES
+can rule her out for	PRE-NEG-PHRASES
+can rule him out	PRE-NEG-PHRASES
+can rule him out against	PRE-NEG-PHRASES
+can rule him out for	PRE-NEG-PHRASES
+can rule out	PRE-NEG-PHRASES
+can rule out against	PRE-NEG-PHRASES
+can rule out for	PRE-NEG-PHRASES
+can rule the patient out	PRE-NEG-PHRASES
+can rule the patient out against	PRE-NEG-PHRASES
+can rule the patient out for	PRE-NEG-PHRASES
+cannot	PRE-NEG-PHRASES
+cannot see	PRE-NEG-PHRASES
+checked for	PRE-NEG-PHRASES
+declined	PRE-NEG-PHRASES
+declines	PRE-NEG-PHRASES
+denied	PRE-NEG-PHRASES
+denies	PRE-NEG-PHRASES
+denies any	PRE-NEG-PHRASES
+deny	PRE-NEG-PHRASES
+denying	PRE-NEG-PHRASES
+did rule her out	PRE-NEG-PHRASES
+did rule her out against	PRE-NEG-PHRASES
+did rule her out for	PRE-NEG-PHRASES
+did rule him out	PRE-NEG-PHRASES
+did rule him out against	PRE-NEG-PHRASES
+did rule him out for	PRE-NEG-PHRASES
+did rule out	PRE-NEG-PHRASES
+did rule out against	PRE-NEG-PHRASES
+did rule out for	PRE-NEG-PHRASES
+did rule the patient out	PRE-NEG-PHRASES
+did rule the patient out against	PRE-NEG-PHRASES
+did rule the patient out for	PRE-NEG-PHRASES
+fails to reveal	PRE-NEG-PHRASES
+free of	PRE-NEG-PHRASES
+negative for	PRE-NEG-PHRASES
+neither nor	PRE-NEG-PHRASES
+never developed	PRE-NEG-PHRASES
+never had	PRE-NEG-PHRASES
+no	PRE-NEG-PHRASES
+no abnormal	PRE-NEG-PHRASES
+no cause of	PRE-NEG-PHRASES
+no complaints of	PRE-NEG-PHRASES
+no evidence	PRE-NEG-PHRASES
+no evidence of	PRE-NEG-PHRASES
+no evidence to suggest	PRE-NEG-PHRASES
+no findings of	PRE-NEG-PHRASES
+no findings to indicate	PRE-NEG-PHRASES
+no known	PRE-NEG-PHRASES
+no mammographic evidence of	PRE-NEG-PHRASES
+no new	PRE-NEG-PHRASES
+no new evidence	PRE-NEG-PHRASES
+no other evidence	PRE-NEG-PHRASES
+no radiographic evidence of	PRE-NEG-PHRASES
+no sign of	PRE-NEG-PHRASES
+no significant	PRE-NEG-PHRASES
+no signs of	PRE-NEG-PHRASES
+no suggestion of	PRE-NEG-PHRASES
+no suspicious	PRE-NEG-PHRASES
+not	PRE-NEG-PHRASES
+not appear	PRE-NEG-PHRASES
+not appreciate	PRE-NEG-PHRASES
+not associated with	PRE-NEG-PHRASES
+not complain of	PRE-NEG-PHRASES
+not demonstrate	PRE-NEG-PHRASES
+not exhibit	PRE-NEG-PHRASES
+not feel	PRE-NEG-PHRASES
+not had	PRE-NEG-PHRASES
+not have	PRE-NEG-PHRASES
+not know of	PRE-NEG-PHRASES
+not known to have	PRE-NEG-PHRASES
+not reveal	PRE-NEG-PHRASES
+not see	PRE-NEG-PHRASES
+not to be	PRE-NEG-PHRASES
+patient was not	PRE-NEG-PHRASES
+r/o	PRE-NEG-PHRASES
+rather than	PRE-NEG-PHRASES
+resolved	PRE-NEG-PHRASES
+ruled her out	PRE-NEG-PHRASES
+ruled her out against	PRE-NEG-PHRASES
+ruled her out for	PRE-NEG-PHRASES
+ruled him out	PRE-NEG-PHRASES
+ruled him out against	PRE-NEG-PHRASES
+ruled him out for	PRE-NEG-PHRASES
+ruled out	PRE-NEG-PHRASES
+ruled out against	PRE-NEG-PHRASES
+ruled out for	PRE-NEG-PHRASES
+ruled the patient out	PRE-NEG-PHRASES
+ruled the patient out against	PRE-NEG-PHRASES
+ruled the patient out for	PRE-NEG-PHRASES
+rules her out	PRE-NEG-PHRASES
+rules her out for	PRE-NEG-PHRASES
+rules him out	PRE-NEG-PHRASES
+rules him out for	PRE-NEG-PHRASES
+rules out	PRE-NEG-PHRASES
+rules out for	PRE-NEG-PHRASES
+rules the patient out	PRE-NEG-PHRASES
+rules the patient out for	PRE-NEG-PHRASES
+sufficient to rule her out	PRE-NEG-PHRASES
+sufficient to rule her out against	PRE-NEG-PHRASES
+sufficient to rule her out for	PRE-NEG-PHRASES
+sufficient to rule him out	PRE-NEG-PHRASES
+sufficient to rule him out against	PRE-NEG-PHRASES
+sufficient to rule him out for	PRE-NEG-PHRASES
+sufficient to rule out	PRE-NEG-PHRASES
+sufficient to rule out against	PRE-NEG-PHRASES
+sufficient to rule out for	PRE-NEG-PHRASES
+sufficient to rule the patient out	PRE-NEG-PHRASES
+sufficient to rule the patient out against	PRE-NEG-PHRASES
+sufficient to rule the patient out for	PRE-NEG-PHRASES
+test for	PRE-NEG-PHRASES
+to exclude	PRE-NEG-PHRASES
+unremarkable for	PRE-NEG-PHRASES
+w/o evidence of	PRE-NEG-PHRASES
+with no	PRE-NEG-PHRASES
+with no evidence of	PRE-NEG-PHRASES
+without	PRE-NEG-PHRASES
+without any evidence of	PRE-NEG-PHRASES
+without evidence	PRE-NEG-PHRASES
+without evidence of	PRE-NEG-PHRASES
+without indication of	PRE-NEG-PHRASES
+without sign of	PRE-NEG-PHRASES
+are not seen	POST-NEG-PHRASES
+are ruled out	POST-NEG-PHRASES
+can be ruled out	POST-NEG-PHRASES
+free	POST-NEG-PHRASES
+has been ruled out	POST-NEG-PHRASES
+have been ruled out	POST-NEG-PHRASES
+is absent	POST-NEG-PHRASES
+is not seen	POST-NEG-PHRASES
+is ruled out	POST-NEG-PHRASES
+negative	POST-NEG-PHRASES
+not evaluated	POST-NEG-PHRASES
+not identified	POST-NEG-PHRASES
+not seen	POST-NEG-PHRASES
+not visualized	POST-NEG-PHRASES
+resolved	POST-NEG-PHRASES
+ruled out	POST-NEG-PHRASES
+unlikely	POST-NEG-PHRASES
+was ruled out	POST-NEG-PHRASES
+although	STOP-WORDS
+apart from	STOP-WORDS
+as a cause for	STOP-WORDS
+as a cause of	STOP-WORDS
+as a etiology for	STOP-WORDS
+as a etiology of	STOP-WORDS
+as a reason for	STOP-WORDS
+as a reason of	STOP-WORDS
+as a secondary cause for	STOP-WORDS
+as a secondary cause of	STOP-WORDS
+as a secondary etiology for	STOP-WORDS
+as a secondary etiology of	STOP-WORDS
+as a secondary origin for	STOP-WORDS
+as a secondary origin of	STOP-WORDS
+as a secondary reason for	STOP-WORDS
+as a secondary reason of	STOP-WORDS
+as a secondary source for	STOP-WORDS
+as a secondary source of	STOP-WORDS
+as a source for	STOP-WORDS
+as a source of	STOP-WORDS
+as an cause for	STOP-WORDS
+as an cause of	STOP-WORDS
+as an etiology for	STOP-WORDS
+as an etiology of	STOP-WORDS
+as an origin for	STOP-WORDS
+as an origin of	STOP-WORDS
+as an reason for	STOP-WORDS
+as an reason of	STOP-WORDS
+as an secondary cause for	STOP-WORDS
+as an secondary cause of	STOP-WORDS
+as an secondary etiology for	STOP-WORDS
+as an secondary etiology of	STOP-WORDS
+as an secondary origin for	STOP-WORDS
+as an secondary origin of	STOP-WORDS
+as an secondary reason for	STOP-WORDS
+as an secondary reason of	STOP-WORDS
+as an secondary source for	STOP-WORDS
+as an secondary source of	STOP-WORDS
+as an source for	STOP-WORDS
+as an source of	STOP-WORDS
+as the cause for	STOP-WORDS
+as the cause of	STOP-WORDS
+as the etiology for	STOP-WORDS
+as the etiology of	STOP-WORDS
+as the origin for	STOP-WORDS
+as the origin of	STOP-WORDS
+as the reason for	STOP-WORDS
+as the reason of	STOP-WORDS
+as the secondary cause for	STOP-WORDS
+as the secondary cause of	STOP-WORDS
+as the secondary etiology for	STOP-WORDS
+as the secondary etiology of	STOP-WORDS
+as the secondary origin for	STOP-WORDS
+as the secondary origin of	STOP-WORDS
+as the secondary reason for	STOP-WORDS
+as the secondary reason of	STOP-WORDS
+as the secondary source for	STOP-WORDS
+as the secondary source of	STOP-WORDS
+as the source for	STOP-WORDS
+as the source of	STOP-WORDS
+aside from	STOP-WORDS
+but	STOP-WORDS
+cause for	STOP-WORDS
+cause of	STOP-WORDS
+causes for	STOP-WORDS
+causes of	STOP-WORDS
+etiology for	STOP-WORDS
+etiology of	STOP-WORDS
+except	STOP-WORDS
+however	STOP-WORDS
+nevertheless	STOP-WORDS
+origin for	STOP-WORDS
+origin of	STOP-WORDS
+origins for	STOP-WORDS
+origins of	STOP-WORDS
+other possibilities of	STOP-WORDS
+reason for	STOP-WORDS
+reason of	STOP-WORDS
+reasons for	STOP-WORDS
+reasons of	STOP-WORDS
+secondary to	STOP-WORDS
+source for	STOP-WORDS
+source of	STOP-WORDS
+sources for	STOP-WORDS
+sources of	STOP-WORDS
+still	STOP-WORDS
+though	STOP-WORDS
+trigger event for	STOP-WORDS
+yet	STOP-WORDS

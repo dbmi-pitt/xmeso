@@ -51,6 +51,7 @@ public class Xmeso {
 						"resourcePaths", resourcePaths, 
 						"lowMemoryProfile", false);
 		File inputDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\reports");
+		inputDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\input");
 		File[] inputFiles = inputDirectory.listFiles();
 		for (File inputFile : inputFiles) {
 			processFile(inputFile);
@@ -66,7 +67,7 @@ public class Xmeso {
 			JCas jCas = engine.newJCas();
 			jCas.setDocumentText(content);
 			engine.process(jCas);
-			displayCas(jCas);
+//			displayCas(jCas);
 			System.out.println("Report #" + reportNumber + " succeeded");
 		} catch (Exception e) {
 			System.err.println("Report #" + reportNumber + " failed");

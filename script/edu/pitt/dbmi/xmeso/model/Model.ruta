@@ -57,6 +57,10 @@ DECLARE Annotation XmesoPart(STRING sectionName, INT sectionLevel, INT partNumbe
 
 DECLARE Annotation SynopticCategory(STRING name);
 
+DECLARE Annotation XmesoSentence;
+DECLARE Annotation XmesoSentenceToken;
+DECLARE Annotation XmesoNegatedConcept;
+
 DECLARE Annotation XmesoNamedEntity(STRING sectionName, INT sectionLevel, INT partNumber, STRING snomedCode, STRING semanticType, INT codedPenalty, BOOLEAN isNegated);
 
 DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree, 
@@ -69,9 +73,6 @@ DECLARE XmesoNamedEntity XmesoTumorDifferentiation;
 DECLARE XmesoNamedEntity XmesoSubsumingTumorSite;
 DECLARE XmesoNamedEntity XmesoImmunoHistochemicalProfile;
 
-DECLARE Annotation XmesoSentence;
-DECLARE Annotation XmesoSentenceToken;
-DECLARE Annotation XmesoNegatedConcept;
 
 
                         
