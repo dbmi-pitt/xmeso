@@ -253,7 +253,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector</string>
+                    <string>edu.pitt.dbmi.xmeso.negex.NegEx</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -276,9 +276,7 @@
             <nameValuePair>
                 <name>additionalScripts</name>
                 <value>
-                    <array>
-                        <string>edu.pitt.dbmi.xmeso.model.Model</string>
-                    </array>
+                    <array/>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -314,7 +312,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="FloatNumberDetectorTypeSystem.xml"/>
+                <import location="NegExTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

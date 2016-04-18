@@ -27,7 +27,7 @@ public class NegExEngine {
 		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
 	}
 
-	public List<NegPhrase> findPossibleNegatedConcepts(String sentence) {
+	public List<NegPhrase> findNegationIndicators(String sentence) {
 		if(sentence == null || sentence.isEmpty()) {
 			return null;
 		} else {

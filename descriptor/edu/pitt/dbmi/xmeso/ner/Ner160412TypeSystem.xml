@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.pitt.dbmi.xmeso.ner.Ner160412TypeSystem</name>
+    <imports>
+        <import location="../../../../../BasicTypeSystem.xml"/>
+        <import location="../model/ModelTypeSystem.xml"/>
+    </imports>
+</typeSystemDescription>

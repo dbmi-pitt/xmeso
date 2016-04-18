@@ -243,6 +243,14 @@
                 </value>
             </nameValuePair>
             <nameValuePair>
+                <name>resourcePaths</name>
+                <value>
+                    <array>
+                        <string>C:\\ws\\ws-xmeso\\xmeso\\resources</string>
+                    </array>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
                 <name>mainScript</name>
                 <value>
                     <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
@@ -263,12 +271,6 @@
                         <string>C:/ws/ws-xmeso/xmeso/target/classes</string>
                         <string>C:/ws/ws-xmeso/xmeso/descriptor</string>
                     </array>
-                </value>
-            </nameValuePair>
-            <nameValuePair>
-                <name>resourcePaths</name>
-                <value>
-                    <array/>
                 </value>
             </nameValuePair>
             <nameValuePair>

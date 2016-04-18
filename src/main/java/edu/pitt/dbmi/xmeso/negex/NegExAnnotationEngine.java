@@ -1,209 +1,166 @@
 package edu.pitt.dbmi.xmeso.negex;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.cas.FSIndex;
-import org.apache.uima.cas.FSIterator;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import edu.pitt.dbmi.xmeso.model.Model.Part;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken;
 
-public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class NegExAnnotationEngine extends
+		org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 
-	private SentenceDetectorConfigurator configurator; 
-	private SentenceDetector boundaryDetector;
-	private NegExEngine negator;
+	private NegExEngine negator = new NegExEngine();
 
 	private final String spaceSplitRegEx = "(\\w+|\\$[\\d\\.]+|\\S+)";
-	private Pattern sentenceSplitter; 
-	
+	private Pattern sentenceSplitter;
+
 	private final String specialCharacterRemovalRegEx = "[^a-zA-Z0-9\\s\t]";
-	
+
 	private final String START = "START";
 	private final String END = "END";
-	
-	/*PIPELINE :
-	 * 1. Sentence Not Null
-	 * 2. Sentence Tokens Not Null
-	 * 3. Contains Named Entities
-	 * 4. Contains Negation Concepts
-	 * 5. Define Boundary Indices
+
+	/*
+	 * PIPELINE : 1. Sentence Not Null 2. Sentence Tokens Not Null 3. Contains
+	 * Named Entities 4. Contains Negation Concepts 5. Define Boundary Indices
 	 * 6. Check if Named Entities fall within boundaries.
 	 */
 
-	/**
-	 * Vamsi, 
-	 *    Here is a place to implement the NegEx algorithm.
-	 *  See below examples of pulling the Types you can work with.	
-	 */
-
 	@Override
-	public void process(JCas jCas) throws AnalysisEngineProcessException {	
-		System.out.println(getClass().getName() + " being called via a Ruta script..");
-		Collection<Part> parts = JCasUtil.select(jCas, Part.class);
-		initialize();
-		for (Part part : parts) {
-			System.out.println("Section: " + part.getSectionName() + " Part: " + part.getPartNumber());
-			String scope = part.getCoveredText();
-			if(scope != null && !scope.trim().isEmpty()) {
-				sentenceBoundaryTokenizer(jCas, part, scope);
-			}
-		}
-		sentenceTokenizer(jCas);
+	public void process(JCas jCas) throws AnalysisEngineProcessException {
+		tokenizeSentences(jCas);
 		defineNegations(jCas);
-		System.out.println("Done...");
 	}
 
-	public void sentenceBoundaryTokenizer(JCas jCas, Part part, String scope) {
-		Map<String, String[]> tokensMap = SentenceDetectorUtils.tokenizeText(scope);
-		List<String> sentences = SentenceDetectorUtils.breakDownToSentences(boundaryDetector, tokensMap.get(SentenceDetectorUtils.TOKENS), tokensMap.get(SentenceDetectorUtils.WHITE_SPACES));
-		int spanStart = trimPartTextStart(part);
-		if(sentences != null && !sentences.isEmpty()) {
-			for(int i=0; i<sentences.size(); i++) {
-				XmesoSentence annotation = new XmesoSentence(jCas);
-				annotation.setBegin(spanStart);
-				annotation.setEnd(spanStart+sentences.get(i).length());
-				annotation.addToIndexes();
-				spanStart = spanStart+sentences.get(i).length();
-			}
-		}
-	}
-
-	public void sentenceTokenizer(JCas jCas){
-		FSIndex<XmesoSentence> sentenceAnnotations = jCas.getAnnotationIndex(XmesoSentence.type);
-		if(sentenceAnnotations != null){
-			FSIterator<XmesoSentence> iter =  sentenceAnnotations.iterator();
-			while(iter.hasNext()) {
-				XmesoSentence sentenceAnnotation = iter.next();
-				if(sentenceAnnotation != null) {
-					int startingIndex = sentenceAnnotation.getBegin();
-					String text = sentenceAnnotation.getCoveredText();
-					if(text != null && !text.isEmpty()) {
-						sentenceSplitter = Pattern.compile(spaceSplitRegEx);
-						Matcher matcher = sentenceSplitter.matcher(text);
-						while(matcher.find()){
-							int start = (matcher.start()+startingIndex);
-							int end = (matcher.end()+startingIndex);
-							XmesoSentenceToken sentenceToken = new XmesoSentenceToken(jCas);
-							sentenceToken.setBegin(start);
-							sentenceToken.setEnd(end);
-							sentenceToken.addToIndexes();
-						}
-					}
-				}
+	public void tokenizeSentences(JCas jCas) {
+		sentenceSplitter = Pattern.compile(spaceSplitRegEx);
+		for (XmesoSentence sentenceAnnotation : JCasUtil.select(jCas,
+				XmesoSentence.class)) {
+			int startingIndex = sentenceAnnotation.getBegin();
+			String sentenceContent = sentenceAnnotation.getCoveredText();
+			Matcher matcher = sentenceSplitter.matcher(sentenceContent);
+			while (matcher.find()) {
+				int start = (matcher.start() + startingIndex);
+				int end = (matcher.end() + startingIndex);
+				XmesoSentenceToken sentenceToken = new XmesoSentenceToken(jCas);
+				sentenceToken.setBegin(start);
+				sentenceToken.setEnd(end);
+				sentenceToken.addToIndexes();
 			}
 		}
 	}
 
 	public void defineNegations(JCas jCas) {
-		FSIndex<XmesoSentence> sentenceAnnotations = jCas.getAnnotationIndex(XmesoSentence.type);
-		if(sentenceAnnotations != null) {
-			FSIterator<XmesoSentence> iter =  sentenceAnnotations.iterator();
-			while(iter.hasNext()) {
-				XmesoSentence sentenceAnnotation = iter.next();
-				if(sentenceAnnotation != null){
-					String text = sentenceAnnotation.getCoveredText();
-					text = removeSpecialCharacters(text);
-					if(text !=null && !text.isEmpty()){
-						List<XmesoSentenceToken> sentenceTokensList = JCasUtil.selectCovered(jCas,XmesoSentenceToken.class, sentenceAnnotation);
-						if(sentenceTokensList != null && !sentenceTokensList.isEmpty()) {
-							if(JCasUtil.contains(jCas, sentenceAnnotation, XmesoNamedEntity.class)) {
-								List<NegPhrase> negationConcepts = negator.findPossibleNegatedConcepts(text);
-								if(negationConcepts != null && !negationConcepts.isEmpty()) {
-									String[] sentenceTokens = formSentenceWordSequences(sentenceTokensList);
-									for(NegPhrase phrs : negationConcepts) {
-										String[] scopeTokens = formScopeWordSequences(phrs);
-										if(scopeTokens != null) {
-											HashMap<String, Integer> scopeIndices = defineScopeIndices(scopeTokens, sentenceTokens);
-											if(scopeIndices != null) {
-												if(scopeIndices.get(START) != scopeIndices.get(END)) {
-													int start = scopeIndices.get(START);
-													int end = scopeIndices.get(END);
-													if(start >=0 && end < sentenceTokensList.size()) {
-														XmesoSentenceToken startBoundary = sentenceTokensList.get(start);
-														XmesoSentenceToken endBoundary = sentenceTokensList.get(end);
-														List<XmesoNamedEntity> negatedEntities = JCasUtil.selectCovered(jCas,XmesoNamedEntity.class, sentenceAnnotation);
-														for(XmesoNamedEntity namedEntity : negatedEntities) {
-															markNamedEntity(jCas, namedEntity, startBoundary.getBegin(), endBoundary.getBegin());
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+		for (XmesoSentence sentenceAnnotation : JCasUtil.select(jCas,
+				XmesoSentence.class)) {
+			String sentenceContent = sentenceAnnotation.getCoveredText();
+			sentenceContent = removeSpecialCharacters(sentenceContent);
+			if (sentenceContent == null
+					|| sentenceContent.isEmpty()
+					|| !JCasUtil.contains(jCas, sentenceAnnotation,
+							XmesoNamedEntity.class)) {
+				continue;
 			}
-		}
-	}
-	
-	public void markNamedEntity(JCas jCas, XmesoNamedEntity entity, int startBoundary, int endBoundary) {
-		if(entity != null){
-			if(entity.getBegin() >= startBoundary && entity.getEnd() <= endBoundary) {
-				entity.setIsNegated(true);
-				XmesoNegatedConcept negation = new XmesoNegatedConcept(jCas);
-				negation.setBegin(entity.getBegin());
-				negation.setEnd(entity.getEnd());
-				negation.addToIndexes();
+			List<NegPhrase> negationIndicatingPhrases = negator
+					.findNegationIndicators(sentenceContent);
+			if (negationIndicatingPhrases == null
+					|| negationIndicatingPhrases.isEmpty())
+				continue;
+			List<XmesoSentenceToken> sentenceTokensList = JCasUtil
+					.selectCovered(jCas, XmesoSentenceToken.class,
+							sentenceAnnotation);
+			String[] sentenceTokens = formSentenceWordSequences(sentenceTokensList);
+			for (NegPhrase negExPhrase : negationIndicatingPhrases) {
+				processNegPhrase(jCas, sentenceAnnotation, negExPhrase,
+						sentenceTokensList, sentenceTokens);
 			}
 		}
 	}
 
-	public HashMap<String,Integer> defineScopeIndices(String[]scopeTokens, String[]sentenceTokens) {
-		if(scopeTokens.length > 0 && sentenceTokens.length > 0) {
-			int scopeId = 0;
-			int sentenceId = 0;
-			int startIndex = 0;
-			int endIndex = 0;
-			while(scopeId < scopeTokens.length && sentenceId < sentenceTokens.length) {
-				String sentenceToken = sentenceTokens[sentenceId].trim().toLowerCase().replaceAll(specialCharacterRemovalRegEx, "");
-				String scopeToken = scopeTokens[scopeId];
-				if(!sentenceToken.isEmpty()) {
-					if(sentenceToken.equals(scopeToken)) {
-						if(scopeId == 0){
-							startIndex = sentenceId; 
-						}
-						scopeId++;
-						sentenceId++;
-					} else {
-						sentenceId++;
-						scopeId = 0;
+	private void processNegPhrase(JCas jCas, XmesoSentence sentenceAnnotation,
+			NegPhrase negationIndicatingPhrase,
+			List<XmesoSentenceToken> sentenceTokensList, String[] sentenceTokens) {
+		String[] negationIndicatingPhraseTokens = tokenizeNegationIndicatingPhrase(negationIndicatingPhrase);
+		HashMap<String, Integer> scopeIndices = defineScopeIndices(
+				negationIndicatingPhraseTokens, sentenceTokens);
+		int start = scopeIndices.get(START);
+		int end = scopeIndices.get(END);
+		if (start >= 0 && end < sentenceTokensList.size() && start != end) {
+			XmesoSentenceToken startBoundary = sentenceTokensList.get(start);
+			XmesoSentenceToken endBoundary = sentenceTokensList.get(end);
+			List<XmesoNamedEntity> negatedEntities = JCasUtil.selectCovered(
+					jCas, XmesoNamedEntity.class, sentenceAnnotation);
+			for (XmesoNamedEntity namedEntity : negatedEntities) {
+				markNamedEntity(jCas, namedEntity, startBoundary.getBegin(),
+						endBoundary.getBegin());
+			}
+		}
+	}
+
+	public void markNamedEntity(JCas jCas, XmesoNamedEntity entity,
+			int startBoundary, int endBoundary) {
+		if (entity.getBegin() >= startBoundary
+				&& entity.getEnd() <= endBoundary) {
+			entity.setIsNegated(true);
+			XmesoNegatedConcept negation = new XmesoNegatedConcept(jCas);
+			negation.setBegin(entity.getBegin());
+			negation.setEnd(entity.getEnd());
+			negation.addToIndexes();
+		}
+	}
+
+	public HashMap<String, Integer> defineScopeIndices(
+			String[] negexPhraseTokens, String[] sentenceTokens) {
+		final HashMap<String, Integer> indicesMap = new HashMap<String, Integer>();
+		indicesMap.put(START, -1);
+		indicesMap.put(END, Integer.MAX_VALUE);
+		if (negexPhraseTokens.length == 0 || sentenceTokens.length == 0) {
+			return indicesMap;
+		}
+
+		int negexPhraseIdx = 0;
+		int sentenceIdx = 0;
+		int startIndex = 0;
+		int endIndex = 0;
+		while (negexPhraseIdx < negexPhraseTokens.length
+				&& sentenceIdx < sentenceTokens.length) {
+			String sentenceToken = sentenceTokens[sentenceIdx].trim()
+					.toLowerCase().replaceAll(specialCharacterRemovalRegEx, "");
+			String negexPhraseToken = negexPhraseTokens[negexPhraseIdx];
+			if (!sentenceToken.isEmpty()) {
+				if (sentenceToken.equals(negexPhraseToken)) {
+					if (negexPhraseIdx == 0) {
+						startIndex = sentenceIdx;
 					}
+					negexPhraseIdx++;
+					sentenceIdx++;
 				} else {
-					sentenceId++;
+					sentenceIdx++;
+					negexPhraseIdx = 0;
 				}
-			}
-			if(scopeId > (scopeTokens.length - 1)) {
-				endIndex = sentenceId;
-				HashMap<String,Integer> indicesMap = new HashMap<String,Integer>();
-				indicesMap.put(START, startIndex);
-				indicesMap.put(END, endIndex);
-				return indicesMap;
 			} else {
-				return null;
+				sentenceIdx++;
 			}
 		}
-		return null;	
-	}
+		if (negexPhraseIdx > (negexPhraseTokens.length - 1)) {
+			endIndex = sentenceIdx;
+			indicesMap.put(START, startIndex);
+			indicesMap.put(END, endIndex);
+		}
 
+		return indicesMap;
+	}
 
 	public String removeSpecialCharacters(String sentence) {
-		if(sentence != null) {
+		if (sentence != null) {
 			sentence = sentence.trim().toLowerCase();
 			sentence = sentence.replaceAll(specialCharacterRemovalRegEx, "");
 		}
@@ -211,10 +168,10 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 	}
 
 	public String[] formSentenceWordSequences(List<?> annotations) {
-		if(annotations!= null && !annotations.isEmpty()){
+		if (annotations != null && !annotations.isEmpty()) {
 			String[] words = new String[annotations.size()];
 			Annotation annotation;
-			for(int i=0; i<annotations.size(); i++) {
+			for (int i = 0; i < annotations.size(); i++) {
 				annotation = (Annotation) annotations.get(i);
 				words[i] = annotation.getCoveredText();
 			}
@@ -223,42 +180,14 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 		return null;
 	}
 
-	public String[] formScopeWordSequences(NegPhrase scopePhrase) {
-		if(scopePhrase != null){
-			if(scopePhrase.getCoveredText() != null){
-				String words[] = scopePhrase.getCoveredText().split("\\s+");
-				return words;
-			}
+	public String[] tokenizeNegationIndicatingPhrase(
+			NegPhrase negationIndicatingPhrase) {
+		if (negationIndicatingPhrase.getCoveredText() != null) {
+			String words[] = negationIndicatingPhrase.getCoveredText().split(
+					"\\s+");
+			return words;
 		}
-		return null;
+		return new String[0];
 	}
-
-	public void initialize() {
-		configurator = new SentenceDetectorConfigurator(false,true);
-		configurator.setForceFinalStopsFlag(true);
-		configurator.setBalanceParenthesesFlag(true);
-
-		configurator.addPossibleStop(":");
-		configurator.addPossibleStop("-");
-
-		boundaryDetector = new SentenceDetector(configurator.getPossibleStops(), 
-				configurator.getImpossiblePenUltimates(), 
-				configurator.getImpossibleSentenceStarts(),
-				configurator.getForceFinalStopsFlag(),
-				configurator.getBalanceParenthesesFlag());
-
-		negator = new NegExEngine();
-	}
-	
-	public int trimPartTextStart(Part part) {
-        String text = part.getCoveredText();
-        int startingIndex = part.getBegin();
-        int index = 0;
-        while(Character.isWhitespace(text.charAt(index))) {
-            index++;
-            startingIndex++;
-        }
-        return startingIndex;
-    }
 
 }

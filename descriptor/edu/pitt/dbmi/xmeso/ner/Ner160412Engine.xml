@@ -253,7 +253,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector</string>
+                    <string>edu.pitt.dbmi.xmeso.ner.Ner160412</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -314,7 +314,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="FloatNumberDetectorTypeSystem.xml"/>
+                <import location="Ner160412TypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

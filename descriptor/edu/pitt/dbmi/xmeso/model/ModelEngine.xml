@@ -243,6 +243,14 @@
                 </value>
             </nameValuePair>
             <nameValuePair>
+                <name>resourcePaths</name>
+                <value>
+                    <array>
+                        <string>C:\\ws\\ws-xmeso\\xmeso\\resources</string>
+                    </array>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
                 <name>mainScript</name>
                 <value>
                     <string>edu.pitt.dbmi.xmeso.model.Model</string>
@@ -263,12 +271,6 @@
                         <string>C:/ws/ws-xmeso/xmeso/target/classes</string>
                         <string>C:/ws/ws-xmeso/xmeso/descriptor</string>
                     </array>
-                </value>
-            </nameValuePair>
-            <nameValuePair>
-                <name>resourcePaths</name>
-                <value>
-                    <array/>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -336,9 +338,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.Sentence</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.SentenceToken</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.NegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
@@ -355,6 +354,9 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSize</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</type>
@@ -373,9 +375,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageN</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.Sentence</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.SentenceToken</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.NegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
@@ -392,6 +391,9 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSize</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</type>
