@@ -9,6 +9,8 @@ public class KbEncounter extends KbSummarizable {
 	private String kind = "NA";
 	private String uri;
 	private String content;
+	private String expertForm;
+	private String xmesoForm;
 	private String xmi;
 	
 	
@@ -55,6 +57,22 @@ public class KbEncounter extends KbSummarizable {
 		this.content = content;
 	}
 	
+	public String getExpertForm() {
+		return expertForm;
+	}
+
+	public void setExpertForm(String expertForm) {
+		this.expertForm = expertForm;
+	}
+
+	public String getXmesoForm() {
+		return xmesoForm;
+	}
+
+	public void setXmesoForm(String xmesoForm) {
+		this.xmesoForm = xmesoForm;
+	}
+
 	public String getXmi() {
 		return xmi;
 	}

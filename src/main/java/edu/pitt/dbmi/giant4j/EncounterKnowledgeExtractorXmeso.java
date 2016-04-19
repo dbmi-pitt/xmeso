@@ -5,28 +5,35 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.SerializationUtils;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.impl.XmiCasSerializer;
+import org.apache.uima.cas.text.AnnotationFS;
+import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.util.InvalidXMLException;
 import org.apache.uima.util.XMLSerializer;
 import org.xml.sax.SAXException;
 
+import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
 import edu.pitt.dbmi.giant4j.kb.KbEncounter;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.kb.KbSummary;
+import edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm;
 
 @SuppressWarnings("unused")
-public class EncounterKnowledgeExtractorCtakes implements
+public class EncounterKnowledgeExtractorXmeso implements
 		EncounterKnowledgeExtractorInterface {
 
 	private AnalysisEngine ae = null;
 
-	public EncounterKnowledgeExtractorCtakes() {
+	public EncounterKnowledgeExtractorXmeso() {
 	}
 
 	public void executePatient(KbPatient kbPatient) {
@@ -44,22 +51,48 @@ public class EncounterKnowledgeExtractorCtakes implements
 	@Override
 	public void executeEncounter(KbEncounter kbEncounter) {
 		try {
-			buildCtakesAnalysisEngine();
+			buildXmesoAnalysisEngine();
 			JCas encounterJCas = ae.newJCas();
-			runCtakesPipeline(encounterJCas, kbEncounter);
+			runXmesoPipeline(encounterJCas, kbEncounter);
+			cacheFormData(encounterJCas, kbEncounter);
 			cacheSerializedCasXmi(encounterJCas, kbEncounter);
-			clearDerivedSummaries(kbEncounter);
-			pullCasToDag(encounterJCas, kbEncounter);
 		} catch (IOException | SAXException | UIMAException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	private void pullCasToDag(JCas encounterJCas, KbEncounter kbEncounter) {
+
+	private void cacheFormData(JCas encounterJCas, KbEncounter kbEncounter) {
+
+		XmesoFormPartSet partSet = new XmesoFormPartSet();
+		
+		for (AnnotationFS tumorFormFS : JCasUtil.select(encounterJCas, XmesoTumorForm.class)) {
+			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
+			int currentPart = tumorForm.getCurrentPart();
+			String surgicalProcedureCode = tumorForm.getSurgicalProcedure();
+			String histologicTypeCode = tumorForm.getHistopathologicalType();
+			String tumorSiteCode = tumorForm.getTumorSite();
+			String tumorConfigurationCode = tumorForm
+					.getTumorConfiguration();
+			String tumorDifferentiationCode = tumorForm
+					.getTumorDifferentiation();		
+			partSet.getFormData()[currentPart].setSurgicalProcedure(surgicalProcedureCode);
+			partSet.getFormData()[currentPart].setHistologicType(histologicTypeCode);
+			partSet.getFormData()[currentPart].setTumorSite(tumorSiteCode);
+			partSet.getFormData()[currentPart].setTumorConfiguration(tumorConfigurationCode);
+			partSet.getFormData()[currentPart].setTumorDifferentiation(tumorDifferentiationCode);
+		}
+		
+		KbSummary kbSummary = new KbSummary();
+		kbSummary.setBaseCode("Xmeso:Machine");
+		kbSummary.setCode(kbSummary.getBaseCode());
+		kbSummary.setValue(new String(SerializationUtils.serialize(partSet)));
+		kbEncounter.addSummary(kbSummary);
+		
+		
 		
 	}
 
-	private void runCtakesPipeline(JCas encounterJCas, KbEncounter kbEncounter) throws AnalysisEngineProcessException {
+	private void runXmesoPipeline(JCas encounterJCas, KbEncounter kbEncounter) throws AnalysisEngineProcessException {
 		String documentText = kbEncounter.getContent();
 		encounterJCas.setDocumentText(documentText);
 		SimplePipeline.runPipeline(encounterJCas, ae);
@@ -70,9 +103,13 @@ public class EncounterKnowledgeExtractorCtakes implements
 		kbEncounter.setXmi(xmi);
 	}
 
-	private void buildCtakesAnalysisEngine() {
+	private void buildXmesoAnalysisEngine() throws InvalidXMLException, ResourceInitializationException, IOException {
 		if (ae == null) {
-			
+			final String[] resourcePaths = {"C:\\ws\\ws-xmeso\\xmeso\\resources"};
+			ae = AnalysisEngineFactory
+					.createEngine("edu.pitt.dbmi.xmeso.XmesoEngine",
+							"resourcePaths", resourcePaths, 
+							"lowMemoryProfile", false);
 		}
 	}
 
@@ -82,10 +119,9 @@ public class EncounterKnowledgeExtractorCtakes implements
 	}
 
 	private void clearDerivedSummaries(KbEncounter encounter) {
-		// TODO change to enconter.getSummaries().removeAll();
 		List<KbSummary> summariesToRemove = new ArrayList<KbSummary>();
 		for (KbSummary removalCandidate : encounter.getSummaries()) {
-			if (!removalCandidate.getCode().matches("Dphe:Anafora|Dphe:Ctakes")) {
+			if (!removalCandidate.getCode().matches("Xmeso:Anafora|Xmeso:Machine")) {
 				summariesToRemove.add(removalCandidate);
 			}
 		}

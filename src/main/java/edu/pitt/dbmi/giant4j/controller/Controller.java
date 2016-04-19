@@ -13,8 +13,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import edu.pitt.dbmi.giant4j.form.FormDataBean;
-import edu.pitt.dbmi.giant4j.form.XmesoFormDataBean;
+import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
 import edu.pitt.dbmi.giant4j.kb.KbEncounter;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.kb.KbSummary;
@@ -64,7 +63,8 @@ public class Controller {
 		Controller controller = new Controller();
 		controller.cleanRdbmsData();
 		// controller.uploadFsDirectoryToRdbms();
-		controller.constructFastDagFromRdbms();
+//		controller.constructFastDagFromRdbms();
+		controller.constructFastPatientEncountersFromRdbms();
 		controller.closeUp();
 	}
 
@@ -91,46 +91,19 @@ public class Controller {
 		cleaner.execute();
 	}
 
-	// public void uploadFsDirectoryToRdbms() throws IOException {
-	// uploadFsDirectoryRawTexts();
-	// buildSummaryFormsForPatients();
-	// }
-
-	// private void buildSummaryFormsForPatients() throws IOException {
-	// File goldDirectory = new File(CONST_PATH_TO_GOLD_SET);
-	// File[] patientFolders = goldDirectory.listFiles();
-	// for (File patientFolder : patientFolders) {
-	// cachePatientParametersFromFileName(patientFolder);
-	// findOrCreatePatient(parsedPatientLimsId);
-	// findOrCreateVisit("XmesoVisit:sentinel");
-	// findOrCreateConcept("XmesoConcept:sentinel");
-	// currentDbModifier = "XmesoModifier:sentinel";
-	//
-	// // Stores the expert summarization for the patient
-	// findOrCreateProvider("XmesoProvider:expert");
-	// currentTextToStore = serializeFormDataBean(new FormDataBean());
-	// findOrCreateObservation();
-	//
-	// // Stores DeepPhe's summarization for the patient
-	// findOrCreateProvider("XmesoProvider:dphe");
-	// currentTextToStore = serializeFormDataBean(new FormDataBean());
-	// findOrCreateObservation();
-	// }
-	// }
-
-	private String serializeFormDataBean(XmesoFormDataBean formDataBean) {
+	private String serializeFormPartSet(XmesoFormPartSet xmesoFormPartSet) {
 		byte[] formDataBeanByteArray = SerializationUtils
-				.serialize(formDataBean);
+				.serialize(xmesoFormPartSet);
 		return Base64.getEncoder().encodeToString(formDataBeanByteArray);
 	}
 
-	private XmesoFormDataBean deSerializeFormDataBean(String utfFormDataBeanString) {
-		XmesoFormDataBean formBean = null;
+	private XmesoFormPartSet deSerializeFormPartSet(String utfFormPartSetString) {
+		XmesoFormPartSet formPartSet = null;
 		byte[] objectAsBytes = Base64.getDecoder()
-				.decode(utfFormDataBeanString);
+				.decode(utfFormPartSetString);
 		ByteArrayInputStream bais = new ByteArrayInputStream(objectAsBytes);
-		formBean = (XmesoFormDataBean) SerializationUtils.deserialize(bais);
-		return formBean;
+		formPartSet = (XmesoFormPartSet) SerializationUtils.deserialize(bais);
+		return formPartSet;
 	}
 
 	public void uploadFsDirectoryRawTexts(KbPatient kbPatient) {
@@ -147,12 +120,12 @@ public class Controller {
 
 				// Stores the expert summarization for the encounter
 				findOrCreateProvider("XmesoProvider:expert");
-				currentTextToStore = serializeFormDataBean(new XmesoFormDataBean());
+				currentTextToStore = serializeFormPartSet(new XmesoFormPartSet());
 				findOrCreateObservation();
 
 				// Stores the summarization for the encounter
 				findOrCreateProvider("XmesoProvider:xmeso");
-				currentTextToStore = serializeFormDataBean(new XmesoFormDataBean());
+				currentTextToStore = serializeFormPartSet(new XmesoFormPartSet());
 				findOrCreateObservation();
 
 				break;
@@ -169,6 +142,87 @@ public class Controller {
 		parsedVisitLimsId = parsedPatientLimsId + ":"
 				+ padId(kbEncounter.getId());
 		parsedNoteKind = "pathology";
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void constructFastPatientEncountersFromRdbms() {
+
+		findOrCreateProvider("XmesoProvider:clinic");
+		ProviderDimension providerClinic = currentDbProvider;
+		findOrCreateProvider("XmesoProvider:expert");
+		ProviderDimension providerExpert = currentDbProvider;
+		findOrCreateProvider("XmesoProvider:xmeso");
+		ProviderDimension providerXmeso = currentDbProvider;
+	
+		findOrCreateConcept("XmesoConcept:unprocessed");
+		ConceptDimension conceptUnprocessed = currentDbConcept;
+		findOrCreateConcept("XmesoConcept:xmi");
+		ConceptDimension conceptXmi = currentDbConcept;
+		findOrCreateConcept("XmesoConcept:synoptic");
+		ConceptDimension conceptSynoptic = currentDbConcept;
+		
+		String hql = "from ObservationFact o where ";
+		hql += " o.sourcesystemCd like :sourceSystemCd ";
+		hql += " order by o.id.patientNum, o.id.encounterNum";
+		Query query = i2b2DataSession.createQuery(hql);
+		query.setString("sourceSystemCd", sourcesystemCd);
+		List<ObservationFact> observationFacts = query.list();
+		BigDecimal lastPatientNum = new BigDecimal(-1.0d);
+		KbPatient kbPatient = null;
+		KbEncounter enc = null;
+		int patientSeq = 0;
+		for (ObservationFact observationFact : observationFacts) {
+			if (observationFact.getId().getPatientNum().intValue() > lastPatientNum
+					.intValue()) {
+				kbPatient = new KbPatient();
+				kbPatient.setId(observationFact.getId().getPatientNum()
+						.intValue());
+				kbPatient.setSequence(patientSeq++);
+				kbPatients.add(kbPatient);
+				lastPatientNum = observationFact.getId().getPatientNum();			
+				enc = new KbEncounter();
+				enc.setId((int) observationFact.getId().getEncounterNum().intValue());
+				enc.setSequence(0);
+				kbPatient.getEncounters().add(enc);
+			}
+			boolean isContent = true;
+			isContent = isContent &&
+					observationFact.getId().getProviderId().equals(providerClinic.getId());
+			isContent = isContent &&
+					observationFact.getId().getConceptCd().equals(conceptUnprocessed.getConceptCd());
+			if (isContent) {
+				enc.setContent(observationFact.getObservationBlob());
+			}
+			
+			boolean isXmi = true;
+			isXmi = isXmi &&
+					observationFact.getId().getProviderId().equals(providerXmeso.getId());
+			isXmi = isXmi &&
+					observationFact.getId().getConceptCd().equals(conceptXmi.getConceptCd());
+			if (isXmi) {
+				enc.setXmi(observationFact.getObservationBlob());
+			}
+			
+			boolean isExpert = true;
+			isExpert = isExpert &&
+					observationFact.getId().getProviderId().equals(providerExpert.getId());
+			isExpert = isExpert &&
+					observationFact.getId().getConceptCd().equals(conceptSynoptic.getConceptCd());
+			if (isExpert) {
+				enc.setExpertForm(observationFact.getObservationBlob());
+			}
+			
+			boolean isMachine = true;
+			isMachine = isMachine &&
+					observationFact.getId().getProviderId().equals(providerXmeso.getId());
+			isMachine = isMachine &&
+					observationFact.getId().getConceptCd().equals(conceptSynoptic.getConceptCd());
+			if (isMachine) {
+				enc.setXmesoForm(observationFact.getObservationBlob());
+			}
+			
+			
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -410,17 +464,17 @@ public class Controller {
 		return result;
 	}
 
-	public XmesoFormDataBean findFormDataByInstanceNum(long instanceNum) {
+	public XmesoFormPartSet findFormDataByInstanceNum(long instanceNum) {
 		findObservationByInstanceNum(instanceNum);
 		String blobAsString = (currentDbObservation != null) ? currentDbObservation
 				.getObservationBlob() : null;
-		return deSerializeFormDataBean(blobAsString);
+		return deSerializeFormPartSet(blobAsString);
 	}
 
 	public void saveObservationFormData(long observationInstanceNumber,
-			XmesoFormDataBean formDataBean) {
+			XmesoFormPartSet xmesoFormPartSet) {
 		findObservationByInstanceNum(observationInstanceNumber);
-		String utfFormDataBeanString = serializeFormDataBean(formDataBean);
+		String utfFormDataBeanString = serializeFormPartSet(xmesoFormPartSet);
 		currentDbObservation.setObservationBlob(utfFormDataBeanString);
 		Transaction tx = i2b2DataSession.beginTransaction();
 		i2b2DataSession.saveOrUpdate(currentDbObservation);

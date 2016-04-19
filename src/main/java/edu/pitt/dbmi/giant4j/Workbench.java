@@ -28,6 +28,7 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import edu.pitt.dbmi.giant4j.controller.Controller;
 import edu.pitt.dbmi.giant4j.form.XmesoFormDataBean;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPanel;
+import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.ontology.I2b2OntologyBuilder;
 import edu.pitt.dbmi.giant4j.ontology.MetaDataDbManager;
@@ -76,10 +77,10 @@ public class Workbench extends JFrame implements ActionListener,
 	private PatientViewerPanel patientViewerPanel;
 
 	private XmesoFormPanel formPanelExpert = new XmesoFormPanel();
-	private XmesoFormDataBean formDataExpert = new XmesoFormDataBean();
+	private XmesoFormPartSet formDataExpert = new XmesoFormPartSet();
 
 	private XmesoFormPanel formPanelMachine = new XmesoFormPanel();
-	private XmesoFormDataBean formDataMachine = new XmesoFormDataBean();
+	private XmesoFormPartSet formDataMachine = new XmesoFormPartSet();
 
 	private OntologyCleaner ontologyCleaner;
 	private Controller controller;
@@ -104,7 +105,8 @@ public class Workbench extends JFrame implements ActionListener,
 
 		controller = new Controller();
 		controller.setKbPatients(patients);
-		controller.constructFastDagFromRdbms();
+//		controller.constructFastDagFromRdbms();
+		controller.constructFastPatientEncountersFromRdbms();
 
 		fc = new JFileChooser();
 		fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -167,17 +169,17 @@ public class Workbench extends JFrame implements ActionListener,
 //		i2b2OntologyBuilder.setTopLevelClses(topLevelClses);
 
 		formPanelExpert = new XmesoFormPanel();
-		formDataExpert = new XmesoFormDataBean();
+		formDataExpert = new XmesoFormPartSet();
 		Border border = BorderFactory.createTitledBorder("Expert");
 		formPanelExpert.setBorder(border);
-		formPanelExpert.setFormDataBean(formDataExpert);
+		formPanelExpert.setFormPartSet(formDataExpert);
 		formPanelExpert.buildPanel();
 	
 		formPanelMachine = new XmesoFormPanel();
-		formDataMachine = new XmesoFormDataBean();
+		formDataMachine = new XmesoFormPartSet();
 		border = BorderFactory.createTitledBorder("Xmeso");
 		formPanelMachine.setBorder(border);
-		formPanelMachine.setFormDataBean(formDataMachine);
+		formPanelMachine.setFormPartSet(formDataMachine);
 		formPanelMachine.buildPanel();
 	}
 
@@ -207,7 +209,7 @@ public class Workbench extends JFrame implements ActionListener,
 	private void establishExtractor() {
 		try {
 			EncounterKnowlegeExractorFactory
-					.setEncounterKnowledgeExtractor(new EncounterKnowledgeExtractorCtakes());
+					.setEncounterKnowledgeExtractor(new EncounterKnowledgeExtractorXmeso());
 			EncounterKnowlegeExractorFactory.getEncounterKnowledgeExtractor()
 					.setAnalysisEngine(cTakesAnalysisEngine);
 
@@ -306,7 +308,8 @@ public class Workbench extends JFrame implements ActionListener,
 				&& evt.getNewValue().equals("Finished")) {
 			dialogWorkerPatientLoader.dispose();
 			patients.clear();
-			controller.constructFastDagFromRdbms();
+//			controller.constructFastDagFromRdbms();
+			controller.constructFastPatientEncountersFromRdbms();
 			buildFormPanels();
 			buildPatientViewerPanel();
 			mainPanel.remove(patientViewerPanel);

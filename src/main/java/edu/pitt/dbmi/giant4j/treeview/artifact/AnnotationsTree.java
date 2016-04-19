@@ -44,44 +44,16 @@ public class AnnotationsTree {
 			DefaultMutableTreeNode patientNode = new DefaultMutableTreeNode(
 					patientUserObject);
 			cohortNode.add(patientNode);
-			
-			DefaultMutableTreeNode corporaNode = new DefaultMutableTreeNode(new AnnotationsCorporaUserObject());
-			patientNode.add(corporaNode);
 			Iterator<KbEncounter> encounterIterator = kbPatient.getEncounters()
 					.iterator();
 			while (encounterIterator.hasNext()) {
-				
 				KbEncounter kbEncounter = encounterIterator.next();
 				AnnotationsEncounterUserObject encounterUserObject = new AnnotationsEncounterUserObject();
 				encounterUserObject.setEncounter(kbEncounter);
 				DefaultMutableTreeNode encounterNode = new DefaultMutableTreeNode(
 						encounterUserObject);
-				corporaNode.add(encounterNode);
-				
-				AnnotationsAnaforaUserObject anaforaUserObject = new AnnotationsAnaforaUserObject();
-				anaforaUserObject.setKbEncounter(kbEncounter);
-				encounterNode.add(new DefaultMutableTreeNode(
-						anaforaUserObject));
-				
-				AnnotationsCtakesUserObject cTakesUserObject = new AnnotationsCtakesUserObject();
-				cTakesUserObject.setKbEncounter(kbEncounter);
-				encounterNode.add(new DefaultMutableTreeNode(
-						cTakesUserObject));
+				patientNode.add(encounterNode);
 			}
-			
-			AnnotationsSummaryUserObject summaryUserObject = new AnnotationsSummaryUserObject();
-			summaryUserObject.setPatient(kbPatient);
-			summaryUserObject.setProvider("XmesoProvider:expert");
-			DefaultMutableTreeNode summaryNode = new DefaultMutableTreeNode(
-					summaryUserObject);
-			patientNode.add(summaryNode);
-			
-			summaryUserObject = new AnnotationsSummaryUserObject();
-			summaryUserObject.setPatient(kbPatient);
-			summaryUserObject.setProvider("XmesoProvider:xmeso");
-			summaryNode = new DefaultMutableTreeNode(
-					summaryUserObject);
-			patientNode.add(summaryNode);
 		}
 		tree = new JTree(root);
 

@@ -133,13 +133,19 @@ public class AnnotationTabPanel extends JSplitPane implements
 			;
 		} else if (selectedNode.getUserObject() == null) {
 			;
-		} else if (selectedNode.getUserObject() instanceof AnnotationsSummaryUserObject) {
-			processSummaryNode((AnnotationsSummaryUserObject) selectedNode
+		} else if (selectedNode.getUserObject() instanceof AnnotationsPatientUserObject) {
+			processPatientNode((AnnotationsPatientUserObject) selectedNode
 					.getUserObject());
 		} else {
 			processNonSummaryNode(selectedNode);
 		}
 		SwingUtilities.getWindowAncestor(this).repaint(10);
+	}
+
+	private void processPatientNode(AnnotationsPatientUserObject userObject) {
+		KbPatient patient = ((AnnotationsPatientUserObject) userObject).getPatient();
+		summarizableTextPane.setText(patient.fetchInfo());
+		summarizableTextPane.setCaretPosition(0);
 	}
 
 	private void processSummaryNode(

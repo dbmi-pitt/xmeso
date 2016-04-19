@@ -16,7 +16,12 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.apache.commons.io.FileUtils;
 
@@ -28,18 +33,19 @@ import com.jgoodies.forms.layout.FormLayout;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.ontology.PartialPath;
 
-public class XmesoFormPanel extends JPanel {
+public class XmesoFormPanel extends JPanel implements ChangeListener {
 
 	private static final long serialVersionUID = -6106800407531520261L;
 
-	private KbPatient kbPatient;
+	private int kbPatient;
 	private String provider = "Xmeso:expert";
 	private TreeSet<PartialPath> partialPathTreeSet = new TreeSet<PartialPath>();
-	private HashMap<String, PartialPath> partialPathMap =  new HashMap<String, PartialPath>();
+	private HashMap<String, PartialPath> partialPathMap = new HashMap<String, PartialPath>();
 	private List<String> topLevelClses = new ArrayList<String>();
-	
-//	private JPanel formPanel = new JPanel();
 
+	// private JPanel formPanel = new JPanel();
+
+	private JSpinner partChooser;
 	private JComboBox<PartialPath> surgicalProcedureBox;
 	private JComboBox<PartialPath> histologicTypeBox;
 	private JComboBox<PartialPath> tumorSiteBox;
@@ -57,7 +63,8 @@ public class XmesoFormPanel extends JPanel {
 	private JButton resetButton = new JButton("Reset");
 	private JButton clearButton = new JButton("Clear");
 
-	private XmesoFormDataBean formDataBean;
+	private XmesoFormPartSet formPartSet;
+	private int currentPart = 0;
 
 	private CellConstraints cc = new CellConstraints();
 	private int yCoor = 1;
@@ -67,8 +74,7 @@ public class XmesoFormPanel extends JPanel {
 	}
 
 	private void cacheIcons() {
-		new ImageIcon(getClass().getResource(
-				"/images/16f/search16.png"));
+		new ImageIcon(getClass().getResource("/images/16f/search16.png"));
 		resetIcon = new ImageIcon(getClass()
 				.getResource("/images/16f/undo.png"));
 		clearIcon = new ImageIcon(getClass().getResource(
@@ -91,64 +97,81 @@ public class XmesoFormPanel extends JPanel {
 
 		String columnLayout = "right:pref, $lcgap, left:100dlu:grow";
 		StringBuilder rowLayoutBuilder = new StringBuilder();
-		rowLayoutBuilder.append("p");          // Surgical Procedure Bannar
-		rowLayoutBuilder.append(", 30dlu, p"); // Surgical Procedure
-		rowLayoutBuilder.append(", 30dlu:grow, p"); // Histopathologic Type Bannar
-    	rowLayoutBuilder.append(", 30dlu, p"); // Histopathologic Type
-		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Site Bannar
-    	rowLayoutBuilder.append(", 30dlu, p"); // Tumor Site
-		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Configuration Bannar
-    	rowLayoutBuilder.append(", 30dlu, p"); // Tumor Configuration
-		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Differentiation Bannar
-    	rowLayoutBuilder.append(", 30dlu, p"); // Tumor Differentiation
-		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Size Bannar
-    	rowLayoutBuilder.append(", 30dlu, p"); // Size X
-    	rowLayoutBuilder.append(", 20dlu, p"); // Size Y
-    	rowLayoutBuilder.append(", 20dlu, p"); // Size Z
-    	rowLayoutBuilder.append(", 20dlu, p"); // Size Max
-    	rowLayoutBuilder.append(", 30dlu:grow"); // Action Panel Buttons
 
-    	FormLayout dataElementLayout = new FormLayout(columnLayout, rowLayoutBuilder.toString());
-    	dataElementLayout.setColumnGroups(new int[][] {{1},{2},{3}});
-    	dataElementLayout.setRowGroups(new int[][] {{3,5,7,9,11}});
+		rowLayoutBuilder.append("p"); // Part Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Part
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Surgical Procedure Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Surgical Procedure
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Histopathologic Type
+													// Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Histopathologic Type
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Site Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Tumor Site
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Configuration
+													// Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Tumor Configuration
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Differentiation
+													// Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Tumor Differentiation
+		rowLayoutBuilder.append(", 30dlu:grow, p"); // Tumor Size Bannar
+		rowLayoutBuilder.append(", 30dlu, p"); // Size X
+		rowLayoutBuilder.append(", 20dlu, p"); // Size Y
+		rowLayoutBuilder.append(", 20dlu, p"); // Size Z
+		rowLayoutBuilder.append(", 20dlu, p"); // Size Max
+		rowLayoutBuilder.append(", 30dlu:grow"); // Action Panel Buttons
+
+		FormLayout dataElementLayout = new FormLayout(columnLayout,
+				rowLayoutBuilder.toString());
+		dataElementLayout.setColumnGroups(new int[][] { { 1 }, { 2 }, { 3 } });
+		dataElementLayout.setRowGroups(new int[][] { { 3, 5, 7, 9, 11, 13 } });
 		setLayout(dataElementLayout);
-	
-//		setBorder(Borders.DIALOG_BORDER);
+
+		// setBorder(Borders.DIALOG_BORDER);
 
 		// Fill the table with labels and components.
 
+		buildPartChooser();
 		buildSurgicalProcedure();
-        buildHistopathologicType();
+		buildHistopathologicType();
 		buildTumorSite();
 		buildConfiguration();
-     	buildTumorDifferentiation();
-		buildSize();		
+		buildTumorDifferentiation();
+		buildSize();
 		buildActionPanel();
 
 		fillFormDataFromBean();
 	}
-	
+
 	/**
 	 * Creates and intializes the UI components.
-	 * @throws IOException 
+	 * 
+	 * @throws IOException
 	 */
 	private void initComponents() throws IOException {
-		
+
+		SpinnerModel partsModel = new SpinnerNumberModel(currentPart, // initial
+																		// value
+				0, // min
+				formPartSet.getFormData().length - 1, // max
+				1);
+		partChooser = new JSpinner(partsModel);
+		partChooser.addChangeListener(this);
+
 		surgicalProcedureBox = buildComboBoxFromFile("ruta_surgical_procedure.csv");
 		clearAll();
 
 		histologicTypeBox = buildComboBoxFromFile("ruta_histological_type.csv");
 		clearAll();
-		
+
 		tumorSiteBox = buildComboBoxFromFile("ruta_site_of_tumor.csv");
 		clearAll();
-		
+
 		tumorConfigurationBox = buildComboBoxFromFile("ruta_tumor_configuration.csv");
 		clearAll();
-		
+
 		tumorDifferentiationBox = buildComboBoxFromFile("ruta_tumor_differentiation.csv");
 		clearAll();
-		
+
 		sizeOneField.setText("-1.0");
 		sizeTwoField.setText("-1.0");
 		sizeThreeField.setText("-1.0");
@@ -167,7 +190,7 @@ public class XmesoFormPanel extends JPanel {
 		saveButton.setIcon(saveIcon);
 
 	}
-	
+
 	private void buildActionPanel() {
 		String actionsColumnLayout = "1px:grow, center:pref, 1px:grow, "
 				+ "center:pref, 1px:grow, center:pref, 1px:grow";
@@ -186,8 +209,18 @@ public class XmesoFormPanel extends JPanel {
 		add(actionPanel, cc.xyw(1, yCoor, 3));
 	}
 
-	private void buildSurgicalProcedure() {
+	private void buildPartChooser() {
+
 		yCoor = 1;
+		add(createSeparator("Part Chooser"), cc.xyw(1, yCoor, 3));
+
+		yCoor += 1;
+		add(new JLabel("Part"), cc.xyw(1, yCoor, 1));
+		add(partChooser, cc.xyw(3, yCoor, 1));
+	}
+
+	private void buildSurgicalProcedure() {
+		yCoor += 1;
 		add(createSeparator("Surgical Procedure"), cc.xyw(1, yCoor, 3));
 
 		yCoor += 1;
@@ -202,7 +235,7 @@ public class XmesoFormPanel extends JPanel {
 		yCoor += 1;
 		add(new JLabel("Histopathologic Type"), cc.xyw(1, yCoor, 1));
 		add(histologicTypeBox, cc.xyw(3, yCoor, 1));
-		
+
 		System.out.println("ycoor = " + yCoor);
 	}
 
@@ -213,7 +246,7 @@ public class XmesoFormPanel extends JPanel {
 		yCoor += 1;
 		add(new JLabel("Tumor Site One"), cc.xyw(1, yCoor, 1));
 		add(tumorSiteBox, cc.xyw(3, yCoor, 1));
-		
+
 	}
 
 	private void buildConfiguration() {
@@ -236,29 +269,30 @@ public class XmesoFormPanel extends JPanel {
 	}
 
 	private void buildSize() {
-		
+
 		yCoor += 1;
 		add(createSeparator("Tumor Size"), cc.xyw(1, yCoor, 3));
 
 		yCoor += 1;
 		add(new JLabel("SizeX"), cc.xyw(1, yCoor, 1));
 		add(sizeOneField, cc.xyw(3, yCoor, 1));
-		
+
 		yCoor += 1;
 		add(new JLabel("SizeY"), cc.xyw(1, yCoor, 1));
 		add(sizeTwoField, cc.xyw(3, yCoor, 1));
-		
+
 		yCoor += 1;
 		add(new JLabel("SizeZ"), cc.xyw(1, yCoor, 1));
 		add(sizeThreeField, cc.xyw(3, yCoor, 1));
-		
+
 		yCoor += 1;
 		add(new JLabel("SizeMax"), cc.xyw(1, yCoor, 1));
 		add(sizeMaxField, cc.xyw(3, yCoor, 1));
 
 	}
 
-	private JComboBox<PartialPath> buildComboBoxFromFile(String fileName) throws IOException {
+	private JComboBox<PartialPath> buildComboBoxFromFile(String fileName)
+			throws IOException {
 		final String path = "C:\\ws\\ws-xmeso\\xmeso\\resources\\ner";
 		File terminologyDirectory = new File(path);
 		final TreeSet<String> preferredTerms = new TreeSet<String>();
@@ -276,7 +310,7 @@ public class XmesoFormPanel extends JPanel {
 		int pathNumber = 0;
 		for (String preferredTerm : preferredTerms) {
 			PartialPath partialPath = new PartialPath();
-			partialPath.setBaseCode(pathNumber+"");
+			partialPath.setBaseCode(pathNumber + "");
 			partialPath.setPath(preferredTerm);
 			box.addItem(partialPath);
 			pathNumber++;
@@ -291,7 +325,8 @@ public class XmesoFormPanel extends JPanel {
 	}
 
 	protected void performReset() {
-		formDataBean.resetFormData();
+		formPartSet.resetFormData();
+		currentPart = 0;
 		fillFormDataFromBean();
 
 	}
@@ -303,14 +338,6 @@ public class XmesoFormPanel extends JPanel {
 
 	protected void performSave() {
 		System.out.println("performSave()");
-	}
-	
-	public XmesoFormDataBean getFormDataBean() {
-		return formDataBean;
-	}
-
-	public void setFormDataBean(XmesoFormDataBean formDataBean) {
-		this.formDataBean = formDataBean;
 	}
 
 	public TreeSet<PartialPath> getPartialPathTreeSet() {
@@ -337,12 +364,12 @@ public class XmesoFormPanel extends JPanel {
 		this.topLevelClses = topLevelClses;
 	}
 
-	public KbPatient getKbPatient() {
+	public int getKbPatient() {
 		return kbPatient;
 	}
 
-	public void setKbPatient(KbPatient kbPatient) {
-		this.kbPatient = kbPatient;
+	public void setKbPatient(int i) {
+		this.kbPatient = i;
 	}
 
 	public String getProvider() {
@@ -351,6 +378,14 @@ public class XmesoFormPanel extends JPanel {
 
 	public void setProvider(String provider) {
 		this.provider = provider;
+	}
+
+	public XmesoFormPartSet getFormPartSet() {
+		return formPartSet;
+	}
+
+	public void setFormPartSet(XmesoFormPartSet formPartSet) {
+		this.formPartSet = formPartSet;
 	}
 
 	private void clearAll() {
@@ -389,29 +424,33 @@ public class XmesoFormPanel extends JPanel {
 	}
 
 	public void fillFormDataFromBean() {
-		if (formDataBean != null) {
-			fillComboBoxWithString(surgicalProcedureBox, formDataBean.getSurgicalProcedure());
-			fillComboBoxWithString(histologicTypeBox, formDataBean.getHistologicType());
-			fillComboBoxWithString(tumorSiteBox, formDataBean.getTumorSite());
-			fillComboBoxWithString(tumorConfigurationBox, formDataBean.getTumorConfiguration());
-			fillComboBoxWithString(tumorDifferentiationBox, formDataBean.getTumorDifferentiation());
-			fillTextFieldWithString(sizeOneField,
-					formDataBean.getSizeX());
-			fillTextFieldWithString(sizeTwoField,
-					formDataBean.getSizeY());
-			fillTextFieldWithString(sizeThreeField,
-					formDataBean.getSizeZ());
-			fillTextFieldWithString(sizeMaxField,
-					formDataBean.getSizeMax());
-		}
+		XmesoFormDataBean formDataBean = formPartSet.getFormData()[currentPart];
+		fillComboBoxWithString(surgicalProcedureBox,
+				formDataBean.getSurgicalProcedure());
+		fillComboBoxWithString(histologicTypeBox,
+				formDataBean.getHistologicType());
+		fillComboBoxWithString(tumorSiteBox, formDataBean.getTumorSite());
+		fillComboBoxWithString(tumorConfigurationBox,
+				formDataBean.getTumorConfiguration());
+		fillComboBoxWithString(tumorDifferentiationBox,
+				formDataBean.getTumorDifferentiation());
+		fillTextFieldWithString(sizeOneField, formDataBean.getSizeX());
+		fillTextFieldWithString(sizeTwoField, formDataBean.getSizeY());
+		fillTextFieldWithString(sizeThreeField, formDataBean.getSizeZ());
+		fillTextFieldWithString(sizeMaxField, formDataBean.getSizeMax());
 	}
 
 	public void scrapeScreenToBean() {
-		formDataBean.setSurgicalProcedure(surgicalProcedureBox.getSelectedItem().toString());
-		formDataBean.setHistologicType(histologicTypeBox.getSelectedItem().toString());
+		XmesoFormDataBean formDataBean = formPartSet.getFormData()[currentPart];
+		formDataBean.setSurgicalProcedure(surgicalProcedureBox
+				.getSelectedItem().toString());
+		formDataBean.setHistologicType(histologicTypeBox.getSelectedItem()
+				.toString());
 		formDataBean.setTumorSite(tumorSiteBox.getSelectedItem().toString());
-		formDataBean.setTumorConfiguration(tumorConfigurationBox.getSelectedItem().toString());
-		formDataBean.setTumorDifferentiation(tumorDifferentiationBox.getSelectedItem().toString());
+		formDataBean.setTumorConfiguration(tumorConfigurationBox
+				.getSelectedItem().toString());
+		formDataBean.setTumorDifferentiation(tumorDifferentiationBox
+				.getSelectedItem().toString());
 		formDataBean.setSizeX(sizeOneField.getText());
 		formDataBean.setSizeY(sizeTwoField.getText());
 		formDataBean.setSizeZ(sizeThreeField.getText());
@@ -436,6 +475,19 @@ public class XmesoFormPanel extends JPanel {
 	private void fillTextFieldWithString(JTextField textField,
 			String selectedValue) {
 		textField.setText(selectedValue);
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		SpinnerModel model = partChooser.getModel();
+		
+		if (model instanceof SpinnerNumberModel) {
+			SpinnerNumberModel numberModel = (SpinnerNumberModel) model;
+			scrapeScreenToBean();
+			currentPart = numberModel.getNumber()
+					.intValue();
+			fillFormDataFromBean();
+		}
 	}
 
 }

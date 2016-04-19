@@ -166,7 +166,6 @@ public class FormDataBean implements Serializable {
 		this.her2NeuStatus = her2NeuStatus;
 	}
 
-	@SuppressWarnings("unchecked")
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		try {

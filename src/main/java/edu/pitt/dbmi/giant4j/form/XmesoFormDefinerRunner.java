@@ -20,6 +20,7 @@ public class XmesoFormDefinerRunner {
 
 	protected static void createAndShowGUI() {
 		XmesoFormPanel formPanel = new XmesoFormPanel();
+		formPanel.setFormPartSet(new XmesoFormPartSet());
 		formPanel.buildPanel();
 		formPanel.setPreferredSize(new Dimension(1200, 900));
 		JFrame frame = new JFrame("Testing Forms");
