@@ -5,6 +5,7 @@ SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
 
 INT partizerGenNum = -1;
 INT partizerPartNum = -1; 
+INTLIST partizerPartNums;
 INT partizerGenTotal = -1;
 INT partizerPartNum4GenTotal = -1;
 INT partizerPartNum4GenNum = -1;
@@ -27,14 +28,22 @@ BLOCK(PartIndicatorDetector) Document{} {
     PartIndicator {-> CALL(Utilities.CleanBeneathRutas)};
 }
 
-BLOCK(PartHeaderDetector) Document{->
-                ADDFILTERTYPE(CAP,COMMA,CW,PERIOD,SPECIAL,SW,BREAK),
-                ADDRETAINTYPE(NUM,PartIndicator,PartHeaderGenerator,PartNumber)} { 
-  PartIndicator (NUM{->MARK(PartNumber)}|BREAK)+ COLON? {
- ->
-  CREATE(PartHeaderGenerator, 1, 3, "genNumber" = -1, "genCount" = -1)};
-  PartNumber {PARSE(partizerPartNum)->SETFEATURE("partNumber", partizerPartNum)};
+BLOCK(PartHeaderDetector) Document{} { 
+    PartIndicator ((NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)}) (COMMA|SEMICOLON)?)+
+                  (W{REGEXP("and|AND|And")->LOG("GOT and")} (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)}))?
+                  { -> LOG("Got a PartHeaderGenerator"),
+                       CREATE(PartHeaderGenerator, 1, 3, "genNumber" = -1, "genCount" = -1)};              
+    PartNumber {PARSE(partizerPartNum)-> SETFEATURE("partNumber", partizerPartNum)};
 }
+
+//BLOCK(PartHeaderDetector) Document{->
+//                ADDFILTERTYPE(CAP,COMMA,CW,PERIOD,SPECIAL,SW,BREAK),
+//                ADDRETAINTYPE(NUM,PartIndicator,PartHeaderGenerator,PartNumber)} { 
+//  PartIndicator (NUM{->MARK(PartNumber)}|BREAK)+ COLON? {
+// ->
+//  CREATE(PartHeaderGenerator, 1, 3, "genNumber" = -1, "genCount" = -1)};
+//  PartNumber {PARSE(partizerPartNum)->SETFEATURE("partNumber", partizerPartNum)};
+//}
 
 BLOCK(TallyPartHeaderGenerators) 
   Document {} {

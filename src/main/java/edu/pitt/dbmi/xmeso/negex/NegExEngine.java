@@ -27,7 +27,7 @@ public class NegExEngine {
 		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
 	}
 
-	public List<NegPhrase> findNegationIndicators(String sentence) {
+	public List<NegPhrase> findPossibleNegatedConcepts(String sentence) {
 		if(sentence == null || sentence.isEmpty()) {
 			return null;
 		} else {
@@ -190,8 +190,8 @@ public class NegExEngine {
 							if(longestMatchingSequenceKey != Integer.MIN_VALUE) {
 								//NegPhrase longestNegation = commonbaseWords.get(longestMatchingSequenceKey);
 								NegPhrase longestNegation = new NegPhrase();
-                                longestNegation.setNegationPhrase(commonbaseWords.get(longestMatchingSequenceKey).getNegationPhrase());
-                                longestNegation.setNegationType(commonbaseWords.get(longestMatchingSequenceKey).getNegationType());
+								longestNegation.setNegationPhrase(commonbaseWords.get(longestMatchingSequenceKey).getNegationPhrase());
+								longestNegation.setNegationType(commonbaseWords.get(longestMatchingSequenceKey).getNegationType());
 								longestNegation.setStartIndex(sentenceIndex);
 								longestNegation.setEndIndex(sentenceIndex+longestMatchingSequenceLength);
 								result.add(longestNegation);

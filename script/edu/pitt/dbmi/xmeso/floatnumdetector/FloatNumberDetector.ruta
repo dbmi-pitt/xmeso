@@ -8,25 +8,26 @@ BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
   PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
 
-BLOCK(DetectUom) Document{->RETAINTYPE(SPACE)} {
-    (NUM|FloatNum) SPACE+?    
+BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
+    (NUM|FloatNum) (SPACE|BREAK)+?    
     @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
     ANY{-PARTOF(W)};
 }
 
-BLOCK(SizeDetection) Document{->RETAINTYPE(FloatNum,UOM)} {
-    FLOAT dimensionOne;
-    FLOAT dimensionTwo;
-    FLOAT dimensionThree;
-    FLOAT dimensionMaximum = -1.0;
-    STRING unitOfMeasure;
-    FloatNum{PARSE(dimensionOne)} 
-    W{REGEXP("x")} 
-    FloatNum{PARSE(dimensionTwo)} 
-    W{REGEXP("x")} 
-    FloatNum{PARSE(dimensionThree)} 
+FLOAT dimensionOne;
+FLOAT dimensionTwo;
+FLOAT dimensionThree;
+FLOAT dimensionMaximum = -1.0;
+STRING unitOfMeasure;
+BLOCK(SizeDetection) Document{->RETAINTYPE(BREAK)} {
+    (NUM{PARSE(dimensionOne)}|FloatNum{PARSE(dimensionOne)}) 
+    W{REGEXP("x",true)}
+    (NUM{PARSE(dimensionTwo)}|FloatNum{PARSE(dimensionTwo)}) 
+    W{REGEXP("x",true)} 
+    (NUM{PARSE(dimensionThree)}|FloatNum{PARSE(dimensionThree)}) 
+    BREAK*
     UOM{-> MATCHEDTEXT(unitOfMeasure), 
-      CREATE(XmesoSize, 1, 6,
+      CREATE(XmesoSize, 1, 7,
         "codedPenalty" = 1, 
         "maxDim" = dimensionMaximum, 
         "dimOne" = dimensionOne, 
@@ -34,8 +35,6 @@ BLOCK(SizeDetection) Document{->RETAINTYPE(FloatNum,UOM)} {
         "dimThree" = dimensionThree, 
         "uom" = unitOfMeasure)};
 }
-
-
 
 BLOCK(MaximumSizeCalculator) XmesoSize{} {
     XmesoSize.dimOne > XmesoSize.maxDim{-> 

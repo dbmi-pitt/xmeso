@@ -37,7 +37,7 @@ public class XmesoFormPanel extends JPanel implements ChangeListener {
 
 	private static final long serialVersionUID = -6106800407531520261L;
 
-	private int kbPatient;
+	private KbPatient kbPatient;
 	private String provider = "Xmeso:expert";
 	private TreeSet<PartialPath> partialPathTreeSet = new TreeSet<PartialPath>();
 	private HashMap<String, PartialPath> partialPathMap = new HashMap<String, PartialPath>();
@@ -364,12 +364,12 @@ public class XmesoFormPanel extends JPanel implements ChangeListener {
 		this.topLevelClses = topLevelClses;
 	}
 
-	public int getKbPatient() {
+	public KbPatient getKbPatient() {
 		return kbPatient;
 	}
 
-	public void setKbPatient(int i) {
-		this.kbPatient = i;
+	public void setKbPatient(KbPatient kbPatient) {
+		this.kbPatient = kbPatient;
 	}
 
 	public String getProvider() {

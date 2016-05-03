@@ -28,8 +28,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import org.apache.commons.lang3.StringUtils;
 
 import edu.pitt.dbmi.giant4j.controller.Controller;
-import edu.pitt.dbmi.giant4j.form.XmesoFormDataBean;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPanel;
+import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
 import edu.pitt.dbmi.giant4j.kb.KbEncounter;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsEncounterUserObject;
@@ -54,15 +54,16 @@ public class PatientViewerPanel extends JSplitPane implements
 	private Controller controller;
 	private AnnotationsTree annotationsTree;
 
-	private KbEncounter currentEncounter;
+	private AnnotationsPatientUserObject currentPatient;
+	private AnnotationsEncounterUserObject currentEncounter;
 	private JPanel formBorderedExpertPanel = new JPanel(new BorderLayout());
 	private JPanel formBorderedMachinePanel = new JPanel(new BorderLayout());
 	private XmesoFormPanel formExpertPanel;
 	private XmesoFormPanel formMachinePanel;
 	private AnnotationsSummaryUserObject currentExpertSummaryNode;
 	private AnnotationsSummaryUserObject currentMachineSummaryNode;
-	private XmesoFormDataBean currentFormBeanExpert;
-	private XmesoFormDataBean currentFormBeanMachine;
+	private XmesoFormPartSet currentPartSetExpert;
+	private XmesoFormPartSet currentPartSetMachine;
 
 	public PatientViewerPanel() {
 	}
@@ -158,56 +159,33 @@ public class PatientViewerPanel extends JSplitPane implements
 	}
 
 	private void processPatientSelection(DefaultMutableTreeNode selectedNode) {
+		DefaultMutableTreeNode patientNode = (DefaultMutableTreeNode) selectedNode;
 		DefaultMutableTreeNode encounterNode = (DefaultMutableTreeNode) selectedNode
-		.getChildAt(0).getChildAt(0);
-		currentEncounter = ((AnnotationsEncounterUserObject) encounterNode.getUserObject()).getEncounter();
-		processKbEncounter(currentEncounter);
-		DefaultMutableTreeNode summaryNode = (DefaultMutableTreeNode) selectedNode
-				.getChildAt(1);
-		currentExpertSummaryNode = (AnnotationsSummaryUserObject) summaryNode.getUserObject();
-		summaryNode = (DefaultMutableTreeNode) selectedNode
-				.getChildAt(2);
-		currentMachineSummaryNode = (AnnotationsSummaryUserObject) summaryNode.getUserObject();
-		cacheObservationInstance(currentExpertSummaryNode);
-		cacheObservationInstance(currentMachineSummaryNode);
-		currentFormBeanExpert = controller
-				.findFormDataByInstanceNum(currentExpertSummaryNode
-						.getObservationInstanceNumber());
-		currentFormBeanMachine = controller
-				.findFormDataByInstanceNum(currentMachineSummaryNode
-						.getObservationInstanceNumber());
-		populateForm(currentExpertSummaryNode, formExpertPanel,
-				currentFormBeanExpert);
-		populateForm(currentMachineSummaryNode, formMachinePanel,
-				currentFormBeanMachine);
+		.getChildAt(0);
+		currentPatient = ((AnnotationsPatientUserObject) selectedNode.getUserObject());
+		currentEncounter = ((AnnotationsEncounterUserObject) encounterNode.getUserObject());
+		
+		processKbEncounter(currentPatient, currentEncounter);
+		populateForm(currentEncounter, formExpertPanel,
+				currentPartSetExpert);
+		populateForm(currentEncounter, formMachinePanel,
+				currentPartSetMachine);
 	}
 
-	private void populateForm(AnnotationsSummaryUserObject summaryUserObject,
-			XmesoFormPanel formPanel, XmesoFormDataBean formData) {
-		if (formData != null) {
-			formPanel.setKbPatient(summaryUserObject.getPatient());
-			formPanel.setProvider(summaryUserObject.getProvider());
-			formPanel.setFormDataBean(formData);
+	private void populateForm(AnnotationsEncounterUserObject currentEncounter,
+			XmesoFormPanel formPanel, XmesoFormPartSet formPartSet) {
+		if (formPartSet != null) {
+			formPanel.setKbPatient(currentPatient.getPatient());
+			formPanel.setProvider(currentEncounter.getProvider());
+			formPanel.setFormPartSet(formPartSet);
 			formPanel.fillFormDataFromBean();
 		}
 	}
 
-	private void cacheObservationInstance(
-			AnnotationsSummaryUserObject summaryUserObj) {
-		long observationInstanceNum = summaryUserObj
-				.getObservationInstanceNumber();
-		if (observationInstanceNum < 0) {
-			KbPatient patient = summaryUserObj.getPatient();
-			String provider = summaryUserObj.getProvider();
-			observationInstanceNum = controller
-					.findObservationInstanceNumberForForm(patient, provider);
-			summaryUserObj.setObservationInstanceNumber(observationInstanceNum);
-		}
-	}
-
-	private void processKbEncounter(KbEncounter encounter) {
+	private void processKbEncounter(AnnotationsPatientUserObject currentPatient, AnnotationsEncounterUserObject currentEncounter) {
 		reportTextPane.setText("");
-		appendText(encounter.getContent());
+		String encounterContent = currentEncounter.getEncounter().getContent();
+		appendText(encounterContent);
 		reportTextPane.setCaretPosition(0);
 	}
 
@@ -246,17 +224,17 @@ public class PatientViewerPanel extends JSplitPane implements
 			if (srcButton.getParent().getParent() == formExpertPanel) {
 				System.out.println("Got action from Expert panel");
 				processFormPanelAction(e, currentExpertSummaryNode,
-						formExpertPanel, currentFormBeanExpert);
+						formExpertPanel, currentPartSetExpert);
 			} else if (srcButton.getParent() == formMachinePanel) {
 				System.out.println("Got action from Machine panel");
 				processFormPanelAction(e, currentMachineSummaryNode,
-						formMachinePanel, currentFormBeanMachine);
+						formMachinePanel, currentPartSetMachine);
 			}
 		}
 	}
 
 	private void processFormPanelAction(ActionEvent e,
-			AnnotationsSummaryUserObject summaryUserObject, XmesoFormPanel formPanel, XmesoFormDataBean formData) {
+			AnnotationsSummaryUserObject summaryUserObject, XmesoFormPanel formPanel, XmesoFormPartSet formData) {
 		if (e.getActionCommand().startsWith("Form:")) {
 			String commandSuffix = StringUtils.substringAfterLast(
 					e.getActionCommand(), ":");
@@ -271,15 +249,15 @@ public class PatientViewerPanel extends JSplitPane implements
 	}
 
 	private void processClearForm(XmesoFormPanel formPanel) {
-		XmesoFormDataBean formData = new XmesoFormDataBean();
-		formPanel.setFormDataBean(formData);
+		XmesoFormPartSet formData = new XmesoFormPartSet();
+		formPanel.setFormPartSet(formData);
 		formPanel.fillFormDataFromBean();
 		SwingUtilities.getWindowAncestor(this).repaint(10);
 	}
 	
 	private void processResetForm(
-			XmesoFormPanel formPanel, XmesoFormDataBean formData) {
-		formPanel.setFormDataBean(formData);
+			XmesoFormPanel formPanel, XmesoFormPartSet formData) {
+		formPanel.setFormPartSet(formData);
 		formPanel.fillFormDataFromBean();
 		SwingUtilities.getWindowAncestor(this).repaint(10);
 	}
@@ -290,7 +268,7 @@ public class PatientViewerPanel extends JSplitPane implements
 				.getObservationInstanceNumber();
 		formPanel.scrapeScreenToBean();
 		controller.saveObservationFormData(observationInstanceNumber,
-				formPanel.getFormDataBean());
+				formPanel.getFormPartSet());
 	}
 
 
