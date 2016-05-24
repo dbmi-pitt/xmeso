@@ -1,0 +1,19 @@
+PACKAGE edu.pitt.dbmi.xmeso.avpairs;
+
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
+
+BLOCK(DetectLymphNodesExamined) Document{->FILTERTYPE(SPECIAL)} {
+  INT numberOfLymphNodes;
+  NUM{PARSE(numberOfLymphNodes)} 
+  W{REGEXP("LYMPH")} 
+  W{REGEXP("NODES")} 
+  W{REGEXP("INVOLVED")->LOG("FOUND INVOLVED LYMPH NODE")};
+  }
+  
+BLOCK(DetectPositiveLymphNodes) Document{} {
+  W{REGEXP("METASTASES")} 
+  W{REGEXP("INVOLVING")} 
+  ANY+
+  W{REGEXP("LYMPH")} 
+  W{REGEXP("NODES")->LOG("DISCOVERED POSITIVE LYMPH NODES")};
+}

@@ -9,6 +9,11 @@ public class I2b2MetaDataSourceManager extends I2b2DataSourceManager {
 	
 	protected void addAnnotatedClasses() {
         configuration.addAnnotatedClass(XmesoOntology.class);
+        configuration.addAnnotatedClass(NcatsDemographics.class);
+        configuration.addAnnotatedClass(NcatsIcd9Diag.class);
+        configuration.addAnnotatedClass(NcatsIcd9Proc.class);
+        configuration.addAnnotatedClass(NcatsVisitDetails.class);
+        configuration.addAnnotatedClass(NmvbMesothelioma.class);      
         configuration.addAnnotatedClass(OntProcessStatus.class);
         configuration.addAnnotatedClass(TableAccess.class);
     }
