@@ -63,133 +63,14 @@
             </features>
         </typeDescription>
         <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</name>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoUltrastructuralFindings</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
-            <supertypeName>uima.tcas.Annotation</supertypeName>
-            <features>
-                <featureDescription>
-                    <name>currentPart</name>
-                    <description>currentPart</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>numberOfParts</name>
-                    <description>numberOfParts</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>currentPenalty</name>
-                    <description>currentPenalty</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>numberOfPenalties</name>
-                    <description>numberOfPenalties</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>currentSectionLevel</name>
-                    <description>currentSectionLevel</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>numberOfSectionLevels</name>
-                    <description>numberOfSectionLevels</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>surgicalProcedure</name>
-                    <description>surgicalProcedure</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>histopathologicalType</name>
-                    <description>histopathologicalType</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorSite</name>
-                    <description>tumorSite</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorConfiguration</name>
-                    <description>tumorConfiguration</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorDifferentiation</name>
-                    <description>tumorDifferentiation</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionX</name>
-                    <description>sizeDimensionX</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionY</name>
-                    <description>sizeDimensionY</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionZ</name>
-                    <description>sizeDimensionZ</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionMax</name>
-                    <description>sizeDimensionMax</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-            </features>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</name>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSpecialStain</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
-            <supertypeName>uima.tcas.Annotation</supertypeName>
-            <features>
-                <featureDescription>
-                    <name>sectionName</name>
-                    <description>sectionName</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sectionLevel</name>
-                    <description>sectionLevel</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>partNumber</name>
-                    <description>partNumber</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>snomedCode</name>
-                    <description>snomedCode</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>i2b2OntologyPath</name>
-                    <description>i2b2OntologyPath</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>semanticType</name>
-                    <description>semanticType</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>codedPenalty</name>
-                    <description>codedPenalty</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>isNegated</name>
-                    <description>isNegated</description>
-                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
-                </featureDescription>
-            </features>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.Section</name>
@@ -204,6 +85,23 @@
                 <featureDescription>
                     <name>level</name>
                     <description>level</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>attribute</name>
+                    <description>attribute</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>value</name>
+                    <description>value</description>
                     <rangeTypeName>uima.cas.Integer</rangeTypeName>
                 </featureDescription>
             </features>
@@ -258,9 +156,143 @@
             </features>
         </typeDescription>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>sectionName</name>
+                    <description>sectionName</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sectionLevel</name>
+                    <description>sectionLevel</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>partNumber</name>
+                    <description>partNumber</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>snomedCode</name>
+                    <description>snomedCode</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>coveredText</name>
+                    <description>coveredText</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>i2b2OntologyPath</name>
+                    <description>i2b2OntologyPath</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>semanticType</name>
+                    <description>semanticType</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>codedPenalty</name>
+                    <description>codedPenalty</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>isNegated</name>
+                    <description>isNegated</description>
+                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.EndOfSection</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.LymphNodesExamined</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoLymphNodesExamined</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>currentPart</name>
+                    <description>currentPart</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorSite</name>
+                    <description>tumorSite</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>histopathologicalType</name>
+                    <description>histopathologicalType</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorConfiguration</name>
+                    <description>tumorConfiguration</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorDifferentiation</name>
+                    <description>tumorDifferentiation</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorSiteTerm</name>
+                    <description>tumorSiteTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>histopathologicalTypeTerm</name>
+                    <description>histopathologicalTypeTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorConfigurationTerm</name>
+                    <description>tumorConfigurationTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>tumorDifferentiationTerm</name>
+                    <description>tumorDifferentiationTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sizeDimensionX</name>
+                    <description>sizeDimensionX</description>
+                    <rangeTypeName>uima.cas.Float</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sizeDimensionY</name>
+                    <description>sizeDimensionY</description>
+                    <rangeTypeName>uima.cas.Float</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sizeDimensionZ</name>
+                    <description>sizeDimensionZ</description>
+                    <rangeTypeName>uima.cas.Float</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sizeDimensionMax</name>
+                    <description>sizeDimensionMax</description>
+                    <rangeTypeName>uima.cas.Float</rangeTypeName>
+                </featureDescription>
+            </features>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.Size</name>
@@ -271,11 +303,6 @@
             <name>edu.pitt.dbmi.xmeso.model.Model.StageTNM</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
-        </typeDescription>
-        <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</name>
-            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
-            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</supertypeName>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.SectionHeader</name>
@@ -305,59 +332,19 @@
             <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</name>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
             <features>
                 <featureDescription>
-                    <name>currentPart</name>
-                    <description>currentPart</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>surgicalProcedure</name>
-                    <description>surgicalProcedure</description>
+                    <name>attribute</name>
+                    <description>attribute</description>
                     <rangeTypeName>uima.cas.String</rangeTypeName>
                 </featureDescription>
                 <featureDescription>
-                    <name>histopathologicalType</name>
-                    <description>histopathologicalType</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorSite</name>
-                    <description>tumorSite</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorConfiguration</name>
-                    <description>tumorConfiguration</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>tumorDifferentiation</name>
-                    <description>tumorDifferentiation</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionX</name>
-                    <description>sizeDimensionX</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionY</name>
-                    <description>sizeDimensionY</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionZ</name>
-                    <description>sizeDimensionZ</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sizeDimensionMax</name>
-                    <description>sizeDimensionMax</description>
-                    <rangeTypeName>uima.cas.Float</rangeTypeName>
+                    <name>value</name>
+                    <description>value</description>
+                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
                 </featureDescription>
             </features>
         </typeDescription>
@@ -411,6 +398,16 @@
             </features>
         </typeDescription>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.PositiveLymphNodes</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</supertypeName>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSurgicalProcedure</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
@@ -433,6 +430,63 @@
             </features>
         </typeDescription>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>surgicalProcedure</name>
+                    <description>surgicalProcedure</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>ultrastructuralFindings</name>
+                    <description>ultrastructuralFindings</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>lymphNodesExamined</name>
+                    <description>lymphNodesExamined</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>specialStain</name>
+                    <description>specialStain</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>invasiveTumor</name>
+                    <description>invasiveTumor</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>surgicalProcedureTerm</name>
+                    <description>surgicalProcedureTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>ultrastructuralFindingsTerm</name>
+                    <description>ultrastructuralFindingsTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>lymphNodesExaminedTerm</name>
+                    <description>lymphNodesExaminedTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>specialStainTerm</name>
+                    <description>specialStainTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>invasiveTumorTerm</name>
+                    <description>invasiveTumorTerm</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
@@ -448,6 +502,11 @@
                     <rangeTypeName>uima.cas.Integer</rangeTypeName>
                 </featureDescription>
             </features>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoInvasiveTumor</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorSite</name>
@@ -534,6 +593,18 @@
             <name>edu.pitt.dbmi.xmeso.model.Model.StageM</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.RomanPartNumber</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>edu.pitt.dbmi.xmeso.model.Model.PartNumber</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>romanValue</name>
+                    <description>romanValue</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+            </features>
         </typeDescription>
         <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.UOM</name>

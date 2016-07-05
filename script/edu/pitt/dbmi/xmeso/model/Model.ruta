@@ -9,40 +9,9 @@ DECLARE StageN;
 DECLARE StageM;
 DECLARE StageTNM;
 
-
 DECLARE UOM;
 
-DECLARE Annotation XmesoIterationController(
-    INT currentPart,
-    INT numberOfParts,
-    INT currentPenalty,
-    INT numberOfPenalties,
-    INT currentSectionLevel,
-    INT numberOfSectionLevels,
-    STRING surgicalProcedure,
-    STRING histopathologicalType,
-    STRING tumorSite,
-    STRING tumorConfiguration,
-    STRING tumorDifferentiation,
-    FLOAT sizeDimensionX,
-    FLOAT sizeDimensionY,
-    FLOAT sizeDimensionZ,
-    FLOAT sizeDimensionMax
-);
-
-DECLARE Annotation XmesoTumorForm(
-    INT currentPart,
-    STRING surgicalProcedure,
-    STRING histopathologicalType,
-    STRING tumorSite,
-    STRING tumorConfiguration,
-    STRING tumorDifferentiation,
-    FLOAT sizeDimensionX,
-    FLOAT sizeDimensionY,
-    FLOAT sizeDimensionZ,
-    FLOAT sizeDimensionMax);
-
-DECLARE XmesoIterationController EndOfDocument;
+DECLARE Annotation EndOfDocument;
 DECLARE Annotation SubsumableSectionHeader(STRING name, INT level);
 DECLARE Annotation SectionHeader(STRING name, INT level);
 DECLARE Annotation Section(STRING name, INT level);
@@ -50,6 +19,7 @@ DECLARE EndOfSection;
 DECLARE WholeNumberList;
 DECLARE PartIndicator;
 DECLARE Annotation PartNumber(INT partNumber, INT genNumber, INT genSeq);
+DECLARE PartNumber RomanPartNumber(STRING romanValue);
 DECLARE Annotation PartHeaderGenerator(INT genNumber, INT genCount);
 DECLARE Annotation PartHeader(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation Part(STRING sectionName, INT sectionLevel, INT partNumber);
@@ -65,6 +35,7 @@ DECLARE Annotation XmesoNamedEntity(STRING sectionName,
  INT sectionLevel,
  INT partNumber,
  STRING snomedCode,
+ STRING coveredText,
  STRING i2b2OntologyPath,
  STRING semanticType,
  INT codedPenalty,
@@ -79,7 +50,42 @@ DECLARE XmesoNamedEntity XmesoTumorConfiguration;
 DECLARE XmesoNamedEntity XmesoTumorDifferentiation;
 DECLARE XmesoNamedEntity XmesoSubsumingTumorSite;
 DECLARE XmesoNamedEntity XmesoImmunoHistochemicalProfile;
+DECLARE XmesoNamedEntity XmesoUltrastructuralFindings;
+DECLARE XmesoNamedEntity XmesoLymphNodesExamined;
+DECLARE XmesoNamedEntity XmesoSpecialStain;
+DECLARE XmesoNamedEntity XmesoInvasiveTumor;
 
+DECLARE Annotation XmesoBooleanDataElement(STRING attribute,
+                                           BOOLEAN value);
+DECLARE Annotation XmesoNumberDataElement(STRING attribute, INT value);
 
+DECLARE XmesoBooleanDataElement PositiveLymphNodes;
+DECLARE XmesoNumberDataElement LymphNodesExamined;
 
+DECLARE Annotation XmesoCaseForm (
+    STRING surgicalProcedure,
+    STRING ultrastructuralFindings,
+    STRING lymphNodesExamined,
+    STRING specialStain,
+    STRING invasiveTumor,  
+    STRING surgicalProcedureTerm,
+    STRING ultrastructuralFindingsTerm,
+    STRING lymphNodesExaminedTerm,
+    STRING specialStainTerm,
+    STRING invasiveTumorTerm);
+    
+DECLARE Annotation XmesoTumorForm(
+    INT currentPart,
+    STRING tumorSite,
+    STRING histopathologicalType,
+    STRING tumorConfiguration,
+    STRING tumorDifferentiation,
+    STRING tumorSiteTerm,
+    STRING histopathologicalTypeTerm,
+    STRING tumorConfigurationTerm,
+    STRING tumorDifferentiationTerm,
+    FLOAT sizeDimensionX,
+    FLOAT sizeDimensionY,
+    FLOAT sizeDimensionZ,
+    FLOAT sizeDimensionMax);
                         

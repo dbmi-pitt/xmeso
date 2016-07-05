@@ -339,8 +339,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SubsumableSectionHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SectionHeader</type>
@@ -349,6 +347,7 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.WholeNumberList</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartIndicator</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartNumber</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.RomanPartNumber</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
@@ -366,6 +365,16 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorDifferentiation</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSubsumingTumorSite</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoImmunoHistochemicalProfile</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoUltrastructuralFindings</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoLymphNodesExamined</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSpecialStain</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoInvasiveTumor</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PositiveLymphNodes</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.LymphNodesExamined</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
                 </inputs>
                 <outputs>
                     <type>edu.pitt.dbmi.xmeso.model.Model.DeIdBannarAnnotation</type>
@@ -376,8 +385,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.StageTNM</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.UOM</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoIterationController</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.EndOfDocument</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SubsumableSectionHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.SectionHeader</type>
@@ -386,6 +393,7 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.WholeNumberList</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartIndicator</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartNumber</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.RomanPartNumber</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
@@ -403,6 +411,16 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorDifferentiation</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSubsumingTumorSite</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoImmunoHistochemicalProfile</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoUltrastructuralFindings</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoLymphNodesExamined</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSpecialStain</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoInvasiveTumor</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.PositiveLymphNodes</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.LymphNodesExamined</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
                 </outputs>
                 <languagesSupported/>
             </capability>

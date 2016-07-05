@@ -68,16 +68,14 @@ public class EncounterKnowledgeExtractorXmeso implements
 		for (AnnotationFS tumorFormFS : JCasUtil.select(encounterJCas, XmesoTumorForm.class)) {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
 			int currentPart = tumorForm.getCurrentPart();
-			String surgicalProcedureCode = tumorForm.getSurgicalProcedure();
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorSiteCode = tumorForm.getTumorSite();
 			String tumorConfigurationCode = tumorForm
 					.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm
-					.getTumorDifferentiation();		
-			partSet.getFormData()[currentPart].setSurgicalProcedure(surgicalProcedureCode);
-			partSet.getFormData()[currentPart].setHistologicType(histologicTypeCode);
+					.getTumorDifferentiation();	
 			partSet.getFormData()[currentPart].setTumorSite(tumorSiteCode);
+			partSet.getFormData()[currentPart].setHistologicType(histologicTypeCode);
 			partSet.getFormData()[currentPart].setTumorConfiguration(tumorConfigurationCode);
 			partSet.getFormData()[currentPart].setTumorDifferentiation(tumorDifferentiationCode);
 		}

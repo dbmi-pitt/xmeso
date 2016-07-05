@@ -194,7 +194,6 @@ public class PartizerAnnotationEngine extends
 	private void initializeDefaultTumorForm(JCas jCas) {
 		defaultTumorForm = new XmesoTumorForm(jCas);
 		defaultTumorForm.setCurrentPart(-1);
-		defaultTumorForm.setSurgicalProcedure("PROC:UNKNOWN");
 		defaultTumorForm.setHistopathologicalType("HIST_TYPE:UNKNOWN");
 		defaultTumorForm.setTumorSite("TUMOR_SITE:UNKNOWN");
 		defaultTumorForm.setTumorConfiguration("TUMOR_CONFIG:UNKNOWN");
@@ -210,11 +209,9 @@ public class PartizerAnnotationEngine extends
 	private void initializeCurrentTumorForm(JCas jCas) {
 		currentTumorForm = new XmesoTumorForm(jCas);
 		currentTumorForm.setCurrentPart(currentPart);
-		currentTumorForm.setSurgicalProcedure(defaultTumorForm
-				.getSurgicalProcedure());
+		currentTumorForm.setTumorSite(defaultTumorForm.getTumorSite());
 		currentTumorForm.setHistopathologicalType(defaultTumorForm
 				.getHistopathologicalType());
-		currentTumorForm.setTumorSite(defaultTumorForm.getTumorSite());
 		currentTumorForm.setTumorConfiguration(defaultTumorForm
 				.getTumorConfiguration());
 		currentTumorForm.setTumorDifferentiation(defaultTumorForm
@@ -271,14 +268,7 @@ public class PartizerAnnotationEngine extends
 					if (isCurrent) {
 						String simpleClassName = namedEntity.getClass()
 								.getSimpleName();
-						if ("XmesoSurgicalProcedure".equals(simpleClassName)) {
-							if (defaultTumorForm.getSurgicalProcedure().equals(
-									currentTumorForm.getSurgicalProcedure())) {
-								currentTumorForm
-										.setSurgicalProcedure(namedEntity
-												.getSnomedCode());
-							}
-						} else if ("XmesoHistologicalType"
+						if ("XmesoHistologicalType"
 								.equals(simpleClassName)) {
 							if (defaultTumorForm.getHistopathologicalType()
 									.equals(currentTumorForm

@@ -22,7 +22,7 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.VisitDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.VisitDimensionId;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm;
 
-public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
+public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 
 	private Date timeNow = new Date();
 	private I2b2DemoDataSourceManager dataSourceMgr;
@@ -53,7 +53,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 
 		try {
 			I2b2DemoDataSourceManager i2b2DataDataSourceManager = new I2b2DemoDataSourceManager();
-			I2B2DataDataWriter i2b2DataDataWriter = new I2B2DataDataWriter();
+			I2B2DemoDataWriter i2b2DataDataWriter = new I2B2DemoDataWriter();
 			i2b2DataDataWriter.setDataSourceMgr(i2b2DataDataSourceManager);
 			i2b2DataDataWriter.setSourceSystemCd("Xmeso");
 			i2b2DataDataWriter.execute();

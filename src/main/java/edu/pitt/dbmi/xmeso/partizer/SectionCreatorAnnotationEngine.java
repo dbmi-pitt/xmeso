@@ -51,7 +51,7 @@ public class SectionCreatorAnnotationEngine extends
 			Annotation annotTwo = iterTwo.next();
 			if (annotOne instanceof SectionHeader && ((annotTwo instanceof EndOfSection) ||
 					(annotTwo instanceof EndOfDocument))) {			
-				int sPos = annotOne.getEnd()+1;
+				int sPos = annotOne.getEnd();
 				int ePos = annotTwo.getEnd();
 				if (ePos - sPos > 0) {
 					Section section = new Section(jCas);

@@ -74,13 +74,13 @@ public class PartCreatorAnnotationEngine extends
 				Annotation sAnnot = sPartIterator.next();
 				Annotation eAnnot = ePartIterator.next();
 				if (sAnnot instanceof PartHeaderGenerator) {
-					Collection<PartNumber> nes = JCasUtil.selectCovered(
+					Collection<PartNumber> partNumAnnots = JCasUtil.selectCovered(
 							PartNumber.class, sAnnot);
-					for (PartNumber ne : nes) {
+					for (PartNumber partNumAnnot : partNumAnnots) {
 						Part part = new Part(jCas);
-						partNumbers.add(ne.getPartNumber());
-						part.setPartNumber(ne.getPartNumber());
-						int sPos = sAnnot.getEnd() + 1;
+						partNumbers.add(partNumAnnot.getPartNumber());
+						part.setPartNumber(partNumAnnot.getPartNumber());
+						int sPos = sAnnot.getEnd();
 						int ePos = eAnnot.getBegin() - 1;
 						if (ePos - sPos > 0) {
 							part.setBegin(sPos);
@@ -108,7 +108,6 @@ public class PartCreatorAnnotationEngine extends
 						part.setBegin(section.getBegin());
 						part.setEnd(section.getEnd());
 						part.addToIndexes(jCas);
-						break;
 					}
 				}
 			}

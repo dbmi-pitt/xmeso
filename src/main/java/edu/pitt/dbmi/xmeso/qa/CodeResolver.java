@@ -28,6 +28,7 @@ import org.apache.lucene.store.RAMDirectory;
 import org.hibernate.Criteria;
 
 import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2meta.I2b2MetaDataSourceManager;
+import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2meta.NcatsIcd9Proc;
 import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2meta.NmvbMesothelioma;
 
 public class CodeResolver {
@@ -42,32 +43,50 @@ public class CodeResolver {
 	private final List<String> queryTerms = new ArrayList<String>();
 
 	public static void main(String[] args) {
+
 		CodeResolver codeResolver = new CodeResolver();
 		codeResolver.setMetaDataMgr(new I2b2MetaDataSourceManager());
 		codeResolver.initialize();
-		codeResolver.addQueryTerm("Histological Type");
-		codeResolver.addQueryTerm("Biphasic Mesothelioma");
-		String code = codeResolver.searchForCode();
-		System.out.println("Found code of " + code);
-		codeResolver.clear();
+		String code = "";
 		
-		codeResolver.addQueryTerm("Immunohistochemical Profile");
-		codeResolver.addQueryTerm("CD10");
+//		codeResolver.addQueryTerm("Immunohistochemical Profile");
+//		codeResolver.addQueryTerm("CD10");
+//		String code = codeResolver.searchForCode();
+//		System.out.println("Found code of " + code);
+//		codeResolver.clear();
+//		
+//		codeResolver.addQueryTerm("Immunohistochemical Profile");
+//		codeResolver.addQueryTerm("CD31");
+//		code = codeResolver.searchForCode();
+//		System.out.println("Found code of " + code);
+//		codeResolver.clear();
+//		
+//		codeResolver.addQueryTerm("Immunohistochemical Profile");
+//		codeResolver.addQueryTerm("AE1/3");
+//		code = codeResolver.searchForCode();
+//		System.out.println("Found code of " + code);
+//		codeResolver.clear();
+		
+//		codeResolver.addQueryTerm("Tumor Differentiation or Grade");
+//		codeResolver.addQueryTerm("Not Applicable");
+//		code = codeResolver.searchForCode();
+//		System.out.println("Found code of " + code);
+//		codeResolver.clear();
+//		
+//		codeResolver.addQueryTerm("Tumor Differentiation or Grade");
+//		codeResolver.addQueryTerm("Unknown Differentiation");
+//		code = codeResolver.searchForCode();
+//		System.out.println("Found code of " + code);
+//		codeResolver.clear();
+		
+//		Tumor Configuration
+		
+		codeResolver.addQueryTerm("Special Stain Profile");
+		codeResolver.addQueryTerm("Unknown");
 		code = codeResolver.searchForCode();
 		System.out.println("Found code of " + code);
 		codeResolver.clear();
 		
-		codeResolver.addQueryTerm("Immunohistochemical Profile");
-		codeResolver.addQueryTerm("CD31");
-		code = codeResolver.searchForCode();
-		System.out.println("Found code of " + code);
-		codeResolver.clear();
-		
-		codeResolver.addQueryTerm("Immunohistochemical Profile");
-		codeResolver.addQueryTerm("AE1/3");
-		code = codeResolver.searchForCode();
-		System.out.println("Found code of " + code);
-		codeResolver.clear();
 	}
 
 	public CodeResolver() {
@@ -80,41 +99,86 @@ public class CodeResolver {
 			setDirectory(new RAMDirectory());
 			setAnalyzer(new SimpleAnalyzer());
 			writerConfig = new IndexWriterConfig(analyzer);
-			setWriter(new IndexWriter(directory, writerConfig));		
-			Criteria searchCriteria = metaDataMgr.getSession().createCriteria(
-					NmvbMesothelioma.class);
-			@SuppressWarnings("unchecked")
-			List<NmvbMesothelioma> recordList = searchCriteria.list();
-			for (NmvbMesothelioma record : recordList) {
-				if (StringUtils.isBlank(record.getCFullname())) {
-					continue;
-				}
-				final Set<String> wordSet = new HashSet<String>();
-				parseWordsInString(record.getCFullname(), wordSet);
-				String code = record.getCBasecode();
-				String content = StringUtils.join(wordSet, " ");
-				if (StringUtils.isNotBlank(code) && StringUtils.isNotBlank(content)) {
-					if (content.toLowerCase().contains("biphasic")) {
-						System.out.println("Adding code: " + code + " content: " + content);
-					}
-					Document doc = new Document();
-					doc.add(new Field("code", record.getCBasecode(), Field.Store.YES,
-							Field.Index.NOT_ANALYZED));
-					doc.add(new Field("content", content.toLowerCase(),
-							Field.Store.NO, Field.Index.ANALYZED));
-					writer.addDocument(doc);
-				}
-			}
-			
+			IndexWriter indexWriter = new IndexWriter(directory, writerConfig);
+			setWriter( indexWriter);		
+			indexBasedOnNmvbMetaData(writer);
+			indexBasedNcatsIcd9Proc(writer);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void addQueryTerm(String term) {
-		queryTerms.add(term.toLowerCase());
+	@SuppressWarnings("deprecation")
+	private void indexBasedOnNmvbMetaData(IndexWriter writer) throws IOException {
+		Criteria searchCriteria = metaDataMgr.getSession().createCriteria(
+				NmvbMesothelioma.class);
+		@SuppressWarnings("unchecked")
+		List<NmvbMesothelioma> recordList = searchCriteria.list();
+		for (NmvbMesothelioma record : recordList) {
+			if (StringUtils.isBlank(record.getCFullname())) {
+				continue;
+			}
+			final Set<String> wordSet = new HashSet<String>();
+			parseWordsInString(record.getCFullname(), wordSet);
+			String code = record.getCBasecode();
+			String content = StringUtils.join(wordSet, " ");
+			if (StringUtils.isNotBlank(code) && StringUtils.isNotBlank(content)) {
+				Document doc = new Document();
+				doc.add(new Field("code", record.getCBasecode(), Field.Store.YES,
+						Field.Index.NOT_ANALYZED));
+				doc.add(new Field("content", content.toLowerCase(),
+						Field.Store.NO, Field.Index.ANALYZED));
+				writer.addDocument(doc);
+			}
+		}	
 	}
 	
+	@SuppressWarnings("deprecation")
+	private void indexBasedNcatsIcd9Proc(IndexWriter writer) throws IOException {
+		Criteria searchCriteria = metaDataMgr.getSession().createCriteria(
+				NcatsIcd9Proc.class);
+		@SuppressWarnings("unchecked")
+		List<NcatsIcd9Proc> recordList = searchCriteria.list();
+		for (NcatsIcd9Proc record : recordList) {
+			if (StringUtils.isBlank(record.getCName())) {
+				continue;
+			}
+			final Set<String> wordSet = new HashSet<String>();
+			parseWordsInString(record.getCName(), wordSet);
+			String code = record.getCBasecode();
+			String content = StringUtils.join(wordSet, " ");
+			if (StringUtils.isNotBlank(code) && StringUtils.isNotBlank(content)) {
+				Document doc = new Document();
+				doc.add(new Field("code", record.getCBasecode(), Field.Store.YES,
+						Field.Index.NOT_ANALYZED));
+				doc.add(new Field("content", content.toLowerCase(),
+						Field.Store.NO, Field.Index.ANALYZED));
+				writer.addDocument(doc);
+			}
+		}	
+	}
+
+	public void addQueryTerm(String term) {
+		queryTerms.add(tranformSpecialCases(term.toLowerCase()));
+	}
+	
+	private String tranformSpecialCases(String term) {
+		String result = term;
+		if (result.equals("unknown differentiation")) {
+			result = "not applicable";
+		}
+		else if (result.equalsIgnoreCase("Unknown Meso Type")) {
+			result = "unknown";
+		}
+		else if (result.equalsIgnoreCase("Other Meso Type")) {
+			result = "Other";
+		}
+		else if (result.equalsIgnoreCase("U")) {
+			result = "Unknown";
+		}
+		return result;
+	}
+
 	private String constructQueryFromTerms() {
 		final Set<String> wordSet = new HashSet<String>();
 		for (String term : queryTerms) {
@@ -128,7 +192,7 @@ public class CodeResolver {
 			}
 			query += "content:" + word;
 		}
-		System.out.println("query: " + query);
+//		System.out.println("query: " + query);
 		
 		return query;
 	}

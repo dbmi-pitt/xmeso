@@ -1,18 +1,22 @@
-package edu.pitt.dbmi.xmeso.util;
+package edu.pitt.dbmi.xmeso.qa;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.util.FileUtils;
 
-public class DeIdReportExtractor {
+public class QaDeidParser {
 	
 	private Integer reportNumber;
 	private String formattedReportNumber;
@@ -21,19 +25,33 @@ public class DeIdReportExtractor {
 	private String currentPrincipleDateAsString;
 	private Date currentPrincipleDate;
 	private String currentReportContent;
-
+	
+	private List<XmesoCase> xmesoCases = new ArrayList<XmesoCase>();
+	private Map<String, XmesoCase> xmesoCaseMap = new HashMap<String, XmesoCase>();
+	
 	public static void main(String[] args) {
-		DeIdReportExtractor extractor = new DeIdReportExtractor();
-		try {
-			extractor.execute();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
+		QaDeidParser extractor = new QaDeidParser();
+		extractor.execute();
+	}
+	
+	public void replaceAllCases(List<XmesoCase> xmesoCases) {
+		this.xmesoCases.clear();
+		this.xmesoCases.addAll(xmesoCases);
+		for (XmesoCase xmesoCase : xmesoCases) {
+			String key = xmesoCase.getReportId();
+			xmesoCaseMap.put(key, xmesoCase);
 		}
 	}
 
-	private void execute() throws IOException, ParseException {
+	public void execute()  {
+		try {
+			tryExecute();
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void tryExecute() throws IOException, ParseException {
 		File deIdFile = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\nmvb_train.deid");
 		File outputDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\output\\nmvb160520");
 		if (outputDirectory.exists()) {
@@ -50,7 +68,7 @@ public class DeIdReportExtractor {
 			processHeader(header);
 			processReportContent(reportContent);
 			
-			final String reportName = "report_" + formattedReportNumber + "_" + currentPatientChecksum + "_" + currentReportChecksum + ".txt";
+			final String reportName = "report_" + formattedReportNumber + ".txt";
 			File outputFile =  new File(outputDirectory, reportName);
 			FileUtils.saveString2File( currentReportContent, outputFile, "utf8");
 			System.out.println(formatCurrentReportInformation());
@@ -62,24 +80,28 @@ public class DeIdReportExtractor {
 		currentReportContent += "\n\n$";
 	}
 
+//	1,BohWEAHrwxRB	BohWEAHrwxRB	SP	A12345BohWEAHrwxRB	20160504
 	private void processHeader(String header) throws ParseException {
-		Pattern headerParser = Pattern.compile("(\\d+)\\,([A-Za-z0-9\\+]+)\\s+([A-Za-z0-9\\+]+)\\s+SP\\s+([A-Za-z0-9\\+]+)\\s+(\\d+)");
+		Pattern headerParser = Pattern.compile("(\\d+)\\,(\\S+)\\s+(\\S+)\\s+SP\\s+(\\S+)\\s+(\\d+)");
 		Matcher matcher = headerParser.matcher(header);
 		if (matcher.find()) {
 			reportNumber = new Integer(matcher.group(1));
-			formattedReportNumber = StringUtils.leftPad(reportNumber+"", 5, "0");
 			currentPatientChecksum = matcher.group(2);
-			String currentPatientChecksumVerifier = matcher.group(3);
-			if (currentPatientChecksum.equals(currentPatientChecksumVerifier)) {
-				currentReportChecksum = matcher.group(4);
-				currentPrincipleDateAsString = matcher.group(5);
-				DateFormat df = new SimpleDateFormat("yyyyMMdd");
-				currentPrincipleDate = df.parse(currentPrincipleDateAsString);
+			String key = reportNumber + " " + currentPatientChecksum;
+			XmesoCase xmesoCase = xmesoCaseMap.get(key);
+			if (xmesoCase != null) {
+				formattedReportNumber = StringUtils.leftPad(xmesoCase.getReportNumber(), 5, "0");
+				String currentPatientChecksumVerifier = matcher.group(3);
+				if (currentPatientChecksum.equals(currentPatientChecksumVerifier)) {
+					currentReportChecksum = matcher.group(4);
+					currentPrincipleDateAsString = matcher.group(5);
+					DateFormat df = new SimpleDateFormat("yyyyMMdd");
+					currentPrincipleDate = df.parse(currentPrincipleDateAsString);
+				}
+				else {
+					System.err.println("ERROR in header: " + header);
+				}
 			}
-			else {
-				System.err.println("ERROR in header: " + header);
-			}
-		
 		}
 	}
 	

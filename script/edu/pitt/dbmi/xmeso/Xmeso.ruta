@@ -1,3 +1,4 @@
+
 PACKAGE edu.pitt.dbmi.xmeso;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
@@ -7,6 +8,7 @@ SCRIPT edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Sectionizer;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Partizer;
 SCRIPT edu.pitt.dbmi.xmeso.ner.Ner160412;
+SCRIPT edu.pitt.dbmi.xmeso.avpairs.AvPairDetector;
 
 UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.decomposition.SentenceCreatorAnnotationEngine;
@@ -16,9 +18,9 @@ UIMAFIT edu.pitt.dbmi.xmeso.negex.SentenceTokenizationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.ie.InformationExtractorAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.i2b2.I2B2DataDataWriter;
 
 Document{->CALL(DeIdCleaner.DetectDeId)};
+
 DeIdBannarAnnotation{->CALL(Utilities.CleanBeneathRutas)};
 Document{->CALL(FloatNumberDetector.DetectFloatNum)};
 Document{->CALL(FloatNumberDetector.DetectUom)};
@@ -39,12 +41,20 @@ Document{->CALL(Ner160412.NameEntityTumorSite)};
 Document{->CALL(Ner160412.NameEntitySurgicalProcedure)};
 Document{->CALL(Ner160412.NameEntityTumorConfiguration)};
 Document{->CALL(Ner160412.NameEntityTumorDifferentiation)};
+Document{->CALL(Ner160412.NameEntityUltrastructuralFindings)};
+Document{->CALL(AvPairDetector.DetectLymphNodesExamined)};
+Document{->CALL(AvPairDetector.DetectSpecialStainProfile)};
 Document{->CALL(Partizer.PartIndicatorDetector)};
+Document{->CALL(Partizer.PartHeaderDetectorMultipleAnd)};
+Document{->CALL(Partizer.PartHeaderDetectorTwo)};
+Document{->CALL(Partizer.PartHeaderDetectorMultiple)};
 Document{->CALL(Partizer.PartHeaderDetector)};
+Document{->CALL(Partizer.PartHeaderDetectorRoman)};
+Document{->CALL(Partizer.PartNumberAssigner)};
+Document{->CALL(Partizer.PartNumberAssignerRoman)};
 Document{->CALL(Partizer.TallyPartHeaderGenerators)};
 Document{->EXEC(PartCreatorAnnotationEngine, {Part})};
 Document{->EXEC(SentenceBoundaryDetectionEngine, {XmesoSentence})};
 Document{->EXEC(SentenceTokenizationEngine, {XmesoSentenceToken})};
 Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity,XmesoNegatedConcept})};
-Document{->EXEC(InformationExtractorAnnotationEngine, {XmesoTumorForm})};
-//Document{->EXEC(I2B2DataDataWriter, {})};
+Document{->EXEC(InformationExtractorAnnotationEngine, {XmesoCaseForm, XmesoTumorForm})};

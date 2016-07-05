@@ -3,10 +3,10 @@ package edu.pitt.dbmi.giant4j.controller;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.SerializationUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Query;
@@ -94,13 +94,12 @@ public class Controller {
 	private String serializeFormPartSet(XmesoFormPartSet xmesoFormPartSet) {
 		byte[] formDataBeanByteArray = SerializationUtils
 				.serialize(xmesoFormPartSet);
-		return Base64.getEncoder().encodeToString(formDataBeanByteArray);
+		return Base64.encodeBase64String(formDataBeanByteArray);
 	}
 
 	private XmesoFormPartSet deSerializeFormPartSet(String utfFormPartSetString) {
 		XmesoFormPartSet formPartSet = null;
-		byte[] objectAsBytes = Base64.getDecoder()
-				.decode(utfFormPartSetString);
+		byte[] objectAsBytes = Base64.decodeBase64(utfFormPartSetString);
 		ByteArrayInputStream bais = new ByteArrayInputStream(objectAsBytes);
 		formPartSet = (XmesoFormPartSet) SerializationUtils.deserialize(bais);
 		return formPartSet;

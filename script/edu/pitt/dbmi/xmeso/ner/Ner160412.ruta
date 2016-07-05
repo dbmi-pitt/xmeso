@@ -8,30 +8,35 @@ WORDTABLE xmesoTumorSiteTable = 'ner160412/ruta_site_of_tumor.csv';
 WORDTABLE xmesoSurgicalProcedureTable = 'ner160412/ruta_surgical_procedure.csv';
 WORDTABLE xmesoTumorConfigurationTable = 'ner160412/ruta_tumor_configuration.csv';
 WORDTABLE xmesoTumorDifferentiationTable = 'ner160412/ruta_tumor_differentiation.csv';
+WORDTABLE xmesoUltrastructuralFindingsTable = 'ner160412/ruta_ultrastructural_findings.csv';
 
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 2,
-      xmesoHistologicalTypeTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoHistologicalTypeTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityImmunohistochemicalProfile) Document {} { 
   Document{->MARKTABLE(XmesoImmunoHistochemicalProfile, 2,
-      xmesoImmunohistochemicalProfileTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoImmunohistochemicalProfileTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorSite) Document {} { 
   Document{->MARKTABLE(XmesoTumorSite, 2,
-      xmesoTumorSiteTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoTumorSiteTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntitySurgicalProcedure) Document {} { 
   Document{->MARKTABLE(XmesoSurgicalProcedure, 2,
-      xmesoSurgicalProcedureTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoSurgicalProcedureTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorConfiguration) Document {} { 
   Document{->MARKTABLE(XmesoTumorConfiguration, 2,
-      xmesoTumorConfigurationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoTumorConfigurationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorDifferentiation) Document {} { 
   Document{->MARKTABLE(XmesoTumorDifferentiation, 2,
-      xmesoTumorDifferentiationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+      xmesoTumorDifferentiationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+}
+BLOCK(NameEntityUltrastructuralFindings) Document {} { 
+  Document{->MARKTABLE(XmesoUltrastructuralFindings, 2,
+      xmesoUltrastructuralFindingsTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 
 STRING sectionNameVar = "Undefined";

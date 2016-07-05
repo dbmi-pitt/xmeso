@@ -2,16 +2,32 @@ package edu.pitt.dbmi.xmeso.qa;
 
 public class XmesoPart {
 
-	private String partLabel;
-	private String siteOfTumor;
-	private String histologicaltype;
-	private String tumorType;
-	private String invasiveTumor;
-	private String tumorConfiguration;
-	private String tumorDifferentiationOrGrade;
-	private String surgicalMargins;
-	private String tumorSizeMaxDimensionInCm;
-	private String tumorExtension;
+	private String partLabel = "Unknown";
+	private String siteOfTumor = "Unknown";
+	private String histologicalType = "Unknown";
+	private String tumorType = "Unknown";
+	private String invasiveTumor = "Unknown";
+	private String tumorConfiguration = "Unknown";
+	private String tumorDifferentiationOrGrade = "Unknown";
+	private String surgicalMargins = "Unknown";
+	private String tumorSizeMaxDimensionInCm = "Unknown";
+	private String tumorExtension = "Unknown";
+	
+	public XmesoPart() {
+	}
+
+	public XmesoPart(XmesoPart o) {
+		setPartLabel(o.getPartLabel());
+		setSiteOfTumor(o.getSiteOfTumor());
+		setHistologicalType(o.getHistologicalType());
+		setTumorType(o.getTumorType());
+		setInvasiveTumor(o.getInvasiveTumor());
+		setTumorConfiguration(o.getTumorConfiguration());
+		setTumorDifferentiationOrGrade(o.getTumorDifferentiationOrGrade());
+		setSurgicalMargins(o.getSurgicalMargins());
+		setTumorSizeMaxDimensionInCm(o.getTumorSizeMaxDimensionInCm());
+		setTumorExtension(o.getTumorExtension());
+	}
 
 	public String getPartLabel() {
 		return partLabel;
@@ -29,12 +45,12 @@ public class XmesoPart {
 		this.siteOfTumor = siteOfTumor;
 	}
 
-	public String getHistologicaltype() {
-		return histologicaltype;
+	public String getHistologicalType() {
+		return histologicalType;
 	}
 
-	public void setHistologicaltype(String histologicaltype) {
-		this.histologicaltype = histologicaltype;
+	public void setHistologicalType(String histologicalType) {
+		this.histologicalType = histologicalType;
 	}
 
 	public String getTumorType() {
@@ -93,4 +109,20 @@ public class XmesoPart {
 	public void setTumorExtension(String tumorExtension) {
 		this.tumorExtension = tumorExtension;
 	}
+	
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("\t\tPart Label = " + getPartLabel()+ "\n");
+		sb.append("\t\tSite of Tumor = " + getSiteOfTumor()+ "\n");
+		sb.append("\t\tHistological Type = " + getHistologicalType()+ "\n");
+		sb.append("\t\tTumor Type = " + getTumorType()+ "\n");
+		sb.append("\t\tInvasive Tumor = " + getInvasiveTumor()+ "\n");
+		sb.append("\t\tTumor Configuration = " + getTumorConfiguration()+ "\n");
+		sb.append("\t\tTumor Differentiation or Grade = " + getTumorDifferentiationOrGrade() + "\n");
+		sb.append("\t\tSurgical Margins = " + getSurgicalMargins()+ "\n");
+		sb.append("\t\tTumor size Max Dimension in cm = " + getTumorSizeMaxDimensionInCm()+ "\n");
+		sb.append("\t\tTumor Extension = " + getTumorExtension()+ "\n");
+		return sb.toString();
+	}
+	
 }

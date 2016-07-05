@@ -4,22 +4,23 @@ public class XmesoCase {
 	
 	private static final int CONST_MAX_PARTS = 8;
 	
-	private String project;
-	private String patient;
-	private String patientNumber;
-	private String reportid;
-	private String reportFk;
-	private String reportNumber;
-	private String reportDate;
-	private String largestNodule;
-	private String lymphNodesExamined;
-	private String positiveLymphNodes;
-	private String specialStainProfile;
-	private String statusOfVascularInvasionByTumor;
-	private String ultrastructuralFindings;
-	private String immunohistochemicalProfile;
-	private String procedureType;
-	private String notRequired;
+	private String project = "Unknown";
+	private String patient = "Unknown";
+	private String patientNumber = "Unknown";
+	private String reportId = "Unknown";
+	private String reportFk = "Unknown";
+	private String reportNumber = "Unknown";
+	private String reportDate = "Unknown";
+	private String largestNodule = "Unknown";
+	private String positiveLymphNodes = "Unknown";
+	private String statusOfVascularInvasionByTumor = "Unknown";
+	private String immunohistochemicalProfile = "Unknown";
+	private String notRequired = "Unknown";
+	
+	private String procedureType = "Unknown";
+	private String ultrastructuralFindings = "Unknown";
+	private String lymphNodesExamined = "Unknown";
+	private String specialStainProfile = "Unknown";
 	
 	private XmesoPart[] xmesoParts = new XmesoPart[CONST_MAX_PARTS];
 	
@@ -28,6 +29,33 @@ public class XmesoCase {
 			xmesoParts[idx] = new XmesoPart();
 			xmesoParts[idx].setPartLabel(idx + "");
 		}
+	}
+	
+	public XmesoCase(XmesoCase o) {
+		setProject(o.getProject());
+		setPatient(o.getPatient());
+		setPatientNumber(o.getPatientNumber());
+		setReportId(o.getReportId());
+		setReportFk(o.getReportFk());
+		setReportNumber(o.getReportNumber());
+		setReportDate(o.getReportDate());
+		setLargestNodule(o.getLargestNodule());		
+		setPositiveLymphNodes(o.getPositiveLymphNodes());
+		setSpecialStainProfile(o.getSpecialStainProfile());
+		setStatusOfVascularInvasionByTumor(o.getStatusOfVascularInvasionByTumor());
+		setImmunohistochemicalProfile(o.getImmunohistochemicalProfile());	
+		setNotRequired(o.getNotRequired());
+		
+		setProcedureType(o.getProcedureType());
+		setUltrastructuralFindings(o.getUltrastructuralFindings());
+		setLymphNodesExamined(o.getLymphNodesExamined());
+		setSpecialStainProfile(o.getSpecialStainProfile());
+		
+		for (int partIdx = 0; partIdx < o.getXmesoParts().length; partIdx++) {
+			XmesoPart myXmesoPart = new XmesoPart(o.getXmesoParts()[partIdx]);
+			xmesoParts[partIdx] = myXmesoPart;
+		}
+		
 	}
 	
 	public String getProject() {
@@ -54,12 +82,12 @@ public class XmesoCase {
 		this.patientNumber = patientNumber;
 	}
 
-	public String getReportid() {
-		return reportid;
+	public String getReportId() {
+		return reportId;
 	}
 
-	public void setReportid(String reportid) {
-		this.reportid = reportid;
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
 	}
 
 	public String getReportFk() {
@@ -158,21 +186,39 @@ public class XmesoCase {
 	public void setNotRequired(String notRequired) {
 		this.notRequired = notRequired;
 	}
-	
+
 	public XmesoPart[] getXmesoParts() {
 		return xmesoParts;
 	}
-	
+
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
-		sb.append("Report " + getReportid() + "\n");
+		sb.append("Project = " + getProject()+ "\n");
+		sb.append("Patient = " + getPatient()+ "\n");
+		sb.append("Patient Number = " + getPatientNumber()+ "\n");
+		sb.append("ReportID = " + getReportId() + "\n");
+		sb.append("Report_fk = " + getReportFk() + "\n");
+		sb.append("Report Number = " + getReportNumber() + "\n");
+		sb.append("Report Date = " + getReportDate() + "\n");
+//		sb.append("Largest Nodule = " + getLargestNodule() + "\n");
+//		sb.append("Positive Lymph Nodes = " + getPositiveLymphNodes() + "\n");	
+//		sb.append("Status of vascular invasion by tumor = " + getStatusOfVascularInvasionByTumor() + "\n");
+//		sb.append("Immunohistochemical Profile = " + getImmunohistochemicalProfile() + "\n");
+	
+		sb.append("Procedure Type = " + getProcedureType() + "\n");
+		sb.append("Ultrastructural Findings = " + getUltrastructuralFindings() + "\n");
+		sb.append("Lymph Nodes Examined = " + getLymphNodesExamined() + "\n");
+		sb.append("Special Stain Profile = " + getSpecialStainProfile() + "\n");
+		
 		int partIdx = 0;
 		for (XmesoPart xmesoPart : getXmesoParts()) {
 			if (xmesoPart.getSiteOfTumor() != null && xmesoPart.getSiteOfTumor().length() > 0) {
-				sb.append("\tPart " + partIdx + ") " + xmesoPart.getSiteOfTumor() + "\n");
+				sb.append("\tPart " + partIdx + ")\n" + xmesoPart.toString() + "\n");
 			}
 			partIdx++;
 		}
 		return sb.toString();
 	}
+
+	
 }
