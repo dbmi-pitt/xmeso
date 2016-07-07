@@ -3,7 +3,7 @@ PACKAGE edu.pitt.dbmi.xmeso;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
-SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner;
+SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner;
 SCRIPT edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Sectionizer;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Partizer;
@@ -19,7 +19,7 @@ UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.ie.InformationExtractorAnnotationEngine;
 
-Document{->CALL(DeIdCleaner.DetectDeId)};
+Document{->CALL(DeidCleaner.DetectDeId)};
 
 DeIdBannarAnnotation{->CALL(Utilities.CleanBeneathRutas)};
 Document{->CALL(FloatNumberDetector.DetectFloatNum)};
@@ -45,6 +45,7 @@ Document{->CALL(Ner160412.NameEntityUltrastructuralFindings)};
 Document{->CALL(AvPairDetector.DetectLymphNodesExamined)};
 Document{->CALL(AvPairDetector.DetectSpecialStainProfile)};
 Document{->CALL(Partizer.PartIndicatorDetector)};
+Document{->CALL(Partizer.PartIndicatorDectorNyu)};
 Document{->CALL(Partizer.PartHeaderDetectorMultipleAnd)};
 Document{->CALL(Partizer.PartHeaderDetectorTwo)};
 Document{->CALL(Partizer.PartHeaderDetectorMultiple)};

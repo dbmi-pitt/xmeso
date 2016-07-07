@@ -253,7 +253,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.deidcleaner.DeIdCleaner</string>
+                    <string>edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -314,7 +314,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="DeIdCleanerTypeSystem.xml"/>
+                <import location="DeidCleanerTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

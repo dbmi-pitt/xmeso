@@ -83,25 +83,25 @@ public class PartizerAnnotationEngine extends
 
 	@SuppressWarnings("unused")
 	private void displayDimensions() {
-		System.out.println("Displaying dimensions");
 		StringBuilder sb = new StringBuilder();
+		sb.append("Displaying dimensions\n");
 		sb.append("Part Numbers: ");
 		for (Integer partNumber : partNumbers) {
 			sb.append(partNumber + ", ");
 		}
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 		sb = new StringBuilder();
 		sb.append("Section Levels: ");
 		for (Integer sectionLevel : sectionLevels) {
 			sb.append(sectionLevel + ", ");
 		}
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 		sb = new StringBuilder();
 		sb.append("Coded Penalties:  ");
 		for (Integer codedPenalty : codedPenalties) {
 			sb.append(codedPenalty + ", ");
 		}
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 	}
 
 	private void partizeFromExplicitlyLabeled(JCas jCas) {

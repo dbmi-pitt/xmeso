@@ -18,7 +18,7 @@ public class SentenceTokenizationEngine extends org.apache.uima.fit.component.JC
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		System.out.println(getClass().getName() + " being called via a Ruta script..");
+//		System.out.println(getClass().getName() + " being called via a Ruta script..");
 		sentenceTokenizer(aJCas);
 	}
 

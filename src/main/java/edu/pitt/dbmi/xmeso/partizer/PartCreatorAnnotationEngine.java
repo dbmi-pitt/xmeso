@@ -47,7 +47,7 @@ public class PartCreatorAnnotationEngine extends
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
-		System.out.println("Processing report " + reportNumber++);
+//		System.out.println("Processing report " + reportNumber++);
 		clearCaches();
 		partizeFromExplicitlyLabeled(jCas);
 		partizeFromInferred(jCas);
@@ -81,7 +81,10 @@ public class PartCreatorAnnotationEngine extends
 						partNumbers.add(partNumAnnot.getPartNumber());
 						part.setPartNumber(partNumAnnot.getPartNumber());
 						int sPos = sAnnot.getEnd();
-						int ePos = eAnnot.getBegin() - 1;
+						int ePos = eAnnot.getBegin();
+						if (eAnnot.getCoveredText().startsWith("\n")) {
+							ePos = eAnnot.getBegin() - 1;
+						}
 						if (ePos - sPos > 0) {
 							part.setBegin(sPos);
 							part.setEnd(ePos);

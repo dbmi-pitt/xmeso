@@ -2,6 +2,7 @@ package edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.Map;
 
 import org.hibernate.Session;
 
@@ -19,8 +20,8 @@ public class I2b2UserHomeDataSourceManager extends I2b2DataSourceManager {
 	}
 	
 	public Session getSession() {
-		String userHome = System.getProperty("user.home");
-		String xmesoHome = userHome + File.separator + "xmeso";
+        Map<String, String> env = System.getenv();
+		String xmesoHome = env.get("XMESO_HOME");
 		File xmesoPropertiesFile = new File(xmesoHome + File.separator + "xmeso.properties");
 		try {
 			dbPropertiesUrl = xmesoPropertiesFile.toURI().toURL();

@@ -12,6 +12,77 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <droolsVersion>5.5.0.Final</droolsVersion>
    </properties>
+   <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+     <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>1.4</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <artifactSet>
+                             <includes>
+                                  <include>edu.pitt.dbmi.xmeso:*</include>
+                                  <include>org.apache.uima:*</include>
+                                  <include>antlr:*</include>             
+                                  <include>com.google.guava:*</include>
+                                  <include>org.hibernate:*</include>
+                                  <include>com.oracle:*</include>
+                                  <include>commons-beanutils:*</include>
+                                  <include>de.julielab:*</include>                                                     
+                                  <include>com.lexicalscope.jewelcli:*</include>
+                                  <include>org.antlr:*</include>
+                                  <include>org.htmlparser:*</include>
+                                  <include>commons-collections:*</include>
+                                  <include>org.apache.commons:*</include>
+                                  <include>commons-io:*</include>
+                                  <include>commons-lang:*</include>
+                                  <include>commons-logging:*</include>
+                                  <include>org.springframework:*</include>
+                                  <include>org.codehaus.sonar-plugins:*</include>
+                                  <include>org.slf4j:*</include>
+                                  <include>org.jboss:*</include>
+                                  <include>org.jboss.logging:*</include>
+                                  <include>org.jboss.spec.javax.transaction:*</include>
+                                  <include>dom4j:*</include>
+                                  <include>xml-apis:*</include>
+                                  <include>org.hibernate.javax.persistence:*</include>
+                                  <include>org.hibernate.common:*</include>
+                                  <include>javassist:*</include>
+                                  <include>commons-codec:*</include>
+                                  <include>org.apache.lucene:*</include>
+                              </includes>
+                        </artifactSet>
+                         <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                     <resource>target/classes/**</resource>
+                            </transformer>
+                            <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <!-- Main class -->
+                                <mainClass>edu.pitt.dbmi.xmeso.Xmeso</mainClass>
+                            </transformer>
+                     </transformers>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
    <dependencies>
   	<dependency>
   		<groupId>com.lexicalscope.jewelcli</groupId>
@@ -38,13 +109,15 @@
   		<artifactId>guava</artifactId>
   		<version>19.0-rc1</version>
   	</dependency>
-  	   <dependency>
+ <!-- 
+ <dependency>
         <groupId>oracle.jdbc</groupId>
         <artifactId>ojdbc</artifactId>
         <version>6</version>
         <scope>system</scope>
         <systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
      </dependency>  
+  -->  
      <dependency>
      	<groupId>org.codehaus.sonar-plugins</groupId>
      	<artifactId>sonar-ant-task</artifactId>
@@ -99,6 +172,11 @@
      	<groupId>org.apache.lucene</groupId>
      	<artifactId>lucene-queryparser</artifactId>
      	<version>5.4.0</version>
+     </dependency>
+      <dependency>
+     	<groupId>com.oracle</groupId>
+     	<artifactId>ojdbc6</artifactId>
+     	<version>11.2.0</version>
      </dependency>
    </dependencies>
 </project>

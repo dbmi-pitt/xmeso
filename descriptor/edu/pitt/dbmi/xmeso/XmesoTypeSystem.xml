@@ -3,12 +3,12 @@
     <name>edu.pitt.dbmi.xmeso.XmesoTypeSystem</name>
     <imports>
         <import location="../../../../BasicTypeSystem.xml"/>
-        <import location="deidcleaner/DeIdCleanerTypeSystem.xml"/>
         <import location="model/ModelTypeSystem.xml"/>
         <import location="sectionizer/SectionizerTypeSystem.xml"/>
         <import location="avpairs/AvPairDetectorTypeSystem.xml"/>
         <import location="floatnumdetector/FloatNumberDetectorTypeSystem.xml"/>
         <import location="utilities/UtilitiesTypeSystem.xml"/>
+        <import location="deidcleaner/DeidCleanerTypeSystem.xml"/>
         <import location="sectionizer/PartizerTypeSystem.xml"/>
         <import location="ner/Ner160412TypeSystem.xml"/>
     </imports>

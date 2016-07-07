@@ -32,10 +32,8 @@ public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnn
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {	
-		System.out.println(getClass().getName() + " being called via a Ruta script..");
 		initialize();
 		defineNegations(jCas);
-		System.out.println("Done...");
 	}
 
 	public void defineNegations(JCas jCas) {

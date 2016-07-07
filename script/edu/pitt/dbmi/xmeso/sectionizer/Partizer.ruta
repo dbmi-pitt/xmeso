@@ -24,9 +24,14 @@ BLOCK(ObserveDeIdBannar) Document {} {
   Section {->LOG("Observing a Section?")};
 }
 
-BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK)} {
+BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
     BREAK W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)};
-    PartIndicator {-> CALL(Utilities.CleanBeneathRutas)};
+    PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
+}
+
+BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE(SPECIAL)} {
+    SPECIAL{REGEXP("\""), -PARTOF(PartIndicator)-> MARK(PartIndicator)} NUM{REGEXP(".{1,2}")} PERIOD;
+    PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
 }
 
 BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} { 

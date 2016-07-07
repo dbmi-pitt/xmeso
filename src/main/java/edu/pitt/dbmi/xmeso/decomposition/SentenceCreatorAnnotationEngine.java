@@ -19,9 +19,9 @@ public class SentenceCreatorAnnotationEngine extends
 		for (Part part : JCasUtil.select(aJCas, Part.class)) {
 			String partContent = part.getCoveredText();
 			if (partContent != null && !partContent.trim().isEmpty()) {
-				System.out.println("Processing section "
-						+ part.getSectionName() + " part # "
-						+ part.getPartNumber());
+//				System.out.println("Processing section "
+//						+ part.getSectionName() + " part # "
+//						+ part.getPartNumber());
 				sentenceBoundaryTokenizer(aJCas, part, partContent);
 			}
 		}
@@ -42,8 +42,8 @@ public class SentenceCreatorAnnotationEngine extends
 			annotation.setPartNumber(part.getPartNumber());
 			annotation.setSentenceNumber(sentenceNumber++);
 			annotation.addToIndexes();
-			System.out.println("\t\tAdded Sentence(" + spanStart + ","
-					+ spanEnd + ")");
+//			System.out.println("\t\tAdded Sentence(" + spanStart + ","
+//					+ spanEnd + ")");
 			spanStart += sentence.length();
 		}
 	}

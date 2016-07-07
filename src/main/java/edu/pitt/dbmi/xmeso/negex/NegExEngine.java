@@ -24,7 +24,7 @@ public class NegExEngine {
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
 		initializeTerminology(NEGEX_DICTIONARY_PATH);
-		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
+//		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
 	}
 
 	public List<NegPhrase> findPossibleNegatedConcepts(String sentence) {
@@ -217,7 +217,7 @@ public class NegExEngine {
 		Scanner scanner = null;
 		try {
 			scanner = new Scanner(new FileInputStream(path));
-			System.out.println("PATH >> "+path);
+//			System.out.println("PATH >> "+path);
 			while(scanner.hasNextLine()) {
 				String sentence = scanner.nextLine();
 				String[] conceptSpace = sentence.split("\t");

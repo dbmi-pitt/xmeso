@@ -45,13 +45,13 @@ public class InformationExtractorAnnotationEngine extends
 		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
 		String result = ie
 				.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
-		System.out.println("The result is " + result);
+//		System.out.println("The result is " + result);
 	}
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
-		System.out.println("InformationExtractor Processing report "
-				+ reportNumber++);
+//		System.out.println("InformationExtractor Processing report "
+//				+ reportNumber++);
 		clearCaches();
 		ftrXchangePartToNamedEntity(jCas);
 		cacheEndOfDocument(jCas);
@@ -239,9 +239,7 @@ public class InformationExtractorAnnotationEngine extends
 					else if (XmesoUltrastructuralFindings.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getUltrastructuralFindings().equals(defaultCaseForm.getUltrastructuralFindings())) {
 							currentCaseForm.setUltrastructuralFindings(namedEntity.getSnomedCode());
-							System.out.println("Extracting ultra from " + namedEntity.getI2b2OntologyPath());
 							String suffixTerm = extractSuffixTerm(namedEntity.getI2b2OntologyPath());
-							System.out.println("Result is " + suffixTerm);
 							currentCaseForm.setUltrastructuralFindingsTerm(suffixTerm);
 						}
 					}

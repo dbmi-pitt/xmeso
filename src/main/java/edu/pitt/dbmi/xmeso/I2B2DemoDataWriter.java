@@ -263,7 +263,7 @@ public class I2B2DemoDataWriter {
 
 		if (observationFact == null) {
 
-			System.out.println("Writing obs (" + observationFactId + ")");
+//			System.out.println("Writing obs (" + observationFactId + ")");
 
 			observationFact = new ObservationFact();
 			observationFact.setId(observationFactId);

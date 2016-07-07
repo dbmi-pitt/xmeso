@@ -1,7 +1,0 @@
-PACKAGE edu.pitt.dbmi.xmeso.deidcleaner;
-
-SCRIPT edu.pitt.dbmi.xmeso.model.Model;
-
-BLOCK(DetectDeId) Document{} {
-  "^\\[Report de[^\\]]+\\]" -> DeIdBannarAnnotation;
-}

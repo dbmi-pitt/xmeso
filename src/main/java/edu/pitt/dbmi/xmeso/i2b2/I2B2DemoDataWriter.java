@@ -186,7 +186,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		sb.append("\ntumorDifferentiationCode = " + tumorDifferentiationCode);
 		sb.append("\nsurgicalProcedureCode = " + surgicalProcedureCode);
 		sb.append("\nhistologicTypeCode = " + histologicTypeCode);
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 	}
 
 	/****
@@ -428,7 +428,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 
 		if (observationFact == null) {
 
-			System.out.println("Writing obs (" + observationFactId + ")");
+//			System.out.println("Writing obs (" + observationFactId + ")");
 
 			observationFact = new ObservationFact();
 			observationFact.setId(observationFactId);
@@ -477,7 +477,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 
 		if (observationFact == null) {
 
-		    System.out.println("Writing obs (" + observationFactId + ")");
+//		    System.out.println("Writing obs (" + observationFactId + ")");
 
 			observationFact = new ObservationFact();
 			observationFact.setId(observationFactId);

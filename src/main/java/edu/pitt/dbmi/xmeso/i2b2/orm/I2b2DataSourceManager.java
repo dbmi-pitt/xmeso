@@ -38,7 +38,7 @@ public abstract class I2b2DataSourceManager {
 	// default to null to avoid accidental database modifications.
 	protected String hibernateHbm2ddlAuto = "none";
 
-	protected String hibernateShowSql = "true";
+	protected String hibernateShowSql = "false";
 	protected String hibernateCacheUseSecondLevelCache = "false";
 
 	protected Configuration configuration;
@@ -69,6 +69,7 @@ public abstract class I2b2DataSourceManager {
 					"i2b2demodata"));
 			setHibernateUserPassword(dbProperties.getProperty("password",
 					"demouser"));
+			setHibernateShowSql(dbProperties.getProperty("show_sql", "true"));
 
 			configuration = new Configuration();
 			configuration.setProperty("hibernate.dialect",
@@ -130,10 +131,10 @@ public abstract class I2b2DataSourceManager {
 				logger.error("Failed to load hibernate clses");
 			} else {
 				for (Class<?> cls : clses) {
-					System.err.println("Configuring " + cls.getName()
-							+ " into Hibernate");
-					logger.info("Configuring " + cls.getName()
-							+ " into Hibernate");
+//					System.err.println("Configuring " + cls.getName()
+//							+ " into Hibernate");
+//					logger.info("Configuring " + cls.getName()
+//							+ " into Hibernate");
 					configuration.addAnnotatedClass(cls);
 				}
 			}
