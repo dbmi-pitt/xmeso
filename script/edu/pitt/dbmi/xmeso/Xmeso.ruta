@@ -1,10 +1,29 @@
 
+//
+// Xmeso
+//
+//
+// Main Ruta Script for eXtraction from MESOthelioma Reports (Xmeso)
+// the Natural Language Processing Component of the National Mesothelioma
+// Virtual Bank (NMVB) project. 
+//
+// Calls
+//     DeIdCleaner
+//     QuantitativeValueDectector
+//     Sectionizer 
+//     Ner Detection
+//     AvPair Dectection
+//     Partizer
+//     Sentence Detection
+//     NegEx
+//     Information Extraction
+//
 PACKAGE edu.pitt.dbmi.xmeso;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
 SCRIPT edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner;
-SCRIPT edu.pitt.dbmi.xmeso.floatnumdetector.FloatNumberDetector;
+SCRIPT edu.pitt.dbmi.xmeso.quantitative.QuantitativeValueDetector;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Sectionizer;
 SCRIPT edu.pitt.dbmi.xmeso.sectionizer.Partizer;
 SCRIPT edu.pitt.dbmi.xmeso.ner.Ner160412;
@@ -22,10 +41,10 @@ UIMAFIT edu.pitt.dbmi.xmeso.ie.InformationExtractorAnnotationEngine;
 Document{->CALL(DeidCleaner.DetectDeId)};
 
 DeIdBannarAnnotation{->CALL(Utilities.CleanBeneathRutas)};
-Document{->CALL(FloatNumberDetector.DetectFloatNum)};
-Document{->CALL(FloatNumberDetector.DetectUom)};
-Document{->CALL(FloatNumberDetector.SizeDetection)};
-XmesoSize{->CALL(FloatNumberDetector.MaximumSizeCalculator)};
+Document{->CALL(QuantitativeValueDetector.DetectFloatNum)};
+Document{->CALL(QuantitativeValueDetector.DetectUom)};
+Document{->CALL(QuantitativeValueDetector.SizeDetection)};
+XmesoSize{->CALL(QuantitativeValueDetector.MaximumSizeCalculator)};
 XmesoSize{->CALL(Utilities.CleanBeneathRutas)};
 XmesoSize{->CALL(Utilities.CleanBeneathXmeso)};
 Document{->CALL(Sectionizer.SectionHeaderDetector)};

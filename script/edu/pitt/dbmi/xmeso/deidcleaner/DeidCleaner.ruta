@@ -2,6 +2,13 @@ PACKAGE edu.pitt.dbmi.xmeso.deidcleaner;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
+//
+// DetectDeId
+//
+// Detects the Deid Bannar which can be subsequently
+// disregarded other than a good metric to the start 
+// of the report
+//
 BLOCK(DetectDeId) Document{} {
   "^\\[Report de[^\\]]+\\]" -> DeIdBannarAnnotation;
 }

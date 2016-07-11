@@ -24,16 +24,46 @@ BLOCK(ObserveDeIdBannar) Document {} {
   Section {->LOG("Observing a Section?")};
 }
 
+//
+// Partizing
+//
+// In general is a complex piece of Xmeso.
+// Pathologist use many idioms for delineating and
+// enumerating specimen decompositions in the Gross room.
+// In addition trying to over load a single Ruta rule for
+// many expressive permutations is not a good idea.
+// Subsequently Partizing consists of many rules called
+// in a cascade.  Success by earlier rules cause the
+// later rules to not fire.
+
+//
+// PartIndicatorDetector
+//
+// Finds "PARTS or Parts" at start of line
+//
 BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
     BREAK W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)};
     PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
 }
 
+//
+// PartIndicatorDectorNyu
+//
+// Special case part detector for Nyu reports. Including
+// it into the general report parser does not create spurious results
+// An apostrophe at the beginning of the line followed by an
+// up to two digit number makes that apostrophe a Part Indicator
+//
 BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE(SPECIAL)} {
     SPECIAL{REGEXP("\""), -PARTOF(PartIndicator)-> MARK(PartIndicator)} NUM{REGEXP(".{1,2}")} PERIOD;
     PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
 }
 
+//
+// PartHeaderDetectorMultipleAnd
+//
+// PARTS 1, 2, 3, and 4
+//
 BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} { 
     PartIndicator
         ((NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})(COMMA|SEMICOLON))+
@@ -44,6 +74,11 @@ BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} {
                        CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
 }
 
+//
+// PartHeaderDetectorTwo
+//
+// Parts 1 and 2:
+//
 BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} { 
     PartIndicator (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
                   (W{REGEXP("and|AND|And")})
@@ -54,6 +89,11 @@ BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} {
     PartNumber {PARSE(partizerPartNum)-> SETFEATURE("partNumber", partizerPartNum)};
 }
 
+//
+// PartHeaderDetectorMultiple
+//
+// Parts 1, 2, 4:
+//
 BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLON)} { 
     PartIndicator 
         (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})+
@@ -62,6 +102,12 @@ BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLO
              CREATE(PartHeaderGenerator, 1, 2, "genNumber" = -1, "genCount" = -1)};              
 }
 
+
+//
+// PartHeaderDetector
+//
+// 1 - PROSTRATE:
+//
 BLOCK(PartHeaderDetector) Document{} { 
         (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
         (SPECIAL{REGEXP("-")}) 
@@ -70,6 +116,11 @@ BLOCK(PartHeaderDetector) Document{} {
              CREATE(PartHeaderGenerator, 1, 4, "genNumber" = -1, "genCount" = -1)};              
 }
 
+//
+// PartHeaderDetectorRoman
+//
+// Part II.
+//
 BLOCK(PartHeaderDetectorRoman) Document{->ADDRETAINTYPE(BREAK)} { 
         BREAK
         W{REGEXP("[IVX]{1,5}"), -PARTOF(PartHeaderGenerator)  
@@ -79,10 +130,23 @@ BLOCK(PartHeaderDetectorRoman) Document{->ADDRETAINTYPE(BREAK)} {
         { -> CREATE(PartHeaderGenerator, 2, 3, "genNumber" = -1, "genCount" = -1)};              
 }
 
+//
+// PartNumberAssigner
+//
+// PartNumber are sub annotation to the overall PartHeader
+// annotation.  They are assigned numeric features based on the
+// actual number text.  A common Ruta idiom.  Using PARSE and store
+// to a local variable then assignment to a feature
+//
 BLOCK(PartNumberAssigner) Document{} {
      PartNumber {REGEXP("[0-9]{1,2}"), PARSE(partizerPartNum)-> SETFEATURE("partNumber", partizerPartNum)};
 }
 
+//
+// PartNumberAssignerRoman
+//
+// Same as PartNumberAssigner except works with Roman
+//
 BLOCK(PartNumberAssignerRoman) Document{} {
      RomanPartNumber {REGEXP("I") -> SETFEATURE("partNumber", 1)};
      RomanPartNumber {REGEXP("II") -> SETFEATURE("partNumber", 2)};
@@ -106,6 +170,14 @@ BLOCK(PartNumberAssignerRoman) Document{} {
      RomanPartNumber {REGEXP("XX") -> SETFEATURE("partNumber", 20)};
 }
 
+//
+// TallyPartHeaderGenerators
+//
+// Each PartHeaderGenerator is enumerated sequentially 
+// and assigned an enumeration value across the entire
+// report.
+//
+//
 BLOCK(TallyPartHeaderGenerators) 
   Document {} {
   Document {COUNT(PartHeaderGenerator,partizerGenTotal)
@@ -118,6 +190,29 @@ BLOCK(TallyPartHeaderGenerators)
    PartHeaderGenerator {->CALL(Partizer.ProcessPartHeaderGenerator)};
 }
 
+//
+// ProcessPartHeaderGenerator
+//
+// Similarly each PartNumber within a PartHeaderGenerator is
+// numbered sequentially.  So for
+//
+// PARTS 1, 3: 
+//     xx
+// PARTS 2, 4, and 5:
+//     yy
+//
+// PartHeaderGenerator(genNumber=1,genCount=2)
+// PartNumberGenerator(genNumber=2,genCount=3)
+// PartNumber(genNumber=1,genSeq=1,partNumber=1)
+// PartNumber(genNumber=1,genSeq=2,partNumber=3)
+// PartNumber(genNumber=2,genSeq=1,partNumber=2)
+// PartNumber(genNumber=2,genSeq=2,partNumber=4)
+// PartNumber(genNumber=2,genSeq=3,partNumber=5)
+//
+// The final round of Partizing happens in the Java
+// code.  There NERs are duplicated across common part
+// spans.
+//
 BLOCK(ProcessPartHeaderGenerator) 
   PartHeaderGenerator {->GETFEATURE("genNumber",partizerGenNum)} {
   PartHeaderGenerator {
@@ -133,6 +228,12 @@ BLOCK(ProcessPartHeaderGenerator)
   };
 }
 
+//
+// CleanPartGeneratorsAndNumbers
+//
+// PartHeaderGenerators are intermediate annotations
+// and can be cleaned after use
+//
 BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
     PartHeaderGenerator {->
             UNMARK(PartHeaderGenerator)};
@@ -143,6 +244,11 @@ BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
             SETFEATURE("sectionLevel",-1)};
 }
 
+//
+// PartSectionNameAssigner
+//
+// Feature propogation from Section to enclosing Parts
+//
 BLOCK(PartSectionNameAssigner) Section {} {
     STRING cachedSectionNameVar;
     INT cachedSectionLevelVar;
@@ -156,10 +262,22 @@ BLOCK(PartSectionNameAssigner) Section {} {
              };
 }
 
+//
+// PartDiagnostics
+//
+// Prints a message for each Part annotation
+//
 BLOCK(PartDiagnostics) Part{} {
    Part{-> LOG("Pulling part for diagnostics.")};
 }
 
+//
+// PartTrimmer
+//
+// Correct any sloppy annotation bookkeeping that may have
+// happened during Part detection.  Parts do not include
+// section or document ends or trailing whitespace.
+//
 BLOCK(PartTrimmer) Part{} {
    Part{->TRIM(BREAK,SPACE,EndOfDocument,EndOfSection)};
 }

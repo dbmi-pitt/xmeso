@@ -62,6 +62,18 @@ DECLARE Annotation XmesoNumberDataElement(STRING attribute, INT value);
 DECLARE XmesoBooleanDataElement PositiveLymphNodes;
 DECLARE XmesoNumberDataElement LymphNodesExamined;
 
+//
+// XmesoCaseForm
+// XmesoTumorForm
+//
+// These are the extraction target for this round of
+// Xmeso development
+// There is one CaseForm per pathology report and potentially
+// many Tumor Forms.  Tumor Form might be better named Part Form
+// as they can exist now for benign tissue sections.  There remains
+// some ambiguity here.
+//
+
 DECLARE Annotation XmesoCaseForm (
     STRING surgicalProcedure,
     STRING ultrastructuralFindings,

@@ -2,18 +2,36 @@ PACKAGE edu.pitt.dbmi.xmeso.quantitative;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
+//
+// DetectFloatNum
+//
+// Floating point numbers 3.1426 need to be ignored later
+// while doing Part Header detection
+//
 BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
   NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
   NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
   PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
 
+//
+// DetectUom
+//
+// Units in Pathology Reports are usually either mm or cm
+//
 BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
     (NUM|FloatNum) (SPACE|BREAK)+?    
     @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
     ANY{-PARTOF(W)};
 }
 
+//
+// SizeDetection
+//
+// Detects three dimensional size specifications typical
+// to Gross sections of a Pathology Report
+// 2.3 x 4.2 x 5.3 cm
+//
 FLOAT dimensionOne;
 FLOAT dimensionTwo;
 FLOAT dimensionThree;
@@ -36,6 +54,12 @@ BLOCK(SizeDetection) Document{->RETAINTYPE(BREAK)} {
         "uom" = unitOfMeasure)};
 }
 
+//
+// MaximumSizeCalculator
+//
+// Gathers the maximum dimension of a Size dimension
+// triple
+//
 BLOCK(MaximumSizeCalculator) XmesoSize{} {
     XmesoSize.dimOne > XmesoSize.maxDim{-> 
         XmesoSize.maxDim = XmesoSize.dimOne};
@@ -45,6 +69,13 @@ BLOCK(MaximumSizeCalculator) XmesoSize{} {
         XmesoSize.maxDim = XmesoSize.dimThree};
 }
 
+//
+// DetectTnm
+//
+// Preliminary rule for finding a AJCC TMN mention within the
+// report.  This is a very complex metric and equally tricky
+// parse.  
+// 
 BLOCK(DetectTnm) Document{} {
    "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
 }

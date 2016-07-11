@@ -5,6 +5,10 @@ SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
 
 //
 // Section Header Discovery
+//
+// Here we add a subsumption mechanism for cases like 
+// "Final Diagnosis" vs "Diagnosis".  Subsumbed pass two
+// headers are not considered any further
 // 
 WORDTABLE sectionHeadersPassOne = 'sectionizer/section_headers_pass_one.csv';
 WORDTABLE sectionHeadersPassTwo = 'sectionizer/section_headers_pass_two.csv';
@@ -28,6 +32,8 @@ BLOCK(SynopticCategoryFilter) Document{->ADDRETAINTYPE(BREAK,SynopticCategory)} 
 }
 
 //
+// SynopticDetector
+//
 // Synoptic Report Question Discovery
 // 
 WORDTABLE synopticsTable = 'synoptics/synoptic_categories.csv';
@@ -37,12 +43,24 @@ BLOCK(SynopticDetector) Document{} {
      SynopticCategory  {-> SHIFT(SynopticCategory,1,2)} COLON{-PARTOF(SynopticCategory)};
 }
 
-// End of Document and End of Section
+//
+// EndOfDocumentDetector
+//
+// Detect the end of document position.  Each document
+// is given a dollar sign ending char at pipe load time
+// this is annotated here
+//
 BLOCK(EndOfDocumentDetector) Document{} {
     Document{->MARKLAST(EndOfDocument)};
     SPECIAL {REGEXP("\\$"), PARTOF(EndOfDocument) -> UNMARK(SPECIAL)};
 }
 
+//
+// EndOfSectionDetector
+//
+// End of section is defined to end where the following
+// section header begins
+//
 BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
    BREAK @SectionHeader { -> 
 //                            LOG("Marking EndOfSection"),
@@ -52,6 +70,12 @@ BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
                             UNMARK(EndOfSection)};
 }
 
+//
+// SectionDetector
+//
+// Text between a SectionHeader and a SectionEnd is
+// Section text.
+//
 BLOCK(SectionDetector) Document{} {
    STRING cachedSectionName;
    INT cachedSectionLevel;
@@ -65,56 +89,3 @@ BLOCK(SectionDetector) Document{} {
       CREATE(Section, 2, 3, "name" = cachedSectionName, "level" = cachedSectionLevel)};
 }
 
-BLOCK(PartHeaderAnnotator) Document{} {
-    INT currentPartNumber = 0;
-    Document {-> RETAINTYPE(BREAK)};
-    BREAK 
-    W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)}
-    NUM {PARSE(currentPartNumber),
-         -PARTOF(PartHeader) -> CREATE(PartHeader, 2, 3, 
-             "sectionName" = "UNASSIGNED",
-             "sectionLevel" = -1,
-             "partNumber" = currentPartNumber)};
-    PartHeader  {-> SHIFT(PartHeader,1,2)} COLON{-PARTOF(PartHeader)};
-}
-
-BLOCK(PartHeaderSectionNameAssigner) Document {} {
-    STRING cachedSectionNameVar;
-    INT cachedSectionLevelVar;
-    Section{ -> 
-                GETFEATURE("name", cachedSectionNameVar),
-                GETFEATURE("level", cachedSectionLevelVar)
-//                ,
-//                LOG("Cached variables from section")
-                };
-    PartHeader { PartHeader.sectionName=="UNASSIGNED",
-                 PartHeader.sectionLevel==-1,
-                 PARTOF(Section) ->  
-                 SETFEATURE("sectionName", cachedSectionNameVar),
-                 SETFEATURE("sectionLevel", cachedSectionLevelVar)            
-             };
-}
-
-BLOCK(PartDetector) Document{} {
-    STRING sectionNameVar;
-    INT partLevelVar;
-    INT partNumVar;  
-    PartHeader {->  
-//                    LOG("PartDetector has PartHeader"),
-                    GETFEATURE("sectionName", sectionNameVar),
-                    GETFEATURE("sectionLevel", partLevelVar),
-                    GETFEATURE("partNumber", partNumVar)} 
-    ((ANY|FloatNum|XmesoSize|UOM){-PARTOF(Part)->LOG("Token for part discovered.")})+?                
-//    ((CW|SW|CAP|NUM|PERIOD|COLON|COMMA|SPECIAL|FloatNum|XmesoSize|UOM|BREAK){-PARTOF(Part)})+?
-    (PartHeader | EndOfSection | EndOfDocument) 
-       {->
-//          LOG("Part delimeter discovered"), 
-          CREATE(Part, 2, 2,
-           "sectionName" = sectionNameVar,
-           "sectionLevel" = partLevelVar,
-           "partNumber" = partNumVar)};
-}
-
-BLOCK(PartTrimmer) Part{->ADDRETAINTYPE(BREAK,SPACE)} {
- Part{-> TRIM(BREAK,SPACE)};
-}
