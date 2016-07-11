@@ -1,0 +1,52 @@
+PACKAGE edu.pitt.dbmi.xmeso.quantitative;
+
+SCRIPT edu.pitt.dbmi.xmeso.model.Model;
+
+BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
+  NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
+  NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
+  PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
+}
+
+BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
+    (NUM|FloatNum) (SPACE|BREAK)+?    
+    @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
+    ANY{-PARTOF(W)};
+}
+
+FLOAT dimensionOne;
+FLOAT dimensionTwo;
+FLOAT dimensionThree;
+FLOAT dimensionMaximum = -1.0;
+STRING unitOfMeasure;
+BLOCK(SizeDetection) Document{->RETAINTYPE(BREAK)} {
+    (NUM{PARSE(dimensionOne)}|FloatNum{PARSE(dimensionOne)}) 
+    W{REGEXP("x",true)}
+    (NUM{PARSE(dimensionTwo)}|FloatNum{PARSE(dimensionTwo)}) 
+    W{REGEXP("x",true)} 
+    (NUM{PARSE(dimensionThree)}|FloatNum{PARSE(dimensionThree)}) 
+    BREAK*
+    UOM{-> MATCHEDTEXT(unitOfMeasure), 
+      CREATE(XmesoSize, 1, 7,
+        "codedPenalty" = 1, 
+        "maxDim" = dimensionMaximum, 
+        "dimOne" = dimensionOne, 
+        "dimTwo" = dimensionTwo, 
+        "dimThree" = dimensionThree, 
+        "uom" = unitOfMeasure)};
+}
+
+BLOCK(MaximumSizeCalculator) XmesoSize{} {
+    XmesoSize.dimOne > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimOne};
+    XmesoSize.dimTwo > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimTwo};
+    XmesoSize.dimThree > XmesoSize.maxDim{-> 
+        XmesoSize.maxDim = XmesoSize.dimThree};
+}
+
+BLOCK(DetectTnm) Document{} {
+   "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
+}
+
+
