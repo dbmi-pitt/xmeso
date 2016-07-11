@@ -39,6 +39,12 @@ BLOCK(NameEntityUltrastructuralFindings) Document {} {
       xmesoUltrastructuralFindingsTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 
+//
+// AssignSectionsAndPartsToNamedEntities
+//
+//   All Named Entities inherit features from their
+// enclosing section and part.
+//
 STRING sectionNameVar = "Undefined";
 INT sectionLevelVar = -1;
 INT partNumberVar = -1;
