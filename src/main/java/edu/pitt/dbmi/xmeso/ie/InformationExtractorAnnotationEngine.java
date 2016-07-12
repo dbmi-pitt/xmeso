@@ -221,9 +221,6 @@ public class InformationExtractorAnnotationEngine extends
 				boolean isCurrent = true;
 				isCurrent = isCurrent
 						&& (section.getLevel() == currentSectionLevel);
-				isCurrent = isCurrent 
-						&& (section.getName().equalsIgnoreCase("FINAL_DIAGNOSIS") ||
-								section.getName().equalsIgnoreCase("COMMENT"));
 				isCurrent = isCurrent
 						&& (namedEntity.getCodedPenalty() == currentCodedPenalty);
 				isCurrent = isCurrent && !namedEntity.getIsNegated();
@@ -286,9 +283,6 @@ public class InformationExtractorAnnotationEngine extends
 					boolean isCurrent = true;
 					isCurrent = isCurrent
 							&& (section.getLevel() == currentSectionLevel);
-					isCurrent = isCurrent 
-							&& (section.getName().equalsIgnoreCase("FINAL_DIAGNOSIS") ||
-									section.getName().equalsIgnoreCase("COMMENT"));
 					isCurrent = isCurrent
 							&& (part.getPartNumber() == currentPart);
 					isCurrent = isCurrent
