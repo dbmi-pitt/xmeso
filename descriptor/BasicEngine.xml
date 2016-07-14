@@ -264,7 +264,7 @@
         <name>resourcePaths</name>
         <value>
           <array>
-            <string>C:\\ws\\ws-xmeso\\xmeso\\resources</string>
+            <string>D:\\ws\\ws-xmeso\\xmeso\\resources</string>
           </array>
         </value>
       </nameValuePair>

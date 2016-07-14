@@ -149,7 +149,7 @@ public class Xmeso {
 
 	private void processReports() throws InvalidXMLException,
 			ResourceInitializationException, IOException {
-		final String resourcePath = (new File(".")).getAbsolutePath();
+		final String resourcePath = (new File(".")).getAbsolutePath() + File.separator + "resources";
 		System.out.println("Setting resourcePath to " + resourcePath);
 		final String[] resourcePaths = { resourcePath };
 		engine = AnalysisEngineFactory.createEngine(
