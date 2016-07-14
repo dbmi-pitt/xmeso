@@ -172,11 +172,11 @@
      	<groupId>org.apache.lucene</groupId>
      	<artifactId>lucene-queryparser</artifactId>
      	<version>5.4.0</version>
-     </dependency>
-      <dependency>
+     </dependency>  
+     <dependency>
      	<groupId>com.oracle</groupId>
      	<artifactId>ojdbc6</artifactId>
      	<version>11.2.0</version>
-     </dependency>
+     </dependency>  
    </dependencies>
 </project>

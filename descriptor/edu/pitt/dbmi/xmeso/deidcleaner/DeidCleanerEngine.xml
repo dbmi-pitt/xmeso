@@ -4,7 +4,7 @@
     <primitive>true</primitive>
     <annotatorImplementationName>org.apache.uima.ruta.engine.RutaEngine</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>org.apache.uima.ruta.engine.BasicEngine</name>
+        <name>edu.pitt.dbmi.xmeso.deidcleaner.DeidCleanerEngine</name>
         <description/>
         <version>1.0</version>
         <vendor/>
@@ -186,6 +186,12 @@
                 <multiValued>false</multiValued>
                 <mandatory>false</mandatory>
             </configurationParameter>
+            <configurationParameter>
+                <name>reindexOnly</name>
+                <type>String</type>
+                <multiValued>true</multiValued>
+                <mandatory>false</mandatory>
+            </configurationParameter>
         </configurationParameters>
         <configurationParameterSettings>
             <nameValuePair>
@@ -237,20 +243,6 @@
                 </value>
             </nameValuePair>
             <nameValuePair>
-                <name>lowMemoryProfile</name>
-                <value>
-                    <boolean>false</boolean>
-                </value>
-            </nameValuePair>
-            <nameValuePair>
-                <name>resourcePaths</name>
-                <value>
-                    <array>
-                        <string>C:\\ws\\ws-xmeso\\xmeso\\resources</string>
-                    </array>
-                </value>
-            </nameValuePair>
-            <nameValuePair>
                 <name>mainScript</name>
                 <value>
                     <string>edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner</string>
@@ -260,7 +252,7 @@
                 <name>scriptPaths</name>
                 <value>
                     <array>
-                        <string>C:/ws/ws-xmeso/xmeso/script</string>
+                        <string>C:/Users/zhy19/workspace/xmeso/script</string>
                     </array>
                 </value>
             </nameValuePair>
@@ -268,8 +260,18 @@
                 <name>descriptorPaths</name>
                 <value>
                     <array>
-                        <string>C:/ws/ws-xmeso/xmeso/target/classes</string>
-                        <string>C:/ws/ws-xmeso/xmeso/descriptor</string>
+                        <string>C:/Users/zhy19/workspace/xmeso/descriptor</string>
+                        <string>C:/Users/zhy19/workspace/xmeso/desc</string>
+                        <string>C:/Users/zhy19/workspace/xmeso/target/classes</string>
+                    </array>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>resourcePaths</name>
+                <value>
+                    <array>
+                        <string>C:/Users/zhy19/workspace/xmeso/target/classes</string>
+                        <string>C:/Users/zhy19/workspace/xmeso/resources</string>
                     </array>
                 </value>
             </nameValuePair>
