@@ -149,20 +149,18 @@ public class Xmeso {
 
 	private void processReports() throws InvalidXMLException,
 			ResourceInitializationException, IOException {
-		// System.out.println((new File(".")).getAbsolutePath());
-		// final String[] resourcePaths =
-		// {"C:\\ws\\ws-xmeso\\xmeso\\resources"};
+		final String resourcePath = (new File(".")).getAbsolutePath();
+		System.out.println("Setting resourcePath to " + resourcePath);
+		final String[] resourcePaths = { resourcePath };
 		engine = AnalysisEngineFactory.createEngine(
-				"edu.pitt.dbmi.xmeso.XmesoEngine",
-				// "resourcePaths", resourcePaths,
-				"lowMemoryProfile", false);
+				"edu.pitt.dbmi.xmeso.XmesoEngine", "resourcePaths",
+				resourcePaths, "lowMemoryProfile", false);
 		File inputDirectory = new File(xmesoHome + File.separator + "reports");
 		File[] inputFiles = inputDirectory.listFiles();
 		for (File inputFile : inputFiles) {
 			currentReportFile = inputFile;
 			processReport();
 		}
-
 	}
 
 	private void processReport() {
@@ -244,13 +242,14 @@ public class Xmeso {
 			String tumorDifferentiationCode = tumorForm
 					.getTumorDifferentiation();
 			if (isDebugging) {
-				System.out.println("histologicTypeCode = " + histologicTypeCode);
+				System.out
+						.println("histologicTypeCode = " + histologicTypeCode);
 				System.out.println("tumorConfigurationCode = "
 						+ tumorConfigurationCode);
 				System.out.println("tumorDifferentiationCode = "
 						+ tumorDifferentiationCode);
 			}
-			
+
 			i2b2DemoDataWriter.fetchOrCreateConcept(histologicTypeCode);
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorConfigurationCode);
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
