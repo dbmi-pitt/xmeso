@@ -76,5 +76,5 @@ Document{->CALL(Partizer.TallyPartHeaderGenerators)};
 Document{->EXEC(PartCreatorAnnotationEngine, {Part})};
 Document{->EXEC(SentenceBoundaryDetectionEngine, {XmesoSentence})};
 Document{->EXEC(SentenceTokenizationEngine, {XmesoSentenceToken})};
-//Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity,XmesoNegatedConcept})};
+Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity,XmesoNegatedConcept})};
 Document{->EXEC(InformationExtractorAnnotationEngine, {XmesoCaseForm, XmesoTumorForm})};
