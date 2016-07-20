@@ -1,5 +1,6 @@
 package edu.pitt.dbmi.xmeso.negex;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -17,13 +18,16 @@ public class NegExEngine {
 	private final String STOP_WORDS = "STOP-WORDS";
 	private final String POST_NEG_PHRASES = "POST-NEG-PHRASES";
 	
-	//private final String NEGEX_DICTIONARY_PATH = "resources/negex/NegExDictionary.txt";
-	private final String NEGEX_DICTIONARY_PATH = "C:\\ws\\ws-xmeso\\xmeso\\resources\\negex\\NegExDictionary.txt";
-	
-
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
-		initializeTerminology(NEGEX_DICTIONARY_PATH);
+		
+		// C:\Users\zhy19\workspace\xmeso\resources
+		String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
+		
+		// C:\Users\zhy19\workspace\xmeso\resources\negex\NegExDictionary.txt
+		String negexDictionaryFilePath = resourcePath  + File.separator + "negex" + File.separator + "NegExDictionary.txt";
+		
+		initializeTerminology(negexDictionaryFilePath);
 //		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
 	}
 
