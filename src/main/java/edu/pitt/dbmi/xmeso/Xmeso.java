@@ -78,11 +78,14 @@ public class Xmeso {
 			ResourceInitializationException, IOException,
 			AnalysisEngineProcessException, SAXException {
 
+		// Get the XMESO_HOME environment variable
 		Map<String, String> env = System.getenv();
 		displaySystemEnvironmentVariables(env);
 		xmesoHome = env.get("XMESO_HOME");
+		
 		System.out.println("XMESO_HOME is " + xmesoHome);
 
+		// Load xmeso.properties from the XMESO_HOME
 		loadXmesoProperties();
 
 		mapVisitDates();
@@ -108,8 +111,17 @@ public class Xmeso {
 	}
 
 	private void mapVisitDates() throws IOException {
-		File eventDatesFile = new File(xmesoHome + File.separator
-				+ "nmvb_path_report_event_date.csv");
+		/*
+		 * nmvb_path_report_event_date.csv contains content looks like this:
+		 * 
+			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
+			00001,MVB0001,0001,2016-07-07
+			00002,MVB0002,0002,2016-07-07
+			00003,MVB0003,0003,2016-07-07
+			00004,MVB0004,0004,2016-07-07
+			00005,MVB0005,0005,2016-07-07
+		 */
+		File eventDatesFile = new File(xmesoHome + File.separator + "nmvb_path_report_event_date.csv");
 		for (String line : FileUtils.readLines(eventDatesFile)) {
 			if (line.contains("REPORT_ID")) {
 				continue;
@@ -121,8 +133,7 @@ public class Xmeso {
 			formattedDate = fields[3];
 			String key = mvbName + "_" + reportId + ".txt";
 			if (visitDateMap.get(key) != null) {
-				System.err
-						.println("Replacing an existing visit date at " + key);
+				System.err.println("Replacing an existing visit date at " + key);
 			}
 			visitDateMap.put(key, formattedDate);
 		}
@@ -131,8 +142,8 @@ public class Xmeso {
 	private void loadXmesoProperties() {
 		InputStream input = null;
 		try {
-			input = new FileInputStream(xmesoHome + File.separator
-					+ "xmeso.properties");
+			// Load xmeso.properties from the XMESO_HOME
+			input = new FileInputStream(xmesoHome + File.separator + "xmeso.properties");
 			xmesoProperties.load(input);
 		} catch (IOException ex) {
 			ex.printStackTrace();
@@ -235,18 +246,14 @@ public class Xmeso {
 		for (AnnotationFS tumorFormFS : JCasUtil.select(jCas,
 				XmesoTumorForm.class)) {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
-			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart()
-					+ "");
+			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart() + "");
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
-			String tumorDifferentiationCode = tumorForm
-					.getTumorDifferentiation();
+			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
 			if (isDebugging) {
 				System.out.println("histologicTypeCode = " + histologicTypeCode);
-				System.out.println("tumorConfigurationCode = "
-						+ tumorConfigurationCode);
-				System.out.println("tumorDifferentiationCode = "
-						+ tumorDifferentiationCode);
+				System.out.println("tumorConfigurationCode = " + tumorConfigurationCode);
+				System.out.println("tumorDifferentiationCode = " + tumorDifferentiationCode);
 			}
 			
 			i2b2DemoDataWriter.fetchOrCreateConcept(histologicTypeCode);
@@ -254,14 +261,11 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId),
-					Integer.parseInt(reportId), histologicTypeCode,
-					currentPartNumber);
+					Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId),
-					Integer.parseInt(reportId), tumorConfigurationCode,
-					currentPartNumber);
+					Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId),
-					Integer.parseInt(reportId), tumorDifferentiationCode,
-					currentPartNumber);
+					Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
 		}
 
 	}
@@ -281,12 +285,9 @@ public class Xmeso {
 					.getTumorDifferentiation();
 			if (isDebugging) {
 				System.out.println("tumorSiteCode = " + tumorSiteCode);
-				System.out
-						.println("histologicTypeCode = " + histologicTypeCode);
-				System.out.println("tumorConfigurationCode = "
-						+ tumorConfigurationCode);
-				System.out.println("tumorDifferentiationCode = "
-						+ tumorDifferentiationCode);
+				System.out.println("histologicTypeCode = " + histologicTypeCode);
+				System.out.println("tumorConfigurationCode = " + tumorConfigurationCode);
+				System.out.println("tumorDifferentiationCode = " + tumorDifferentiationCode);
 			}
 
 		}
