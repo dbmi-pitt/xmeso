@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.pitt.dbmi.xmeso.XmesoTypeSystem</name>
+    <imports>
+        <import location="BasicTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/model/ModelTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/sectionizer/SectionizerTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/avpairs/AvPairDetectorTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/utilities/UtilitiesTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/deidcleaner/DeidCleanerTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/sectionizer/PartizerTypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/ner/Ner160412TypeSystem.xml"/>
+        <import location="edu/pitt/dbmi/xmeso/quantitative/QuantitativeValueDetectorTypeSystem.xml"/>
+    </imports>
+</typeSystemDescription>

@@ -160,12 +160,13 @@ public class Xmeso {
 
 	private void processReports() throws InvalidXMLException,
 		ResourceInitializationException, IOException {
-		final String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
-		System.out.println("Setting resourcePath to " + resourcePath);
-		final String[] resourcePaths = { resourcePath };
-		engine = AnalysisEngineFactory.createEngine(
-				"edu.pitt.dbmi.xmeso.XmesoEngine", "resourcePaths",
-				resourcePaths, "lowMemoryProfile", false);
+		//final String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
+		//System.out.println("Setting resourcePath to " + resourcePath);
+		//final String[] resourcePaths = { resourcePath };
+		// "edu.pitt.dbmi.xmeso.XmesoEngine" is the descriptor name
+		engine = AnalysisEngineFactory.createEngine("edu.pitt.dbmi.xmeso.XmesoEngine", 
+				//"resourcePaths", resourcePaths, 
+				"lowMemoryProfile", false);
 		File inputDirectory = new File(xmesoHome + File.separator + "reports");
 		File[] inputFiles = inputDirectory.listFiles();
 		for (File inputFile : inputFiles) {

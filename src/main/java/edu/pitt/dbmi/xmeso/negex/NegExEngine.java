@@ -20,12 +20,8 @@ public class NegExEngine {
 	
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
-		
-		// C:\Users\zhy19\workspace\xmeso\resources
-		String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
-		
-		// C:\Users\zhy19\workspace\xmeso\resources\negex\NegExDictionary.txt
-		String negexDictionaryFilePath = resourcePath  + File.separator + "negex" + File.separator + "NegExDictionary.txt";
+
+		String negexDictionaryFilePath = "C:\\Users\\zhy19\\workspace\\xmeso\\resources\\negex\\NegExDictionary.txt";
 		
 		initializeTerminology(negexDictionaryFilePath);
 //		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
