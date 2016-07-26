@@ -25,15 +25,14 @@ public class SentenceDetectorConfigurator {
 
 	public SentenceDetectorConfigurator() {
 		this(true, true);
-
 	}
 	
-	public SentenceDetectorConfigurator(boolean forceFinalStop,
-			boolean balanceParentheses) {
+	public SentenceDetectorConfigurator(boolean forceFinalStop, boolean balanceParentheses) {
 		initializePossibleStops();
 		initializeImpossiblePenultimates();
 		initializeImpossibleSentenceStarts();
-		detector = new HeuristicSentenceModel(possibleSentenceStops,
+		detector = new HeuristicSentenceModel(
+				possibleSentenceStops,
 				impossiblePenultimates,
 				impossibleSentenceStarts,
 				forceFinalStop,

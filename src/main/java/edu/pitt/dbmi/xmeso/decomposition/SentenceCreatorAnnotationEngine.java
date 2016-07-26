@@ -9,8 +9,7 @@ import org.apache.uima.jcas.JCas;
 import edu.pitt.dbmi.xmeso.model.Model.Part;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;
 
-public class SentenceCreatorAnnotationEngine extends
-		org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class SentenceCreatorAnnotationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 
 	private SentenceDetectorConfigurator detector = new SentenceDetectorConfigurator();
 
@@ -27,8 +26,7 @@ public class SentenceCreatorAnnotationEngine extends
 		}
 	}
 
-	public void sentenceBoundaryTokenizer(JCas jCas, Part part,
-			String partContent) {
+	public void sentenceBoundaryTokenizer(JCas jCas, Part part, String partContent) {
 		int spanStart = trimPartContentStart(part);
 		int spanEnd = -1;
 		List<String> sentences = detector.createSentencesForPart(partContent);
