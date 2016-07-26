@@ -24,8 +24,7 @@ import com.google.common.reflect.ClassPath.ClassInfo;
 
 public abstract class I2b2DataSourceManager {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(I2b2DataSourceManager.class);
+	private static final Logger logger = LoggerFactory.getLogger(I2b2DataSourceManager.class);
 
 	protected String hibernateDialect;
 	protected String hibernateDriver;
@@ -59,36 +58,24 @@ public abstract class I2b2DataSourceManager {
 			FileReader reader = new FileReader(dbPropertiesUrl.getPath());
 			dbProperties.load(reader);
 
-			setHibernateDriver(dbProperties.getProperty("driver",
-					oracle.jdbc.OracleDriver.class.getName()));
-			setHibernateDialect(dbProperties.getProperty("dialect",
-					org.hibernate.dialect.Oracle10gDialect.class.getName()));
-			setHibernateConnectionUrl(dbProperties.getProperty("url",
-					"jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE"));
-			setHibernateUserName(dbProperties.getProperty("user",
-					"i2b2demodata"));
-			setHibernateUserPassword(dbProperties.getProperty("password",
-					"demouser"));
+			setHibernateDriver(dbProperties.getProperty("driver", oracle.jdbc.OracleDriver.class.getName()));
+			setHibernateDialect(dbProperties.getProperty("dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
+			setHibernateConnectionUrl(dbProperties.getProperty("url", "jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE"));
+			setHibernateUserName(dbProperties.getProperty("user", "i2b2demodata"));
+			setHibernateUserPassword(dbProperties.getProperty("password", "demouser"));
 			setHibernateShowSql(dbProperties.getProperty("show_sql", "true"));
 
 			configuration = new Configuration();
-			configuration.setProperty("hibernate.dialect",
-					getHibernateDialect());
-			configuration.setProperty("hibernate.connection.driver_class",
-					getHibernateDriver());
-			configuration.setProperty("hibernate.show_sql",
-					getHibernateShowSql());
-			configuration.setProperty("hibernate.connection.url",
-					getHibernateConnectionUrl());
-			configuration.setProperty("hibernate.connection.username",
-					getHibernateUserName());
-			configuration.setProperty("hibernate.connection.password",
-					getHibernateUserPassword());
-			configuration.setProperty("hibernate.cache.use_second_level_cache",
-					getHibernateCacheUseSecondLevelCache());
+			configuration.setProperty("hibernate.dialect", getHibernateDialect());
+			configuration.setProperty("hibernate.connection.driver_class", getHibernateDriver());
+			configuration.setProperty("hibernate.show_sql", getHibernateShowSql());
+			configuration.setProperty("hibernate.connection.url", getHibernateConnectionUrl());
+			configuration.setProperty("hibernate.connection.username", getHibernateUserName());
+			configuration.setProperty("hibernate.connection.password", getHibernateUserPassword());
+			configuration.setProperty("hibernate.cache.use_second_level_cache", getHibernateCacheUseSecondLevelCache());
+			
 			if (getHibernateHbm2ddlAuto() != null) {
-				configuration.setProperty("hibernate.hbm2ddl.auto",
-						getHibernateHbm2ddlAuto());
+				configuration.setProperty("hibernate.hbm2ddl.auto", getHibernateHbm2ddlAuto());
 			}
 			addAnnotatedClasses();
 
@@ -114,8 +101,8 @@ public abstract class I2b2DataSourceManager {
 	protected abstract void addAnnotatedClasses(); 
 
 	public void addAnnotatedClsesForPackage() {
-		logger.debug("Entered addAnnotatedClsesForPackage for "
-				+ getClass().getName());
+		logger.debug("Entered addAnnotatedClsesForPackage for " + getClass().getName());
+		
 		try {
 			String pkgName = getClass().getPackage().getName();
 			ClassPath classPath = ClassPath.from(getClass().getClassLoader());
@@ -140,8 +127,7 @@ public abstract class I2b2DataSourceManager {
 			}
 		} catch (IOException e) {
 		}
-		logger.debug("Exited addAnnotatedClsesForPackage for "
-				+ getClass().getName());
+		logger.debug("Exited addAnnotatedClsesForPackage for " + getClass().getName());
 	}
 
 	/*
@@ -264,8 +250,7 @@ public abstract class I2b2DataSourceManager {
 		return hibernateCacheUseSecondLevelCache;
 	}
 
-	public void setHibernateCacheUseSecondLevelCache(
-			String hibernateCacheUseSecondLevelCache) {
+	public void setHibernateCacheUseSecondLevelCache(String hibernateCacheUseSecondLevelCache) {
 		this.hibernateCacheUseSecondLevelCache = hibernateCacheUseSecondLevelCache;
 	}
 

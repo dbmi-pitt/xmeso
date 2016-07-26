@@ -43,8 +43,7 @@ public class InformationExtractorAnnotationEngine extends
 
 	public static void main(String[] args) {
 		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
-		String result = ie
-				.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
+		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
 //		System.out.println("The result is " + result);
 	}
 
@@ -73,8 +72,7 @@ public class InformationExtractorAnnotationEngine extends
 
 	private void ftrXchangePartToNamedEntity(JCas jCas) {
 		for (Part part : JCasUtil.select(jCas, Part.class)) {
-			for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(
-					XmesoNamedEntity.class, part)) {
+			for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(XmesoNamedEntity.class, part)) {
 				namedEntity.setPartNumber(part.getPartNumber());
 				namedEntity.setSectionName(part.getSectionName());
 				namedEntity.setSectionLevel(part.getSectionLevel());
@@ -84,8 +82,7 @@ public class InformationExtractorAnnotationEngine extends
 	}
 
 	private void cacheEndOfDocument(JCas jCas) {
-		endOfDocument = JCasUtil.select(jCas, EndOfDocument.class).iterator()
-				.next();
+		endOfDocument = JCasUtil.select(jCas, EndOfDocument.class).iterator().next();
 	}
 
 	private void initalizeSizeCodePenalties(JCas jCas) {
@@ -112,22 +109,15 @@ public class InformationExtractorAnnotationEngine extends
 
 	private void initializeCurrentCaseForm(JCas jCas) {
 		currentCaseForm = new XmesoCaseForm(jCas);
-		currentCaseForm.setSurgicalProcedure(defaultCaseForm
-				.getSurgicalProcedure());
-		currentCaseForm.setUltrastructuralFindings(defaultCaseForm
-				.getUltrastructuralFindings());
-		currentCaseForm.setLymphNodesExamined(defaultCaseForm
-				.getLymphNodesExamined());
+		currentCaseForm.setSurgicalProcedure(defaultCaseForm.getSurgicalProcedure());
+		currentCaseForm.setUltrastructuralFindings(defaultCaseForm.getUltrastructuralFindings());
+		currentCaseForm.setLymphNodesExamined(defaultCaseForm.getLymphNodesExamined());
 		currentCaseForm.setSpecialStain(defaultCaseForm.getSpecialStain());
 
-		currentCaseForm.setSurgicalProcedureTerm(defaultCaseForm
-				.getSurgicalProcedureTerm());
-		currentCaseForm.setUltrastructuralFindingsTerm(defaultCaseForm
-				.getUltrastructuralFindingsTerm());
-		currentCaseForm.setLymphNodesExaminedTerm(defaultCaseForm
-				.getLymphNodesExaminedTerm());
-		currentCaseForm.setSpecialStainTerm(defaultCaseForm
-				.getSpecialStainTerm());
+		currentCaseForm.setSurgicalProcedureTerm(defaultCaseForm.getSurgicalProcedureTerm());
+		currentCaseForm.setUltrastructuralFindingsTerm(defaultCaseForm.getUltrastructuralFindingsTerm());
+		currentCaseForm.setLymphNodesExaminedTerm(defaultCaseForm.getLymphNodesExaminedTerm());
+		currentCaseForm.setSpecialStainTerm(defaultCaseForm.getSpecialStainTerm());
 
 		currentCaseForm.setBegin(defaultCaseForm.getBegin());
 		currentCaseForm.setEnd(defaultCaseForm.getEnd());
@@ -156,21 +146,15 @@ public class InformationExtractorAnnotationEngine extends
 		currentTumorForm = new XmesoTumorForm(jCas);
 
 		currentTumorForm.setCurrentPart(currentPart);
-		currentTumorForm.setHistopathologicalType(defaultTumorForm
-				.getHistopathologicalType());
+		currentTumorForm.setHistopathologicalType(defaultTumorForm.getHistopathologicalType());
 		currentTumorForm.setTumorSite(defaultTumorForm.getTumorSite());
-		currentTumorForm.setTumorConfiguration(defaultTumorForm
-				.getTumorConfiguration());
-		currentTumorForm.setTumorDifferentiation(defaultTumorForm
-				.getTumorDifferentiation());
+		currentTumorForm.setTumorConfiguration(defaultTumorForm.getTumorConfiguration());
+		currentTumorForm.setTumorDifferentiation(defaultTumorForm.getTumorDifferentiation());
 
-		currentTumorForm.setHistopathologicalTypeTerm(defaultTumorForm
-				.getHistopathologicalTypeTerm());
+		currentTumorForm.setHistopathologicalTypeTerm(defaultTumorForm.getHistopathologicalTypeTerm());
 		currentTumorForm.setTumorSiteTerm(defaultTumorForm.getTumorSiteTerm());
-		currentTumorForm.setTumorConfigurationTerm(defaultTumorForm
-				.getTumorConfigurationTerm());
-		currentTumorForm.setTumorDifferentiationTerm(defaultTumorForm
-				.getTumorDifferentiationTerm());
+		currentTumorForm.setTumorConfigurationTerm(defaultTumorForm.getTumorConfigurationTerm());
+		currentTumorForm.setTumorDifferentiationTerm(defaultTumorForm.getTumorDifferentiationTerm());
 
 		currentTumorForm.setBegin(defaultTumorForm.getBegin());
 		currentTumorForm.setEnd(defaultTumorForm.getEnd());
@@ -200,14 +184,11 @@ public class InformationExtractorAnnotationEngine extends
 
 	private void fillCaseForm(JCas jCas) {
 		initializeCurrentCaseForm(jCas);
-		for (Iterator<Integer> sectionLevelIterator = sectionLevels.iterator(); sectionLevelIterator
-				.hasNext();) {
+		for (Iterator<Integer> sectionLevelIterator = sectionLevels.iterator(); sectionLevelIterator.hasNext();) {
 			currentSectionLevel = sectionLevelIterator.next();
-			for (Iterator<Integer> codedPenaltyIterator = codedPenalties
-					.iterator(); codedPenaltyIterator.hasNext();) {
+			for (Iterator<Integer> codedPenaltyIterator = codedPenalties.iterator(); codedPenaltyIterator.hasNext();) {
 				currentCodedPenalty = codedPenaltyIterator.next();
-				fillCaseFormAtLevels(jCas, currentCaseForm, currentSectionLevel,
-						currentCodedPenalty);
+				fillCaseFormAtLevels(jCas, currentCaseForm, currentSectionLevel, currentCodedPenalty);
 			}
 		}
 		jCas.addFsToIndexes(currentCaseForm);
@@ -262,11 +243,9 @@ public class InformationExtractorAnnotationEngine extends
 				.hasNext();) {
 			currentPart = partNumberIterator.next();
 			initializeCurrentTumorForm(jCas);
-			for (Iterator<Integer> sectionLevelIterator = sectionLevels
-					.iterator(); sectionLevelIterator.hasNext();) {
+			for (Iterator<Integer> sectionLevelIterator = sectionLevels.iterator(); sectionLevelIterator.hasNext();) {
 				currentSectionLevel = sectionLevelIterator.next();
-				for (Iterator<Integer> codedPenaltyIterator = codedPenalties
-						.iterator(); codedPenaltyIterator.hasNext();) {
+				for (Iterator<Integer> codedPenaltyIterator = codedPenalties.iterator(); codedPenaltyIterator.hasNext();) {
 					currentCodedPenalty = codedPenaltyIterator.next();
 					fillTumorFormRemainingSlots(jCas);
 				}
@@ -278,8 +257,7 @@ public class InformationExtractorAnnotationEngine extends
 	private void fillTumorFormRemainingSlots(JCas jCas) {
 		for (Section section : JCasUtil.select(jCas, Section.class)) {
 			for (Part part : JCasUtil.selectCovered(Part.class, section)) {
-				for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(
-						XmesoNamedEntity.class, part)) {
+				for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(XmesoNamedEntity.class, part)) {
 					boolean isCurrent = true;
 					isCurrent = isCurrent
 							&& (section.getLevel() == currentSectionLevel);

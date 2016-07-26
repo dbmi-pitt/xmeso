@@ -294,8 +294,8 @@ public class Xmeso {
 			String tumorSiteCode = tumorForm.getTumorSite();
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
-			String tumorDifferentiationCode = tumorForm
-					.getTumorDifferentiation();
+			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
+			
 			if (isDebugging) {
 				System.out.println("tumorSiteCode = " + tumorSiteCode);
 				System.out.println("histologicTypeCode = " + histologicTypeCode);

@@ -73,8 +73,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 			currentPatientDimension = fetchOrCreatePatient();
 			currentVisitDimension = fetchOrCreateVisit();
 			clearExistingPatientObservations();
-			for (XmesoTumorForm tumorForm : JCasUtil.select(aJCas,
-					XmesoTumorForm.class)) {
+			for (XmesoTumorForm tumorForm : JCasUtil.select(aJCas, XmesoTumorForm.class)) {
 				cacheCodesFromForm(tumorForm);
 				displayTumorForm();
 				storeDataElements();
