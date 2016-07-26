@@ -1,0 +1,756 @@
+Accuracy: 0.8518518518518519
+
+report000000000001 6 VhKACrhrqPxZ
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000002 1 BohWEAHrwxRB
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000003 2 CqYZOiysdkaX
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000004 3 NS8PNmWAr7Cs
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+	Part 2
+		Histological Type, Biphasic, SNOMED:30383009, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Exophytic, SNOMED:369749000, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000005 4 facJA7SpWC9p
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 1
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, MIXED, SNOMED:8145008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000006 5 jANMm5Zo5ely
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, PLEURAL PLAQUE, SNOMED:233658003
+	Part 0
+	Part 1
+		Histological Type, Biphasic, SNOMED:30383009, OTHER, HIST_TYPE:OTHER
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 2
+	Part 3
+	Part 4
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, Unknown, HIST_TYPE:UNKNOWN
+	Part 5
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, Unknown, HIST_TYPE:UNKNOWN
+	Part 6
+	Part 7
+report000000000008 7 2bHKyzKdNA5x
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000009 8 FuxQkjejoLyQ
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000010 9 Q1iXGN9oaswy
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000011 10 tCFLI8qTqJTf
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Biphasic, SNOMED:30383009, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000012 11 DZNGTSzQPVCs
+		Lymph Nodes Examined, No, PATH|LYMPH_EXAMINED:NO, Yes, PATH|LYMPH_EXAMINED:YES
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000013 12 7tOOi9vlV6KF
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+		Tumor Differentiation Or Grade, Unknown Differentiation, ANA|TUMOR_DIFF:NA, INDETERMINATE, SNOMED:384741006
+	Part 1
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+		Tumor Differentiation Or Grade, Unknown Differentiation, ANA|TUMOR_DIFF:NA, INDETERMINATE, SNOMED:384741006
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000014 13 oKSyoSThDmFT
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000015 14 zMOCTGe4Dhi2
+		Special Stain Profile, Unknown, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 1
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 2
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000016 15 YMMmsZKlb003
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000017 16 /We3Hqb1jEo6
+	Part 0
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, PAPILLARY MESOTHELIOMA, SNOMED:86143001
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 1
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, PAPILLARY MESOTHELIOMA, SNOMED:86143001
+	Part 2
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, PAPILLARY MESOTHELIOMA, SNOMED:86143001
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000018 17 7Cd+KLM7z4W8
+		Ultrastructural Findings, Unknown Ultrastructural, ANA|ULTRASTRUCTURAL:UN, CHRONIC INFLAMMATION, SNOMED:84499006
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000019 18 T7tJjhyYbe1q
+		Ultrastructural Findings, Unknown Ultrastructural, ANA|ULTRASTRUCTURAL:UN, OTHER, ANA|ULTRASTRUCTURAL:OT
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000020 19 ZcMxKdS8fRCs
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000021 20 xsrCcKkYWNwW
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 1
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 3
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 4
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 5
+	Part 6
+	Part 7
+report000000000022 21 dYWD8SrZMNlz
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 7
+report000000000023 22 m60mTufDZBiZ
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000024 23 M+BQCAz6t0Ij
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000025 24 ykVhAYlCNCnX
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 1
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000026 25 VYW0YqmWkQka
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000027 26 /WALS43smk+x
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+		Histological Type, Papillary, SNOMED:86143001, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 1
+	Part 2
+		Histological Type, Papillary, SNOMED:86143001, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000028 27 sjN2UjrTZrV4
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, No, PATH|SPECIAL_STAIN:NO, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000029 28 pCvR25AYTXAC
+	Part 0
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+	Part 5
+	Part 6
+	Part 7
+report000000000030 29 X8p2QSUsax6A
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000031 30 E95/Dt8PH4Sb
+	Part 0
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 1
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 2
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 3
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 4
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, MIXED, SNOMED:8145008
+	Part 5
+	Part 6
+	Part 7
+report000000000032 31 TmiPoQJPzJ8q
+	Part 0
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+	Part 1
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000033 32 Gg+9j+aTw4QB
+	Part 0
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 2
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000034 33 2UVn6hUc00Rq
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000035 34 Ig3WBEEW/9+8
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000036 35 J+Jq86GcUbJM
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, Unknown, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, NODULAR, SNOMED:255288007
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 6
+	Part 7
+report000000000037 36 sHdv8u0aWTjK
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 1
+	Part 2
+	Part 3
+		Histological Type, Biphasic, SNOMED:30383009, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 4
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 5
+	Part 6
+	Part 7
+report000000000038 37 RMm6X4Xp4jfS
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000039 38 u7VTh0l2oiP/
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 1
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000040 39 +SllCGHxQyc3
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 3
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+	Part 4
+	Part 5
+		Histological Type, Biphasic, SNOMED:30383009, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+	Part 6
+	Part 7
+report000000000041 40 V3bJIRJw5DHs
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+		Histological Type, Sarcomatoid, SNOMED:399477001, Unknown, HIST_TYPE:UNKNOWN
+	Part 1
+		Histological Type, Sarcomatoid, SNOMED:399477001, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+		Histological Type, Sarcomatoid, SNOMED:399477001, Unknown, HIST_TYPE:UNKNOWN
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000042 41 dbzK6zThXTt3
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 3
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 4
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 5
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 6
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 7
+report000000000043 42 HP/m06ruw+ln
+		Ultrastructural Findings, Unknown Ultrastructural, ANA|ULTRASTRUCTURAL:UN, CHRONIC INFLAMMATION, SNOMED:84499006
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 2
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 4
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 5
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 6
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 7
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+report000000000044 43 +zc4sO05CczQ
+		Ultrastructural Findings, Pleural Plaque, SNOMED:233658003, FERRUGINOUS BODIES, SNOMED:397325001
+	Part 0
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 2
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+report000000000045 44 rGpYcyGzcGfH
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 6
+	Part 7
+report000000000046 45 aU9RFIWG4XXL
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000047 46 ktxRvUIZs9gm
+		Special Stain Profile, Unknown, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, BIPHASIC MESOTHELIOMA, SNOMED:30383009
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, BIPHASIC MESOTHELIOMA, SNOMED:30383009
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 2
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, BIPHASIC MESOTHELIOMA, SNOMED:30383009
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, BIPHASIC MESOTHELIOMA, SNOMED:30383009
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 4
+		Histological Type, Unknown, HIST_TYPE:UNKNOWN, BIPHASIC MESOTHELIOMA, SNOMED:30383009
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 5
+	Part 6
+	Part 7
+report000000000048 47 mwlSRO/3kvNO
+	Part 0
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 1
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 2
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 4
+		Histological Type, Unknown Meso Type, HIST_TYPE:UNKNOWN, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 5
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 6
+	Part 7
+report000000000049 48 EVVqX3RXypxZ
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000050 49 sLhVVeC1DoAw
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Lymph Nodes Examined, No, PATH|LYMPH_EXAMINED:NO, Yes, PATH|LYMPH_EXAMINED:YES
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 1
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+	Part 2
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 3
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 4
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 5
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 6
+	Part 7
+report000000000051 51 51fGFeqpWCpD
+	Part 0
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000052 52 3GJgqpQgAxIS
+	Part 0
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 1
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 2
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 3
+		Histological Type, Biphasic, SNOMED:30383009, EPITHELIAL OR EPITHELIOID MESOTHELIOMA, SNOMED:65278006
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 4
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 5
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, PAPILLARY, SNOMED:77526009
+	Part 6
+	Part 7
+report000000000053 53 hKcKNPD2rHFh
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, Unknown, ANA|ULTRASTRUCTURAL:UN
+		Special Stain Profile, U, PATH|SPECIAL_STAIN:UN, Yes, PATH|SPECIAL_STAIN:YES
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Other Meso Type, HIST_TYPE:OTHER, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Configuration Not specified, SNOMED:399740008, DIFFUSE, TUMOR_CONFIG:DIFFUSE
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000054 54 9/3Ib6STa6r4
+		Special Stain Profile, Yes, PATH|SPECIAL_STAIN:YES, Unknown, PATH|SPECIAL_STAIN:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000055 55 aS4nBvqVJ5aI
+		Ultrastructural Findings, Acute Inflammation, SNOMED:4532008, Unknown, ANA|ULTRASTRUCTURAL:UN
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000056 56 hGvd2vynaTW5
+		Lymph Nodes Examined, Yes, PATH|LYMPH_EXAMINED:YES, No, PATH|LYMPH_EXAMINED:NO
+	Part 0
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 1
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+	Part 2
+	Part 3
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Exophytic, SNOMED:369749000, Unknown, SNOMED:399740008
+		Tumor Differentiation Or Grade, High, SNOMED:399611001, Unknown, ANA|TUMOR_DIFF:NA
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000057 57 KZMzvZP7oNzN
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, Unknown, ANA|ULTRASTRUCTURAL:UN
+	Part 0
+	Part 1
+	Part 2
+		Histological Type, Biphasic, SNOMED:30383009, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 3
+		Histological Type, Meso Type Not Specified, FAILED, Unknown, HIST_TYPE:UNKNOWN
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000058 58 9iRxIZStMq8f
+		Ultrastructural Findings, Other Ultrastructural, ANA|ULTRASTRUCTURAL:OT, PLEURAL PLAQUE, SNOMED:233658003
+	Part 0
+	Part 1
+	Part 2
+	Part 3
+	Part 4
+	Part 5
+	Part 6
+	Part 7
+report000000000059 59 RzdoaSt1+W6f
+	Part 0
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 1
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 2
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 3
+		Histological Type, Epithelial or epithelioid, SNOMED:65278006, Unknown, HIST_TYPE:UNKNOWN
+		Tumor Configuration, Diffuse Configuration, TUMOR_CONFIG:DIFFUSE, Unknown, SNOMED:399740008
+	Part 4
+	Part 5
+	Part 6
+	Part 7

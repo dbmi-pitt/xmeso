@@ -39,11 +39,11 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2meta.NmvbMesothelioma;
 public class Qa {
 
 	// private static final String CONST_SAMPLE_FILE_PATH =
-	// "C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\ExAnnotTblWithSpacedCols.txt";
+	// "C:\\Users\\zhy19\\workspace\\xmeso\\qa\\nmvb160520\\ExAnnotTblWithSpacedCols.txt";
 
-	private static final String CONST_INPUT_FILE_PATH = "C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\TrainingSetRawNeedsCleanup.tsv";
-	private static final String CONST_OUTPUT_FILE_PATH = "C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\Xmeso160607.csv";
-	private static final String CONST_LOG_FILE_PATH = "C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\XmesoLog160614.csv";
+	private static final String CONST_INPUT_FILE_PATH = "C:\\Users\\zhy19\\workspace\\xmeso\\qa\\nmvb160520\\TrainingSetRawNeedsCleanup.tsv";
+	private static final String CONST_OUTPUT_FILE_PATH = "C:\\Users\\zhy19\\workspace\\xmeso\\qa\\nmvb160520\\Xmeso160607.csv";
+	private static final String CONST_LOG_FILE_PATH = "C:\\Users\\zhy19\\workspace\\xmeso\\qa\\nmvb160520\\XmesoLog160614.csv";
 
 	private static final Integer[] ignoredReportNumbers = { 3, 12, 13, 15, 16,
 			18, 33, 47 };
