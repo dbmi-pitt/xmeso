@@ -47,7 +47,7 @@ public class QaXmiReader {
 	}
 
 	public void tryExecute() throws IOException, UIMAException, SAXException {
-		File xmiDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\output");
+		File xmiDirectory = new File("C:\\Users\\zhy19\\workspace\\xmeso\\output");
 		Iterator<XmesoCase> xmesoCaseIterator = xmesoCases.iterator();
 		Iterator<XmesoCase> xmesoCaseCodifiedIterator = xmesoCasesCodified.iterator();
 		while (xmesoCaseIterator.hasNext()) {
@@ -127,7 +127,7 @@ public class QaXmiReader {
 
 	private JCas convertXmiToJCas(File reportFile) throws UIMAException,
 			SAXException, IOException {
-		final String xmesoTypeSystemPath = "C:\\ws\\ws-xmeso\\xmeso\\descriptor\\edu\\pitt\\dbmi\\xmeso\\XmesoTypeSystem.xml";
+		final String xmesoTypeSystemPath = "C:\\Users\\zhy19\\workspace\\xmeso\\descriptor\\edu\\pitt\\dbmi\\xmeso\\XmesoTypeSystem.xml";
 		File xmesoTypeDescriptor = new File(xmesoTypeSystemPath);
 		TypeSystemDescription typeSystemDescription = TypeSystemDescriptionFactory
 				.createTypeSystemDescriptionFromPath(xmesoTypeDescriptor.toURI().toString());

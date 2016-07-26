@@ -17,8 +17,8 @@ public class RandomCohortSelector {
 	}
 
 	private void execute() throws IOException {
-		File reportDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\reports");
-		File randomizedResultsDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\cohort");
+		File reportDirectory = new File("C:\\Users\\zhy19\\workspace\\xmeso\\data\\reports");
+		File randomizedResultsDirectory = new File("C:\\Users\\zhy19\\workspace\\xmeso\\data\\cohort");
 		if (randomizedResultsDirectory.exists() && randomizedResultsDirectory.isDirectory()) {
 			FileUtils.deleteDirectory(randomizedResultsDirectory);
 		}

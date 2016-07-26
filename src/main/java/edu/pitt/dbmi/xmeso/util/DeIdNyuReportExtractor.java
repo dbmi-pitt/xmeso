@@ -23,7 +23,7 @@ public class DeIdNyuReportExtractor {
 	}
 
 	private void execute() throws IOException, ParseException {
-		final String xmesoHome = "C:\\ws\\ws-xmeso\\xmeso\\data\\nyu";
+		final String xmesoHome = "C:\\Users\\zhy19\\workspace\\xmeso\\data\\nyu";
 		File nyuDeidFile = new File(xmesoHome + File.separator + "path_reports_v2_deid.txt");
 		File outputDirectory = establishOutputDirectory(xmesoHome);
 		transferDeidFiles2Reports(nyuDeidFile, outputDirectory);

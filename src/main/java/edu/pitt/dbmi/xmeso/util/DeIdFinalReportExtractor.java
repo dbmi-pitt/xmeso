@@ -48,7 +48,7 @@ public class DeIdFinalReportExtractor {
 	}
 	
 	private void transferDeidFiles2Reports(File outputDirectory) throws IOException {
-		File deidDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\final\\deid");
+		File deidDirectory = new File("C:\\Users\\zhy19\\workspace\\xmeso\\data\\final\\deid");
 		File[] deidFiles = deidDirectory.listFiles();
 		for (File deidFile : deidFiles) {
 			String content = FileUtils.readFileToString(deidFile);

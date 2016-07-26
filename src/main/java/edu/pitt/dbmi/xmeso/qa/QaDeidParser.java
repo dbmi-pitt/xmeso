@@ -52,8 +52,8 @@ public class QaDeidParser {
 	}
 	
 	private void tryExecute() throws IOException, ParseException {
-		File deIdFile = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\input\\nmvb160520\\nmvb_train.deid");
-		File outputDirectory = new File("C:\\ws\\ws-xmeso\\xmeso\\data\\xmeso\\output\\nmvb160520");
+		File deIdFile = new File("C:\\Users\\zhy19\\workspace\\xmeso\\data\\xmeso\\input\\nmvb160520\\nmvb_train.deid");
+		File outputDirectory = new File("C:\\Users\\zhy19\\workspace\\xmeso\\data\\xmeso\\output\\nmvb160520");
 		if (outputDirectory.exists()) {
 			FileUtils.deleteRecursive(outputDirectory);
 		}
