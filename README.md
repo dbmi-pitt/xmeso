@@ -110,5 +110,7 @@ INFO: HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@dbmi-i2b2-dev05.
 
 You must have the following installed to build/install xmeso:
 
-* Oracle Java 1.8 - (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* Maven 3.x -(https://maven.apache.org/download.cgi)
+* Oracle Java 1.8 (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* Maven 3.x (https://maven.apache.org/download.cgi)
+
+You'll also need to install the UIMA Ruta component (https://uima.apache.org/ruta.html) to assist development. UIMA Ruta component consists of two major parts: An Analysis Engine, which interprets and executes the rule-based scripting language, and the Eclipse-based tooling (Workbench), which provides various support for developing rules.
