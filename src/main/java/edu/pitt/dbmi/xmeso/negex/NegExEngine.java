@@ -1,6 +1,5 @@
-package edu.pitt.dbmi.xmeso.negex;
+ package edu.pitt.dbmi.xmeso.negex;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.LinkedHashMap;

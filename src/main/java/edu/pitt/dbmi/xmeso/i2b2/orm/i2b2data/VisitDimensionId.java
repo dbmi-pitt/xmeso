@@ -3,6 +3,7 @@ package edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data;
 // Generated Apr 15, 2015 4:30:25 PM by Hibernate Tools 4.3.1
 
 import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 

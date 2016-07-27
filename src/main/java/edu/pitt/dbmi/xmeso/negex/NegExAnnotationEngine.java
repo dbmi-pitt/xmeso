@@ -2,12 +2,14 @@ package edu.pitt.dbmi.xmeso.negex;
 
 import java.util.HashMap;
 import java.util.List;
+
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+
 import edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;

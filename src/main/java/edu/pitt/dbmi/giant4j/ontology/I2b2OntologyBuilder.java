@@ -3,7 +3,6 @@ package edu.pitt.dbmi.giant4j.ontology;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;

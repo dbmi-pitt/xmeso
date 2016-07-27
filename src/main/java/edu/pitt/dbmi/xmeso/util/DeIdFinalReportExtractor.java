@@ -77,8 +77,23 @@ public class DeIdFinalReportExtractor {
 	private void loadXmesoProperties(String xmesoHomeDirectoryPath) {
 		InputStream input = null;
 		try {
+			/* 
+			 * Sample file content:
+			 * 
+			    organization=NYU
+				location_path=New York/New York
+				location_cd=New York
+				driver = oracle.jdbc.OracleDriver
+				dialect = org.hibernate.dialect.Oracle10gDialect
+				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+				user = i2b2demodata
+				password = demouser
+				show_sql = false
+			*/
 			input = new FileInputStream(xmesoHomeDirectoryPath + File.separator + "xmeso.properties");
+			// Load the "xmeso.properties" file into Properties object from a stream
 			xmesoProperties.load(input);
+			
 			System.out.println(xmesoProperties.getProperty("organization"));
 			System.out.println(xmesoProperties.getProperty("location_path"));
 			System.out.println(xmesoProperties.getProperty("url"));

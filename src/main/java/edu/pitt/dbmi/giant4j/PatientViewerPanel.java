@@ -30,7 +30,6 @@ import org.apache.commons.lang3.StringUtils;
 import edu.pitt.dbmi.giant4j.controller.Controller;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPanel;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
-import edu.pitt.dbmi.giant4j.kb.KbEncounter;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsEncounterUserObject;
 import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsPatientUserObject;

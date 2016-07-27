@@ -22,8 +22,8 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
 import edu.pitt.dbmi.giant4j.controller.Controller;
-import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.kb.KbEncounter;
+import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import edu.pitt.dbmi.giant4j.kb.KbSummary;
 
 public class PipeDialogEncounterExtraction extends JDialog implements Runnable,

@@ -5,6 +5,9 @@
  */
 package edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeTrue;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -15,9 +18,6 @@ import org.hibernate.Session;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
-import static org.junit.Assume.assumeTrue;
 
 /**
  *

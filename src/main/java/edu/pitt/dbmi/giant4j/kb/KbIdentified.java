@@ -1,6 +1,5 @@
 package edu.pitt.dbmi.giant4j.kb;
 
-import java.io.Serializable;
 
 public class KbIdentified implements KbIdentifiedInterface {
 	

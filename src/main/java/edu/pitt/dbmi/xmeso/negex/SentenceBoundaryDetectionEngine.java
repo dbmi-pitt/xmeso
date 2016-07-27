@@ -3,6 +3,7 @@ package edu.pitt.dbmi.xmeso.negex;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;

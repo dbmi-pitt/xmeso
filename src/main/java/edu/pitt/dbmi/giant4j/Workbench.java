@@ -26,7 +26,6 @@ import javax.swing.border.Border;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 
 import edu.pitt.dbmi.giant4j.controller.Controller;
-import edu.pitt.dbmi.giant4j.form.XmesoFormDataBean;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPanel;
 import edu.pitt.dbmi.giant4j.form.XmesoFormPartSet;
 import edu.pitt.dbmi.giant4j.kb.KbPatient;

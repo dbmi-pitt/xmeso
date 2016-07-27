@@ -1,8 +1,8 @@
 package edu.pitt.dbmi.giant4j.controller;
 
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.I2b2DemoDataSourceManager;
-
 import org.hibernate.SQLQuery;
+
+import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.I2b2DemoDataSourceManager;
 
 public class I2b2DemoDataCleaner {
 	

@@ -19,15 +19,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import edu.pitt.dbmi.giant4j.ontology.I2b2OntologyBuilder;
-import edu.pitt.dbmi.giant4j.ontology.PartialPath;
-import edu.pitt.dbmi.giant4j.kb.KbPatient;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+
+import edu.pitt.dbmi.giant4j.kb.KbPatient;
+import edu.pitt.dbmi.giant4j.ontology.I2b2OntologyBuilder;
+import edu.pitt.dbmi.giant4j.ontology.PartialPath;
 
 public class FormPanel extends JPanel {
 

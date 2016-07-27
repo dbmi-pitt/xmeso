@@ -31,11 +31,11 @@ import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.fit.factory.JCasFactory;
-import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
 import org.apache.uima.util.XmlCasDeserializer;
+import org.xml.sax.SAXException;
 
 import edu.pitt.dbmi.giant4j.controller.Controller;
 import edu.pitt.dbmi.giant4j.form.FormDataBean;
@@ -48,8 +48,6 @@ import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsPatientUserObject;
 import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsSummaryUserObject;
 import edu.pitt.dbmi.giant4j.treeview.artifact.AnnotationsTree;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity;
-
-import org.xml.sax.SAXException;
 
 public class AnnotationTabPanel extends JSplitPane implements
 		TreeSelectionListener, ActionListener {

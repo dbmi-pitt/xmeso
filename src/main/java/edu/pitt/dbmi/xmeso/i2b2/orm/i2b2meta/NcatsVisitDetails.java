@@ -5,6 +5,7 @@ package edu.pitt.dbmi.xmeso.i2b2.orm.i2b2meta;
 import java.math.BigDecimal;
 import java.sql.Clob;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;

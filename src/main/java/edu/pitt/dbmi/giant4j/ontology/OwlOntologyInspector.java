@@ -5,7 +5,6 @@ import static org.semanticweb.owlapi.search.Searcher.annotations;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.Queue;
