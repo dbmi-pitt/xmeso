@@ -38,7 +38,6 @@ public class Xmeso {
 
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-	//  XMESO_HOME environment variable
 	private String xmesoHome;
 	
 	private Properties xmesoProperties = new Properties();
@@ -79,7 +78,7 @@ public class Xmeso {
 	}
 
 	public void execute() throws InvalidXMLException, ResourceInitializationException, IOException, AnalysisEngineProcessException, SAXException {
-		// Get the xxmeso.home path from application.properties
+		// Get the xmeso.home path from application.properties
 		File file = new File("application.properties");
 		FileInputStream fileInput = new FileInputStream(file);
 		Properties properties = new Properties();
@@ -89,7 +88,7 @@ public class Xmeso {
 
 		System.out.println("Input data folder path: " + xmesoHome);
 
-		// Load `xmeso.properties` file from the XMESO_HOME
+		// Load `xmeso.properties` file from the input data folder
 		loadXmesoProperties();
 
 		mapVisitDates();

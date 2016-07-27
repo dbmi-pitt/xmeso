@@ -25,6 +25,7 @@ public class I2b2UserHomeDataSourceManager extends I2b2DataSourceManager {
 	public Session getSession() {
 		Properties properties = new Properties();
 		
+		// Get the xmeso.home path from application.properties
 		try {
 			File file = new File("application.properties");
 			FileInputStream fileInput = new FileInputStream(file);
