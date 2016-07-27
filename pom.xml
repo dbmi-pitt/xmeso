@@ -88,7 +88,8 @@
         </plugin>
     </plugins>
   </build>
-   <dependencies>
+  
+  <dependencies>
   	<dependency>
   		<groupId>com.lexicalscope.jewelcli</groupId>
   		<artifactId>jewelcli</artifactId>
@@ -114,15 +115,15 @@
   		<artifactId>guava</artifactId>
   		<version>19.0-rc1</version>
   	</dependency>
- <!-- 
- <dependency>
+<!-- 
+    <dependency>
         <groupId>oracle.jdbc</groupId>
         <artifactId>ojdbc</artifactId>
         <version>6</version>
         <scope>system</scope>
         <systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
      </dependency>  
-  -->  
+-->  
      <dependency>
      	<groupId>org.codehaus.sonar-plugins</groupId>
      	<artifactId>sonar-ant-task</artifactId>
@@ -184,14 +185,14 @@
      	<version>11.2.0</version>
      </dependency>  
         <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-api</artifactId>
-       <version>1.7.5</version>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.5</version>
      </dependency>
      <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-simple</artifactId>
-       <version>1.6.4</version>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.6.4</version>
      </dependency>
    </dependencies>
 </project>
