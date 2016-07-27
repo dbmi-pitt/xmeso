@@ -32,9 +32,6 @@ XMESO_NYU/
 |-- |-- MVB0004_00004.txt
 |-- |-- MVB0005_00005.txt
 |-- xmeso.properties
-nmvb_path_report_event_date.csv
-reports/
-xmeso.properties
 ````
 
 The `nmvb_path_report_event_date.csv` contains linkage from the patient report to visit number and visit date:
@@ -109,3 +106,9 @@ Jul 27, 2016 3:31:20 PM org.hibernate.service.jdbc.connections.internal.DriverMa
 INFO: HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE]
 ````
 
+## For Developers
+
+You must have the following installed to build/install xmeso:
+
+* Oracle Java 1.8 - (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* Maven 3.x -(https://maven.apache.org/download.cgi)
