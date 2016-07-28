@@ -47,11 +47,21 @@ public class VisitDimension implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public VisitDimension(VisitDimensionId id, String activeStatusCd,
-			Date startDate, Date endDate, String inoutCd, String locationCd,
-			String locationPath, BigDecimal lengthOfStay, String visitBlob,
-			Date updateDate, Date downloadDate, Date importDate,
-			String sourcesystemCd, BigDecimal uploadId) {
+	public VisitDimension(
+			VisitDimensionId id, 
+			String activeStatusCd,
+			Date startDate, 
+			Date endDate, 
+			String inoutCd, 
+			String locationCd,
+			String locationPath, 
+			BigDecimal lengthOfStay, 
+			String visitBlob,
+			Date updateDate, 
+			Date downloadDate, 
+			Date importDate,
+			String sourcesystemCd, 
+			BigDecimal uploadId) {
 		this.id = id;
 		this.activeStatusCd = activeStatusCd;
 		this.startDate = startDate;

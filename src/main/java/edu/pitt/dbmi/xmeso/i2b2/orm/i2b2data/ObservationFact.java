@@ -48,12 +48,23 @@ public class ObservationFact implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public ObservationFact(ObservationFactId id, String valtypeCd,
-			String tvalChar, BigDecimal nvalNum, String valueflagCd,
-			BigDecimal quantityNum, String unitsCd, Date endDate,
-			String locationCd, String observationBlob, BigDecimal confidenceNum,
-			Date updateDate, Date downloadDate, Date importDate,
-			String sourcesystemCd, BigDecimal uploadId) {
+	public ObservationFact(
+			ObservationFactId id, 
+			String valtypeCd,
+			String tvalChar, 
+			BigDecimal nvalNum, 
+			String valueflagCd,
+			BigDecimal quantityNum, 
+			String unitsCd, 
+			Date endDate,
+			String locationCd, 
+			String observationBlob, 
+			BigDecimal confidenceNum,
+			Date updateDate, 
+			Date downloadDate, 
+			Date importDate,
+			String sourcesystemCd, 
+			BigDecimal uploadId) {
 		this.id = id;
 		this.valtypeCd = valtypeCd;
 		this.tvalChar = tvalChar;

@@ -58,7 +58,7 @@ public abstract class I2b2DataSourceManager {
 			FileReader reader = new FileReader(dbPropertiesUrl.getPath());
 			dbProperties.load(reader);
 
-			/* Sample i2b2demodata.properties content
+			/* Sample i2b2 connection settings
 			 *  
 			 *  driver = oracle.jdbc.OracleDriver
 				dialect = org.hibernate.dialect.Oracle10gDialect

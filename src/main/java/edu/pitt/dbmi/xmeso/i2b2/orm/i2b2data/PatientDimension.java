@@ -50,13 +50,26 @@ public class PatientDimension implements java.io.Serializable {
 		this.patientNum = patientNum;
 	}
 
-	public PatientDimension(BigDecimal patientNum, String vitalStatusCd,
-			Date birthDate, Date deathDate, String sexCd,
-			BigDecimal ageInYearsNum, String languageCd, String raceCd,
-			String maritalStatusCd, String religionCd, String zipCd,
-			String statecityzipPath, String incomeCd, String patientBlob,
-			Date updateDate, Date downloadDate, Date importDate,
-			String sourcesystemCd, BigDecimal uploadId) {
+	public PatientDimension(
+			BigDecimal patientNum, 
+			String vitalStatusCd,
+			Date birthDate, 
+			Date deathDate, 
+			String sexCd,
+			BigDecimal ageInYearsNum, 
+			String languageCd, 
+			String raceCd,
+			String maritalStatusCd, 
+			String religionCd, 
+			String zipCd,
+			String statecityzipPath, 
+			String incomeCd, 
+			String patientBlob,
+			Date updateDate, 
+			Date downloadDate, 
+			Date importDate,
+			String sourcesystemCd, 
+			BigDecimal uploadId) {
 		this.patientNum = patientNum;
 		this.vitalStatusCd = vitalStatusCd;
 		this.birthDate = birthDate;

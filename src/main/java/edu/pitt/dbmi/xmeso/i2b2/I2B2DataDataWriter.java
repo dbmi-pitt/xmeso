@@ -223,8 +223,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		patientDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
 		return result;
@@ -246,8 +245,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		patientDimension.setMaritalStatusCd("single");
 		patientDimension.setReligionCd("Agnostic");
 		patientDimension.setZipCd("15232");
-		patientDimension
-				.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
+		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
 		patientDimension.setUpdateDate(timeNow);
@@ -286,8 +284,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(visitDimension);
 		VisitDimension result = (VisitDimension) q.uniqueResult();
 		return result;
@@ -316,7 +313,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		return visitDimension;
 	}
 
-	/****
+	/**
 	 * 
 	 *
 	 * Concept (aka Summary)
@@ -342,8 +339,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		conceptDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(conceptDimension);
 		ConceptDimension result = (ConceptDimension) q.uniqueResult();
 		return result;
@@ -394,21 +390,17 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 		sqlUpdate.executeUpdate();
 	}
 
-	private ObservationFact fetchObservationFact(
-			ObservationFactId observationFactId) {
+	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
 		q.setParameter("id", observationFactId);
 		q.setParameter("sourcesystemCd", getSourceSystemCd());
 		ObservationFact result = (ObservationFact) q.uniqueResult();
 		return result;
 	}
 
-	private void writeObservation(int patientNum, int visitNum,
-			String conceptCd, long instanceNum) {
-
+	private void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));
@@ -455,9 +447,7 @@ public class I2B2DataDataWriter extends JCasAnnotator_ImplBase {
 
 	}
 
-	private void writeNumericObservation(int patientNum, int visitNum,
-			String conceptCd, long instanceNum, float floatValue) {
-
+	private void writeNumericObservation(int patientNum, int visitNum, String conceptCd, long instanceNum, float floatValue) {
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));

@@ -27,9 +27,14 @@ public class ObservationFactId implements java.io.Serializable {
 	public ObservationFactId() {
 	}
 
-	public ObservationFactId(BigDecimal patientNum, String conceptCd,
-			String modifierCd, Date startDate, BigDecimal encounterNum,
-			long instanceNum, String providerId) {
+	public ObservationFactId(
+			BigDecimal patientNum, 
+			String conceptCd,
+			String modifierCd, 
+			Date startDate, 
+			BigDecimal encounterNum,
+			long instanceNum, 
+			String providerId) {
 		this.patientNum = patientNum;
 		this.conceptCd = conceptCd;
 		this.modifierCd = modifierCd;

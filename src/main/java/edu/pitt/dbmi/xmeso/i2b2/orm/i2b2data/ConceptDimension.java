@@ -41,9 +41,15 @@ public class ConceptDimension implements java.io.Serializable {
 		this.conceptPath = conceptPath;
 	}
 
-	public ConceptDimension(String conceptCd, String conceptPath,
-			String nameChar, String conceptBlob, Date updateDate,
-			Date downloadDate, Date importDate, String sourcesystemCd,
+	public ConceptDimension(
+			String conceptCd, 
+			String conceptPath,
+			String nameChar, 
+			String conceptBlob, 
+			Date updateDate,
+			Date downloadDate, 
+			Date importDate, 
+			String sourcesystemCd,
 			BigDecimal uploadId) {
 		this.conceptCd = conceptCd;
 		this.conceptPath = conceptPath;

@@ -41,9 +41,15 @@ public class ProviderDimension implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public ProviderDimension(ProviderDimensionId id, String nameChar,
-			String providerBlob, Date updateDate, Date downloadDate,
-			Date importDate, String sourcesystemCd, BigDecimal uploadId) {
+	public ProviderDimension(
+			ProviderDimensionId id, 
+			String nameChar,
+			String providerBlob, 
+			Date updateDate, 
+			Date downloadDate,
+			Date importDate, 
+			String sourcesystemCd, 
+			BigDecimal uploadId) {
 		this.id = id;
 		this.nameChar = nameChar;
 		this.providerBlob = providerBlob;

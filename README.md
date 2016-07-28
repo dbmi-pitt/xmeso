@@ -11,7 +11,7 @@ designed by PITT Bioinformatics.
 
 ## Configuration
 
-There is a `application.properties` file in the root directory of this project. In order to run the final Uber jar file, users will need to specify the input data directory:
+There is a `application.properties` file in the root directory of this project. In order to run the final Uber jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
 
 ````
 xmeso.home=C:/Users/zhy19/XMESO_PITT
@@ -23,8 +23,24 @@ Note: Always use the Unix file separator "/" when working on Windows system. Oth
 xmeso.home=C:\\Users\\zhy19\\XMESO_PITT
 ````
 
-The Xmeso input data directory can be anywhere on the file system accessible from the executable
-jar. And the input data folder should have the sub-folder/file structure that is similar to the following example:
+In addition, users will also need to specify their i2b2 related settings.
+
+````
+# i2b2 location ontology path and code
+organization=PITT
+location_path=Pittsburgh/Pennsylvania
+location_cd=Pennsylvania
+
+# i2b2 database connection settings
+driver = oracle.jdbc.OracleDriver
+dialect = org.hibernate.dialect.Oracle10gDialect
+url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+user = i2b2demodata
+password = demouser
+show_sql = false
+````
+
+And the input data folder should have the sub-folder/file structure that is similar to the following example:
 
 ````
 XMESO_PITT/
@@ -35,7 +51,6 @@ XMESO_PITT/
 |-- |-- MVB0004_17555.txt
 |-- |-- MVB0005_15979.txt
 |-- |-- MVB0006_15891.txt
-|-- xmeso.properties
 ````
 
 The `nmvb_path_report_event_date.csv` contains linkage from the patient report to visit number and visit date:
@@ -50,20 +65,6 @@ REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
 ````
 
 The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `observation_fact` table as well as appropriate dimension tables.
-
-And the `xmeso.properties` contains the dataset name (E.g. PITT, RPCI, UPENN, or NYU) and the i2b2 database connection parameters and i2b2 location ontology path and code":
-
-````
-organization=PITT
-location_path=Pittsburgh/Pennsylvania
-location_cd=Pennsylvania
-driver = oracle.jdbc.OracleDriver
-dialect = org.hibernate.dialect.Oracle10gDialect
-url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-user = your-i2b2-username
-password = your-i2b2-password
-show_sql = false
-````
 
 ## Running the Uber Jar
 
