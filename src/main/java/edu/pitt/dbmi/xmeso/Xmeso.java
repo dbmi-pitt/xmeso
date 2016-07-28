@@ -38,7 +38,7 @@ public class Xmeso {
 
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-	private String xmesoData;
+	private String xmesoDataDir;
 
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
 
@@ -83,9 +83,9 @@ public class Xmeso {
 		Properties properties = new Properties();
 		properties.load(fileInput);
 
-		xmesoData = properties.getProperty("xmeso_data");
+		xmesoDataDir = properties.getProperty("xmeso_data");
 
-		System.out.println("Input data folder path: " + xmesoData);
+		System.out.println("Input data folder path: " + xmesoDataDir);
 
 		mapVisitDates();
 
@@ -108,7 +108,7 @@ public class Xmeso {
 			00004,MVB0004,0004,2016-07-07
 			00005,MVB0005,0005,2016-07-07
 		 */
-		File eventDatesFile = new File(xmesoData + File.separator + "nmvb_path_report_event_date.csv");
+		File eventDatesFile = new File(xmesoDataDir + File.separator + "nmvb_path_report_event_date.csv");
 		
 		for (String line : FileUtils.readLines(eventDatesFile)) {
 			if (line.contains("REPORT_ID")) {
@@ -139,7 +139,7 @@ public class Xmeso {
 				//"resourcePaths", resourcePaths, 
 				"lowMemoryProfile", false);
 		// All report files inside the "reports" folder
-		File inputDirectory = new File(xmesoData + File.separator + "reports");
+		File inputDirectory = new File(xmesoDataDir + File.separator + "reports");
 		File[] inputFiles = inputDirectory.listFiles();
 		for (File inputFile : inputFiles) {
 			currentReportFile = inputFile;
