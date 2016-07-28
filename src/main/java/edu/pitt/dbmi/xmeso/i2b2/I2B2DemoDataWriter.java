@@ -343,8 +343,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		conceptDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(conceptDimension);
 		ConceptDimension result = (ConceptDimension) q.uniqueResult();
 		return result;
@@ -399,8 +398,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 			ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
 		q.setParameter("id", observationFactId);
 		q.setParameter("sourcesystemCd", getSourceSystemCd());
 		ObservationFact result = (ObservationFact) q.uniqueResult();
@@ -456,9 +454,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 
 	}
 
-	private void writeNumericObservation(int patientNum, int visitNum,
-			String conceptCd, long instanceNum, float floatValue) {
-
+	private void writeNumericObservation(int patientNum, int visitNum, String conceptCd, long instanceNum, float floatValue) {
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));

@@ -1,4 +1,8 @@
-/target/
-/.settings/
-/bin/
-/data/
+## Ignore the target directory created by Maven
+target
+
+## Ignore the input data directory
+data/
+
+## Ignore the log file
+xmeso.log

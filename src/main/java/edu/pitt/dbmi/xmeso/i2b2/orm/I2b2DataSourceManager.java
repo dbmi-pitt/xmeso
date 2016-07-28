@@ -58,12 +58,9 @@ public abstract class I2b2DataSourceManager {
 			FileReader reader = new FileReader(dbPropertiesUrl.getPath());
 			dbProperties.load(reader);
 
-			/* Sample xemo.properties content form PITT
-			 * 
-			 *  organization=PITT
-				location_path=Pittsburgh/Pennsylvania
-				location_cd=Pennsylvania
-				driver = oracle.jdbc.OracleDriver
+			/* Sample i2b2demodata.properties content
+			 *  
+			 *  driver = oracle.jdbc.OracleDriver
 				dialect = org.hibernate.dialect.Oracle10gDialect
 				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
 				user = 
