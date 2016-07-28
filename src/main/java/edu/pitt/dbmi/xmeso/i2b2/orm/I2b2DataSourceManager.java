@@ -180,8 +180,7 @@ public abstract class I2b2DataSourceManager {
 	public void destroy() {
 		closeSession();
 		closeSessionFactory();
-		logger.debug("destroyed " + getClass().getName()
-				+ " : session and sessionFactory removed.");
+		logger.debug("destroyed " + getClass().getName() + " : session and sessionFactory removed.");
 	}
 
 	@Override

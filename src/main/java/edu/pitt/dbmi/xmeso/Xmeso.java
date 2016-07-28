@@ -55,6 +55,7 @@ public class Xmeso {
 	private AnalysisEngine engine;
 	private File currentReportFile;
 
+	// Set to true to see more debugging info
 	private boolean isDebugging = false;
 
 	public static void main(String[] args) {
@@ -99,17 +100,6 @@ public class Xmeso {
 		processReports();
 
 		i2b2DataSourceManager.destroy();
-	}
-
-	private void displaySystemEnvironmentVariables(Map<String, String> env) {
-		if (isDebugging) {
-			final List<String> sortedKeys = new ArrayList<String>();
-			sortedKeys.addAll(env.keySet());
-			Collections.sort(sortedKeys);
-			for (String envName : sortedKeys) {
-				System.out.format("%s=%s%n", envName, env.get(envName));
-			}
-		}
 	}
 
 	private void mapVisitDates() throws IOException {
@@ -211,7 +201,7 @@ public class Xmeso {
 			
 			System.out.println("Successfully processed report #" + reportId);
 		} catch (Exception e) {
-			System.err.println("Report #" + reportId + " failed");
+			System.err.println("Failed to process report #" + reportId);
 		}
 	}
 
@@ -242,14 +232,11 @@ public class Xmeso {
 			XmesoCaseForm caseForm = (XmesoCaseForm) caseFormFs;
 			String lymphNodesExamined = caseForm.getLymphNodesExamined();
 			String specialStain = caseForm.getSpecialStain();
-			String ultraStructuralFindings = caseForm
-					.getUltrastructuralFindings();
+			String ultraStructuralFindings = caseForm.getUltrastructuralFindings();
 			if (isDebugging) {
-				System.out
-						.println("lymphNodesExamined = " + lymphNodesExamined);
+				System.out.println("lymphNodesExamined = " + lymphNodesExamined);
 				System.out.println("specialStain = " + specialStain);
-				System.out.println("ultraStructuralFindings = "
-						+ ultraStructuralFindings);
+				System.out.println("ultraStructuralFindings = " + ultraStructuralFindings);
 			}
 
 			i2b2DemoDataWriter.fetchOrCreateConcept(lymphNodesExamined);

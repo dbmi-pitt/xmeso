@@ -20,7 +20,8 @@ public class NegExEngine {
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
 
-		String negexDictionaryFilePath = "C:\\Users\\zhy19\\workspace\\xmeso\\resources\\negex\\NegExDictionary.txt";
+		// Always use the Unix file separator "/" when working on Windows system
+		String negexDictionaryFilePath = "C:/Users/zhy19/workspace/xmeso/resources/negex/NegExDictionary.txt";
 		
 		initializeTerminology(negexDictionaryFilePath);
 //		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
