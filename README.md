@@ -11,7 +11,7 @@ designed by PITT Bioinformatics.
 
 ## Configuration
 
-There is a `application.properties` file in the root directory of this project. In order to run the final Uber jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
+There is a `application.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
 
 ````
 xmeso_data=C:/Users/zhy19/XMESO_PITT
@@ -66,49 +66,23 @@ REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
 
 The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `observation_fact` table as well as appropriate dimension tables.
 
-## Running the Uber Jar
+## Executing the Jar
 
 Open your command line terminal, and go to the directory where this project resides, and type the following command:
 
 ````
-java -jar xmeso-1.0.0.jar
+java -jar xmeso-1.0.0-jar-with-dependencies.jar
 ````
 
 And this command will have the following sample outputs in the terminal when everything works successfully:
 
 ````
 Input data folder path: C:\Users\zhy19\XMESO_PITT
-Jul 27, 2016 3:31:13 PM org.hibernate.annotations.common.Version <clinit>
-INFO: HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
-Jul 27, 2016 3:31:13 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {4.0.0.Final}
-Jul 27, 2016 3:31:13 PM org.hibernate.cfg.Environment <clinit>
-INFO: HHH000206: hibernate.properties not found
-Jul 27, 2016 3:31:13 PM org.hibernate.cfg.Environment buildBytecodeProvider
-INFO: HHH000021: Bytecode provider name : javassist
-Jul 27, 2016 3:31:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-Jul 27, 2016 3:31:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000115: Hibernate connection pool size: 20
-Jul 27, 2016 3:31:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000006: Autocommit mode: false
-Jul 27, 2016 3:31:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000401: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE]
-Jul 27, 2016 3:31:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000046: Connection properties: {user=i2b2demodata, password=****}
-Jul 27, 2016 3:31:14 PM org.hibernate.dialect.Dialect <init>
-INFO: HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
-Jul 27, 2016 3:31:14 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
-INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-Jul 27, 2016 3:31:14 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
-INFO: HHH000397: Using ASTQueryTranslatorFactory
 Successfully processed report #15869
 Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Successfully processed report #15891
-Jul 27, 2016 3:31:20 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl stop
-INFO: HHH000030: Cleaning up connection pool [jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE]
 ````
 
 ## For Developers
