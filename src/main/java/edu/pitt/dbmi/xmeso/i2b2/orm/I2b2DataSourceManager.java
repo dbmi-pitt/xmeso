@@ -66,8 +66,8 @@ public abstract class I2b2DataSourceManager {
 				driver = oracle.jdbc.OracleDriver
 				dialect = org.hibernate.dialect.Oracle10gDialect
 				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-				user = i2b2demodata
-				password = demouser
+				user = 
+				password = 
 				show_sql = false
 			 */
 			setHibernateDriver(dbProperties.getProperty("driver", oracle.jdbc.OracleDriver.class.getName()));
