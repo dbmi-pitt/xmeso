@@ -58,11 +58,25 @@ public abstract class I2b2DataSourceManager {
 			FileReader reader = new FileReader(dbPropertiesUrl.getPath());
 			dbProperties.load(reader);
 
+			/* Sample xemo.properties content form PITT
+			 * 
+			 *  organization=PITT
+				location_path=Pittsburgh/Pennsylvania
+				location_cd=Pennsylvania
+				driver = oracle.jdbc.OracleDriver
+				dialect = org.hibernate.dialect.Oracle10gDialect
+				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+				user = i2b2demodata
+				password = demouser
+				show_sql = false
+			 */
 			setHibernateDriver(dbProperties.getProperty("driver", oracle.jdbc.OracleDriver.class.getName()));
 			setHibernateDialect(dbProperties.getProperty("dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
-			setHibernateConnectionUrl(dbProperties.getProperty("url", "jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE"));
-			setHibernateUserName(dbProperties.getProperty("user", "i2b2demodata"));
-			setHibernateUserPassword(dbProperties.getProperty("password", "demouser"));
+			// No need to specify the default values
+			setHibernateConnectionUrl(dbProperties.getProperty("url"));
+			setHibernateUserName(dbProperties.getProperty("user"));
+			setHibernateUserPassword(dbProperties.getProperty("password"));
+			// Set default as true
 			setHibernateShowSql(dbProperties.getProperty("show_sql", "true"));
 
 			configuration = new Configuration();
