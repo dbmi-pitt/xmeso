@@ -38,9 +38,7 @@ public class Xmeso {
 
 	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-	private String xmesoHome;
-	
-	private Properties xmesoProperties = new Properties();
+	private String xmesoData;
 
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
 
@@ -85,12 +83,9 @@ public class Xmeso {
 		Properties properties = new Properties();
 		properties.load(fileInput);
 
-		xmesoHome = properties.getProperty("xmeso.home");
+		xmesoData = properties.getProperty("xmeso_data");
 
-		System.out.println("Input data folder path: " + xmesoHome);
-
-		// Load `xmeso.properties` file from the input data folder
-		loadXmesoProperties();
+		System.out.println("Input data folder path: " + xmesoData);
 
 		mapVisitDates();
 
@@ -113,7 +108,7 @@ public class Xmeso {
 			00004,MVB0004,0004,2016-07-07
 			00005,MVB0005,0005,2016-07-07
 		 */
-		File eventDatesFile = new File(xmesoHome + File.separator + "nmvb_path_report_event_date.csv");
+		File eventDatesFile = new File(xmesoData + File.separator + "nmvb_path_report_event_date.csv");
 		
 		for (String line : FileUtils.readLines(eventDatesFile)) {
 			if (line.contains("REPORT_ID")) {
@@ -133,40 +128,6 @@ public class Xmeso {
 		}
 	}
 
-	/**
-	 * Load `xmeso.properties` file from the XMESO_HOME
-	 */
-	private void loadXmesoProperties() {
-		InputStream input = null;
-		try {
-			/* 
-			 * Sample file content:
-			 * 
-			    organization=NYU
-				location_path=New York/New York
-				location_cd=New York
-				driver = oracle.jdbc.OracleDriver
-				dialect = org.hibernate.dialect.Oracle10gDialect
-				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-				user = i2b2demodata
-				password = demouser
-				show_sql = false
-			*/
-			input = new FileInputStream(xmesoHome + File.separator + "xmeso.properties");
-			// Load the "xmeso.properties" file into Properties object from a stream
-			xmesoProperties.load(input);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		} finally {
-			if (input != null) {
-				try {
-					input.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
 
 	private void processReports() throws InvalidXMLException,
 		ResourceInitializationException, IOException {
@@ -178,7 +139,7 @@ public class Xmeso {
 				//"resourcePaths", resourcePaths, 
 				"lowMemoryProfile", false);
 		// All report files inside the "reports" folder
-		File inputDirectory = new File(xmesoHome + File.separator + "reports");
+		File inputDirectory = new File(xmesoData + File.separator + "reports");
 		File[] inputFiles = inputDirectory.listFiles();
 		for (File inputFile : inputFiles) {
 			currentReportFile = inputFile;

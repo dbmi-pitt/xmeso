@@ -14,13 +14,13 @@ designed by PITT Bioinformatics.
 There is a `application.properties` file in the root directory of this project. In order to run the final Uber jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
 
 ````
-xmeso.home=C:/Users/zhy19/XMESO_PITT
+xmeso_data=C:/Users/zhy19/XMESO_PITT
 ````
 
 Note: Always use the Unix file separator "/" when working on Windows system. Otherwise you'll have to specify the path as 
 
 ````
-xmeso.home=C:\\Users\\zhy19\\XMESO_PITT
+xmeso_data=C:\\Users\\zhy19\\XMESO_PITT
 ````
 
 In addition, users will also need to specify their i2b2 related settings.
