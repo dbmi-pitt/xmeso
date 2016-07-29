@@ -3,15 +3,11 @@ package edu.pitt.dbmi.xmeso;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -89,6 +85,18 @@ public class Xmeso {
 
 		mapVisitDates();
 
+		/**
+		 * Display the report file and date mappings. E.g.
+		 * 
+		 * MVB0020_17639.txt: 1978-12-16
+		   MVB0038_15907.txt: 1960-04-14
+		   MVB0471_16685.txt: 1979-11-07
+		 */
+		if (isDebugging) {
+			System.out.println("============================DEBUGGING============================");
+			displayVisitMap();
+		}
+		
 		i2b2DataSourceManager = new I2b2UserHomeDataSourceManager();
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DataSourceManager);
 
@@ -129,8 +137,7 @@ public class Xmeso {
 	}
 
 
-	private void processReports() throws InvalidXMLException,
-		ResourceInitializationException, IOException {
+	private void processReports() throws InvalidXMLException, ResourceInitializationException, IOException {
 		//final String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
 		//System.out.println("Setting resourcePath to " + resourcePath);
 		//final String[] resourcePaths = { resourcePath };
@@ -141,6 +148,7 @@ public class Xmeso {
 		// All report files inside the "reports" folder
 		File inputDirectory = new File(xmesoDataDir + File.separator + "reports");
 		File[] inputFiles = inputDirectory.listFiles();
+		// Process each individual report file
 		for (File inputFile : inputFiles) {
 			currentReportFile = inputFile;
 			processReport();
@@ -179,7 +187,6 @@ public class Xmeso {
 		// Establish the patient
 		i2b2DemoDataWriter.setPatientNum(Integer.parseInt(patientId));
 		i2b2DemoDataWriter.fetchOrCreatePatient();
-
 		i2b2DemoDataWriter.setVisitNum(Integer.parseInt(reportId));
 		String eventKey = currentReportFile.getName();
 		String formattedDate = this.visitDateMap.get(eventKey);
@@ -195,6 +202,7 @@ public class Xmeso {
 			String specialStain = caseForm.getSpecialStain();
 			String ultraStructuralFindings = caseForm.getUltrastructuralFindings();
 			if (isDebugging) {
+				System.out.println("============================DEBUGGING============================");
 				System.out.println("lymphNodesExamined = " + lymphNodesExamined);
 				System.out.println("specialStain = " + specialStain);
 				System.out.println("ultraStructuralFindings = " + ultraStructuralFindings);
@@ -214,10 +222,17 @@ public class Xmeso {
 		for (AnnotationFS tumorFormFS : JCasUtil.select(jCas, XmesoTumorForm.class)) {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
 			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart() + "");
+			
+			String tumorSiteCode = tumorForm.getTumorSite();
+			
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
 			if (isDebugging) {
+				// Kevin only used this tumorSiteCode when he was debugging in an unused function
+				// So I moved it here as part of the debugging
+				System.out.println("tumorSiteCode = " + tumorSiteCode);
+				
 				System.out.println("histologicTypeCode = " + histologicTypeCode);
 				System.out.println("tumorConfigurationCode = " + tumorConfigurationCode);
 				System.out.println("tumorDifferentiationCode = " + tumorDifferentiationCode);
@@ -232,27 +247,6 @@ public class Xmeso {
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
 		}
 
-	}
-
-	@SuppressWarnings("unused")
-	private void displayCas(JCas jCas) {
-
-		// TumorForm information
-
-		for (AnnotationFS tumorFormFS : JCasUtil.select(jCas, XmesoTumorForm.class)) {
-			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
-			String tumorSiteCode = tumorForm.getTumorSite();
-			String histologicTypeCode = tumorForm.getHistopathologicalType();
-			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
-			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
-			
-			if (isDebugging) {
-				System.out.println("tumorSiteCode = " + tumorSiteCode);
-				System.out.println("histologicTypeCode = " + histologicTypeCode);
-				System.out.println("tumorConfigurationCode = " + tumorConfigurationCode);
-				System.out.println("tumorDifferentiationCode = " + tumorDifferentiationCode);
-			}
-		}
 	}
 
 	private void displayVisitMap() {
