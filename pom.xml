@@ -11,11 +11,9 @@
 	<description>Information Extraction for National Mesothelioma Virtual Bank</description>
 
 	<properties>
-		<ctakes.version>3.2.3-SNAPSHOT</ctakes.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<droolsVersion>5.5.0.Final</droolsVersion>
 	</properties>
 
 	<build>
@@ -49,7 +47,7 @@
 	</build>
 
 	<dependencies>
-		<dependency>
+		<dependency><!-- Used by giant -->
 			<groupId>com.lexicalscope.jewelcli</groupId>
 			<artifactId>jewelcli</artifactId>
 			<version>0.8.9</version>
@@ -69,29 +67,22 @@
 			<artifactId>uimafit-core</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>19.0-rc1</version>
-		</dependency>
-		<!-- 
-		<dependency> 
-			<groupId>oracle.jdbc</groupId> 
-			<artifactId>ojdbc</artifactId> 
-			<version>6</version> 
-			<scope>system</scope> 
-			<systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath> 
-		</dependency> 
-		-->
-		<dependency>
+<!-- 		<dependency>  -->
+<!-- 			<groupId>oracle.jdbc</groupId>  -->
+<!-- 			<artifactId>ojdbc</artifactId>  -->
+<!-- 			<version>6</version>  -->
+<!-- 			<scope>system</scope>  -->
+<!-- 			<systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>  -->
+<!-- 		</dependency>  -->
+		<dependency><!-- Used by Xmeso.java to process file -->
 			<groupId>org.codehaus.sonar-plugins</groupId>
 			<artifactId>sonar-ant-task</artifactId>
 			<version>2.2</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- Used by giant -->
 			<groupId>org.drools</groupId>
 			<artifactId>drools-compiler</artifactId>
-			<version>${droolsVersion}</version>
+			<version>5.5.0.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -103,37 +94,32 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.0.0.Final</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- Used by I2b2DataSourceManager -->
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-distribution</artifactId>
 			<version>4.1.1</version>
-		</dependency>
-		<dependency>
+ 		</dependency>
+		<dependency><!-- Used by giant -->
 			<groupId>com.jgoodies</groupId>
 			<artifactId>forms</artifactId>
 			<version>1.2.1</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- Used by giant -->
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.9.2</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- Used by xmeso.decomposition SentenceDetectorConfigurator -->
 			<groupId>de.julielab</groupId>
 			<artifactId>aliasi-lingpipe</artifactId>
 			<version>4.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-			<version>5.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-analyzers-common</artifactId>
 			<version>5.4.0</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- Used by xmeso qa -->
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-queryparser</artifactId>
 			<version>5.4.0</version>
