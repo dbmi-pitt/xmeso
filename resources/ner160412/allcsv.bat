@@ -1,6 +1,0 @@
-copy ruta_histological_type.txt ruta_histological_type.csv
-copy ruta_immunohistochemical_profile.txt ruta_immunohistochemical_profile.csv
-copy ruta_site_of_tumor.txt ruta_site_of_tumor.csv
-copy ruta_surgical_procedure.txt ruta_surgical_procedure.csv
-copy ruta_tumor_configuration.txt ruta_tumor_configuration.csv
-copy ruta_tumor_differentiation.txt ruta_tumor_differentiation.csv
