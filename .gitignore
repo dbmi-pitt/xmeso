@@ -1,8 +1,11 @@
 ## Ignore the target directory created by Maven
-target
+target/
 
 ## Ignore the input data directory
 data/
+
+## Ignore the JCasGen generated org package
+src/mian/java/org/
 
 ## Ignore the log file
 xmeso.log
