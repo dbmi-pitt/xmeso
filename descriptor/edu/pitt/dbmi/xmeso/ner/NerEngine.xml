@@ -4,7 +4,7 @@
     <primitive>true</primitive>
     <annotatorImplementationName>org.apache.uima.ruta.engine.RutaEngine</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>edu.pitt.dbmi.xmeso.ner.Ner160412Engine</name>
+        <name>edu.pitt.dbmi.xmeso.ner.NerEngine</name>
         <description/>
         <version>1.0</version>
         <vendor/>
@@ -245,7 +245,7 @@
             <nameValuePair>
                 <name>mainScript</name>
                 <value>
-                    <string>edu.pitt.dbmi.xmeso.ner.Ner160412</string>
+                    <string>edu.pitt.dbmi.xmeso.ner.Ner</string>
                 </value>
             </nameValuePair>
             <nameValuePair>
@@ -316,7 +316,7 @@
         </configurationParameterSettings>
         <typeSystemDescription>
             <imports>
-                <import location="Ner160412TypeSystem.xml"/>
+                <import location="NerTypeSystem.xml"/>
             </imports>
         </typeSystemDescription>
         <typePriorities>

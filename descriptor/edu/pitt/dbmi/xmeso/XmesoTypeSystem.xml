@@ -4,12 +4,12 @@
     <imports>
         <import location="../../../../BasicTypeSystem.xml"/>
         <import location="model/ModelTypeSystem.xml"/>
+        <import location="ner/NerTypeSystem.xml"/>
         <import location="sectionizer/SectionizerTypeSystem.xml"/>
         <import location="avpairs/AvPairDetectorTypeSystem.xml"/>
         <import location="utilities/UtilitiesTypeSystem.xml"/>
         <import location="deidcleaner/DeidCleanerTypeSystem.xml"/>
         <import location="sectionizer/PartizerTypeSystem.xml"/>
-        <import location="ner/Ner160412TypeSystem.xml"/>
         <import location="quantitative/QuantitativeValueDetectorTypeSystem.xml"/>
     </imports>
 </typeSystemDescription>

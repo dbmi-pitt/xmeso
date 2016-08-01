@@ -280,12 +280,12 @@
                 <value>
                     <array>
                         <string>edu.pitt.dbmi.xmeso.model.Model</string>
+                        <string>edu.pitt.dbmi.xmeso.ner.Ner</string>
                         <string>edu.pitt.dbmi.xmeso.sectionizer.Sectionizer</string>
                         <string>edu.pitt.dbmi.xmeso.avpairs.AvPairDetector</string>
                         <string>edu.pitt.dbmi.xmeso.utilities.Utilities</string>
                         <string>edu.pitt.dbmi.xmeso.deidcleaner.DeidCleaner</string>
                         <string>edu.pitt.dbmi.xmeso.sectionizer.Partizer</string>
-                        <string>edu.pitt.dbmi.xmeso.ner.Ner160412</string>
                         <string>edu.pitt.dbmi.xmeso.quantitative.QuantitativeValueDetector</string>
                     </array>
                 </value>

@@ -2,13 +2,13 @@ PACKAGE edu.pitt.dbmi.xmeso.ner;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
-WORDTABLE xmesoHistologicalTypeTable = 'ner160412/ruta_histological_type.csv';
-WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner160412/ruta_immunohistochemical_profile.csv';
-WORDTABLE xmesoTumorSiteTable = 'ner160412/ruta_site_of_tumor.csv';
-WORDTABLE xmesoSurgicalProcedureTable = 'ner160412/ruta_surgical_procedure.csv';
-WORDTABLE xmesoTumorConfigurationTable = 'ner160412/ruta_tumor_configuration.csv';
-WORDTABLE xmesoTumorDifferentiationTable = 'ner160412/ruta_tumor_differentiation.csv';
-WORDTABLE xmesoUltrastructuralFindingsTable = 'ner160412/ruta_ultrastructural_findings.csv';
+WORDTABLE xmesoHistologicalTypeTable = 'ner/ruta_histological_type.csv';
+WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner/ruta_immunohistochemical_profile.csv';
+WORDTABLE xmesoTumorSiteTable = 'ner/ruta_site_of_tumor.csv';
+WORDTABLE xmesoSurgicalProcedureTable = 'ner/ruta_surgical_procedure.csv';
+WORDTABLE xmesoTumorConfigurationTable = 'ner/ruta_tumor_configuration.csv';
+WORDTABLE xmesoTumorDifferentiationTable = 'ner/ruta_tumor_differentiation.csv';
+WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ruta_ultrastructural_findings.csv';
 
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 2,
