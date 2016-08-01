@@ -113,8 +113,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setMaritalStatusCd("single");
 		patientDimension.setReligionCd("Agnostic");
 		patientDimension.setZipCd("15232");
-		patientDimension
-				.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
+		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
 		patientDimension.setUpdateDate(timeNow);
@@ -153,8 +152,7 @@ public class I2B2DemoDataWriter {
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(visitDimension);
 		VisitDimension result = (VisitDimension) q.uniqueResult();
 		return result;
@@ -209,8 +207,7 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(conceptDimension);
 		ConceptDimension result = (ConceptDimension) q.uniqueResult();
 		return result;
@@ -234,8 +231,7 @@ public class I2B2DemoDataWriter {
 			ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
 		q.setParameter("id", observationFactId);
 		q.setParameter("sourcesystemCd", getSourceSystemCd());
 		ObservationFact result = (ObservationFact) q.uniqueResult();

@@ -73,8 +73,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 			currentPatientDimension = fetchOrCreatePatient();
 			currentVisitDimension = fetchOrCreateVisit();
 			clearExistingPatientObservations();
-			for (XmesoTumorForm tumorForm : JCasUtil.select(aJCas,
-					XmesoTumorForm.class)) {
+			for (XmesoTumorForm tumorForm : JCasUtil.select(aJCas, XmesoTumorForm.class)) {
 				cacheCodesFromForm(tumorForm);
 				displayTumorForm();
 				storeDataElements();
@@ -224,8 +223,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		patientDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
 		return result;
@@ -247,8 +245,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		patientDimension.setMaritalStatusCd("single");
 		patientDimension.setReligionCd("Agnostic");
 		patientDimension.setZipCd("15232");
-		patientDimension
-				.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
+		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
 		patientDimension.setUpdateDate(timeNow);
@@ -287,8 +284,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(visitDimension);
 		VisitDimension result = (VisitDimension) q.uniqueResult();
 		return result;
