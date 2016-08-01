@@ -47,11 +47,6 @@
 	</build>
 
 	<dependencies>
-		<dependency><!-- Used by giant -->
-			<groupId>com.lexicalscope.jewelcli</groupId>
-			<artifactId>jewelcli</artifactId>
-			<version>0.8.9</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
 			<artifactId>ruta-core</artifactId>
@@ -79,11 +74,6 @@
 			<artifactId>sonar-ant-task</artifactId>
 			<version>2.2</version>
 		</dependency>
-		<dependency><!-- Used by giant -->
-			<groupId>org.drools</groupId>
-			<artifactId>drools-compiler</artifactId>
-			<version>5.5.0.Final</version>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -99,30 +89,10 @@
 			<artifactId>owlapi-distribution</artifactId>
 			<version>4.1.1</version>
  		</dependency>
-		<dependency><!-- Used by giant -->
-			<groupId>com.jgoodies</groupId>
-			<artifactId>forms</artifactId>
-			<version>1.2.1</version>
-		</dependency>
-		<dependency><!-- Used by giant -->
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.2</version>
-		</dependency>
 		<dependency><!-- Used by xmeso.decomposition SentenceDetectorConfigurator -->
 			<groupId>de.julielab</groupId>
 			<artifactId>aliasi-lingpipe</artifactId>
 			<version>4.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers-common</artifactId>
-			<version>5.4.0</version>
-		</dependency>
-		<dependency><!-- Used by xmeso qa -->
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queryparser</artifactId>
-			<version>5.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
