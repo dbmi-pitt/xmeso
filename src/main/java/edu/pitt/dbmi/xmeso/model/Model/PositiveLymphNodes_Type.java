@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Jul 29 16:10:25 EDT 2016 */
+/* First created by JCasGen Mon Aug 01 15:50:48 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -11,7 +11,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Mon Aug 01 09:56:26 EDT 2016
+ * Updated by JCasGen Mon Aug 01 15:50:48 EDT 2016
  * @generated */
 public class PositiveLymphNodes_Type extends XmesoBooleanDataElement_Type {
   /** @generated 

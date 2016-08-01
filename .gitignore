@@ -5,7 +5,7 @@ target/
 data/
 
 ## Ignore the JCasGen generated org package
-src/mian/java/org/
+src/main/java/org/
 
 ## Ignore the log file
 xmeso.log
