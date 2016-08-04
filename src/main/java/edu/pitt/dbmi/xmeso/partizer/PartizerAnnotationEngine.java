@@ -20,8 +20,7 @@ import edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSize;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm;
 
-public class PartizerAnnotationEngine extends
-		org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 
 	/**
 	 * Given a set of PartHeaderGenerator Annotations covering a series of
@@ -39,8 +38,7 @@ public class PartizerAnnotationEngine extends
 		}
 	};
 
-	private final TreeSet<Annotation> sPartSet = new TreeSet<Annotation>(
-			annotComparator);
+	private final TreeSet<Annotation> sPartSet = new TreeSet<Annotation>(annotComparator);
 
 	private final TreeSet<Integer> partNumbers = new TreeSet<Integer>();
 	private final TreeSet<Integer> sectionLevels = new TreeSet<Integer>();
@@ -210,12 +208,9 @@ public class PartizerAnnotationEngine extends
 		currentTumorForm = new XmesoTumorForm(jCas);
 		currentTumorForm.setCurrentPart(currentPart);
 		currentTumorForm.setTumorSite(defaultTumorForm.getTumorSite());
-		currentTumorForm.setHistopathologicalType(defaultTumorForm
-				.getHistopathologicalType());
-		currentTumorForm.setTumorConfiguration(defaultTumorForm
-				.getTumorConfiguration());
-		currentTumorForm.setTumorDifferentiation(defaultTumorForm
-				.getTumorDifferentiation());
+		currentTumorForm.setHistopathologicalType(defaultTumorForm.getHistopathologicalType());
+		currentTumorForm.setTumorConfiguration(defaultTumorForm.getTumorConfiguration());
+		currentTumorForm.setTumorDifferentiation(defaultTumorForm.getTumorDifferentiation());
 		currentTumorForm.setBegin(defaultTumorForm.getBegin());
 		currentTumorForm.setEnd(defaultTumorForm.getEnd());
 	}
@@ -236,15 +231,12 @@ public class PartizerAnnotationEngine extends
 	}
 
 	private void fillTumorForms(JCas jCas) {
-		for (Iterator<Integer> partNumberIterator = partNumbers.iterator(); partNumberIterator
-				.hasNext();) {
+		for (Iterator<Integer> partNumberIterator = partNumbers.iterator(); partNumberIterator.hasNext();) {
 			currentPart = partNumberIterator.next();
 			initializeCurrentTumorForm(jCas);
-			for (Iterator<Integer> sectionLevelIterator = sectionLevels
-					.iterator(); sectionLevelIterator.hasNext();) {
+			for (Iterator<Integer> sectionLevelIterator = sectionLevels.iterator(); sectionLevelIterator.hasNext();) {
 				currentSectionLevel = sectionLevelIterator.next();
-				for (Iterator<Integer> codedPenaltyIterator = codedPenalties
-						.iterator(); codedPenaltyIterator.hasNext();) {
+				for (Iterator<Integer> codedPenaltyIterator = codedPenalties.iterator(); codedPenaltyIterator.hasNext();) {
 					currentCodedPenalty = codedPenaltyIterator.next();
 					fillRemainingFormSlots(jCas);
 				}
@@ -256,8 +248,7 @@ public class PartizerAnnotationEngine extends
 	private void fillRemainingFormSlots(JCas jCas) {
 		for (Section section : JCasUtil.select(jCas, Section.class)) {
 			for (Part part : JCasUtil.selectCovered(Part.class, section)) {
-				for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(
-						XmesoNamedEntity.class, part)) {
+				for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(XmesoNamedEntity.class, part)) {
 					boolean isCurrent = true;
 					isCurrent = isCurrent
 							&& (section.getLevel() == currentSectionLevel);

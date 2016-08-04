@@ -39,11 +39,11 @@ public class InformationExtractorAnnotationEngine extends
 	private XmesoTumorForm defaultTumorForm;
 	private XmesoTumorForm currentTumorForm;
 
-	private int reportNumber = 0;
+	//private int reportNumber = 0;
 
 	public static void main(String[] args) {
-		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
-		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
+		//InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
+		//String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
 //		System.out.println("The result is " + result);
 	}
 

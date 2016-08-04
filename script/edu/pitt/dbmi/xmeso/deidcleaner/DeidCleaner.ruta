@@ -10,5 +10,6 @@ SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 // of the report
 //
 BLOCK(DetectDeId) Document{} {
+  // E.g. [Report de-identified (Safe-harbor compliant) by De-ID v.6.14.03] ?
   "^\\[Report de[^\\]]+\\]" -> DeIdBannarAnnotation;
 }

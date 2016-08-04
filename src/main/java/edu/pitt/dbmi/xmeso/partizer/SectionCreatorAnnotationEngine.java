@@ -14,8 +14,7 @@ import edu.pitt.dbmi.xmeso.model.Model.EndOfSection;
 import edu.pitt.dbmi.xmeso.model.Model.Section;
 import edu.pitt.dbmi.xmeso.model.Model.SectionHeader;
 
-public class SectionCreatorAnnotationEngine extends
-		org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class SectionCreatorAnnotationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
 
 	/**
 	 * Given a set of PartHeaderGenerator Annotations covering a series of
