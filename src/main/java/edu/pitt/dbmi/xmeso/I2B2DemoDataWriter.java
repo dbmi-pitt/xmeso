@@ -90,8 +90,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setSourcesystemCd(getSourceSystemCd());
 		Query q = dataSourceMgr
 				.getSession()
-				.createQuery(
-						"from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
+				.createQuery("from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
 		return result;

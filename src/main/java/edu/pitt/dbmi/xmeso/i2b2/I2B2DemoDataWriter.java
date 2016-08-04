@@ -52,12 +52,12 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 	public static void main(String[] args) {
 
 		try {
-			I2b2DemoDataSourceManager i2b2DataDataSourceManager = new I2b2DemoDataSourceManager();
-			I2B2DemoDataWriter i2b2DataDataWriter = new I2B2DemoDataWriter();
-			i2b2DataDataWriter.setDataSourceMgr(i2b2DataDataSourceManager);
-			i2b2DataDataWriter.setSourceSystemCd("Xmeso");
-			i2b2DataDataWriter.execute();
-			i2b2DataDataSourceManager.destroy();
+			I2b2DemoDataSourceManager i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
+			I2B2DemoDataWriter i2b2DemoDataWriter = new I2B2DemoDataWriter();
+			i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
+			i2b2DemoDataWriter.setSourceSystemCd("Xmeso");
+			i2b2DemoDataWriter.execute();
+			i2b2DemoDataSourceManager.destroy();
 
 		} catch (ClassNotFoundException ce) {
 			ce.printStackTrace();
@@ -390,8 +390,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		sqlUpdate.executeUpdate();
 	}
 
-	private ObservationFact fetchObservationFact(
-			ObservationFactId observationFactId) {
+	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
 				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
@@ -401,9 +400,7 @@ public class I2B2DemoDataWriter extends JCasAnnotator_ImplBase {
 		return result;
 	}
 
-	private void writeObservation(int patientNum, int visitNum,
-			String conceptCd, long instanceNum) {
-
+	private void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));

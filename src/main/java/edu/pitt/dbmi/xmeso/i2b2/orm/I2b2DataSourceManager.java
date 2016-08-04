@@ -118,8 +118,7 @@ public abstract class I2b2DataSourceManager {
 			String pkgName = getClass().getPackage().getName();
 			ClassPath classPath = ClassPath.from(getClass().getClassLoader());
 			final ArrayList<Class<?>> clses = new ArrayList<Class<?>>();
-			Set<ClassInfo> clsInfos = classPath
-					.getTopLevelClassesRecursive(pkgName);
+			Set<ClassInfo> clsInfos = classPath.getTopLevelClassesRecursive(pkgName);
 			for (ClassInfo clsInfo : clsInfos) {
 				if (!clsInfo.getName().equals(getClass().getName())) {
 					clses.add(clsInfo.load());
