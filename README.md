@@ -9,6 +9,18 @@ federated query is based on Shrine connectivity between i2b2 instances housed wi
 participating covered site. This architecture is similar to that used for ACT and PCORI networks
 designed by PITT Bioinformatics.
 
+Xmeso is implemented as a hybrid system of Apache Ruta Scripts and Apache Uima Java Text
+Annotators. Ruta is essentially a Java Annotator under the hood but the Ruta Scripting
+language is unique in its expressivity.
+
+At this development stage, this Xmeso tool will extract six Data Elements over the report set:
+
+| Case Level | Part Level |
+| --- | --- |
+| Ultrastructural Findings | Histopathologic Type |
+| Lymph Nodes Examined | Tumor Configuration |
+| Special Stain Profile | Tumor Differentiation |
+
 ## Configuration
 
 There is a `application.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
@@ -83,6 +95,7 @@ Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Successfully processed report #15891
+Finished processing all reports.
 ````
 
 ## For Developers
