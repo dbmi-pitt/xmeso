@@ -1,11 +1,11 @@
-package edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data;
+package edu.pitt.dbmi.xmeso.i2b2;
 
 import java.io.File;
 import java.net.MalformedURLException;
 
 import org.hibernate.Session;
 
-import edu.pitt.dbmi.xmeso.i2b2.orm.I2b2DataSourceManager;
+import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
 
 public class I2b2DemoDataSourceManager extends I2b2DataSourceManager {
 	

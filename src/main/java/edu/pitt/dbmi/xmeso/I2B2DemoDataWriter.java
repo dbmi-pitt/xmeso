@@ -9,13 +9,13 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
-import edu.pitt.dbmi.xmeso.i2b2.orm.I2b2DataSourceManager;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.ConceptDimension;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.ObservationFact;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.ObservationFactId;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.PatientDimension;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.VisitDimension;
-import edu.pitt.dbmi.xmeso.i2b2.orm.i2b2data.VisitDimensionId;
+import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
+import edu.pitt.dbmi.xmeso.i2b2.ConceptDimension;
+import edu.pitt.dbmi.xmeso.i2b2.ObservationFact;
+import edu.pitt.dbmi.xmeso.i2b2.ObservationFactId;
+import edu.pitt.dbmi.xmeso.i2b2.PatientDimension;
+import edu.pitt.dbmi.xmeso.i2b2.VisitDimension;
+import edu.pitt.dbmi.xmeso.i2b2.VisitDimensionId;
 
 public class I2B2DemoDataWriter {
 	
