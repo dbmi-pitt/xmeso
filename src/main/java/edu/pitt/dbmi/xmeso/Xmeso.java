@@ -212,8 +212,18 @@ public class Xmeso {
 		i2b2DemoDataWriter.setVisitDate(visitDate);
 		i2b2DemoDataWriter.fetchOrCreateVisit();
 
-		// Case level information
+		// On this cycle we wll extract six Data Elements over the report set:
+		//
+		// Case level information:
+		//		    - Ultrastructural Findings
+		//		    - Lymph Nodes Examined
+		//		    - Special Stain Profile
+		// Part Level:
+		//		    - Histopathologic Type
+		//		    - Tumor Configuration
+		//		    - Tumor Differentiation
 
+		// Case level information
 		for (AnnotationFS caseFormFs : JCasUtil.select(jCas, XmesoCaseForm.class)) {
 			XmesoCaseForm caseForm = (XmesoCaseForm) caseFormFs;
 			String lymphNodesExamined = caseForm.getLymphNodesExamined();
@@ -230,6 +240,7 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(specialStain);
 			i2b2DemoDataWriter.fetchOrCreateConcept(ultraStructuralFindings);
 
+			// Here we use report id as the encounter number
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), lymphNodesExamined, 0L);
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), specialStain, 0L);
 			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), ultraStructuralFindings, 0L);
