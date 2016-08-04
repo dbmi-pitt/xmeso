@@ -15,6 +15,7 @@ import java.util.Set;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -125,7 +126,7 @@ public abstract class I2b2DataSourceManager {
 				}
 			}
 			if (clses.isEmpty()) {
-				logger.error("Failed to load hibernate clses");
+				logger.error("Failed to load hibernate classes");
 			} else {
 				for (Class<?> cls : clses) {
 //					System.err.println("Configuring " + cls.getName()
@@ -144,7 +145,8 @@ public abstract class I2b2DataSourceManager {
 	 * SessionFactory
 	 */
 	protected boolean buildSessionFactory(Configuration configuration) {
-		sessionFactory = configuration.buildSessionFactory();
+		StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+        sessionFactory = configuration.buildSessionFactory(ssrb.build());
 		return !sessionFactory.isClosed();
 	}
 

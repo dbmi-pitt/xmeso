@@ -1,4 +1,4 @@
-package edu.pitt.dbmi.xmeso;
+package edu.pitt.dbmi.xmeso.i2b2;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -32,8 +32,8 @@ public class I2B2DemoDataWriter {
 	
 	private Date visitDate;
 
+	// Do we need to clean up the XMESO_PROVIDER_DIMENSION table?
 	public void cleanOldRecords() {
-
 		String sql = "delete from XMESO_OBSERVATION_FACT where SOURCESYSTEM_CD = :sourceSystemCd";
 		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
