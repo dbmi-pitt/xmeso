@@ -226,8 +226,7 @@ public class I2B2DemoDataWriter {
 		return conceptDimension;
 	}
 
-	private ObservationFact fetchObservationFact(
-			ObservationFactId observationFactId) {
+	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
 				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
@@ -237,9 +236,7 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
-	public void writeObservation(int patientNum, int visitNum,
-			String conceptCd, long instanceNum) {
-
+	public void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));

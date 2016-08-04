@@ -39,7 +39,10 @@ public class Xmeso {
 
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
 
-	private I2b2DemoDataSourceManager i2b2DataSourceManager;
+	private I2b2DemoDataSourceManager i2b2DemoDataSourceManager;
+	
+	// This is the I2B2DemoDataWriter in the same directory as this Xmeso.java 
+	// Not the one at src/main/java/edu/pitt/dbmi/xmeso/i2b2/I2B2DemoDataWriter.java
 	private I2B2DemoDataWriter i2b2DemoDataWriter = new I2B2DemoDataWriter();
 
 	private String reportId;
@@ -98,12 +101,12 @@ public class Xmeso {
 			displayVisitMap();
 		}
 		
-		i2b2DataSourceManager = new I2b2DemoDataSourceManager();
-		i2b2DemoDataWriter.setDataSourceMgr(i2b2DataSourceManager);
+		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
+		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 
 		processReports();
 
-		i2b2DataSourceManager.destroy();
+		i2b2DemoDataSourceManager.destroy();
 	}
 
 	private void mapVisitDates() throws IOException {
@@ -149,12 +152,16 @@ public class Xmeso {
 				"lowMemoryProfile", false);
 		// All report files inside the "reports" folder
 		File inputDirectory = new File(xmesoDataDir + File.separator + "reports");
+		
+		// Should only process reports that are listed in the nmvb_path_report_event_date.csv?
 		File[] inputFiles = inputDirectory.listFiles();
 		// Process each individual report file
 		for (File inputFile : inputFiles) {
 			currentReportFile = inputFile;
 			processReport();
 		}
+		
+		System.out.println("Finished processing all reports.");
 	}
 	
 	/**
