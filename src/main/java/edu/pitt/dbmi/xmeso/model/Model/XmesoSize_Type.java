@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Mon Aug 01 15:50:48 EDT 2016
+ * Updated by JCasGen Thu Aug 04 16:21:38 EDT 2016
  * @generated */
 public class XmesoSize_Type extends XmesoNamedEntity_Type {
   /** @generated 

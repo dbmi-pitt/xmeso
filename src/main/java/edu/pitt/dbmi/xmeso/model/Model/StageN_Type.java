@@ -12,7 +12,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Mon Aug 01 15:50:48 EDT 2016
+ * Updated by JCasGen Thu Aug 04 16:21:38 EDT 2016
  * @generated */
 public class StageN_Type extends Annotation_Type {
   /** @generated 

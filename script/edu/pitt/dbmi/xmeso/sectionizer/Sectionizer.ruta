@@ -32,18 +32,6 @@ BLOCK(SynopticCategoryFilter) Document{->ADDRETAINTYPE(BREAK,SynopticCategory)} 
 }
 
 //
-// SynopticDetector
-//
-// Synoptic Report Question Discovery
-// 
-WORDTABLE synopticsTable = 'synoptics/synoptic_categories.csv';
-BLOCK(SynopticDetector) Document{} {
-     Document{->MARKTABLE(SynopticCategory, 1,
-         synopticsTable, true, 10, "-()", 10, "name" = 2)};
-     SynopticCategory  {-> SHIFT(SynopticCategory,1,2)} COLON{-PARTOF(SynopticCategory)};
-}
-
-//
 // EndOfDocumentDetector
 //
 // Detect the end of document position.  Each document

@@ -11,7 +11,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Mon Aug 01 15:50:48 EDT 2016
+ * Updated by JCasGen Thu Aug 04 16:21:38 EDT 2016
  * @generated */
 public class XmesoUltrastructuralFindings_Type extends XmesoNamedEntity_Type {
   /** @generated 
