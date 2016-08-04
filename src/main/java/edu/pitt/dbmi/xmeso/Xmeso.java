@@ -109,6 +109,9 @@ public class Xmeso {
 		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 
+		// Delete old records before inserting new ones
+		i2b2DemoDataWriter.cleanOldRecords();
+		
 		processReports();
 
 		i2b2DemoDataSourceManager.destroy();
