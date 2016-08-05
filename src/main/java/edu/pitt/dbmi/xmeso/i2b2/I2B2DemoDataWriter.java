@@ -2,7 +2,6 @@ package edu.pitt.dbmi.xmeso.i2b2;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -28,13 +27,13 @@ public class I2B2DemoDataWriter {
 	
 	private I2b2DataSourceManager dataSourceMgr;
 
-	private int uploadId = 0;
+	private int uploadId;
 
 	private String sourceSystemCd = "Xmeso";
 
-	private int patientNum = -1;
-	private int visitNum = -1;
-	private int instanceNum = -1;
+	private int patientNum;
+	private int visitNum;
+	private int instanceNum;
 	
 	private Date visitDate;
 
@@ -72,6 +71,7 @@ public class I2B2DemoDataWriter {
 		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
 		sqlUpdate.setInteger("patientNum", patientNum);
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
+		// Transaction
 		Transaction tx = dataSourceMgr.getSession().beginTransaction();
 		sqlUpdate.executeUpdate();
 		tx.commit();
@@ -83,6 +83,7 @@ public class I2B2DemoDataWriter {
 		if (existingPatient == null) {
 			PatientDimension newPatient = newPatient();
 			dataSourceMgr.getSession().saveOrUpdate(newPatient);
+			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().flush();
 			tx.commit();
@@ -103,11 +104,15 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
+	// Create fake patient
+	// The patient ID will be the PATIENT_NUM from the nmvb_path_report_event_date.csv
+	// everything else will be fake and repeated for each patient
 	private PatientDimension newPatient() {
 		PatientDimension patientDimension = new PatientDimension();
 
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setVitalStatusCd((String) null);
+		// Use `20-APR-67` as fake birthday date
 		GregorianCalendar calendar = new GregorianCalendar();
 		calendar.set(1967, 3, 20);
 		patientDimension.setBirthDate(calendar.getTime());
@@ -144,6 +149,7 @@ public class I2B2DemoDataWriter {
 		if (existingVisit == null) {
 			VisitDimension newVisit = newVisit();
 			dataSourceMgr.getSession().saveOrUpdate(newVisit);
+			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().flush();
 			tx.commit();
@@ -197,6 +203,8 @@ public class I2B2DemoDataWriter {
 		visitDimension.setDownloadDate(timeNow);
 		visitDimension.setImportDate(timeNow);
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
+		
+		// Why use 99 as the `UPLOAD_ID` value in VISIT_DIMENSION?
 		visitDimension.setUploadId(new BigDecimal(99));
 		
 		return visitDimension;
@@ -213,6 +221,7 @@ public class I2B2DemoDataWriter {
 		if (existingConcept == null) {
 			ConceptDimension newConcept = newConcept(code);
 			dataSourceMgr.getSession().saveOrUpdate(newConcept);
+			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().flush();
 			tx.commit();
@@ -263,6 +272,8 @@ public class I2B2DemoDataWriter {
 	public void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		// Primary key
 		ObservationFactId observationFactId = new ObservationFactId();
+		// User visit number (report ID) as the `ENCOUNTER_NUM` if it's valid
+		// Otherwise use the patient number
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));
 		} else {
@@ -304,6 +315,7 @@ public class I2B2DemoDataWriter {
 			observationFact.setSourcesystemCd(getSourceSystemCd());
 			observationFact.setUploadId(new BigDecimal(uploadId++));
 
+			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().saveOrUpdate(observationFact);
 			dataSourceMgr.getSession().flush();
@@ -312,6 +324,7 @@ public class I2B2DemoDataWriter {
 	}
 
 	public void setPatientNum(int patientNum) {
+		this.patientNum = patientNum;
 	}
 
 	public int getVisitNum() {
