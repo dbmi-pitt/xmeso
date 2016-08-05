@@ -6,6 +6,11 @@ import java.net.MalformedURLException;
 import org.hibernate.Session;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
+import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimension;
 
 public class I2b2DemoDataSourceManager extends I2b2DataSourceManager {
 	

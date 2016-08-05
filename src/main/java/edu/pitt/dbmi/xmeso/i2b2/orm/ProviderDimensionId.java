@@ -1,4 +1,4 @@
-package edu.pitt.dbmi.xmeso.i2b2;
+package edu.pitt.dbmi.xmeso.i2b2.orm;
 
 // Generated Apr 15, 2015 4:30:25 PM by Hibernate Tools 4.3.1
 
