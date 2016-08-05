@@ -107,6 +107,8 @@ Once finish running, this tool will have all the found information added to the 
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
+Note: when rerunning this jar file, all the previously added database records will be erased before adding new records.
+
 ## For Developers
 
 You must have the following installed to build/install xmeso:
