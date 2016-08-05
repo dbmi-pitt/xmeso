@@ -42,6 +42,9 @@ In addition, users will also need to specify their i2b2 related settings.
 location_path=Pittsburgh/Pennsylvania
 location_cd=Pennsylvania
 
+# i2b2 source system code
+sourcesystem_cd=Xmeso
+
 # i2b2 database connection settings
 driver = oracle.jdbc.OracleDriver
 dialect = org.hibernate.dialect.Oracle10gDialect
@@ -96,6 +99,13 @@ Successfully processed report #15979
 Successfully processed report #15891
 Finished processing all reports.
 ````
+Once finish running, this tool will have all the found information added to the following I2B2 database tables:
+
+- `OBSERVATION_FACT`
+- `CONCEPT_DIMENSION`
+- `VISIT_DIMENSION`
+
+Then you can do further analysis by referencing the added records with the existing patients.
 
 ## For Developers
 
