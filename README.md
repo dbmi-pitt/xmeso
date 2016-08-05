@@ -39,7 +39,6 @@ In addition, users will also need to specify their i2b2 related settings.
 
 ````
 # i2b2 location ontology path and code
-organization=PITT
 location_path=Pittsburgh/Pennsylvania
 location_cd=Pennsylvania
 
