@@ -1,9 +1,14 @@
 package edu.pitt.dbmi.xmeso.i2b2;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Properties;
 
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
@@ -20,6 +25,7 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimensionId;
 public class I2B2DemoDataWriter {
 	
 	private Date timeNow = new Date();
+	
 	private I2b2DataSourceManager dataSourceMgr;
 
 	private int uploadId = 0;
@@ -73,6 +79,7 @@ public class I2B2DemoDataWriter {
 
 	public PatientDimension fetchOrCreatePatient() {
 		PatientDimension existingPatient = fetchPatient();
+		// Create a fake patient record if no existing patients in the PATIENT_DIMENSION table
 		if (existingPatient == null) {
 			PatientDimension newPatient = newPatient();
 			dataSourceMgr.getSession().saveOrUpdate(newPatient);
@@ -98,7 +105,7 @@ public class I2B2DemoDataWriter {
 
 	private PatientDimension newPatient() {
 		PatientDimension patientDimension = new PatientDimension();
-		Date timeNow = new Date();
+
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setVitalStatusCd((String) null);
 		GregorianCalendar calendar = new GregorianCalendar();
@@ -115,6 +122,8 @@ public class I2B2DemoDataWriter {
 		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
+		// Use today's date, e.g., 05-AUG-16, as the 
+		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the PATIENT_DIMENSION table
 		patientDimension.setUpdateDate(timeNow);
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
@@ -127,9 +136,10 @@ public class I2B2DemoDataWriter {
 	 * 
 	 *
 	 * Encounter
+	 * @throws IOException 
 	 *
 	 */
-	public VisitDimension fetchOrCreateVisit() {
+	public VisitDimension fetchOrCreateVisit() throws IOException {
 		VisitDimension existingVisit = fetchVisit();
 		if (existingVisit == null) {
 			VisitDimension newVisit = newVisit();
@@ -157,26 +167,38 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
-	private VisitDimension newVisit() {
-		Date timeNow = new Date();
+	private VisitDimension newVisit() throws IOException {
+		// Get the `location_cd` and `location_path`values form application.properties
+		File file = new File("application.properties");
+		FileInputStream fileInput = new FileInputStream(file);
+		Properties properties = new Properties();
+		properties.load(fileInput);
+
+		String location_cd = properties.getProperty("location_cd");
+		String location_path = properties.getProperty("location_path");
+		
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitId = new VisitDimensionId();
-		visitId.setPatientNum(new BigDecimal(patientNum));
+		
 		visitId.setEncounterNum(new BigDecimal(visitNum));
+		visitId.setPatientNum(new BigDecimal(patientNum));
 		visitDimension.setId(visitId);
 		visitDimension.setActiveStatusCd("Active");
-		visitDimension.setDownloadDate(timeNow);
-		visitDimension.setEndDate(visitDate);
-		visitDimension.setImportDate(timeNow);
-		visitDimension.setInoutCd("in");
-		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
-		visitDimension.setLocationCd("Pennsylvania");
-		visitDimension.setLocationPath("Pittsburgh/Pennsylvania");
-		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		visitDimension.setStartDate(visitDate);
-		visitDimension.setUpdateDate(timeNow);
+		visitDimension.setEndDate(visitDate);
+		visitDimension.setInoutCd("in");
+		visitDimension.setLocationCd(location_cd);
+		visitDimension.setLocationPath(location_path);
+		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
 		visitDimension.setVisitBlob(null);
+		// Use today's date, e.g., 05-AUG-16, as the 
+		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the VISIT_DIMENSION table
+		visitDimension.setUpdateDate(timeNow);
+		visitDimension.setDownloadDate(timeNow);
+		visitDimension.setImportDate(timeNow);
+		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		visitDimension.setUploadId(new BigDecimal(99));
+		
 		return visitDimension;
 	}
 
@@ -218,6 +240,8 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setConceptCd(code);
 		conceptDimension.setNameChar(code);
 		conceptDimension.setConceptBlob(null);
+		// Use today's date, e.g., 05-AUG-16, as the 
+		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the CONCEPT_DIMENSION table
 		conceptDimension.setUpdateDate(timeNow);
 		conceptDimension.setDownloadDate(timeNow);
 		conceptDimension.setImportDate(timeNow);
@@ -237,6 +261,7 @@ public class I2B2DemoDataWriter {
 	}
 
 	public void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
+		// Primary key
 		ObservationFactId observationFactId = new ObservationFactId();
 		if (visitNum >= 0) {
 			observationFactId.setEncounterNum(new BigDecimal(visitNum));
@@ -249,6 +274,7 @@ public class I2B2DemoDataWriter {
 		observationFactId.setProviderId(getSourceSystemCd());
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@_"+uploadId);
+		// Use today's date, e.g., 05-AUG-16, as the `START_DATE` in the OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
 		ObservationFact observationFact = fetchObservationFact(observationFactId);
@@ -265,10 +291,13 @@ public class I2B2DemoDataWriter {
 			observationFact.setValueflagCd("@");
 			observationFact.setQuantityNum(new BigDecimal(1));
 			observationFact.setUnitsCd("@");
+			// Use today's date, e.g., 05-AUG-16, as the `END_DATE` in the OBSERVATION_FACT table
 			observationFact.setEndDate(timeNow);
 			observationFact.setLocationCd("@");
 			observationFact.setObservationBlob(null);
 			observationFact.setConfidenceNum(new BigDecimal(1.0));
+			// Use today's date, e.g., 05-AUG-16, as the 
+			// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the OBSERVATION_FACT table
 			observationFact.setUpdateDate(timeNow);
 			observationFact.setDownloadDate(timeNow);
 			observationFact.setImportDate(timeNow);

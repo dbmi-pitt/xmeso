@@ -202,7 +202,7 @@ public class Xmeso {
 		}
 	}
 
-	private void populateCas(JCas jCas) throws ParseException {
+	private void populateCas(JCas jCas) throws ParseException, IOException {
 		// Establish the patient
 		i2b2DemoDataWriter.setPatientNum(Integer.parseInt(patientId));
 		i2b2DemoDataWriter.fetchOrCreatePatient();

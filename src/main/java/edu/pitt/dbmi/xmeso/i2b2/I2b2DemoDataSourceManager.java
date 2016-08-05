@@ -20,7 +20,6 @@ public class I2b2DemoDataSourceManager extends I2b2DataSourceManager {
 		configuration.addAnnotatedClass(VisitDimension.class);
 		configuration.addAnnotatedClass(PatientDimension.class);
 		configuration.addAnnotatedClass(ConceptDimension.class);
-
 	}
 	
 	public Session getSession() {
