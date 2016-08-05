@@ -54,10 +54,12 @@ public class I2B2DemoDataWriter {
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
 		sqlUpdate.executeUpdate();
 
+		/* Should we do this?
 		sql = "delete from XMESO_PATIENT_DIMENSION where SOURCESYSTEM_CD = :sourceSystemCd";
 		sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
 		sqlUpdate.executeUpdate();
+		*/
 	}
 	
 	/****
