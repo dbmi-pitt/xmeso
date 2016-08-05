@@ -45,10 +45,8 @@ public class Xmeso {
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
 
 	private I2b2DemoDataSourceManager i2b2DemoDataSourceManager;
-	
-	// This is the I2B2DemoDataWriter in the same directory as this Xmeso.java 
-	// Not the one at src/main/java/edu/pitt/dbmi/xmeso/i2b2/I2B2DemoDataWriter.java
-	private I2B2DemoDataWriter i2b2DemoDataWriter = new I2B2DemoDataWriter();
+
+	private I2B2DemoDataWriter i2b2DemoDataWriter;
 
 	private String reportId;
 	private String mvbName;
@@ -79,15 +77,18 @@ public class Xmeso {
 	}
 
 	public void execute() throws InvalidXMLException, ResourceInitializationException, IOException, AnalysisEngineProcessException, SAXException {
-		// Get the xmeso.home path from application.properties
+		// Get the xmeso_data path from application.properties
 		File file = new File("application.properties");
 		FileInputStream fileInput = new FileInputStream(file);
 		Properties properties = new Properties();
 		properties.load(fileInput);
 
 		xmesoDataDir = properties.getProperty("xmeso_data");
-
+		
 		System.out.println("Input data folder path: " + xmesoDataDir);
+		
+		// We'll use this sourcesystem_cd to instantiate the I2B2DemoDataWriter
+		String sourceSystemCd = properties.getProperty("sourcesystem_cd");
 
 		/**
 		 * Report file and date mappings. E.g.
@@ -99,6 +100,10 @@ public class Xmeso {
 		mapVisitDates();
 		
 		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
+		
+		// Instantiate the data writer with a predefined source system code
+		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourceSystemCd);
+		
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 
 		// Delete old records before inserting new ones

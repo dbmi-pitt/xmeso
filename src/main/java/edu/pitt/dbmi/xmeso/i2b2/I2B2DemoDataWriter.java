@@ -23,20 +23,20 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimensionId;
 public class I2B2DemoDataWriter {
 	
 	private Date timeNow = new Date();
-	
 	private I2b2DataSourceManager dataSourceMgr;
-
 	private int uploadId;
-
-	private String sourceSystemCd = "Xmeso";
-
+	private String sourceSystemCd;
 	private int patientNum;
 	private int visitNum;
 	private int instanceNum;
-	
 	private Date visitDate;
 
-    /**
+    public I2B2DemoDataWriter(String sourceSystemCd) {
+		super();
+		this.sourceSystemCd = sourceSystemCd;
+	}
+
+	/**
      * Erase old Xmeso records before inserting new one
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
@@ -152,6 +152,11 @@ public class I2B2DemoDataWriter {
 		return existingVisit;
 	}
 
+	/**
+	 * Fetch info of individual visit from the VISIT_DIMENSION table
+	 * 
+	 * @return
+	 */
 	private VisitDimension fetchVisit() {
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitDimensionId = new VisitDimensionId();
@@ -231,6 +236,12 @@ public class I2B2DemoDataWriter {
 		return existingConcept;
 	}
 
+	/**
+	 * Fetch info of individual visit from the CONCEPT_DIMENSION table
+	 * 
+	 * @param code
+	 * @return
+	 */
 	private ConceptDimension fetchConcept(String code) {
 		ConceptDimension conceptDimension = new ConceptDimension();
 		conceptDimension.setConceptCd(code);
