@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Properties;
@@ -37,7 +36,10 @@ public class I2B2DemoDataWriter {
 	
 	private Date visitDate;
 
-	// Do we need to clean up the XMESO_PROVIDER_DIMENSION table?
+    /**
+     * Erase old Xmeso records before inserting new one
+     * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
+     */
 	public void cleanOldRecords() {
 		String sql = "delete from XMESO_OBSERVATION_FACT where SOURCESYSTEM_CD = :sourceSystemCd";
 		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
@@ -53,35 +55,16 @@ public class I2B2DemoDataWriter {
 		sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
 		sqlUpdate.executeUpdate();
-
-		/* Should we do this?
-		sql = "delete from XMESO_PATIENT_DIMENSION where SOURCESYSTEM_CD = :sourceSystemCd";
-		sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
-		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
-		sqlUpdate.executeUpdate();
-		*/
 	}
-	
-	/****
+
+	/**
+	 * Create a fake patient record if no existing patients in the PATIENT_DIMENSION table
+	 * We won't need to do this in real use case
 	 * 
-	 *
-	 * Patient
-	 *
+	 * @return
 	 */
-	public void clearExistingPatientObservations() throws SQLException {
-		String sql = "delete from XMESO_OBSERVATION_FACT where PATIENT_NUM = :patientNum AND SOURCESYSTEM_CD = :sourceSystemCd";
-		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
-		sqlUpdate.setInteger("patientNum", patientNum);
-		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
-		// Transaction
-		Transaction tx = dataSourceMgr.getSession().beginTransaction();
-		sqlUpdate.executeUpdate();
-		tx.commit();
-	}
-
 	public PatientDimension fetchOrCreatePatient() {
 		PatientDimension existingPatient = fetchPatient();
-		// Create a fake patient record if no existing patients in the PATIENT_DIMENSION table
 		if (existingPatient == null) {
 			PatientDimension newPatient = newPatient();
 			dataSourceMgr.getSession().saveOrUpdate(newPatient);
@@ -94,6 +77,11 @@ public class I2B2DemoDataWriter {
 		return existingPatient;
 	}
 
+	/**
+	 * Fetch info of individual patient from the PATIENT_DIMENSION table
+	 * 
+	 * @return
+	 */
 	private PatientDimension fetchPatient() {
 		PatientDimension patientDimension = new PatientDimension();
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
@@ -106,9 +94,14 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
-	// Create fake patient
-	// The patient ID will be the PATIENT_NUM from the nmvb_path_report_event_date.csv
-	// everything else will be fake and repeated for each patient
+	/**
+	 * Create fake patient record for testing
+	 * 
+	 * The patient ID will be the PATIENT_NUM from the nmvb_path_report_event_date.csv
+	 * everything else will be fake and repeated for each patient
+	 * 
+	 * @return
+	 */
 	private PatientDimension newPatient() {
 		PatientDimension patientDimension = new PatientDimension();
 
@@ -139,12 +132,11 @@ public class I2B2DemoDataWriter {
 		return patientDimension;
 	}
 
-	/****
+	/**
+	 * Fetch existing visit info or create new record otherwise
 	 * 
-	 *
-	 * Encounter
-	 * @throws IOException 
-	 *
+	 * @return
+	 * @throws IOException
 	 */
 	public VisitDimension fetchOrCreateVisit() throws IOException {
 		VisitDimension existingVisit = fetchVisit();
@@ -175,6 +167,12 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
+	/**
+	 * Add new visit info to the VISIT_DIMENSION table
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	private VisitDimension newVisit() throws IOException {
 		// Get the `location_cd` and `location_path`values form application.properties
 		File file = new File("application.properties");
@@ -212,11 +210,11 @@ public class I2B2DemoDataWriter {
 		return visitDimension;
 	}
 
-	/****
+	/**
+	 * Fetch existing concept info or create new record otherwise
 	 * 
-	 *
-	 * Concept (aka Summary)
-	 *
+	 * @param code
+	 * @return
 	 */
 	public ConceptDimension fetchOrCreateConcept(String code) {
 		ConceptDimension existingConcept = fetchConcept(code);
@@ -245,6 +243,12 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
+	/**
+	 * Add new concept info to the CONCEPT_DIMENSION table
+	 * 
+	 * @param code
+	 * @return
+	 */
 	private ConceptDimension newConcept(String code) {
 		ConceptDimension conceptDimension = new ConceptDimension();
 		conceptDimension.setConceptPath("\\" + code);
@@ -261,6 +265,12 @@ public class I2B2DemoDataWriter {
 		return conceptDimension;
 	}
 
+	/**
+	 * Fetch existing observation face info
+	 * 
+	 * @param observationFactId
+	 * @return
+	 */
 	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
 		Query q = dataSourceMgr
 				.getSession()
@@ -271,6 +281,14 @@ public class I2B2DemoDataWriter {
 		return result;
 	}
 
+	/**
+	 * Add new observation fact info to the OBSERVATION_FACT table
+	 * 
+	 * @param patientNum
+	 * @param visitNum
+	 * @param conceptCd
+	 * @param instanceNum
+	 */
 	public void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		// Primary key
 		ObservationFactId observationFactId = new ObservationFactId();
@@ -293,9 +311,6 @@ public class I2B2DemoDataWriter {
 		ObservationFact observationFact = fetchObservationFact(observationFactId);
 
 		if (observationFact == null) {
-
-//			System.out.println("Writing obs (" + observationFactId + ")");
-
 			observationFact = new ObservationFact();
 			observationFact.setId(observationFactId);
 			observationFact.setValtypeCd("@");
