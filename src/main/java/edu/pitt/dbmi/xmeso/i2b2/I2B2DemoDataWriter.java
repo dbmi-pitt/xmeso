@@ -106,7 +106,7 @@ public class I2B2DemoDataWriter {
 
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setVitalStatusCd((String) null);
-		// Use `20-APR-67` as fake birthday date
+		// Fake a birthday date
 		GregorianCalendar calendar = new GregorianCalendar();
 		calendar.set(1967, 3, 20);
 		patientDimension.setBirthDate(calendar.getTime());
@@ -121,8 +121,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
-		// Use today's date, e.g., 05-AUG-16, as the 
-		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the PATIENT_DIMENSION table
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the PATIENT_DIMENSION table
 		patientDimension.setUpdateDate(timeNow);
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
@@ -201,14 +200,13 @@ public class I2B2DemoDataWriter {
 		visitDimension.setLocationPath(location_path);
 		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
 		visitDimension.setVisitBlob(null);
-		// Use today's date, e.g., 05-AUG-16, as the 
-		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the VISIT_DIMENSION table
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the VISIT_DIMENSION table
 		visitDimension.setUpdateDate(timeNow);
 		visitDimension.setDownloadDate(timeNow);
 		visitDimension.setImportDate(timeNow);
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
 		visitDimension.setUploadId(null);
-		
+
 		return visitDimension;
 	}
 
@@ -263,8 +261,7 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setConceptCd(code);
 		conceptDimension.setNameChar(code);
 		conceptDimension.setConceptBlob(null);
-		// Use today's date, e.g., 05-AUG-16, as the 
-		// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the CONCEPT_DIMENSION table
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the CONCEPT_DIMENSION table
 		conceptDimension.setUpdateDate(timeNow);
 		conceptDimension.setDownloadDate(timeNow);
 		conceptDimension.setImportDate(timeNow);
@@ -314,7 +311,7 @@ public class I2B2DemoDataWriter {
 		observationFactId.setProviderId(getSourceSystemCd());
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
-		// Use today's date, e.g., 05-AUG-16, as the `START_DATE` in the OBSERVATION_FACT table
+		// Use today's date as the `START_DATE` in the OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
 		ObservationFact observationFact = fetchObservationFact(observationFactId);
@@ -328,13 +325,12 @@ public class I2B2DemoDataWriter {
 			observationFact.setValueflagCd("@");
 			observationFact.setQuantityNum(new BigDecimal(1));
 			observationFact.setUnitsCd("@");
-			// Use today's date, e.g., 05-AUG-16, as the `END_DATE` in the OBSERVATION_FACT table
+			// Use today's date as the `END_DATE` in the OBSERVATION_FACT table
 			observationFact.setEndDate(timeNow);
 			observationFact.setLocationCd("@");
 			observationFact.setObservationBlob(null);
 			observationFact.setConfidenceNum(new BigDecimal(1.0));
-			// Use today's date, e.g., 05-AUG-16, as the 
-			// `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the OBSERVATION_FACT table
+			// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the OBSERVATION_FACT table
 			observationFact.setUpdateDate(timeNow);
 			observationFact.setDownloadDate(timeNow);
 			observationFact.setImportDate(timeNow);
