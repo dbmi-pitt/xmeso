@@ -50,7 +50,7 @@ public class Xmeso {
 	private I2B2DemoDataWriter i2b2DemoDataWriter;
 
 	private String reportId;
-	private String mvbName;
+	private String mvbId;
 	private String patientId;
 	private String formattedDate;
 
@@ -134,11 +134,11 @@ public class Xmeso {
 			}
 			String[] fields = line.split(",");
 			reportId = fields[0];
-			mvbName = fields[1];
+			mvbId = fields[1];
 			patientId = fields[2];
 			formattedDate = fields[3];
 			// E.g. MVB0001_00001.txt
-			String key = mvbName + "_" + reportId + ".txt";
+			String key = mvbId + "_" + reportId + ".txt";
 			if (visitDateMap.get(key) != null) {
 				System.err.println("Replacing an existing visit date at " + key);
 			}
