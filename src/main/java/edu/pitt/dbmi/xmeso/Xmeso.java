@@ -89,7 +89,7 @@ public class Xmeso {
 		System.out.println("Input data folder path: " + xmesoDataDir);
 		
 		// We'll use this sourcesystem_cd to instantiate the I2B2DemoDataWriter
-		String sourceSystemCd = properties.getProperty("sourcesystem_cd");
+		String sourcesystemCd = properties.getProperty("sourcesystem_cd");
 
 		/**
 		 * Report file and date mappings. E.g.
@@ -103,7 +103,7 @@ public class Xmeso {
 		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
 		
 		// Instantiate the data writer with a predefined source system code
-		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourceSystemCd);
+		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourcesystemCd);
 		
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 

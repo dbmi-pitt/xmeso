@@ -9,7 +9,6 @@ import java.util.GregorianCalendar;
 import java.util.Properties;
 
 import org.hibernate.Query;
-import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
@@ -24,15 +23,15 @@ public class I2B2DemoDataWriter {
 	
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceMgr;
-	private String sourceSystemCd;
+	private String sourcesystemCd;
 	private int patientNum;
 	private int visitNum;
 	private int instanceNum;
 	private Date visitDate;
 
-    public I2B2DemoDataWriter(String sourceSystemCd) {
+    public I2B2DemoDataWriter(String sourcesystemCd) {
 		super();
-		this.sourceSystemCd = sourceSystemCd;
+		this.sourcesystemCd = sourcesystemCd;
 	}
 
 	/**
@@ -40,21 +39,21 @@ public class I2B2DemoDataWriter {
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
 	public void cleanOldRecords() {
-		// Therse are SQL queries, not Hibernate Query Language (HQL) queries
-		String sql = "delete from XMESO_OBSERVATION_FACT where SOURCESYSTEM_CD = :sourceSystemCd";
-		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
-		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
-		sqlUpdate.executeUpdate();
+		// These are Hibernate Query Language (HQL) queries
+		String hql = "delete from VisitDimension where sourcesystemCd = :sourcesystemCd";
+		Query q = dataSourceMgr.getSession().createQuery(hql);
+		q.setString("sourcesystemCd", getSourcesystemCd());
+		q.executeUpdate();
 
-		sql = "delete from XMESO_CONCEPT_DIMENSION where SOURCESYSTEM_CD = :sourceSystemCd";
-		sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
-		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
-		sqlUpdate.executeUpdate();
+		hql = "delete from ConceptDimension where sourcesystemCd = :sourcesystemCd";
+		q = dataSourceMgr.getSession().createQuery(hql);
+		q.setString("sourcesystemCd", getSourcesystemCd());
+		q.executeUpdate();
 
-		sql = "delete from XMESO_VISIT_DIMENSION where SOURCESYSTEM_CD = :sourceSystemCd";
-		sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
-		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
-		sqlUpdate.executeUpdate();
+		hql = "delete from ObservationFact where sourcesystemCd = :sourcesystemCd";
+		q = dataSourceMgr.getSession().createQuery(hql);
+		q.setString("sourcesystemCd", getSourcesystemCd());
+		q.executeUpdate();
 	}
 
 	/**
@@ -85,7 +84,7 @@ public class I2B2DemoDataWriter {
 	private PatientDimension fetchPatient() {
 		PatientDimension patientDimension = new PatientDimension();
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
-		patientDimension.setSourcesystemCd(getSourceSystemCd());
+		patientDimension.setSourcesystemCd(getSourcesystemCd());
 		// Hibernate Query Language (HQL)
 		String hql = "from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
@@ -126,7 +125,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setUpdateDate(timeNow);
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
-		patientDimension.setSourcesystemCd(getSourceSystemCd());
+		patientDimension.setSourcesystemCd(getSourcesystemCd());
 		patientDimension.setUploadId(null);
 		return patientDimension;
 	}
@@ -162,7 +161,7 @@ public class I2B2DemoDataWriter {
 		visitDimensionId.setPatientNum(new BigDecimal(patientNum));
 		visitDimensionId.setEncounterNum(new BigDecimal(visitNum));
 		visitDimension.setId(visitDimensionId);
-		visitDimension.setSourcesystemCd(getSourceSystemCd());
+		visitDimension.setSourcesystemCd(getSourcesystemCd());
 		// Hibernate Query Language (HQL)
 		String hql = "from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
@@ -205,7 +204,7 @@ public class I2B2DemoDataWriter {
 		visitDimension.setUpdateDate(timeNow);
 		visitDimension.setDownloadDate(timeNow);
 		visitDimension.setImportDate(timeNow);
-		visitDimension.setSourcesystemCd(getSourceSystemCd());
+		visitDimension.setSourcesystemCd(getSourcesystemCd());
 		visitDimension.setUploadId(null);
 
 		return visitDimension;
@@ -241,7 +240,7 @@ public class I2B2DemoDataWriter {
 	private ConceptDimension fetchConcept(String code) {
 		ConceptDimension conceptDimension = new ConceptDimension();
 		conceptDimension.setConceptCd(code);
-		conceptDimension.setSourcesystemCd(getSourceSystemCd());
+		conceptDimension.setSourcesystemCd(getSourcesystemCd());
 		// Hibernate Query Language (HQL)
 		String hql = "from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
@@ -266,7 +265,7 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setUpdateDate(timeNow);
 		conceptDimension.setDownloadDate(timeNow);
 		conceptDimension.setImportDate(timeNow);
-		conceptDimension.setSourcesystemCd(getSourceSystemCd());
+		conceptDimension.setSourcesystemCd(getSourcesystemCd());
 		conceptDimension.setUploadId(null);
 		return conceptDimension;
 	}
@@ -282,7 +281,7 @@ public class I2B2DemoDataWriter {
 		String hql = "from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setParameter("id", observationFactId);
-		q.setParameter("sourcesystemCd", getSourceSystemCd());
+		q.setParameter("sourcesystemCd", getSourcesystemCd());
 		ObservationFact result = (ObservationFact) q.uniqueResult();
 		return result;
 	}
@@ -308,8 +307,8 @@ public class I2B2DemoDataWriter {
 
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
-		// We use sourceSystemCd as the provider now, it can't be null
-		observationFactId.setProviderId(getSourceSystemCd());
+		// We use sourcesystemCd as the provider now, it can't be null
+		observationFactId.setProviderId(getSourcesystemCd());
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
 		// Use today's date as the `START_DATE` in the OBSERVATION_FACT table
@@ -335,7 +334,7 @@ public class I2B2DemoDataWriter {
 			observationFact.setUpdateDate(timeNow);
 			observationFact.setDownloadDate(timeNow);
 			observationFact.setImportDate(timeNow);
-			observationFact.setSourcesystemCd(getSourceSystemCd());
+			observationFact.setSourcesystemCd(getSourcesystemCd());
 			observationFact.setUploadId(null);
 
 			// Transaction
@@ -374,12 +373,12 @@ public class I2B2DemoDataWriter {
 		this.instanceNum = instanceNum;
 	}
 
-	public String getSourceSystemCd() {
-		return sourceSystemCd;
+	public String getSourcesystemCd() {
+		return sourcesystemCd;
 	}
 
-	public void setSourceSystemCd(String sourceSystemCd) {
-		this.sourceSystemCd = sourceSystemCd;
+	public void setSourcesystemCd(String sourcesystemCd) {
+		this.sourcesystemCd = sourcesystemCd;
 	}
 
 	public I2b2DataSourceManager getDataSourceMgr() {
