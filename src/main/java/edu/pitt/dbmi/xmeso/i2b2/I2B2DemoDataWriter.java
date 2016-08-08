@@ -40,6 +40,7 @@ public class I2B2DemoDataWriter {
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
 	public void cleanOldRecords() {
+		// Therse are SQL queries, not Hibernate Query Language (HQL) queries
 		String sql = "delete from XMESO_OBSERVATION_FACT where SOURCESYSTEM_CD = :sourceSystemCd";
 		SQLQuery sqlUpdate = dataSourceMgr.getSession().createSQLQuery(sql);
 		sqlUpdate.setString("sourceSystemCd", getSourceSystemCd());
@@ -85,9 +86,9 @@ public class I2B2DemoDataWriter {
 		PatientDimension patientDimension = new PatientDimension();
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setSourcesystemCd(getSourceSystemCd());
-		Query q = dataSourceMgr
-				.getSession()
-				.createQuery("from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd");
+		// Hibernate Query Language (HQL)
+		String hql = "from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd";
+		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
 		return result;
@@ -162,9 +163,9 @@ public class I2B2DemoDataWriter {
 		visitDimensionId.setEncounterNum(new BigDecimal(visitNum));
 		visitDimension.setId(visitDimensionId);
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
-		Query q = dataSourceMgr
-				.getSession()
-				.createQuery("from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd");
+		// Hibernate Query Language (HQL)
+		String hql = "from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd";
+		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setProperties(visitDimension);
 		VisitDimension result = (VisitDimension) q.uniqueResult();
 		return result;
@@ -241,9 +242,9 @@ public class I2B2DemoDataWriter {
 		ConceptDimension conceptDimension = new ConceptDimension();
 		conceptDimension.setConceptCd(code);
 		conceptDimension.setSourcesystemCd(getSourceSystemCd());
-		Query q = dataSourceMgr
-				.getSession()
-				.createQuery("from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd");
+		// Hibernate Query Language (HQL)
+		String hql = "from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd";
+		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setProperties(conceptDimension);
 		ConceptDimension result = (ConceptDimension) q.uniqueResult();
 		return result;
@@ -277,9 +278,9 @@ public class I2B2DemoDataWriter {
 	 * @return
 	 */
 	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
-		Query q = dataSourceMgr
-				.getSession()
-				.createQuery("from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd");
+		// Hibernate Query Language (HQL)
+		String hql = "from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd";
+		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setParameter("id", observationFactId);
 		q.setParameter("sourcesystemCd", getSourceSystemCd());
 		ObservationFact result = (ObservationFact) q.uniqueResult();
