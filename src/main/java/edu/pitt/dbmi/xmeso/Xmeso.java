@@ -38,7 +38,8 @@ public class Xmeso {
 
 	private static final Logger logger = LoggerFactory.getLogger(Xmeso.class);
 	
-	private DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+	// This is also the date format used in the linkage file nmvb_path_report_event_date.csv
+	private DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 	private String xmesoDataDir;
 
@@ -209,7 +210,7 @@ public class Xmeso {
 		String eventKey = currentReportFile.getName();
 		String formattedDate = this.visitDateMap.get(eventKey);
 		// yyyy-MM-dd format
-		Date visitDate = df.parse(formattedDate);
+		Date visitDate = dateFormat.parse(formattedDate);
 		
 		// E.g. Tue Dec 31 00:00:00 EST 1991
 		logger.debug("visit date ------- " + visitDate);

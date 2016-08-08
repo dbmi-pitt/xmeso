@@ -310,6 +310,7 @@ public class I2B2DemoDataWriter {
 
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
+		// We use sourceSystemCd as the provider now, it can't be null
 		observationFactId.setProviderId(getSourceSystemCd());
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
