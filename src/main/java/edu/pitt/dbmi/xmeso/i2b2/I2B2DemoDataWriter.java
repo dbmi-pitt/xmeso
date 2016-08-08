@@ -24,7 +24,6 @@ public class I2B2DemoDataWriter {
 	
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceMgr;
-	private int uploadId;
 	private String sourceSystemCd;
 	private int patientNum;
 	private int visitNum;
@@ -128,7 +127,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
 		patientDimension.setSourcesystemCd(getSourceSystemCd());
-		patientDimension.setUploadId(new BigDecimal(patientNum));
+		patientDimension.setUploadId(null);
 		return patientDimension;
 	}
 
@@ -208,9 +207,7 @@ public class I2B2DemoDataWriter {
 		visitDimension.setDownloadDate(timeNow);
 		visitDimension.setImportDate(timeNow);
 		visitDimension.setSourcesystemCd(getSourceSystemCd());
-		
-		// Why use 99 as the `UPLOAD_ID` value in VISIT_DIMENSION?
-		visitDimension.setUploadId(new BigDecimal(99));
+		visitDimension.setUploadId(null);
 		
 		return visitDimension;
 	}
@@ -272,7 +269,7 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setDownloadDate(timeNow);
 		conceptDimension.setImportDate(timeNow);
 		conceptDimension.setSourcesystemCd(getSourceSystemCd());
-		conceptDimension.setUploadId(new BigDecimal(uploadId++));
+		conceptDimension.setUploadId(null);
 		return conceptDimension;
 	}
 
@@ -315,7 +312,7 @@ public class I2B2DemoDataWriter {
 		observationFactId.setConceptCd(conceptCd);
 		observationFactId.setProviderId(getSourceSystemCd());
 		observationFactId.setInstanceNum(instanceNum);
-		observationFactId.setModifierCd("@_"+uploadId);
+		observationFactId.setModifierCd("@");
 		// Use today's date, e.g., 05-AUG-16, as the `START_DATE` in the OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
@@ -341,7 +338,7 @@ public class I2B2DemoDataWriter {
 			observationFact.setDownloadDate(timeNow);
 			observationFact.setImportDate(timeNow);
 			observationFact.setSourcesystemCd(getSourceSystemCd());
-			observationFact.setUploadId(new BigDecimal(uploadId++));
+			observationFact.setUploadId(null);
 
 			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
