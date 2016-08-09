@@ -201,6 +201,9 @@ public class I2B2DemoDataWriter {
 	/**
 	 * Fetch existing concept info or create new record otherwise
 	 * 
+	 * A concept found in one report may also appear in another report
+	 * That's why we "fetch or create" to reuse previously added concepts
+	 * 
 	 * @param code
 	 * @return
 	 */
@@ -258,21 +261,6 @@ public class I2B2DemoDataWriter {
 		return conceptDimension;
 	}
 
-	/**
-	 * Fetch existing observation fact info
-	 * 
-	 * @param observationFactId
-	 * @return
-	 */
-	private ObservationFact fetchObservationFact(ObservationFactId observationFactId) {
-		// Hibernate Query Language (HQL)
-		String hql = "from ObservationFact as o where o.id=:id and o.sourcesystemCd=:sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
-		q.setParameter("id", observationFactId);
-		q.setParameter("sourcesystemCd", getSourcesystemCd());
-		ObservationFact result = (ObservationFact) q.uniqueResult();
-		return result;
-	}
 
 	/**
 	 * Add new observation fact info to the OBSERVATION_FACT table
@@ -282,9 +270,10 @@ public class I2B2DemoDataWriter {
 	 * @param conceptCd
 	 * @param instanceNum
 	 */
-	public void writeObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
-		// Primary key
+	public void createObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
+		// Compose the observation fact ID (multiple fields as primary key)
 		ObservationFactId observationFactId = new ObservationFactId();
+		
 		// User visit number (report ID) as the `ENCOUNTER_NUM` if it's valid
 		// Otherwise use the patient number
 		if (visitNum >= 0) {
@@ -292,7 +281,6 @@ public class I2B2DemoDataWriter {
 		} else {
 			observationFactId.setEncounterNum(new BigDecimal(patientNum));
 		}
-
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
 		// We use sourcesystemCd as the provider now, it can't be null
@@ -302,35 +290,33 @@ public class I2B2DemoDataWriter {
 		// Use today's date as the `START_DATE` in the OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
-		ObservationFact observationFact = fetchObservationFact(observationFactId);
+		// Create new observation fact
+		ObservationFact observationFact = new ObservationFact();
+		
+		observationFact.setId(observationFactId);
+		observationFact.setValtypeCd("@");
+		observationFact.setTvalChar("@");
+		observationFact.setNvalNum(new BigDecimal(-1));
+		observationFact.setValueflagCd("@");
+		observationFact.setQuantityNum(new BigDecimal(1));
+		observationFact.setUnitsCd("@");
+		// Use today's date as the `END_DATE` in the OBSERVATION_FACT table
+		observationFact.setEndDate(timeNow);
+		observationFact.setLocationCd("@");
+		observationFact.setObservationBlob(null);
+		observationFact.setConfidenceNum(new BigDecimal(1.0));
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the OBSERVATION_FACT table
+		observationFact.setUpdateDate(timeNow);
+		observationFact.setDownloadDate(timeNow);
+		observationFact.setImportDate(timeNow);
+		observationFact.setSourcesystemCd(getSourcesystemCd());
+		observationFact.setUploadId(null);
 
-		if (observationFact == null) {
-			observationFact = new ObservationFact();
-			observationFact.setId(observationFactId);
-			observationFact.setValtypeCd("@");
-			observationFact.setTvalChar("@");
-			observationFact.setNvalNum(new BigDecimal(-1));
-			observationFact.setValueflagCd("@");
-			observationFact.setQuantityNum(new BigDecimal(1));
-			observationFact.setUnitsCd("@");
-			// Use today's date as the `END_DATE` in the OBSERVATION_FACT table
-			observationFact.setEndDate(timeNow);
-			observationFact.setLocationCd("@");
-			observationFact.setObservationBlob(null);
-			observationFact.setConfidenceNum(new BigDecimal(1.0));
-			// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the OBSERVATION_FACT table
-			observationFact.setUpdateDate(timeNow);
-			observationFact.setDownloadDate(timeNow);
-			observationFact.setImportDate(timeNow);
-			observationFact.setSourcesystemCd(getSourcesystemCd());
-			observationFact.setUploadId(null);
-
-			// Transaction
-			Transaction tx = dataSourceMgr.getSession().beginTransaction();
-			dataSourceMgr.getSession().saveOrUpdate(observationFact);
-			dataSourceMgr.getSession().flush();
-			tx.commit();
-		}
+		// Transaction
+		Transaction tx = dataSourceMgr.getSession().beginTransaction();
+		dataSourceMgr.getSession().saveOrUpdate(observationFact);
+		dataSourceMgr.getSession().flush();
+		tx.commit();
 	}
 
 	public void setPatientNum(int patientNum) {

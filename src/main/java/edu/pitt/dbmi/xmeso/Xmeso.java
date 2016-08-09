@@ -203,6 +203,7 @@ public class Xmeso {
 	private void populateCas(JCas jCas) throws ParseException, IOException {
 		// Establish the patient
 		i2b2DemoDataWriter.setPatientNum(Integer.parseInt(patientId));
+		// Fetch existing patient info if exists, otherwise create a fake patient record
 		i2b2DemoDataWriter.fetchOrCreatePatient();
 		// Use report ID as the visit number (`ENCOUNTER_NUM` in VISIT_DIMENSION table)
 		i2b2DemoDataWriter.setVisitNum(Integer.parseInt(reportId));
@@ -218,15 +219,16 @@ public class Xmeso {
 		logger.debug("visit date ------- " + dateFormat.format(visitDate));
 		
 		i2b2DemoDataWriter.setVisitDate(visitDate);
+		// Create new visit record of the current report
 		i2b2DemoDataWriter.createVisit();
 
 		// On this cycle we will extract six Data Elements over the report set:
 		//
-		// Case level information:
+		// Case level (whole report) information:
 		//		    - Ultrastructural Findings
 		//		    - Lymph Nodes Examined
 		//		    - Special Stain Profile
-		// Part Level:
+		// Part (report part in each section) Level:
 		//		    - Histopathologic Type
 		//		    - Tumor Configuration
 		//		    - Tumor Differentiation
@@ -243,14 +245,20 @@ public class Xmeso {
 			logger.debug("specialStain = " + specialStain);
 			logger.debug("ultraStructuralFindings = " + ultraStructuralFindings);
 
+			// A concept found in one report may also appear in another report
+			// That's why we "fetch or create" to reuse previously added concepts
 			i2b2DemoDataWriter.fetchOrCreateConcept(lymphNodesExamined);
 			i2b2DemoDataWriter.fetchOrCreateConcept(specialStain);
 			i2b2DemoDataWriter.fetchOrCreateConcept(ultraStructuralFindings);
 
 			// Here we use report id as the encounter number
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), lymphNodesExamined, 0L);
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), specialStain, 0L);
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), ultraStructuralFindings, 0L);
+			// The 0L means the number zero of type long
+			// Won't be able to reuse previously added observation fact even if 
+			// it's the same patient, same report, same concept code, same provider, same modifier, same start date.
+			// Because the instance_num will always be different, and all these fields consist of the primary keys
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), lymphNodesExamined, 0L);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), specialStain, 0L);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), ultraStructuralFindings, 0L);
 		}
 
 		// TumorForm information
@@ -276,9 +284,9 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorConfigurationCode);
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
-			i2b2DemoDataWriter.writeObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
 		}
 
 	}
