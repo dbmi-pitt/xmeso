@@ -145,43 +145,17 @@ public class I2B2DemoDataWriter {
 	}
 
 	/**
-	 * Fetch existing visit info or create new record otherwise
+	 * Create new visit record
 	 * 
-	 * @return
 	 * @throws IOException
 	 */
-	public VisitDimension fetchOrCreateVisit() throws IOException {
-		VisitDimension existingVisit = fetchVisit();
-		if (existingVisit == null) {
-			VisitDimension newVisit = newVisit();
-			dataSourceMgr.getSession().saveOrUpdate(newVisit);
-			// Transaction
-			Transaction tx = dataSourceMgr.getSession().beginTransaction();
-			dataSourceMgr.getSession().flush();
-			tx.commit();
-			existingVisit = fetchVisit();
-		}
-		return existingVisit;
-	}
-
-	/**
-	 * Fetch info of individual visit from the VISIT_DIMENSION table
-	 * 
-	 * @return
-	 */
-	private VisitDimension fetchVisit() {
-		VisitDimension visitDimension = new VisitDimension();
-		VisitDimensionId visitDimensionId = new VisitDimensionId();
-		visitDimensionId.setPatientNum(new BigDecimal(patientNum));
-		visitDimensionId.setEncounterNum(new BigDecimal(visitNum));
-		visitDimension.setId(visitDimensionId);
-		visitDimension.setSourcesystemCd(getSourcesystemCd());
-		// Hibernate Query Language (HQL)
-		String hql = "from VisitDimension as v where v.id=:id and v.sourcesystemCd=:sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
-		q.setProperties(visitDimension);
-		VisitDimension result = (VisitDimension) q.uniqueResult();
-		return result;
+	public void createVisit() throws IOException {
+		VisitDimension newVisit = newVisit();
+		dataSourceMgr.getSession().saveOrUpdate(newVisit);
+		// Transaction
+		Transaction tx = dataSourceMgr.getSession().beginTransaction();
+		dataSourceMgr.getSession().flush();
+		tx.commit();
 	}
 
 	/**

@@ -218,7 +218,7 @@ public class Xmeso {
 		logger.debug("visit date ------- " + dateFormat.format(visitDate));
 		
 		i2b2DemoDataWriter.setVisitDate(visitDate);
-		i2b2DemoDataWriter.fetchOrCreateVisit();
+		i2b2DemoDataWriter.createVisit();
 
 		// On this cycle we will extract six Data Elements over the report set:
 		//
