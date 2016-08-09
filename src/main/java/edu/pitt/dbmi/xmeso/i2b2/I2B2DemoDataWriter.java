@@ -48,7 +48,7 @@ public class I2B2DemoDataWriter {
     /**
      * Erase database table records based on sourcesystem_cd, if old records exist
      * 
-     * @param name
+     * @param tableName
      */
 	public void eraseOldRecordsIfExist(String tableName) {
 		// These are SQL, NOT Hibernate Query Language (HQL) queries
