@@ -107,8 +107,8 @@ public class Xmeso {
 		
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 
-		// Delete old records before inserting new ones
-		i2b2DemoDataWriter.cleanOldRecords();
+		// Delete old records (if exist) before inserting new ones
+		i2b2DemoDataWriter.cleanOldRecordsIfExist();
 		
 		processReports();
 

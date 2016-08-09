@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.Properties;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
@@ -38,22 +39,35 @@ public class I2B2DemoDataWriter {
      * Erase old Xmeso records before inserting new one
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
-	public void cleanOldRecords() {
-		// These are Hibernate Query Language (HQL) queries
-		String hql = "delete from VisitDimension where sourcesystemCd = :sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
+    public void cleanOldRecordsIfExist() {
+    	eraseOldRecordsIfExist("XMESO_OBSERVATION_FACT");
+    	eraseOldRecordsIfExist("XMESO_CONCEPT_DIMENSION");
+    	eraseOldRecordsIfExist("XMESO_VISIT_DIMENSION");
+	}
+    
+    /**
+     * Erase database table records based on sourcesystem_cd, if old records exist
+     * 
+     * @param name
+     */
+	public void eraseOldRecordsIfExist(String tableName) {
+		// These are SQL, NOT Hibernate Query Language (HQL) queries
+		// Actual table name and field name are used, instead of object and properties
+		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
+		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
 		q.setString("sourcesystemCd", getSourcesystemCd());
-		q.executeUpdate();
+		Long count = ((BigDecimal) q.uniqueResult()).longValue();
 
-		hql = "delete from ConceptDimension where sourcesystemCd = :sourcesystemCd";
-		q = dataSourceMgr.getSession().createQuery(hql);
-		q.setString("sourcesystemCd", getSourcesystemCd());
-		q.executeUpdate();
-
-		hql = "delete from ObservationFact where sourcesystemCd = :sourcesystemCd";
-		q = dataSourceMgr.getSession().createQuery(hql);
-		q.setString("sourcesystemCd", getSourcesystemCd());
-		q.executeUpdate();
+		if (count > 0) {
+			// Let users know that the old records will be erased when they rerun the jar
+			String output = String.format("Erasing previously added xmeso records (%d) from %s table", count, tableName);
+			System.out.println(output);
+			
+			sql = String.format("delete from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
+			q = dataSourceMgr.getSession().createSQLQuery(sql);
+			q.setString("sourcesystemCd", getSourcesystemCd());
+			q.executeUpdate();
+		}
 	}
 
 	/**
@@ -271,7 +285,7 @@ public class I2B2DemoDataWriter {
 	}
 
 	/**
-	 * Fetch existing observation face info
+	 * Fetch existing observation fact info
 	 * 
 	 * @param observationFactId
 	 * @return
