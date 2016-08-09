@@ -29,20 +29,36 @@ public class I2B2DemoDataWriter {
 	private int visitNum;
 	private int instanceNum;
 	private Date visitDate;
+	
+	private Properties xmesoProperties;
 
-    public I2B2DemoDataWriter(String sourcesystemCd) {
+    public I2B2DemoDataWriter(String sourcesystemCd) throws IOException {
 		super();
 		this.sourcesystemCd = sourcesystemCd;
+		
+		// Load the application.properties
+		loadXmesoProperties();
 	}
+    
+    private void loadXmesoProperties() throws IOException {
+    	File file = new File("application.properties");
+		FileInputStream fileInput = new FileInputStream(file);
+		xmesoProperties = new Properties();
+		xmesoProperties.load(fileInput);
+    }
 
 	/**
      * Erase old Xmeso records before inserting new one
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
     public void cleanOldRecordsIfExist() {
-    	eraseOldRecordsIfExist("XMESO_OBSERVATION_FACT");
-    	eraseOldRecordsIfExist("XMESO_CONCEPT_DIMENSION");
-    	eraseOldRecordsIfExist("XMESO_VISIT_DIMENSION");
+    	String observation_fact = xmesoProperties.getProperty("observation_fact");
+    	String concept_dimension = xmesoProperties.getProperty("concept_dimension");
+    	String visit_dimension = xmesoProperties.getProperty("visit_dimension");
+
+    	eraseOldRecordsIfExist(observation_fact);
+    	eraseOldRecordsIfExist(concept_dimension);
+    	eraseOldRecordsIfExist(visit_dimension);
 	}
     
     /**
@@ -51,6 +67,8 @@ public class I2B2DemoDataWriter {
      * @param tableName
      */
 	public void eraseOldRecordsIfExist(String tableName) {
+		System.out.println(tableName);
+		
 		// These are SQL, NOT Hibernate Query Language (HQL) queries
 		// Actual table name and field name are used, instead of object and properties
 		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
@@ -71,9 +89,13 @@ public class I2B2DemoDataWriter {
 	}
 
 	public void resultsSummary() {
-		displayRowsAffected("XMESO_OBSERVATION_FACT");
-		displayRowsAffected("XMESO_CONCEPT_DIMENSION");
-		displayRowsAffected("XMESO_VISIT_DIMENSION");
+		String observation_fact = xmesoProperties.getProperty("observation_fact");
+    	String concept_dimension = xmesoProperties.getProperty("concept_dimension");
+    	String visit_dimension = xmesoProperties.getProperty("visit_dimension");
+    	
+    	displayRowsAffected(observation_fact);
+    	displayRowsAffected(concept_dimension);
+    	displayRowsAffected(visit_dimension);
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -175,13 +197,8 @@ public class I2B2DemoDataWriter {
 	 */
 	public void createVisit() throws IOException {
 		// Get the `location_cd` and `location_path`values form application.properties
-		File file = new File("application.properties");
-		FileInputStream fileInput = new FileInputStream(file);
-		Properties properties = new Properties();
-		properties.load(fileInput);
-
-		String location_cd = properties.getProperty("location_cd");
-		String location_path = properties.getProperty("location_path");
+		String location_cd = xmesoProperties.getProperty("location_cd");
+		String location_path = xmesoProperties.getProperty("location_path");
 		
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitId = new VisitDimensionId();
