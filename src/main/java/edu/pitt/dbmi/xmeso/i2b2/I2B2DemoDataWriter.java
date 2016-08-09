@@ -60,7 +60,7 @@ public class I2B2DemoDataWriter {
 
 		if (count > 0) {
 			// Let users know that the old records will be erased when they rerun the jar
-			String output = String.format("Erasing previously added xmeso records (%d) from %s table", count, tableName);
+			String output = String.format("Erasing %d previously added xmeso records from %s table", count, tableName);
 			System.out.println(output);
 			
 			sql = String.format("delete from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
@@ -70,6 +70,30 @@ public class I2B2DemoDataWriter {
 		}
 	}
 
+	public void resultsSummary() {
+		displayRowsAffected("XMESO_OBSERVATION_FACT");
+		displayRowsAffected("XMESO_CONCEPT_DIMENSION");
+		displayRowsAffected("XMESO_VISIT_DIMENSION");
+	}
+	
+	public void displayRowsAffected(String tableName) {
+		// These are SQL, NOT Hibernate Query Language (HQL) queries
+		// Actual table name and field name are used, instead of object and properties
+		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
+		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
+		q.setString("sourcesystemCd", getSourcesystemCd());
+		Long count = ((BigDecimal) q.uniqueResult()).longValue();
+
+		if (count > 0) {
+			// Let users know how many new rows added
+			String output = String.format("Newly added %d xmeso records into %s table", count, tableName);
+			System.out.println(output);
+		} else {
+			String output = String.format("NO xmeso record added into %s table", tableName);
+			System.out.println(output);
+		}
+	}
+	
 	/**
 	 * Create a fake patient record if no existing patients in the PATIENT_DIMENSION table
 	 * We won't need to do this in real use case

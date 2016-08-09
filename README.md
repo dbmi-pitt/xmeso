@@ -97,6 +97,9 @@ Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Finished processing all reports.
+Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
+Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
+Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
 Once finish running, this tool will have all the found information added to the following I2B2 database tables:
 
@@ -118,6 +121,9 @@ Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Finished processing all reports.
+Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
+Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
+Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
 
 ## For Developers

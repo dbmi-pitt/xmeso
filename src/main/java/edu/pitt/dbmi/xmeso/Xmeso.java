@@ -113,7 +113,7 @@ public class Xmeso {
 		processReports();
 		
 		// Notify the users that how many records are added into each table
-		//i2b2DemoDataWriter.cleanOldRecordsIfExist();
+		i2b2DemoDataWriter.resultsSummary();
 
 		i2b2DemoDataSourceManager.destroy();
 	}
