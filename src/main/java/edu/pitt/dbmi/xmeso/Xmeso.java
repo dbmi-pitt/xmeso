@@ -111,6 +111,9 @@ public class Xmeso {
 		i2b2DemoDataWriter.cleanOldRecordsIfExist();
 		
 		processReports();
+		
+		// Notify the users that how many records are added into each table
+		//i2b2DemoDataWriter.cleanOldRecordsIfExist();
 
 		i2b2DemoDataSourceManager.destroy();
 	}
@@ -218,6 +221,7 @@ public class Xmeso {
 		logger.debug("visit date ------- " + dateFormat.format(visitDate));
 		
 		i2b2DemoDataWriter.setVisitDate(visitDate);
+		
 		// Create new visit record of the current report
 		i2b2DemoDataWriter.createVisit();
 
@@ -251,7 +255,7 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(ultraStructuralFindings);
 
 			// Here we use report id as the encounter number
-			// The 0L means the number zero of type long
+			// The 0L means the number zero of type long, we'll increase the instance number using the currentPartNumber 
 			// Won't be able to reuse previously added observation fact even if 
 			// it's the same patient, same report, same concept code, same provider, same modifier, same start date.
 			// Because the instance_num will always be different, and all these fields consist of the primary keys
@@ -283,6 +287,7 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorConfigurationCode);
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 
+			// The instance number starts from 0L, we'll increase it using the currentPartNumber 
 			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
 			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
 			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);

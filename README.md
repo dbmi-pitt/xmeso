@@ -92,9 +92,6 @@ And this command will have the following sample outputs in the terminal when eve
 
 ````
 Input data folder path: C:\Users\zhy19\XMESO_PITT
-Erasing previously added xmeso records (36) from XMESO_OBSERVATION_FACT table
-Erasing previously added xmeso records (12) from XMESO_CONCEPT_DIMENSION table
-Erasing previously added xmeso records (4) from XMESO_VISIT_DIMENSION table
 Successfully processed report #15869
 Successfully processed report #15887
 Successfully processed report #17555
@@ -109,7 +106,19 @@ Once finish running, this tool will have all the found information added to the 
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
-Note: when rerunning this jar file, all the previously added database records will be erased before adding new records.
+Note: when rerunning this jar file, all the previously added database records will be erased before adding new records. And you will see the following additional message:
+
+````
+Input data folder path: C:\Users\zhy19\XMESO_PITT
+Erasing previously added xmeso records (36) from XMESO_OBSERVATION_FACT table
+Erasing previously added xmeso records (12) from XMESO_CONCEPT_DIMENSION table
+Erasing previously added xmeso records (4) from XMESO_VISIT_DIMENSION table
+Successfully processed report #15869
+Successfully processed report #15887
+Successfully processed report #17555
+Successfully processed report #15979
+Finished processing all reports.
+````
 
 ## For Developers
 
