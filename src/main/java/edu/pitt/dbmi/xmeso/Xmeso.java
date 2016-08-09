@@ -213,7 +213,6 @@ public class Xmeso {
 		String formattedDate = this.visitDateMap.get(eventKey);
 		// Now we convert the String into Date type
 		Date visitDate = dateFormat.parse(formattedDate);
-		
 		// Without formatting, outputting visitDate (Date type) directly will give us this: Thu May 10 00:00:00 EDT 1984
 		// dateFormat.format(visitDate) will give us the desired string format: 1984-05-10
 		logger.debug("visit date ------- " + dateFormat.format(visitDate));

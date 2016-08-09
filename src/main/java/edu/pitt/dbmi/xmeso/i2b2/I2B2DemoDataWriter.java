@@ -145,26 +145,11 @@ public class I2B2DemoDataWriter {
 	}
 
 	/**
-	 * Create new visit record
+	 * Add new visit info to the VISIT_DIMENSION table
 	 * 
 	 * @throws IOException
 	 */
 	public void createVisit() throws IOException {
-		VisitDimension newVisit = newVisit();
-		dataSourceMgr.getSession().saveOrUpdate(newVisit);
-		// Transaction
-		Transaction tx = dataSourceMgr.getSession().beginTransaction();
-		dataSourceMgr.getSession().flush();
-		tx.commit();
-	}
-
-	/**
-	 * Add new visit info to the VISIT_DIMENSION table
-	 * 
-	 * @return
-	 * @throws IOException
-	 */
-	private VisitDimension newVisit() throws IOException {
 		// Get the `location_cd` and `location_path`values form application.properties
 		File file = new File("application.properties");
 		FileInputStream fileInput = new FileInputStream(file);
@@ -194,8 +179,13 @@ public class I2B2DemoDataWriter {
 		visitDimension.setImportDate(timeNow);
 		visitDimension.setSourcesystemCd(getSourcesystemCd());
 		visitDimension.setUploadId(null);
-
-		return visitDimension;
+		
+		// Insert into VISIT_DIMENSION table
+		dataSourceMgr.getSession().saveOrUpdate(visitDimension);
+		// Transaction
+		Transaction tx = dataSourceMgr.getSession().beginTransaction();
+		dataSourceMgr.getSession().flush();
+		tx.commit();
 	}
 
 	/**
