@@ -39,6 +39,7 @@ public abstract class I2b2DataSourceManager {
 	protected String hibernateHbm2ddlAuto = "none";
 
 	protected String hibernateShowSql = "false";
+	protected String hibernateDefaultSchema = "false";
 	protected String hibernateCacheUseSecondLevelCache = "false";
 
 	protected Configuration configuration;
@@ -76,6 +77,9 @@ public abstract class I2b2DataSourceManager {
 			setHibernateUserPassword(dbProperties.getProperty("hibernate.password"));
 			// Set default as true
 			setHibernateShowSql(dbProperties.getProperty("hibernate.show_sql", "true"));
+			
+			// Set default schema
+			setHibernateDefaultSchema(dbProperties.getProperty("hibernate.default_schema"));
 
 			configuration = new Configuration();
 			configuration.setProperty("hibernate.dialect", getHibernateDialect());
@@ -257,6 +261,14 @@ public abstract class I2b2DataSourceManager {
 		this.hibernateShowSql = hibernateShowSql;
 	}
 
+	public String getHibernateDefaultSchema() {
+		return hibernateDefaultSchema;
+	}
+
+	public void setHibernateDefaultSchema(String hibernateDefaultSchema) {
+		this.hibernateDefaultSchema = hibernateDefaultSchema;
+	}
+	
 	public String getHibernateCacheUseSecondLevelCache() {
 		return hibernateCacheUseSecondLevelCache;
 	}
