@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Properties;
 
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
@@ -23,20 +22,27 @@ public class I2B2DemoDataWriter {
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceMgr;
 	private String sourcesystemCd;
+	private String locationCd;
+	private String locationPath;
 	private int patientNum;
 	private int visitNum;
 	private int instanceNum;
 	private Date visitDate;
-	
-	private Properties xmesoProperties;
 
-    public I2B2DemoDataWriter(Properties xmesoProperties) {
+
+	/**
+	 * /Get the `sourcesystem_cd`, `location_cd` and `location_path`values form application.properties
+	 * 
+	 * @param sourcesystemCd
+	 * @param locationCd
+	 * @param locationPath
+	 */
+    public I2B2DemoDataWriter(String sourcesystemCd, String locationCd, String locationPath) {
 		super();
-		// Get all the application.properties key-values
-		this.xmesoProperties = xmesoProperties;
-		// Assign value to sourcesystemCd
-        // Since this variable is used many times, let's make it a class-level property
-		this.sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
+
+		this.sourcesystemCd = sourcesystemCd;
+		this.locationCd = locationCd;
+		this.locationPath = locationPath;
 	}
 
 	/**
@@ -44,9 +50,9 @@ public class I2B2DemoDataWriter {
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
     public void cleanOldRecordsIfExist() {
-    	eraseOldRecordsIfExist(xmesoProperties.getProperty("observation_fact"));
-    	eraseOldRecordsIfExist(xmesoProperties.getProperty("concept_dimension"));
-    	eraseOldRecordsIfExist(xmesoProperties.getProperty("visit_dimension"));
+    	eraseOldRecordsIfExist("XMESO_OBSERVATION_FACT");
+    	eraseOldRecordsIfExist("XMESO_CONCEPT_DIMENSION");
+    	eraseOldRecordsIfExist("XMESO_VISIT_DIMENSION");
 	}
     
     /**
@@ -75,9 +81,9 @@ public class I2B2DemoDataWriter {
 	}
 
 	public void resultsSummary() {
-    	displayRowsAffected(xmesoProperties.getProperty("observation_fact"));
-    	displayRowsAffected(xmesoProperties.getProperty("concept_dimension"));
-    	displayRowsAffected(xmesoProperties.getProperty("visit_dimension"));
+		displayRowsAffected("XMESO_OBSERVATION_FACT");
+		displayRowsAffected("XMESO_CONCEPT_DIMENSION");
+		displayRowsAffected("XMESO_VISIT_DIMENSION");
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -188,9 +194,8 @@ public class I2B2DemoDataWriter {
 		visitDimension.setStartDate(visitDate);
 		visitDimension.setEndDate(visitDate);
 		visitDimension.setInoutCd("in");
-		// Get the `location_cd` and `location_path`values form application.properties
-		visitDimension.setLocationCd(xmesoProperties.getProperty("location_cd"));
-		visitDimension.setLocationPath(xmesoProperties.getProperty("location_path"));
+		visitDimension.setLocationCd(locationCd);
+		visitDimension.setLocationPath(locationPath);
 		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
 		visitDimension.setVisitBlob(null);
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the VISIT_DIMENSION table
