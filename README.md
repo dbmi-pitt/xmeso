@@ -21,6 +21,18 @@ At this development stage, this Xmeso tool will extract six Data Elements over t
 | Lymph Nodes Examined | Tumor Configuration |
 | Special Stain Profile | Tumor Differentiation |
 
+## Creating Database Schema and Tables
+
+Before jumping to the configuration section, we'll first need to have the database schema and required i2b2 tables created. In your Oracle 10g database server, create a schema first (you can decide the schema name), then run the [DDL](Xmeso-I2B2-DDL.sql) to create the required tables as follow:
+
+- `XMESO_PROVIDER_DIMENSION`
+- `XMESO_OBSERVATION_FACT`
+- `XMESO_CONCEPT_DIMENSION`
+- `XMESO_VISIT_DIMENSION`
+- `XMESO_PATIENT_DIMENSION`
+
+Note: you can either load the patient records directly into the `XMESO_PATIENT_DIMENSION` table, or leave it blank. If you leave it blank, fake patient records (but using the actual patient number found in the linkage file) will be created.
+
 ## Configuration
 
 There is a `application.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
@@ -65,7 +77,7 @@ hibernate.password=demouser
 hibernate.show_sql=false
 
 # i2b2 database schema
-# this schema contains the following tables (can't change the table name): 
+# this schema contains the following tables (don't ever change the table name): 
 # - XMESO_OBSERVATION_FACT
 # - XMESO_PATIENT_DIMENSION
 # - XMESO_VISIT_DIMENSION
@@ -73,8 +85,6 @@ hibernate.show_sql=false
 # - XMESO_PROVIDER_DIMENSION
 hibernate.default_schema=I2B2DEMODATA
 ````
-
-These five tables mentioned above will need to be created in that schema. Users can use the [DDL](Xmeso-I2B2-DDL.sql) to easily create the tables.
 
 And the input data folder should have the sub-folder/file structure that is similar to the following example:
 
@@ -133,7 +143,7 @@ Once finish running, this tool will add new records to the following I2B2 databa
 - `XMESO_CONCEPT_DIMENSION` - all the found concepts
 - `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
 
-If you don't have any patient records in the `XMESO_PATIENT_DIMENSION` table by the time you run this program, it will create fake patient records (But using the actual patient number found in the linkage file). 
+Note: if you don't have any patient records in the `XMESO_PATIENT_DIMENSION` table by the time you run this program, it will create fake patient records (but using the actual patient number found in the linkage file). If you load the patient records before running the Jar for the first time, make sure all the patient numbers are matched with the ones in the linkage file as well as the patient number found in the report file name.
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
