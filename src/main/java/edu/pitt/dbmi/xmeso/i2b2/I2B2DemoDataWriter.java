@@ -1,6 +1,5 @@
 package edu.pitt.dbmi.xmeso.i2b2;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -24,27 +23,16 @@ public class I2B2DemoDataWriter {
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceMgr;
 	private String sourcesystemCd;
-	private String locationCd;
-	private String locationPath;
-	private int patientNum;
-	private int visitNum;
-	private int instanceNum;
-	private Date visitDate;
-
 
 	/**
-	 * /Get the `sourcesystem_cd`, `location_cd` and `location_path`values form application.properties
+	 * Get the `sourcesystem_cd` value form application.properties
 	 * 
 	 * @param sourcesystemCd
-	 * @param locationCd
-	 * @param locationPath
 	 */
-    public I2B2DemoDataWriter(String sourcesystemCd, String locationCd, String locationPath) {
+    public I2B2DemoDataWriter(String sourcesystemCd) {
 		super();
 
 		this.sourcesystemCd = sourcesystemCd;
-		this.locationCd = locationCd;
-		this.locationPath = locationPath;
 	}
 
 	/**
@@ -114,16 +102,16 @@ public class I2B2DemoDataWriter {
 	 * 
 	 * @return
 	 */
-	public PatientDimension fetchOrCreatePatient() {
-		PatientDimension existingPatient = fetchPatient();
+	public PatientDimension fetchOrCreatePatient(int patientNum) {
+		PatientDimension existingPatient = fetchPatient(patientNum);
 		if (existingPatient == null) {
-			PatientDimension newPatient = newPatient();
+			PatientDimension newPatient = newPatient(patientNum);
 			dataSourceMgr.getSession().saveOrUpdate(newPatient);
 			// Transaction
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().flush();
 			tx.commit();
-			existingPatient = fetchPatient();
+			existingPatient = fetchPatient(patientNum);
 		}
 		return existingPatient;
 	}
@@ -133,7 +121,7 @@ public class I2B2DemoDataWriter {
 	 * 
 	 * @return
 	 */
-	private PatientDimension fetchPatient() {
+	private PatientDimension fetchPatient(int patientNum) {
 		PatientDimension patientDimension = new PatientDimension();
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setSourcesystemCd(sourcesystemCd);
@@ -153,7 +141,7 @@ public class I2B2DemoDataWriter {
 	 * 
 	 * @return
 	 */
-	private PatientDimension newPatient() {
+	private PatientDimension newPatient(int patientNum) {
 		PatientDimension patientDimension = new PatientDimension();
 
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
@@ -183,7 +171,7 @@ public class I2B2DemoDataWriter {
 	}
 
 	/**
-	 * Create fake provider info based on configuration
+	 * Create provider info based on configuration
 	 * 
 	 * @param providerId
 	 * @param providerPath
@@ -217,14 +205,19 @@ public class I2B2DemoDataWriter {
 	/**
 	 * Add new visit info to the XMESO_VISIT_DIMENSION table
 	 * 
-	 * @throws IOException
+	 * @param patientNum
+	 * @param visitNum
+	 * @param visitDate
+	 * @param locationCd
+	 * @param locationPath
 	 */
-	public void createVisit() throws IOException {
+	public void createVisit(int patientNum, int visitNum, Date visitDate, String locationCd, String locationPath) {
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitId = new VisitDimensionId();
 		
 		visitId.setEncounterNum(new BigDecimal(visitNum));
 		visitId.setPatientNum(new BigDecimal(patientNum));
+		
 		visitDimension.setId(visitId);
 		visitDimension.setActiveStatusCd("Active");
 		visitDimension.setStartDate(visitDate);
@@ -368,34 +361,6 @@ public class I2B2DemoDataWriter {
 		dataSourceMgr.getSession().saveOrUpdate(observationFact);
 		dataSourceMgr.getSession().flush();
 		tx.commit();
-	}
-
-	public void setPatientNum(int patientNum) {
-		this.patientNum = patientNum;
-	}
-
-	public int getVisitNum() {
-		return visitNum;
-	}
-
-	public void setVisitNum(int visitNum) {
-		this.visitNum = visitNum;
-	}
-
-	public Date getVisitDate() {
-		return visitDate;
-	}
-
-	public void setVisitDate(Date visitDate) {
-		this.visitDate = visitDate;
-	}
-
-	public int getInstanceNum() {
-		return instanceNum;
-	}
-
-	public void setInstanceNum(int instanceNum) {
-		this.instanceNum = instanceNum;
 	}
 
 	public I2b2DataSourceManager getDataSourceMgr() {
