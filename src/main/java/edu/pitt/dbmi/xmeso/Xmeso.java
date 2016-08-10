@@ -154,9 +154,9 @@ public class Xmeso {
 				continue;
 			}
 			String[] fields = line.split(",");
-			reportId = fields[0];
+			reportId = fields[0]; // Here the reportId is string
 			mvbId = fields[1];
-			patientId = fields[2];
+			patientId = fields[2]; // Here the patientId is string
 			formattedDate = fields[3];
 			// E.g. MVB0001_00001.txt
 			String key = mvbId + "_" + reportId + ".txt";
@@ -245,8 +245,6 @@ public class Xmeso {
 	}
 
 	private void populateCas(JCas jCas) {
-		
-
 		// On this cycle we will extract six Data Elements over the report set:
 		//
 		// Case level (whole report) information:

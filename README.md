@@ -35,6 +35,17 @@ Note: Always use the Unix file separator "/" when working on Windows system. Oth
 xmeso_data=C:\\Users\\zhy19\\XMESO_PITT
 ````
 
+The next thing that users may need to change is the provider information:
+
+````
+# provider info
+provider_id=XMESO:Pathology
+# Must use \\
+provider_path=\\i2b2\\Providers\\XMESO\\Pathology
+provider_name_char=Pathology
+````
+The above provider info is used to create ONE record in the `XMESO_PROVIDER_DIMENSION` table. Nothing fancy. And we assume all the reports are from this same provider.
+
 In addition, users will also need to specify their i2b2 related settings.
 
 ````
@@ -90,7 +101,7 @@ REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
 15891,MVB0010,0010,1979-01-10
 ````
 
-The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `observation_fact` table as well as appropriate dimension tables.
+The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `XMESO_OBSERVATION_FACT` table as well as appropriate dimension tables.
 
 ## Executing the Jar
 
@@ -109,12 +120,14 @@ Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Finished processing all reports.
+Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
 Once finish running, this tool will have all the found information added to the following I2B2 database tables:
 
+- `XMESO_PROVIDER_DIMENSION`
 - `XMESO_OBSERVATION_FACT`
 - `XMESO_CONCEPT_DIMENSION`
 - `XMESO_VISIT_DIMENSION`
@@ -125,14 +138,16 @@ Note: when rerunning this jar file, all the previously added database records wi
 
 ````
 Input data folder path: C:\Users\zhy19\XMESO_PITT
-Erasing previously added xmeso records (36) from XMESO_OBSERVATION_FACT table
-Erasing previously added xmeso records (12) from XMESO_CONCEPT_DIMENSION table
-Erasing previously added xmeso records (4) from XMESO_VISIT_DIMENSION table
+Erasing 1 previously added xmeso records from XMESO_PROVIDER_DIMENSION table
+Erasing 36 previously added xmeso records from XMESO_OBSERVATION_FACT table
+Erasing 12 previously added xmeso records from XMESO_CONCEPT_DIMENSION table
+Erasing 4 previously added xmeso records from XMESO_VISIT_DIMENSION table
 Successfully processed report #15869
 Successfully processed report #15887
 Successfully processed report #17555
 Successfully processed report #15979
 Finished processing all reports.
+Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
