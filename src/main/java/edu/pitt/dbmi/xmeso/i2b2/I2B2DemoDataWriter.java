@@ -30,7 +30,7 @@ public class I2B2DemoDataWriter {
 	private int visitNum;
 	private int instanceNum;
 	private Date visitDate;
-	private String providerId;
+
 
 	/**
 	 * /Get the `sourcesystem_cd`, `location_cd` and `location_path`values form application.properties
@@ -52,6 +52,7 @@ public class I2B2DemoDataWriter {
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
     public void cleanOldRecordsIfExist() {
+    	eraseOldRecordsIfExist("XMESO_PROVIDER_DIMENSION");
     	eraseOldRecordsIfExist("XMESO_OBSERVATION_FACT");
     	eraseOldRecordsIfExist("XMESO_CONCEPT_DIMENSION");
     	eraseOldRecordsIfExist("XMESO_VISIT_DIMENSION");
@@ -83,6 +84,7 @@ public class I2B2DemoDataWriter {
 	}
 
 	public void resultsSummary() {
+		displayRowsAffected("XMESO_PROVIDER_DIMENSION");
 		displayRowsAffected("XMESO_OBSERVATION_FACT");
 		displayRowsAffected("XMESO_CONCEPT_DIMENSION");
 		displayRowsAffected("XMESO_VISIT_DIMENSION");
@@ -127,23 +129,19 @@ public class I2B2DemoDataWriter {
 	}
 
 	/**
-	 * Fetch info of individual patient from the PATIENT_DIMENSION table
+	 * Fetch info of individual patient from the XMESO_PATIENT_DIMENSION table
 	 * 
 	 * @return
 	 */
 	private PatientDimension fetchPatient() {
 		PatientDimension patientDimension = new PatientDimension();
-		
-		// Query values
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
 		patientDimension.setSourcesystemCd(sourcesystemCd);
-		
 		// Hibernate Query Language (HQL)
 		String hql = "from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
-		
 		return result;
 	}
 
@@ -175,68 +173,31 @@ public class I2B2DemoDataWriter {
 		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
 		patientDimension.setPatientBlob(null);
-		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_PATIENT_DIMENSION table
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the PATIENT_DIMENSION table
 		patientDimension.setUpdateDate(timeNow);
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
 		patientDimension.setSourcesystemCd(sourcesystemCd);
 		patientDimension.setUploadId(null);
-		
 		return patientDimension;
 	}
 
 	/**
-	 * Create a fake provider record if no existing providers in the XMESO_PROVIDER_DIMENSION table
-	 * We won't need to do this in real use case
-	 * @return
-	 */
-	public ProviderDimension fetchOrCreateProvider() {
-		ProviderDimension existingProvider = fetchProvider();
-		if (existingProvider == null) {
-			ProviderDimension newProvider = newProvider();
-			dataSourceMgr.getSession().saveOrUpdate(newProvider);
-			// Transaction
-			Transaction tx = dataSourceMgr.getSession().beginTransaction();
-			dataSourceMgr.getSession().flush();
-			tx.commit();
-			existingProvider = fetchProvider();
-		}
-		return existingProvider;
-	}
-
-	private ProviderDimension fetchProvider() {
-		ProviderDimension providerDimension = new ProviderDimension();
-		ProviderDimensionId providerDimensionId = new ProviderDimensionId();
-
-		providerDimensionId.setProviderId(providerId);
-		providerDimensionId.setProviderPath("\\i2b2\\Providers\\Surgery\\General\\Smith, Joe, MD");
-		
-		// Query values
-		providerDimension.setId(providerDimensionId);
-		providerDimension.setSourcesystemCd(sourcesystemCd);
-		
-		// Hibernate Query Language (HQL)
-		String hql = "from ProviderDimension as p where p.providerId=:providerId and p.sourcesystemCd=:sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
-		q.setProperties(providerDimension);
-		ProviderDimension result = (ProviderDimension) q.uniqueResult();
-		return result;
-	}
-	
-	/**
-	 * Create fake provider info
+	 * Create fake provider info based on configuration
 	 * 
-	 * @return
+	 * @param providerId
+	 * @param providerPath
+	 * @param providerNameChar
 	 */
-	private ProviderDimension newProvider() {
+	public void createProvider(String providerId, String providerPath, String providerNameChar) {
 		ProviderDimension providerDimension = new ProviderDimension();
 		ProviderDimensionId providerDimensionId = new ProviderDimensionId();
 
 		providerDimensionId.setProviderId(providerId);
-		providerDimensionId.setProviderPath("\\i2b2\\Providers\\Surgery\\General\\Smith, Joe, MD");
+		providerDimensionId.setProviderPath(providerPath);
 		
 		providerDimension.setId(providerDimensionId);
-		providerDimension.setNameChar("Smith, Joe, MD");
+		providerDimension.setNameChar(providerNameChar);
 		providerDimension.setProviderBlob(null);
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_PATIENT_DIMENSION table
 		providerDimension.setUpdateDate(timeNow);
@@ -245,11 +206,16 @@ public class I2B2DemoDataWriter {
 		providerDimension.setSourcesystemCd(sourcesystemCd);
 		providerDimension.setUploadId(null);
 		
-		return providerDimension;
+		// Insert into XMESO_PROVIDER_DIMENSION table
+		dataSourceMgr.getSession().saveOrUpdate(providerDimension);
+		// Transaction
+		Transaction tx = dataSourceMgr.getSession().beginTransaction();
+		dataSourceMgr.getSession().flush();
+		tx.commit();
 	}
-	
+
 	/**
-	 * Add new visit info to the VISIT_DIMENSION table
+	 * Add new visit info to the XMESO_VISIT_DIMENSION table
 	 * 
 	 * @throws IOException
 	 */
@@ -275,7 +241,7 @@ public class I2B2DemoDataWriter {
 		visitDimension.setSourcesystemCd(sourcesystemCd);
 		visitDimension.setUploadId(null);
 		
-		// Insert into VISIT_DIMENSION table
+		// Insert into XMESO_VISIT_DIMENSION table
 		dataSourceMgr.getSession().saveOrUpdate(visitDimension);
 		// Transaction
 		Transaction tx = dataSourceMgr.getSession().beginTransaction();
@@ -353,10 +319,9 @@ public class I2B2DemoDataWriter {
 	 * @param patientNum
 	 * @param visitNum
 	 * @param conceptCd
-	 * @param providerNum
 	 * @param instanceNum
 	 */
-	public void createObservation(int patientNum, int visitNum, String conceptCd, String providerNum, long instanceNum) {
+	public void createObservation(int patientNum, int visitNum, String conceptCd, long instanceNum) {
 		// Compose the observation fact ID (multiple fields as primary key)
 		ObservationFactId observationFactId = new ObservationFactId();
 		
@@ -369,8 +334,8 @@ public class I2B2DemoDataWriter {
 		}
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
-        // Right now the PROVIDER_ID is fake info in the linkage csv file
-		observationFactId.setProviderId(providerNum);
+		// We use sourcesystemCd as the provider now, it can't be null
+		observationFactId.setProviderId(sourcesystemCd);
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
 		// Use today's date as the `START_DATE` in the XMESO_OBSERVATION_FACT table
@@ -433,14 +398,6 @@ public class I2B2DemoDataWriter {
 		this.instanceNum = instanceNum;
 	}
 
-	public String getProviderId() {
-		return this.providerId;
-	}
-
-	public void setProviderId(String providerId) {
-		this.providerId = providerId;
-	}
-	
 	public I2b2DataSourceManager getDataSourceMgr() {
 		return dataSourceMgr;
 	}

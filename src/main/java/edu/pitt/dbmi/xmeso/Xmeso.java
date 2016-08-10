@@ -45,7 +45,6 @@ public class Xmeso {
 	private String xmesoDataDir;
 
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
-	private final Map<String, String> providerIdMap = new HashMap<String, String>();
 
 	private I2b2DemoDataSourceManager i2b2DemoDataSourceManager;
 
@@ -55,7 +54,6 @@ public class Xmeso {
 	private String mvbId;
 	private String patientId;
 	private String formattedDate;
-	private String providerId;
 
 	private AnalysisEngine engine;
 	private File currentReportFile;
@@ -99,13 +97,20 @@ public class Xmeso {
 		
 		System.out.println("Input data folder path: " + xmesoDataDir);
 		
-		// Report file and date mappings. E.g. MVB0002_15869.txt: 1991-12-31
+		/**
+		 * Report file and date mappings. E.g.
+		 * 
+		 * MVB0020_17639.txt: 1978-12-16
+		   MVB0038_15907.txt: 1960-04-14
+		   MVB0471_16685.txt: 1979-11-07
+		 */
 		mapVisitDates();
 
 		// Values to be passed to instantiate the data writer
 		String sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
 		String locationCd = xmesoProperties.getProperty("location_cd");
 		String locationPath = xmesoProperties.getProperty("location_path");
+		
 		// Instantiate the data writer by passing xmesoProperties
 		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourcesystemCd, locationCd, locationPath);
 		
@@ -115,6 +120,13 @@ public class Xmeso {
 
 		// Delete old records (if exist) before inserting new ones
 		i2b2DemoDataWriter.cleanOldRecordsIfExist();
+		
+		// Create provider record based on configuration
+		String providerId = xmesoProperties.getProperty("provider_id");
+		String providerPath = xmesoProperties.getProperty("provider_path");
+		String providerNameChar = xmesoProperties.getProperty("provider_name_char");
+
+		i2b2DemoDataWriter.createProvider(providerId, providerPath, providerNameChar);
 		
 		processReports();
 		
@@ -128,11 +140,12 @@ public class Xmeso {
 		/*
 		 * nmvb_path_report_event_date.csv contains content looks like this:
 		 * 
-			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,PROVIDER_ID
-			15869,MVB0002,0002,1991-12-31,LCS-I2B2:D000109082
-			15887,MVB0003,0003,1984-05-10,LCS-I2B2:D000109083
-			17555,MVB0004,0004,1987-08-08,LCS-I2B2:D000109084
-			15979,MVB0006,0006,1979-02-28,LCS-I2B2:D000109085
+			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
+			00001,MVB0001,0001,2016-07-07
+			00002,MVB0002,0002,2016-07-07
+			00003,MVB0003,0003,2016-07-07
+			00004,MVB0004,0004,2016-07-07
+			00005,MVB0005,0005,2016-07-07
 		 */
 		File eventDatesFile = new File(xmesoDataDir + File.separator + "nmvb_path_report_event_date.csv");
 		
@@ -145,21 +158,12 @@ public class Xmeso {
 			mvbId = fields[1];
 			patientId = fields[2];
 			formattedDate = fields[3];
-			providerId = fields[4];
 			// E.g. MVB0001_00001.txt
 			String key = mvbId + "_" + reportId + ".txt";
-			
-			// Mapping EVENT_DATE
 			if (visitDateMap.get(key) != null) {
 				System.err.println("Replacing an existing visit date at " + key);
 			}
 			visitDateMap.put(key, formattedDate);
-			
-			// Mapping PROVIDER_ID
-			if (providerIdMap.get(key) != null) {
-				System.err.println("Replacing an existing provider ID at " + key);
-			}
-			providerIdMap.put(key, providerId);
 		}
 	}
 
@@ -218,11 +222,6 @@ public class Xmeso {
 	}
 
 	private void populateCas(JCas jCas) throws ParseException, IOException {
-		// Establish the provider
-		i2b2DemoDataWriter.setProviderId(providerId);
-		// Fetch existing provider info if exists, otherwise create a fake provider record
-		i2b2DemoDataWriter.fetchOrCreateProvider();
-		
 		// Establish the patient
 		i2b2DemoDataWriter.setPatientNum(Integer.parseInt(patientId));
 		// Fetch existing patient info if exists, otherwise create a fake patient record
@@ -278,9 +277,9 @@ public class Xmeso {
 			// Won't be able to reuse previously added observation fact even if 
 			// it's the same patient, same report, same concept code, same provider, same modifier, same start date.
 			// Because the instance_num will always be different, and all these fields consist of the primary keys
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, lymphNodesExamined, 0L);
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, specialStain, 0L);
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, ultraStructuralFindings, 0L);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), lymphNodesExamined, 0L);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), specialStain, 0L);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), ultraStructuralFindings, 0L);
 		}
 
 		// TumorForm information
@@ -307,9 +306,9 @@ public class Xmeso {
 			i2b2DemoDataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 
 			// The instance number starts from 0L, we'll increase it using the currentPartNumber 
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, histologicTypeCode, currentPartNumber);
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, tumorConfigurationCode, currentPartNumber);
-			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), providerId, tumorDifferentiationCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
+			i2b2DemoDataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
 		}
 
 	}
