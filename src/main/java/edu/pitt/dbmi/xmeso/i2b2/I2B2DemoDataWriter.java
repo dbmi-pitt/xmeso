@@ -211,7 +211,7 @@ public class I2B2DemoDataWriter {
 	 * @param locationCd
 	 * @param locationPath
 	 */
-	public void createVisit(int patientNum, int visitNum, Date visitDate, String locationCd, String locationPath) {
+	public void createVisit(int patientNum, int visitNum, Date visitDate) {
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitId = new VisitDimensionId();
 		
@@ -219,12 +219,15 @@ public class I2B2DemoDataWriter {
 		visitId.setPatientNum(new BigDecimal(patientNum));
 		
 		visitDimension.setId(visitId);
+		// Just hard code the value for now
 		visitDimension.setActiveStatusCd("Active");
 		visitDimension.setStartDate(visitDate);
 		visitDimension.setEndDate(visitDate);
 		visitDimension.setInoutCd("in");
-		visitDimension.setLocationCd(locationCd);
-		visitDimension.setLocationPath(locationPath);
+		// location_cd and location_path are supposed to be per visit related
+		// Use null for now
+		visitDimension.setLocationCd(null);
+		visitDimension.setLocationPath(null);
 		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
 		visitDimension.setVisitBlob(null);
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_VISIT_DIMENSION table

@@ -202,11 +202,8 @@ public class Xmeso {
 			// dateFormat.format(visitDate) will give us the desired string format: 1984-05-10
 			logger.debug("visit date ------- " + dateFormat.format(visitDate));
 
-			// location_cd and location_path are used in each XMESO_VISIT_DIMENSION table record
-			String locationCd = xmesoProperties.getProperty("location_cd");
-			String locationPath = xmesoProperties.getProperty("location_path");
 			// Create new visit record of the current report
-			i2b2DemoDataWriter.createVisit(Integer.parseInt(patientId), Integer.parseInt(reportId), visitDate, locationCd, locationPath);
+			i2b2DemoDataWriter.createVisit(Integer.parseInt(patientId), Integer.parseInt(reportId), visitDate);
 			
 			// Ruta kicks in
 			processReport();

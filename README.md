@@ -35,7 +35,7 @@ Note: Always use the Unix file separator "/" when working on Windows system. Oth
 xmeso_data=C:\\Users\\zhy19\\XMESO_PITT
 ````
 
-The next thing that users may need to change is the provider information:
+The next thing that users may need to change is the provider information and the source system code:
 
 ````
 # provider info
@@ -43,18 +43,17 @@ provider_id=XMESO:Pathology
 # Must use \\
 provider_path=\\i2b2\\Providers\\XMESO\\Pathology
 provider_name_char=Pathology
+
+# source system code
+sourcesystem_cd=Xmeso
 ````
-The above provider info is used to create ONE record in the `XMESO_PROVIDER_DIMENSION` table. Nothing fancy. And we assume all the reports are from this same provider.
+The above provider info is used to create ONE (only one) record in the `XMESO_PROVIDER_DIMENSION` table. Nothing fancy. And we assume all the reports are from this same provider.
+
+And the `sourcesystem_cd` value is mainly used as an data source identifier, so we know all the results from running this Xmeso program are different from other existing data records.
 
 In addition, users will also need to specify their i2b2 related settings.
 
 ````
-# i2b2 source system code
-sourcesystem_cd=Xmeso
-# i2b2 location ontology path and code
-location_path=Pittsburgh/Pennsylvania
-location_cd=Pennsylvania
-
 # i2b2 database connection settings
 hibernate.driver=oracle.jdbc.OracleDriver
 hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
