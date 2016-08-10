@@ -61,21 +61,21 @@ public abstract class I2b2DataSourceManager {
 
 			/* Sample i2b2 connection settings
 			 *  
-			 *  driver = oracle.jdbc.OracleDriver
-				dialect = org.hibernate.dialect.Oracle10gDialect
-				url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-				user = 
-				password = 
-				show_sql = false
+			 *  hibernate.driver = oracle.jdbc.OracleDriver
+				hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
+				hibernate.url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+				hibernate.user = 
+				hibernate.password = 
+				hibernate.show_sql = false
 			 */
-			setHibernateDriver(dbProperties.getProperty("driver", oracle.jdbc.OracleDriver.class.getName()));
-			setHibernateDialect(dbProperties.getProperty("dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
+			setHibernateDriver(dbProperties.getProperty("hibernate.driver", oracle.jdbc.OracleDriver.class.getName()));
+			setHibernateDialect(dbProperties.getProperty("hibernate.dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
 			// No need to specify the default values
-			setHibernateConnectionUrl(dbProperties.getProperty("url"));
-			setHibernateUserName(dbProperties.getProperty("user"));
-			setHibernateUserPassword(dbProperties.getProperty("password"));
+			setHibernateConnectionUrl(dbProperties.getProperty("hibernate.url"));
+			setHibernateUserName(dbProperties.getProperty("hibernate.user"));
+			setHibernateUserPassword(dbProperties.getProperty("hibernate.password"));
 			// Set default as true
-			setHibernateShowSql(dbProperties.getProperty("show_sql", "true"));
+			setHibernateShowSql(dbProperties.getProperty("hibernate.show_sql", "true"));
 
 			configuration = new Configuration();
 			configuration.setProperty("hibernate.dialect", getHibernateDialect());
