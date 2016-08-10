@@ -85,7 +85,6 @@ XMESO_PITT/
 |-- |-- MVB0002_15869.txt
 |-- |-- MVB0003_15887.txt
 |-- |-- MVB0004_17555.txt
-|-- |-- MVB0005_15979.txt
 |-- |-- MVB0006_15891.txt
 ````
 
@@ -97,7 +96,6 @@ REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
 15887,MVB0003,0003,1984-05-10
 17555,MVB0004,0004,1987-08-08
 15979,MVB0006,0006,1979-02-28
-15891,MVB0010,0010,1979-01-10
 ````
 
 The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `XMESO_OBSERVATION_FACT` table as well as appropriate dimension tables.
@@ -114,9 +112,13 @@ And this command will have the following sample outputs in the terminal when eve
 
 ````
 Input data folder path: C:\Users\zhy19\XMESO_PITT
+Created fake patient information for patient #6
 Successfully processed report #15869
+Created fake patient information for patient #2
 Successfully processed report #15887
+Created fake patient information for patient #3
 Successfully processed report #17555
+Created fake patient information for patient #4
 Successfully processed report #15979
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
@@ -124,16 +126,18 @@ Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
-Once finish running, this tool will have all the found information added to the following I2B2 database tables:
+Once finish running, this tool will add new records to the following I2B2 database tables:
 
-- `XMESO_PROVIDER_DIMENSION`
-- `XMESO_OBSERVATION_FACT`
-- `XMESO_CONCEPT_DIMENSION`
-- `XMESO_VISIT_DIMENSION`
+- `XMESO_PROVIDER_DIMENSION` - only one record of the specified provider information
+- `XMESO_OBSERVATION_FACT` - all the found observation facts
+- `XMESO_CONCEPT_DIMENSION` - all the found concepts
+- `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
+
+If you don't have any patient records in the `XMESO_PATIENT_DIMENSION` table by the time you run this program, it will create fake patient records (But using the actual patient number found in the linkage file). 
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
-Note: when rerunning this jar file, all the previously added database records will be erased before adding new records. And you will see the following additional message:
+Note: when rerunning this jar file, all the previously added database records will be erased (except the patient records) before adding new records. And you will see the following additional message:
 
 ````
 Input data folder path: C:\Users\zhy19\XMESO_PITT

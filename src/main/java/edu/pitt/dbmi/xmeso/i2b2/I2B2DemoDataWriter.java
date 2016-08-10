@@ -37,7 +37,7 @@ public class I2B2DemoDataWriter {
 
 	/**
      * Erase old Xmeso records before inserting new one
-     * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
+     * We don't touch the XMESO_PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
     public void cleanOldRecordsIfExist() {
     	eraseOldRecordsIfExist("XMESO_PROVIDER_DIMENSION");
@@ -111,6 +111,9 @@ public class I2B2DemoDataWriter {
 			Transaction tx = dataSourceMgr.getSession().beginTransaction();
 			dataSourceMgr.getSession().flush();
 			tx.commit();
+			
+			System.out.println("Created fake patient information for patient #" + patientNum);
+			
 			existingPatient = fetchPatient(patientNum);
 		}
 		return existingPatient;
@@ -167,6 +170,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setImportDate(timeNow);
 		patientDimension.setSourcesystemCd(sourcesystemCd);
 		patientDimension.setUploadId(null);
+		
 		return patientDimension;
 	}
 
