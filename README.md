@@ -38,21 +38,33 @@ xmeso_data=C:\\Users\\zhy19\\XMESO_PITT
 In addition, users will also need to specify their i2b2 related settings.
 
 ````
+# i2b2 source system code
+sourcesystem_cd=Xmeso
 # i2b2 location ontology path and code
 location_path=Pittsburgh/Pennsylvania
 location_cd=Pennsylvania
 
-# i2b2 source system code
-sourcesystem_cd=Xmeso
-
 # i2b2 database connection settings
-driver = oracle.jdbc.OracleDriver
-dialect = org.hibernate.dialect.Oracle10gDialect
-url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-user = i2b2demodata
-password = demouser
-show_sql = false
+hibernate.driver=oracle.jdbc.OracleDriver
+hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+hibernate.url=jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+# i2b2 database username and password
+hibernate.user=i2b2demodata
+hibernate.password=demouser
+# used by log file for debugging
+hibernate.show_sql=false
+
+# i2b2 database schema
+# this schema contains the following tables (can't change the table name): 
+# - XMESO_OBSERVATION_FACT
+# - XMESO_PATIENT_DIMENSION
+# - XMESO_VISIT_DIMENSION
+# - XMESO_CONCEPT_DIMENSION
+# - XMESO_PROVIDER_DIMENSION
+hibernate.default_schema=I2B2DEMODATA
 ````
+
+These five tables mentioned above will need to be created in that schema. Users can use the [DDL](Xmeso-I2B2-DDL.sql) to easily create the tables.
 
 And the input data folder should have the sub-folder/file structure that is similar to the following example:
 
@@ -103,9 +115,9 @@ Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
 Once finish running, this tool will have all the found information added to the following I2B2 database tables:
 
-- `OBSERVATION_FACT`
-- `CONCEPT_DIMENSION`
-- `VISIT_DIMENSION`
+- `XMESO_OBSERVATION_FACT`
+- `XMESO_CONCEPT_DIMENSION`
+- `XMESO_VISIT_DIMENSION`
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
