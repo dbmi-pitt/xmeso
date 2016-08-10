@@ -56,8 +56,12 @@ public class Xmeso {
 
 	private AnalysisEngine engine;
 	private File currentReportFile;
+	
+	private Properties xmesoProperties;
 
-	public static void main(String[] args) {
+	// Entry point
+	public static void main(String[] args) throws IOException {
+		// Create instance of this class
 		final Xmeso xmeso = new Xmeso();
 		try {
 			xmeso.execute();
@@ -74,22 +78,23 @@ public class Xmeso {
 		}
 	}
 
-	public Xmeso() {
+	public Xmeso() throws IOException {
+		// Load the application.properties
+		loadXmesoProperties();
 	}
+	
+	private void loadXmesoProperties() throws IOException {
+    	File file = new File("application.properties");
+		FileInputStream fileInput = new FileInputStream(file);
+		xmesoProperties = new Properties();
+		xmesoProperties.load(fileInput);
+    }
 
 	public void execute() throws InvalidXMLException, ResourceInitializationException, IOException, AnalysisEngineProcessException, SAXException {
 		// Get the xmeso_data path from application.properties
-		File file = new File("application.properties");
-		FileInputStream fileInput = new FileInputStream(file);
-		Properties properties = new Properties();
-		properties.load(fileInput);
-
-		xmesoDataDir = properties.getProperty("xmeso_data");
+		xmesoDataDir = xmesoProperties.getProperty("xmeso_data");
 		
 		System.out.println("Input data folder path: " + xmesoDataDir);
-		
-		// We'll use this sourcesystem_cd to instantiate the I2B2DemoDataWriter
-		String sourcesystemCd = properties.getProperty("sourcesystem_cd");
 
 		/**
 		 * Report file and date mappings. E.g.
@@ -102,8 +107,8 @@ public class Xmeso {
 		
 		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
 		
-		// Instantiate the data writer with a predefined source system code
-		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourcesystemCd);
+		// Instantiate the data writer by passing xmesoProperties
+		i2b2DemoDataWriter = new I2B2DemoDataWriter(xmesoProperties);
 		
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 

@@ -1,7 +1,5 @@
 package edu.pitt.dbmi.xmeso.i2b2;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -32,33 +30,23 @@ public class I2B2DemoDataWriter {
 	
 	private Properties xmesoProperties;
 
-    public I2B2DemoDataWriter(String sourcesystemCd) throws IOException {
+    public I2B2DemoDataWriter(Properties xmesoProperties) {
 		super();
-		this.sourcesystemCd = sourcesystemCd;
-		
-		// Load the application.properties
-		loadXmesoProperties();
+		// Get all the application.properties key-values
+		this.xmesoProperties = xmesoProperties;
+		// Assign value to sourcesystemCd
+        // Since this variable is used many times, let's make it a class-level property
+		this.sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
 	}
-    
-    private void loadXmesoProperties() throws IOException {
-    	File file = new File("application.properties");
-		FileInputStream fileInput = new FileInputStream(file);
-		xmesoProperties = new Properties();
-		xmesoProperties.load(fileInput);
-    }
 
 	/**
      * Erase old Xmeso records before inserting new one
      * We don't touch the PATIENT_DIMENSION table, since it should have already been filled with patient records.
      */
     public void cleanOldRecordsIfExist() {
-    	String observation_fact = xmesoProperties.getProperty("observation_fact");
-    	String concept_dimension = xmesoProperties.getProperty("concept_dimension");
-    	String visit_dimension = xmesoProperties.getProperty("visit_dimension");
-
-    	eraseOldRecordsIfExist(observation_fact);
-    	eraseOldRecordsIfExist(concept_dimension);
-    	eraseOldRecordsIfExist(visit_dimension);
+    	eraseOldRecordsIfExist(xmesoProperties.getProperty("observation_fact"));
+    	eraseOldRecordsIfExist(xmesoProperties.getProperty("concept_dimension"));
+    	eraseOldRecordsIfExist(xmesoProperties.getProperty("visit_dimension"));
 	}
     
     /**
@@ -67,13 +55,11 @@ public class I2B2DemoDataWriter {
      * @param tableName
      */
 	public void eraseOldRecordsIfExist(String tableName) {
-		System.out.println(tableName);
-		
 		// These are SQL, NOT Hibernate Query Language (HQL) queries
 		// Actual table name and field name are used, instead of object and properties
 		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
 		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
-		q.setString("sourcesystemCd", getSourcesystemCd());
+		q.setString("sourcesystemCd", sourcesystemCd);
 		Long count = ((BigDecimal) q.uniqueResult()).longValue();
 
 		if (count > 0) {
@@ -83,19 +69,15 @@ public class I2B2DemoDataWriter {
 			
 			sql = String.format("delete from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
 			q = dataSourceMgr.getSession().createSQLQuery(sql);
-			q.setString("sourcesystemCd", getSourcesystemCd());
+			q.setString("sourcesystemCd", sourcesystemCd);
 			q.executeUpdate();
 		}
 	}
 
 	public void resultsSummary() {
-		String observation_fact = xmesoProperties.getProperty("observation_fact");
-    	String concept_dimension = xmesoProperties.getProperty("concept_dimension");
-    	String visit_dimension = xmesoProperties.getProperty("visit_dimension");
-    	
-    	displayRowsAffected(observation_fact);
-    	displayRowsAffected(concept_dimension);
-    	displayRowsAffected(visit_dimension);
+    	displayRowsAffected(xmesoProperties.getProperty("observation_fact"));
+    	displayRowsAffected(xmesoProperties.getProperty("concept_dimension"));
+    	displayRowsAffected(xmesoProperties.getProperty("visit_dimension"));
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -103,7 +85,7 @@ public class I2B2DemoDataWriter {
 		// Actual table name and field name are used, instead of object and properties
 		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
 		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
-		q.setString("sourcesystemCd", getSourcesystemCd());
+		q.setString("sourcesystemCd", sourcesystemCd);
 		Long count = ((BigDecimal) q.uniqueResult()).longValue();
 
 		if (count > 0) {
@@ -144,7 +126,7 @@ public class I2B2DemoDataWriter {
 	private PatientDimension fetchPatient() {
 		PatientDimension patientDimension = new PatientDimension();
 		patientDimension.setPatientNum(new BigDecimal(patientNum));
-		patientDimension.setSourcesystemCd(getSourcesystemCd());
+		patientDimension.setSourcesystemCd(sourcesystemCd);
 		// Hibernate Query Language (HQL)
 		String hql = "from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
@@ -185,7 +167,7 @@ public class I2B2DemoDataWriter {
 		patientDimension.setUpdateDate(timeNow);
 		patientDimension.setDownloadDate(timeNow);
 		patientDimension.setImportDate(timeNow);
-		patientDimension.setSourcesystemCd(getSourcesystemCd());
+		patientDimension.setSourcesystemCd(sourcesystemCd);
 		patientDimension.setUploadId(null);
 		return patientDimension;
 	}
@@ -196,10 +178,6 @@ public class I2B2DemoDataWriter {
 	 * @throws IOException
 	 */
 	public void createVisit() throws IOException {
-		// Get the `location_cd` and `location_path`values form application.properties
-		String location_cd = xmesoProperties.getProperty("location_cd");
-		String location_path = xmesoProperties.getProperty("location_path");
-		
 		VisitDimension visitDimension = new VisitDimension();
 		VisitDimensionId visitId = new VisitDimensionId();
 		
@@ -210,15 +188,16 @@ public class I2B2DemoDataWriter {
 		visitDimension.setStartDate(visitDate);
 		visitDimension.setEndDate(visitDate);
 		visitDimension.setInoutCd("in");
-		visitDimension.setLocationCd(location_cd);
-		visitDimension.setLocationPath(location_path);
+		// Get the `location_cd` and `location_path`values form application.properties
+		visitDimension.setLocationCd(xmesoProperties.getProperty("location_cd"));
+		visitDimension.setLocationPath(xmesoProperties.getProperty("location_path"));
 		visitDimension.setLengthOfStay(new BigDecimal(1.0d));
 		visitDimension.setVisitBlob(null);
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the VISIT_DIMENSION table
 		visitDimension.setUpdateDate(timeNow);
 		visitDimension.setDownloadDate(timeNow);
 		visitDimension.setImportDate(timeNow);
-		visitDimension.setSourcesystemCd(getSourcesystemCd());
+		visitDimension.setSourcesystemCd(sourcesystemCd);
 		visitDimension.setUploadId(null);
 		
 		// Insert into VISIT_DIMENSION table
@@ -262,7 +241,7 @@ public class I2B2DemoDataWriter {
 	private ConceptDimension fetchConcept(String code) {
 		ConceptDimension conceptDimension = new ConceptDimension();
 		conceptDimension.setConceptCd(code);
-		conceptDimension.setSourcesystemCd(getSourcesystemCd());
+		conceptDimension.setSourcesystemCd(sourcesystemCd);
 		// Hibernate Query Language (HQL)
 		String hql = "from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd";
 		Query q = dataSourceMgr.getSession().createQuery(hql);
@@ -287,7 +266,7 @@ public class I2B2DemoDataWriter {
 		conceptDimension.setUpdateDate(timeNow);
 		conceptDimension.setDownloadDate(timeNow);
 		conceptDimension.setImportDate(timeNow);
-		conceptDimension.setSourcesystemCd(getSourcesystemCd());
+		conceptDimension.setSourcesystemCd(sourcesystemCd);
 		conceptDimension.setUploadId(null);
 		return conceptDimension;
 	}
@@ -315,7 +294,7 @@ public class I2B2DemoDataWriter {
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
 		// We use sourcesystemCd as the provider now, it can't be null
-		observationFactId.setProviderId(getSourcesystemCd());
+		observationFactId.setProviderId(sourcesystemCd);
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
 		// Use today's date as the `START_DATE` in the OBSERVATION_FACT table
@@ -340,7 +319,7 @@ public class I2B2DemoDataWriter {
 		observationFact.setUpdateDate(timeNow);
 		observationFact.setDownloadDate(timeNow);
 		observationFact.setImportDate(timeNow);
-		observationFact.setSourcesystemCd(getSourcesystemCd());
+		observationFact.setSourcesystemCd(sourcesystemCd);
 		observationFact.setUploadId(null);
 
 		// Transaction
@@ -376,14 +355,6 @@ public class I2B2DemoDataWriter {
 
 	public void setInstanceNum(int instanceNum) {
 		this.instanceNum = instanceNum;
-	}
-
-	public String getSourcesystemCd() {
-		return sourcesystemCd;
-	}
-
-	public void setSourcesystemCd(String sourcesystemCd) {
-		this.sourcesystemCd = sourcesystemCd;
 	}
 
 	public I2b2DataSourceManager getDataSourceMgr() {
