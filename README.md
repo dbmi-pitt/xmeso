@@ -2,8 +2,8 @@
 
 Xmeso is an Information Extraction Program designed to eXtract information predominantly from
 the MESOthelioma Surgical Pathology Reports. It has been written to bolster traditional Extract
-Translate Load (ETL) approaches for populating Mesothelioma data for the National
-Mesothelioma Virtual Bank (NMVB) project. NMVB consists of a federated network of four
+Translate Load (ETL) approaches for populating Mesothelioma data for the ]National
+Mesothelioma Virtual Bank (NMVB)](https://mesotissue.org/) project. NMVB consists of a federated network of four
 cooperating institutions PITT, NYU, RPCI, and UPENN. The underlying architecture for
 federated query is based on Shrine connectivity between i2b2 instances housed within each
 participating covered site. This architecture is similar to that used for ACT and PCORI networks
@@ -183,4 +183,4 @@ You must have the following installed to build/install xmeso:
 * [Maven 3.x](https://maven.apache.org/download.cgi)
 * [Eclipse 4.4 (Luna)](https://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunasr2)
 
-You'll also need to install the UIMA Ruta component (https://uima.apache.org/ruta.html) to assist development. UIMA Ruta component consists of two major parts: An Analysis Engine, which interprets and executes the rule-based scripting language, and the Eclipse-based tooling (Workbench), which provides various support for developing rules.
+You'll also need to install the [UIMA Ruta component](https://uima.apache.org/ruta.html) to assist development. UIMA Ruta component consists of two major parts: An Analysis Engine, which interprets and executes the rule-based scripting language, and the Eclipse-based tooling (Workbench), which provides various support for developing rules.
