@@ -5,10 +5,7 @@
  */
 package edu.pitt.dbmi.xmeso.i2b2;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Properties;
-import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,9 +14,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.common.reflect.ClassPath;
-import com.google.common.reflect.ClassPath.ClassInfo;
 
 import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
@@ -60,12 +54,16 @@ public class I2b2DataSourceManager {
 		configuration.setProperty("hibernate.connection.password", xmesoProperties.getProperty("hibernate.password"));
 		configuration.setProperty("hibernate.default_schema", xmesoProperties.getProperty("hibernate.default_schema"));
 
-		addAnnotatedClasses();
+		// Add entity beans
+		configuration.addAnnotatedClass(ObservationFact.class);
+		configuration.addAnnotatedClass(ProviderDimension.class);
+		configuration.addAnnotatedClass(VisitDimension.class);
+		configuration.addAnnotatedClass(PatientDimension.class);
+		configuration.addAnnotatedClass(ConceptDimension.class);
 	}
 
 	/**
-	 * get or create configuration object to further customize it before calling
-	 * getSession()
+	 * Get or create configuration object to further customize it before calling getSession()
 	 *
 	 * @return
 	 */
@@ -76,56 +74,12 @@ public class I2b2DataSourceManager {
 		return configuration;
 	}
 
-	protected void addAnnotatedClasses() {
-		configuration.addAnnotatedClass(ObservationFact.class);
-		configuration.addAnnotatedClass(ProviderDimension.class);
-		configuration.addAnnotatedClass(VisitDimension.class);
-		configuration.addAnnotatedClass(PatientDimension.class);
-		configuration.addAnnotatedClass(ConceptDimension.class);
-	}; 
-
-	public void addAnnotatedClsesForPackage() {
-		logger.debug("Entered addAnnotatedClsesForPackage for " + getClass().getName());
-		
-		try {
-			String pkgName = getClass().getPackage().getName();
-			ClassPath classPath = ClassPath.from(getClass().getClassLoader());
-			final ArrayList<Class<?>> clses = new ArrayList<Class<?>>();
-			Set<ClassInfo> clsInfos = classPath.getTopLevelClassesRecursive(pkgName);
-			for (ClassInfo clsInfo : clsInfos) {
-				if (!clsInfo.getName().equals(getClass().getName())) {
-					clses.add(clsInfo.load());
-				}
-			}
-			if (clses.isEmpty()) {
-				logger.error("Failed to load hibernate classes");
-			} else {
-				for (Class<?> cls : clses) {
-//					System.err.println("Configuring " + cls.getName()
-//							+ " into Hibernate");
-//					logger.info("Configuring " + cls.getName()
-//							+ " into Hibernate");
-					configuration.addAnnotatedClass(cls);
-				}
-			}
-		} catch (IOException e) {
-		}
-		
-		logger.debug("Exited addAnnotatedClsesForPackage for " + getClass().getName());
-	}
-
-	/*
-	 * SessionFactory
-	 */
 	protected boolean buildSessionFactory(Configuration configuration) {
 		StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
         sessionFactory = configuration.buildSessionFactory(ssrb.build());
 		return !sessionFactory.isClosed();
 	}
 
-	/*
-	 * Session
-	 */
 	public Session getSession() {
 		try {
 			if (session == null) {
@@ -145,9 +99,6 @@ public class I2b2DataSourceManager {
 		return session;
 	}
 
-	/*
-	 * Clean up
-	 */
 	protected void closeSession() throws HibernateException {
 		if (session != null && session.isOpen()) {
 			session.close();
@@ -165,7 +116,7 @@ public class I2b2DataSourceManager {
 	public void destroy() {
 		closeSession();
 		closeSessionFactory();
-		logger.debug("destroyed " + getClass().getName() + " : session and sessionFactory removed.");
+		logger.debug("Destroyed " + getClass().getName() + " : session and sessionFactory removed.");
 	}
 
 	@Override
