@@ -21,7 +21,13 @@ import org.slf4j.LoggerFactory;
 import com.google.common.reflect.ClassPath;
 import com.google.common.reflect.ClassPath.ClassInfo;
 
-public abstract class I2b2DataSourceManager {
+import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
+import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimension;
+
+public class I2b2DataSourceManager {
 
 	private static final Logger logger = LoggerFactory.getLogger(I2b2DataSourceManager.class);
 
@@ -70,7 +76,13 @@ public abstract class I2b2DataSourceManager {
 		return configuration;
 	}
 
-	protected abstract void addAnnotatedClasses(); 
+	protected void addAnnotatedClasses() {
+		configuration.addAnnotatedClass(ObservationFact.class);
+		configuration.addAnnotatedClass(ProviderDimension.class);
+		configuration.addAnnotatedClass(VisitDimension.class);
+		configuration.addAnnotatedClass(PatientDimension.class);
+		configuration.addAnnotatedClass(ConceptDimension.class);
+	}; 
 
 	public void addAnnotatedClsesForPackage() {
 		logger.debug("Entered addAnnotatedClsesForPackage for " + getClass().getName());
