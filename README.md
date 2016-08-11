@@ -112,7 +112,16 @@ The `reports/` folder contains all the surgical pathology reports. When executin
 
 ## Executing the Jar
 
-Open your command line terminal, and go to the directory where this project resides, and type the following command:
+Open your command line terminal, and go to the directory where this project resides, and type `java -version` to verify that you have Java Runtime Environment (JRE) installed on your computer. Otherwise, you'll need to install it.
+
+````
+$ java -version
+java version "1.8.0_92"
+Java(TM) SE Runtime Environment (build 1.8.0_92-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.92-b14, mixed mode)
+````
+
+Then you can type the following command to execute this Jar file:
 
 ````
 java -jar xmeso-1.0.0-jar-with-dependencies.jar
