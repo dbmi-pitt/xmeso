@@ -12,6 +12,7 @@ import javax.persistence.Embeddable;
 public class ProviderDimensionId implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	private String providerPath;
 	private String providerId;
 
