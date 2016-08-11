@@ -86,7 +86,7 @@ public class Xmeso {
 	}
 	
 	private void loadXmesoProperties() throws IOException {
-    	File file = new File("application.properties");
+    	File file = new File("xmeso.properties");
 		FileInputStream fileInput = new FileInputStream(file);
 		xmesoProperties = new Properties();
 		xmesoProperties.load(fileInput);
@@ -114,6 +114,7 @@ public class Xmeso {
 		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourcesystemCd);
 		
 		// Create instance of I2b2DemoDataSourceManager and pass the connection settings
+		// The data source manager will only use the database related properties of xmesoProperties
 		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager(xmesoProperties);
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 

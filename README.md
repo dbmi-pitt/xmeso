@@ -35,7 +35,7 @@ Note: you can either load the patient records directly into the `XMESO_PATIENT_D
 
 ## Configuration
 
-There is a `application.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
+There is a `xmeso.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
 
 ````
 xmeso_data=C:/Users/zhy19/XMESO_PITT
