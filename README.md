@@ -73,8 +73,6 @@ hibernate.url=jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
 # i2b2 database username and password
 hibernate.user=i2b2demodata
 hibernate.password=demouser
-# used by log file for debugging
-hibernate.show_sql=false
 
 # i2b2 database schema
 # this schema contains the following tables (don't ever change the table name): 

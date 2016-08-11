@@ -89,7 +89,7 @@ public abstract class I2b2DataSourceManager {
 			configuration.setProperty("hibernate.connection.username", getHibernateUserName());
 			configuration.setProperty("hibernate.connection.password", getHibernateUserPassword());
 			configuration.setProperty("hibernate.cache.use_second_level_cache", getHibernateCacheUseSecondLevelCache());
-			
+
 			if (getHibernateHbm2ddlAuto() != null) {
 				configuration.setProperty("hibernate.hbm2ddl.auto", getHibernateHbm2ddlAuto());
 			}
