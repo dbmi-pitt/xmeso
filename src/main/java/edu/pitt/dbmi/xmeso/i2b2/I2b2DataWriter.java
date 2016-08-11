@@ -18,7 +18,7 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimensionId;
 import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimensionId;
 
-public class I2B2DemoDataWriter {
+public class I2b2DataWriter {
 	
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceMgr;
@@ -29,7 +29,7 @@ public class I2B2DemoDataWriter {
 	 * 
 	 * @param sourcesystemCd
 	 */
-    public I2B2DemoDataWriter(String sourcesystemCd) {
+    public I2b2DataWriter(String sourcesystemCd) {
 		super();
 
 		this.sourcesystemCd = sourcesystemCd;
