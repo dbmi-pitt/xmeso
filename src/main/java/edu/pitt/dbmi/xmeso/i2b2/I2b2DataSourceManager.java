@@ -27,8 +27,8 @@ public abstract class I2b2DataSourceManager {
 
 	private static final Logger logger = LoggerFactory.getLogger(I2b2DataSourceManager.class);
 
-	protected String hibernateDialect;
 	protected String hibernateDriver;
+	protected String hibernateDialect;
 	protected String hibernateConnectionUrl;
 	protected String hibernateUserName;
 	protected String hibernateUserPassword;
@@ -37,9 +37,7 @@ public abstract class I2b2DataSourceManager {
 	// explicit use by the installer or other utility methods. Must always
 	// default to null to avoid accidental database modifications.
 	protected String hibernateHbm2ddlAuto = "none";
-
-	protected String hibernateShowSql = "false";
-	protected String hibernateDefaultSchema = "false";
+	protected String hibernateDefaultSchema;
 	protected String hibernateCacheUseSecondLevelCache = "false";
 
 	protected Configuration configuration;
@@ -67,7 +65,6 @@ public abstract class I2b2DataSourceManager {
 				hibernate.url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
 				hibernate.user = 
 				hibernate.password = 
-				hibernate.show_sql = false
 			 */
 			setHibernateDriver(dbProperties.getProperty("hibernate.driver", oracle.jdbc.OracleDriver.class.getName()));
 			setHibernateDialect(dbProperties.getProperty("hibernate.dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
@@ -75,16 +72,12 @@ public abstract class I2b2DataSourceManager {
 			setHibernateConnectionUrl(dbProperties.getProperty("hibernate.url"));
 			setHibernateUserName(dbProperties.getProperty("hibernate.user"));
 			setHibernateUserPassword(dbProperties.getProperty("hibernate.password"));
-			// Set default as true
-			setHibernateShowSql(dbProperties.getProperty("hibernate.show_sql", "true"));
-			
 			// Set default schema
 			setHibernateDefaultSchema(dbProperties.getProperty("hibernate.default_schema"));
 
 			configuration = new Configuration();
-			configuration.setProperty("hibernate.dialect", getHibernateDialect());
 			configuration.setProperty("hibernate.connection.driver_class", getHibernateDriver());
-			configuration.setProperty("hibernate.show_sql", getHibernateShowSql());
+			configuration.setProperty("hibernate.dialect", getHibernateDialect());
 			configuration.setProperty("hibernate.connection.url", getHibernateConnectionUrl());
 			configuration.setProperty("hibernate.connection.username", getHibernateUserName());
 			configuration.setProperty("hibernate.connection.password", getHibernateUserPassword());
@@ -251,14 +244,6 @@ public abstract class I2b2DataSourceManager {
 
 	public void setHibernateHbm2ddlAuto(String hibernateHbm2ddlAuto) {
 		this.hibernateHbm2ddlAuto = hibernateHbm2ddlAuto;
-	}
-
-	public String getHibernateShowSql() {
-		return hibernateShowSql;
-	}
-
-	public void setHibernateShowSql(String hibernateShowSql) {
-		this.hibernateShowSql = hibernateShowSql;
 	}
 
 	public String getHibernateDefaultSchema() {
