@@ -27,19 +27,6 @@ public abstract class I2b2DataSourceManager {
 
 	private static final Logger logger = LoggerFactory.getLogger(I2b2DataSourceManager.class);
 
-	protected String hibernateDriver;
-	protected String hibernateDialect;
-	protected String hibernateConnectionUrl;
-	protected String hibernateUserName;
-	protected String hibernateUserPassword;
-
-	// Very dangerous to have this set to create or update. Only available for
-	// explicit use by the installer or other utility methods. Must always
-	// default to null to avoid accidental database modifications.
-	protected String hibernateHbm2ddlAuto = "none";
-	protected String hibernateDefaultSchema;
-	protected String hibernateCacheUseSecondLevelCache = "false";
-
 	protected Configuration configuration;
 
 	protected SessionFactory sessionFactory;
@@ -66,26 +53,14 @@ public abstract class I2b2DataSourceManager {
 				hibernate.user = 
 				hibernate.password = 
 			 */
-			setHibernateDriver(dbProperties.getProperty("hibernate.driver", oracle.jdbc.OracleDriver.class.getName()));
-			setHibernateDialect(dbProperties.getProperty("hibernate.dialect", org.hibernate.dialect.Oracle10gDialect.class.getName()));
-			// No need to specify the default values
-			setHibernateConnectionUrl(dbProperties.getProperty("hibernate.url"));
-			setHibernateUserName(dbProperties.getProperty("hibernate.user"));
-			setHibernateUserPassword(dbProperties.getProperty("hibernate.password"));
-			// Set default schema
-			setHibernateDefaultSchema(dbProperties.getProperty("hibernate.default_schema"));
-
 			configuration = new Configuration();
-			configuration.setProperty("hibernate.connection.driver_class", getHibernateDriver());
-			configuration.setProperty("hibernate.dialect", getHibernateDialect());
-			configuration.setProperty("hibernate.connection.url", getHibernateConnectionUrl());
-			configuration.setProperty("hibernate.connection.username", getHibernateUserName());
-			configuration.setProperty("hibernate.connection.password", getHibernateUserPassword());
-			configuration.setProperty("hibernate.cache.use_second_level_cache", getHibernateCacheUseSecondLevelCache());
+			configuration.setProperty("hibernate.connection.driver_class", dbProperties.getProperty("hibernate.driver"));
+			configuration.setProperty("hibernate.dialect", dbProperties.getProperty("hibernate.dialect"));
+			configuration.setProperty("hibernate.connection.url", dbProperties.getProperty("hibernate.url"));
+			configuration.setProperty("hibernate.connection.username", dbProperties.getProperty("hibernate.user"));
+			configuration.setProperty("hibernate.connection.password", dbProperties.getProperty("hibernate.password"));
+			configuration.setProperty("hibernate.default_schema", dbProperties.getProperty("hibernate.default_schema"));
 
-			if (getHibernateHbm2ddlAuto() != null) {
-				configuration.setProperty("hibernate.hbm2ddl.auto", getHibernateHbm2ddlAuto());
-			}
 			addAnnotatedClasses();
 
 		} catch (IOException x) {
@@ -196,70 +171,6 @@ public abstract class I2b2DataSourceManager {
 	protected void finalize() throws Throwable {
 		destroy();
 		super.finalize();
-	}
-
-	public String getHibernateDialect() {
-		return hibernateDialect;
-	}
-
-	public void setHibernateDialect(String paramHibernateDialect) {
-		this.hibernateDialect = paramHibernateDialect;
-	}
-
-	public String getHibernateDriver() {
-		return hibernateDriver;
-	}
-
-	public void setHibernateDriver(String hibernateDriver) {
-		this.hibernateDriver = hibernateDriver;
-	}
-
-	public String getHibernateConnectionUrl() {
-		return hibernateConnectionUrl;
-	}
-
-	public void setHibernateConnectionUrl(String hibernateConnectionUrl) {
-		this.hibernateConnectionUrl = hibernateConnectionUrl;
-	}
-
-	public String getHibernateUserName() {
-		return hibernateUserName;
-	}
-
-	public void setHibernateUserName(String hibernateUserName) {
-		this.hibernateUserName = hibernateUserName;
-	}
-
-	public String getHibernateUserPassword() {
-		return hibernateUserPassword;
-	}
-
-	public void setHibernateUserPassword(String hibernateUserPassword) {
-		this.hibernateUserPassword = hibernateUserPassword;
-	}
-
-	public String getHibernateHbm2ddlAuto() {
-		return hibernateHbm2ddlAuto;
-	}
-
-	public void setHibernateHbm2ddlAuto(String hibernateHbm2ddlAuto) {
-		this.hibernateHbm2ddlAuto = hibernateHbm2ddlAuto;
-	}
-
-	public String getHibernateDefaultSchema() {
-		return hibernateDefaultSchema;
-	}
-
-	public void setHibernateDefaultSchema(String hibernateDefaultSchema) {
-		this.hibernateDefaultSchema = hibernateDefaultSchema;
-	}
-	
-	public String getHibernateCacheUseSecondLevelCache() {
-		return hibernateCacheUseSecondLevelCache;
-	}
-
-	public void setHibernateCacheUseSecondLevelCache(String hibernateCacheUseSecondLevelCache) {
-		this.hibernateCacheUseSecondLevelCache = hibernateCacheUseSecondLevelCache;
 	}
 
 }
