@@ -5,9 +5,7 @@
  */
 package edu.pitt.dbmi.xmeso.i2b2;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Set;
@@ -32,41 +30,31 @@ public abstract class I2b2DataSourceManager {
 	protected SessionFactory sessionFactory;
 
 	protected Session session;
-	
-	protected URL dbPropertiesUrl;
 
-	public I2b2DataSourceManager() {
+	protected Properties xmesoProperties;
+	
+	public I2b2DataSourceManager(Properties xmesoProperties) {
+		this.xmesoProperties = xmesoProperties;
 	}
 
 	protected void buildConfiguration() {
+		/* Sample i2b2 connection settings
+		 *  
+		 *  hibernate.driver = oracle.jdbc.OracleDriver
+			hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
+			hibernate.url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
+			hibernate.user = 
+			hibernate.password = 
+		 */
+		configuration = new Configuration();
+		configuration.setProperty("hibernate.connection.driver_class", xmesoProperties.getProperty("hibernate.driver"));
+		configuration.setProperty("hibernate.dialect", xmesoProperties.getProperty("hibernate.dialect"));
+		configuration.setProperty("hibernate.connection.url", xmesoProperties.getProperty("hibernate.url"));
+		configuration.setProperty("hibernate.connection.username", xmesoProperties.getProperty("hibernate.user"));
+		configuration.setProperty("hibernate.connection.password", xmesoProperties.getProperty("hibernate.password"));
+		configuration.setProperty("hibernate.default_schema", xmesoProperties.getProperty("hibernate.default_schema"));
 
-		try {
-			Properties dbProperties = new Properties();
-			FileReader reader = new FileReader(dbPropertiesUrl.getPath());
-			dbProperties.load(reader);
-
-			/* Sample i2b2 connection settings
-			 *  
-			 *  hibernate.driver = oracle.jdbc.OracleDriver
-				hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
-				hibernate.url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-				hibernate.user = 
-				hibernate.password = 
-			 */
-			configuration = new Configuration();
-			configuration.setProperty("hibernate.connection.driver_class", dbProperties.getProperty("hibernate.driver"));
-			configuration.setProperty("hibernate.dialect", dbProperties.getProperty("hibernate.dialect"));
-			configuration.setProperty("hibernate.connection.url", dbProperties.getProperty("hibernate.url"));
-			configuration.setProperty("hibernate.connection.username", dbProperties.getProperty("hibernate.user"));
-			configuration.setProperty("hibernate.connection.password", dbProperties.getProperty("hibernate.password"));
-			configuration.setProperty("hibernate.default_schema", dbProperties.getProperty("hibernate.default_schema"));
-
-			addAnnotatedClasses();
-
-		} catch (IOException x) {
-			System.err.println("Error connecting to I2B2 database.");
-		}
-
+		addAnnotatedClasses();
 	}
 
 	/**
@@ -110,6 +98,7 @@ public abstract class I2b2DataSourceManager {
 			}
 		} catch (IOException e) {
 		}
+		
 		logger.debug("Exited addAnnotatedClsesForPackage for " + getClass().getName());
 	}
 

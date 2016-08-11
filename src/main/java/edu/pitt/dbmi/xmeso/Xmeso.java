@@ -113,8 +113,8 @@ public class Xmeso {
 		// Instantiate the data writer by passing xmesoProperties
 		i2b2DemoDataWriter = new I2B2DemoDataWriter(sourcesystemCd);
 		
-		// Create instance of I2b2DemoDataSourceManager
-		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager();
+		// Create instance of I2b2DemoDataSourceManager and pass the connection settings
+		i2b2DemoDataSourceManager = new I2b2DemoDataSourceManager(xmesoProperties);
 		i2b2DemoDataWriter.setDataSourceMgr(i2b2DemoDataSourceManager);
 
 		// Delete old records (if exist) before inserting new ones
