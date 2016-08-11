@@ -15,6 +15,7 @@ class Oracle:
         if not self.connection:
             import cx_Oracle
             dsn_tns = cx_Oracle.makedsn(self.host, self.port, self.SID)
+            #dsn_tns = dsn_tns.replace('SID', 'SERVICE_NAME')
             self.connection = cx_Oracle.connect(self.user, self.password, dsn_tns)
         return self.connection
     

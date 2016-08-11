@@ -14,4 +14,7 @@ dbUser = ''
 dbSchema = ''
 dbPassword = ''
 
-
+umls_api_key = ''
+umlsUsername = ''
+umlsPassword = ''
+outputDir = ''
