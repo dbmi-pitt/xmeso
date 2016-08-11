@@ -23,13 +23,15 @@ At this development stage, this Xmeso tool will extract six Data Elements over t
 
 ## Creating Database Schema and Tables
 
-Before jumping to the configuration section, we'll first need to have the database schema and required i2b2 tables created. In your Oracle 10g database server, create a schema first (you can decide the schema name), then run the [DDL](Xmeso-I2B2-DDL.sql) to create the required tables as follow:
+Before jumping to the configuration section, we'll first need to have the database schema and required i2b2 tables created. In your Oracle database server, create a schema first (you can decide the schema name), then run the [DDL](Xmeso-I2B2-DDL.sql) to create the required tables as follow:
 
 - `XMESO_PROVIDER_DIMENSION`
 - `XMESO_OBSERVATION_FACT`
 - `XMESO_CONCEPT_DIMENSION`
 - `XMESO_VISIT_DIMENSION`
 - `XMESO_PATIENT_DIMENSION`
+
+These tables have the same structure as the formal i2b2 tables without the `XMESO_` prefix. But you won't see all the constraints since they are used for data staging purpose. Your DBA will need to migrate the resulting data from these staging tables to the corresponding i2b2 production tables.
 
 Note: you can either load the patient records directly into the `XMESO_PATIENT_DIMENSION` table, or leave it blank. If you leave it blank, fake patient records (but using the actual patient number found in the linkage file) will be created.
 
