@@ -112,7 +112,7 @@ public class I2b2DataWriter {
 			dataSourceMgr.getSession().flush();
 			tx.commit();
 			
-			System.out.println("Created fake patient information for patient #" + patientNum);
+			System.out.println("Created fake patient information for patient #" + patientNum + " in XMESO_PATIENT_DIMENSION table");
 			
 			existingPatient = fetchPatient(patientNum);
 		}
@@ -204,6 +204,8 @@ public class I2b2DataWriter {
 		Transaction tx = dataSourceMgr.getSession().beginTransaction();
 		dataSourceMgr.getSession().flush();
 		tx.commit();
+		
+		System.out.println("Created provider record in XMESO_PROVIDER_DIMENSION table");
 	}
 
 	/**
@@ -247,6 +249,8 @@ public class I2b2DataWriter {
 		Transaction tx = dataSourceMgr.getSession().beginTransaction();
 		dataSourceMgr.getSession().flush();
 		tx.commit();
+		
+		System.out.println("Created visit record for patient #" + patientNum + " in XMESO_VISIT_DIMENSION table");
 	}
 
 	/**

@@ -46,18 +46,14 @@ public class Xmeso {
 	private String xmesoDataDir;
 
 	private final Map<String, String> visitDateMap = new HashMap<String, String>();
+	private final Map<String, String> patientMap = new HashMap<String, String>();
+	private final Map<String, String> reportMap = new HashMap<String, String>();
 
 	private I2b2DataSourceManager i2b2DataSourceManager;
 
 	private I2b2DataWriter i2b2DataWriter;
 
-	private String reportId;
-	private String mvbId;
-	private String patientId;
-	private String formattedDate;
-
 	private AnalysisEngine engine;
-	private File currentReportFile;
 	
 	private Properties xmesoProperties;
 
@@ -98,15 +94,8 @@ public class Xmeso {
 		
 		System.out.println("Input data folder path: " + xmesoDataDir);
 		
-		/**
-		 * Report file and date mappings. E.g.
-		 * 
-		 * MVB0020_17639.txt: 1978-12-16
-		   MVB0038_15907.txt: 1960-04-14
-		   MVB0471_16685.txt: 1979-11-07
-		 */
-		mapVisitDates();
-
+		createMappings();
+		
 		// Value to be passed to instantiate the data writer
 		String sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
 
@@ -137,7 +126,12 @@ public class Xmeso {
 		i2b2DataSourceManager.destroy();
 	}
 
-	private void mapVisitDates() throws IOException {
+	/**
+	 * Map report file name with patient ID, report ID, and visit date
+	 * 
+	 * @throws IOException
+	 */
+	private void createMappings() throws IOException {
 		/*
 		 * nmvb_path_report_event_date.csv contains content looks like this:
 		 * 
@@ -148,28 +142,43 @@ public class Xmeso {
 			00004,MVB0004,0004,2016-07-07
 			00005,MVB0005,0005,2016-07-07
 		 */
-		File eventDatesFile = new File(xmesoDataDir + File.separator + "nmvb_path_report_event_date.csv");
+		File linkageFile = new File(xmesoDataDir + File.separator + "nmvb_path_report_event_date.csv");
 		
-		for (String line : FileUtils.readLines(eventDatesFile)) {
+		for (String line : FileUtils.readLines(linkageFile)) {
 			// Skip the header line
 			if (line.contains("REPORT_ID")) {
 				continue;
 			}
 			String[] fields = line.split(",");
-			reportId = fields[0]; // Here the reportId is string
-			mvbId = fields[1];
-			patientId = fields[2]; // Here the patientId is string
-			formattedDate = fields[3];
+			String reportId = fields[0]; // Here the reportId is string
+			String mvbId = fields[1];
+			String patientId = fields[2]; // Here the patientId is string
+			String formattedDate = fields[3];
 			// E.g. MVB0001_00001.txt
 			String key = mvbId + "_" + reportId + ".txt";
+			
+			// Map report file name with visit date
 			if (visitDateMap.get(key) != null) {
-				System.err.println("Replacing an existing visit date at " + key);
+				System.err.println("FYI, visit date mapped to " + key + " already exists");
 			}
 			visitDateMap.put(key, formattedDate);
+			
+			// Map report file name with patient ID
+			if (patientMap.get(key) != null) {
+				System.err.println("FYI, patient mapped to " + key + " already exists");
+			}
+			patientMap.put(key, patientId);
+			
+			// Map report file name with report ID
+			if (reportMap.get(key) != null) {
+				System.err.println("FYI, report mapped to " + key + " already exists");
+			}
+			reportMap.put(key, reportId);
 		}
 	}
 
 
+	// Solely based on the file order
 	private void processReports() throws InvalidXMLException, ResourceInitializationException, IOException, ParseException {
 		//final String resourcePath = (new File("")).getAbsolutePath() + File.separator + "resources";
 		//System.out.println("Setting resourcePath to " + resourcePath);
@@ -198,15 +207,18 @@ public class Xmeso {
 		
 		// Process each individual report file
 		for (File inputFile : inputFiles) {
-			currentReportFile = inputFile;
-			
-			// Establish the patient
-			// Fetch existing patient info if exists, otherwise create a fake patient record
-			// One patient may have multiple reports
-			i2b2DataWriter.fetchOrCreatePatient(Integer.parseInt(patientId));
+			File currentReportFile = inputFile;
 
 			// E.g. MVB0646_14960.txt
 			String eventKey = currentReportFile.getName();
+			
+			// Get corresponding patient ID and report ID
+			String currentPatientId = this.patientMap.get(eventKey);
+			String currentReportId = this.reportMap.get(eventKey);
+			
+			// Tell user which report is getting processed
+			System.out.println("Processing report file " + eventKey);
+			
 			// This is the date string parsed from the linkage table, yyyy-MM-dd format
 			String formattedDate = this.visitDateMap.get(eventKey);
 			// Now we convert the String into Date type
@@ -215,44 +227,42 @@ public class Xmeso {
 			// dateFormat.format(visitDate) will give us the desired string format: 1984-05-10
 			logger.debug("visit date ------- " + dateFormat.format(visitDate));
 
-			System.out.println("Creating visit----" + Integer.parseInt(patientId) + "----" + Integer.parseInt(reportId));
+			// Establish the patient
+			// Fetch existing patient info if exists, otherwise create a fake patient record
+			// One patient may have multiple reports
+			i2b2DataWriter.fetchOrCreatePatient(Integer.parseInt(currentPatientId));
 			
 			// Create new visit record of the current report
-			i2b2DataWriter.createVisit(Integer.parseInt(patientId), Integer.parseInt(reportId), visitDate);
+			i2b2DataWriter.createVisit(Integer.parseInt(currentPatientId), Integer.parseInt(currentReportId), visitDate);
 			
 			// Ruta kicks in
-			processReport();
+			processReport(currentReportFile, currentPatientId, currentReportId);
 		}
 		
 		System.out.println("Finished processing all reports.");
 	}
 	
 	/**
-	 * Process the current report file
+	 * Process the current report file for current patient ID and report ID
+	 * 
+	 * @param currentReportFile
+	 * @param patientId
+	 * @param reportId
 	 */
-	private void processReport() {
+	private void processReport(File currentReportFile, String patientId, String reportId) {
 		String content;
 		try {
-			cachePatientAndVisitFromName(currentReportFile.getName());
 			content = FileUtils.readFileToString(currentReportFile);
 			JCas jCas = engine.newJCas();
 			// Extract information from this current report content (text to be analyzed)
 			jCas.setDocumentText(content + "\n$\n");
 			engine.process(jCas);
-			populateCas(jCas);
 			
-			System.out.println("Successfully processed report #" + reportId);
+			populateCas(jCas, patientId, reportId);
+			
+			System.out.println("Successfully processed report #" + reportId + " and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table");
 		} catch (Exception e) {
 			System.err.println("Failed to process report #" + reportId);
-		}
-	}
-
-	private void cachePatientAndVisitFromName(String name) {
-		Pattern nameExtractionPattern = Pattern.compile("MVB(\\d{4})_(\\d{5})");
-		Matcher matcher = nameExtractionPattern.matcher(name);
-		if (matcher.find()) {
-			patientId = matcher.group(1);
-			reportId = matcher.group(2);
 		}
 	}
 
@@ -261,7 +271,7 @@ public class Xmeso {
 	 * 
 	 * @param jCas
 	 */
-	private void populateCas(JCas jCas) {
+	private void populateCas(JCas jCas, String patientId, String reportId) {
 		// On this cycle we will extract six Data Elements over the report set:
 		//
 		// Case level (whole report) information:
