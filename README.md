@@ -37,16 +37,24 @@ Note: you can either load the patient records directly into the `XMESO_PATIENT_D
 
 ## Configuration
 
-There is a `xmeso.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
+There is a `xmeso.properties` file in the root directory of this project. In order to run the final jar file, users will need to specify the input data directory absolute path. The Xmeso input data directory can be anywhere on the file system accessible from the executable jar. 
+
+On Unix/Linux/Mac machine, you may have something like this:
 
 ````
-xmeso_data=C:/Users/zhy19/XMESO_PITT
+xmeso_data=/home/joe/XMESO_PITT
 ````
 
-Note: Always use the Unix file separator "/" when working on Windows system. Otherwise you'll have to specify the path as 
+On Windows machine, you should always use the Unix file separator "/" as well, for example:
 
 ````
-xmeso_data=C:\\Users\\zhy19\\XMESO_PITT
+xmeso_data=C:/Users/joe/XMESO_PITT
+````
+
+Otherwise you'll have to specify the path as:
+
+````
+xmeso_data=C:\\Users\\joe\\XMESO_PITT
 ````
 
 The next thing that users may need to change is the provider information and the source system code:
