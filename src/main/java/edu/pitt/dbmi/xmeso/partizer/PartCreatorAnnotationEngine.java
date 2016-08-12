@@ -43,7 +43,7 @@ public class PartCreatorAnnotationEngine extends
 	private final TreeSet<Integer> sectionLevels = new TreeSet<Integer>();
 	private final TreeSet<Integer> codedPenalties = new TreeSet<Integer>();
 
-	private int reportNumber = 0;
+	//private int reportNumber = 0;
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
