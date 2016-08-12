@@ -240,6 +240,11 @@ public class Xmeso {
 		}
 	}
 
+	/**
+	 * Extracts the concept info and observation fact
+	 * 
+	 * @param jCas
+	 */
 	private void populateCas(JCas jCas) {
 		// On this cycle we will extract six Data Elements over the report set:
 		//
