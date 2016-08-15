@@ -25,8 +25,9 @@ public class I2b2DataWriter {
 	private String sourcesystemCd;
 
 	/**
-	 * Get the `sourcesystem_cd` value form application.properties
+	 * Pass the `sourcesystem_cd` value and dataSourceManagre instance
 	 * 
+	 * @param dataSourceManager
 	 * @param sourcesystemCd
 	 */
     public I2b2DataWriter(I2b2DataSourceManager dataSourceManager, String sourcesystemCd) {

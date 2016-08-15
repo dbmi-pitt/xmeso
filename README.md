@@ -98,7 +98,7 @@ And the input data folder should have the sub-folder/file structure that is simi
 
 ````
 XMESO_PITT/
-|-- nmvb_path_report_event_date.csv
+|-- linkage.csv
 |-- reports/
 |-- |-- MVB0002_15869.txt
 |-- |-- MVB0003_15887.txt
@@ -106,7 +106,7 @@ XMESO_PITT/
 |-- |-- MVB0006_15891.txt
 ````
 
-The `nmvb_path_report_event_date.csv` contains linkage from the patient report to visit number and visit date:
+The `linkage.csv` contains linkage from the patient report to visit number and visit date:
 
 ````
 REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE

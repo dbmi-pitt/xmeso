@@ -117,7 +117,7 @@ public class Xmeso {
 	 */
 	private void createMappings() throws IOException {
 		/*
-		 * nmvb_path_report_event_date.csv contains content looks like this:
+		 * linkage.csv contains content looks like this:
 		 * 
 			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
 			00001,MVB0001,0001,2016-07-07
@@ -126,7 +126,7 @@ public class Xmeso {
 			00004,MVB0004,0004,2016-07-07
 			00005,MVB0005,0005,2016-07-07
 		 */
-		File linkageFile = new File(xmesoDataDir + File.separator + "nmvb_path_report_event_date.csv");
+		File linkageFile = new File(xmesoDataDir + File.separator + "linkage.csv");
 		
 		for (String line : FileUtils.readLines(linkageFile)) {
 			// Skip the header line
