@@ -21,7 +21,7 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimensionId;
 public class I2b2DataWriter {
 	
 	private Date timeNow = new Date();
-	private I2b2DataSourceManager dataSourceMgr;
+	private I2b2DataSourceManager dataSourceManager;
 	private String sourcesystemCd;
 
 	/**
@@ -29,9 +29,10 @@ public class I2b2DataWriter {
 	 * 
 	 * @param sourcesystemCd
 	 */
-    public I2b2DataWriter(String sourcesystemCd) {
+    public I2b2DataWriter(I2b2DataSourceManager dataSourceManager, String sourcesystemCd) {
 		super();
 
+		this.dataSourceManager = dataSourceManager;
 		this.sourcesystemCd = sourcesystemCd;
 	}
 
@@ -55,7 +56,7 @@ public class I2b2DataWriter {
 		// These are SQL, NOT Hibernate Query Language (HQL) queries
 		// Actual table name and field name are used, instead of object and properties
 		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
-		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
+		SQLQuery q = dataSourceManager.getSession().createSQLQuery(sql);
 		q.setString("sourcesystemCd", sourcesystemCd);
 		Long count = ((BigDecimal) q.uniqueResult()).longValue();
 
@@ -65,7 +66,7 @@ public class I2b2DataWriter {
 			System.out.println(output);
 			
 			sql = String.format("delete from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
-			q = dataSourceMgr.getSession().createSQLQuery(sql);
+			q = dataSourceManager.getSession().createSQLQuery(sql);
 			q.setString("sourcesystemCd", sourcesystemCd);
 			q.executeUpdate();
 		}
@@ -82,7 +83,7 @@ public class I2b2DataWriter {
 		// These are SQL, NOT Hibernate Query Language (HQL) queries
 		// Actual table name and field name are used, instead of object and properties
 		String sql = String.format("select count(*) from %s where SOURCESYSTEM_CD = :sourcesystemCd", tableName);
-		SQLQuery q = dataSourceMgr.getSession().createSQLQuery(sql);
+		SQLQuery q = dataSourceManager.getSession().createSQLQuery(sql);
 		q.setString("sourcesystemCd", sourcesystemCd);
 		Long count = ((BigDecimal) q.uniqueResult()).longValue();
 
@@ -106,10 +107,10 @@ public class I2b2DataWriter {
 		PatientDimension existingPatient = fetchPatient(patientNum);
 		if (existingPatient == null) {
 			PatientDimension newPatient = newPatient(patientNum);
-			dataSourceMgr.getSession().saveOrUpdate(newPatient);
+			dataSourceManager.getSession().saveOrUpdate(newPatient);
 			// Transaction
-			Transaction tx = dataSourceMgr.getSession().beginTransaction();
-			dataSourceMgr.getSession().flush();
+			Transaction tx = dataSourceManager.getSession().beginTransaction();
+			dataSourceManager.getSession().flush();
 			tx.commit();
 			
 			System.out.println("Created fake patient information for patient #" + patientNum + " in XMESO_PATIENT_DIMENSION table");
@@ -130,7 +131,7 @@ public class I2b2DataWriter {
 		patientDimension.setSourcesystemCd(sourcesystemCd);
 		// Hibernate Query Language (HQL)
 		String hql = "from PatientDimension as p where p.patientNum=:patientNum and p.sourcesystemCd=:sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
+		Query q = dataSourceManager.getSession().createQuery(hql);
 		q.setProperties(patientDimension);
 		PatientDimension result = (PatientDimension) q.uniqueResult();
 		return result;
@@ -199,10 +200,10 @@ public class I2b2DataWriter {
 		providerDimension.setUploadId(null);
 		
 		// Insert into XMESO_PROVIDER_DIMENSION table
-		dataSourceMgr.getSession().saveOrUpdate(providerDimension);
+		dataSourceManager.getSession().saveOrUpdate(providerDimension);
 		// Transaction
-		Transaction tx = dataSourceMgr.getSession().beginTransaction();
-		dataSourceMgr.getSession().flush();
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().flush();
 		tx.commit();
 		
 		System.out.println("Created provider record in XMESO_PROVIDER_DIMENSION table");
@@ -244,10 +245,10 @@ public class I2b2DataWriter {
 		visitDimension.setUploadId(null);
 		
 		// Insert into XMESO_VISIT_DIMENSION table
-		dataSourceMgr.getSession().saveOrUpdate(visitDimension);
+		dataSourceManager.getSession().saveOrUpdate(visitDimension);
 		// Transaction
-		Transaction tx = dataSourceMgr.getSession().beginTransaction();
-		dataSourceMgr.getSession().flush();
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().flush();
 		tx.commit();
 		
 		System.out.println("Created visit record for patient #" + patientNum + " in XMESO_VISIT_DIMENSION table");
@@ -266,10 +267,10 @@ public class I2b2DataWriter {
 		ConceptDimension existingConcept = fetchConcept(code);
 		if (existingConcept == null) {
 			ConceptDimension newConcept = newConcept(code);
-			dataSourceMgr.getSession().saveOrUpdate(newConcept);
+			dataSourceManager.getSession().saveOrUpdate(newConcept);
 			// Transaction
-			Transaction tx = dataSourceMgr.getSession().beginTransaction();
-			dataSourceMgr.getSession().flush();
+			Transaction tx = dataSourceManager.getSession().beginTransaction();
+			dataSourceManager.getSession().flush();
 			tx.commit();
 			existingConcept = fetchConcept(code);
 		}
@@ -289,7 +290,7 @@ public class I2b2DataWriter {
 		conceptDimension.setSourcesystemCd(sourcesystemCd);
 		// Hibernate Query Language (HQL)
 		String hql = "from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd";
-		Query q = dataSourceMgr.getSession().createQuery(hql);
+		Query q = dataSourceManager.getSession().createQuery(hql);
 		q.setProperties(conceptDimension);
 		ConceptDimension result = (ConceptDimension) q.uniqueResult();
 		return result;
@@ -368,18 +369,10 @@ public class I2b2DataWriter {
 		observationFact.setUploadId(null);
 
 		// Transaction
-		Transaction tx = dataSourceMgr.getSession().beginTransaction();
-		dataSourceMgr.getSession().saveOrUpdate(observationFact);
-		dataSourceMgr.getSession().flush();
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().saveOrUpdate(observationFact);
+		dataSourceManager.getSession().flush();
 		tx.commit();
-	}
-
-	public I2b2DataSourceManager getDataSourceMgr() {
-		return dataSourceMgr;
-	}
-
-	public void setDataSourceMgr(I2b2DataSourceManager dataSourceMgr) {
-		this.dataSourceMgr = dataSourceMgr;
 	}
 
 }

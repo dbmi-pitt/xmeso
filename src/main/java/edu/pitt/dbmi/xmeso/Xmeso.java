@@ -80,17 +80,16 @@ public class Xmeso {
 		System.out.println("Input data folder path: " + xmesoDataDir);
 		
 		createMappings();
-		
+
+		// Create instance of I2b2DemoDataSourceManager and pass the connection settings
+		// The data source manager will only use the database related properties of xmesoProperties
+		i2b2DataSourceManager = new I2b2DataSourceManager(xmesoProperties);
+
 		// Value to be passed to instantiate the data writer
 		String sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
 
 		// Instantiate the data writer by passing xmesoProperties
-		i2b2DataWriter = new I2b2DataWriter(sourcesystemCd);
-		
-		// Create instance of I2b2DemoDataSourceManager and pass the connection settings
-		// The data source manager will only use the database related properties of xmesoProperties
-		i2b2DataSourceManager = new I2b2DataSourceManager(xmesoProperties);
-		i2b2DataWriter.setDataSourceMgr(i2b2DataSourceManager);
+		i2b2DataWriter = new I2b2DataWriter(i2b2DataSourceManager, sourcesystemCd);
 
 		// Delete old records (if exist) before inserting new ones
 		i2b2DataWriter.cleanOldRecordsIfExist();
