@@ -234,7 +234,7 @@ public class NegExEngine {
 				negPhrases.add(phrase);
 			}
 		} catch(Exception e) {
-			System.out.println("Exception occurred while parsing NegEx Dictionary!");
+			System.out.println("Can't find NegEx Dictionary file " + path);
 		} finally {
 			if(scanner != null) {
 				scanner.close();
