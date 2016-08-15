@@ -8,8 +8,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class NegExEngine {
 
+	private static final Logger logger = LoggerFactory.getLogger(NegExEngine.class);
+	
 	private List<NegPhrase> negPhrases;
 
 	private final int scopeBoundaryLength = 6;
@@ -23,6 +28,8 @@ public class NegExEngine {
 		// Always use the Unix file separator "/" when working on Windows system
 		String negexDictionaryFilePath = new File("resources/negex/NegExDictionary.txt").getAbsolutePath();
 	    //System.out.println("basepath -------- " + negexDictionaryFilePath);
+		logger.debug("NegExDictionary.txt file path -------- " + negexDictionaryFilePath);
+		
 		initializeTerminology(negexDictionaryFilePath);
 //		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
 	}
@@ -226,10 +233,8 @@ public class NegExEngine {
 				phrase.setNegationType(conceptSpace[1]);
 				negPhrases.add(phrase);
 			}
-
 		} catch(Exception e) {
 			System.out.println("Exception occurred while parsing NegEx Dictionary!");
-
 		} finally {
 			if(scanner != null) {
 				scanner.close();
