@@ -173,13 +173,12 @@ public class Xmeso {
 				//"resourcePaths", resourcePaths, 
 				"lowMemoryProfile", false);
 		// All report files inside the "reports" folder
-		File inputDirectory = new File(xmesoDataDir + File.separator + "reports");
+		File reportsDir = new File(xmesoDataDir + File.separator + "reports");
 		
-		// Should only process reports that are listed in the nmvb_path_report_event_date.csv?
 		// This file system based looping has to be consistent with the csv records
 		// The listFiles method does not guarantee any order
 		// Different filesystems and OS can give different sortings
-		File[] inputFiles = inputDirectory.listFiles();
+		File[] reportFiles = reportsDir.listFiles();
 		// Arrays.sort() can sort this sort-able array because File is comparable class
         // and by default it sorts pathnames lexicographically
 		// Without this sorting, it came up with hibernate error during executing the final jar file
@@ -187,24 +186,24 @@ public class Xmeso {
 		// Error:
 		// Exception in thread "main" org.hibernate.NonUniqueObjectException: 
 		// A different object with the same identifier value was already associated with the session
-		Arrays.sort(inputFiles);
+		Arrays.sort(reportFiles);
 		
 		// Process each individual report file
-		for (File inputFile : inputFiles) {
-			File currentReportFile = inputFile;
+		for (File reportFile : reportFiles) {
+			File currentReportFile = reportFile;
 
 			// E.g. MVB0646_14960.txt
-			String eventKey = currentReportFile.getName();
+			String reportFilename = currentReportFile.getName();
 			
 			// Get corresponding patient ID and report ID
-			String currentPatientId = this.patientMap.get(eventKey);
-			String currentReportId = this.reportMap.get(eventKey);
+			String currentPatientId = this.patientMap.get(reportFilename);
+			String currentReportId = this.reportMap.get(reportFilename);
 			
 			// Tell user which report is getting processed
-			System.out.println("Processing report file " + eventKey);
+			System.out.println("Processing report file " + reportFilename);
 			
 			// This is the date string parsed from the linkage table, yyyy-MM-dd format
-			String formattedDate = this.visitDateMap.get(eventKey);
+			String formattedDate = this.visitDateMap.get(reportFilename);
 			// Now we convert the String into Date type
 			Date visitDate = dateFormat.parse(formattedDate);
 			// Without formatting, outputting visitDate (Date type) directly will give us this: Thu May 10 00:00:00 EDT 1984
@@ -244,9 +243,9 @@ public class Xmeso {
 			
 			populateCas(jCas, patientId, reportId);
 			
-			System.out.println("Successfully processed report #" + reportId + " and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table");
+			System.out.println("Successfully processed report file " + currentReportFile.getName() + " and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table");
 		} catch (Exception e) {
-			System.err.println("Failed to process report #" + reportId);
+			System.err.println("Failed to process report file " + currentReportFile.getName());
 		}
 	}
 
