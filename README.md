@@ -143,19 +143,19 @@ Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file MVB0002_15869.txt
 Created fake patient information for patient #2 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #2 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15869 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0002_15869.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0003_15887.txt
 Created fake patient information for patient #3 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #3 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15887 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0003_15887.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0004_17555.txt
 Created fake patient information for patient #4 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #4 in XMESO_VISIT_DIMENSION table
-Successfully processed report #17555 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0004_17555.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0006_15979.txt
 Created fake patient information for patient #6 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #6 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15979 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0006_15979.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
@@ -184,16 +184,16 @@ Erasing 4 previously added xmeso records from XMESO_VISIT_DIMENSION table
 Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file MVB0002_15869.txt
 Created visit record for patient #2 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15869 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0002_15869.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0003_15887.txt
 Created visit record for patient #3 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15887 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0003_15887.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0004_17555.txt
 Created visit record for patient #4 in XMESO_VISIT_DIMENSION table
-Successfully processed report #17555 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0004_17555.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Processing report file MVB0006_15979.txt
 Created visit record for patient #6 in XMESO_VISIT_DIMENSION table
-Successfully processed report #15979 and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file MVB0006_15979.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
