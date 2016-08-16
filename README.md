@@ -136,7 +136,7 @@ java -jar xmeso-1.0.0-jar-with-dependencies.jar
 And this command will have the following sample outputs in the terminal when everything works successfully:
 
 ````
-Input data folder path: C:\Users\zhy19\XMESO_PITT
+Input data folder path: C:\Users\joe\XMESO_PITT
 Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file MVB0002_15869.txt
 Created fake patient information for patient #2 in XMESO_PATIENT_DIMENSION table
@@ -174,7 +174,7 @@ Then you can do further analysis by referencing the added records with the exist
 Note: when rerunning this jar file, all the previously added database records will be erased (except the patient records) before adding new records. And you will see the following additional message:
 
 ````
-Input data folder path: C:\Users\zhy19\XMESO_PITT
+Input data folder path: C:\Users\joe\XMESO_PITT
 Erasing 1 previously added xmeso records from XMESO_PROVIDER_DIMENSION table
 Erasing 36 previously added xmeso records from XMESO_OBSERVATION_FACT table
 Erasing 12 previously added xmeso records from XMESO_CONCEPT_DIMENSION table
