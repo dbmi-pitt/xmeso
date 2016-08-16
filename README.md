@@ -98,20 +98,20 @@ And the input data folder should have the sub-folder/file structure that is simi
 XMESO_PITT/
 |-- linkage.csv
 |-- reports/
-|-- |-- MVB0002_15869.txt
-|-- |-- MVB0003_15887.txt
-|-- |-- MVB0004_17555.txt
-|-- |-- MVB0006_15891.txt
+|-- |-- Report_file_1.txt
+|-- |-- Report_file_2.txt
+|-- |-- Report_file_3.txt
+|-- |-- Report_file_4.txt
 ````
 
-The `linkage.csv` contains linkage from the patient report to visit number and visit date:
+The `linkage.csv` contains linkage from the patient report to visit number and visit date, as well as the NMVB_ID and the actual report file name. The NMVB_ID column is only used for easy reference, it's totally fine if we don't have this column. And the report file name is used to find the actual report file in the `reports` folder. The file name can be anything, it's only used to link the report file with corresponding row in this linkage file.
 
 ````
-REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
-15869,MVB0002,0002,1991-12-31
-15887,MVB0003,0003,1984-05-10
-17555,MVB0004,0004,1987-08-08
-15979,MVB0006,0006,1979-02-28
+REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
+15869,MVB0002,1000000083,1991-12-31,Report_file_1.txt
+15887,MVB0003,1000000084,1984-05-10,Report_file_2.txt
+17555,MVB0004,1000000085,1987-08-08,Report_file_3.txt
+15979,MVB0006,1000000086,1979-02-28,Report_file_4.txt
 ````
 
 The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `XMESO_OBSERVATION_FACT` table as well as appropriate dimension tables.
@@ -138,22 +138,22 @@ And this command will have the following sample outputs in the terminal when eve
 ````
 Input data folder path: C:\Users\joe\XMESO_PITT
 Created provider record in XMESO_PROVIDER_DIMENSION table
-Processing report file MVB0002_15869.txt
-Created fake patient information for patient #2 in XMESO_PATIENT_DIMENSION table
-Created visit record for patient #2 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0002_15869.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0003_15887.txt
-Created fake patient information for patient #3 in XMESO_PATIENT_DIMENSION table
-Created visit record for patient #3 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0003_15887.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0004_17555.txt
-Created fake patient information for patient #4 in XMESO_PATIENT_DIMENSION table
-Created visit record for patient #4 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0004_17555.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0006_15979.txt
-Created fake patient information for patient #6 in XMESO_PATIENT_DIMENSION table
-Created visit record for patient #6 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0006_15979.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_1.txt
+Created fake patient information for patient #1000000083 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_1.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_2.txt
+Created fake patient information for patient #1000000084 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_2.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_3.txt
+Created fake patient information for patient #1000000085 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_3.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_4.txt
+Created fake patient information for patient #1000000086 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_4.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
@@ -176,22 +176,23 @@ Note: when rerunning this jar file, all the previously added database records wi
 ````
 Input data folder path: C:\Users\joe\XMESO_PITT
 Erasing 1 previously added xmeso records from XMESO_PROVIDER_DIMENSION table
-Erasing 36 previously added xmeso records from XMESO_OBSERVATION_FACT table
-Erasing 12 previously added xmeso records from XMESO_CONCEPT_DIMENSION table
-Erasing 4 previously added xmeso records from XMESO_VISIT_DIMENSION table
 Created provider record in XMESO_PROVIDER_DIMENSION table
-Processing report file MVB0002_15869.txt
-Created visit record for patient #2 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0002_15869.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0003_15887.txt
-Created visit record for patient #3 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0003_15887.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0004_17555.txt
-Created visit record for patient #4 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0004_17555.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
-Processing report file MVB0006_15979.txt
-Created visit record for patient #6 in XMESO_VISIT_DIMENSION table
-Successfully processed report file MVB0006_15979.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_1.txt
+Created fake patient information for patient #1000000083 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_1.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_2.txt
+Created fake patient information for patient #1000000084 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_2.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_3.txt
+Created fake patient information for patient #1000000085 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_3.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Processing report file Report_file_4.txt
+Created fake patient information for patient #1000000086 in XMESO_PATIENT_DIMENSION table
+Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
+Successfully processed report file Report_file_4.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table

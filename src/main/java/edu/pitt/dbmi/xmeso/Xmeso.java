@@ -119,12 +119,11 @@ public class Xmeso {
 		/*
 		 * linkage.csv contains content looks like this:
 		 * 
-			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE
-			00001,MVB0001,0001,2016-07-07
-			00002,MVB0002,0002,2016-07-07
-			00003,MVB0003,0003,2016-07-07
-			00004,MVB0004,0004,2016-07-07
-			00005,MVB0005,0005,2016-07-07
+			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
+			15869,MVB0002,1000000083,1991-12-31,Report_file_1.txt
+			15887,MVB0003,1000000084,1984-05-10,Report_file_2.txt
+			17555,MVB0004,1000000085,1987-08-08,Report_file_3.txt
+			15979,MVB0006,1000000086,1979-02-28,Report_file_4.txt
 		 */
 		File linkageFile = new File(xmesoDataDir + File.separator + "linkage.csv");
 		
@@ -135,11 +134,12 @@ public class Xmeso {
 			}
 			String[] fields = line.split(",");
 			String reportId = fields[0]; // Here the reportId is string
-			String mvbId = fields[1];
+			// NMVB_ID is in the linkage table only for easy-reference purpose, not being used
 			String patientId = fields[2]; // Here the patientId is string
 			String formattedDate = fields[3];
-			// E.g. MVB0001_00001.txt
-			String key = mvbId + "_" + reportId + ".txt";
+			// Use report file name as the array key
+			// Report file name can be anything
+			String key = fields[4];
 			
 			// Map report file name with visit date
 			if (visitDateMap.get(key) != null) {
@@ -192,7 +192,7 @@ public class Xmeso {
 		for (File reportFile : reportFiles) {
 			File currentReportFile = reportFile;
 
-			// E.g. MVB0646_14960.txt
+			// Report file name can be anything
 			String reportFilename = currentReportFile.getName();
 			
 			// Get corresponding patient ID and report ID
