@@ -300,16 +300,18 @@ public class I2b2DataWriter {
 	}
 
 	/**
-	 * Add new concept info to the XMESO_CONCEPT_DIMENSION table
+	 * Add incomplete concept info to the XMESO_CONCEPT_DIMENSION table
 	 * 
 	 * @param code
 	 * @return
 	 */
 	private ConceptDimension newConcept(String code) {
 		ConceptDimension conceptDimension = new ConceptDimension();
+		// Only for testing purpose since concept_path can't be null
+		// and the records added to this XMESO_CONCEPT_DIMENSION table is only for maintaining constraints between other tables
 		conceptDimension.setConceptPath("\\" + code);
 		conceptDimension.setConceptCd(code);
-		conceptDimension.setNameChar(code);
+		conceptDimension.setNameChar(null);
 		conceptDimension.setConceptBlob(null);
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_CONCEPT_DIMENSION table
 		conceptDimension.setUpdateDate(timeNow);
