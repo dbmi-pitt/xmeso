@@ -160,14 +160,14 @@ Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
 ````
-Once finish running, this tool will add new records to the following I2B2 database tables:
+Once finish running, new records will be added to the following I2B2 database staging tables:
 
 - `XMESO_PROVIDER_DIMENSION` - only one record of the specified provider information
 - `XMESO_OBSERVATION_FACT` - all the found observation facts
 - `XMESO_CONCEPT_DIMENSION` - all the found concepts
 - `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
 
-Note: if you don't have any patient records in the `XMESO_PATIENT_DIMENSION` table by the time you run this program, it will create fake patient records (but using the actual patient number found in the linkage file). If you load the patient records before running the Jar for the first time, make sure all the patient numbers are matched with the ones in the linkage file as well as the patient number found in the report file name.
+Note: the table records that are added to `XMESO_PATIENT_DIMENSION`, `XMESO_CONCEPT_DIMENSION`, and `XMESO_PROVIDER_DIMENSION` are only for staging purpose to main the constraints across those 5 tables. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And therecords added to the `XMESO_CONCEPT_DIMENSION` table don't need to be copied to the production table.
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
