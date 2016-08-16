@@ -1,7 +1,6 @@
  package edu.pitt.dbmi.xmeso.negex;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -13,8 +12,6 @@ import org.slf4j.LoggerFactory;
 
 public class NegExEngine {
 
-	private static final Logger logger = LoggerFactory.getLogger(NegExEngine.class);
-	
 	private List<NegPhrase> negPhrases;
 
 	private final int scopeBoundaryLength = 6;
@@ -25,13 +22,15 @@ public class NegExEngine {
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
 
-		// Always use the Unix file separator "/" when working on Windows system
-		String negexDictionaryFilePath = new File("resources/negex/NegExDictionary.txt").getAbsolutePath();
-	    //System.out.println("basepath -------- " + negexDictionaryFilePath);
-		logger.debug("NegExDictionary.txt file path -------- " + negexDictionaryFilePath);
+		// This finds the dictionary file from within the jar instead of relying on the file system absolute path
+		// Must use the leading slash "/", which indicates absolute names
+		// http://www.javaworld.com/article/2077352/java-se/smartly-load-your-properties.html
+		InputStream negexDictionaryFileInputStream = this.getClass().getResourceAsStream("/negex/NegExDictionary.txt");
 		
-		initializeTerminology(negexDictionaryFilePath);
-//		System.out.println("DICTIONARY SIZE : "+negPhrases.size());
+		// Alternatively, we can also do this with No leading slash
+		//InputStream negexDictionaryFileInputStream = this.getClass().getClassLoader().getResourceAsStream("negex/NegExDictionary.txt");
+
+		initializeTerminology(negexDictionaryFileInputStream);
 	}
 
 	public List<NegPhrase> findPossibleNegatedConcepts(String sentence) {
@@ -220,25 +219,20 @@ public class NegExEngine {
 	}
 
 
-	private void initializeTerminology(String path) {
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(new FileInputStream(path));
-//			System.out.println("PATH >> "+path);
-			while(scanner.hasNextLine()) {
-				String sentence = scanner.nextLine();
-				String[] conceptSpace = sentence.split("\t");
-				NegPhrase phrase = new NegPhrase();
-				phrase.setNegationPhrase(conceptSpace[0]);
-				phrase.setNegationType(conceptSpace[1]);
-				negPhrases.add(phrase);
-			}
-		} catch(Exception e) {
-			System.out.println("Can't find NegEx Dictionary file " + path);
-		} finally {
-			if(scanner != null) {
-				scanner.close();
-			}
+	private void initializeTerminology(InputStream negexDictionaryFileInputStream) {
+		Scanner scanner = new Scanner(negexDictionaryFileInputStream);
+		
+		while(scanner.hasNextLine()) {
+			String sentence = scanner.nextLine();
+			String[] conceptSpace = sentence.split("\t");
+			NegPhrase phrase = new NegPhrase();
+			phrase.setNegationPhrase(conceptSpace[0]);
+			phrase.setNegationType(conceptSpace[1]);
+			negPhrases.add(phrase);
+		}
+
+		if(scanner != null) {
+			scanner.close();
 		}
 	}
 
