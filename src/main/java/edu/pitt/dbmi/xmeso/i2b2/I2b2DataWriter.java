@@ -23,6 +23,7 @@ public class I2b2DataWriter {
 	private Date timeNow = new Date();
 	private I2b2DataSourceManager dataSourceManager;
 	private String sourcesystemCd;
+	private String providerId;
 
 	/**
 	 * Pass the `sourcesystem_cd` value and dataSourceManagre instance
@@ -30,11 +31,12 @@ public class I2b2DataWriter {
 	 * @param dataSourceManager
 	 * @param sourcesystemCd
 	 */
-    public I2b2DataWriter(I2b2DataSourceManager dataSourceManager, String sourcesystemCd) {
+    public I2b2DataWriter(I2b2DataSourceManager dataSourceManager, String sourcesystemCd, String providerId) {
 		super();
 
 		this.dataSourceManager = dataSourceManager;
 		this.sourcesystemCd = sourcesystemCd;
+		this.providerId = providerId;
 	}
 
 	/**
@@ -340,8 +342,8 @@ public class I2b2DataWriter {
 		}
 		observationFactId.setPatientNum(new BigDecimal(patientNum));
 		observationFactId.setConceptCd(conceptCd);
-		// We use sourcesystemCd as the provider now, it can't be null
-		observationFactId.setProviderId(sourcesystemCd);
+		// We use the provider_id specified in the properties file
+		observationFactId.setProviderId(providerId);
 		observationFactId.setInstanceNum(instanceNum);
 		observationFactId.setModifierCd("@");
 		// Use today's date as the `START_DATE` in the XMESO_OBSERVATION_FACT table

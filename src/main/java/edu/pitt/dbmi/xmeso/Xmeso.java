@@ -87,15 +87,15 @@ public class Xmeso {
 
 		// Value to be passed to instantiate the data writer
 		String sourcesystemCd = xmesoProperties.getProperty("sourcesystem_cd");
-
+		String providerId = xmesoProperties.getProperty("provider_id");
+		
 		// Instantiate the data writer by passing xmesoProperties
-		i2b2DataWriter = new I2b2DataWriter(i2b2DataSourceManager, sourcesystemCd);
+		i2b2DataWriter = new I2b2DataWriter(i2b2DataSourceManager, sourcesystemCd, providerId);
 
 		// Delete old records (if exist) before inserting new ones
 		i2b2DataWriter.cleanOldRecordsIfExist();
 		
 		// Create provider record based on configuration
-		String providerId = xmesoProperties.getProperty("provider_id");
 		String providerPath = xmesoProperties.getProperty("provider_path");
 		String providerNameChar = xmesoProperties.getProperty("provider_name_char");
         // We have only one provider in the XMESO_PROVIDER_DIMENSION table
