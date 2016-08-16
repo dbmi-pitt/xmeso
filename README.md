@@ -167,7 +167,7 @@ Once finish running, new records will be added to the following I2B2 database st
 - `XMESO_CONCEPT_DIMENSION` - all the found concepts
 - `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
 
-Note: the table records that are added to `XMESO_PATIENT_DIMENSION`, `XMESO_CONCEPT_DIMENSION`, and `XMESO_PROVIDER_DIMENSION` are only for staging purpose to main the constraints across those 5 tables. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And therecords added to the `XMESO_CONCEPT_DIMENSION` table don't need to be copied to the production table.
+Note: the table records that are added to `XMESO_PATIENT_DIMENSION`, `XMESO_CONCEPT_DIMENSION`, and `XMESO_PROVIDER_DIMENSION` are only for staging purpose to main the constraints across those 5 tables. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And the records added to the `XMESO_CONCEPT_DIMENSION` table don't need to be copied to the production table. Eventually, on the `XMESO_VISIT_DIMENSION` and `XMESO_OBSERVATION_FACT` records need to be copied to the production tables.
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
