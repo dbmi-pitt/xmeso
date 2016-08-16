@@ -76,14 +76,9 @@ And the `sourcesystem_cd` value is mainly used as an data source identifier, so 
 In addition, users will also need to specify their i2b2 related settings.
 
 ````
-# i2b2 database connection settings
-hibernate.driver=oracle.jdbc.OracleDriver
-hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
-hibernate.url=jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-# i2b2 database username and password
-hibernate.user=i2b2demodata
-hibernate.password=demouser
-
+# It's required to use Oracle 10g and later
+i2b2.hostname=dbmi-i2b2-dev05.dbmi.pitt.edu
+i2b2.port=1521
 # i2b2 database schema
 # this schema contains the following tables (don't ever change the table name): 
 # - XMESO_OBSERVATION_FACT
@@ -91,7 +86,10 @@ hibernate.password=demouser
 # - XMESO_VISIT_DIMENSION
 # - XMESO_CONCEPT_DIMENSION
 # - XMESO_PROVIDER_DIMENSION
-hibernate.default_schema=I2B2DEMODATA
+i2b2.schema=I2B2DEMODATA
+# i2b2 database username and password
+i2b2.user=i2b2demodata
+i2b2.password=demouser
 ````
 
 And the input data folder should have the sub-folder/file structure that is similar to the following example:

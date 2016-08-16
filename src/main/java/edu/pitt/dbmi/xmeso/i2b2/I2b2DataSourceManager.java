@@ -38,21 +38,21 @@ public class I2b2DataSourceManager {
 	}
 
 	protected void buildConfiguration() {
-		/* Sample i2b2 connection settings
-		 *  
-		 *  hibernate.driver = oracle.jdbc.OracleDriver
-			hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
-			hibernate.url = jdbc:oracle:thin:@dbmi-i2b2-dev05.dbmi.pitt.edu:1521:XE
-			hibernate.user = 
-			hibernate.password = 
-		 */
 		configuration = new Configuration();
-		configuration.setProperty("hibernate.connection.driver_class", xmesoProperties.getProperty("hibernate.driver"));
-		configuration.setProperty("hibernate.dialect", xmesoProperties.getProperty("hibernate.dialect"));
-		configuration.setProperty("hibernate.connection.url", xmesoProperties.getProperty("hibernate.url"));
-		configuration.setProperty("hibernate.connection.username", xmesoProperties.getProperty("hibernate.user"));
-		configuration.setProperty("hibernate.connection.password", xmesoProperties.getProperty("hibernate.password"));
-		configuration.setProperty("hibernate.default_schema", xmesoProperties.getProperty("hibernate.default_schema"));
+		// No need to allow users to specify the JDBC driver class
+		configuration.setProperty("hibernate.connection.driver_class", "oracle.jdbc.OracleDriver");
+		// We assume all sites use Oracle 10g and later
+		configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		// Key-value pairs specified in xmeso.properties
+		String hostname = xmesoProperties.getProperty("i2b2.hostname");
+		String port = xmesoProperties.getProperty("i2b2.port");
+		// Compose the connection url string using the hostname and post specified in xmeso.properties
+		String url = "jdbc:oracle:thin:@" + hostname + ":" + port + ":XE";
+		configuration.setProperty("hibernate.connection.url", url);
+		// Other key-value pairs specified in xmeso.properties that can be used directly
+		configuration.setProperty("hibernate.connection.username", xmesoProperties.getProperty("i2b2.user"));
+		configuration.setProperty("hibernate.connection.password", xmesoProperties.getProperty("i2b2.password"));
+		configuration.setProperty("hibernate.default_schema", xmesoProperties.getProperty("i2b2.schema"));
 
 		// Add entity beans
 		configuration.addAnnotatedClass(ObservationFact.class);
