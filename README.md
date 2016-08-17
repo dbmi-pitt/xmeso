@@ -79,7 +79,7 @@ In addition, users will also need to specify their i2b2 related settings.
 # It's required to use Oracle 10g and later
 i2b2.hostname=dbmi-i2b2-dev05.dbmi.pitt.edu
 i2b2.port=1521
-i2b2.sid=xe
+i2b2.service_name=XE
 # i2b2 database schema
 # this schema contains the following tables (don't ever change the table name): 
 # - XMESO_OBSERVATION_FACT
