@@ -46,8 +46,9 @@ public class I2b2DataSourceManager {
 		// Key-value pairs specified in xmeso.properties
 		String hostname = xmesoProperties.getProperty("i2b2.hostname");
 		String port = xmesoProperties.getProperty("i2b2.port");
-		// Compose the connection url string using the hostname and post specified in xmeso.properties
-		String url = "jdbc:oracle:thin:@" + hostname + ":" + port + ":XE";
+		String sid = xmesoProperties.getProperty("i2b2.sid");
+		// Compose the connection url string using the hostname, post, and sid specified in xmeso.properties
+		String url = "jdbc:oracle:thin:@" + hostname + ":" + port + ":" + sid;
 		configuration.setProperty("hibernate.connection.url", url);
 		// Other key-value pairs specified in xmeso.properties that can be used directly
 		configuration.setProperty("hibernate.connection.username", xmesoProperties.getProperty("i2b2.user"));
