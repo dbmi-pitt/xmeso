@@ -44,15 +44,7 @@ public class I2b2DataSourceManager {
 		// We assume all sites use Oracle 10g and later
 		configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		// Key-value pairs specified in xmeso.properties
-		String hostname = xmesoProperties.getProperty("i2b2.hostname");
-		String port = xmesoProperties.getProperty("i2b2.port");
-		String service_name = xmesoProperties.getProperty("i2b2.service_name");
-		// Compose the connection url string using the hostname, post, and service_name specified in xmeso.properties
-		// According to this wiki: http://www.orafaq.com/wiki/JDBC
-		// service name is the new syntax, SID is old
-		String url = "jdbc:oracle:thin:@//" + hostname + ":" + port + "/" + service_name;
-		configuration.setProperty("hibernate.connection.url", url);
-		// Other key-value pairs specified in xmeso.properties that can be used directly
+		configuration.setProperty("hibernate.connection.url", xmesoProperties.getProperty("i2b2.url"));
 		configuration.setProperty("hibernate.connection.username", xmesoProperties.getProperty("i2b2.user"));
 		configuration.setProperty("hibernate.connection.password", xmesoProperties.getProperty("i2b2.password"));
 		configuration.setProperty("hibernate.default_schema", xmesoProperties.getProperty("i2b2.schema"));

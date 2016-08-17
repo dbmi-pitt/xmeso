@@ -73,13 +73,14 @@ The above provider info is used to create ONE (only one) record in the `XMESO_PR
 
 And the `sourcesystem_cd` value is mainly used as an data source identifier, so we know all the results from running this Xmeso program are different from other existing data records.
 
-In addition, users will also need to specify their i2b2 related settings. It's required to use Oracle 10g or later to run the i2b2 database. When connecting to the i2b2 database from this Xmeso, you'll need to specify the Oracle hostname, port number, as well as the service name. Talk to your DBA if don't know the actual Oracle database settings.
+In addition, users will also need to specify their i2b2 related settings. It's required to use Oracle 10g or later to run the i2b2 database. When connecting to the i2b2 database from this Xmeso, you'll need to specify the Oracle hostname, port number, as well as the service name. The suggested url format is `jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE`
+
+Talk to your DBA if don't know the actual Oracle database settings.
 
 ````
 # It's required to use Oracle 10g and later
-i2b2.hostname=dbmi-i2b2-dev05.dbmi.pitt.edu
-i2b2.port=1521
-i2b2.service_name=XE
+# Format: jdbc:oracle:thin:@//[HOST][:PORT]/SERVICE
+i2b2.url=jdbc:oracle:thin:@//dbmi-i2b2-dev05.dbmi.pitt.edu:1521/XE
 # i2b2 database schema
 # this schema contains the following tables (don't ever change the table name): 
 # - XMESO_OBSERVATION_FACT
