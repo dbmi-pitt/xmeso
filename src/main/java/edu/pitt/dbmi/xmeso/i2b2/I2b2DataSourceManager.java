@@ -48,6 +48,8 @@ public class I2b2DataSourceManager {
 		String port = xmesoProperties.getProperty("i2b2.port");
 		String service_name = xmesoProperties.getProperty("i2b2.service_name");
 		// Compose the connection url string using the hostname, post, and service_name specified in xmeso.properties
+		// According to this wiki: http://www.orafaq.com/wiki/JDBC
+		// service name is the new syntax, SID is old
 		String url = "jdbc:oracle:thin:@//" + hostname + ":" + port + "/" + service_name;
 		configuration.setProperty("hibernate.connection.url", url);
 		// Other key-value pairs specified in xmeso.properties that can be used directly
