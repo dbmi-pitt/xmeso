@@ -106,7 +106,15 @@ XMESO_PITT/
 |-- |-- Report_file_4.txt
 ````
 
-The `linkage.csv` contains linkage from the patient report to visit number and visit date, as well as the NMVB_ID and the actual report file name. The NMVB_ID column is only used for easy reference, it's totally fine if we don't have this column. And the report file name is used to find the actual report file in the `reports` folder. The file name can be anything, it's only used to link the report file with corresponding row in this linkage file.
+The `linkage.csv` (stick with this file name) contains linkage information about the patient report, NMVB_ID, patient number,visit date, as well as the actual report file name. The NMVB_ID column is only used for easy reference, it's totally fine if we don't have this column. And the report file name is used to find the actual report file in the `reports` folder. The file name can be anything, it's only used to link the report file with corresponding row in this linkage file.
+
+Note: you have to stick with this header names and their order exactly as this:
+
+````
+REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
+````
+
+Here is the sample linkage content:
 
 ````
 REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
