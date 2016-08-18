@@ -9,6 +9,7 @@ SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 // disregarded other than a good metric to the start 
 // of the report
 //
+// A block declaration always starts with the keyword "BLOCK", followed by the identifier of the block within parentheses.
 BLOCK(DetectDeId) Document{} {
   // E.g. [Report de-identified (Safe-harbor compliant) by De-ID v.6.14.03] ?
   "^\\[Report de[^\\]]+\\]" -> DeIdBannarAnnotation;
