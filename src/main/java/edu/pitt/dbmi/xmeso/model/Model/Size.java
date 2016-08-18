@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 10:32:05 EDT 2016
+ * Updated by JCasGen Thu Aug 18 12:41:28 EDT 2016
  * XML source: C:/Users/zhy19/workspace/xmeso/descriptor/edu/pitt/dbmi/xmeso/XmesoEngine.xml
  * @generated */
 public class Size extends Annotation {

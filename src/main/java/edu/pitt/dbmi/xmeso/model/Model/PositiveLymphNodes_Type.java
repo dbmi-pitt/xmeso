@@ -11,7 +11,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 10:32:05 EDT 2016
+ * Updated by JCasGen Thu Aug 18 12:41:28 EDT 2016
  * @generated */
 public class PositiveLymphNodes_Type extends XmesoBooleanDataElement_Type {
   /** @generated 

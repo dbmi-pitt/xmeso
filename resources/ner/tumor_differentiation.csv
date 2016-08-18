@@ -1,17 +1,17 @@
-Low grade;SNOMED:399415002;Tumor Differentiation;0
-Low grade histologic differentiation;SNOMED:399415002;Tumor Differentiation;0
-Low grade histologic differentiation (finding);SNOMED:399415002;Tumor Differentiation;1
-Indeterminate;SNOMED:384741006;Tumor Differentiation;0
-Grade cannot be determined;SNOMED:384741006;Tumor Differentiation;0
-Grade cannot be determined (finding);SNOMED:384741006;Tumor Differentiation;1
-Grade not determined;SNOMED:60815008;Tumor Differentiation;0
-Differentiation not determined;SNOMED:60815008;Tumor Differentiation;1
-Grade not determined (finding);SNOMED:60815008;Tumor Differentiation;1
-Differentiation not stated;SNOMED:60815008;Tumor Differentiation;1
-Differentiation not applicable;SNOMED:60815008;Tumor Differentiation;1
-Intermediate;SNOMED:373377004;Tumor Differentiation;0
-Moderately differentiated histological grade finding;SNOMED:373377004;Tumor Differentiation;0
-Moderately differentiated histological grade finding (finding);SNOMED:373377004;Tumor Differentiation;1
-High grade;SNOMED:399611001;Tumor Differentiation;0
-High grade histologic differentiation;SNOMED:399611001;Tumor Differentiation;0
-High grade histologic differentiation (finding);SNOMED:399611001;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\LOW\;Low grade;SNOMED:399415002;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\LOW\;Low grade histologic differentiation;SNOMED:399415002;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\LOW\;Low grade histologic differentiation (finding);SNOMED:399415002;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\INDETERMINATE\;Indeterminate;SNOMED:384741006;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\INDETERMINATE\;Grade cannot be determined;SNOMED:384741006;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\INDETERMINATE\;Grade cannot be determined (finding);SNOMED:384741006;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\NOT SPECIFIED\;Grade not determined;SNOMED:60815008;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\NOT SPECIFIED\;Differentiation not determined;SNOMED:60815008;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\NOT SPECIFIED\;Grade not determined (finding);SNOMED:60815008;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\NOT SPECIFIED\;Differentiation not stated;SNOMED:60815008;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\NOT SPECIFIED\;Differentiation not applicable;SNOMED:60815008;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\INTERMEDIATE\;Intermediate;SNOMED:373377004;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\INTERMEDIATE\;Moderately differentiated histological grade finding;SNOMED:373377004;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\INTERMEDIATE\;Moderately differentiated histological grade finding (finding);SNOMED:373377004;Tumor Differentiation;1
+\TUMOR DIFFERENTIATION OR GRADE\HIGH\;High grade;SNOMED:399611001;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\HIGH\;High grade histologic differentiation;SNOMED:399611001;Tumor Differentiation;0
+\TUMOR DIFFERENTIATION OR GRADE\HIGH\;High grade histologic differentiation (finding);SNOMED:399611001;Tumor Differentiation;1
