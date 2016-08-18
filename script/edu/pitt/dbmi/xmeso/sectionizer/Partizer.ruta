@@ -42,6 +42,8 @@ BLOCK(ObserveDeIdBannar) Document {} {
 // Finds "PARTS or Parts" at start of line
 //
 BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
+    // If the matching condition and the additional regular expression are fulfilled, 
+    // then the action is executed, which creates a new annotation of the type "PartIndicator"
     BREAK W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)};
     PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
 }
