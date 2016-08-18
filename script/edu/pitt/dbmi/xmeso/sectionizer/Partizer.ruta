@@ -14,6 +14,7 @@ INT partizerPartNumSeq = -1;
 STRING romanValueStore = "UNKNOWN";
 
 BLOCK(ObserveDeIdBannar) Document {} { 
+  // The LOG action writes a log message.
   DeIdBannarAnnotation {->LOG("Observing a DeIdBannar?")};
   EndOfDocument {->LOG("Observing a EndOfDocument?")};
   EndOfSection {->LOG("Observing a EndOfSection?")};
@@ -49,7 +50,7 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
 }
 
 //
-// PartIndicatorDectorNyu
+// PartIndicatorDectorNyu, why NYU?
 //
 // Special case part detector for Nyu reports. Including
 // it into the general report parser does not create spurious results

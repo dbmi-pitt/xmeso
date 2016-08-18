@@ -83,7 +83,9 @@ Document{->CALL(AvPairDetector.DetectSpecialStainProfile)};
 
 // Detects part specific text within each section
 Document{->CALL(Partizer.PartIndicatorDetector)};
+// Why NYU here?
 Document{->CALL(Partizer.PartIndicatorDectorNyu)};
+
 Document{->CALL(Partizer.PartHeaderDetectorMultipleAnd)};
 Document{->CALL(Partizer.PartHeaderDetectorTwo)};
 Document{->CALL(Partizer.PartHeaderDetectorMultiple)};
