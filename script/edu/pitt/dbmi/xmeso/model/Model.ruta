@@ -1,16 +1,17 @@
 PACKAGE edu.pitt.dbmi.xmeso.model;
 
+// Type declarations always start with the keyword "DECLARE" followed by the short name of the new type. 
+// The namespace of the type is equal to the package declaration of the script file, 
+// which is edu.pitt.dbmi.xmeso.model
+// The JCasGen generated type files can be found at src/main/java/edu/pitt/dbmi/xmeso/model/Model
 DECLARE Annotation DeIdBannarAnnotation;
-
 DECLARE FloatNum;
 DECLARE Size;
 DECLARE StageT;
 DECLARE StageN;
 DECLARE StageM;
 DECLARE StageTNM;
-
 DECLARE UOM;
-
 DECLARE Annotation EndOfDocument;
 DECLARE Annotation SubsumableSectionHeader(STRING name, INT level);
 DECLARE Annotation SectionHeader(STRING name, INT level);
@@ -24,25 +25,23 @@ DECLARE Annotation PartHeaderGenerator(INT genNumber, INT genCount);
 DECLARE Annotation PartHeader(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation Part(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation XmesoPart(STRING sectionName, INT sectionLevel, INT partNumber);
-
 DECLARE Annotation SynopticCategory(STRING name);
-
 DECLARE Annotation XmesoSentence(STRING sectionName, INT partNumber, INT sentenceNumber);
 DECLARE Annotation XmesoSentenceToken(STRING sectionName, INT partNumber, INT sentenceNumber, INT tokenNumber);
 DECLARE Annotation XmesoNegatedConcept;
 
-DECLARE Annotation XmesoNamedEntity(STRING sectionName,
- INT sectionLevel,
- INT partNumber,
- STRING snomedCode,
- STRING coveredText,
- STRING i2b2OntologyPath,
- STRING semanticType,
- INT codedPenalty,
- BOOLEAN isNegated);
+DECLARE Annotation XmesoNamedEntity(
+	STRING sectionName,
+	INT sectionLevel,
+	INT partNumber,
+	STRING snomedCode,
+	STRING coveredText,
+	STRING i2b2OntologyPath,
+	STRING semanticType,
+	INT codedPenalty,
+	BOOLEAN isNegated);
 
-DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree, 
-    STRING uom);   
+DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree,  STRING uom);   
 DECLARE XmesoNamedEntity XmesoSurgicalProcedure;
 DECLARE XmesoNamedEntity XmesoHistologicalType;
 DECLARE XmesoNamedEntity XmesoTumorSite;
@@ -54,11 +53,8 @@ DECLARE XmesoNamedEntity XmesoUltrastructuralFindings;
 DECLARE XmesoNamedEntity XmesoLymphNodesExamined;
 DECLARE XmesoNamedEntity XmesoSpecialStain;
 DECLARE XmesoNamedEntity XmesoInvasiveTumor;
-
-DECLARE Annotation XmesoBooleanDataElement(STRING attribute,
-                                           BOOLEAN value);
+DECLARE Annotation XmesoBooleanDataElement(STRING attribute, BOOLEAN value);
 DECLARE Annotation XmesoNumberDataElement(STRING attribute, INT value);
-
 DECLARE XmesoBooleanDataElement PositiveLymphNodes;
 DECLARE XmesoNumberDataElement LymphNodesExamined;
 
