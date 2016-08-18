@@ -4,6 +4,7 @@ PACKAGE edu.pitt.dbmi.xmeso.model;
 // The namespace of the type is equal to the package declaration of the script file, 
 // which is edu.pitt.dbmi.xmeso.model
 // The JCasGen generated type files can be found at src/main/java/edu/pitt/dbmi/xmeso/model/Model
+// Below are all the types defined in this project
 DECLARE Annotation DeIdBannarAnnotation;
 DECLARE FloatNum;
 DECLARE Size;

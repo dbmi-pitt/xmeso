@@ -3,6 +3,8 @@ PACKAGE edu.pitt.dbmi.xmeso.utilities;
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
 BLOCK(CleanBeneathXmeso) Document{} {
+    // The rule element contains one condition and one action, both surrounded by curly parentheses. 
+    // In order to distinguish conditions from actions they are separated by "->".
     FloatNum{PARTOF(Document)->UNMARK(FloatNum)};
     UOM{PARTOF(Document)->UNMARK(UOM)};
     PartIndicator{PARTOF(Document)->UNMARK(PartIndicator)};
