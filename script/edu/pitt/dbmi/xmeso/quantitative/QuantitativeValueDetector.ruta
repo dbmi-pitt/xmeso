@@ -8,14 +8,18 @@ SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 // Floating point numbers 3.1426 need to be ignored later
 // while doing Part Header detection
 //
+// The RETAINTYPE action retains the given types. This means that they are now not ignored by rules.
+// Here, all spaces are retained and can be matched by rules.
 BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
+  // The MARK action is the most important action in the UIMA Ruta system. 
+  // It creates a new annotation of the given type. 
   NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
   NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
   PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
 
 //
-// DetectUom
+// DetectUom (Units of measurement)
 //
 // Units in Pathology Reports are usually either mm or cm
 //
@@ -70,7 +74,7 @@ BLOCK(MaximumSizeCalculator) XmesoSize{} {
 }
 
 //
-// DetectTnm
+// DetectTnm - TNM Classification of Malignant Tumours (TNM)
 //
 // Preliminary rule for finding a AJCC TMN mention within the
 // report.  This is a very complex metric and equally tricky
