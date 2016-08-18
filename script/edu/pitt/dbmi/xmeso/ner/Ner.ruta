@@ -2,13 +2,14 @@ PACKAGE edu.pitt.dbmi.xmeso.ner;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
-WORDTABLE xmesoHistologicalTypeTable = 'ner/ruta_histological_type.csv';
-WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner/ruta_immunohistochemical_profile.csv';
-WORDTABLE xmesoTumorSiteTable = 'ner/ruta_site_of_tumor.csv';
-WORDTABLE xmesoSurgicalProcedureTable = 'ner/ruta_surgical_procedure.csv';
-WORDTABLE xmesoTumorConfigurationTable = 'ner/ruta_tumor_configuration.csv';
-WORDTABLE xmesoTumorDifferentiationTable = 'ner/ruta_tumor_differentiation.csv';
-WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ruta_ultrastructural_findings.csv';
+// NER stands for Named Entity Recognition
+WORDTABLE xmesoHistologicalTypeTable = 'ner/histological_type.csv';
+WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner/immunohistochemical_profile.csv';
+WORDTABLE xmesoTumorSiteTable = 'ner/site_of_tumor.csv';
+WORDTABLE xmesoSurgicalProcedureTable = 'ner/surgical_procedure.csv';
+WORDTABLE xmesoTumorConfigurationTable = 'ner/tumor_configuration.csv';
+WORDTABLE xmesoTumorDifferentiationTable = 'ner/tumor_differentiation.csv';
+WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
 
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 2,

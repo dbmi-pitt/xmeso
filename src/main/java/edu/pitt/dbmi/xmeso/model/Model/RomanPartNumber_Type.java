@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Aug 12 12:07:13 EDT 2016 */
+/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Fri Aug 12 12:07:13 EDT 2016
+ * Updated by JCasGen Thu Aug 18 10:32:05 EDT 2016
  * @generated */
 public class RomanPartNumber_Type extends PartNumber_Type {
   /** @generated 
