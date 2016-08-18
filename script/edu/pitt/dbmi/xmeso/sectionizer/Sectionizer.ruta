@@ -16,8 +16,13 @@ WORDTABLE sectionHeadersPassOne = 'sectionizer/section_headers_pass_one.csv';
 WORDTABLE sectionHeadersPassTwo = 'sectionizer/section_headers_pass_two.csv';
 
 BLOCK(SectionHeaderDetector) Document{} {
+     // The whole document is searched for all occurrences of the entries of the first column of the given table 'sectionHeadersPassOne'.
+     // For each occurrence, an annotation of the type SectionHeader is created and its feature 'name' is filled with 
+     // the entry of the second column, and its feature 'level' is filled with the entry of the third column.
      Document{->MARKTABLE(SectionHeader, 1, sectionHeadersPassOne, true, 100, "", 1, "name" = 2, "level" = 3)};
+     
      Document{->MARKTABLE(SubsumableSectionHeader, 1, sectionHeadersPassTwo, true, 100, "", 1, "name" = 2, "level" = 3)};
+     
      SubsumableSectionHeader{-PARTOF(SectionHeader)-> TRANSFER(SectionHeader), 
                               UNMARK(SubsumableSectionHeader)};
      SubsumableSectionHeader{PARTOF(SectionHeader)->
