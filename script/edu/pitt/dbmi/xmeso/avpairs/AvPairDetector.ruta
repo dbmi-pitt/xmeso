@@ -18,6 +18,7 @@ BLOCK(DetectLymphNodesExamined) Document{} {
   
 //
 // DetectSpecialStainProfile
+// http://www.miracalifesciences.com/publication/exactly-what-are-immunohistochemical-stains/
 //
 // A mention of special or immunohistochemical stain in
 // an important section triggers a yes response to 

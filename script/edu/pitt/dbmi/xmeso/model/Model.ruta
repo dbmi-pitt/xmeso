@@ -31,6 +31,8 @@ DECLARE Annotation XmesoSentence(STRING sectionName, INT partNumber, INT sentenc
 DECLARE Annotation XmesoSentenceToken(STRING sectionName, INT partNumber, INT sentenceNumber, INT tokenNumber);
 DECLARE Annotation XmesoNegatedConcept;
 
+// Declaration that defines a new type of annotation named "XmesoNamedEntity". 
+// This annotation has 8 features
 DECLARE Annotation XmesoNamedEntity(
 	STRING sectionName,
 	INT sectionLevel,
