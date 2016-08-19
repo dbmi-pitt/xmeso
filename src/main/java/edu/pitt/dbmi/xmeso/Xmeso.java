@@ -243,7 +243,7 @@ public class Xmeso {
 			
 			populateCas(jCas, patientId, reportId);
 			
-			System.out.println("Successfully processed report file " + currentReportFile.getName() + " and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table");
+			System.out.println("Successfully processed report file " + currentReportFile.getName() + " and added extracted information from report file to XMESO_OBSERVATION_FACT table");
 		} catch (Exception e) {
 			System.err.println("Failed to process report file " + currentReportFile.getName());
 		}
@@ -280,12 +280,6 @@ public class Xmeso {
 			logger.debug("specialStain = " + specialStain);
 			logger.debug("ultraStructuralFindings = " + ultraStructuralFindings);
 
-			// A concept found in one report may also appear in another report
-			// That's why we "fetch or create" to reuse previously added concepts
-			i2b2DataWriter.fetchOrCreateConcept(lymphNodesExamined);
-			i2b2DataWriter.fetchOrCreateConcept(specialStain);
-			i2b2DataWriter.fetchOrCreateConcept(ultraStructuralFindings);
-
 			// Here we use report id as the encounter number
 			// The 0L means the number zero of type long, we'll increase the instance number using the currentPartNumber 
 			// Won't be able to reuse previously added observation fact even if 
@@ -311,10 +305,6 @@ public class Xmeso {
 			logger.debug("histologicTypeCode = " + histologicTypeCode);
 			logger.debug("tumorConfigurationCode = " + tumorConfigurationCode);
 			logger.debug("tumorDifferentiationCode = " + tumorDifferentiationCode);
-
-			i2b2DataWriter.fetchOrCreateConcept(histologicTypeCode);
-			i2b2DataWriter.fetchOrCreateConcept(tumorConfigurationCode);
-			i2b2DataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 
 			// The instance number starts from 0L, we'll increase it using the currentPartNumber 
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
