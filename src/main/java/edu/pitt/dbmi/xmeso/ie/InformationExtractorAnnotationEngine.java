@@ -40,9 +40,9 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 	private XmesoTumorForm currentTumorForm;
 
 	public static void main(String[] args) {
-		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
-		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
-        System.out.println("The result is " + result);
+//		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
+//		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
+//      System.out.println("The result is " + result);
 	}
 
 	@Override
