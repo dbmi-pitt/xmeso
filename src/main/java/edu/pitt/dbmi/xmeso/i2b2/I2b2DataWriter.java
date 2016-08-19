@@ -9,7 +9,6 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
-import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFactId;
 import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
