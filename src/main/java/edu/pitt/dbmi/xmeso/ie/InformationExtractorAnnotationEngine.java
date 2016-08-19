@@ -86,12 +86,6 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 		defaultCaseForm.setUltrastructuralFindings("ANA|ULTRASTRUCTURAL:UN");
 		defaultCaseForm.setLymphNodesExamined("PATH|LYMPH_EXAMINED:NO");
 		defaultCaseForm.setSpecialStain("PATH|SPECIAL_STAIN:UN");
-
-		defaultCaseForm.setSurgicalProcedureTerm("Unknown");
-		defaultCaseForm.setUltrastructuralFindingsTerm("Unknown");
-		defaultCaseForm.setLymphNodesExaminedTerm("No");
-		defaultCaseForm.setSpecialStainTerm("Unknown");
-
 		defaultCaseForm.setBegin(endOfDocument.getBegin());
 		defaultCaseForm.setEnd(endOfDocument.getEnd());
 	}
@@ -102,12 +96,6 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 		currentCaseForm.setUltrastructuralFindings(defaultCaseForm.getUltrastructuralFindings());
 		currentCaseForm.setLymphNodesExamined(defaultCaseForm.getLymphNodesExamined());
 		currentCaseForm.setSpecialStain(defaultCaseForm.getSpecialStain());
-
-		currentCaseForm.setSurgicalProcedureTerm(defaultCaseForm.getSurgicalProcedureTerm());
-		currentCaseForm.setUltrastructuralFindingsTerm(defaultCaseForm.getUltrastructuralFindingsTerm());
-		currentCaseForm.setLymphNodesExaminedTerm(defaultCaseForm.getLymphNodesExaminedTerm());
-		currentCaseForm.setSpecialStainTerm(defaultCaseForm.getSpecialStainTerm());
-
 		currentCaseForm.setBegin(defaultCaseForm.getBegin());
 		currentCaseForm.setEnd(defaultCaseForm.getEnd());
 	}
@@ -120,10 +108,6 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 		// This SNOMED:399740008 means "Not specified"
 		defaultTumorForm.setTumorConfiguration("SNOMED:399740008");
 		defaultTumorForm.setTumorDifferentiation("ANA|TUMOR_DIFF:NA");
-		defaultTumorForm.setHistopathologicalTypeTerm("Unknown");
-		defaultTumorForm.setTumorSiteTerm("Unknown");
-		defaultTumorForm.setTumorConfigurationTerm("Unknown");
-		defaultTumorForm.setTumorDifferentiationTerm("Unknown");
 		defaultTumorForm.setSizeDimensionX(-1.0f);
 		defaultTumorForm.setSizeDimensionY(-1.0f);
 		defaultTumorForm.setSizeDimensionZ(-1.0f);
@@ -134,18 +118,11 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 
 	private void initializeCurrentTumorForm(JCas jCas) {
 		currentTumorForm = new XmesoTumorForm(jCas);
-
 		currentTumorForm.setCurrentPart(currentPart);
 		currentTumorForm.setHistopathologicalType(defaultTumorForm.getHistopathologicalType());
 		currentTumorForm.setTumorSite(defaultTumorForm.getTumorSite());
 		currentTumorForm.setTumorConfiguration(defaultTumorForm.getTumorConfiguration());
 		currentTumorForm.setTumorDifferentiation(defaultTumorForm.getTumorDifferentiation());
-
-		currentTumorForm.setHistopathologicalTypeTerm(defaultTumorForm.getHistopathologicalTypeTerm());
-		currentTumorForm.setTumorSiteTerm(defaultTumorForm.getTumorSiteTerm());
-		currentTumorForm.setTumorConfigurationTerm(defaultTumorForm.getTumorConfigurationTerm());
-		currentTumorForm.setTumorDifferentiationTerm(defaultTumorForm.getTumorDifferentiationTerm());
-
 		currentTumorForm.setBegin(defaultTumorForm.getBegin());
 		currentTumorForm.setEnd(defaultTumorForm.getEnd());
 	}

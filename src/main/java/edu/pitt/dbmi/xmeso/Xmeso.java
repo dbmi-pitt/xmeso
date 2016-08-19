@@ -269,10 +269,12 @@ public class Xmeso {
 		// Case level information
 		for (AnnotationFS caseFormFs : JCasUtil.select(jCas, XmesoCaseForm.class)) {
 			XmesoCaseForm caseForm = (XmesoCaseForm) caseFormFs;
+			// Other info (surgicalProcedure) can be used from InformationExtractorAnnotationEngine,
+			// other than just the below 3
 			String lymphNodesExamined = caseForm.getLymphNodesExamined();
 			String specialStain = caseForm.getSpecialStain();
 			String ultraStructuralFindings = caseForm.getUltrastructuralFindings();
-			
+
 			logger.debug("============================DEBUGGING============================");
 			logger.debug("lymphNodesExamined = " + lymphNodesExamined);
 			logger.debug("specialStain = " + specialStain);
@@ -300,15 +302,12 @@ public class Xmeso {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
 			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart() + "");
 			
-			String tumorSiteCode = tumorForm.getTumorSite();
-			
+			// Other info (tumorSite, sizeDimensionX, sizeDimensionY, sizeDimensionZ, sizeDimensionMax, and histopathologicalType) 
+			// can also be used from InformationExtractorAnnotationEngine, other than just the below 3
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
 			
-			// Kevin only used this tumorSiteCode when he was debugging in an unused function
-			// So I moved it here as part of the debugging
-			logger.debug("tumorSiteCode = " + tumorSiteCode);
 			logger.debug("histologicTypeCode = " + histologicTypeCode);
 			logger.debug("tumorConfigurationCode = " + tumorConfigurationCode);
 			logger.debug("tumorDifferentiationCode = " + tumorDifferentiationCode);

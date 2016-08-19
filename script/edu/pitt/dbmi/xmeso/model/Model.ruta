@@ -74,13 +74,7 @@ DECLARE Annotation XmesoCaseForm (
     STRING surgicalProcedure,
     STRING ultrastructuralFindings,
     STRING lymphNodesExamined,
-    STRING specialStain,
-    STRING invasiveTumor,  
-    STRING surgicalProcedureTerm,
-    STRING ultrastructuralFindingsTerm,
-    STRING lymphNodesExaminedTerm,
-    STRING specialStainTerm,
-    STRING invasiveTumorTerm);
+    STRING specialStain);
     
 DECLARE Annotation XmesoTumorForm(
     INT currentPart,
@@ -88,10 +82,6 @@ DECLARE Annotation XmesoTumorForm(
     STRING histopathologicalType,
     STRING tumorConfiguration,
     STRING tumorDifferentiation,
-    STRING tumorSiteTerm,
-    STRING histopathologicalTypeTerm,
-    STRING tumorConfigurationTerm,
-    STRING tumorDifferentiationTerm,
     FLOAT sizeDimensionX,
     FLOAT sizeDimensionY,
     FLOAT sizeDimensionZ,

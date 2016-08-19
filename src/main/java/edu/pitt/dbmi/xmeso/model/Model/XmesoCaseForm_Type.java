@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Aug 19 10:41:13 EDT 2016 */
+/* First created by JCasGen Fri Aug 19 11:18:24 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Fri Aug 19 10:41:13 EDT 2016
+ * Updated by JCasGen Fri Aug 19 11:18:24 EDT 2016
  * @generated */
 public class XmesoCaseForm_Type extends Annotation_Type {
   /** @generated 
@@ -141,150 +141,6 @@ public class XmesoCaseForm_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_specialStain, v);}
     
   
- 
-  /** @generated */
-  final Feature casFeat_invasiveTumor;
-  /** @generated */
-  final int     casFeatCode_invasiveTumor;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getInvasiveTumor(int addr) {
-        if (featOkTst && casFeat_invasiveTumor == null)
-      jcas.throwFeatMissing("invasiveTumor", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_invasiveTumor);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setInvasiveTumor(int addr, String v) {
-        if (featOkTst && casFeat_invasiveTumor == null)
-      jcas.throwFeatMissing("invasiveTumor", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_invasiveTumor, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_surgicalProcedureTerm;
-  /** @generated */
-  final int     casFeatCode_surgicalProcedureTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getSurgicalProcedureTerm(int addr) {
-        if (featOkTst && casFeat_surgicalProcedureTerm == null)
-      jcas.throwFeatMissing("surgicalProcedureTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_surgicalProcedureTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setSurgicalProcedureTerm(int addr, String v) {
-        if (featOkTst && casFeat_surgicalProcedureTerm == null)
-      jcas.throwFeatMissing("surgicalProcedureTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_surgicalProcedureTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_ultrastructuralFindingsTerm;
-  /** @generated */
-  final int     casFeatCode_ultrastructuralFindingsTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getUltrastructuralFindingsTerm(int addr) {
-        if (featOkTst && casFeat_ultrastructuralFindingsTerm == null)
-      jcas.throwFeatMissing("ultrastructuralFindingsTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_ultrastructuralFindingsTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setUltrastructuralFindingsTerm(int addr, String v) {
-        if (featOkTst && casFeat_ultrastructuralFindingsTerm == null)
-      jcas.throwFeatMissing("ultrastructuralFindingsTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_ultrastructuralFindingsTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_lymphNodesExaminedTerm;
-  /** @generated */
-  final int     casFeatCode_lymphNodesExaminedTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getLymphNodesExaminedTerm(int addr) {
-        if (featOkTst && casFeat_lymphNodesExaminedTerm == null)
-      jcas.throwFeatMissing("lymphNodesExaminedTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_lymphNodesExaminedTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setLymphNodesExaminedTerm(int addr, String v) {
-        if (featOkTst && casFeat_lymphNodesExaminedTerm == null)
-      jcas.throwFeatMissing("lymphNodesExaminedTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_lymphNodesExaminedTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_specialStainTerm;
-  /** @generated */
-  final int     casFeatCode_specialStainTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getSpecialStainTerm(int addr) {
-        if (featOkTst && casFeat_specialStainTerm == null)
-      jcas.throwFeatMissing("specialStainTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_specialStainTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setSpecialStainTerm(int addr, String v) {
-        if (featOkTst && casFeat_specialStainTerm == null)
-      jcas.throwFeatMissing("specialStainTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_specialStainTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_invasiveTumorTerm;
-  /** @generated */
-  final int     casFeatCode_invasiveTumorTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getInvasiveTumorTerm(int addr) {
-        if (featOkTst && casFeat_invasiveTumorTerm == null)
-      jcas.throwFeatMissing("invasiveTumorTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_invasiveTumorTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setInvasiveTumorTerm(int addr, String v) {
-        if (featOkTst && casFeat_invasiveTumorTerm == null)
-      jcas.throwFeatMissing("invasiveTumorTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_invasiveTumorTerm, v);}
-    
-  
 
 
 
@@ -312,30 +168,6 @@ public class XmesoCaseForm_Type extends Annotation_Type {
  
     casFeat_specialStain = jcas.getRequiredFeatureDE(casType, "specialStain", "uima.cas.String", featOkTst);
     casFeatCode_specialStain  = (null == casFeat_specialStain) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_specialStain).getCode();
-
- 
-    casFeat_invasiveTumor = jcas.getRequiredFeatureDE(casType, "invasiveTumor", "uima.cas.String", featOkTst);
-    casFeatCode_invasiveTumor  = (null == casFeat_invasiveTumor) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_invasiveTumor).getCode();
-
- 
-    casFeat_surgicalProcedureTerm = jcas.getRequiredFeatureDE(casType, "surgicalProcedureTerm", "uima.cas.String", featOkTst);
-    casFeatCode_surgicalProcedureTerm  = (null == casFeat_surgicalProcedureTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_surgicalProcedureTerm).getCode();
-
- 
-    casFeat_ultrastructuralFindingsTerm = jcas.getRequiredFeatureDE(casType, "ultrastructuralFindingsTerm", "uima.cas.String", featOkTst);
-    casFeatCode_ultrastructuralFindingsTerm  = (null == casFeat_ultrastructuralFindingsTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_ultrastructuralFindingsTerm).getCode();
-
- 
-    casFeat_lymphNodesExaminedTerm = jcas.getRequiredFeatureDE(casType, "lymphNodesExaminedTerm", "uima.cas.String", featOkTst);
-    casFeatCode_lymphNodesExaminedTerm  = (null == casFeat_lymphNodesExaminedTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_lymphNodesExaminedTerm).getCode();
-
- 
-    casFeat_specialStainTerm = jcas.getRequiredFeatureDE(casType, "specialStainTerm", "uima.cas.String", featOkTst);
-    casFeatCode_specialStainTerm  = (null == casFeat_specialStainTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_specialStainTerm).getCode();
-
- 
-    casFeat_invasiveTumorTerm = jcas.getRequiredFeatureDE(casType, "invasiveTumorTerm", "uima.cas.String", featOkTst);
-    casFeatCode_invasiveTumorTerm  = (null == casFeat_invasiveTumorTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_invasiveTumorTerm).getCode();
 
   }
 }
