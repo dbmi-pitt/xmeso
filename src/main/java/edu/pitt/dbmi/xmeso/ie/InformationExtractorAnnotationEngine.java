@@ -39,18 +39,14 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 	private XmesoTumorForm defaultTumorForm;
 	private XmesoTumorForm currentTumorForm;
 
-	//private int reportNumber = 0;
-
 	public static void main(String[] args) {
-		//InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
-		//String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
-//		System.out.println("The result is " + result);
+		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
+		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
+        System.out.println("The result is " + result);
 	}
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
-//		System.out.println("InformationExtractor Processing report "
-//				+ reportNumber++);
 		clearCaches();
 		ftrXchangePartToNamedEntity(jCas);
 		cacheEndOfDocument(jCas);
@@ -128,6 +124,7 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 		defaultTumorForm.setCurrentPart(-1);
 		defaultTumorForm.setHistopathologicalType("HIST_TYPE:UNKNOWN");
 		defaultTumorForm.setTumorSite("TUMOR_SITE:UNKNOWN");
+		// This SNOMED:399740008 means "Not specified"
 		defaultTumorForm.setTumorConfiguration("SNOMED:399740008");
 		defaultTumorForm.setTumorDifferentiation("ANA|TUMOR_DIFF:NA");
 		defaultTumorForm.setHistopathologicalTypeTerm("Unknown");
@@ -194,8 +191,7 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 		jCas.addFsToIndexes(currentCaseForm);
 	}
 
-	private void fillCaseFormAtLevels(JCas jCas, XmesoCaseForm currentCaseForm,
-			int currentSectionLevel, int currentCodedPenalty) {
+	private void fillCaseFormAtLevels(JCas jCas, XmesoCaseForm currentCaseForm, int currentSectionLevel, int currentCodedPenalty) {
 		for (Section section : JCasUtil.select(jCas, Section.class)) {
 			for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(XmesoNamedEntity.class, section)) {
 				boolean isCurrent = true;
@@ -209,21 +205,18 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 							currentCaseForm.setSurgicalProcedure(namedEntity.getSnomedCode());
 							currentCaseForm.setSurgicalProcedureTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 						}
-					}
-					else if (XmesoUltrastructuralFindings.class.getSimpleName().equals(simpleClassName)) {
+					} else if (XmesoUltrastructuralFindings.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getUltrastructuralFindings().equals(defaultCaseForm.getUltrastructuralFindings())) {
 							currentCaseForm.setUltrastructuralFindings(namedEntity.getSnomedCode());
 							String suffixTerm = extractSuffixTerm(namedEntity.getI2b2OntologyPath());
 							currentCaseForm.setUltrastructuralFindingsTerm(suffixTerm);
 						}
-					}
-					else if (XmesoLymphNodesExamined.class.getSimpleName().equals(simpleClassName)) {
+					} else if (XmesoLymphNodesExamined.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getLymphNodesExamined().equals(defaultCaseForm.getLymphNodesExamined())) {
 							currentCaseForm.setLymphNodesExamined(namedEntity.getSnomedCode());
 							currentCaseForm.setLymphNodesExaminedTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 						}
-					}
-					else if (XmesoSpecialStain.class.getSimpleName().equals(simpleClassName)) {
+					} else if (XmesoSpecialStain.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getSpecialStain().equals(defaultCaseForm.getSpecialStain())) {
 							currentCaseForm.setSpecialStain(namedEntity.getSnomedCode());
 							currentCaseForm.setSpecialStainTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
