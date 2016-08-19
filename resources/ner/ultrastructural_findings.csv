@@ -1,37 +1,37 @@
-Mixed Inflammation;SNOMED:103623002;Ultrastructural Findings;0
-Moderate inflammation;SNOMED:103623002;Ultrastructural Findings;1
-Moderate inflammation (morphologic abnormality);SNOMED:103623002;Ultrastructural Findings;1
-Ferruginous Bodies;SNOMED:397325001;Ultrastructural Findings;0
-Ferruginous body;SNOMED:397325001;Ultrastructural Findings;1
-Ferruginous body (morphologic abnormality);SNOMED:397325001;Ultrastructural Findings;1
-Chronic Inflammation;SNOMED:84499006;Ultrastructural Findings;0
-Chronic inflammation;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory reaction;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammation (morphologic abnormality);SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory cell infiltration;SNOMED:84499006;Ultrastructural Findings;1
-Changes of talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;0
-Talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;1
-Talc pleurodesis (procedure);SNOMED:302450005;Ultrastructural Findings;1
-Acute Inflammation;SNOMED:4532008;Ultrastructural Findings;0
-Acute inflammation;SNOMED:4532008;Ultrastructural Findings;1
-Polymorphonuclear leucocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory cell infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory reaction;SNOMED:4532008;Ultrastructural Findings;1
-Neutrophilic infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Polymorphonuclear leukocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammation (morphologic abnormality);SNOMED:4532008;Ultrastructural Findings;1
-Active inflammation;SNOMED:4532008;Ultrastructural Findings;1
-Unknown;ANA|ULTRASTRUCTURAL:UN;Ultrastructural Findings;0
-No Information;ANA|ULTRASTRUCTURAL:NI;Ultrastructural Findings;0
-None Identified;ANA|ULTRASTRUCTURAL:NONE;Ultrastructural Findings;0
-Other;ANA|ULTRASTRUCTURAL:OT;Ultrastructural Findings;0
-Pleural Plaque;SNOMED:233658003;Ultrastructural Findings;0
-Pleural plaque;SNOMED:233658003;Ultrastructural Findings;1
-Pleural plaque (disorder);SNOMED:233658003;Ultrastructural Findings;1
-Pulmonary Interstitial Fibrosis;SNOMED:125565008;Ultrastructural Findings;0
-Interstitial fibrosis;SNOMED:125565008;Ultrastructural Findings;1
-Interstitial fibrosis (morphologic abnormality);SNOMED:125565008;Ultrastructural Findings;1
-Ultrastructural Findings;SNOMED:108361009;Ultrastructural Findings;0
-Ultrastructural feature;SNOMED:108361009;Ultrastructural Findings;1
-Ultrastructural feature (cell structure);SNOMED:108361009;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\MIXED INFLAMMATION\;Mixed Inflammation;SNOMED:103623002;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\MIXED INFLAMMATION\;Moderate inflammation;SNOMED:103623002;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\MIXED INFLAMMATION\;Moderate inflammation (morphologic abnormality);SNOMED:103623002;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\FERRUGINOUS BODIES\;Ferruginous Bodies;SNOMED:397325001;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\FERRUGINOUS BODIES\;Ferruginous body;SNOMED:397325001;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\FERRUGINOUS BODIES\;Ferruginous body (morphologic abnormality);SNOMED:397325001;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHRONIC INFLAMMATION\;Chronic Inflammation;SNOMED:84499006;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHRONIC INFLAMMATION\;Chronic inflammation;SNOMED:84499006;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHRONIC INFLAMMATION\;Chronic inflammatory reaction;SNOMED:84499006;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHRONIC INFLAMMATION\;Chronic inflammation (morphologic abnormality);SNOMED:84499006;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHRONIC INFLAMMATION\;Chronic inflammatory cell infiltration;SNOMED:84499006;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHANGES OF TALC PLEURODESIS\;Changes of talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHANGES OF TALC PLEURODESIS\;Talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\CHANGES OF TALC PLEURODESIS\;Talc pleurodesis (procedure);SNOMED:302450005;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute Inflammation;SNOMED:4532008;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute inflammation;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Polymorphonuclear leucocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute inflammatory cell infiltration;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute inflammatory reaction;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Neutrophilic infiltration;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute inflammatory infiltration;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Polymorphonuclear leukocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Acute inflammation (morphologic abnormality);SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\ACUTE INFLAMMATION\;Active inflammation;SNOMED:4532008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\UNKNOWN\;Unknown;ANA|ULTRASTRUCTURAL:UN;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\NO INFORMATION\;No Information;ANA|ULTRASTRUCTURAL:NI;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\NONE IDENTIFIED\;None Identified;ANA|ULTRASTRUCTURAL:NONE;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\OTHER\;Other;ANA|ULTRASTRUCTURAL:OT;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PLEURAL PLAQUE\;Pleural Plaque;SNOMED:233658003;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PLEURAL PLAQUE\;Pleural plaque;SNOMED:233658003;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PLEURAL PLAQUE\;Pleural plaque (disorder);SNOMED:233658003;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PULMONARY INTERSTITIAL FIBROSIS\;Pulmonary Interstitial Fibrosis;SNOMED:125565008;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PULMONARY INTERSTITIAL FIBROSIS\;Interstitial fibrosis;SNOMED:125565008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\PULMONARY INTERSTITIAL FIBROSIS\;Interstitial fibrosis (morphologic abnormality);SNOMED:125565008;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\;Ultrastructural Findings;SNOMED:108361009;Ultrastructural Findings;0
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\;Ultrastructural feature;SNOMED:108361009;Ultrastructural Findings;1
+\NMVB\MESOTHELIOMA\ANATOMICAL PATHOLOGY\ULTRASTRUCTURAL FINDINGS\;Ultrastructural feature (cell structure);SNOMED:108361009;Ultrastructural Findings;1
