@@ -272,7 +272,7 @@ public class Xmeso {
 			String lymphNodesExamined = caseForm.getLymphNodesExamined();
 			String specialStain = caseForm.getSpecialStain();
 			String ultraStructuralFindings = caseForm.getUltrastructuralFindings();
-
+			
 			logger.debug("============================DEBUGGING============================");
 			logger.debug("lymphNodesExamined = " + lymphNodesExamined);
 			logger.debug("specialStain = " + specialStain);
