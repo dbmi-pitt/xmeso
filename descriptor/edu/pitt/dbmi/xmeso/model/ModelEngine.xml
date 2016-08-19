@@ -372,8 +372,8 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSpecialStain</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoInvasiveTumor</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PositiveLymphNodes</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.LymphNodesExamined</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>
@@ -418,8 +418,8 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSpecialStain</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoInvasiveTumor</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoBooleanDataElement</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.PositiveLymphNodes</type>
+                    <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNumberDataElement</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.LymphNodesExamined</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoCaseForm</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm</type>

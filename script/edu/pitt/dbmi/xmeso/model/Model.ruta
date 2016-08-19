@@ -20,8 +20,11 @@ DECLARE Annotation Section(STRING name, INT level);
 DECLARE EndOfSection;
 DECLARE WholeNumberList;
 DECLARE PartIndicator;
+
+// PartNumber is the supertype of RomanPartNumber
 DECLARE Annotation PartNumber(INT partNumber, INT genNumber, INT genSeq);
 DECLARE PartNumber RomanPartNumber(STRING romanValue);
+
 DECLARE Annotation PartHeaderGenerator(INT genNumber, INT genCount);
 DECLARE Annotation PartHeader(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation Part(STRING sectionName, INT sectionLevel, INT partNumber);
@@ -44,6 +47,7 @@ DECLARE Annotation XmesoNamedEntity(
 	INT codedPenalty,
 	BOOLEAN isNegated);
 
+// XmesoNamedEntity is the supertype of the following types
 DECLARE XmesoNamedEntity XmesoSize(FLOAT maxDim, FLOAT dimOne, FLOAT dimTwo, FLOAT dimThree,  STRING uom);   
 DECLARE XmesoNamedEntity XmesoSurgicalProcedure;
 DECLARE XmesoNamedEntity XmesoHistologicalType;
@@ -56,9 +60,13 @@ DECLARE XmesoNamedEntity XmesoUltrastructuralFindings;
 DECLARE XmesoNamedEntity XmesoLymphNodesExamined;
 DECLARE XmesoNamedEntity XmesoSpecialStain;
 DECLARE XmesoNamedEntity XmesoInvasiveTumor;
+
+// XmesoBooleanDataElement is the supertype of PositiveLymphNodes
 DECLARE Annotation XmesoBooleanDataElement(STRING attribute, BOOLEAN value);
-DECLARE Annotation XmesoNumberDataElement(STRING attribute, INT value);
 DECLARE XmesoBooleanDataElement PositiveLymphNodes;
+
+// XmesoNumberDataElement is the supertype of LymphNodesExamined
+DECLARE Annotation XmesoNumberDataElement(STRING attribute, INT value);
 DECLARE XmesoNumberDataElement LymphNodesExamined;
 
 //
@@ -72,7 +80,6 @@ DECLARE XmesoNumberDataElement LymphNodesExamined;
 // as they can exist now for benign tissue sections.  There remains
 // some ambiguity here.
 //
-
 DECLARE Annotation XmesoCaseForm (
     STRING surgicalProcedure,
     STRING ultrastructuralFindings,
