@@ -37,7 +37,6 @@ DECLARE Annotation XmesoNamedEntity(
 	INT partNumber,
 	STRING snomedCode,
 	STRING coveredText,
-	STRING i2b2OntologyPath,
 	STRING semanticType,
 	INT codedPenalty,
 	BOOLEAN isNegated);

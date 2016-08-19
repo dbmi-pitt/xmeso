@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
+/* First created by JCasGen Fri Aug 19 10:41:13 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 12:41:28 EDT 2016
+ * Updated by JCasGen Fri Aug 19 10:41:13 EDT 2016
  * @generated */
 public class XmesoNamedEntity_Type extends Annotation_Type {
   /** @generated 
@@ -167,30 +167,6 @@ public class XmesoNamedEntity_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_i2b2OntologyPath;
-  /** @generated */
-  final int     casFeatCode_i2b2OntologyPath;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getI2b2OntologyPath(int addr) {
-        if (featOkTst && casFeat_i2b2OntologyPath == null)
-      jcas.throwFeatMissing("i2b2OntologyPath", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_i2b2OntologyPath);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setI2b2OntologyPath(int addr, String v) {
-        if (featOkTst && casFeat_i2b2OntologyPath == null)
-      jcas.throwFeatMissing("i2b2OntologyPath", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    ll_cas.ll_setStringValue(addr, casFeatCode_i2b2OntologyPath, v);}
-    
-  
- 
-  /** @generated */
   final Feature casFeat_semanticType;
   /** @generated */
   final int     casFeatCode_semanticType;
@@ -292,10 +268,6 @@ public class XmesoNamedEntity_Type extends Annotation_Type {
  
     casFeat_coveredText = jcas.getRequiredFeatureDE(casType, "coveredText", "uima.cas.String", featOkTst);
     casFeatCode_coveredText  = (null == casFeat_coveredText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_coveredText).getCode();
-
- 
-    casFeat_i2b2OntologyPath = jcas.getRequiredFeatureDE(casType, "i2b2OntologyPath", "uima.cas.String", featOkTst);
-    casFeatCode_i2b2OntologyPath  = (null == casFeat_i2b2OntologyPath) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_i2b2OntologyPath).getCode();
 
  
     casFeat_semanticType = jcas.getRequiredFeatureDE(casType, "semanticType", "uima.cas.String", featOkTst);

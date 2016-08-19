@@ -3,7 +3,6 @@ package edu.pitt.dbmi.xmeso.ie;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
@@ -38,12 +37,6 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 
 	private XmesoTumorForm defaultTumorForm;
 	private XmesoTumorForm currentTumorForm;
-
-	public static void main(String[] args) {
-		InformationExtractorAnnotationEngine ie = new InformationExtractorAnnotationEngine();
-		String result = ie.extractSuffixTerm("\\NMVB\\MESOTHELIOMA\\ANATOMICAL PATHOLOGY\\SITE OF TUMOR\\PERICARDIUM\\");
-        System.out.println("The result is " + result);
-	}
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
@@ -203,23 +196,18 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 					if (XmesoSurgicalProcedure.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getSurgicalProcedure().equals(defaultCaseForm.getSurgicalProcedure())) {
 							currentCaseForm.setSurgicalProcedure(namedEntity.getSnomedCode());
-							currentCaseForm.setSurgicalProcedureTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 						}
 					} else if (XmesoUltrastructuralFindings.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getUltrastructuralFindings().equals(defaultCaseForm.getUltrastructuralFindings())) {
 							currentCaseForm.setUltrastructuralFindings(namedEntity.getSnomedCode());
-							String suffixTerm = extractSuffixTerm(namedEntity.getI2b2OntologyPath());
-							currentCaseForm.setUltrastructuralFindingsTerm(suffixTerm);
 						}
 					} else if (XmesoLymphNodesExamined.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getLymphNodesExamined().equals(defaultCaseForm.getLymphNodesExamined())) {
 							currentCaseForm.setLymphNodesExamined(namedEntity.getSnomedCode());
-							currentCaseForm.setLymphNodesExaminedTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 						}
 					} else if (XmesoSpecialStain.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getSpecialStain().equals(defaultCaseForm.getSpecialStain())) {
 							currentCaseForm.setSpecialStain(namedEntity.getSnomedCode());
-							currentCaseForm.setSpecialStainTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 						}
 					}
 				}
@@ -256,22 +244,18 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 						if ("XmesoHistologicalType".equals(simpleClassName)) {
 							if (defaultTumorForm.getHistopathologicalType().equals(currentTumorForm.getHistopathologicalType())) {
 								currentTumorForm.setHistopathologicalType(namedEntity.getSnomedCode());
-								currentTumorForm.setHistopathologicalTypeTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 							}
 						} else if ("XmesoTumorSite".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorSite().equals(currentTumorForm.getTumorSite())) {
 								currentTumorForm.setTumorSite(namedEntity.getSnomedCode());
-								currentTumorForm.setTumorSiteTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 							}
 						} else if ("XmesoTumorConfiguration".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorConfiguration().equals(currentTumorForm.getTumorConfiguration())) {
 								currentTumorForm.setTumorConfiguration(namedEntity.getSnomedCode());
-								currentTumorForm.setTumorConfigurationTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 							}
 						} else if ("XmesoTumorDifferentiation".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorDifferentiation().equals(currentTumorForm.getTumorDifferentiation())) {
 								currentTumorForm.setTumorDifferentiation(namedEntity.getSnomedCode());
-								currentTumorForm.setTumorDifferentiationTerm(extractSuffixTerm(namedEntity.getI2b2OntologyPath()));
 							}
 						} else if ("XmesoSize".equals(simpleClassName)) {
 							XmesoSize currentSize = (XmesoSize) namedEntity;
@@ -286,11 +270,6 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 				}
 			}
 		}
-	}
-
-	private String extractSuffixTerm(String i2b2OntologyPath) {
-		String backSlash = "\\";
-		return StringUtils.substringAfterLast(StringUtils.substringBeforeLast(i2b2OntologyPath, backSlash), backSlash);
 	}
 
 }

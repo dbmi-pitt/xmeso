@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
+/* First created by JCasGen Fri Aug 19 10:41:13 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 12:41:28 EDT 2016
+ * Updated by JCasGen Fri Aug 19 10:41:13 EDT 2016
  * XML source: C:/Users/zhy19/workspace/xmeso/descriptor/edu/pitt/dbmi/xmeso/XmesoEngine.xml
  * @generated */
 public class XmesoNamedEntity extends Annotation {
@@ -184,28 +184,6 @@ public class XmesoNamedEntity extends Annotation {
     if (XmesoNamedEntity_Type.featOkTst && ((XmesoNamedEntity_Type)jcasType).casFeat_coveredText == null)
       jcasType.jcas.throwFeatMissing("coveredText", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
     jcasType.ll_cas.ll_setStringValue(addr, ((XmesoNamedEntity_Type)jcasType).casFeatCode_coveredText, v);}    
-   
-    
-  //*--------------*
-  //* Feature: i2b2OntologyPath
-
-  /** getter for i2b2OntologyPath - gets i2b2OntologyPath
-   * @generated
-   * @return value of the feature 
-   */
-  public String getI2b2OntologyPath() {
-    if (XmesoNamedEntity_Type.featOkTst && ((XmesoNamedEntity_Type)jcasType).casFeat_i2b2OntologyPath == null)
-      jcasType.jcas.throwFeatMissing("i2b2OntologyPath", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((XmesoNamedEntity_Type)jcasType).casFeatCode_i2b2OntologyPath);}
-    
-  /** setter for i2b2OntologyPath - sets i2b2OntologyPath 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setI2b2OntologyPath(String v) {
-    if (XmesoNamedEntity_Type.featOkTst && ((XmesoNamedEntity_Type)jcasType).casFeat_i2b2OntologyPath == null)
-      jcasType.jcas.throwFeatMissing("i2b2OntologyPath", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    jcasType.ll_cas.ll_setStringValue(addr, ((XmesoNamedEntity_Type)jcasType).casFeatCode_i2b2OntologyPath, v);}    
    
     
   //*--------------*
