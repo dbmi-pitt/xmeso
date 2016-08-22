@@ -31,9 +31,15 @@ Before jumping to the configuration section, we'll first need to have the databa
 - `XMESO_VISIT_DIMENSION`
 - `XMESO_PATIENT_DIMENSION`
 
-These tables have the same structure as the formal i2b2 tables without the `XMESO_` prefix. But you won't see all the constraints since they are used for data staging purpose. Your DBA will need to migrate the resulting data from these staging tables to the corresponding i2b2 production tables.
+These tables have the same structure as the formal i2b2 tables without the `XMESO_` prefix. But you won't see all the constraints since they are used for data staging purpose. 
 
-Note: you can either load the patient records directly into the `XMESO_PATIENT_DIMENSION` table, or leave it blank. If you leave it blank, fake patient records (but using the actual patient number found in the linkage file) will be created.
+Among these five tables, leave `XMESO_OBSERVATION_FACT` and `XMESO_VISIT_DIMENSION` blank, because these are the two tables we'll actually add the extracted information into. Also don't import any data into the `XMESO_PROVIDER_DIMENSION` table, this program will add One record into it, and we'll cover this in the configuration section. 
+
+You SHOULD load data from your existing `CONCEPT_DIMENSION` table and `PATIENT_DIMENSION` table into the two corresponding `XMESO_` tables. If there's any patient that doesn't exist, this program will create fake patient record into the `XMESO_PATIENT_DIMENSION` table. Similarly, if there's new concept code found during the information extraction process but this concept code is not already in the `CONCEPT_DIMENSION` table, this new record will be added to the `XMESO_CONCEPT_DIMENSION` table (with incomplete information).
+
+Note: once you have the data loaded into `XMESO_PATIENT_DIMENSION` table and `XMESO_CONCEPT_DIMENSION` table, you'll also need to change the `sourcesystem_cd` value to the one that you configured in the configuration section. It's mainly used as an data source identifier, so we know all the related table records are used for this specific program.
+
+Finally, your DBA will need to migrate the resulting data from these staging tables to the corresponding i2b2 production tables.
 
 ## Configuration
 
@@ -149,19 +155,15 @@ And this command will have the following sample outputs in the terminal when eve
 Input data folder path: C:\Users\joe\XMESO_PITT
 Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file Report_file_1.txt
-Created fake patient information for patient #1000000083 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
 Successfully processed report file Report_file_1.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_2.txt
-Created fake patient information for patient #1000000084 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
 Successfully processed report file Report_file_2.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_3.txt
-Created fake patient information for patient #1000000085 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
 Successfully processed report file Report_file_3.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_4.txt
-Created fake patient information for patient #1000000086 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
 Successfully processed report file Report_file_4.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Finished processing all reports.
@@ -172,39 +174,12 @@ Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 Once finish running, new records will be added to the following I2B2 database staging tables:
 
 - `XMESO_PROVIDER_DIMENSION` - only one record of the specified provider information
-- `XMESO_PATIENT_DIMENSION` - fake patient info
 - `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
 - `XMESO_OBSERVATION_FACT` - all the found observation facts
 
-Note: the table records that are added to `XMESO_PATIENT_DIMENSION` and `XMESO_PROVIDER_DIMENSION` are only for staging purposes. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And NO records will be added to the `XMESO_CONCEPT_DIMENSION` table. Eventually, only the `XMESO_VISIT_DIMENSION` and `XMESO_OBSERVATION_FACT` records need to be copied to the corresponding production tables.
+As we have mentioned earlier, it's possible that new patient record will be added if that patient doesn't exist in the loaded records. Similarly new concept code will be added as well if it doesn't exist in the pre-loaded table.
 
-Then you can do further analysis by referencing the added records with the existing patients.
-
-Note: when rerunning this jar file, all the previously added database records will be erased (except the patient records) before adding new records. And you will see the following additional message:
-
-````
-Input data folder path: C:\Users\joe\XMESO_PITT
-Erasing 1 previously added xmeso records from XMESO_PROVIDER_DIMENSION table
-Erasing 4 previously added xmeso records from XMESO_VISIT_DIMENSION table
-Erasing 36 previously added xmeso records from XMESO_OBSERVATION_FACT table
-Created provider record in XMESO_PROVIDER_DIMENSION table
-Processing report file Report_file_1.txt
-Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_1.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_2.txt
-Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_2.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_3.txt
-Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_3.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_4.txt
-Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_4.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Finished processing all reports.
-Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
-Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
-Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
-````
+Note: this Jar is supposed to be executed for only once. If you rerun it, make sure to repeat all the previous steps.
 
 ## For Developers
 

@@ -9,6 +9,7 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFactId;
 import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
@@ -108,6 +109,8 @@ public class I2b2DataWriter {
 	public PatientDimension fetchOrCreatePatient(int patientNum) {
 		PatientDimension existingPatient = fetchPatient(patientNum);
 		if (existingPatient == null) {
+			System.out.println("Patient #" + patientNum + " doesn't exist in XMESO_PATIENT_DIMENSION table");
+			
 			PatientDimension newPatient = newPatient(patientNum);
 			dataSourceManager.getSession().saveOrUpdate(newPatient);
 			// Transaction
@@ -157,12 +160,12 @@ public class I2b2DataWriter {
 		calendar.set(1967, 3, 20);
 		patientDimension.setBirthDate(calendar.getTime());
 		patientDimension.setDeathDate(null);
-		patientDimension.setSexCd("F");
+		patientDimension.setSexCd("M");
 		patientDimension.setAgeInYearsNum(new BigDecimal(78));
-		patientDimension.setLanguageCd("Chinese");
-		patientDimension.setRaceCd("asian");
-		patientDimension.setMaritalStatusCd("single");
-		patientDimension.setReligionCd("Agnostic");
+		patientDimension.setLanguageCd("english");
+		patientDimension.setRaceCd("white");
+		patientDimension.setMaritalStatusCd("married");
+		patientDimension.setReligionCd("roman catholic");
 		patientDimension.setZipCd("15232");
 		patientDimension.setStatecityzipPath("Zip codes\\Massachusetts\\Boston\\02115\\");
 		patientDimension.setIncomeCd("Medium");
@@ -254,6 +257,77 @@ public class I2b2DataWriter {
 		tx.commit();
 		
 		System.out.println("Created visit record for patient #" + patientNum + " in XMESO_VISIT_DIMENSION table");
+	}
+
+	/**
+	 * Fetch existing concept info or create new record(with incomplete information) otherwise
+	 * 
+	 * A concept found in one report may also appear in another report
+	 * That's why we "fetch or create" to reuse previously added concepts
+	 * 
+	 * @param code
+	 * @return
+	 */
+	public ConceptDimension fetchOrCreateConcept(String code) {
+		ConceptDimension existingConcept = fetchConcept(code);
+		if (existingConcept == null) {
+			System.out.println("Concept code " + code + " doesn't exist in XMESO_CONCEPT_DIMENSION table");
+			
+			ConceptDimension newConcept = newConcept(code);
+			dataSourceManager.getSession().saveOrUpdate(newConcept);
+			// Transaction
+			Transaction tx = dataSourceManager.getSession().beginTransaction();
+			dataSourceManager.getSession().flush();
+			tx.commit();
+			
+			System.out.println("Created new concept code " + code + " in XMESO_CONCEPT_DIMENSION table");
+			
+			existingConcept = fetchConcept(code);
+		}
+
+		return existingConcept;
+	}
+
+	/**
+	 * Fetch info of individual visit from the XMESO_CONCEPT_DIMENSION table
+	 * 
+	 * @param code
+	 * @return
+	 */
+	private ConceptDimension fetchConcept(String code) {
+		ConceptDimension conceptDimension = new ConceptDimension();
+		conceptDimension.setConceptCd(code);
+		conceptDimension.setSourcesystemCd(sourcesystemCd);
+		// Hibernate Query Language (HQL)
+		String hql = "from ConceptDimension as c where c.conceptCd=:conceptCd and c.sourcesystemCd=:sourcesystemCd";
+		Query q = dataSourceManager.getSession().createQuery(hql);
+		q.setProperties(conceptDimension);
+		ConceptDimension result = (ConceptDimension) q.uniqueResult();
+		return result;
+	}
+
+	/**
+	 * Add incomplete concept info to the XMESO_CONCEPT_DIMENSION table
+	 * 
+	 * @param code
+	 * @return
+	 */
+	private ConceptDimension newConcept(String code) {
+		ConceptDimension conceptDimension = new ConceptDimension();
+		// Only for testing purpose since concept_path can't be null
+		// and the records added to this XMESO_CONCEPT_DIMENSION table is only for maintaining constraints between other tables
+		conceptDimension.setConceptPath("\\" + code);
+		conceptDimension.setConceptCd(code);
+		conceptDimension.setNameChar(null);
+		conceptDimension.setConceptBlob(null);
+		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_CONCEPT_DIMENSION table
+		conceptDimension.setUpdateDate(timeNow);
+		conceptDimension.setDownloadDate(timeNow);
+		conceptDimension.setImportDate(timeNow);
+		conceptDimension.setSourcesystemCd(sourcesystemCd);
+		conceptDimension.setUploadId(null);
+		
+		return conceptDimension;
 	}
 
 	/**

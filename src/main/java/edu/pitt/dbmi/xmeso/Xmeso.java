@@ -280,6 +280,12 @@ public class Xmeso {
 			logger.debug("specialStain = " + specialStain);
 			logger.debug("ultraStructuralFindings = " + ultraStructuralFindings);
 
+			// A concept found in one report may also appear in another report
+			// That's why we "fetch or create" to reuse previously added concepts
+			i2b2DataWriter.fetchOrCreateConcept(lymphNodesExamined);
+			i2b2DataWriter.fetchOrCreateConcept(specialStain);
+			i2b2DataWriter.fetchOrCreateConcept(ultraStructuralFindings);
+			
 			// Here we use report id as the encounter number
 			// The 0L means the number zero of type long, we'll increase the instance number using the currentPartNumber 
 			// Won't be able to reuse previously added observation fact even if 
@@ -306,6 +312,10 @@ public class Xmeso {
 			logger.debug("tumorConfigurationCode = " + tumorConfigurationCode);
 			logger.debug("tumorDifferentiationCode = " + tumorDifferentiationCode);
 
+			i2b2DataWriter.fetchOrCreateConcept(histologicTypeCode);
+			i2b2DataWriter.fetchOrCreateConcept(tumorConfigurationCode);
+			i2b2DataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
+			
 			// The instance number starts from 0L, we'll increase it using the currentPartNumber 
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
