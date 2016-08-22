@@ -151,33 +151,32 @@ Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file Report_file_1.txt
 Created fake patient information for patient #1000000083 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_1.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_1.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_2.txt
 Created fake patient information for patient #1000000084 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_2.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_2.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_3.txt
 Created fake patient information for patient #1000000085 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_3.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_3.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_4.txt
 Created fake patient information for patient #1000000086 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_4.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_4.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
-Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
-Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
+Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 ````
 Once finish running, new records will be added to the following I2B2 database staging tables:
 
 - `XMESO_PROVIDER_DIMENSION` - only one record of the specified provider information
-- `XMESO_OBSERVATION_FACT` - all the found observation facts
-- `XMESO_CONCEPT_DIMENSION` - all the found concepts
+- `XMESO_PATIENT_DIMENSION` - fake patient info
 - `XMESO_VISIT_DIMENSION` - all visit information, basically one visit per report
+- `XMESO_OBSERVATION_FACT` - all the found observation facts
 
-Note: the table records that are added to `XMESO_PATIENT_DIMENSION`, `XMESO_CONCEPT_DIMENSION`, and `XMESO_PROVIDER_DIMENSION` are only for staging purpose to main the constraints across those 5 tables. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And the records added to the `XMESO_CONCEPT_DIMENSION` table don't need to be copied to the production table. Eventually, on the `XMESO_VISIT_DIMENSION` and `XMESO_OBSERVATION_FACT` records need to be copied to the production tables.
+Note: the table records that are added to `XMESO_PATIENT_DIMENSION` and `XMESO_PROVIDER_DIMENSION` are only for staging purposes. This program will create fake patient records (but using the actual patient number found in the linkage file) into `XMESO_PATIENT_DIMENSION`. And that one record added to `XMESO_PROVIDER_DIMENSION` is based on the provider information settings that are specified in the `xmeso.properties`. And NO records will be added to the `XMESO_CONCEPT_DIMENSION` table. Eventually, only the `XMESO_VISIT_DIMENSION` and `XMESO_OBSERVATION_FACT` records need to be copied to the corresponding production tables.
 
 Then you can do further analysis by referencing the added records with the existing patients.
 
@@ -186,28 +185,25 @@ Note: when rerunning this jar file, all the previously added database records wi
 ````
 Input data folder path: C:\Users\joe\XMESO_PITT
 Erasing 1 previously added xmeso records from XMESO_PROVIDER_DIMENSION table
+Erasing 4 previously added xmeso records from XMESO_VISIT_DIMENSION table
+Erasing 36 previously added xmeso records from XMESO_OBSERVATION_FACT table
 Created provider record in XMESO_PROVIDER_DIMENSION table
 Processing report file Report_file_1.txt
-Created fake patient information for patient #1000000083 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_1.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_1.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_2.txt
-Created fake patient information for patient #1000000084 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_2.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_2.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_3.txt
-Created fake patient information for patient #1000000085 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_3.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_3.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Processing report file Report_file_4.txt
-Created fake patient information for patient #1000000086 in XMESO_PATIENT_DIMENSION table
 Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_4.txt and added extracted information to XMESO_CONCEPT_DIMENSION and XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_4.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
-Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
-Newly added 12 xmeso records into XMESO_CONCEPT_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
+Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
 ````
 
 ## For Developers
