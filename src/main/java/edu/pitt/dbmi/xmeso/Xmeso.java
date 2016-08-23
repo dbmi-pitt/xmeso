@@ -78,6 +78,7 @@ public class Xmeso {
 		xmesoDataDir = xmesoProperties.getProperty("xmeso_data");
 		
 		System.out.println("Input data folder path: " + xmesoDataDir);
+		System.out.println(System.lineSeparator());
 		
 		createMappings();
 
@@ -188,6 +189,14 @@ public class Xmeso {
 		// A different object with the same identifier value was already associated with the session
 		Arrays.sort(reportFiles);
 		
+		// Display the progress
+		int count = 1;
+		int total = reportFiles.length;
+		
+		// Tell user how many report files will be processed
+		System.out.println(System.lineSeparator());
+		System.out.println("Total " + total + " report files will be processed");
+
 		// Process each individual report file
 		for (File reportFile : reportFiles) {
 			File currentReportFile = reportFile;
@@ -200,7 +209,8 @@ public class Xmeso {
 			String currentReportId = this.reportMap.get(reportFilename);
 			
 			// Tell user which report is getting processed
-			System.out.println("Processing report file " + reportFilename);
+			System.out.println(System.lineSeparator());
+			System.out.println("[" + count + "/" + total + "] Processing report file " + reportFilename);
 			
 			// This is the date string parsed from the linkage table, yyyy-MM-dd format
 			String formattedDate = this.visitDateMap.get(reportFilename);
@@ -220,8 +230,11 @@ public class Xmeso {
 			
 			// Ruta kicks in
 			processReport(currentReportFile, currentPatientId, currentReportId);
+			
+			count++;
 		}
 		
+		System.out.println(System.lineSeparator());
 		System.out.println("Finished processing all reports.");
 	}
 	
@@ -243,7 +256,7 @@ public class Xmeso {
 			
 			populateCas(jCas, patientId, reportId);
 			
-			System.out.println("Successfully processed report file " + currentReportFile.getName() + " and added extracted information from report file to XMESO_OBSERVATION_FACT table");
+			System.out.println("Successfully processed report file " + currentReportFile.getName() + " and added extracted information to XMESO_OBSERVATION_FACT table");
 		} catch (Exception e) {
 			System.err.println("Failed to process report file " + currentReportFile.getName());
 		}

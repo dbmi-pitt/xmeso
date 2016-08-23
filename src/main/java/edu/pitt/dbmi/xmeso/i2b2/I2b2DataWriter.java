@@ -211,6 +211,7 @@ public class I2b2DataWriter {
 		dataSourceManager.getSession().flush();
 		tx.commit();
 		
+		System.out.println(System.lineSeparator());
 		System.out.println("Created provider record in XMESO_PROVIDER_DIMENSION table");
 	}
 
