@@ -315,21 +315,30 @@ public class Xmeso {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
 			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart() + "");
 			
-			// Other info (tumorSite, sizeDimensionX, sizeDimensionY, sizeDimensionZ, sizeDimensionMax, and histopathologicalType) 
+			// Other info (sizeDimensionX, sizeDimensionY, sizeDimensionZ, sizeDimensionMax, and histopathologicalType) 
 			// can also be used from InformationExtractorAnnotationEngine, other than just the below 3
+			String tumorSiteCode = tumorForm.getTumorSite();
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
 			
+			System.out.println("tumorSiteCode:----- " + tumorSiteCode);
+			System.out.println("histologicTypeCode:----- " + histologicTypeCode);
+			System.out.println("tumorConfigurationCode:----- " + tumorConfigurationCode);
+			System.out.println("tumorDifferentiationCode:----- " + tumorDifferentiationCode);
+			
+			logger.debug("tumorSiteCode = " + tumorSiteCode);
 			logger.debug("histologicTypeCode = " + histologicTypeCode);
 			logger.debug("tumorConfigurationCode = " + tumorConfigurationCode);
 			logger.debug("tumorDifferentiationCode = " + tumorDifferentiationCode);
 
+			i2b2DataWriter.fetchOrCreateConcept(tumorSiteCode);
 			i2b2DataWriter.fetchOrCreateConcept(histologicTypeCode);
 			i2b2DataWriter.fetchOrCreateConcept(tumorConfigurationCode);
 			i2b2DataWriter.fetchOrCreateConcept(tumorDifferentiationCode);
 			
 			// The instance number starts from 0L, we'll increase it using the currentPartNumber 
+			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorSiteCode, currentPartNumber);
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), histologicTypeCode, currentPartNumber);
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorConfigurationCode, currentPartNumber);
 			i2b2DataWriter.createObservation(Integer.parseInt(patientId), Integer.parseInt(reportId), tumorDifferentiationCode, currentPartNumber);
