@@ -1,0 +1,52 @@
+[Report de-identified (Safe-harbor compliant) by De-ID v.6.14.03]
+
+
+PATIENT HISTORY:
+The patient is a **AGE[in 20s]-year-old female.  Date of last menstrual period: Not
+given.
+PRE OP DIAGNOSIS: Infertility.
+POST OP DIAGNOSIS: Same, rule out endometriosis.
+PROCEDURE: Diagnostic laparoscopy, biopsy anterior peritoneum, tubal lavage,
+endometrial biopsy.
+**INITIALS
+_______________________________________________________________
+FINAL DIAGNOSIS:
+PART 1: PERITONEUM, ANTERIOR, BIOPSY 
+     BENIGN PAPILLARY PERITONEAL MESOTHELIOMA.
+PART 2: ENDOMETRIAL BIOPSY 
+     SECRETORY ENDOMETRIUM DAY 22.
+AA/dme
+DME/DME
+     Pathologist:  **NAME[WWW M. XXX], M.D.
+     ** Report Electronically Signed Out **
+     By Pathologist:  **NAME[WWW M. XXX], M.D.
+     **DATE[May 10 03] 16:31
+My signature is attestation that I have personally reviewed the submitted
+material(s) and the final diagnosis reflects that evaluation.
+_______________________________________________________________
+GROSS DESCRIPTION:
+The specimen is received in formalin in two parts.
+Part 1 is labeled "biopsy of anterior peritoneum" and consists of two portions
+of gray tissue, each measuring 0.3 cm in greatest dimension.  Totally
+submitted in cassette 1A.
+Part 2 is labeled "endometrial biopsy" and consists of 0.5 cc of tan-brown
+tissue.  Totally submitted in cassette 2A.
+**INITIALS
+**INITIALS
+MICROSCOPIC:
+Microscopic examination substantiates the above diagnosis.
+AA/dme
+
+HISTO TISSUE SUMMARY/SLIDES REVIEWED:
+Part 1: Ant. Peritoneum Bx.
+Taken: **DATE[May 9 03] 00:00     Received: **DATE[May 9 03] 11:10
+Stain/cnt     Block
+H&E Lvs x 1     A
+Part 2: Endometrial Bx.
+Taken: **DATE[May 9 03] 00:00     Received: **DATE[May 9 03] 11:10
+Stain/cnt     Block
+H&E Lvs x 1     A
+TC1
+
+
+

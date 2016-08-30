@@ -76,7 +76,7 @@ Document{->CALL(Ner.NameEntityTumorConfiguration)};
 Document{->CALL(Ner.NameEntityTumorDifferentiation)};
 Document{->CALL(Ner.NameEntityUltrastructuralFindings)};
 
-// Heuristic rules designed to fill in Yes/No slots of the taret templates.
+// Heuristic rules designed to fill in Yes/No slots of the target templates.
 // Currently Lymph Nodes involved and Special Stains used?
 Document{->CALL(AvPairDetector.DetectLymphNodesExamined)};
 Document{->CALL(AvPairDetector.DetectSpecialStainProfile)};
