@@ -11,6 +11,12 @@ WORDTABLE xmesoTumorConfigurationTable = 'ner/tumor_configuration.csv';
 WORDTABLE xmesoTumorDifferentiationTable = 'ner/tumor_differentiation.csv';
 WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
 
+// The MARKTABLE action creates annotations of the given type (first parameter), 
+// if an element of the given column (second parameter) of a passed table (third parameter) 
+// occures within the window of the matched annotation. 
+// Thereby, the created annotation does not cover the whole matched annotation. 
+// Instead, it only covers the text of the found occurrence. 
+// Optionally the MARKTABLE action is able to assign entries of the given table to features of the created annotation.
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 2,
       xmesoHistologicalTypeTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
