@@ -77,7 +77,7 @@ Document{->CALL(Ner.NameEntityTumorDifferentiation)};
 Document{->CALL(Ner.NameEntityUltrastructuralFindings)};
 
 // Heuristic rules designed to fill in Yes/No slots of the target templates.
-// Currently Lymph Nodes involved and Special Stains used?
+// Currently Lymph Nodes and Special Stains are searched
 Document{->CALL(AvPairDetector.DetectLymphNodesExamined)};
 Document{->CALL(AvPairDetector.DetectSpecialStainProfile)};
 
