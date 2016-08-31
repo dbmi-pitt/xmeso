@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
+/* First created by JCasGen Wed Aug 31 14:05:35 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 12:41:29 EDT 2016
+ * Updated by JCasGen Wed Aug 31 14:05:35 EDT 2016
  * @generated */
 public class XmesoTumorForm_Type extends Annotation_Type {
   /** @generated 
@@ -167,102 +167,6 @@ public class XmesoTumorForm_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_tumorSiteTerm;
-  /** @generated */
-  final int     casFeatCode_tumorSiteTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getTumorSiteTerm(int addr) {
-        if (featOkTst && casFeat_tumorSiteTerm == null)
-      jcas.throwFeatMissing("tumorSiteTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_tumorSiteTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setTumorSiteTerm(int addr, String v) {
-        if (featOkTst && casFeat_tumorSiteTerm == null)
-      jcas.throwFeatMissing("tumorSiteTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_tumorSiteTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_histopathologicalTypeTerm;
-  /** @generated */
-  final int     casFeatCode_histopathologicalTypeTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getHistopathologicalTypeTerm(int addr) {
-        if (featOkTst && casFeat_histopathologicalTypeTerm == null)
-      jcas.throwFeatMissing("histopathologicalTypeTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_histopathologicalTypeTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setHistopathologicalTypeTerm(int addr, String v) {
-        if (featOkTst && casFeat_histopathologicalTypeTerm == null)
-      jcas.throwFeatMissing("histopathologicalTypeTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_histopathologicalTypeTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_tumorConfigurationTerm;
-  /** @generated */
-  final int     casFeatCode_tumorConfigurationTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getTumorConfigurationTerm(int addr) {
-        if (featOkTst && casFeat_tumorConfigurationTerm == null)
-      jcas.throwFeatMissing("tumorConfigurationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_tumorConfigurationTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setTumorConfigurationTerm(int addr, String v) {
-        if (featOkTst && casFeat_tumorConfigurationTerm == null)
-      jcas.throwFeatMissing("tumorConfigurationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_tumorConfigurationTerm, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_tumorDifferentiationTerm;
-  /** @generated */
-  final int     casFeatCode_tumorDifferentiationTerm;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getTumorDifferentiationTerm(int addr) {
-        if (featOkTst && casFeat_tumorDifferentiationTerm == null)
-      jcas.throwFeatMissing("tumorDifferentiationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_tumorDifferentiationTerm);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setTumorDifferentiationTerm(int addr, String v) {
-        if (featOkTst && casFeat_tumorDifferentiationTerm == null)
-      jcas.throwFeatMissing("tumorDifferentiationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    ll_cas.ll_setStringValue(addr, casFeatCode_tumorDifferentiationTerm, v);}
-    
-  
- 
-  /** @generated */
   final Feature casFeat_sizeDimensionX;
   /** @generated */
   final int     casFeatCode_sizeDimensionX;
@@ -388,22 +292,6 @@ public class XmesoTumorForm_Type extends Annotation_Type {
  
     casFeat_tumorDifferentiation = jcas.getRequiredFeatureDE(casType, "tumorDifferentiation", "uima.cas.String", featOkTst);
     casFeatCode_tumorDifferentiation  = (null == casFeat_tumorDifferentiation) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tumorDifferentiation).getCode();
-
- 
-    casFeat_tumorSiteTerm = jcas.getRequiredFeatureDE(casType, "tumorSiteTerm", "uima.cas.String", featOkTst);
-    casFeatCode_tumorSiteTerm  = (null == casFeat_tumorSiteTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tumorSiteTerm).getCode();
-
- 
-    casFeat_histopathologicalTypeTerm = jcas.getRequiredFeatureDE(casType, "histopathologicalTypeTerm", "uima.cas.String", featOkTst);
-    casFeatCode_histopathologicalTypeTerm  = (null == casFeat_histopathologicalTypeTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_histopathologicalTypeTerm).getCode();
-
- 
-    casFeat_tumorConfigurationTerm = jcas.getRequiredFeatureDE(casType, "tumorConfigurationTerm", "uima.cas.String", featOkTst);
-    casFeatCode_tumorConfigurationTerm  = (null == casFeat_tumorConfigurationTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tumorConfigurationTerm).getCode();
-
- 
-    casFeat_tumorDifferentiationTerm = jcas.getRequiredFeatureDE(casType, "tumorDifferentiationTerm", "uima.cas.String", featOkTst);
-    casFeatCode_tumorDifferentiationTerm  = (null == casFeat_tumorDifferentiationTerm) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tumorDifferentiationTerm).getCode();
 
  
     casFeat_sizeDimensionX = jcas.getRequiredFeatureDE(casType, "sizeDimensionX", "uima.cas.Float", featOkTst);

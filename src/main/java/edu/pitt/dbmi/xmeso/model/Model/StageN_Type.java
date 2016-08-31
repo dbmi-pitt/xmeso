@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
+/* First created by JCasGen Wed Aug 31 14:05:35 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -12,7 +12,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 12:41:28 EDT 2016
+ * Updated by JCasGen Wed Aug 31 14:05:35 EDT 2016
  * @generated */
 public class StageN_Type extends Annotation_Type {
   /** @generated 

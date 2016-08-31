@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Thu Aug 18 10:26:55 EDT 2016 */
+/* First created by JCasGen Wed Aug 31 14:05:35 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Aug 18 12:41:29 EDT 2016
+ * Updated by JCasGen Wed Aug 31 14:05:35 EDT 2016
  * XML source: C:/Users/zhy19/workspace/xmeso/descriptor/edu/pitt/dbmi/xmeso/XmesoEngine.xml
  * @generated */
 public class XmesoTumorForm extends Annotation {
@@ -184,94 +184,6 @@ public class XmesoTumorForm extends Annotation {
     if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorDifferentiation == null)
       jcasType.jcas.throwFeatMissing("tumorDifferentiation", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
     jcasType.ll_cas.ll_setStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorDifferentiation, v);}    
-   
-    
-  //*--------------*
-  //* Feature: tumorSiteTerm
-
-  /** getter for tumorSiteTerm - gets tumorSiteTerm
-   * @generated
-   * @return value of the feature 
-   */
-  public String getTumorSiteTerm() {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorSiteTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorSiteTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorSiteTerm);}
-    
-  /** setter for tumorSiteTerm - sets tumorSiteTerm 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setTumorSiteTerm(String v) {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorSiteTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorSiteTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    jcasType.ll_cas.ll_setStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorSiteTerm, v);}    
-   
-    
-  //*--------------*
-  //* Feature: histopathologicalTypeTerm
-
-  /** getter for histopathologicalTypeTerm - gets histopathologicalTypeTerm
-   * @generated
-   * @return value of the feature 
-   */
-  public String getHistopathologicalTypeTerm() {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_histopathologicalTypeTerm == null)
-      jcasType.jcas.throwFeatMissing("histopathologicalTypeTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_histopathologicalTypeTerm);}
-    
-  /** setter for histopathologicalTypeTerm - sets histopathologicalTypeTerm 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setHistopathologicalTypeTerm(String v) {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_histopathologicalTypeTerm == null)
-      jcasType.jcas.throwFeatMissing("histopathologicalTypeTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    jcasType.ll_cas.ll_setStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_histopathologicalTypeTerm, v);}    
-   
-    
-  //*--------------*
-  //* Feature: tumorConfigurationTerm
-
-  /** getter for tumorConfigurationTerm - gets tumorConfigurationTerm
-   * @generated
-   * @return value of the feature 
-   */
-  public String getTumorConfigurationTerm() {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorConfigurationTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorConfigurationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorConfigurationTerm);}
-    
-  /** setter for tumorConfigurationTerm - sets tumorConfigurationTerm 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setTumorConfigurationTerm(String v) {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorConfigurationTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorConfigurationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    jcasType.ll_cas.ll_setStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorConfigurationTerm, v);}    
-   
-    
-  //*--------------*
-  //* Feature: tumorDifferentiationTerm
-
-  /** getter for tumorDifferentiationTerm - gets tumorDifferentiationTerm
-   * @generated
-   * @return value of the feature 
-   */
-  public String getTumorDifferentiationTerm() {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorDifferentiationTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorDifferentiationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorDifferentiationTerm);}
-    
-  /** setter for tumorDifferentiationTerm - sets tumorDifferentiationTerm 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setTumorDifferentiationTerm(String v) {
-    if (XmesoTumorForm_Type.featOkTst && ((XmesoTumorForm_Type)jcasType).casFeat_tumorDifferentiationTerm == null)
-      jcasType.jcas.throwFeatMissing("tumorDifferentiationTerm", "edu.pitt.dbmi.xmeso.model.Model.XmesoTumorForm");
-    jcasType.ll_cas.ll_setStringValue(addr, ((XmesoTumorForm_Type)jcasType).casFeatCode_tumorDifferentiationTerm, v);}    
    
     
   //*--------------*
