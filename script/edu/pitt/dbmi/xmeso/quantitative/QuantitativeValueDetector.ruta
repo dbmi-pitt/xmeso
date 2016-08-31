@@ -42,12 +42,16 @@ FLOAT dimensionThree;
 FLOAT dimensionMaximum = -1.0;
 STRING unitOfMeasure;
 BLOCK(SizeDetection) Document{->RETAINTYPE(BREAK)} {
+    // The PARSE condition is fulfilled, if the text covered by the matched annotation 
+    // can be transformed into a value of the given variable's type. 
+    // If this is possible, the parsed value is additionally assigned to the passed variable.
     (NUM{PARSE(dimensionOne)}|FloatNum{PARSE(dimensionOne)}) 
     W{REGEXP("x",true)}
     (NUM{PARSE(dimensionTwo)}|FloatNum{PARSE(dimensionTwo)}) 
     W{REGEXP("x",true)} 
     (NUM{PARSE(dimensionThree)}|FloatNum{PARSE(dimensionThree)}) 
     BREAK*
+    // The MATCHEDTEXT action saves the text of the matched annotation in a passed String variable.
     UOM{-> MATCHEDTEXT(unitOfMeasure), 
       CREATE(XmesoSize, 1, 7,
         "codedPenalty" = 1, 
