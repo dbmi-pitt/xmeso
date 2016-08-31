@@ -12,7 +12,7 @@ BLOCK(DetectLymphNodesExamined) Document{} {
   W{REGEXP("LYMPH|Lymph|lymph")} 
   W{REGEXP("NODES?|Nodes?|nodes?") -> 
          CREATE(XmesoLymphNodesExamined, 1, 2,
-              "i2b2OntologyPath" = "\\Yes\\", "snomedCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)};
+              "snomedCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)};
   }
  
   
@@ -29,5 +29,5 @@ BLOCK(DetectSpecialStainProfile) Document{} {
   W{REGEXP("(?i)SPECIAL|IMMUNOHISTOCHEMICAL")} 
   W{REGEXP("(?i)STAINS?") -> 
          CREATE(XmesoSpecialStain, 1, 2,
-             "i2b2OntologyPath" = "\\Yes\\", "snomedCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)};
+            "snomedCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)};
   }

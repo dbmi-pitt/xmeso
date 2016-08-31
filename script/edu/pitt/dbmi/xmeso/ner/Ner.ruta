@@ -3,13 +3,13 @@ PACKAGE edu.pitt.dbmi.xmeso.ner;
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
 // NER stands for Named Entity Recognition
-WORDTABLE xmesoHistologicalTypeTable = 'ner/histological_type.csv';
-WORDTABLE xmesoImmunohistochemicalProfileTable = 'ner/immunohistochemical_profile.csv';
-WORDTABLE xmesoTumorSiteTable = 'ner/site_of_tumor.csv';
-WORDTABLE xmesoSurgicalProcedureTable = 'ner/surgical_procedure.csv';
-WORDTABLE xmesoTumorConfigurationTable = 'ner/tumor_configuration.csv';
-WORDTABLE xmesoTumorDifferentiationTable = 'ner/tumor_differentiation.csv';
-WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
+WORDTABLE histologicalTypeTable = 'ner/histological_type.csv';
+WORDTABLE immunohistochemicalProfileTable = 'ner/immunohistochemical_profile.csv';
+WORDTABLE tumorSiteTable = 'ner/site_of_tumor.csv';
+WORDTABLE surgicalProcedureTable = 'ner/surgical_procedure.csv';
+WORDTABLE tumorConfigurationTable = 'ner/tumor_configuration.csv';
+WORDTABLE tumorDifferentiationTable = 'ner/tumor_differentiation.csv';
+WORDTABLE ultrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
 
 // The MARKTABLE action creates annotations of the given type (first parameter), 
 // if an element of the given column (second parameter) of a passed table (third parameter) 
@@ -17,33 +17,28 @@ WORDTABLE xmesoUltrastructuralFindingsTable = 'ner/ultrastructural_findings.csv'
 // Thereby, the created annotation does not cover the whole matched annotation. 
 // Instead, it only covers the text of the found occurrence. 
 // Optionally the MARKTABLE action is able to assign entries of the given table to features of the created annotation.
+// The case of the word is ignored if the length of the word exceeds 10
+// Additionally, the char " " and  "-" are ignored
 BLOCK(NameEntityHistologicalType) Document {} { 
-  Document{->MARKTABLE(XmesoHistologicalType, 2,
-      xmesoHistologicalTypeTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoHistologicalType, 2, histologicalTypeTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityImmunohistochemicalProfile) Document {} { 
-  Document{->MARKTABLE(XmesoImmunoHistochemicalProfile, 2,
-      xmesoImmunohistochemicalProfileTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoImmunoHistochemicalProfile, 2, immunohistochemicalProfileTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorSite) Document {} { 
-  Document{->MARKTABLE(XmesoTumorSite, 2,
-      xmesoTumorSiteTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoTumorSite, 2, tumorSiteTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntitySurgicalProcedure) Document {} { 
-  Document{->MARKTABLE(XmesoSurgicalProcedure, 2,
-      xmesoSurgicalProcedureTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoSurgicalProcedure, 2, surgicalProcedureTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorConfiguration) Document {} { 
-  Document{->MARKTABLE(XmesoTumorConfiguration, 2,
-      xmesoTumorConfigurationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoTumorConfiguration, 2, tumorConfigurationTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityTumorDifferentiation) Document {} { 
-  Document{->MARKTABLE(XmesoTumorDifferentiation, 2,
-      xmesoTumorDifferentiationTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoTumorDifferentiation, 2, tumorDifferentiationTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 BLOCK(NameEntityUltrastructuralFindings) Document {} { 
-  Document{->MARKTABLE(XmesoUltrastructuralFindings, 2,
-      xmesoUltrastructuralFindingsTable, true, 0, " -", 10, "i2b2OntologyPath" = 1, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
+  Document{->MARKTABLE(XmesoUltrastructuralFindings, 2, ultrastructuralFindingsTable, true, 0, " -", 10, "coveredText" = 2, "snomedCode" = 3, "semanticType" = 4, "codedPenalty" = 5)};
 }
 
 //

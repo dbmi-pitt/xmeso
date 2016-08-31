@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Wed Aug 31 14:05:35 EDT 2016 */
+/* First created by JCasGen Wed Aug 31 14:36:42 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Wed Aug 31 14:05:35 EDT 2016
+ * Updated by JCasGen Wed Aug 31 14:36:42 EDT 2016
  * @generated */
 public class XmesoCaseForm_Type extends Annotation_Type {
   /** @generated 
