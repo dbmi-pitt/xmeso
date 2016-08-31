@@ -9,8 +9,16 @@ SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 // triggers a yes to Lymph Nodes Examined slot
 //
 BLOCK(DetectLymphNodesExamined) Document{} {
+  // First rule
   W{REGEXP("LYMPH|Lymph|lymph")} 
+  // Second rule
   W{REGEXP("NODES?|Nodes?|nodes?") -> 
+         // The CREATE action is similar to the MARK action. 
+         // It also annotates the matched text fragments with a type annotation (XmesoLymphNodesExamined), 
+         // but additionally assigns values to a chosen subset of the type's feature elements (snomedCode and codedPenalty).
+         // In this case, the two numerical expressions at the end of the CREATE action state that 
+         // the matched text of the first and the second rule elements are joined to 
+         // create the boundaries of the new annotation (XmesoLymphNodesExamined).
          CREATE(XmesoLymphNodesExamined, 1, 2,
               "snomedCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)};
   }
