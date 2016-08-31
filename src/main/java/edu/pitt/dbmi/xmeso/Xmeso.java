@@ -287,7 +287,7 @@ public class Xmeso {
 			String lymphNodesExamined = caseForm.getLymphNodesExamined();
 			String specialStain = caseForm.getSpecialStain();
 			String ultraStructuralFindings = caseForm.getUltrastructuralFindings();
-
+			
 			logger.debug("============================DEBUGGING============================");
 			logger.debug("lymphNodesExamined = " + lymphNodesExamined);
 			logger.debug("specialStain = " + specialStain);
@@ -321,12 +321,7 @@ public class Xmeso {
 			String histologicTypeCode = tumorForm.getHistopathologicalType();
 			String tumorConfigurationCode = tumorForm.getTumorConfiguration();
 			String tumorDifferentiationCode = tumorForm.getTumorDifferentiation();
-			
-			System.out.println("tumorSiteCode:----- " + tumorSiteCode);
-			System.out.println("histologicTypeCode:----- " + histologicTypeCode);
-			System.out.println("tumorConfigurationCode:----- " + tumorConfigurationCode);
-			System.out.println("tumorDifferentiationCode:----- " + tumorDifferentiationCode);
-			
+
 			logger.debug("tumorSiteCode = " + tumorSiteCode);
 			logger.debug("histologicTypeCode = " + histologicTypeCode);
 			logger.debug("tumorConfigurationCode = " + tumorConfigurationCode);
