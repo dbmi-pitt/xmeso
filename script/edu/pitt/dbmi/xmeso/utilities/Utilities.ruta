@@ -10,11 +10,22 @@ BLOCK(CleanBeneathXmeso) Document{} {
     PartIndicator{PARTOF(Document)->UNMARK(PartIndicator)};
 }
 
+// The RETAINTYPE action retains the given types. This means that they can be matched by rules.
+// CAP - word only containing capitalized letters
+// COLON - colon
+// COMMA - comma
+// CW - word starting with one capitalized letter
+// PERIOD - period
+// SPACE -spaces
+// SPECIAL - all other tokens and symbols
+// SW - lower case word
 BLOCK(CleanBeneathRutas) Document{->RETAINTYPE(CAP,COLON,COMMA,CW,PERIOD,SPACE,SPECIAL,SW)} {
+    // The UNMARK action removes the annotation of the given type overlapping the matched annotation
     CAP{PARTOF(Document)->UNMARK(CAP)};
     COLON{PARTOF(Document)->UNMARK(COLON)};
     COMMA{PARTOF(Document)->UNMARK(COMMA)};
     CW{PARTOF(Document)->UNMARK(CW)};
+    // Why NUM is not in RETAINTYPE()?
     NUM{PARTOF(Document)->UNMARK(NUM)};
     PERIOD{PARTOF(Document)->UNMARK(PERIOD)};
     SPACE{PARTOF(Document)->UNMARK(SPACE)};  
