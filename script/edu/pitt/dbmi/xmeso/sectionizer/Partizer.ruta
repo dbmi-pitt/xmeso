@@ -13,18 +13,6 @@ INT partizerPartNumSeq = -1;
 
 STRING romanValueStore = "UNKNOWN";
 
-BLOCK(ObserveDeIdBannar) Document {} { 
-  // The LOG action writes a log message.
-  DeIdBannarAnnotation {->LOG("Observing a DeIdBannar?")};
-  EndOfDocument {->LOG("Observing a EndOfDocument?")};
-  EndOfSection {->LOG("Observing a EndOfSection?")};
-  FloatNum {->LOG("Observing a FloatNum?")};
-  PartHeaderGenerator {->LOG("Observing a PartHeaderGenerator?")};
-  PartNumber {->LOG("Observing a PartNumber?")};
-  SectionHeader {->LOG("Observing a SectionHeader?")};
-  Section {->LOG("Observing a Section?")};
-}
-
 //
 // Partizing
 //
