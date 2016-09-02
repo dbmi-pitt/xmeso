@@ -1,110 +1,24 @@
-D2-40;LOINC:73909-4;Immunohistochemical Profile;0
-D2-40 Ag Tiss Ql ImStn;LOINC:73909-4;Immunohistochemical Profile;1
-D2-40 Ag [Presence] in Tissue by Immune stain;LOINC:73909-4;Immunohistochemical Profile;1
-D2-40 Ag:Pr:Pt:Tiss:Ord:Immune stain;LOINC:73909-4;Immunohistochemical Profile;1
-D2-40 Antigen:Presence:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:73909-4;Immunohistochemical Profile;1
-Unknown;PATH|IMMUNH:UN;Immunohistochemical Profile;0
-LeuM1;LOINC:10436-4;Immunohistochemical Profile;0
-CD15 Ag Tiss Ql ImStn;LOINC:10436-4;Immunohistochemical Profile;1
-CD15 Ag [Presence] in Tissue by Immune stain;LOINC:10436-4;Immunohistochemical Profile;1
-CD15 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:10436-4;Immunohistochemical Profile;1
-CD15 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:10436-4;Immunohistochemical Profile;1
-WT1;LOINC:50331-8;Immunohistochemical Profile;0
-WT-1 Ag Tiss Ql ImStn;LOINC:50331-8;Immunohistochemical Profile;1
-WT-1 Ag [Presence] in Tissue by Immune stain;LOINC:50331-8;Immunohistochemical Profile;1
-WT-1 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:50331-8;Immunohistochemical Profile;1
-WT-1 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:50331-8;Immunohistochemical Profile;1
-CK7;LOINC:40559-7;Immunohistochemical Profile;0
-CK 7 Ag Tiss Ql ImStn;LOINC:40559-7;Immunohistochemical Profile;1
-Cytokeratin 7 Ag [Presence] in Tissue by Immune stain;LOINC:40559-7;Immunohistochemical Profile;1
-Cytokeratin 7 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:40559-7;Immunohistochemical Profile;1
-Cytokeratin 7 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:40559-7;Immunohistochemical Profile;1
-AE1/3;LOINC:40560-5;Immunohistochemical Profile;0
-CK AE1/AE3 Ag Tiss Ql ImStn;LOINC:40560-5;Immunohistochemical Profile;1
-Cytokeratin AE1+AE3 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:40560-5;Immunohistochemical Profile;1
-Cytokeratin AE1+AE3 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:40560-5;Immunohistochemical Profile;1
-Cytokeratin AE1/AE3 Ag [Presence] in Tissue by Immune stain;LOINC:40560-5;Immunohistochemical Profile;1
-CK5/6;LOINC:47025-2;Immunohistochemical Profile;0
-CK 5/6 Ag Tiss Ql ImStn;LOINC:47025-2;Immunohistochemical Profile;1
-Cytokeratin 5+6 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:47025-2;Immunohistochemical Profile;1
-Cytokeratin 5+6 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:47025-2;Immunohistochemical Profile;1
-Cytokeratin 5/6 Ag [Presence] in Tissue by Immune stain;LOINC:47025-2;Immunohistochemical Profile;1
-CK20;LOINC:40558-9;Immunohistochemical Profile;0
-CK 20 Ag Tiss Ql ImStn;LOINC:40558-9;Immunohistochemical Profile;1
-Cytokeratin 20 Ag [Presence] in Tissue by Immune stain;LOINC:40558-9;Immunohistochemical Profile;1
-Cytokeratin 20 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:40558-9;Immunohistochemical Profile;1
-Cytokeratin 20 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:40558-9;Immunohistochemical Profile;1
-TTF;LOINC:40564-7;Immunohistochemical Profile;0
-TTF1 Ag Tiss Ql ImStn;LOINC:40564-7;Immunohistochemical Profile;1
-Thyroid transcription factor 1 Ag [Presence] in Tissue by Immune stain;LOINC:40564-7;Immunohistochemical Profile;1
-Thyroid transcription factor 1 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:40564-7;Immunohistochemical Profile;1
-Thyroid transcription factor 1 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:40564-7;Immunohistochemical Profile;1
-CD10;LOINC:51214-5;Immunohistochemical Profile;0
-CD10 Cells NFr Tiss;LOINC:51214-5;Immunohistochemical Profile;1
-CD10 cells/100 cells in Tissue;LOINC:51214-5;Immunohistochemical Profile;1
-Cells.CD10/100 cells:NFr:Pt:Tiss:Qn;LOINC:51214-5;Immunohistochemical Profile;1
-Cells.CD10/100 cells:Number Fraction:Point in time:Tissue, unspecified:Quantitative;LOINC:51214-5;Immunohistochemical Profile;1
-Ber-EP4;LOINC:47010-4;Immunohistochemical Profile;0
-BER-EP4 Ag Tiss Ql ImStn;LOINC:47010-4;Immunohistochemical Profile;1
-Ber-EP4 Ag [Presence] in Tissue by Immune stain;LOINC:47010-4;Immunohistochemical Profile;1
-Ber-EP4 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:47010-4;Immunohistochemical Profile;1
-Ber-EP4 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:47010-4;Immunohistochemical Profile;1
-TAG-72;LOINC:47012-0;Immunohistochemical Profile;0
-Cancer Ag 72-4 [Presence] in Tissue by Immune stain;LOINC:47012-0;Immunohistochemical Profile;1
-Cancer Ag 72-4:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:47012-0;Immunohistochemical Profile;1
-Cancer Ag72-4 Tiss Ql ImStn;LOINC:47012-0;Immunohistochemical Profile;1
-Cancer Antigen 72-4:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:47012-0;Immunohistochemical Profile;1
-PSAD;LOINC:10508-0;Immunohistochemical Profile;0
-PSA Tiss Ql ImStn;LOINC:10508-0;Immunohistochemical Profile;1
-Prostate specific Ag [Presence] in Tissue by Immune stain;LOINC:10508-0;Immunohistochemical Profile;1
-Prostate specific Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:10508-0;Immunohistochemical Profile;1
-Prostate specific Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:10508-0;Immunohistochemical Profile;1
+E-cadherin;LOINC:29540-2;Immunohistochemical Profile;0
 Epithelial Membrane Antigen ;LOINC:10479-4;Immunohistochemical Profile;0
-CD227 Ag Tiss Ql ImStn;LOINC:10479-4;Immunohistochemical Profile;1
-CD227 Ag [Presence] in Tissue by Immune stain;LOINC:10479-4;Immunohistochemical Profile;1
-CD227 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:10479-4;Immunohistochemical Profile;1
-CD227 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:10479-4;Immunohistochemical Profile;1
-Mesothelin;LOINC:74125-6;Immunohistochemical Profile;0
-Ag Tiss Ql ImStn;LOINC:74125-6;Immunohistochemical Profile;1
-Mesothelin Ag [Presence] in Tissue by Immune stain;LOINC:74125-6;Immunohistochemical Profile;1
-Mesothelin Ag:Pr:Pt:Tiss:Ord:Immune stain;LOINC:74125-6;Immunohistochemical Profile;1
-Mesothelin Antigen:Presence:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:74125-6;Immunohistochemical Profile;1
 HBME-1;LOINC:50319-3;Immunohistochemical Profile;0
-HBME-1 Ag Tiss Ql ImStn;LOINC:50319-3;Immunohistochemical Profile;1
-HBME-1 Ag [Presence] in Tissue by Immune stain;LOINC:50319-3;Immunohistochemical Profile;1
-HBME-1 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:50319-3;Immunohistochemical Profile;1
-HBME-1 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:50319-3;Immunohistochemical Profile;1
-Thrombomodulin;LOINC:19146-0;Immunohistochemical Profile;0
-Ref Lab Test Results;LOINC:19146-0;Immunohistochemical Profile;1
-Reference lab test results;LOINC:19146-0;Immunohistochemical Profile;1
-Reference lab test results:Find:XXX:Reference lab test:Nar;LOINC:19146-0;Immunohistochemical Profile;1
-Reference lab test results:Finding:time reported elsewhere:Reference lab test:Narrative;LOINC:19146-0;Immunohistochemical Profile;1
-CD44S;LOINC:17155-3;Immunohistochemical Profile;0
-CD44 Cells NFr Bld;LOINC:17155-3;Immunohistochemical Profile;1
-CD44 cells/100 cells in Blood;LOINC:17155-3;Immunohistochemical Profile;1
-Cells.CD44/100 cells:NFr:Pt:Bld:Qn;LOINC:17155-3;Immunohistochemical Profile;1
-Cells.CD44/100 cells:Number Fraction:Point in time:Whole blood:Quantitative;LOINC:17155-3;Immunohistochemical Profile;1
+LeuM1;LOINC:10436-4;Immunohistochemical Profile;0
+Mesothelin;LOINC:74125-6;Immunohistochemical Profile;0
 N-cadherin;NMVB_LAB:N-CADHERIN;Immunohistochemical Profile;0
+PSAD;LOINC:10508-0;Immunohistochemical Profile;0
+TAG-72;LOINC:47012-0;Immunohistochemical Profile;0
+Thrombomodulin;LOINC:19146-0;Immunohistochemical Profile;0
+TTF;LOINC:40564-7;Immunohistochemical Profile;0
+Vimentin;LOINC:10519-7;Immunohistochemical Profile;0
+D2-40;LOINC:73909-4;Immunohistochemical Profile;0
+CK7;LOINC:40559-7;Immunohistochemical Profile;0
+CK5/6;LOINC:47025-2;Immunohistochemical Profile;0
+CK20;LOINC:40558-9;Immunohistochemical Profile;0
+CD44S;LOINC:17155-3;Immunohistochemical Profile;0
+CD31;LOINC:47015-3;Immunohistochemical Profile;0
+WT1;LOINC:50331-8;Immunohistochemical Profile;0
 Calretinin;MESO:010;Immunohistochemical Profile;0
 CEA;LOINC:2039-6;Immunohistochemical Profile;0
-CEA SerPl-mCnc;LOINC:2039-6;Immunohistochemical Profile;1
-Carcinoembryonic Ag [Mass/volume] in Serum or Plasma;LOINC:2039-6;Immunohistochemical Profile;1
-Carcinoembryonic Ag:MCnc:Pt:Ser/Plas:Qn;LOINC:2039-6;Immunohistochemical Profile;1
-Carcinoembryonic Antigen:Mass Concentration:Point in time:Serum/Plasma:Quantitative;LOINC:2039-6;Immunohistochemical Profile;1
-Vimentin;LOINC:10519-7;Immunohistochemical Profile;0
-Vimentin Ag Tiss Ql ImStn;LOINC:10519-7;Immunohistochemical Profile;1
-Vimentin Ag [Presence] in Tissue by Immune stain;LOINC:10519-7;Immunohistochemical Profile;1
-Vimentin Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:10519-7;Immunohistochemical Profile;1
-Vimentin Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:10519-7;Immunohistochemical Profile;1
-E-cadherin;LOINC:29540-2;Immunohistochemical Profile;0
-E-Cadherin Tiss Ql ImStn;LOINC:29540-2;Immunohistochemical Profile;1
-E-cadherin [Presence] in Tissue by Immune stain;LOINC:29540-2;Immunohistochemical Profile;1
-E-cadherin:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:29540-2;Immunohistochemical Profile;1
-E-cadherin:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:29540-2;Immunohistochemical Profile;1
-No Information;PATH|IMMUNH:NI;Immunohistochemical Profile;0
-Other;PATH|IMMUNH:OT;Immunohistochemical Profile;0
-CD31;LOINC:47015-3;Immunohistochemical Profile;0
-CD31 Ag Tiss Ql ImStn;LOINC:47015-3;Immunohistochemical Profile;1
-CD31 Ag [Presence] in Tissue by Immune stain;LOINC:47015-3;Immunohistochemical Profile;1
-CD31 Ag:ACnc:Pt:Tiss:Ord:Immune stain;LOINC:47015-3;Immunohistochemical Profile;1
-CD31 Antigen:Arbitrary Concentration:Point in time:Tissue, unspecified:Ordinal:Immune stain;LOINC:47015-3;Immunohistochemical Profile;1
+Ber-EP4;LOINC:47010-4;Immunohistochemical Profile;0
+AE1/3;LOINC:40560-5;Immunohistochemical Profile;0
+Immunohistochemical Profile;None;Immunohistochemical Profile;0
+CD10;LOINC:51214-5;Immunohistochemical Profile;0

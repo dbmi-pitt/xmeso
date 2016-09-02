@@ -1,347 +1,415 @@
-VISCERAL PLEURA;SNOMED:81623005;Site of tumor;0
-Pleura pulmonalis;SNOMED:81623005;Site of tumor;1
-Pleura visceralis;SNOMED:81623005;Site of tumor;1
-Pleura visceralis (pulmonalis);SNOMED:81623005;Site of tumor;1
-Pleura, Visceral;SNOMED:81623005;Site of tumor;1
-Pulmonary pleura;SNOMED:81623005;Site of tumor;1
-Visceral Pleura;SNOMED:81623005;Site of tumor;1
-Visceral pleura;SNOMED:81623005;Site of tumor;1
-Visceral pleura structure;SNOMED:81623005;Site of tumor;1
-Visceral pleura structure (body structure);SNOMED:81623005;Site of tumor;1
-pleura pulmonary;SNOMED:81623005;Site of tumor;1
-pleura visceral;SNOMED:81623005;Site of tumor;1
-visceral pleura;SNOMED:81623005;Site of tumor;1
+Site of Tumor;SNOMED:371480007;Site of tumor;0
+Tumor site;SNOMED:371480007;Site of tumor;0
+Tumor site (observable entity);SNOMED:371480007;Site of tumor;1
+Tumour site;SNOMED:371480007;Site of tumor;1
+Not Applicable;ANA|SITE_OF_TUMOR:NA;Site of tumor;0
+OTHER;ANA|SITE_OF_TUMOR:OTHER;Site of tumor;0
+Adrenal;SNOMED:362894002;Site of tumor;0
+Adrenal part;SNOMED:362894002;Site of tumor;0
+Adrenal part (body structure);SNOMED:362894002;Site of tumor;1
+Bones;SNOMED:123037004;Site of tumor;0
+Body structure;SNOMED:123037004;Site of tumor;0
+Body structure (body structure);SNOMED:123037004;Site of tumor;1
+Body structures;SNOMED:123037004;Site of tumor;1
+Brain & CNS;SNOMED:389111004;Site of tumor;0
+Entire brain and spinal cord;SNOMED:389111004;Site of tumor;0
+Entire brain and spinal cord (body structure);SNOMED:389111004;Site of tumor;1
+Breast;SNOMED:181131000;Site of tumor;0
+Entire breast;SNOMED:181131000;Site of tumor;0
+Mamma;SNOMED:181131000;Site of tumor;1
+Entire breast (body structure);SNOMED:181131000;Site of tumor;1
+Head & Neck;SNOMED:255056009;Site of tumor;0
+Malignant tumor of head and neck;SNOMED:255056009;Site of tumor;0
+Malignant tumor of head and/or neck (disorder);SNOMED:255056009;Site of tumor;1
+Malignant tumor of head and/or neck;SNOMED:255056009;Site of tumor;1
+Malignant tumour of head and/or neck;SNOMED:255056009;Site of tumor;1
+Malignant tumour of head and neck;SNOMED:255056009;Site of tumor;1
+Kidney;SNOMED:363518003;Site of tumor;0
+Malignant tumor of kidney;SNOMED:363518003;Site of tumor;0
+Renal malignant tumor;SNOMED:363518003;Site of tumor;1
+Malignant tumor of kidney (disorder);SNOMED:363518003;Site of tumor;1
+CA - Renal cancer;SNOMED:363518003;Site of tumor;1
+Renal cancer;SNOMED:363518003;Site of tumor;1
+Renal malignant tumour;SNOMED:363518003;Site of tumor;1
+Malignant tumour of kidney;SNOMED:363518003;Site of tumor;1
+CA - Cancer of kidney;SNOMED:363518003;Site of tumor;1
+Larynx;SNOMED:301207000;Site of tumor;0
+Larynx present;SNOMED:301207000;Site of tumor;0
+Larynx present (finding);SNOMED:301207000;Site of tumor;1
+Leukemia;SNOMED:93143009;Site of tumor;0
+Leukaemia;SNOMED:93143009;Site of tumor;1
+Leukemia, disease;SNOMED:93143009;Site of tumor;1
+Leukemia, disease (disorder);SNOMED:93143009;Site of tumor;1
+Leukaemia, disease;SNOMED:93143009;Site of tumor;1
+Lymph node;SNOMED:81756000;Site of tumor;0
+Oral Cavity;SNOMED:363505006;Site of tumor;0
+Malignant tumor of oral cavity;SNOMED:363505006;Site of tumor;0
+Malignant tumour of oral cavity;SNOMED:363505006;Site of tumor;1
+Malignant tumour of mouth;SNOMED:363505006;Site of tumor;1
+Cancer of oral cavity;SNOMED:363505006;Site of tumor;1
+Mouth cancer;SNOMED:363505006;Site of tumor;1
+CA - Mouth cancer;SNOMED:363505006;Site of tumor;1
+Malignant tumor of mouth;SNOMED:363505006;Site of tumor;1
+Malignant tumor of oral cavity (disorder);SNOMED:363505006;Site of tumor;1
+Malignant neoplasm of mouth;SNOMED:363505006;Site of tumor;1
+Parotid Gland;SNOMED:181234002;Site of tumor;0
+Entire parotid gland;SNOMED:181234002;Site of tumor;0
+Parotid gland;SNOMED:181234002;Site of tumor;1
+Entire parotid gland (body structure);SNOMED:181234002;Site of tumor;1
+Pharynx;SNOMED:363507003;Site of tumor;0
+Malignant tumor of pharynx;SNOMED:363507003;Site of tumor;0
+Malignant tumour of pharynx;SNOMED:363507003;Site of tumor;1
+Cancer of pharynx;SNOMED:363507003;Site of tumor;1
+Malignant tumor of pharynx (disorder);SNOMED:363507003;Site of tumor;1
+CA - Cancer of pharynx;SNOMED:363507003;Site of tumor;1
+Pleura;SNOMED:264148002;Site of tumor;0
+Pleural;SNOMED:264148002;Site of tumor;0
+Pleural (qualifier value);SNOMED:264148002;Site of tumor;1
+Prostate;SNOMED:399068003;Site of tumor;0
+Malignant tumor of prostate;SNOMED:399068003;Site of tumor;0
+Malignant prostatic tumor;SNOMED:399068003;Site of tumor;1
+CA - Cancer of prostate;SNOMED:399068003;Site of tumor;1
+Malignant tumor of prostate (disorder);SNOMED:399068003;Site of tumor;1
+Malignant tumour of prostate;SNOMED:399068003;Site of tumor;1
+Cancer of prostate;SNOMED:399068003;Site of tumor;1
+Malignant prostatic tumour;SNOMED:399068003;Site of tumor;1
+Renal Pelvis;SNOMED:363457009;Site of tumor;0
+Malignant tumor of renal pelvis;SNOMED:363457009;Site of tumor;0
+Malignant tumor of renal pelvis (disorder);SNOMED:363457009;Site of tumor;1
+Malignant tumour of renal pelvis;SNOMED:363457009;Site of tumor;1
+Skin;SNOMED:402652009;Site of tumor;0
+Malignant vascular tumor of skin;SNOMED:402652009;Site of tumor;0
+Malignant vascular tumour of skin;SNOMED:402652009;Site of tumor;1
+Malignant vascular tumor of skin (disorder);SNOMED:402652009;Site of tumor;1
+Testis;SNOMED:188219004;Site of tumor;0
+Malignant tumor of undescended testis;SNOMED:188219004;Site of tumor;0
+Malignant tumor of undescended testis (disorder);SNOMED:188219004;Site of tumor;1
+Malignant neoplasm of undescended testis;SNOMED:188219004;Site of tumor;1
+Malignant tumour of retained testis;SNOMED:188219004;Site of tumor;1
+Malignant tumour of undescended testis;SNOMED:188219004;Site of tumor;1
+Cancer of undescended testis;SNOMED:188219004;Site of tumor;1
+Malignant tumor of retained testis;SNOMED:188219004;Site of tumor;1
+Thyroid;SNOMED:127018007;Site of tumor;0
+Neoplasm of thyroid gland;SNOMED:127018007;Site of tumor;0
+Tumor of thyroid gland;SNOMED:127018007;Site of tumor;1
+Thyroid tumor;SNOMED:127018007;Site of tumor;1
+Thyroid tumour;SNOMED:127018007;Site of tumor;1
+Neoplasm of thyroid gland (disorder);SNOMED:127018007;Site of tumor;1
+Tumour of thyroid gland;SNOMED:127018007;Site of tumor;1
+Unknown;ANA|TUMOR_SITE:UNKNOWN;Site of tumor;0
+Ureter;SNOMED:363458004;Site of tumor;0
+Malignant tumor of ureter;SNOMED:363458004;Site of tumor;0
+Ureter Ca;SNOMED:363458004;Site of tumor;1
+Malignant tumor of ureter (disorder);SNOMED:363458004;Site of tumor;1
+Cancer of ureter;SNOMED:363458004;Site of tumor;1
+Malignant tumour of ureter;SNOMED:363458004;Site of tumor;1
+Urinary Bladder;SNOMED:399326009;Site of tumor;0
+Malignant tumor of urinary bladder;SNOMED:399326009;Site of tumor;0
+Malignant tumor of urinary bladder (disorder);SNOMED:399326009;Site of tumor;1
+Bladder cancer;SNOMED:399326009;Site of tumor;1
+Malignant neoplasm of urinary bladder;SNOMED:399326009;Site of tumor;1
+Malignant tumour of urinary bladder;SNOMED:399326009;Site of tumor;1
+CA - Bladder cancer;SNOMED:399326009;Site of tumor;1
+PERICARDIUM;SNOMED:181295003;Site of tumor;0
+Entire pericardium;SNOMED:181295003;Site of tumor;0
+Entire pericardium (body structure);SNOMED:181295003;Site of tumor;1
+Pericardium;SNOMED:181295003;Site of tumor;1
+Fibrous pericardium;SNOMED:243953008;Site of tumor;0
+Entire fibrous portion of pericardium;SNOMED:243953008;Site of tumor;0
+Entire fibrous portion of pericardium (body structure);SNOMED:243953008;Site of tumor;1
+Parietal serous pericardium;SNOMED:243956000;Site of tumor;0
+Entire parietal pericardium;SNOMED:243956000;Site of tumor;0
+Entire parietal pericardium (body structure);SNOMED:243956000;Site of tumor;1
+Serous Pericardial Sac;SNOMED:362891005;Site of tumor;0
+Entire serous pericardial sac;SNOMED:362891005;Site of tumor;0
+Entire serous pericardial sac (body structure);SNOMED:362891005;Site of tumor;1
+Serous pericardium;SNOMED:243954002;Site of tumor;0
+Entire serous pericardium;SNOMED:243954002;Site of tumor;0
+Entire serous pericardium (body structure);SNOMED:243954002;Site of tumor;1
+Visceral serous pericardium;SNOMED:243955001;Site of tumor;0
+Entire visceral pericardium;SNOMED:243955001;Site of tumor;0
+Entire visceral pericardium (body structure);SNOMED:243955001;Site of tumor;1
+PERITONEUM;SNOMED:15425007;Site of tumor;0
+Peritoneum (serous membrane) structure;SNOMED:15425007;Site of tumor;0
+Serous membrane of abdomen;SNOMED:15425007;Site of tumor;1
+Peritoneum (serous membrane) structure (body structure);SNOMED:15425007;Site of tumor;1
+Peritoneum;SNOMED:15425007;Site of tumor;1
+Anus;SNOMED:181262009;Site of tumor;0
+Entire anus;SNOMED:181262009;Site of tumor;0
+Entire anus (body structure);SNOMED:181262009;Site of tumor;1
+Appendix;SNOMED:181255000;Site of tumor;0
+Entire appendix;SNOMED:181255000;Site of tumor;0
+Vermiform appendix;SNOMED:181255000;Site of tumor;1
+Entire appendix (body structure);SNOMED:181255000;Site of tumor;1
+Cervix Uteri;SNOMED:181453009;Site of tumor;0
+Entire cervix uteri;SNOMED:181453009;Site of tumor;0
+Cervix uteri;SNOMED:181453009;Site of tumor;1
+Entire cervix uteri (body structure);SNOMED:181453009;Site of tumor;1
+Colon;SNOMED:372174009;Site of tumor;0
+Colon part;SNOMED:372174009;Site of tumor;0
+Colon part (body structure);SNOMED:372174009;Site of tumor;1
+Corpus Uteri;SNOMED:396311006;Site of tumor;0
+Corpus uteri TNM finding;SNOMED:396311006;Site of tumor;0
+Corpus uteri TNM finding (finding);SNOMED:396311006;Site of tumor;1
+Esophagus;SNOMED:300294009;Site of tumor;0
+Esophagus normal;SNOMED:300294009;Site of tumor;0
+Oesophagus normal;SNOMED:300294009;Site of tumor;1
+Esophagus normal (finding);SNOMED:300294009;Site of tumor;1
+Gallbladder;SNOMED:363353009;Site of tumor;0
+Malignant tumor of gallbladder;SNOMED:363353009;Site of tumor;0
+Malignant tumour of gallbladder;SNOMED:363353009;Site of tumor;1
+Gallbladder Ca;SNOMED:363353009;Site of tumor;1
+Malignant tumor of gallbladder (disorder);SNOMED:363353009;Site of tumor;1
+Large Intestine;SNOMED:181254001;Site of tumor;0
+Entire large intestine;SNOMED:181254001;Site of tumor;0
+Entire large intestine (body structure);SNOMED:181254001;Site of tumor;1
+LI - Large intestine;SNOMED:181254001;Site of tumor;1
+Large intestine;SNOMED:181254001;Site of tumor;1
+Liver;SNOMED:93870000;Site of tumor;0
+Malignant neoplasm of liver;SNOMED:93870000;Site of tumor;0
+Malignant tumour of liver;SNOMED:93870000;Site of tumor;1
+Liver cancer;SNOMED:93870000;Site of tumor;1
+CA - Liver cancer;SNOMED:93870000;Site of tumor;1
+Malignant neoplasm of liver (disorder);SNOMED:93870000;Site of tumor;1
+Malignant tumor of liver;SNOMED:93870000;Site of tumor;1
+Ovary;SNOMED:363443007;Site of tumor;0
+Malignant tumor of ovary;SNOMED:363443007;Site of tumor;0
+Malignant tumour of ovary;SNOMED:363443007;Site of tumor;1
+CA - Cancer of ovary;SNOMED:363443007;Site of tumor;1
+Malignant tumor of ovary (disorder);SNOMED:363443007;Site of tumor;1
+Ovarian Ca;SNOMED:363443007;Site of tumor;1
+Cancer of ovary;SNOMED:363443007;Site of tumor;1
+Pancreas;SNOMED:363418001;Site of tumor;0
+Malignant tumor of pancreas;SNOMED:363418001;Site of tumor;0
+Malignant tumor of pancreas (disorder);SNOMED:363418001;Site of tumor;1
+CA - Pancreatic cancer;SNOMED:363418001;Site of tumor;1
+Pancreatic cancer;SNOMED:363418001;Site of tumor;1
+CA - Cancer of pancreas;SNOMED:363418001;Site of tumor;1
+Malignant tumour of pancreas;SNOMED:363418001;Site of tumor;1
+Pelvic Peritoneum;SNOMED:362721006;Site of tumor;0
+Entire pelvic peritoneum;SNOMED:362721006;Site of tumor;0
+Entire pelvic peritoneum (body structure);SNOMED:362721006;Site of tumor;1
+Rectosigmoid;SNOMED:363414004;Site of tumor;0
+Malignant tumor of rectosigmoid junction;SNOMED:363414004;Site of tumor;0
+Malignant tumour of rectosigmoid junction;SNOMED:363414004;Site of tumor;1
+Ca rectosigmoid junction;SNOMED:363414004;Site of tumor;1
+Malignant tumor of rectosigmoid junction (disorder);SNOMED:363414004;Site of tumor;1
+Rectum;SNOMED:363351006;Site of tumor;0
+Malignant tumor of rectum;SNOMED:363351006;Site of tumor;0
+Malignant tumor of rectum (disorder);SNOMED:363351006;Site of tumor;1
+Malignant tumour of rectum;SNOMED:363351006;Site of tumor;1
+CA - Cancer of rectum;SNOMED:363351006;Site of tumor;1
+Rectal cancer;SNOMED:363351006;Site of tumor;1
+Small Intestine;SNOMED:181250005;Site of tumor;0
+Entire small intestine;SNOMED:181250005;Site of tumor;0
+SI - Small intestine;SNOMED:181250005;Site of tumor;1
+Small intestine;SNOMED:181250005;Site of tumor;1
+Entire small intestine (body structure);SNOMED:181250005;Site of tumor;1
+Spleen;SNOMED:363499005;Site of tumor;0
+Malignant tumor of spleen;SNOMED:363499005;Site of tumor;0
+Malignant tumor of spleen (disorder);SNOMED:363499005;Site of tumor;1
+Malignant tumour of spleen;SNOMED:363499005;Site of tumor;1
+Stomach;SNOMED:363349007;Site of tumor;0
+Malignant tumor of stomach;SNOMED:363349007;Site of tumor;0
+Malignant tumour of stomach;SNOMED:363349007;Site of tumor;1
+Malignant tumor of stomach (disorder);SNOMED:363349007;Site of tumor;1
+CA - Cancer of stomach;SNOMED:363349007;Site of tumor;1
+Cancer of stomach;SNOMED:363349007;Site of tumor;1
+Gastric cancer;SNOMED:363349007;Site of tumor;1
 PLEURAL;SNOMED:74964007;Site of tumor;0
-OTHER;SNOMED:74964007;Site of tumor;1
+Other;SNOMED:74964007;Site of tumor;0
 Other (qualifier value);SNOMED:74964007;Site of tumor;1
-Other or Miscellaneous;SNOMED:74964007;Site of tumor;1
-Hilum of Lung;SNOMED:264017007;Site of tumor;0
-Entire hilum of lung;SNOMED:264017007;Site of tumor;1
-Entire hilum of lung (body structure);SNOMED:264017007;Site of tumor;1
-Hilum of lung;SNOMED:264017007;Site of tumor;1
-Interstitial tissue of lung;SNOMED:113254000;Site of tumor;0
-Interstitial tissue of lung, NOS;SNOMED:113254000;Site of tumor;1
-Structure of interstitial tissue of lung;SNOMED:113254000;Site of tumor;1
-Structure of interstitial tissue of lung (body structure);SNOMED:113254000;Site of tumor;1
-Lobe of lung;SNOMED:31094006;Site of tumor;0
-Lobe of lung, NOS;SNOMED:31094006;Site of tumor;1
-Lung Lobe;SNOMED:31094006;Site of tumor;1
-Pulmonary lobe;SNOMED:31094006;Site of tumor;1
-Structure of lobe of lung;SNOMED:31094006;Site of tumor;1
-Structure of lobe of lung (body structure);SNOMED:31094006;Site of tumor;1
-lobe lung;SNOMED:31094006;Site of tumor;1
-lobe of lung;SNOMED:31094006;Site of tumor;1
-lobe pulmonary;SNOMED:31094006;Site of tumor;1
-lobes lung;SNOMED:31094006;Site of tumor;1
-lobes lungs;SNOMED:31094006;Site of tumor;1
-lung lobe;SNOMED:31094006;Site of tumor;1
-pulmonary lobe;SNOMED:31094006;Site of tumor;1
-Bronchopulmonary segment;SNOMED:72674008;Site of tumor;0
-BPS - Bronchopulmonary segment;SNOMED:72674008;Site of tumor;1
-Bronchopulmonary segment structure;SNOMED:72674008;Site of tumor;1
-Bronchopulmonary segment structure (body structure);SNOMED:72674008;Site of tumor;1
-Bronchopulmonary segment, NOS;SNOMED:72674008;Site of tumor;1
-Bronchopulmonary segments;SNOMED:72674008;Site of tumor;1
-Bronchopulmonary segments set;SNOMED:72674008;Site of tumor;1
-Segment of lung;SNOMED:72674008;Site of tumor;1
-Segmenta bronchopulmonalia;SNOMED:72674008;Site of tumor;1
-Set of bronchopulmonary segments;SNOMED:72674008;Site of tumor;1
-bronchopulmonary segment;SNOMED:72674008;Site of tumor;1
-bronchopulmonary segments;SNOMED:72674008;Site of tumor;1
-lung segments;SNOMED:72674008;Site of tumor;1
-Apical segment of lung;SNOMED:245515008;Site of tumor;0
-Apical bronchopulmonary segment;SNOMED:245515008;Site of tumor;1
-Apical segment of upper lobe of lung;SNOMED:245515008;Site of tumor;1
-Apical segment of upper lobe of lung (body structure);SNOMED:245515008;Site of tumor;1
+LUNG;SNOMED:93880001;Site of tumor;0
+Primary malignant neoplasm of lung;SNOMED:93880001;Site of tumor;0
+Primary malignant neoplasm of lung (disorder);SNOMED:93880001;Site of tumor;1
+Anterior basal segment of left lower lobe;SNOMED:63215004;Site of tumor;0
+Structure of anterior basal segment of left lower lobe of lung;SNOMED:63215004;Site of tumor;0
+Structure of anterior basal segment of left lower lobe of lung (body structure);SNOMED:63215004;Site of tumor;1
+Anterior basal segment of left lower lobe of lung;SNOMED:63215004;Site of tumor;1
+Anterior basal segment of right lower lobe;SNOMED:11098002;Site of tumor;0
+Structure of anterior basal segment of right lower lobe of lung;SNOMED:11098002;Site of tumor;0
+Anterior basal segment of right lower lobe of lung;SNOMED:11098002;Site of tumor;1
+Structure of anterior basal segment of right lower lobe of lung (body structure);SNOMED:11098002;Site of tumor;1
 Apical segment of left upper lobe;SNOMED:245522000;Site of tumor;0
 Apical segment of left upper lobe (body structure);SNOMED:245522000;Site of tumor;1
+Apical segment of lung;SNOMED:245515008;Site of tumor;0
+Apical segment of upper lobe of lung;SNOMED:245515008;Site of tumor;0
+Apical segment of upper lobe of lung (body structure);SNOMED:245515008;Site of tumor;1
 Apical segment of right upper lobe ;SNOMED:361970001;Site of tumor;0
-Entire apical segment of right upper lobe of lung;SNOMED:361970001;Site of tumor;1
+Entire apical segment of right upper lobe of lung;SNOMED:361970001;Site of tumor;0
 Entire apical segment of right upper lobe of lung (body structure);SNOMED:361970001;Site of tumor;1
-Right apical segmental bronchus;SNOMED:65359009;Site of tumor;0
-Apical segmental bronchus of right upper lobe;SNOMED:65359009;Site of tumor;1
-Bronchus segmentalis apicalis (BI)(dexter);SNOMED:65359009;Site of tumor;1
-Right B1;SNOMED:65359009;Site of tumor;1
-Right apical bronchus;SNOMED:65359009;Site of tumor;1
-Structure of right apical segmental bronchus;SNOMED:65359009;Site of tumor;1
-Structure of right apical segmental bronchus (body structure);SNOMED:65359009;Site of tumor;1
 Basal segment of lung;SNOMED:245516009;Site of tumor;0
 Basal segment of lung (body structure);SNOMED:245516009;Site of tumor;1
-Base of lung;SNOMED:245516009;Site of tumor;1
-Base of lung (viewed anatomically);SNOMED:245516009;Site of tumor;1
-Base of lung, NOS;SNOMED:245516009;Site of tumor;1
-Base of the Lung;SNOMED:245516009;Site of tumor;1
-Basis pulmonis (pulmonalis);SNOMED:245516009;Site of tumor;1
-Structure of base of lung;SNOMED:245516009;Site of tumor;1
-Structure of base of lung (body structure);SNOMED:245516009;Site of tumor;1
-basal segment of lung;SNOMED:245516009;Site of tumor;1
-base lung;SNOMED:245516009;Site of tumor;1
-base lungs;SNOMED:245516009;Site of tumor;1
-bases lung;SNOMED:245516009;Site of tumor;1
-lung base;SNOMED:245516009;Site of tumor;1
-Anterior basal segment of left lower lobe;SNOMED:63215004;Site of tumor;0
-Anterior basal segment of left lower lobe of lung;SNOMED:63215004;Site of tumor;1
-Anterior basal segment of left lung [S VIII];SNOMED:63215004;Site of tumor;1
-Bronchopulmonary segment VIII of left lung;SNOMED:63215004;Site of tumor;1
-Left anterior basal bronchopulmonary segment;SNOMED:63215004;Site of tumor;1
-Segmentum basale anterius (SVIII)(pulmo sinister);SNOMED:63215004;Site of tumor;1
-Segmentum basale anterius pulmonis sinistri [S VIII];SNOMED:63215004;Site of tumor;1
-Structure of anterior basal segment of left lower lobe of lung;SNOMED:63215004;Site of tumor;1
-Structure of anterior basal segment of left lower lobe of lung (body structure);SNOMED:63215004;Site of tumor;1
+Base of left lung;SNOMED:184611002;Site of tumor;0
+Entire base of left lung;SNOMED:184611002;Site of tumor;0
+Entire base of left lung (body structure);SNOMED:184611002;Site of tumor;1
+Base of lung;SNOMED:314791004;Site of tumor;0
+Entire base of lung;SNOMED:314791004;Site of tumor;0
+Entire base of lung (body structure);SNOMED:314791004;Site of tumor;1
+Base of right lung;SNOMED:181416003;Site of tumor;0
+Entire base of right lung;SNOMED:181416003;Site of tumor;0
+Entire base of right lung (body structure);SNOMED:181416003;Site of tumor;1
+Bronchopulmonary segment;SNOMED:72674008;Site of tumor;0
+Bronchopulmonary segment structure;SNOMED:72674008;Site of tumor;0
+BPS - Bronchopulmonary segment;SNOMED:72674008;Site of tumor;1
+Bronchopulmonary segment structure (body structure);SNOMED:72674008;Site of tumor;1
+Segment of lung;SNOMED:72674008;Site of tumor;1
+Fissure of left lung;SNOMED:278984000;Site of tumor;0
+Fissure of left lung (body structure);SNOMED:278984000;Site of tumor;1
+Fissure of Lung;SNOMED:278983006;Site of tumor;0
+Fissure of lung;SNOMED:278983006;Site of tumor;0
+Fissure of lung (body structure);SNOMED:278983006;Site of tumor;1
+Fissure of right lung;SNOMED:278985004;Site of tumor;0
+Fissure of right lung (body structure);SNOMED:278985004;Site of tumor;1
+Hilum of Left Lung;SNOMED:361983000;Site of tumor;0
+Entire hilum of left lung;SNOMED:361983000;Site of tumor;0
+Entire hilum of left lung (body structure);SNOMED:361983000;Site of tumor;1
+Hilum of Lung;SNOMED:264017007;Site of tumor;0
+Entire hilum of lung;SNOMED:264017007;Site of tumor;0
+Hilum of lung;SNOMED:264017007;Site of tumor;1
+Entire hilum of lung (body structure);SNOMED:264017007;Site of tumor;1
+Hilum of Right Lung;SNOMED:361968005;Site of tumor;0
+Entire hilum of right lung;SNOMED:361968005;Site of tumor;0
+Entire hilum of right lung (body structure);SNOMED:361968005;Site of tumor;1
+Horizontal interlobar fissure of right lung;SNOMED:83067000;Site of tumor;0
+Structure of horizontal interlobar fissure of right lung;SNOMED:83067000;Site of tumor;0
+Structure of horizontal interlobar fissure of right lung (body structure);SNOMED:83067000;Site of tumor;1
+Interstitial tissue of lung;SNOMED:113254000;Site of tumor;0
+Structure of interstitial tissue of lung;SNOMED:113254000;Site of tumor;0
+Structure of interstitial tissue of lung (body structure);SNOMED:113254000;Site of tumor;1
 Lateral basal segment of left lower lobe;SNOMED:15512001;Site of tumor;0
-Bronchopulmonary segment IX of left lung;SNOMED:15512001;Site of tumor;1
+Structure of lateral basal segment of left lower lobe of lung;SNOMED:15512001;Site of tumor;0
 Lateral basal segment of left lower lobe of lung;SNOMED:15512001;Site of tumor;1
-Lateral basal segment of left lung [S IX];SNOMED:15512001;Site of tumor;1
-Left lateral basal bronchopulmonary segment;SNOMED:15512001;Site of tumor;1
-Left lower lobe lateral basal segment;SNOMED:15512001;Site of tumor;1
-Left lower lobe of lung, lateral basal segment;SNOMED:15512001;Site of tumor;1
-Segmentum basale laterale (SIX)(pulmo sinister);SNOMED:15512001;Site of tumor;1
-Segmentum basale laterale pulmonis sinistri [S IX];SNOMED:15512001;Site of tumor;1
-Structure of lateral basal segment of left lower lobe of lung;SNOMED:15512001;Site of tumor;1
 Structure of lateral basal segment of left lower lobe of lung (body structure);SNOMED:15512001;Site of tumor;1
-Medial basal segment of left lower lobe of lung;SNOMED:90382001;Site of tumor;0
-Bronchopulmonary segment VII of left lung;SNOMED:90382001;Site of tumor;1
-Left lower lobe of lung, basal medial segment;SNOMED:90382001;Site of tumor;1
-Left medial basal bronchopulmonary segment;SNOMED:90382001;Site of tumor;1
-Medial basal segment of left lung [S VII];SNOMED:90382001;Site of tumor;1
-Segmentum basale mediale (cardiacum)(SVII)(pulmo sinister);SNOMED:90382001;Site of tumor;1
-Segmentum basale mediale pulmonis sinistri [S VII];SNOMED:90382001;Site of tumor;1
-Segmentum cardiacum pulmonis sinistri [S VII];SNOMED:90382001;Site of tumor;1
-Structure of medial basal segment of left lower lobe of lung;SNOMED:90382001;Site of tumor;1
-Structure of medial basal segment of left lower lobe of lung (body structure);SNOMED:90382001;Site of tumor;1
-Left lower lobe medial segmental bronchus;SNOMED:76760009;Site of tumor;0
-Bronchus segmentalis basalis medialis (BVII)(sinister);SNOMED:76760009;Site of tumor;1
-Left B7;SNOMED:76760009;Site of tumor;1
-Left cardiac segmental bronchus;SNOMED:76760009;Site of tumor;1
-Left medial basal bronchus;SNOMED:76760009;Site of tumor;1
-Left medial basal segmental bronchus;SNOMED:76760009;Site of tumor;1
-Medial basal segmental bronchus of left lower lobe;SNOMED:76760009;Site of tumor;1
-Structure of left lower lobe medial segmental bronchus;SNOMED:76760009;Site of tumor;1
-Structure of left lower lobe medial segmental bronchus (body structure);SNOMED:76760009;Site of tumor;1
-Posterior basal segment of left lower lobe;SNOMED:46148009;Site of tumor;0
-Bronchopulmonary segment X of left lung;SNOMED:46148009;Site of tumor;1
-Left lower lobe of lung, posterior basal segment;SNOMED:46148009;Site of tumor;1
-Left posterior basal bronchopulmonary segment;SNOMED:46148009;Site of tumor;1
-Posterior basal segment of left lower lobe of lung;SNOMED:46148009;Site of tumor;1
-Posterior basal segment of left lung [S X];SNOMED:46148009;Site of tumor;1
-Segmentum basale posterius (SX)(pulmo sinister);SNOMED:46148009;Site of tumor;1
-Segmentum basale posterius pulmonis sinistri [S X];SNOMED:46148009;Site of tumor;1
-Structure of posterior basal segment of left lower lobe of lung;SNOMED:46148009;Site of tumor;1
-Structure of posterior basal segment of left lower lobe of lung (body structure);SNOMED:46148009;Site of tumor;1
-Left lower lobe posterior segmental bronchus;SNOMED:43851006;Site of tumor;0
-Bronchus segmentalis basalis posterior (BX)(sinister);SNOMED:43851006;Site of tumor;1
-Left B10;SNOMED:43851006;Site of tumor;1
-Left posterior basal bronchus;SNOMED:43851006;Site of tumor;1
-Left posterior basal segmental bronchus;SNOMED:43851006;Site of tumor;1
-Posterior basal segmental bronchus of left lower lobe;SNOMED:43851006;Site of tumor;1
-Structure of left lower lobe posterior segmental bronchus;SNOMED:43851006;Site of tumor;1
-Structure of left lower lobe posterior segmental bronchus (body structure);SNOMED:43851006;Site of tumor;1
-Anterior basal segment of right lower lobe;SNOMED:11098002;Site of tumor;0
-Anterior basal bronchopulmonary segment of right lung;SNOMED:11098002;Site of tumor;1
-Anterior basal segment of right lower lobe of lung;SNOMED:11098002;Site of tumor;1
-Anterior basal segment of right lung [S VIII];SNOMED:11098002;Site of tumor;1
-Bronchopulmonary segment VIII of right lung;SNOMED:11098002;Site of tumor;1
-Right anterior basal bronchopulmonary segment;SNOMED:11098002;Site of tumor;1
-Right lower lobe of lung, anterior basal segment;SNOMED:11098002;Site of tumor;1
-Segmentum basale anterius (SVIII)(pulmo dexter);SNOMED:11098002;Site of tumor;1
-Segmentum basale anterius pulmonis dextri [S VIII];SNOMED:11098002;Site of tumor;1
-Structure of anterior basal segment of right lower lobe of lung;SNOMED:11098002;Site of tumor;1
-Structure of anterior basal segment of right lower lobe of lung (body structure);SNOMED:11098002;Site of tumor;1
-Right lower lobe anterior segmental bronchus;SNOMED:90949006;Site of tumor;0
-Anterior basal segmental bronchus of right lower lobe;SNOMED:90949006;Site of tumor;1
-Bronchus segmentalis basalis anterior (BVIII)(dexter);SNOMED:90949006;Site of tumor;1
-Right B8;SNOMED:90949006;Site of tumor;1
-Right anterior basal bronchus;SNOMED:90949006;Site of tumor;1
-Right anterior basal segmental bronchus;SNOMED:90949006;Site of tumor;1
-Structure of right lower lobe anterior segmental bronchus;SNOMED:90949006;Site of tumor;1
-Structure of right lower lobe anterior segmental bronchus (body structure);SNOMED:90949006;Site of tumor;1
 Lateral basal segment of right lower lobe;SNOMED:74932000;Site of tumor;0
-Bronchopulmonary segment IX of right lung;SNOMED:74932000;Site of tumor;1
-Lateral basal bronchopulmonary segment of right lung;SNOMED:74932000;Site of tumor;1
+Structure of lateral basal segment of right lower lobe of lung;SNOMED:74932000;Site of tumor;0
 Lateral basal segment of right lower lobe of lung;SNOMED:74932000;Site of tumor;1
-Lateral basal segment of right lung [S IX];SNOMED:74932000;Site of tumor;1
-Right lateral basal bronchopulmonary segment;SNOMED:74932000;Site of tumor;1
-Right lower lobe of lung, lateral basal segment;SNOMED:74932000;Site of tumor;1
-Segmentum basal laterale (SIX)(pulmo dexter);SNOMED:74932000;Site of tumor;1
-Segmentum basale laterale pulmonis dextri [S IX];SNOMED:74932000;Site of tumor;1
-Structure of lateral basal segment of right lower lobe of lung;SNOMED:74932000;Site of tumor;1
 Structure of lateral basal segment of right lower lobe of lung (body structure);SNOMED:74932000;Site of tumor;1
-Right lower lobe lateral segmental bronchus;SNOMED:41765007;Site of tumor;0
-Bronchus segmentalis basalis lateralis (IX)(dexter);SNOMED:41765007;Site of tumor;1
-Lateral basal segmental bronchus of right lower lobe;SNOMED:41765007;Site of tumor;1
-Right B9;SNOMED:41765007;Site of tumor;1
-Right lateral basal bronchus;SNOMED:41765007;Site of tumor;1
-Right lateral basal segmental bronchus;SNOMED:41765007;Site of tumor;1
-Structure of right lower lobe lateral segmental bronchus;SNOMED:41765007;Site of tumor;1
-Structure of right lower lobe lateral segmental bronchus (body structure);SNOMED:41765007;Site of tumor;1
-Medial basal segment of right lower lobe of lung;SNOMED:27589003;Site of tumor;0
-Bronchopulmonary segment VII of right lung;SNOMED:27589003;Site of tumor;1
-Cardiac bronchopulmonary segment of right lung;SNOMED:27589003;Site of tumor;1
-Medial basal bronchopulmonary segment of right lung;SNOMED:27589003;Site of tumor;1
-Medial basal segment of right lung [S VII];SNOMED:27589003;Site of tumor;1
-Right lower lobe of lung, medial basal segment;SNOMED:27589003;Site of tumor;1
-Right medial basal bronchopulmonary segment;SNOMED:27589003;Site of tumor;1
-Segmentum basale mediale (SVII)(pulmo dexter);SNOMED:27589003;Site of tumor;1
-Segmentum basale mediale pulmonis dextri [S VII];SNOMED:27589003;Site of tumor;1
-Segmentum cardiacum pulmonis dextri [S VII];SNOMED:27589003;Site of tumor;1
-Structure of medial basal segment of right lower lobe of lung;SNOMED:27589003;Site of tumor;1
-Structure of medial basal segment of right lower lobe of lung (body structure);SNOMED:27589003;Site of tumor;1
-Posterior basal segment of right lower lobe;SNOMED:16057008;Site of tumor;0
-Bronchopulmonary segment X of right lung;SNOMED:16057008;Site of tumor;1
-Posterior basal bronchopulmonary segment of right lung;SNOMED:16057008;Site of tumor;1
-Posterior basal segment of right lower lobe of lung;SNOMED:16057008;Site of tumor;1
-Posterior basal segment of right lung [S X];SNOMED:16057008;Site of tumor;1
-Right lower lobe of lung, posterior basal segment;SNOMED:16057008;Site of tumor;1
-Right posterior basal bronchopulmonary segment;SNOMED:16057008;Site of tumor;1
-Segmentum basale posterius (SX)(pulmo dexter);SNOMED:16057008;Site of tumor;1
-Segmentum basale posterius pulmonis dextri [S X];SNOMED:16057008;Site of tumor;1
-Structure of posterior basal segment of right lower lobe of lung;SNOMED:16057008;Site of tumor;1
-Structure of posterior basal segment of right lower lobe of lung (body structure);SNOMED:16057008;Site of tumor;1
-Right lower lobe posterior segmental bronchus;SNOMED:64154003;Site of tumor;0
-Bronchus segmentalis basalis posterior (BX)(dexter);SNOMED:64154003;Site of tumor;1
-Posterior basal segmental bronchus of right lower lobe;SNOMED:64154003;Site of tumor;1
-Right B10;SNOMED:64154003;Site of tumor;1
-Right posterior basal bronchus;SNOMED:64154003;Site of tumor;1
-Right posterior basal segmental bronchus;SNOMED:64154003;Site of tumor;1
-Structure of right lower lobe posterior segmental bronchus;SNOMED:64154003;Site of tumor;1
-Structure of right lower lobe posterior segmental bronchus (body structure);SNOMED:64154003;Site of tumor;1
+Left lower lobe medial segmental bronchus;SNOMED:76760009;Site of tumor;0
+Structure of left lower lobe medial segmental bronchus;SNOMED:76760009;Site of tumor;0
+Structure of left lower lobe medial segmental bronchus (body structure);SNOMED:76760009;Site of tumor;1
+Left lower lobe posterior segmental bronchus;SNOMED:43851006;Site of tumor;0
+Structure of left lower lobe posterior segmental bronchus;SNOMED:43851006;Site of tumor;0
+Structure of left lower lobe posterior segmental bronchus (body structure);SNOMED:43851006;Site of tumor;1
+Lobe of lung;SNOMED:31094006;Site of tumor;0
+Structure of lobe of lung;SNOMED:31094006;Site of tumor;0
+Structure of lobe of lung (body structure);SNOMED:31094006;Site of tumor;1
 Lower lobe of left lung;SNOMED:361989001;Site of tumor;0
-Entire left lower lobe of lung;SNOMED:361989001;Site of tumor;1
+Entire left lower lobe of lung;SNOMED:361989001;Site of tumor;0
 Entire left lower lobe of lung (body structure);SNOMED:361989001;Site of tumor;1
 LLL - Lower lobe of left lung;SNOMED:361989001;Site of tumor;1
-Upper lobe of left lung;SNOMED:361984006;Site of tumor;0
-Entire left upper lobe of lung;SNOMED:361984006;Site of tumor;1
-Entire left upper lobe of lung (body structure);SNOMED:361984006;Site of tumor;1
-LUL - Upper lobe of left lung;SNOMED:361984006;Site of tumor;1
 Lower lobe of right lung;SNOMED:361976007;Site of tumor;0
-Entire right lower lobe of lung;SNOMED:361976007;Site of tumor;1
-Entire right lower lobe of lung (body structure);SNOMED:361976007;Site of tumor;1
+Entire right lower lobe of lung;SNOMED:361976007;Site of tumor;0
 RLL - Lower lobe of right lung;SNOMED:361976007;Site of tumor;1
+Entire right lower lobe of lung (body structure);SNOMED:361976007;Site of tumor;1
+Lung parenchyma;SNOMED:201712001;Site of tumor;0
+Entire lung parenchyma;SNOMED:201712001;Site of tumor;0
+Entire lung parenchyma (body structure);SNOMED:201712001;Site of tumor;1
+Medial basal segment of left lower lobe of lung;SNOMED:90382001;Site of tumor;0
+Structure of medial basal segment of left lower lobe of lung;SNOMED:90382001;Site of tumor;0
+Structure of medial basal segment of left lower lobe of lung (body structure);SNOMED:90382001;Site of tumor;1
+Medial basal segment of right lower lobe of lung;SNOMED:27589003;Site of tumor;0
+Structure of medial basal segment of right lower lobe of lung;SNOMED:27589003;Site of tumor;0
+Structure of medial basal segment of right lower lobe of lung (body structure);SNOMED:27589003;Site of tumor;1
 Middle lobe of right lung;SNOMED:361973004;Site of tumor;0
-Entire right middle lobe of lung;SNOMED:361973004;Site of tumor;1
+Entire right middle lobe of lung;SNOMED:361973004;Site of tumor;0
 Entire right middle lobe of lung (body structure);SNOMED:361973004;Site of tumor;1
 RML - Middle lobe of right lung;SNOMED:361973004;Site of tumor;1
-Upper lobe of right lung;SNOMED:361969002;Site of tumor;0
-Entire right upper lobe of lung;SNOMED:361969002;Site of tumor;1
-Entire right upper lobe of lung (body structure);SNOMED:361969002;Site of tumor;1
-RUL - Upper lobe of right lung;SNOMED:361969002;Site of tumor;1
 Normal accessory lobe of lung;SNOMED:76271006;Site of tumor;0
-Accessory lobe of lung;SNOMED:76271006;Site of tumor;1
-Structure of normal accessory lobe of lung;SNOMED:76271006;Site of tumor;1
+Structure of normal accessory lobe of lung;SNOMED:76271006;Site of tumor;0
 Structure of normal accessory lobe of lung (body structure);SNOMED:76271006;Site of tumor;1
-Lung parenchyma;SNOMED:201712001;Site of tumor;0
-Entire lung parenchyma;SNOMED:201712001;Site of tumor;1
-Entire lung parenchyma (body structure);SNOMED:201712001;Site of tumor;1
+Accessory lobe of lung;SNOMED:76271006;Site of tumor;1
+Oblique interlobar fissure of left lung;SNOMED:63914005;Site of tumor;0
+Structure of oblique interlobar fissure of left lung;SNOMED:63914005;Site of tumor;0
+Structure of oblique interlobar fissure of left lung (body structure);SNOMED:63914005;Site of tumor;1
+Oblique interlobar fissure of right lung;SNOMED:24720008;Site of tumor;0
+Structure of oblique interlobar fissure of right lung;SNOMED:24720008;Site of tumor;0
+Structure of oblique interlobar fissure of right lung (body structure);SNOMED:24720008;Site of tumor;1
+Posterior basal segment of left lower lobe;SNOMED:46148009;Site of tumor;0
+Structure of posterior basal segment of left lower lobe of lung;SNOMED:46148009;Site of tumor;0
+Posterior basal segment of left lower lobe of lung;SNOMED:46148009;Site of tumor;1
+Structure of posterior basal segment of left lower lobe of lung (body structure);SNOMED:46148009;Site of tumor;1
+Posterior basal segment of right lower lobe;SNOMED:16057008;Site of tumor;0
+Structure of posterior basal segment of right lower lobe of lung;SNOMED:16057008;Site of tumor;0
+Posterior basal segment of right lower lobe of lung;SNOMED:16057008;Site of tumor;1
+Structure of posterior basal segment of right lower lobe of lung (body structure);SNOMED:16057008;Site of tumor;1
 Pulmonary acinus;SNOMED:361365004;Site of tumor;0
-Entire pulmonary acinus;SNOMED:361365004;Site of tumor;1
+Entire pulmonary acinus;SNOMED:361365004;Site of tumor;0
 Entire pulmonary acinus (body structure);SNOMED:361365004;Site of tumor;1
 Pulmonary lobule;SNOMED:361365004;Site of tumor;1
 Pulmonary alveoli;SNOMED:113253006;Site of tumor;0
-Alveoli, Pulmonary;SNOMED:113253006;Site of tumor;1
-Alveolus pulmonis;SNOMED:113253006;Site of tumor;1
-Alveolus, Pulmonary;SNOMED:113253006;Site of tumor;1
-Pulmonary Alveoli;SNOMED:113253006;Site of tumor;1
-Pulmonary Alveolus;SNOMED:113253006;Site of tumor;1
-Pulmonary alveolar structure;SNOMED:113253006;Site of tumor;1
+Pulmonary alveolar structure;SNOMED:113253006;Site of tumor;0
 Pulmonary alveolar structure (body structure);SNOMED:113253006;Site of tumor;1
-Pulmonary alveolus;SNOMED:113253006;Site of tumor;1
-lung alveolus;SNOMED:113253006;Site of tumor;1
-pulmonary alveoli;SNOMED:113253006;Site of tumor;1
 Respiratory bronchiole;SNOMED:200723008;Site of tumor;0
-Bronchiole, Respiratory;SNOMED:200723008;Site of tumor;1
-Bronchioles, Respiratory;SNOMED:200723008;Site of tumor;1
-Bronchiolus respiratorius;SNOMED:200723008;Site of tumor;1
-Respiratory Bronchiole;SNOMED:200723008;Site of tumor;1
-Respiratory Bronchioles;SNOMED:200723008;Site of tumor;1
-Structure of respiratory bronchiole;SNOMED:200723008;Site of tumor;1
+Structure of respiratory bronchiole;SNOMED:200723008;Site of tumor;0
 Structure of respiratory bronchiole (body structure);SNOMED:200723008;Site of tumor;1
-bronchioles respiratory;SNOMED:200723008;Site of tumor;1
-respiratory bronchiole;SNOMED:200723008;Site of tumor;1
+Right apical segmental bronchus;SNOMED:65359009;Site of tumor;0
+Structure of right apical segmental bronchus;SNOMED:65359009;Site of tumor;0
+Structure of right apical segmental bronchus (body structure);SNOMED:65359009;Site of tumor;1
+Right lower lobe anterior segmental bronchus;SNOMED:90949006;Site of tumor;0
+Structure of right lower lobe anterior segmental bronchus;SNOMED:90949006;Site of tumor;0
+Structure of right lower lobe anterior segmental bronchus (body structure);SNOMED:90949006;Site of tumor;1
+Right lower lobe lateral segmental bronchus;SNOMED:41765007;Site of tumor;0
+Structure of right lower lobe lateral segmental bronchus;SNOMED:41765007;Site of tumor;0
+Structure of right lower lobe lateral segmental bronchus (body structure);SNOMED:41765007;Site of tumor;1
+Right lower lobe posterior segmental bronchus;SNOMED:64154003;Site of tumor;0
+Structure of right lower lobe posterior segmental bronchus;SNOMED:64154003;Site of tumor;0
+Structure of right lower lobe posterior segmental bronchus (body structure);SNOMED:64154003;Site of tumor;1
 Terminal bronchiole;SNOMED:278981008;Site of tumor;0
-Entire terminal bronchiole;SNOMED:278981008;Site of tumor;1
-Entire terminal bronchiole (body structure);SNOMED:278981008;Site of tumor;1
+Entire terminal bronchiole;SNOMED:278981008;Site of tumor;0
 TB - Terminal bronchiole;SNOMED:278981008;Site of tumor;1
-Serous Pericardial Sac;SNOMED:362891005;Site of tumor;0
-Entire serous pericardial sac;SNOMED:362891005;Site of tumor;1
-Entire serous pericardial sac (body structure);SNOMED:362891005;Site of tumor;1
-Parietal serous pericardium;SNOMED:243956000;Site of tumor;0
-Entire parietal pericardium;SNOMED:243956000;Site of tumor;1
-Entire parietal pericardium (body structure);SNOMED:243956000;Site of tumor;1
-Visceral serous pericardium;SNOMED:243955001;Site of tumor;0
-Entire visceral pericardium;SNOMED:243955001;Site of tumor;1
-Entire visceral pericardium (body structure);SNOMED:243955001;Site of tumor;1
-Fibrous pericardium;SNOMED:243953008;Site of tumor;0
-Entire fibrous portion of pericardium;SNOMED:243953008;Site of tumor;1
-Entire fibrous portion of pericardium (body structure);SNOMED:243953008;Site of tumor;1
-Serous pericardium;SNOMED:243954002;Site of tumor;0
-Entire serous pericardium;SNOMED:243954002;Site of tumor;1
-Entire serous pericardium (body structure);SNOMED:243954002;Site of tumor;1
-Not Applicable;ANA|SITE_OF_TUMOR:NA;Site of tumor;0
-Lymph node;SNOMED:181756000;Site of tumor;0
-Entire lymph node;SNOMED:181756000;Site of tumor;1
-Entire lymph node (body structure);SNOMED:181756000;Site of tumor;1
-LN - Lymph node;SNOMED:181756000;Site of tumor;1
-Ovary;SNOMED:363443007;Site of tumor;0
--- Ovarian Cancer;SNOMED:363443007;Site of tumor;1
-CA - Cancer of ovary;SNOMED:363443007;Site of tumor;1
-Cancer of Ovary;SNOMED:363443007;Site of tumor;1
-Cancer of ovary;SNOMED:363443007;Site of tumor;1
-Cancer of the Ovary;SNOMED:363443007;Site of tumor;1
-Cancer, Ovarian;SNOMED:363443007;Site of tumor;1
-Cancer, Ovary;SNOMED:363443007;Site of tumor;1
-Cancers, Ovarian;SNOMED:363443007;Site of tumor;1
-Cancers, Ovary;SNOMED:363443007;Site of tumor;1
-Malignant Neoplasm of Ovary;SNOMED:363443007;Site of tumor;1
-Malignant Neoplasm of the Ovary;SNOMED:363443007;Site of tumor;1
-Malignant Ovarian Neoplasm;SNOMED:363443007;Site of tumor;1
-Malignant Ovarian Tumor;SNOMED:363443007;Site of tumor;1
-Malignant Tumor of Ovary;SNOMED:363443007;Site of tumor;1
-Malignant Tumor of the Ovary;SNOMED:363443007;Site of tumor;1
-Malignant neoplasm of ovary;SNOMED:363443007;Site of tumor;1
-Oral Cavity;SNOMED:363505006;Site of tumor;0
-CA - Mouth cancer;SNOMED:363505006;Site of tumor;1
-Cancer of Mouth;SNOMED:363505006;Site of tumor;1
-Cancer of oral cavity;SNOMED:363505006;Site of tumor;1
-Cancer of the Mouth;SNOMED:363505006;Site of tumor;1
-Cancer, Mouth;SNOMED:363505006;Site of tumor;1
-Cancer, Oral;SNOMED:363505006;Site of tumor;1
-Cancers, Mouth;SNOMED:363505006;Site of tumor;1
-Cancers, Oral;SNOMED:363505006;Site of tumor;1
-Malignant Mouth Neoplasm;SNOMED:363505006;Site of tumor;1
-Malignant Mouth Tumor;SNOMED:363505006;Site of tumor;1
-Malignant Neoplasm of Mouth;SNOMED:363505006;Site of tumor;1
-Malignant Neoplasm of the Mouth;SNOMED:363505006;Site of tumor;1
-Malignant Oral Cavity Neoplasm;SNOMED:363505006;Site of tumor;1
-Malignant Oral Cavity Tumor;SNOMED:363505006;Site of tumor;1
-Malignant Oral Neoplasm;SNOMED:363505006;Site of tumor;1
-Malignant Tumor of Mouth;SNOMED:363505006;Site of tumor;1
-Malignant Tumor of the Mouth;SNOMED:363505006;Site of tumor;1
-Malignant neoplasm of mouth;SNOMED:363505006;Site of tumor;1
-Malignant neoplasm of mouth, NOS;SNOMED:363505006;Site of tumor;1
-Malignant neoplasm of mouth, unspecified;SNOMED:363505006;Site of tumor;1
-Parotid Gland;SNOMED:181234002;Site of tumor;0
-Entire parotid gland;SNOMED:181234002;Site of tumor;1
-Entire parotid gland (body structure);SNOMED:181234002;Site of tumor;1
-Parotid gland;SNOMED:181234002;Site of tumor;1
-Pharynx;SNOMED:363507003;Site of tumor;0
-CA - Cancer of pharynx;SNOMED:363507003;Site of tumor;1
-Cancer of Pharynx;SNOMED:363507003;Site of tumor;1
-Cancer of pharynx;SNOMED:363507003;Site of tumor;1
-Cancer of the Pharynx;SNOMED:363507003;Site of tumor;1
-Cancer, Pharnyx;SNOMED:363507003;Site of tumor;1
-Cancer, Pharyngeal;SNOMED:363507003;Site of tumor;1
-Cancers, Pharnyx;SNOMED:363507003;Site of tumor;1
-Cancers, Pharyngeal;SNOMED:363507003;Site of tumor;1
-Malignant Pharyngeal Neoplasm;SNOMED:363507003;Site of tumor;1
-Malignant Pharyngeal Tumor;SNOMED:363507003;Site of tumor;1
-Malignant Pharynx Neoplasm;SNOMED:363507003;Site of tumor;1
-Malignant Pharynx Tumor;SNOMED:363507003;Site of tumor;1
-Malignant Tumor of Pharynx;SNOMED:363507003;Site of tumor;1
-Malignant Tumor of the Pharynx;SNOMED:363507003;Site of tumor;1
-Malignant neoplasm of pharynx;SNOMED:363507003;Site of tumor;1
-Malignant neoplasm of pharynx, NOS;SNOMED:363507003;Site of tumor;1
-Malignant neoplasm of pharynx, unspecified;SNOMED:363507003;Site of tumor;1
-Malignant tumor of pharynx;SNOMED:363507003;Site of tumor;1
-Pleura;SNOMED:264148002;Site of tumor;0
-Pleural;SNOMED:264148002;Site of tumor;1
-Pleural (qualifier value);SNOMED:264148002;Site of tumor;1
+Entire terminal bronchiole (body structure);SNOMED:278981008;Site of tumor;1
+Upper lobe of left lung;SNOMED:361984006;Site of tumor;0
+Entire left upper lobe of lung;SNOMED:361984006;Site of tumor;0
+LUL - Upper lobe of left lung;SNOMED:361984006;Site of tumor;1
+Entire left upper lobe of lung (body structure);SNOMED:361984006;Site of tumor;1
+Upper lobe of right lung;SNOMED:361969002;Site of tumor;0
+Entire right upper lobe of lung;SNOMED:361969002;Site of tumor;0
+RUL - Upper lobe of right lung;SNOMED:361969002;Site of tumor;1
+Entire right upper lobe of lung (body structure);SNOMED:361969002;Site of tumor;1
+Parietal Pleura;SNOMED:80338007;Site of tumor;0
+Parietal pleura structure;SNOMED:80338007;Site of tumor;0
+Parietal pleura structure (body structure);SNOMED:80338007;Site of tumor;1
+Parietal pleura;SNOMED:80338007;Site of tumor;1
+Cervical Pleura;SNOMED:202395000;Site of tumor;0
+Entire cervical pleura;SNOMED:202395000;Site of tumor;0
+Entire cervical pleura (body structure);SNOMED:202395000;Site of tumor;1
+Cervical pleura;SNOMED:202395000;Site of tumor;1
+Costal Pleura;SNOMED:368060008;Site of tumor;0
+Entire costal pleura;SNOMED:368060008;Site of tumor;0
+Entire costal pleura (body structure);SNOMED:368060008;Site of tumor;1
+Costal pleura;SNOMED:368060008;Site of tumor;1
+Diaphragmatic Pleura;SNOMED:202302008;Site of tumor;0
+Entire diaphragmatic pleura;SNOMED:202302008;Site of tumor;0
+Entire diaphragmatic pleura (body structure);SNOMED:202302008;Site of tumor;1
+Diaphragmatic pleura;SNOMED:202302008;Site of tumor;1
+Entire parietal pleura;SNOMED:187338008;Site of tumor;0
+Entire left parietal pleura;SNOMED:187338008;Site of tumor;0
+Left parietal pleura;SNOMED:187338008;Site of tumor;1
+Entire left parietal pleura (body structure);SNOMED:187338008;Site of tumor;1
+Left parietal pleura;SNOMED:361998003;Site of tumor;0
+Entire parietal pleura;SNOMED:361998003;Site of tumor;0
+Entire parietal pleura (body structure);SNOMED:361998003;Site of tumor;1
+Left pleural Mesothelium;SNOMED:397383005;Site of tumor;0
+Left pleural mesothelium;SNOMED:397383005;Site of tumor;0
+Left pleural mesothelium (body structure);SNOMED:397383005;Site of tumor;1
+Mediastinal Pleura;SNOMED:27416003;Site of tumor;0
+Mediastinal pleura structure;SNOMED:27416003;Site of tumor;0
+Mediastinal pleura;SNOMED:27416003;Site of tumor;1
+Mediastinal pleura structure (body structure);SNOMED:27416003;Site of tumor;1
+Right parietal pleura;SNOMED:184304009;Site of tumor;0
+Entire right parietal pleura;SNOMED:184304009;Site of tumor;0
+Entire right parietal pleura (body structure);SNOMED:184304009;Site of tumor;1
+Right pleural Mesothelium;SNOMED:397382000;Site of tumor;0
+Right pleural mesothelium;SNOMED:397382000;Site of tumor;0
+Right pleural mesothelium (body structure);SNOMED:397382000;Site of tumor;1
+VISCERAL PLEURA;SNOMED:81623005;Site of tumor;0
+Visceral pleura structure;SNOMED:81623005;Site of tumor;0
+Visceral pleura;SNOMED:81623005;Site of tumor;1
+Visceral pleura structure (body structure);SNOMED:81623005;Site of tumor;1
+Left visceral pleura;SNOMED:49310007;Site of tumor;0
+Structure of left visceral pleura;SNOMED:49310007;Site of tumor;0
+Structure of left visceral pleura (body structure);SNOMED:49310007;Site of tumor;1
+Right visceral pleura;SNOMED:184204006;Site of tumor;0
+Entire right visceral pleura;SNOMED:184204006;Site of tumor;0
+Entire right visceral pleura (body structure);SNOMED:184204006;Site of tumor;1

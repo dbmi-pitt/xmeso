@@ -1,66 +1,37 @@
-Ultrastructural Findings;SNOMED:108361009;Ultrastructural Findings;0
-Ultrastructural feature;SNOMED:108361009;Ultrastructural Findings;1
-Ultrastructural feature (cell structure);SNOMED:108361009;Ultrastructural Findings;1
-Ferruginous Bodies;SNOMED:397325001;Ultrastructural Findings;0
-Ferruginous body;SNOMED:397325001;Ultrastructural Findings;1
-Ferruginous body (morphologic abnormality);SNOMED:397325001;Ultrastructural Findings;1
-Pleural Plaque;SNOMED:233658003;Ultrastructural Findings;0
-Pleural plaque;SNOMED:233658003;Ultrastructural Findings;1
-Pleural plaque (disorder);SNOMED:233658003;Ultrastructural Findings;1
-Pleural plaque NOS;SNOMED:233658003;Ultrastructural Findings;1
-plaque pleural;SNOMED:233658003;Ultrastructural Findings;1
-plaques pleural;SNOMED:233658003;Ultrastructural Findings;1
-plaques; pleural;SNOMED:233658003;Ultrastructural Findings;1
-pleura; plaques;SNOMED:233658003;Ultrastructural Findings;1
-pleural plaque;SNOMED:233658003;Ultrastructural Findings;1
-pleural plaques;SNOMED:233658003;Ultrastructural Findings;1
-pleural plaques (diagnosis);SNOMED:233658003;Ultrastructural Findings;1
-Pulmonary Interstitial Fibrosis;SNOMED:125565008;Ultrastructural Findings;0
-FIBROSIS, INTERSTITIAL;SNOMED:125565008;Ultrastructural Findings;1
-Interstitial fibrosis;SNOMED:125565008;Ultrastructural Findings;1
-Interstitial fibrosis (morphologic abnormality);SNOMED:125565008;Ultrastructural Findings;1
-Acute Inflammation;SNOMED:4532008;Ultrastructural Findings;0
-ACUTE INFLAMMATIONS;SNOMED:4532008;Ultrastructural Findings;1
-Active inflammation;SNOMED:4532008;Ultrastructural Findings;1
-Active inflammation, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Acute Inflammations;SNOMED:4532008;Ultrastructural Findings;1
-Acute Inflammatory Infiltrate;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammation;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammation (morphologic abnormality);SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammation, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory cell infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory cell infiltration, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory infiltration, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory reaction;SNOMED:4532008;Ultrastructural Findings;1
-Acute inflammatory reaction, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Inflammation, acute;SNOMED:4532008;Ultrastructural Findings;1
-Inflammatory cell infiltration, acute;SNOMED:4532008;Ultrastructural Findings;1
-Neutrophilic infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Neutrophilic infiltration, NOS;SNOMED:4532008;Ultrastructural Findings;1
-Polymorphonuclear leucocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
-Polymorphonuclear leukocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
 Mixed Inflammation;SNOMED:103623002;Ultrastructural Findings;0
 Moderate inflammation;SNOMED:103623002;Ultrastructural Findings;1
 Moderate inflammation (morphologic abnormality);SNOMED:103623002;Ultrastructural Findings;1
+Ferruginous Bodies;SNOMED:397325001;Ultrastructural Findings;0
+Ferruginous body;SNOMED:397325001;Ultrastructural Findings;1
+Ferruginous body (morphologic abnormality);SNOMED:397325001;Ultrastructural Findings;1
+Chronic Inflammation;SNOMED:84499006;Ultrastructural Findings;0
+Chronic inflammation;SNOMED:84499006;Ultrastructural Findings;1
+Chronic inflammatory reaction;SNOMED:84499006;Ultrastructural Findings;1
+Chronic inflammation (morphologic abnormality);SNOMED:84499006;Ultrastructural Findings;1
+Chronic inflammatory cell infiltration;SNOMED:84499006;Ultrastructural Findings;1
 Changes of talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;0
 Talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;1
 Talc pleurodesis (procedure);SNOMED:302450005;Ultrastructural Findings;1
-talc pleurodesis;SNOMED:302450005;Ultrastructural Findings;1
+Acute Inflammation;SNOMED:4532008;Ultrastructural Findings;0
+Acute inflammation;SNOMED:4532008;Ultrastructural Findings;1
+Polymorphonuclear leucocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
+Acute inflammatory cell infiltration;SNOMED:4532008;Ultrastructural Findings;1
+Acute inflammatory reaction;SNOMED:4532008;Ultrastructural Findings;1
+Neutrophilic infiltration;SNOMED:4532008;Ultrastructural Findings;1
+Acute inflammatory infiltration;SNOMED:4532008;Ultrastructural Findings;1
+Polymorphonuclear leukocyte infiltration;SNOMED:4532008;Ultrastructural Findings;1
+Acute inflammation (morphologic abnormality);SNOMED:4532008;Ultrastructural Findings;1
+Active inflammation;SNOMED:4532008;Ultrastructural Findings;1
+Unknown;ANA|ULTRASTRUCTURAL:UN;Ultrastructural Findings;0
+No Information;ANA|ULTRASTRUCTURAL:NI;Ultrastructural Findings;0
 None Identified;ANA|ULTRASTRUCTURAL:NONE;Ultrastructural Findings;0
-Chronic Inflammation;SNOMED:84499006;Ultrastructural Findings;0
-CHRONIC INFLAMMATIONS;SNOMED:84499006;Ultrastructural Findings;1
-Chronic Inflammations;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammation;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammation (morphologic abnormality);SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammation, NOS;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory cell infiltration;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory cell infiltration, NOS;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory reaction;SNOMED:84499006;Ultrastructural Findings;1
-Chronic inflammatory reaction, NOS;SNOMED:84499006;Ultrastructural Findings;1
-Inflammation, chronic;SNOMED:84499006;Ultrastructural Findings;1
-Inflammatory cell infiltration, chronic;SNOMED:84499006;Ultrastructural Findings;1
-chronic inflammation;SNOMED:84499006;Ultrastructural Findings;1
-chronic; inflammation;SNOMED:84499006;Ultrastructural Findings;1
-inflammation chronic;SNOMED:84499006;Ultrastructural Findings;1
-inflammation; chronic;SNOMED:84499006;Ultrastructural Findings;1
+Other;ANA|ULTRASTRUCTURAL:OT;Ultrastructural Findings;0
+Pleural Plaque;SNOMED:233658003;Ultrastructural Findings;0
+Pleural plaque;SNOMED:233658003;Ultrastructural Findings;1
+Pleural plaque (disorder);SNOMED:233658003;Ultrastructural Findings;1
+Pulmonary Interstitial Fibrosis;SNOMED:125565008;Ultrastructural Findings;0
+Interstitial fibrosis;SNOMED:125565008;Ultrastructural Findings;1
+Interstitial fibrosis (morphologic abnormality);SNOMED:125565008;Ultrastructural Findings;1
+Ultrastructural Findings;SNOMED:108361009;Ultrastructural Findings;0
+Ultrastructural feature;SNOMED:108361009;Ultrastructural Findings;1
+Ultrastructural feature (cell structure);SNOMED:108361009;Ultrastructural Findings;1
