@@ -1,39 +1,72 @@
-Papillary;SNOMED:77526009;Tumor Configuration;0
-Papillary (qualifier value);SNOMED:77526009;Tumor Configuration;1
-Unknown;TUMOR_CONFIG:UNKNOWN;Tumor Configuration;0
-Tumor Configuration;SNOMED:370111000;Tumor Configuration;0
-Tumor configuration;SNOMED:370111000;Tumor Configuration;0
-Tumour configuration;SNOMED:370111000;Tumor Configuration;1
-Tumor configuration (finding);SNOMED:370111000;Tumor Configuration;1
-Cystic;SNOMED:369746007;Tumor Configuration;0
-Cystic tumor configuration;SNOMED:369746007;Tumor Configuration;0
-Cystic tumor configuration (finding);SNOMED:369746007;Tumor Configuration;1
-Cystic tumour configuration;SNOMED:369746007;Tumor Configuration;1
-Diffuse;TUMOR_CONFIG:DIFFUSE;Tumor Configuration;0
-Endophytic;SNOMED:399711005;Tumor Configuration;0
-Endophytic tumor configuration;SNOMED:399711005;Tumor Configuration;0
-Endophytic tumour configuration;SNOMED:399711005;Tumor Configuration;1
-Endophytic tumor configuration (finding);SNOMED:399711005;Tumor Configuration;1
-Nodular;SNOMED:255288007;Tumor Configuration;0
-Nodular (qualifier value);SNOMED:255288007;Tumor Configuration;1
-Mixed;SNOMED:8145008;Tumor Configuration;0
-Mixed tumor, malignant;SNOMED:8145008;Tumor Configuration;0
-Mixed tumour, salivary gland type, malignant;SNOMED:8145008;Tumor Configuration;1
-Mixed tumour, malignant;SNOMED:8145008;Tumor Configuration;1
-Mixed tumor, salivary gland type, malignant;SNOMED:8145008;Tumor Configuration;1
-Malignant mixed tumor;SNOMED:8145008;Tumor Configuration;1
-Malignant mixed tumour;SNOMED:8145008;Tumor Configuration;1
-Malignant mixed salivary gland tumour;SNOMED:8145008;Tumor Configuration;1
-Malignant mixed salivary gland tumor;SNOMED:8145008;Tumor Configuration;1
-Mixed tumor, malignant (morphologic abnormality);SNOMED:8145008;Tumor Configuration;1
-Malignant chondroid syringoma;SNOMED:8145008;Tumor Configuration;1
-Localized;TUMOR_CONFIG:LOCALIZED;Tumor Configuration;0
 Exophytic;SNOMED:369749000;Tumor Configuration;0
-Exophytic (polypoid) tumor configuration;SNOMED:369749000;Tumor Configuration;0
+Exophytic (polypoid) tumor configuration;SNOMED:369749000;Tumor Configuration;1
 Exophytic (polypoid) tumor configuration (finding);SNOMED:369749000;Tumor Configuration;1
 Exophytic (polypoid) tumour configuration;SNOMED:369749000;Tumor Configuration;1
-Extent of tumor involvement not specified;SNOMED:399740008;Tumor Configuration;0
-Tumour extent of involvement not specified;SNOMED:399740008;Tumor Configuration;1
-Extent of tumor involvement not specified (finding);SNOMED:399740008;Tumor Configuration;1
-Tumor extent of involvement not specified;SNOMED:399740008;Tumor Configuration;1
-Extent of tumour involvement not specified;SNOMED:399740008;Tumor Configuration;1
+Endophytic;SNOMED:399711005;Tumor Configuration;0
+Endophytic tumor configuration;SNOMED:399711005;Tumor Configuration;1
+Endophytic tumor configuration (finding);SNOMED:399711005;Tumor Configuration;1
+Endophytic tumour configuration;SNOMED:399711005;Tumor Configuration;1
+Nodular;SNOMED:255288007;Tumor Configuration;0
+Nodular (qualifier value);SNOMED:255288007;Tumor Configuration;1
+nodular;SNOMED:255288007;Tumor Configuration;1
+Papillary;SNOMED:77526009;Tumor Configuration;0
+Papillary (qualifier value);SNOMED:77526009;Tumor Configuration;1
+papillary;SNOMED:77526009;Tumor Configuration;1
+Cystic;SNOMED:369746007;Tumor Configuration;0
+Cystic tumor configuration;SNOMED:369746007;Tumor Configuration;1
+Cystic tumor configuration (finding);SNOMED:369746007;Tumor Configuration;1
+Cystic tumour configuration;SNOMED:369746007;Tumor Configuration;1
+Mixed;SNOMED:8145008;Tumor Configuration;0
+Eccrine mixed tumor, malignant;SNOMED:8145008;Tumor Configuration;1
+Eccrine mixed tumour, malignant;SNOMED:8145008;Tumor Configuration;1
+Malignant chondroid syringoma;SNOMED:8145008;Tumor Configuration;1
+Malignant chondroid syringoma (morphologic abnormality);SNOMED:8145008;Tumor Configuration;1
+Malignant chondroid syringoma of skin;SNOMED:8145008;Tumor Configuration;1
+Malignant chondroid syringoma of skin (disorder);SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumor of the skin;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumour of the skin;SNOMED:8145008;Tumor Configuration;1
+malignant mixed tumor of skin;SNOMED:8145008;Tumor Configuration;1
+malignant mixed tumor of skin (diagnosis);SNOMED:8145008;Tumor Configuration;1
+Cancer of salivary gland, mixed tumor;SNOMED:8145008;Tumor Configuration;1
+Cancer of salivary gland, mixed tumour;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Cell Type Neoplasm of Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Cell Type Neoplasm of the Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Neoplasm of Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Neoplasm of the Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Tumor of Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Tumor of the Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Malignant Salivary Gland Mixed Cell Type Neoplasm;SNOMED:8145008;Tumor Configuration;1
+Malignant Salivary Gland Mixed Cell Type Tumor;SNOMED:8145008;Tumor Configuration;1
+Malignant Salivary Gland Mixed Neoplasm;SNOMED:8145008;Tumor Configuration;1
+Malignant Salivary Gland Mixed Tumor;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed salivary gland tumor;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed salivary gland tumour;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumor of salivary gland;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumor of salivary gland (disorder);SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumour of salivary gland;SNOMED:8145008;Tumor Configuration;1
+Mixed Malignant Neoplasm of Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Mixed Malignant Neoplasm of the Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+Mixed Malignant Salivary Gland Neoplasm;SNOMED:8145008;Tumor Configuration;1
+Mixed Malignant Salivary Gland Tumor;SNOMED:8145008;Tumor Configuration;1
+Mixed Malignant Tumor of Salivary Gland;SNOMED:8145008;Tumor Configuration;1
+MIXED TUMOR, MALIGNANT;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Neoplasm;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Tumor;SNOMED:8145008;Tumor Configuration;1
+Malignant Mixed Tumors;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumor;SNOMED:8145008;Tumor Configuration;1
+Malignant mixed tumour;SNOMED:8145008;Tumor Configuration;1
+Mixed Tumor, Malignant;SNOMED:8145008;Tumor Configuration;1
+Mixed Tumor, Malignant [Disease/Finding];SNOMED:8145008;Tumor Configuration;1
+Mixed Tumors, Malignant;SNOMED:8145008;Tumor Configuration;1
+Mixed tumor, malignant;SNOMED:8145008;Tumor Configuration;1
+Mixed tumor, malignant (morphologic abnormality);SNOMED:8145008;Tumor Configuration;1
+Mixed tumor, malignant NOS;SNOMED:8145008;Tumor Configuration;1
+Mixed tumor, malignant, NOS;SNOMED:8145008;Tumor Configuration;1
+Mixed tumour, malignant;SNOMED:8145008;Tumor Configuration;1
+Mixed tumour, malignant NOS;SNOMED:8145008;Tumor Configuration;1
+Mixed tumour, malignant, NOS;SNOMED:8145008;Tumor Configuration;1
+Tumor, Malignant Mixed;SNOMED:8145008;Tumor Configuration;1
+Tumors, Malignant Mixed;SNOMED:8145008;Tumor Configuration;1
+Diffuse;TUMOR_CONFIG:DIFFUSE;Tumor Configuration;0
+Localized;TUMOR_CONFIG:LOCALIZED;Tumor Configuration;0
+Not specified;SNOMED:399740008;Tumor Configuration;0

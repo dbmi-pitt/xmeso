@@ -1,0 +1,125 @@
+LUNG;SNOMED:113255004;Tumor Extension;1
+Lung Parenchyma;SNOMED:113255004;Tumor Extension;1
+Lung Tissue;SNOMED:113255004;Tumor Extension;1
+Lung tiss;SNOMED:113255004;Tumor Extension;1
+Lung tissue;SNOMED:113255004;Tumor Extension;1
+Respiratory portion of lung;SNOMED:113255004;Tumor Extension;1
+Structure of parenchyma of lung;SNOMED:113255004;Tumor Extension;1
+Structure of parenchyma of lung (body structure);SNOMED:113255004;Tumor Extension;1
+lung parenchyma;SNOMED:113255004;Tumor Extension;1
+lung tissue;SNOMED:113255004;Tumor Extension;1
+lung tissues;SNOMED:113255004;Tumor Extension;1
+lungs parenchyma;SNOMED:113255004;Tumor Extension;1
+lungs tissue;SNOMED:113255004;Tumor Extension;1
+lungs tissues;SNOMED:113255004;Tumor Extension;1
+tissue lung;SNOMED:113255004;Tumor Extension;1
+Endothoracic Fascia;SNOMED:64747004;Tumor Extension;0
+Endothoracic fascia;SNOMED:64747004;Tumor Extension;1
+Endothoracic fascia structure;SNOMED:64747004;Tumor Extension;1
+Endothoracic fascia structure (body structure);SNOMED:64747004;Tumor Extension;1
+Endothoracic fascia, NOS;SNOMED:64747004;Tumor Extension;1
+Fascia endothoracica;SNOMED:64747004;Tumor Extension;1
+Contralateral Pleura;MESO:009;Tumor Extension;0
+Soft tissue of chest wall;SNOMED:397460008;Tumor Extension;0
+Tumor invades soft tissue of chest wall;SNOMED:397460008;Tumor Extension;1
+Tumor invades soft tissue of chest wall (finding);SNOMED:397460008;Tumor Extension;1
+Tumour invades soft tissue of chest wall;SNOMED:397460008;Tumor Extension;1
+Rib;SNOMED:113197003;Tumor Extension;0
+BONE, RIB;SNOMED:113197003;Tumor Extension;1
+Bone structure of rib;SNOMED:113197003;Tumor Extension;1
+Bone structure of rib (body structure);SNOMED:113197003;Tumor Extension;1
+Costa;SNOMED:113197003;Tumor Extension;1
+Costal;SNOMED:113197003;Tumor Extension;1
+Os costale (Costa);SNOMED:113197003;Tumor Extension;1
+RIB;SNOMED:113197003;Tumor Extension;1
+RIBS;SNOMED:113197003;Tumor Extension;1
+Rib, NOS;SNOMED:113197003;Tumor Extension;1
+Ribs;SNOMED:113197003;Tumor Extension;1
+Vertebra;SNOMED:420345000;Tumor Extension;0
+BONE, VERTEBRA;SNOMED:420345000;Tumor Extension;1
+Bone of vertebra;SNOMED:420345000;Tumor Extension;1
+Bone structure of spine;SNOMED:420345000;Tumor Extension;1
+Bone structure of spine (body structure);SNOMED:420345000;Tumor Extension;1
+Set of vertebrae;SNOMED:420345000;Tumor Extension;1
+Structure of vertebra;SNOMED:420345000;Tumor Extension;1
+Structure of vertebra (body structure);SNOMED:420345000;Tumor Extension;1
+Vertebra, NOS;SNOMED:420345000;Tumor Extension;1
+Vertebrae;SNOMED:420345000;Tumor Extension;1
+Brachial Plexus;SNOMED:36582005;Tumor Extension;0
+BRACHIAL PLEXUS;SNOMED:36582005;Tumor Extension;1
+Brachial nerve plexus;SNOMED:36582005;Tumor Extension;1
+Brachial plexus;SNOMED:36582005;Tumor Extension;1
+Brachial plexus structure;SNOMED:36582005;Tumor Extension;1
+Brachial plexus structure (body structure);SNOMED:36582005;Tumor Extension;1
+Brachial plexus, NOS;SNOMED:36582005;Tumor Extension;1
+NERVE, BRACHIAL;SNOMED:36582005;Tumor Extension;1
+Plexus brachialis;SNOMED:36582005;Tumor Extension;1
+Plexus, Brachial;SNOMED:36582005;Tumor Extension;1
+brachial nerve plexus;SNOMED:36582005;Tumor Extension;1
+brachial nerves plexus;SNOMED:36582005;Tumor Extension;1
+Pericardium;SNOMED:181295003;Tumor Extension;0
+Entire pericardium;SNOMED:181295003;Tumor Extension;1
+Entire pericardium (body structure);SNOMED:181295003;Tumor Extension;1
+Myocardium;SNOMED:74281007;Tumor Extension;0
+CARDIAC MUSCLE TISSUE;SNOMED:74281007;Tumor Extension;1
+Cardiac Muscle;SNOMED:74281007;Tumor Extension;1
+Cardiac Muscles;SNOMED:74281007;Tumor Extension;1
+Cardiac muscle;SNOMED:74281007;Tumor Extension;1
+Cardiac muscle (tissue);SNOMED:74281007;Tumor Extension;1
+Cardiac muscle (tissue) (body structure);SNOMED:74281007;Tumor Extension;1
+Cardiac muscle tissue;SNOMED:74281007;Tumor Extension;1
+Heart Muscle;SNOMED:74281007;Tumor Extension;1
+Heart Muscles;SNOMED:74281007;Tumor Extension;1
+Heart muscle;SNOMED:74281007;Tumor Extension;1
+Muscle of heart;SNOMED:74281007;Tumor Extension;1
+Muscle, Cardiac;SNOMED:74281007;Tumor Extension;1
+Muscle, Heart;SNOMED:74281007;Tumor Extension;1
+Muscles, Cardiac;SNOMED:74281007;Tumor Extension;1
+Muscles, Heart;SNOMED:74281007;Tumor Extension;1
+Myocardia;SNOMED:74281007;Tumor Extension;1
+Myocardial;SNOMED:74281007;Tumor Extension;1
+Mediastinum;SNOMED:72410000;Tumor Extension;0
+MEDIASTINUM;SNOMED:72410000;Tumor Extension;1
+Mediastinal;SNOMED:72410000;Tumor Extension;1
+Mediastinal (qualifier value);SNOMED:72410000;Tumor Extension;1
+Mediastinal part of chest;SNOMED:72410000;Tumor Extension;1
+Mediastinal structure;SNOMED:72410000;Tumor Extension;1
+Mediastinal structure (body structure);SNOMED:72410000;Tumor Extension;1
+Diaphragm;SNOMED:5798000;Tumor Extension;0
+DIAPHRAGM;SNOMED:5798000;Tumor Extension;1
+Diaphragm (Anatomy);SNOMED:5798000;Tumor Extension;1
+Diaphragm structure;SNOMED:5798000;Tumor Extension;1
+Omentum;SNOMED:27398004;Tumor Extension;0
+OMENTUM;SNOMED:27398004;Tumor Extension;1
+Omental;SNOMED:27398004;Tumor Extension;1
+Omental (qualifier value);SNOMED:27398004;Tumor Extension;1
+Omental Fat;SNOMED:27398004;Tumor Extension;1
+Omento-;SNOMED:27398004;Tumor Extension;1
+Omentum, NOS;SNOMED:27398004;Tumor Extension;1
+Omentums;SNOMED:27398004;Tumor Extension;1
+Adipose tissue of omentum;SNOMED:27398004;Tumor Extension;1
+Omental adipose tissue;SNOMED:27398004;Tumor Extension;1
+Omental fat;SNOMED:27398004;Tumor Extension;1
+Omentum structure;SNOMED:27398004;Tumor Extension;1
+Omentum structure (body structure);SNOMED:27398004;Tumor Extension;1
+Structure of omental adipose tissue;SNOMED:27398004;Tumor Extension;1
+Structure of omental adipose tissue (body structure);SNOMED:27398004;Tumor Extension;1
+Peritoneum;SNOMED:15425007;Tumor Extension;0
+PERITONEUM;SNOMED:15425007;Tumor Extension;1
+Peritoneal;SNOMED:15425007;Tumor Extension;1
+Peritoneum (serous membrane) structure;SNOMED:15425007;Tumor Extension;1
+Peritoneum (serous membrane) structure (body structure);SNOMED:15425007;Tumor Extension;1
+Peritoneum, NOS;SNOMED:15425007;Tumor Extension;1
+Serous membrane of abdomen;SNOMED:15425007;Tumor Extension;1
+Abdominal viscera;SNOMED:361295005;Tumor Extension;0
+All abdominal viscera;SNOMED:361295005;Tumor Extension;1
+All abdominal viscera (body structure);SNOMED:361295005;Tumor Extension;1
+Cannot be determined;SNOMED:395532005;Tumor Extension;0
+Extent of invasion cannot be determined;SNOMED:395532005;Tumor Extension;1
+Tumor extent of invasion cannot be determined;SNOMED:395532005;Tumor Extension;1
+Tumor extent of invasion cannot be determined (finding);SNOMED:395532005;Tumor Extension;1
+Tumour extent of invasion cannot be determined;SNOMED:395532005;Tumor Extension;1
+Not applicable;SNOMED:397377007;Tumor Extension;0
+Tumor size not applicable;SNOMED:397377007;Tumor Extension;1
+Tumor size not applicable (finding);SNOMED:397377007;Tumor Extension;1
+Tumour size not applicable;SNOMED:397377007;Tumor Extension;1

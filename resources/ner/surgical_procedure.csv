@@ -1,856 +1,270 @@
-ICD-9-CM Procedures;(null);Surgical Procedure;0
-Operations on the respiratory system;ICD9:30-34.99;Surgical Procedure;0
-OPERATIONS ON THE RESPIRATORY SYSTEM;ICD9:30-34.99;Surgical Procedure;1
-Excision of larynx;ICD9:30;Surgical Procedure;0
-Excision or destruction of lesion or tissue of larynx;ICD9:30.0;Surgical Procedure;0
-Marsupialization of laryngeal cyst;ICD9:30.01;Surgical Procedure;0
-Other excision or destruction of lesion or tissue of larynx;ICD9:30.09;Surgical Procedure;0
-Hemilaryngectomy;ICD9:30.1;Surgical Procedure;0
-Other partial laryngectomy;ICD9:30.2;Surgical Procedure;0
-Epiglottidectomy;ICD9:30.21;Surgical Procedure;0
-Vocal cordectomy;ICD9:30.22;Surgical Procedure;0
-Other partial laryngectomy;ICD9:30.29;Surgical Procedure;0
-Complete laryngectomy;ICD9:30.3;Surgical Procedure;0
-Radical laryngectomy;ICD9:30.4;Surgical Procedure;0
-Other operations on larynx and trachea;ICD9:31;Surgical Procedure;0
-Injection of larynx;ICD9:31.0;Surgical Procedure;0
-Temporary tracheostomy;ICD9:31.1;Surgical Procedure;0
-Permanent tracheostomy;ICD9:31.2;Surgical Procedure;0
-Mediastinal tracheostomy;ICD9:31.21;Surgical Procedure;0
-Other permanent tracheostomy;ICD9:31.29;Surgical Procedure;0
-Other incision of larynx or trachea;ICD9:31.3;Surgical Procedure;0
-Diagnostic procedures on larynx and trachea;ICD9:31.4;Surgical Procedure;0
-Tracheoscopy through artificial stoma;ICD9:31.41;Surgical Procedure;0
-Laryngoscopy and other tracheoscopy;ICD9:31.42;Surgical Procedure;0
-Closed [endoscopic] biopsy of larynx;ICD9:31.43;Surgical Procedure;0
-Closed endoscopic biopsy of larynx;ICD9:31.43;Surgical Procedure;0
-Closed [endoscopic] biopsy of larynx;ICD9:31.43;Surgical Procedure;1
-Closed [endoscopic] biopsy of trachea;ICD9:31.44;Surgical Procedure;0
-Closed endoscopic biopsy of trachea;ICD9:31.44;Surgical Procedure;0
-Closed [endoscopic] biopsy of trachea;ICD9:31.44;Surgical Procedure;1
-Open biopsy of larynx or trachea;ICD9:31.45;Surgical Procedure;0
-Other diagnostic procedures on larynx;ICD9:31.48;Surgical Procedure;0
-Other diagnostic procedures on trachea;ICD9:31.49;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of trachea;ICD9:31.5;Surgical Procedure;0
-Repair of larynx;ICD9:31.6;Surgical Procedure;0
-Suture of laceration of larynx;ICD9:31.61;Surgical Procedure;0
-Closure of fistula of larynx;ICD9:31.62;Surgical Procedure;0
-Revision of laryngostomy;ICD9:31.63;Surgical Procedure;0
-Repair of laryngeal fracture;ICD9:31.64;Surgical Procedure;0
-Other repair of larynx;ICD9:31.69;Surgical Procedure;0
-Repair and plastic operations on trachea;ICD9:31.7;Surgical Procedure;0
-Suture of laceration of trachea;ICD9:31.71;Surgical Procedure;0
-Closure of external fistula of trachea;ICD9:31.72;Surgical Procedure;0
-Closure of other fistula of trachea;ICD9:31.73;Surgical Procedure;0
-Revision of tracheostomy;ICD9:31.74;Surgical Procedure;0
-Reconstruction of trachea and construction of artificial larynx;ICD9:31.75;Surgical Procedure;0
-Other repair and plastic operations on trachea;ICD9:31.79;Surgical Procedure;0
-Other operations on larynx and trachea;ICD9:31.9;Surgical Procedure;0
-Division of laryngeal nerve;ICD9:31.91;Surgical Procedure;0
-Lysis of adhesions of trachea or larynx;ICD9:31.92;Surgical Procedure;0
-Replacement of laryngeal or tracheal stent;ICD9:31.93;Surgical Procedure;0
-Injection of locally-acting therapeutic substance into trachea;ICD9:31.94;Surgical Procedure;0
-Tracheoesophageal fistulization;ICD9:31.95;Surgical Procedure;0
-Other operations on larynx;ICD9:31.98;Surgical Procedure;0
-Other operations on trachea;ICD9:31.99;Surgical Procedure;0
-Excision of lung and bronchus;ICD9:32;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of bronchus;ICD9:32.0;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of bronchus;ICD9:32.01;Surgical Procedure;0
-Other local excision or destruction of lesion or tissue of bronchus;ICD9:32.09;Surgical Procedure;0
-Other excision of bronchus;ICD9:32.1;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of lung;ICD9:32.2;Surgical Procedure;0
-Thoracoscopic excision of lesion or tissue of lung;ICD9:32.20;Surgical Procedure;0
-Plication of emphysematous bleb;ICD9:32.21;Surgical Procedure;0
-Lung volume reduction surgery;ICD9:32.22;Surgical Procedure;0
-Open ablation of lung lesion or tissue;ICD9:32.23;Surgical Procedure;0
-Percutaneous ablation of lung lesion or tissue;ICD9:32.24;Surgical Procedure;0
-Thoracoscopic ablation of lung lesion or tissue;ICD9:32.25;Surgical Procedure;0
-Other and unspecified ablation of lung lesion or tissue;ICD9:32.26;Surgical Procedure;0
-Bronchoscopic bronchial thermoplasty, ablation of airway smooth muscle;ICD9:32.27;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of lung;ICD9:32.28;Surgical Procedure;0
-Other local excision or destruction of lesion or tissue of lung;ICD9:32.29;Surgical Procedure;0
-Segmental resection of lung;ICD9:32.3;Surgical Procedure;0
-Thoracoscopic segmental resection of lung;ICD9:32.30;Surgical Procedure;0
-Other and unspecified segmental resection of lung;ICD9:32.39;Surgical Procedure;0
-Lobectomy of lung;ICD9:32.4;Surgical Procedure;0
-Thoracoscopic lobectomy of lung;ICD9:32.41;Surgical Procedure;0
-Other lobectomy of lung;ICD9:32.49;Surgical Procedure;0
-Pneumonectomy;ICD9:32.5;Surgical Procedure;0
-Thoracoscopic pneumonectomy;ICD9:32.50;Surgical Procedure;0
-Other and unspecified pneumonectomy;ICD9:32.59;Surgical Procedure;0
-Radical dissection of thoracic structures;ICD9:32.6;Surgical Procedure;0
-Other excision of lung;ICD9:32.9;Surgical Procedure;0
-Other operations on lung and bronchus;ICD9:33;Surgical Procedure;0
-Incision of bronchus;ICD9:33.0;Surgical Procedure;0
-Incision of lung;ICD9:33.1;Surgical Procedure;0
-Diagnostic procedures on lung and bronchus;ICD9:33.2;Surgical Procedure;0
-Thoracoscopic lung biopsy;ICD9:33.20;Surgical Procedure;0
-Bronchoscopy through artificial stoma;ICD9:33.21;Surgical Procedure;0
-Fiber-optic bronchoscopy;ICD9:33.22;Surgical Procedure;0
-Other bronchoscopy;ICD9:33.23;Surgical Procedure;0
-Closed [endoscopic] biopsy of bronchus;ICD9:33.24;Surgical Procedure;0
-Closed endoscopic biopsy of bronchus;ICD9:33.24;Surgical Procedure;0
-Closed [endoscopic] biopsy of bronchus;ICD9:33.24;Surgical Procedure;1
-Open biopsy of bronchus;ICD9:33.25;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of lung;ICD9:33.26;Surgical Procedure;0
-Closed percutaneous needle biopsy of lung;ICD9:33.26;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of lung;ICD9:33.26;Surgical Procedure;1
-Closed endoscopic biopsy of lung;ICD9:33.27;Surgical Procedure;0
-Open biopsy of lung;ICD9:33.28;Surgical Procedure;0
-Other diagnostic procedures on lung or bronchus;ICD9:33.29;Surgical Procedure;0
-Surgical collapse of lung;ICD9:33.3;Surgical Procedure;0
-Destruction of phrenic nerve for collapse of lung;ICD9:33.31;Surgical Procedure;0
-Artificial pneumothorax for collapse of lung;ICD9:33.32;Surgical Procedure;0
-Pneumoperitoneum for collapse of lung;ICD9:33.33;Surgical Procedure;0
-Thoracoplasty;ICD9:33.34;Surgical Procedure;0
-Other surgical collapse of lung;ICD9:33.39;Surgical Procedure;0
-Repair and plastic operation on lung and bronchus;ICD9:33.4;Surgical Procedure;0
-Suture of laceration of bronchus;ICD9:33.41;Surgical Procedure;0
-Closure of bronchial fistula;ICD9:33.42;Surgical Procedure;0
-Closure of laceration of lung;ICD9:33.43;Surgical Procedure;0
-Other repair and plastic operations on bronchus;ICD9:33.48;Surgical Procedure;0
-Other repair and plastic operations on lung;ICD9:33.49;Surgical Procedure;0
-Lung transplant;ICD9:33.5;Surgical Procedure;0
-Lung transplantation, not otherwise specified;ICD9:33.50;Surgical Procedure;0
-Unilateral lung transplantation;ICD9:33.51;Surgical Procedure;0
-Bilateral lung transplantation;ICD9:33.52;Surgical Procedure;0
-Combined heart-lung transplantation;ICD9:33.6;Surgical Procedure;0
-Other endoscopic procedures in bronchus or lung;ICD9:33.7;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valve(s), single lobe;ICD9:33.71;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valves, single lobe;ICD9:33.71;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valve(s), single lobe;ICD9:33.71;Surgical Procedure;1
-Endoscopic pulmonary airway flow measurement;ICD9:33.72;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valve(s), multiple lobes;ICD9:33.73;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valves, multiple lobes;ICD9:33.73;Surgical Procedure;0
-Endoscopic insertion or replacement of bronchial valve(s), multiple lobes;ICD9:33.73;Surgical Procedure;1
-Endoscopic removal of bronchial device(s) or substances;ICD9:33.78;Surgical Procedure;0
-Endoscopic removal of bronchial devices or substances;ICD9:33.78;Surgical Procedure;0
-Endoscopic removal of bronchial device(s) or substances;ICD9:33.78;Surgical Procedure;1
-Endoscopic insertion of other bronchial device or substances;ICD9:33.79;Surgical Procedure;0
-Other operations on lung and bronchus;ICD9:33.9;Surgical Procedure;0
-Bronchial dilation;ICD9:33.91;Surgical Procedure;0
-Ligation of bronchus;ICD9:33.92;Surgical Procedure;0
-Puncture of lung;ICD9:33.93;Surgical Procedure;0
-Other operations on bronchus;ICD9:33.98;Surgical Procedure;0
-Other operations on lung;ICD9:33.99;Surgical Procedure;0
-Operations on chest wall, pleura, mediastinum, and diaphragm;ICD9:34;Surgical Procedure;0
-Incision of chest wall and pleura;ICD9:34.0;Surgical Procedure;0
-Incision of chest wall;ICD9:34.01;Surgical Procedure;0
-Exploratory thoracotomy;ICD9:34.02;Surgical Procedure;0
-Reopening of recent thoracotomy site;ICD9:34.03;Surgical Procedure;0
-Insertion of intercostal catheter for drainage;ICD9:34.04;Surgical Procedure;0
-Creation of pleuroperitoneal shunt;ICD9:34.05;Surgical Procedure;0
-Thoracoscopic drainage of pleural cavity;ICD9:34.06;Surgical Procedure;0
-Other incision of pleura;ICD9:34.09;Surgical Procedure;0
-Incision of mediastinum;ICD9:34.1;Surgical Procedure;0
-Diagnostic procedures on chest wall, pleura, mediastinum, and diaphragm;ICD9:34.2;Surgical Procedure;0
-Thoracoscopic pleural biopsy;ICD9:34.20;Surgical Procedure;0
-Transpleural thoracoscopy;ICD9:34.21;Surgical Procedure;0
-Mediastinoscopy;ICD9:34.22;Surgical Procedure;0
-Biopsy of chest wall;ICD9:34.23;Surgical Procedure;0
-Other pleural biopsy;ICD9:34.24;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of mediastinum;ICD9:34.25;Surgical Procedure;0
-Closed percutaneous needle biopsy of mediastinum;ICD9:34.25;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of mediastinum;ICD9:34.25;Surgical Procedure;1
-Open mediastinal biopsy;ICD9:34.26;Surgical Procedure;0
-Biopsy of diaphragm;ICD9:34.27;Surgical Procedure;0
-Other diagnostic procedures on chest wall, pleura, and diaphragm;ICD9:34.28;Surgical Procedure;0
-Other diagnostic procedures on mediastinum;ICD9:34.29;Surgical Procedure;0
-Excision or destruction of lesion or tissue of mediastinum;ICD9:34.3;Surgical Procedure;0
-Excision or destruction of lesion of chest wall;ICD9:34.4;Surgical Procedure;0
-Pleurectomy;ICD9:34.5;Surgical Procedure;0
-Decortication of lung;ICD9:34.51;Surgical Procedure;0
-Thoracoscopic decortication of lung;ICD9:34.52;Surgical Procedure;0
-Other excision of pleura;ICD9:34.59;Surgical Procedure;0
-Scarification of pleura;ICD9:34.6;Surgical Procedure;0
-Repair of chest wall;ICD9:34.7;Surgical Procedure;0
-Suture of laceration of chest wall;ICD9:34.71;Surgical Procedure;0
-Closure of thoracostomy;ICD9:34.72;Surgical Procedure;0
-Closure of other fistula of thorax;ICD9:34.73;Surgical Procedure;0
-Repair of pectus deformity;ICD9:34.74;Surgical Procedure;0
-Other repair of chest wall;ICD9:34.79;Surgical Procedure;0
-Operations on diaphragm;ICD9:34.8;Surgical Procedure;0
-Excision of lesion or tissue of diaphragm;ICD9:34.81;Surgical Procedure;0
-Suture of laceration of diaphragm;ICD9:34.82;Surgical Procedure;0
-Closure of fistula of diaphragm;ICD9:34.83;Surgical Procedure;0
-Other repair of diaphragm;ICD9:34.84;Surgical Procedure;0
-Implantation of diaphragmatic pacemaker;ICD9:34.85;Surgical Procedure;0
-Other operations on diaphragm;ICD9:34.89;Surgical Procedure;0
-Other operations on thorax;ICD9:34.9;Surgical Procedure;0
-Thoracentesis;ICD9:34.91;Surgical Procedure;0
-Injection into thoracic cavity;ICD9:34.92;Surgical Procedure;0
-Repair of pleura;ICD9:34.93;Surgical Procedure;0
-Other operations on thorax;ICD9:34.99;Surgical Procedure;0
-Operations on the digestive system;ICD9:42-54.99;Surgical Procedure;0
-OPERATIONS ON THE DIGESTIVE SYSTEM;ICD9:42-54.99;Surgical Procedure;1
-Operations on esophagus;ICD9:42;Surgical Procedure;0
-Esophagotomy;ICD9:42.0;Surgical Procedure;0
-Incision of esophageal web;ICD9:42.01;Surgical Procedure;0
-Other incision of esophagus;ICD9:42.09;Surgical Procedure;0
-Esophagostomy;ICD9:42.1;Surgical Procedure;0
-Esophagostomy, not otherwise specified;ICD9:42.10;Surgical Procedure;0
-Cervical esophagostomy;ICD9:42.11;Surgical Procedure;0
-Exteriorization of esophageal pouch;ICD9:42.12;Surgical Procedure;0
-Other external fistulization of esophagus;ICD9:42.19;Surgical Procedure;0
-Diagnostic procedures on esophagus;ICD9:42.2;Surgical Procedure;0
-Operative esophagoscopy by incision;ICD9:42.21;Surgical Procedure;0
-Esophagoscopy through artificial stoma;ICD9:42.22;Surgical Procedure;0
-Other esophagoscopy;ICD9:42.23;Surgical Procedure;0
-Closed [endoscopic] biopsy of esophagus;ICD9:42.24;Surgical Procedure;0
-Closed endoscopic biopsy of esophagus;ICD9:42.24;Surgical Procedure;0
-Closed [endoscopic] biopsy of esophagus;ICD9:42.24;Surgical Procedure;1
-Open biopsy of esophagus;ICD9:42.25;Surgical Procedure;0
-Other diagnostic procedures on esophagus;ICD9:42.29;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of esophagus;ICD9:42.3;Surgical Procedure;0
-Local excision of esophageal diverticulum;ICD9:42.31;Surgical Procedure;0
-Local excision of other lesion or tissue of esophagus;ICD9:42.32;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of esophagus;ICD9:42.33;Surgical Procedure;0
-Other destruction of lesion or tissue of esophagus;ICD9:42.39;Surgical Procedure;0
-Excision of esophagus;ICD9:42.4;Surgical Procedure;0
-Esophagectomy, not otherwise specified;ICD9:42.40;Surgical Procedure;0
-Partial esophagectomy;ICD9:42.41;Surgical Procedure;0
-Total esophagectomy;ICD9:42.42;Surgical Procedure;0
-Intrathoracic anastomosis of esophagus;ICD9:42.5;Surgical Procedure;0
-Intrathoracic esophagoesophagostomy;ICD9:42.51;Surgical Procedure;0
-Intrathoracic esophagogastrostomy;ICD9:42.52;Surgical Procedure;0
-Intrathoracic esophageal anastomosis with interposition of small bowel;ICD9:42.53;Surgical Procedure;0
-Other intrathoracic esophagoenterostomy;ICD9:42.54;Surgical Procedure;0
-Intrathoracic esophageal anastomosis with interposition of colon;ICD9:42.55;Surgical Procedure;0
-Other intrathoracic esophagocolostomy;ICD9:42.56;Surgical Procedure;0
-Intrathoracic esophageal anastomosis with other interposition;ICD9:42.58;Surgical Procedure;0
-Other intrathoracic anastomosis of esophagus;ICD9:42.59;Surgical Procedure;0
-Antesternal anastomosis of esophagus;ICD9:42.6;Surgical Procedure;0
-Antesternal esophagoesophagostomy;ICD9:42.61;Surgical Procedure;0
-Antesternal esophagogastrostomy;ICD9:42.62;Surgical Procedure;0
-Antesternal esophageal anastomosis with interposition of small bowel;ICD9:42.63;Surgical Procedure;0
-Other antesternal esophagoenterostomy;ICD9:42.64;Surgical Procedure;0
-Antesternal esophageal anastomosis with interposition of colon;ICD9:42.65;Surgical Procedure;0
-Other antesternal esophagocolostomy;ICD9:42.66;Surgical Procedure;0
-Other antesternal esophageal anastomosis with interposition;ICD9:42.68;Surgical Procedure;0
-Other antesternal anastomosis of esophagus;ICD9:42.69;Surgical Procedure;0
-Esophagomyotomy;ICD9:42.7;Surgical Procedure;0
-Other repair of esophagus;ICD9:42.8;Surgical Procedure;0
-Insertion of permanent tube into esophagus;ICD9:42.81;Surgical Procedure;0
-Suture of laceration of esophagus;ICD9:42.82;Surgical Procedure;0
-Closure of esophagostomy;ICD9:42.83;Surgical Procedure;0
-Repair of esophageal fistula, not elsewhere classified;ICD9:42.84;Surgical Procedure;0
-Repair of esophageal stricture;ICD9:42.85;Surgical Procedure;0
-Production of subcutaneous tunnel without esophageal anastomosis;ICD9:42.86;Surgical Procedure;0
-Other graft of esophagus;ICD9:42.87;Surgical Procedure;0
-Other repair of esophagus;ICD9:42.89;Surgical Procedure;0
-Other operations on esophagus;ICD9:42.9;Surgical Procedure;0
-Ligation of esophageal varices;ICD9:42.91;Surgical Procedure;0
-Dilation of esophagus;ICD9:42.92;Surgical Procedure;0
-Other operations on esophagus;ICD9:42.99;Surgical Procedure;0
-Incision and excision of stomach;ICD9:43;Surgical Procedure;0
-Gastrotomy;ICD9:43.0;Surgical Procedure;0
-Gastrostomy;ICD9:43.1;Surgical Procedure;0
-Percutaneous [endoscopic] gastrostomy [peg];ICD9:43.11;Surgical Procedure;0
-Percutaneous [endoscopic] gastrostomy [PEG];ICD9:43.11;Surgical Procedure;1
-Percutaneous endoscopic gastrostomy peg;ICD9:43.11;Surgical Procedure;0
-Percutaneous [endoscopic] gastrostomy [PEG];ICD9:43.11;Surgical Procedure;1
-Other gastrostomy;ICD9:43.19;Surgical Procedure;0
-Pyloromyotomy;ICD9:43.3;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of stomach;ICD9:43.4;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of stomach;ICD9:43.41;Surgical Procedure;0
-Local excision of other lesion or tissue of stomach;ICD9:43.42;Surgical Procedure;0
-Other destruction of lesion or tissue of stomach;ICD9:43.49;Surgical Procedure;0
-Partial gastrectomy with anastomosis to esophagus;ICD9:43.5;Surgical Procedure;0
-Partial gastrectomy with anastomosis to duodenum;ICD9:43.6;Surgical Procedure;0
-Partial gastrectomy with anastomosis to jejunum;ICD9:43.7;Surgical Procedure;0
-Other partial gastrectomy;ICD9:43.8;Surgical Procedure;0
-Partial gastrectomy with jejunal transposition;ICD9:43.81;Surgical Procedure;0
-Laparoscopic vertical (sleeve) gastrectomy;ICD9:43.82;Surgical Procedure;0
-Laparoscopic vertical sleeve gastrectomy;ICD9:43.82;Surgical Procedure;0
-Laparoscopic vertical (sleeve) gastrectomy;ICD9:43.82;Surgical Procedure;1
-Open and other partial gastrectomy;ICD9:43.89;Surgical Procedure;0
-Total gastrectomy;ICD9:43.9;Surgical Procedure;0
-Total gastrectomy with intestinal interposition;ICD9:43.91;Surgical Procedure;0
-Other total gastrectomy;ICD9:43.99;Surgical Procedure;0
-Other operations on stomach;ICD9:44;Surgical Procedure;0
-Vagotomy;ICD9:44.0;Surgical Procedure;0
-Vagotomy, not otherwise specified;ICD9:44.00;Surgical Procedure;0
-Truncal vagotomy;ICD9:44.01;Surgical Procedure;0
-Highly selective vagotomy;ICD9:44.02;Surgical Procedure;0
-Other selective vagotomy;ICD9:44.03;Surgical Procedure;0
-Diagnostic procedures on stomach;ICD9:44.1;Surgical Procedure;0
-Transabdominal gastroscopy;ICD9:44.11;Surgical Procedure;0
-Gastroscopy through artificial stoma;ICD9:44.12;Surgical Procedure;0
-Other gastroscopy;ICD9:44.13;Surgical Procedure;0
-Closed [endoscopic] biopsy of stomach;ICD9:44.14;Surgical Procedure;0
-Closed endoscopic biopsy of stomach;ICD9:44.14;Surgical Procedure;0
-Closed [endoscopic] biopsy of stomach;ICD9:44.14;Surgical Procedure;1
-Open biopsy of stomach;ICD9:44.15;Surgical Procedure;0
-Other diagnostic procedures on stomach;ICD9:44.19;Surgical Procedure;0
-Pyloroplasty;ICD9:44.2;Surgical Procedure;0
-Dilation of pylorus by incision;ICD9:44.21;Surgical Procedure;0
-Endoscopic dilation of pylorus;ICD9:44.22;Surgical Procedure;0
-Other pyloroplasty;ICD9:44.29;Surgical Procedure;0
-Gastroenterostomy without gastrectomy;ICD9:44.3;Surgical Procedure;0
-High gastric bypass;ICD9:44.31;Surgical Procedure;0
-Percutaneous [endoscopic] gastrojejunostomy;ICD9:44.32;Surgical Procedure;0
-Percutaneous endoscopic gastrojejunostomy;ICD9:44.32;Surgical Procedure;0
-Percutaneous [endoscopic] gastrojejunostomy;ICD9:44.32;Surgical Procedure;1
-Laparoscopic gastroenterostomy;ICD9:44.38;Surgical Procedure;0
-Other gastroenterostomy without gastrectomy;ICD9:44.39;Surgical Procedure;0
-Control of hemorrhage and suture of ulcer of stomach or duodenum;ICD9:44.4;Surgical Procedure;0
-Suture of peptic ulcer, not otherwise specified;ICD9:44.40;Surgical Procedure;0
-Suture of gastric ulcer site;ICD9:44.41;Surgical Procedure;0
-Suture of duodenal ulcer site;ICD9:44.42;Surgical Procedure;0
-Endoscopic control of gastric or duodenal bleeding;ICD9:44.43;Surgical Procedure;0
-Transcatheter embolization for gastric or duodenal bleeding;ICD9:44.44;Surgical Procedure;0
-Other control of hemorrhage of stomach or duodenum;ICD9:44.49;Surgical Procedure;0
-Revision of gastric anastomosis;ICD9:44.5;Surgical Procedure;0
-Other repair of stomach;ICD9:44.6;Surgical Procedure;0
-Suture of laceration of stomach;ICD9:44.61;Surgical Procedure;0
-Closure of gastrostomy;ICD9:44.62;Surgical Procedure;0
-Closure of other gastric fistula;ICD9:44.63;Surgical Procedure;0
-Gastropexy;ICD9:44.64;Surgical Procedure;0
-Esophagogastroplasty;ICD9:44.65;Surgical Procedure;0
-Other procedures for creation of esophagogastric sphincteric competence;ICD9:44.66;Surgical Procedure;0
-Laparoscopic procedures for creation of esophagogastric sphincteric competence;ICD9:44.67;Surgical Procedure;0
-Laparoscopic gastroplasty;ICD9:44.68;Surgical Procedure;0
-Other repair of stomach;ICD9:44.69;Surgical Procedure;0
-Other operations on stomach;ICD9:44.9;Surgical Procedure;0
-Ligation of gastric varices;ICD9:44.91;Surgical Procedure;0
-Intraoperative manipulation of stomach;ICD9:44.92;Surgical Procedure;0
-Insertion of gastric bubble (balloon);ICD9:44.93;Surgical Procedure;0
-Insertion of gastric bubble balloon;ICD9:44.93;Surgical Procedure;0
-Insertion of gastric bubble (balloon);ICD9:44.93;Surgical Procedure;1
-Removal of gastric bubble (balloon);ICD9:44.94;Surgical Procedure;0
-Removal of gastric bubble balloon;ICD9:44.94;Surgical Procedure;0
-Removal of gastric bubble (balloon);ICD9:44.94;Surgical Procedure;1
-Laparoscopic gastric restrictive procedure;ICD9:44.95;Surgical Procedure;0
-Laparoscopic revision of gastric restrictive procedure;ICD9:44.96;Surgical Procedure;0
-Laparoscopic removal of gastric restrictive device(s);ICD9:44.97;Surgical Procedure;0
-Laparoscopic removal of gastric restrictive devices;ICD9:44.97;Surgical Procedure;0
-Laparoscopic removal of gastric restrictive device(s);ICD9:44.97;Surgical Procedure;1
-(laparoscopic) adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure;0
-(Laparoscopic) adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure;1
-laparoscopic adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure;0
-(Laparoscopic) adjustment of size of adjustable gastric restrictive device;ICD9:44.98;Surgical Procedure;1
-Other operations on stomach;ICD9:44.99;Surgical Procedure;0
-Incision, excision, and anastomosis of intestine;ICD9:45;Surgical Procedure;0
-Enterotomy;ICD9:45.0;Surgical Procedure;0
-Incision of intestine, not otherwise specified;ICD9:45.00;Surgical Procedure;0
-Incision of duodenum;ICD9:45.01;Surgical Procedure;0
-Other incision of small intestine;ICD9:45.02;Surgical Procedure;0
-Incision of large intestine;ICD9:45.03;Surgical Procedure;0
-Diagnostic procedures on small intestine;ICD9:45.1;Surgical Procedure;0
-Transabdominal endoscopy of small intestine;ICD9:45.11;Surgical Procedure;0
-Endoscopy of small intestine through artificial stoma;ICD9:45.12;Surgical Procedure;0
-Other endoscopy of small intestine;ICD9:45.13;Surgical Procedure;0
-Closed [endoscopic] biopsy of small intestine;ICD9:45.14;Surgical Procedure;0
-Closed endoscopic biopsy of small intestine;ICD9:45.14;Surgical Procedure;0
-Closed [endoscopic] biopsy of small intestine;ICD9:45.14;Surgical Procedure;1
-Open biopsy of small intestine;ICD9:45.15;Surgical Procedure;0
-Esophagogastroduodenoscopy [egd] with closed biopsy;ICD9:45.16;Surgical Procedure;0
-Esophagogastroduodenoscopy [EGD] with closed biopsy;ICD9:45.16;Surgical Procedure;1
-Esophagogastroduodenoscopy egd with closed biopsy;ICD9:45.16;Surgical Procedure;0
-Esophagogastroduodenoscopy [EGD] with closed biopsy;ICD9:45.16;Surgical Procedure;1
-Other diagnostic procedures on small intestine;ICD9:45.19;Surgical Procedure;0
-Diagnostic procedures on large intestine;ICD9:45.2;Surgical Procedure;0
-Transabdominal endoscopy of large intestine;ICD9:45.21;Surgical Procedure;0
-Endoscopy of large intestine through artificial stoma;ICD9:45.22;Surgical Procedure;0
-Colonoscopy;ICD9:45.23;Surgical Procedure;0
-Flexible sigmoidoscopy;ICD9:45.24;Surgical Procedure;0
-Closed [endoscopic] biopsy of large intestine;ICD9:45.25;Surgical Procedure;0
-Closed endoscopic biopsy of large intestine;ICD9:45.25;Surgical Procedure;0
-Closed [endoscopic] biopsy of large intestine;ICD9:45.25;Surgical Procedure;1
-Open biopsy of large intestine;ICD9:45.26;Surgical Procedure;0
-Intestinal biopsy, site unspecified;ICD9:45.27;Surgical Procedure;0
-Other diagnostic procedures on large intestine;ICD9:45.28;Surgical Procedure;0
-Other diagnostic procedures on intestine, site unspecified;ICD9:45.29;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of small intestine;ICD9:45.3;Surgical Procedure;0
-Endoscopic excision or destruction of lesion of duodenum;ICD9:45.30;Surgical Procedure;0
-Other local excision of lesion of duodenum;ICD9:45.31;Surgical Procedure;0
-Other destruction of lesion of duodenum;ICD9:45.32;Surgical Procedure;0
-Local excision of lesion or tissue of small intestine, except duodenum;ICD9:45.33;Surgical Procedure;0
-Other destruction of lesion of small intestine, except duodenum;ICD9:45.34;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of large intestine;ICD9:45.4;Surgical Procedure;0
-Excision of lesion or tissue of large intestine;ICD9:45.41;Surgical Procedure;0
-Endoscopic polypectomy of large intestine;ICD9:45.42;Surgical Procedure;0
-Endoscopic destruction of other lesion or tissue of large intestine;ICD9:45.43;Surgical Procedure;0
-Other destruction of lesion of large intestine;ICD9:45.49;Surgical Procedure;0
-Isolation of intestinal segment;ICD9:45.5;Surgical Procedure;0
-Isolation of intestinal segment, not otherwise specified;ICD9:45.50;Surgical Procedure;0
-Isolation of segment of small intestine;ICD9:45.51;Surgical Procedure;0
-Isolation of segment of large intestine;ICD9:45.52;Surgical Procedure;0
-Other excision of small intestine;ICD9:45.6;Surgical Procedure;0
-Multiple segmental resection of small intestine;ICD9:45.61;Surgical Procedure;0
-Other partial resection of small intestine;ICD9:45.62;Surgical Procedure;0
-Total removal of small intestine;ICD9:45.63;Surgical Procedure;0
-Open and other partial excision of large intestine;ICD9:45.7;Surgical Procedure;0
-Open and other multiple segmental resection of large intestine;ICD9:45.71;Surgical Procedure;0
-Open and other cecectomy;ICD9:45.72;Surgical Procedure;0
-Open and other right hemicolectomy;ICD9:45.73;Surgical Procedure;0
-Open and other resection of transverse colon;ICD9:45.74;Surgical Procedure;0
-Open and other left hemicolectomy;ICD9:45.75;Surgical Procedure;0
-Open and other sigmoidectomy;ICD9:45.76;Surgical Procedure;0
-Other and unspecified partial excision of large intestine;ICD9:45.79;Surgical Procedure;0
-Total intra-abdominal colectomy;ICD9:45.8;Surgical Procedure;0
-Laparoscopic total intra-abdominal colectomy;ICD9:45.81;Surgical Procedure;0
-Open total intra-abdominal colectomy;ICD9:45.82;Surgical Procedure;0
-Other and unspecified total intra-abdominal colectomy;ICD9:45.83;Surgical Procedure;0
-Intestinal anastomosis;ICD9:45.9;Surgical Procedure;0
-Intestinal anastomosis, not otherwise specified;ICD9:45.90;Surgical Procedure;0
-Small-to-small intestinal anastomosis;ICD9:45.91;Surgical Procedure;0
-Anastomosis of small intestine to rectal stump;ICD9:45.92;Surgical Procedure;0
-Other small-to-large intestinal anastomosis;ICD9:45.93;Surgical Procedure;0
-Large-to-large intestinal anastomosis;ICD9:45.94;Surgical Procedure;0
-Anastomosis to anus;ICD9:45.95;Surgical Procedure;0
-Other operations on intestine;ICD9:46;Surgical Procedure;0
 Exteriorization of intestine;ICD9:46.0;Surgical Procedure;0
-Other operations on intestine;ICD9:46.03;Surgical Procedure;1
-Exteriorization of small intestine;ICD9:46.01;Surgical Procedure;0
-Other operations on intestine;ICD9:46.03;Surgical Procedure;1
-Resection of exteriorized segment of small intestine;ICD9:46.02;Surgical Procedure;0
-Other operations on intestine;ICD9:46.03;Surgical Procedure;1
-Exteriorization of large intestine;ICD9:46.03;Surgical Procedure;0
-Other operations on intestine;ICD9:46.03;Surgical Procedure;1
-Resection of exteriorized segment of large intestine;ICD9:46.04;Surgical Procedure;0
-Colostomy;ICD9:46.1;Surgical Procedure;0
-Colostomy, not otherwise specified;ICD9:46.10;Surgical Procedure;0
-Temporary colostomy;ICD9:46.11;Surgical Procedure;0
-Permanent colostomy;ICD9:46.13;Surgical Procedure;0
-Delayed opening of colostomy;ICD9:46.14;Surgical Procedure;0
-Ileostomy;ICD9:46.2;Surgical Procedure;0
-Ileostomy, not otherwise specified;ICD9:46.20;Surgical Procedure;0
-Temporary ileostomy;ICD9:46.21;Surgical Procedure;0
-Continent ileostomy;ICD9:46.22;Surgical Procedure;0
-Other permanent ileostomy;ICD9:46.23;Surgical Procedure;0
-Delayed opening of ileostomy;ICD9:46.24;Surgical Procedure;0
-Other enterostomy;ICD9:46.3;Surgical Procedure;0
-Delayed opening of other enterostomy;ICD9:46.31;Surgical Procedure;0
-Percutaneous (endoscopic) jejunostomy [pej];ICD9:46.32;Surgical Procedure;0
-Percutaneous (endoscopic) jejunostomy [PEJ];ICD9:46.32;Surgical Procedure;1
-Percutaneous endoscopic jejunostomy pej;ICD9:46.32;Surgical Procedure;0
-Percutaneous (endoscopic) jejunostomy [PEJ];ICD9:46.32;Surgical Procedure;1
-Other enterostomy;ICD9:46.39;Surgical Procedure;0
-Revision of intestinal stoma;ICD9:46.4;Surgical Procedure;0
-Revision of intestinal stoma, not otherwise specified;ICD9:46.40;Surgical Procedure;0
-Revision of stoma of small intestine;ICD9:46.41;Surgical Procedure;0
-Repair of pericolostomy hernia;ICD9:46.42;Surgical Procedure;0
-Other revision of stoma of large intestine;ICD9:46.43;Surgical Procedure;0
-Closure of intestinal stoma;ICD9:46.5;Surgical Procedure;0
-Closure of intestinal stoma, not otherwise specified;ICD9:46.50;Surgical Procedure;0
-Closure of stoma of small intestine;ICD9:46.51;Surgical Procedure;0
-Closure of stoma of large intestine;ICD9:46.52;Surgical Procedure;0
-Fixation of intestine;ICD9:46.6;Surgical Procedure;0
-Fixation of intestine, not otherwise specified;ICD9:46.60;Surgical Procedure;0
-Fixation of small intestine to abdominal wall;ICD9:46.61;Surgical Procedure;0
-Other fixation of small intestine;ICD9:46.62;Surgical Procedure;0
-Fixation of large intestine to abdominal wall;ICD9:46.63;Surgical Procedure;0
-Other fixation of large intestine;ICD9:46.64;Surgical Procedure;0
-Other repair of intestine;ICD9:46.7;Surgical Procedure;0
-Suture of laceration of duodenum;ICD9:46.71;Surgical Procedure;0
-Closure of fistula of duodenum;ICD9:46.72;Surgical Procedure;0
-Suture of laceration of small intestine, except duodenum;ICD9:46.73;Surgical Procedure;0
-Closure of fistula of small intestine, except duodenum;ICD9:46.74;Surgical Procedure;0
-Suture of laceration of large intestine;ICD9:46.75;Surgical Procedure;0
-Closure of fistula of large intestine;ICD9:46.76;Surgical Procedure;0
-Other repair of intestine;ICD9:46.79;Surgical Procedure;0
-Dilation and manipulation of intestine;ICD9:46.8;Surgical Procedure;0
-Intra-abdominal manipulation of intestine, not otherwise specified;ICD9:46.80;Surgical Procedure;0
-Intra-abdominal manipulation of small intestine;ICD9:46.81;Surgical Procedure;0
-Intra-abdominal manipulation of large intestine;ICD9:46.82;Surgical Procedure;0
-Dilation of intestine;ICD9:46.85;Surgical Procedure;0
-Endoscopic insertion of colonic stent(s);ICD9:46.86;Surgical Procedure;0
-Endoscopic insertion of colonic stents;ICD9:46.86;Surgical Procedure;0
-Endoscopic insertion of colonic stent(s);ICD9:46.86;Surgical Procedure;1
-Other insertion of colonic stent(s);ICD9:46.87;Surgical Procedure;0
-Other insertion of colonic stents;ICD9:46.87;Surgical Procedure;0
-Other insertion of colonic stent(s);ICD9:46.87;Surgical Procedure;1
-Other operations on intestines;ICD9:46.9;Surgical Procedure;0
-Myotomy of sigmoid colon;ICD9:46.91;Surgical Procedure;0
-Myotomy of other parts of colon;ICD9:46.92;Surgical Procedure;0
-Revision of anastomosis of small intestine;ICD9:46.93;Surgical Procedure;0
-Revision of anastomosis of large intestine;ICD9:46.94;Surgical Procedure;0
-Local perfusion of small intestine;ICD9:46.95;Surgical Procedure;0
-Local perfusion of large intestine;ICD9:46.96;Surgical Procedure;0
-Transplant of intestine;ICD9:46.97;Surgical Procedure;0
-Other operations on intestines;ICD9:46.99;Surgical Procedure;0
-Operations on appendix;ICD9:47;Surgical Procedure;0
-Appendectomy;ICD9:47.0;Surgical Procedure;0
-Laparoscopic appendectomy;ICD9:47.01;Surgical Procedure;0
-Other appendectomy;ICD9:47.09;Surgical Procedure;0
-Incidental appendectomy;ICD9:47.1;Surgical Procedure;0
-Laparoscopic incidental appendectomy;ICD9:47.11;Surgical Procedure;0
-Other incidental appendectomy;ICD9:47.19;Surgical Procedure;0
-Drainage of appendiceal abscess;ICD9:47.2;Surgical Procedure;0
+Exteriorisation of intestine;ICD9:46.0;Surgical Procedure;1
+Exteriorization of intestine (procedure);ICD9:46.0;Surgical Procedure;1
+Exteriorization of intestine NOS;ICD9:46.0;Surgical Procedure;1
+Exteriorization of intestine, NOS;ICD9:46.0;Surgical Procedure;1
+Repair of chest wall;ICD9:34.7;Surgical Procedure;0
+Chest wall repair;ICD9:34.7;Surgical Procedure;1
+Repair of chest wall (procedure);ICD9:34.7;Surgical Procedure;1
+Repair of chest wall NOS;ICD9:34.7;Surgical Procedure;1
+Repair of chest wall, NOS;ICD9:34.7;Surgical Procedure;1
+THORAX AND CHEST WALL: SURGICAL REPAIRS, CLOSURES AND RECONSTRUCTIONS;ICD9:34.7;Surgical Procedure;1
+Scarification of pleura;ICD9:34.6;Surgical Procedure;0
+Obliteration of pleural cavity;ICD9:34.6;Surgical Procedure;1
+Pleural cavity obliteration;ICD9:34.6;Surgical Procedure;1
+Pleural cavity obliteration (procedure);ICD9:34.6;Surgical Procedure;1
+Pleural scarification;ICD9:34.6;Surgical Procedure;1
+Pleurodesis;ICD9:34.6;Surgical Procedure;1
+Pleurodesis (procedure);ICD9:34.6;Surgical Procedure;1
+Pleurodesis, NOS;ICD9:34.6;Surgical Procedure;1
+Pleurosclerosis;ICD9:34.6;Surgical Procedure;1
+pleural scarification;ICD9:34.6;Surgical Procedure;1
+pleural scarification (treatment);ICD9:34.6;Surgical Procedure;1
+pleurodesis;ICD9:34.6;Surgical Procedure;1
+Pleurectomy;ICD9:34.5;Surgical Procedure;0
+Excision of Pleura;ICD9:34.5;Surgical Procedure;1
+Excision of pleura;ICD9:34.5;Surgical Procedure;1
+Excision of pleura, NOS;ICD9:34.5;Surgical Procedure;1
+Pleurectomy (procedure);ICD9:34.5;Surgical Procedure;1
+Pleurectomy, NOS;ICD9:34.5;Surgical Procedure;1
+pleurectomy;ICD9:34.5;Surgical Procedure;1
+Excision or destruction of lesion of chest wall;ICD9:34.4;Surgical Procedure;0
+Other repair of esophagus;ICD9:42.8;Surgical Procedure;0
+Esophagomyotomy;ICD9:42.7;Surgical Procedure;0
+Cardiomyotomy;ICD9:42.7;Surgical Procedure;1
+Cardiomyotomy (procedure);ICD9:42.7;Surgical Procedure;1
+Cardiomyotomy of esophagus;ICD9:42.7;Surgical Procedure;1
+Cardiomyotomy of oesophagus;ICD9:42.7;Surgical Procedure;1
+Esophagogastromyotomy;ICD9:42.7;Surgical Procedure;1
+Esophagomyotomy (procedure);ICD9:42.7;Surgical Procedure;1
+Esophagomyotomy, NOS;ICD9:42.7;Surgical Procedure;1
+Heller cardiomyotomy;ICD9:42.7;Surgical Procedure;1
+Heller cardiomyotomy (treatment);ICD9:42.7;Surgical Procedure;1
+Heller operation, esophagomyotomy;ICD9:42.7;Surgical Procedure;1
+Heller operation, oesophagomyotomy;ICD9:42.7;Surgical Procedure;1
+Myotomy of esophagus;ICD9:42.7;Surgical Procedure;1
+Myotomy of oesophagus;ICD9:42.7;Surgical Procedure;1
 Other operations on appendix;ICD9:47.9;Surgical Procedure;0
-Appendicostomy;ICD9:47.91;Surgical Procedure;0
-Closure of appendiceal fistula;ICD9:47.92;Surgical Procedure;0
-Other operations on appendix;ICD9:47.99;Surgical Procedure;0
-Operations on rectum, rectosigmoid and perirectal tissue;ICD9:48;Surgical Procedure;0
-Proctotomy;ICD9:48.0;Surgical Procedure;0
-Proctostomy;ICD9:48.1;Surgical Procedure;0
-Diagnostic procedures on rectum, rectosigmoid and perirectal tissue;ICD9:48.2;Surgical Procedure;0
-Transabdominal proctosigmoidoscopy;ICD9:48.21;Surgical Procedure;0
-Proctosigmoidoscopy through artificial stoma;ICD9:48.22;Surgical Procedure;0
-Rigid proctosigmoidoscopy;ICD9:48.23;Surgical Procedure;0
-Closed [endoscopic] biopsy of rectum;ICD9:48.24;Surgical Procedure;0
-Closed endoscopic biopsy of rectum;ICD9:48.24;Surgical Procedure;0
-Closed [endoscopic] biopsy of rectum;ICD9:48.24;Surgical Procedure;1
-Open biopsy of rectum;ICD9:48.25;Surgical Procedure;0
-Biopsy of perirectal tissue;ICD9:48.26;Surgical Procedure;0
-Other diagnostic procedures on rectum, rectosigmoid and perirectal tissue;ICD9:48.29;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of rectum;ICD9:48.3;Surgical Procedure;0
-Radical electrocoagulation of rectal lesion or tissue;ICD9:48.31;Surgical Procedure;0
-Other electrocoagulation of rectal lesion or tissue;ICD9:48.32;Surgical Procedure;0
-Destruction of rectal lesion or tissue by laser;ICD9:48.33;Surgical Procedure;0
-Destruction of rectal lesion or tissue by cryosurgery;ICD9:48.34;Surgical Procedure;0
-Local excision of rectal lesion or tissue;ICD9:48.35;Surgical Procedure;0
-[endoscopic] polypectomy of rectum;ICD9:48.36;Surgical Procedure;0
-[Endoscopic] polypectomy of rectum;ICD9:48.36;Surgical Procedure;1
-endoscopic polypectomy of rectum;ICD9:48.36;Surgical Procedure;0
-[Endoscopic] polypectomy of rectum;ICD9:48.36;Surgical Procedure;1
-Pull-through resection of rectum;ICD9:48.4;Surgical Procedure;0
-Pull-through resection of rectum, not otherwise specified;ICD9:48.40;Surgical Procedure;0
-Soave submucosal resection of rectum;ICD9:48.41;Surgical Procedure;0
-Laparoscopic pull-through resection of rectum;ICD9:48.42;Surgical Procedure;0
-Open pull-through resection of rectum;ICD9:48.43;Surgical Procedure;0
-Other pull-through resection of rectum;ICD9:48.49;Surgical Procedure;0
-Abdominoperineal resection of rectum;ICD9:48.5;Surgical Procedure;0
-Abdominoperineal resection of the rectum, not otherwise specified;ICD9:48.50;Surgical Procedure;0
-Laparoscopic abdominoperineal resection of the rectum;ICD9:48.51;Surgical Procedure;0
-Open abdominoperineal resection of the rectum;ICD9:48.52;Surgical Procedure;0
-Other abdominoperineal resection of the rectum;ICD9:48.59;Surgical Procedure;0
-Other resection of rectum;ICD9:48.6;Surgical Procedure;0
-Transsacral rectosigmoidectomy;ICD9:48.61;Surgical Procedure;0
-Anterior resection of rectum with synchronous colostomy;ICD9:48.62;Surgical Procedure;0
-Other anterior resection of rectum;ICD9:48.63;Surgical Procedure;0
-Posterior resection of rectum;ICD9:48.64;Surgical Procedure;0
-Duhamel resection of rectum;ICD9:48.65;Surgical Procedure;0
-Other resection of rectum;ICD9:48.69;Surgical Procedure;0
-Repair of rectum;ICD9:48.7;Surgical Procedure;0
-Suture of laceration of rectum;ICD9:48.71;Surgical Procedure;0
-Closure of proctostomy;ICD9:48.72;Surgical Procedure;0
-Closure of other rectal fistula;ICD9:48.73;Surgical Procedure;0
-Rectorectostomy;ICD9:48.74;Surgical Procedure;0
-Abdominal proctopexy;ICD9:48.75;Surgical Procedure;0
-Other proctopexy;ICD9:48.76;Surgical Procedure;0
-Other repair of rectum;ICD9:48.79;Surgical Procedure;0
-Incision or excision of perirectal tissue or lesion;ICD9:48.8;Surgical Procedure;0
-Incision of perirectal tissue;ICD9:48.81;Surgical Procedure;0
-Excision of perirectal tissue;ICD9:48.82;Surgical Procedure;0
-Other operations on rectum and perirectal tissue;ICD9:48.9;Surgical Procedure;0
-Incision of rectal stricture;ICD9:48.91;Surgical Procedure;0
-Anorectal myectomy;ICD9:48.92;Surgical Procedure;0
-Repair of perirectal fistula;ICD9:48.93;Surgical Procedure;0
-Other operations on rectum and perirectal tissue;ICD9:48.99;Surgical Procedure;0
-Operations on anus;ICD9:49;Surgical Procedure;0
-Incision or excision of perianal tissue;ICD9:49.0;Surgical Procedure;0
-Incision of perianal abscess;ICD9:49.01;Surgical Procedure;0
-Other incision of perianal tissue;ICD9:49.02;Surgical Procedure;0
-Excision of perianal skin tags;ICD9:49.03;Surgical Procedure;0
-Other excision of perianal tissue;ICD9:49.04;Surgical Procedure;0
-Incision or excision of anal fistula;ICD9:49.1;Surgical Procedure;0
-Anal fistulotomy;ICD9:49.11;Surgical Procedure;0
-Anal fistulectomy;ICD9:49.12;Surgical Procedure;0
-Diagnostic procedures on anus and perianal tissue;ICD9:49.2;Surgical Procedure;0
-Anoscopy;ICD9:49.21;Surgical Procedure;0
-Biopsy of perianal tissue;ICD9:49.22;Surgical Procedure;0
-Biopsy of anus;ICD9:49.23;Surgical Procedure;0
-Other diagnostic procedures on anus and perianal tissue;ICD9:49.29;Surgical Procedure;0
-Local excision or destruction of other lesion or tissue of anus;ICD9:49.3;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of anus;ICD9:49.31;Surgical Procedure;0
-Other local excision or destruction of lesion or tissue of anus;ICD9:49.39;Surgical Procedure;0
-Procedures on hemorrhoids;ICD9:49.4;Surgical Procedure;0
-Reduction of hemorrhoids;ICD9:49.41;Surgical Procedure;0
-Injection of hemorrhoids;ICD9:49.42;Surgical Procedure;0
-Cauterization of hemorrhoids;ICD9:49.43;Surgical Procedure;0
-Destruction of hemorrhoids by cryotherapy;ICD9:49.44;Surgical Procedure;0
-Ligation of hemorrhoids;ICD9:49.45;Surgical Procedure;0
-Excision of hemorrhoids;ICD9:49.46;Surgical Procedure;0
-Evacuation of thrombosed hemorrhoids;ICD9:49.47;Surgical Procedure;0
-Other procedures on hemorrhoids;ICD9:49.49;Surgical Procedure;0
-Division of anal sphincter;ICD9:49.5;Surgical Procedure;0
-Left lateral anal sphincterotomy;ICD9:49.51;Surgical Procedure;0
-Posterior anal sphincterotomy;ICD9:49.52;Surgical Procedure;0
-Other anal sphincterotomy;ICD9:49.59;Surgical Procedure;0
-Excision of anus;ICD9:49.6;Surgical Procedure;0
-Repair of anus;ICD9:49.7;Surgical Procedure;0
-Suture of laceration of anus;ICD9:49.71;Surgical Procedure;0
-Anal cerclage;ICD9:49.72;Surgical Procedure;0
-Closure of anal fistula;ICD9:49.73;Surgical Procedure;0
-Gracilis muscle transplant for anal incontinence;ICD9:49.74;Surgical Procedure;0
-Implantation or revision of artificial anal sphincter;ICD9:49.75;Surgical Procedure;0
-Removal of artificial anal sphincter;ICD9:49.76;Surgical Procedure;0
-Other repair of anal sphincter;ICD9:49.79;Surgical Procedure;0
-Other operations on anus;ICD9:49.9;Surgical Procedure;0
-Incision of anal septum;ICD9:49.91;Surgical Procedure;0
-Insertion of subcutaneous electrical anal stimulator;ICD9:49.92;Surgical Procedure;0
-Other incision of anus;ICD9:49.93;Surgical Procedure;0
-Reduction of anal prolapse;ICD9:49.94;Surgical Procedure;0
-Control of (postoperative) hemorrhage of anus;ICD9:49.95;Surgical Procedure;0
-Control of postoperative hemorrhage of anus;ICD9:49.95;Surgical Procedure;0
-Control of (postoperative) hemorrhage of anus;ICD9:49.95;Surgical Procedure;1
-Other operations on anus;ICD9:49.99;Surgical Procedure;0
-Operations on liver;ICD9:50;Surgical Procedure;0
-Hepatotomy;ICD9:50.0;Surgical Procedure;0
-Diagnostic procedures on liver;ICD9:50.1;Surgical Procedure;0
-Closed (percutaneous) [needle] biopsy of liver;ICD9:50.11;Surgical Procedure;0
-Closed percutaneous needle biopsy of liver;ICD9:50.11;Surgical Procedure;0
-Closed (percutaneous) [needle] biopsy of liver;ICD9:50.11;Surgical Procedure;1
-Open biopsy of liver;ICD9:50.12;Surgical Procedure;0
-Transjugular liver biopsy;ICD9:50.13;Surgical Procedure;0
-Laparoscopic liver biopsy;ICD9:50.14;Surgical Procedure;0
-Other diagnostic procedures on liver;ICD9:50.19;Surgical Procedure;0
-Local excision or destruction of liver tissue or lesion;ICD9:50.2;Surgical Procedure;0
-Marsupialization of lesion of liver;ICD9:50.21;Surgical Procedure;0
-Partial hepatectomy;ICD9:50.22;Surgical Procedure;0
-Open ablation of liver lesion or tissue;ICD9:50.23;Surgical Procedure;0
-Percutaneous ablation of liver lesion or tissue;ICD9:50.24;Surgical Procedure;0
-Laparoscopic ablation of liver lesion or tissue;ICD9:50.25;Surgical Procedure;0
-Other and unspecified ablation of liver lesion or tissue;ICD9:50.26;Surgical Procedure;0
-Other destruction of lesion of liver;ICD9:50.29;Surgical Procedure;0
-Lobectomy of liver;ICD9:50.3;Surgical Procedure;0
-Total hepatectomy;ICD9:50.4;Surgical Procedure;0
-Liver transplant;ICD9:50.5;Surgical Procedure;0
-Auxiliary liver transplant;ICD9:50.51;Surgical Procedure;0
-Other transplant of liver;ICD9:50.59;Surgical Procedure;0
-Repair of liver;ICD9:50.6;Surgical Procedure;0
-Closure of laceration of liver;ICD9:50.61;Surgical Procedure;0
-Other repair of liver;ICD9:50.69;Surgical Procedure;0
-Other operations on liver;ICD9:50.9;Surgical Procedure;0
-Percutaneous aspiration of liver;ICD9:50.91;Surgical Procedure;0
-Extracorporeal hepatic assistance;ICD9:50.92;Surgical Procedure;0
-Localized perfusion of liver;ICD9:50.93;Surgical Procedure;0
-Other injection of therapeutic substance into liver;ICD9:50.94;Surgical Procedure;0
-Other operations on liver;ICD9:50.99;Surgical Procedure;0
-Operations on gallbladder and biliary tract;ICD9:51;Surgical Procedure;0
-Cholecystotomy and cholecystostomy;ICD9:51.0;Surgical Procedure;0
-Percutaneous aspiration of gallbladder;ICD9:51.01;Surgical Procedure;0
-Trocar cholecystostomy;ICD9:51.02;Surgical Procedure;0
-Other cholecystostomy;ICD9:51.03;Surgical Procedure;0
-Other cholecystotomy;ICD9:51.04;Surgical Procedure;0
-Diagnostic procedures on biliary tract;ICD9:51.1;Surgical Procedure;0
-Endoscopic retrograde cholangiopancreatography [ercp];ICD9:51.10;Surgical Procedure;0
-Endoscopic retrograde cholangiopancreatography [ERCP];ICD9:51.10;Surgical Procedure;1
-Endoscopic retrograde cholangiopancreatography ercp;ICD9:51.10;Surgical Procedure;0
-Endoscopic retrograde cholangiopancreatography [ERCP];ICD9:51.10;Surgical Procedure;1
-Endoscopic retrograde cholangiography [erc];ICD9:51.11;Surgical Procedure;0
-Endoscopic retrograde cholangiography [ERC];ICD9:51.11;Surgical Procedure;1
-Endoscopic retrograde cholangiography erc;ICD9:51.11;Surgical Procedure;0
-Endoscopic retrograde cholangiography [ERC];ICD9:51.11;Surgical Procedure;1
-Percutaneous biopsy of gallbladder or bile ducts;ICD9:51.12;Surgical Procedure;0
-Open biopsy of gallbladder or bile ducts;ICD9:51.13;Surgical Procedure;0
-Other closed [endoscopic] biopsy of biliary duct or sphincter of oddi;ICD9:51.14;Surgical Procedure;0
-Other closed [endoscopic] biopsy of biliary duct or sphincter of Oddi;ICD9:51.14;Surgical Procedure;1
-Other closed endoscopic biopsy of biliary duct or sphincter of oddi;ICD9:51.14;Surgical Procedure;0
-Other closed [endoscopic] biopsy of biliary duct or sphincter of Oddi;ICD9:51.14;Surgical Procedure;1
-Pressure measurement of sphincter of oddi;ICD9:51.15;Surgical Procedure;0
-Pressure measurement of sphincter of Oddi;ICD9:51.15;Surgical Procedure;1
-Other diagnostic procedures on biliary tract;ICD9:51.19;Surgical Procedure;0
-Cholecystectomy;ICD9:51.2;Surgical Procedure;0
-Other partial cholecystectomy;ICD9:51.21;Surgical Procedure;0
-Cholecystectomy;ICD9:51.22;Surgical Procedure;0
-Laparoscopic cholecystectomy;ICD9:51.23;Surgical Procedure;0
-Laparoscopic partial cholecystectomy;ICD9:51.24;Surgical Procedure;0
-Anastomosis of gallbladder or bile duct;ICD9:51.3;Surgical Procedure;0
-Anastomosis of gallbladder to hepatic ducts;ICD9:51.31;Surgical Procedure;0
-Anastomosis of gallbladder to intestine;ICD9:51.32;Surgical Procedure;0
-Anastomosis of gallbladder to pancreas;ICD9:51.33;Surgical Procedure;0
-Anastomosis of gallbladder to stomach;ICD9:51.34;Surgical Procedure;0
-Other gallbladder anastomosis;ICD9:51.35;Surgical Procedure;0
-Choledochoenterostomy;ICD9:51.36;Surgical Procedure;0
-Anastomosis of hepatic duct to gastrointestinal tract;ICD9:51.37;Surgical Procedure;0
-Other bile duct anastomosis;ICD9:51.39;Surgical Procedure;0
-Incision of bile duct for relief of obstruction;ICD9:51.4;Surgical Procedure;0
-Common duct exploration for removal of calculus;ICD9:51.41;Surgical Procedure;0
-Common duct exploration for relief of other obstruction;ICD9:51.42;Surgical Procedure;0
-Insertion of choledochohepatic tube for decompression;ICD9:51.43;Surgical Procedure;0
-Incision of other bile ducts for relief of obstruction;ICD9:51.49;Surgical Procedure;0
-Other incision of bile duct;ICD9:51.5;Surgical Procedure;0
-Exploration of common duct;ICD9:51.51;Surgical Procedure;0
-Other incision of other bile duct;ICD9:51.59;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of biliary ducts and sphincter of oddi;ICD9:51.6;Surgical Procedure;0
-Local excision or destruction of lesion or tissue of biliary ducts and sphincter of Oddi;ICD9:51.6;Surgical Procedure;1
-Excision of cystic duct remnant;ICD9:51.61;Surgical Procedure;0
-Excision of ampulla of vater (with reimplantation of common duct);ICD9:51.62;Surgical Procedure;0
-Excision of ampulla of Vater (with reimplantation of common duct);ICD9:51.62;Surgical Procedure;1
-Excision of ampulla of vater with reimplantation of common duct;ICD9:51.62;Surgical Procedure;0
-Excision of ampulla of Vater (with reimplantation of common duct);ICD9:51.62;Surgical Procedure;1
-Other excision of common duct;ICD9:51.63;Surgical Procedure;0
-Endoscopic excision or destruction of lesion of biliary ducts or sphincter of oddi;ICD9:51.64;Surgical Procedure;0
-Endoscopic excision or destruction of lesion of biliary ducts or sphincter of Oddi;ICD9:51.64;Surgical Procedure;1
-Excision of other bile duct;ICD9:51.69;Surgical Procedure;0
-Repair of bile ducts;ICD9:51.7;Surgical Procedure;0
-Simple suture of common bile duct;ICD9:51.71;Surgical Procedure;0
-Choledochoplasty;ICD9:51.72;Surgical Procedure;0
-Repair of other bile ducts;ICD9:51.79;Surgical Procedure;0
-Other operations on biliary ducts and sphincter of oddi;ICD9:51.8;Surgical Procedure;0
-Other operations on biliary ducts and sphincter of Oddi;ICD9:51.8;Surgical Procedure;1
-Dilation of sphincter of oddi;ICD9:51.81;Surgical Procedure;0
-Dilation of sphincter of Oddi;ICD9:51.81;Surgical Procedure;1
-Pancreatic sphincterotomy;ICD9:51.82;Surgical Procedure;0
-Pancreatic sphincteroplasty;ICD9:51.83;Surgical Procedure;0
-Endoscopic dilation of ampulla and biliary duct;ICD9:51.84;Surgical Procedure;0
-Endoscopic sphincterotomy and papillotomy;ICD9:51.85;Surgical Procedure;0
-Endoscopic insertion of nasobiliary drainage tube;ICD9:51.86;Surgical Procedure;0
-Endoscopic insertion of stent (tube) into bile duct;ICD9:51.87;Surgical Procedure;0
-Endoscopic insertion of stent tube into bile duct;ICD9:51.87;Surgical Procedure;0
-Endoscopic insertion of stent (tube) into bile duct;ICD9:51.87;Surgical Procedure;1
-Endoscopic removal of stone(s) from biliary tract;ICD9:51.88;Surgical Procedure;0
-Endoscopic removal of stones from biliary tract;ICD9:51.88;Surgical Procedure;0
-Endoscopic removal of stone(s) from biliary tract;ICD9:51.88;Surgical Procedure;1
-Other operations on sphincter of oddi;ICD9:51.89;Surgical Procedure;0
-Other operations on sphincter of Oddi;ICD9:51.89;Surgical Procedure;1
-Other operations on biliary tract;ICD9:51.9;Surgical Procedure;0
-Repair of laceration of gallbladder;ICD9:51.91;Surgical Procedure;0
-Closure of cholecystostomy;ICD9:51.92;Surgical Procedure;0
-Closure of other biliary fistula;ICD9:51.93;Surgical Procedure;0
-Revision of anastomosis of biliary tract;ICD9:51.94;Surgical Procedure;0
-Removal of prosthetic device from bile duct;ICD9:51.95;Surgical Procedure;0
-Percutaneous extraction of common duct stones;ICD9:51.96;Surgical Procedure;0
-Other percutaneous procedures on biliary tract;ICD9:51.98;Surgical Procedure;0
-Other operations on biliary tract;ICD9:51.99;Surgical Procedure;0
-Operations on pancreas;ICD9:52;Surgical Procedure;0
-Pancreatotomy;ICD9:52.0;Surgical Procedure;0
-Drainage of pancreatic cyst by catheter;ICD9:52.01;Surgical Procedure;0
-Other pancreatotomy;ICD9:52.09;Surgical Procedure;0
-Diagnostic procedures on pancreas;ICD9:52.1;Surgical Procedure;0
-Closed [aspiration] [needle] [percutaneous] biopsy of pancreas;ICD9:52.11;Surgical Procedure;0
-Closed aspiration needle percutaneous biopsy of pancreas;ICD9:52.11;Surgical Procedure;0
-Closed [aspiration] [needle] [percutaneous] biopsy of pancreas;ICD9:52.11;Surgical Procedure;1
-Open biopsy of pancreas;ICD9:52.12;Surgical Procedure;0
-Endoscopic retrograde pancreatography [erp];ICD9:52.13;Surgical Procedure;0
-Endoscopic retrograde pancreatography [ERP];ICD9:52.13;Surgical Procedure;1
-Endoscopic retrograde pancreatography erp;ICD9:52.13;Surgical Procedure;0
-Endoscopic retrograde pancreatography [ERP];ICD9:52.13;Surgical Procedure;1
-Closed [endoscopic] biopsy of pancreatic duct;ICD9:52.14;Surgical Procedure;0
-Closed endoscopic biopsy of pancreatic duct;ICD9:52.14;Surgical Procedure;0
-Closed [endoscopic] biopsy of pancreatic duct;ICD9:52.14;Surgical Procedure;1
-Other diagnostic procedures on pancreas;ICD9:52.19;Surgical Procedure;0
-Local excision or destruction of pancreas and pancreatic duct;ICD9:52.2;Surgical Procedure;0
-Endoscopic excision or destruction of lesion or tissue of pancreatic duct;ICD9:52.21;Surgical Procedure;0
-Other excision or destruction of lesion or tissue of pancreas or pancreatic duct;ICD9:52.22;Surgical Procedure;0
-Marsupialization of pancreatic cyst;ICD9:52.3;Surgical Procedure;0
-Internal drainage of pancreatic cyst;ICD9:52.4;Surgical Procedure;0
-Partial pancreatectomy;ICD9:52.5;Surgical Procedure;0
-Proximal pancreatectomy;ICD9:52.51;Surgical Procedure;0
-Distal pancreatectomy;ICD9:52.52;Surgical Procedure;0
-Radical subtotal pancreatectomy;ICD9:52.53;Surgical Procedure;0
-Other partial pancreatectomy;ICD9:52.59;Surgical Procedure;0
-Total pancreatectomy;ICD9:52.6;Surgical Procedure;0
-Radical pancreaticoduodenectomy;ICD9:52.7;Surgical Procedure;0
-Transplant of pancreas;ICD9:52.8;Surgical Procedure;0
-Pancreatic transplant, not otherwise specified;ICD9:52.80;Surgical Procedure;0
-Reimplantation of pancreatic tissue;ICD9:52.81;Surgical Procedure;0
-Homotransplant of pancreas;ICD9:52.82;Surgical Procedure;0
-Heterotransplant of pancreas;ICD9:52.83;Surgical Procedure;0
-Autotransplantation of cells of islets of langerhans;ICD9:52.84;Surgical Procedure;0
-Autotransplantation of cells of Islets of Langerhans;ICD9:52.84;Surgical Procedure;1
-Allotransplantation of cells of islets of langerhans;ICD9:52.85;Surgical Procedure;0
-Allotransplantation of cells of Islets of Langerhans;ICD9:52.85;Surgical Procedure;1
-Transplantation of cells of islets of langerhans, not otherwise specified;ICD9:52.86;Surgical Procedure;0
-Transplantation of cells of Islets of Langerhans, not otherwise specified;ICD9:52.86;Surgical Procedure;1
-Other operations on pancreas;ICD9:52.9;Surgical Procedure;0
-Cannulation of pancreatic duct;ICD9:52.92;Surgical Procedure;0
-Endoscopic insertion of stent (tube) into pancreatic duct;ICD9:52.93;Surgical Procedure;0
-Endoscopic insertion of stent tube into pancreatic duct;ICD9:52.93;Surgical Procedure;0
-Endoscopic insertion of stent (tube) into pancreatic duct;ICD9:52.93;Surgical Procedure;1
-Endoscopic removal of stone(s) from pancreatic duct;ICD9:52.94;Surgical Procedure;0
-Endoscopic removal of stones from pancreatic duct;ICD9:52.94;Surgical Procedure;0
-Endoscopic removal of stone(s) from pancreatic duct;ICD9:52.94;Surgical Procedure;1
-Other repair of pancreas;ICD9:52.95;Surgical Procedure;0
-Anastomosis of pancreas;ICD9:52.96;Surgical Procedure;0
-Endoscopic insertion of nasopancreatic drainage tube;ICD9:52.97;Surgical Procedure;0
-Endoscopic dilation of pancreatic duct;ICD9:52.98;Surgical Procedure;0
-Other operations on pancreas;ICD9:52.99;Surgical Procedure;0
-Repair of hernia;ICD9:53;Surgical Procedure;0
-Other unilateral repair of inguinal hernia;ICD9:53.0;Surgical Procedure;0
-Unilateral repair of inguinal hernia, not otherwise specified;ICD9:53.00;Surgical Procedure;0
-Other and open repair of direct inguinal hernia;ICD9:53.01;Surgical Procedure;0
-Other and open repair of indirect inguinal hernia;ICD9:53.02;Surgical Procedure;0
-Other and open repair of direct inguinal hernia with graft or prosthesis;ICD9:53.03;Surgical Procedure;0
-Other and open repair of indirect inguinal hernia with graft or prosthesis;ICD9:53.04;Surgical Procedure;0
-Repair of inguinal hernia with graft or prosthesis, not otherwise specified;ICD9:53.05;Surgical Procedure;0
-Other bilateral repair of inguinal hernia;ICD9:53.1;Surgical Procedure;0
-Bilateral repair of inguinal hernia, not otherwise specified;ICD9:53.10;Surgical Procedure;0
-Other and open bilateral repair of direct inguinal hernia;ICD9:53.11;Surgical Procedure;0
-Other and open bilateral repair of indirect inguinal hernia;ICD9:53.12;Surgical Procedure;0
-Other and open bilateral repair of inguinal hernia, one direct and one indirect;ICD9:53.13;Surgical Procedure;0
-Other and open bilateral repair of direct inguinal hernia with graft or prosthesis;ICD9:53.14;Surgical Procedure;0
-Other and open bilateral repair of indirect inguinal hernia with graft or prosthesis;ICD9:53.15;Surgical Procedure;0
-Other and open bilateral repair of inguinal hernia, one direct and one indirect, with graft or prosthesis;ICD9:53.16;Surgical Procedure;0
-Bilateral inguinal hernia repair with graft or prosthesis, not otherwise specified;ICD9:53.17;Surgical Procedure;0
-Unilateral repair of femoral hernia;ICD9:53.2;Surgical Procedure;0
-Unilateral repair of femoral hernia with graft or prosthesis;ICD9:53.21;Surgical Procedure;0
-Other unilateral femoral herniorrhaphy;ICD9:53.29;Surgical Procedure;0
-Bilateral repair of femoral hernia;ICD9:53.3;Surgical Procedure;0
-Bilateral repair of femoral hernia with graft or prosthesis;ICD9:53.31;Surgical Procedure;0
-Other bilateral femoral herniorrhaphy;ICD9:53.39;Surgical Procedure;0
-Repair of umbilical hernia;ICD9:53.4;Surgical Procedure;0
-Other and open repair of umbilical hernia with graft or prosthesis;ICD9:53.41;Surgical Procedure;0
-Laparoscopic repair of umbilical hernia with graft or prosthesis;ICD9:53.42;Surgical Procedure;0
-Other laparoscopic umbilical herniorrhaphy;ICD9:53.43;Surgical Procedure;0
-Other open umbilical herniorrhaphy;ICD9:53.49;Surgical Procedure;0
-Repair of other hernia of anterior abdominal wall (without graft or prosthesis);ICD9:53.5;Surgical Procedure;0
-Repair of other hernia of anterior abdominal wall without graft or prosthesis;ICD9:53.5;Surgical Procedure;0
-Repair of other hernia of anterior abdominal wall (without graft or prosthesis);ICD9:53.5;Surgical Procedure;1
-Incisional hernia repair;ICD9:53.51;Surgical Procedure;0
-Repair of other hernia of anterior abdominal wall;ICD9:53.59;Surgical Procedure;0
-Repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.6;Surgical Procedure;0
-Other open incisional hernia repair with graft or prosthesis;ICD9:53.61;Surgical Procedure;0
-Laparoscopic incisional hernia repair with graft or prosthesis;ICD9:53.62;Surgical Procedure;0
-Other laparoscopic repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.63;Surgical Procedure;0
-Other and open repair of other hernia of anterior abdominal wall with graft or prosthesis;ICD9:53.69;Surgical Procedure;0
-Repair of diaphragmatic hernia, abdominal approach;ICD9:53.7;Surgical Procedure;0
-Laparoscopic repair of diaphragmatic hernia, abdominal approach;ICD9:53.71;Surgical Procedure;0
-Other and open repair of diaphragmatic hernia, abdominal approach;ICD9:53.72;Surgical Procedure;0
-Repair of diaphragmatic hernia, abdominal approach, not otherwise specified;ICD9:53.75;Surgical Procedure;0
-Repair of diaphragmatic hernia, thoracic approach;ICD9:53.8;Surgical Procedure;0
-Repair of diaphragmatic hernia with thoracic approach, not otherwise specified;ICD9:53.80;Surgical Procedure;0
-Plication of the diaphragm;ICD9:53.81;Surgical Procedure;0
-Repair of parasternal hernia;ICD9:53.82;Surgical Procedure;0
-Laparoscopic repair of diaphragmatic hernia, with thoracic approach;ICD9:53.83;Surgical Procedure;0
-Other and open repair of diaphragmatic hernia, with thoracic approach;ICD9:53.84;Surgical Procedure;0
+Incidental appendectomy;ICD9:47.1;Surgical Procedure;0
+Incidental Appendectomy;ICD9:47.1;Surgical Procedure;1
+Incidental appendectomy (procedure);ICD9:47.1;Surgical Procedure;1
+Incidental appendicectomy;ICD9:47.1;Surgical Procedure;1
+Secondary appendectomy;ICD9:47.1;Surgical Procedure;1
+Secondary appendicectomy;ICD9:47.1;Surgical Procedure;1
+appendectomy as part of other major procedure;ICD9:47.1;Surgical Procedure;1
+appendectomy as part of other major procedure (treatment);ICD9:47.1;Surgical Procedure;1
+incidental appendectomy;ICD9:47.1;Surgical Procedure;1
+incidental appendectomy (treatment);ICD9:47.1;Surgical Procedure;1
 Other hernia repair;ICD9:53.9;Surgical Procedure;0
-Other operations on abdominal region;ICD9:54;Surgical Procedure;0
-Incision of abdominal wall;ICD9:54.0;Surgical Procedure;0
-Laparotomy;ICD9:54.1;Surgical Procedure;0
-Exploratory laparotomy;ICD9:54.11;Surgical Procedure;0
-Reopening of recent laparotomy site;ICD9:54.12;Surgical Procedure;0
-Other laparotomy;ICD9:54.19;Surgical Procedure;0
-Diagnostic procedures of abdominal region;ICD9:54.2;Surgical Procedure;0
-Laparoscopy;ICD9:54.21;Surgical Procedure;0
-Biopsy of abdominal wall or umbilicus;ICD9:54.22;Surgical Procedure;0
-Biopsy of peritoneum;ICD9:54.23;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of intra-abdominal mass;ICD9:54.24;Surgical Procedure;0
-Closed percutaneous needle biopsy of intra-abdominal mass;ICD9:54.24;Surgical Procedure;0
-Closed [percutaneous] [needle] biopsy of intra-abdominal mass;ICD9:54.24;Surgical Procedure;1
-Peritoneal lavage;ICD9:54.25;Surgical Procedure;0
-Other diagnostic procedures on abdominal region;ICD9:54.29;Surgical Procedure;0
-Excision or destruction of lesion or tissue of abdominal wall or umbilicus;ICD9:54.3;Surgical Procedure;0
-Excision or destruction of peritoneal tissue;ICD9:54.4;Surgical Procedure;0
-Lysis of peritoneal adhesions;ICD9:54.5;Surgical Procedure;0
-Laparoscopic lysis of peritoneal adhesions;ICD9:54.51;Surgical Procedure;0
-Other lysis of peritoneal adhesions;ICD9:54.59;Surgical Procedure;0
-Suture of abdominal wall and peritoneum;ICD9:54.6;Surgical Procedure;0
-Reclosure of postoperative disruption of abdominal wall;ICD9:54.61;Surgical Procedure;0
-Delayed closure of granulating abdominal wound;ICD9:54.62;Surgical Procedure;0
-Other suture of abdominal wall;ICD9:54.63;Surgical Procedure;0
-Suture of peritoneum;ICD9:54.64;Surgical Procedure;0
-Unknown Procedure;PROC|DX:UN;Surgical Procedure;0
-Other;PROC|DX:OT;Surgical Procedure;0
-No Information;PROC|DX:NI;Surgical Procedure;0
-Lymph Node Dissection;ICD9:40.50;Surgical Procedure;0
-Radical excision of lymph nodes, not otherwise specified;ICD9:40.50;Surgical Procedure;1
-Other operations of abdominal region;ICD9:54.99;Surgical Procedure;0
-Peritoneal dialysis;ICD9:54.98;Surgical Procedure;0
-Injection of locally-acting therapeutic substance into peritoneal cavity;ICD9:54.97;Surgical Procedure;0
-Injection of air into peritoneal cavity;ICD9:54.96;Surgical Procedure;0
-Incision of peritoneum;ICD9:54.95;Surgical Procedure;0
-Creation of peritoneovascular shunt;ICD9:54.94;Surgical Procedure;0
-Creation of cutaneoperitoneal fistula;ICD9:54.93;Surgical Procedure;0
-Removal of foreign body from peritoneal cavity;ICD9:54.92;Surgical Procedure;0
-Percutaneous abdominal drainage;ICD9:54.91;Surgical Procedure;0
+Radical dissection of thoracic structures;ICD9:32.6;Surgical Procedure;0
+Other operations on thorax;ICD9:34.9;Surgical Procedure;0
+Other thorax operations;ICD9:34.9;Surgical Procedure;1
+Combined heart-lung transplantation;ICD9:33.6;Surgical Procedure;0
+Grafting, Heart Lung;ICD9:33.6;Surgical Procedure;1
+Grafting, Heart-Lung;ICD9:33.6;Surgical Procedure;1
+Graftings, Heart-Lung;ICD9:33.6;Surgical Procedure;1
+HLTx - Heart lung transplant;ICD9:33.6;Surgical Procedure;1
+Heart Lung Grafting;ICD9:33.6;Surgical Procedure;1
+Heart Lung Transplantation;ICD9:33.6;Surgical Procedure;1
+Heart and Lung Transplantation;ICD9:33.6;Surgical Procedure;1
+Heart and heart-lung transplant;ICD9:33.6;Surgical Procedure;1
+Heart and heart-lung transplantation;ICD9:33.6;Surgical Procedure;1
+Heart and lung transplant;ICD9:33.6;Surgical Procedure;1
+Heart and lung transplantation;ICD9:33.6;Surgical Procedure;1
+Heart-Lung Grafting;ICD9:33.6;Surgical Procedure;1
+Heart-Lung Graftings;ICD9:33.6;Surgical Procedure;1
+Heart-Lung Transplantation;ICD9:33.6;Surgical Procedure;1
+Heart-Lung Transplantations;ICD9:33.6;Surgical Procedure;1
+Heart/Lung Transplantation Procedures;ICD9:33.6;Surgical Procedure;1
+Transplantation, Heart Lung;ICD9:33.6;Surgical Procedure;1
+Complete laryngectomy;ICD9:30.3;Surgical Procedure;0
+LARYNGECTOMY TOTAL;ICD9:30.3;Surgical Procedure;1
+Total Laryngectomy;ICD9:30.3;Surgical Procedure;1
+Total laryngectomy;ICD9:30.3;Surgical Procedure;1
+Total laryngectomy (procedure);ICD9:30.3;Surgical Procedure;1
+laryngectomy total;ICD9:30.3;Surgical Procedure;1
+total laryngectomy;ICD9:30.3;Surgical Procedure;1
+total laryngectomy (treatment);ICD9:30.3;Surgical Procedure;1
+total laryngectomy procedure;ICD9:30.3;Surgical Procedure;1
+Vagotomy;ICD9:44.0;Surgical Procedure;0
+Division of vagus nerve NOS;ICD9:44.0;Surgical Procedure;1
+VAGOTOMY;ICD9:44.0;Surgical Procedure;1
+Vagotomies;ICD9:44.0;Surgical Procedure;1
+Vagotomy (procedure);ICD9:44.0;Surgical Procedure;1
+Vagotomy, NOS;ICD9:44.0;Surgical Procedure;1
+Vagotomy, not otherwise specified;ICD9:44.0;Surgical Procedure;1
+vagotomy;ICD9:44.0;Surgical Procedure;1
+vagotomy (treatment);ICD9:44.0;Surgical Procedure;1
+Total gastrectomy;ICD9:43.9;Surgical Procedure;0
+Complete gastrectomy;ICD9:43.9;Surgical Procedure;1
+GASTRECTOMY COMPLETE;ICD9:43.9;Surgical Procedure;1
+Gastrectomy total;ICD9:43.9;Surgical Procedure;1
+Gastrectomy, total;ICD9:43.9;Surgical Procedure;1
+Total excision of stomach;ICD9:43.9;Surgical Procedure;1
+Total gastrectomy (procedure);ICD9:43.9;Surgical Procedure;1
+Total gastric resection;ICD9:43.9;Surgical Procedure;1
+gastrectomy total;ICD9:43.9;Surgical Procedure;1
+total gastrectomy;ICD9:43.9;Surgical Procedure;1
+total gastrectomy (treatment);ICD9:43.9;Surgical Procedure;1
+Partial gastrectomy with anastomosis to duodenum;ICD9:43.6;Surgical Procedure;0
+Other operations on larynx and trachea;ICD9:31.9;Surgical Procedure;0
+Local excision or destruction of lesion or tissue of trachea;ICD9:31.5;Surgical Procedure;0
+Local excision or destruction of lesion or tissue of stomach;ICD9:43.4;Surgical Procedure;0
+Incision of chest wall and pleura;ICD9:34.0;Surgical Procedure;0
+Repair of anus;ICD9:49.7;Surgical Procedure;0
+Anoplasty;ICD9:49.7;Surgical Procedure;1
+Anus: Repair;ICD9:49.7;Surgical Procedure;1
+Repair Procedures on the Anus;ICD9:49.7;Surgical Procedure;1
+Repair of anus (procedure);ICD9:49.7;Surgical Procedure;1
+anoplasty;ICD9:49.7;Surgical Procedure;1
+anus repair;ICD9:49.7;Surgical Procedure;1
+Intestinal anastomosis;ICD9:45.9;Surgical Procedure;0
+Anastomosis of bowel;ICD9:45.9;Surgical Procedure;1
+Anastomosis of bowel, NOS;ICD9:45.9;Surgical Procedure;1
+Anastomosis of intestine;ICD9:45.9;Surgical Procedure;1
+Anastomosis of intestine, NOS;ICD9:45.9;Surgical Procedure;1
+Enteroenterostomy;ICD9:45.9;Surgical Procedure;1
+GIT anastomosis - intestine;ICD9:45.9;Surgical Procedure;1
+Gastrointestinal tract anastomosis - intestine;ICD9:45.9;Surgical Procedure;1
+Gastrointestinal tract anastomosis - intestine (procedure);ICD9:45.9;Surgical Procedure;1
+Intestinal anastomosis, not otherwise specified;ICD9:45.9;Surgical Procedure;1
+anastomosis intestinal;ICD9:45.9;Surgical Procedure;1
+bowel anastomosis;ICD9:45.9;Surgical Procedure;1
+enteroenterostomy;ICD9:45.9;Surgical Procedure;1
+gastrointestinal tract anastomosis - intestine;ICD9:45.9;Surgical Procedure;1
+intestinal anastomosis;ICD9:45.9;Surgical Procedure;1
+Other partial gastrectomy;ICD9:43.8;Surgical Procedure;0
+Partial gastrectomy with anastomosis to jejunum;ICD9:43.7;Surgical Procedure;0
+B2 - Billroth II partial gastrectomy;ICD9:43.7;Surgical Procedure;1
+BILLROTH II;ICD9:43.7;Surgical Procedure;1
+Billroth II;ICD9:43.7;Surgical Procedure;1
+Billroth II Operation;ICD9:43.7;Surgical Procedure;1
+Billroth II Procedure;ICD9:43.7;Surgical Procedure;1
+Billroth II gastric anastomosis;ICD9:43.7;Surgical Procedure;1
+Billroth II operation;ICD9:43.7;Surgical Procedure;1
+Billroth II partial gastrectomy;ICD9:43.7;Surgical Procedure;1
+Billroth II partial gastrectomy (treatment);ICD9:43.7;Surgical Procedure;1
+Billroth II procedure;ICD9:43.7;Surgical Procedure;1
+Billroth's operation II;ICD9:43.7;Surgical Procedure;1
+Operation, Billroth II;ICD9:43.7;Surgical Procedure;1
+Procedure, Billroth II;ICD9:43.7;Surgical Procedure;1
+Resection of stomach with gastrojejunal anastomosis;ICD9:43.7;Surgical Procedure;1
+Resection of stomach with gastrojejunal anastomosis (procedure);ICD9:43.7;Surgical Procedure;1
+billroth ii;ICD9:43.7;Surgical Procedure;1
+billroth ii procedure;ICD9:43.7;Surgical Procedure;1
+Surgical collapse of lung;ICD9:33.3;Surgical Procedure;0
+Surgical collapse of lung, NOS;ICD9:33.3;Surgical Procedure;1
+Thoracolysis for collapse of lung;ICD9:33.3;Surgical Procedure;1
+Gastrostomy;ICD9:43.1;Surgical Procedure;0
+Creation of gastrostomy;ICD9:43.1;Surgical Procedure;1
+GASTROSTOMY;ICD9:43.1;Surgical Procedure;1
+Gastrostomies;ICD9:43.1;Surgical Procedure;1
+Gastrostomy (procedure);ICD9:43.1;Surgical Procedure;1
+Gastrostomy operation;ICD9:43.1;Surgical Procedure;1
+Gastrostomy operation (procedure);ICD9:43.1;Surgical Procedure;1
+Gastrostomy, NOS;ICD9:43.1;Surgical Procedure;1
+Surgical gastrostomy;ICD9:43.1;Surgical Procedure;1
+gastrostomies;ICD9:43.1;Surgical Procedure;1
+gastrostomy;ICD9:43.1;Surgical Procedure;1
+Other partial laryngectomy;ICD9:30.2;Surgical Procedure;0
+Other enterostomy;ICD9:46.3;Surgical Procedure;0
+Other operations on esophagus;ICD9:42.9;Surgical Procedure;0
+Other Procedures on the Esophagus;ICD9:42.9;Surgical Procedure;1
+Diagnostic procedures on lung and bronchus;ICD9:33.2;Surgical Procedure;0
+Other operations on anus;ICD9:49.9;Surgical Procedure;0
+Anus: Other Procedures;ICD9:49.9;Surgical Procedure;1
+Other Procedures on the Anus;ICD9:49.9;Surgical Procedure;1
+Other operation on anus;ICD9:49.9;Surgical Procedure;1
+Other procedures on anus;ICD9:49.9;Surgical Procedure;1
+Diagnostic procedures on chest wall, pleura, mediastinum, and diaphragm;ICD9:34.2;Surgical Procedure;0
+Other repair of stomach;ICD9:44.6;Surgical Procedure;0
+Other repair procedures on stomach;ICD9:44.6;Surgical Procedure;1
+Revision of gastric anastomosis;ICD9:44.5;Surgical Procedure;0
+Gastric anastomosis revision;ICD9:44.5;Surgical Procedure;1
+Gastric anastomosis revision (procedure);ICD9:44.5;Surgical Procedure;1
+gastric anastomosis revision (treatment);ICD9:44.5;Surgical Procedure;1
+Other repair of intestine;ICD9:46.7;Surgical Procedure;0
 Other operations of abdominal region;ICD9:54.9;Surgical Procedure;0
-Other repair of mesentery;ICD9:54.75;Surgical Procedure;0
-Other repair of omentum;ICD9:54.74;Surgical Procedure;0
-Other repair of abdominal wall and peritoneum;ICD9:54.7;Surgical Procedure;0
-Repair of gastroschisis;ICD9:54.71;Surgical Procedure;0
-Other repair of abdominal wall;ICD9:54.72;Surgical Procedure;0
-Other repair of peritoneum;ICD9:54.73;Surgical Procedure;0
+Other operations on abdominal region;ICD9:54.9;Surgical Procedure;1
+Lung transplant;ICD9:33.5;Surgical Procedure;0
+Cardio/pulm: Lung transplant;ICD9:33.5;Surgical Procedure;1
+En bloc lung transplantation;ICD9:33.5;Surgical Procedure;1
+Grafting, Lung;ICD9:33.5;Surgical Procedure;1
+Graftings, Lung;ICD9:33.5;Surgical Procedure;1
+LTx - Lung transplant;ICD9:33.5;Surgical Procedure;1
+LUNGS AND PLEURA: TRANSPLANTATIONS AND TRANSPOSITIONS;ICD9:33.5;Surgical Procedure;1
+Lung Grafting;ICD9:33.5;Surgical Procedure;1
+Lung Graftings;ICD9:33.5;Surgical Procedure;1
+Lung Transplantation;ICD9:33.5;Surgical Procedure;1
+Lung Transplantation Procedures;ICD9:33.5;Surgical Procedure;1
+Lung Transplantations;ICD9:33.5;Surgical Procedure;1
+Lung transplantation, not otherwise specified;ICD9:33.5;Surgical Procedure;1
+Lungs--Transplantation;ICD9:33.5;Surgical Procedure;1
+Transplant of lung;ICD9:33.5;Surgical Procedure;1
+Transplant of lung (procedure);ICD9:33.5;Surgical Procedure;1
+Repair and plastic operation on lung and bronchus;ICD9:33.4;Surgical Procedure;0
+Injection of larynx;ICD9:31.0;Surgical Procedure;0
+Injection into larynx;ICD9:31.0;Surgical Procedure;1
+Injection of larynx (procedure);ICD9:31.0;Surgical Procedure;1
+Injection of larynx, NOS;ICD9:31.0;Surgical Procedure;1
+LARYNX: INJECTIONS AND IMPLANTATIONS;ICD9:31.0;Surgical Procedure;1
+injection of larynx;ICD9:31.0;Surgical Procedure;1
+injection of larynx (treatment);ICD9:31.0;Surgical Procedure;1
+Operations on the respiratory system;ICD9:30-34.99;Surgical Procedure;0
+GENERAL OPERATIVE PROCEDURES ON THE RESPIRATORY TRACT;ICD9:30-34.99;Surgical Procedure;1
+OPERATIONS ON THE RESPIRATORY SYSTEM;ICD9:30-34.99;Surgical Procedure;1
+OPERATIVE PROCEDURES ON THE RESPIRATORY TRACT;ICD9:30-34.99;Surgical Procedure;1
+Operation on respiratory tract;ICD9:30-34.99;Surgical Procedure;1
+Operation on respiratory tract (procedure);ICD9:30-34.99;Surgical Procedure;1
+Operation on respiratory tract, NOS;ICD9:30-34.99;Surgical Procedure;1
+Operative procedure on respiratory tract;ICD9:30-34.99;Surgical Procedure;1
+Operative procedure on respiratory tract, NOS;ICD9:30-34.99;Surgical Procedure;1
+RESPIRATORY TRACT: GENERAL AND MISCELLANEOUS OPERATIVE PROCEDURES;ICD9:30-34.99;Surgical Procedure;1
+Respiratory tract operations;ICD9:30-34.99;Surgical Procedure;1
+Surgical Procedures on the Respiratory System;ICD9:30-34.99;Surgical Procedure;1
+respiratory surgery;ICD9:30-34.99;Surgical Procedure;1
+respiratory system surgery;ICD9:30-34.99;Surgical Procedure;1
+Operations on the digestive system;ICD9:42-54.99;Surgical Procedure;0
+Digestive System Surgery;ICD9:42-54.99;Surgical Procedure;1
+Digestive System Surgical Procedure;ICD9:42-54.99;Surgical Procedure;1
+Digestive System Surgical Procedures;ICD9:42-54.99;Surgical Procedure;1
+OPERATIONS ON THE DIGESTIVE SYSTEM;ICD9:42-54.99;Surgical Procedure;1
+OPERATIVE PROCEDURES ON THE DIGESTIVE SYSTEM;ICD9:42-54.99;Surgical Procedure;1
+Operative procedure on digestive system;ICD9:42-54.99;Surgical Procedure;1
+Operative procedure on digestive system (procedure);ICD9:42-54.99;Surgical Procedure;1
+Procedure, Digestive System Surgical;ICD9:42-54.99;Surgical Procedure;1
+Procedures, Digestive System Surgical;ICD9:42-54.99;Surgical Procedure;1
+Surgery, Digestive System;ICD9:42-54.99;Surgical Procedure;1
+Surgical Procedure, Digestive System;ICD9:42-54.99;Surgical Procedure;1
+Surgical Procedures on the Digestive System;ICD9:42-54.99;Surgical Procedure;1
+Surgical Procedures, Digestive System;ICD9:42-54.99;Surgical Procedure;1
+digestive system operative procedure;ICD9:42-54.99;Surgical Procedure;1
+digestive system surgery;ICD9:42-54.99;Surgical Procedure;1
+digestive system surgery (treatment);ICD9:42-54.99;Surgical Procedure;1
+digestive system surgical procedure;ICD9:42-54.99;Surgical Procedure;1
+operative procedure on the digestive system;ICD9:42-54.99;Surgical Procedure;1
+Excision of lung and bronchus;ICD9:32;Surgical Procedure;0
+Other operations on lung and bronchus;ICD9:33;Surgical Procedure;0
+Operations on appendix;ICD9:47;Surgical Procedure;0
+Appendix operation;ICD9:47;Surgical Procedure;1
+Operation on appendix;ICD9:47;Surgical Procedure;1
+Operation on appendix (procedure);ICD9:47;Surgical Procedure;1
+Operation on appendix, NOS;ICD9:47;Surgical Procedure;1
+Surgical Procedures on the Appendix;ICD9:47;Surgical Procedure;1
+appendix operation;ICD9:47;Surgical Procedure;1
+operation appendix;ICD9:47;Surgical Procedure;1
+Operations on chest wall, pleura, mediastinum, and diaphragm;ICD9:34;Surgical Procedure;0
+Operations on chest wall, pleura, mediastinum and diaphragm;ICD9:34;Surgical Procedure;1
+Incision and excision of stomach;ICD9:43;Surgical Procedure;0
+Other operations on stomach;ICD9:44;Surgical Procedure;0
+Operations on pancreas;ICD9:52;Surgical Procedure;0
+OPERATIVE PROCEDURES ON THE PANCREAS;ICD9:52;Surgical Procedure;1
+Operation on pancreas;ICD9:52;Surgical Procedure;1
+Operation on pancreas (procedure);ICD9:52;Surgical Procedure;1
+Operation on pancreas, NOS;ICD9:52;Surgical Procedure;1
+PANCREAS SURGERY;ICD9:52;Surgical Procedure;1
+Pancreas operation;ICD9:52;Surgical Procedure;1
+Surgical Procedures on the Pancreas;ICD9:52;Surgical Procedure;1
+UNLISTED PROCEDURE PANCREAS;ICD9:52;Surgical Procedure;1
+Unlisted procedure, pancreas;ICD9:52;Surgical Procedure;1
+pancreas surgery;ICD9:52;Surgical Procedure;1
