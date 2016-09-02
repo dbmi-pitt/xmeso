@@ -51,9 +51,11 @@ STRING sectionNameVar = "Undefined";
 INT sectionLevelVar = -1;
 INT partNumberVar = -1;
 BLOCK(AssignSectionsAndPartsToNamedEntities) 
+    // The GETFEATURE action stores the value of the matched annotation's feature (first paramter) in the given variable (second parameter).
     Part{->GETFEATURE("sectionName", sectionNameVar),
            GETFEATURE("sectionLevel", sectionLevelVar),
            GETFEATURE("partNumber", partNumberVar)} {          
+           // The SETFEATURE action sets the value of a feature of the matched complex structure.
            XmesoNamedEntity{-> SETFEATURE("sectionName", sectionNameVar),
                                SETFEATURE("sectionLevel", sectionLevelVar), 
                                SETFEATURE("partNumber", partNumberVar)};
