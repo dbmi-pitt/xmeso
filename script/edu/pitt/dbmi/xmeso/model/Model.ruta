@@ -29,7 +29,6 @@ DECLARE Annotation PartHeaderGenerator(INT genNumber, INT genCount);
 DECLARE Annotation PartHeader(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation Part(STRING sectionName, INT sectionLevel, INT partNumber);
 DECLARE Annotation XmesoPart(STRING sectionName, INT sectionLevel, INT partNumber);
-DECLARE Annotation SynopticCategory(STRING name);
 DECLARE Annotation XmesoSentence(STRING sectionName, INT partNumber, INT sentenceNumber);
 DECLARE Annotation XmesoSentenceToken(STRING sectionName, INT partNumber, INT sentenceNumber, INT tokenNumber);
 DECLARE Annotation XmesoNegatedConcept;

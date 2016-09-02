@@ -392,18 +392,6 @@
             <supertypeName>uima.tcas.Annotation</supertypeName>
         </typeDescription>
         <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</name>
-            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
-            <supertypeName>uima.tcas.Annotation</supertypeName>
-            <features>
-                <featureDescription>
-                    <name>name</name>
-                    <description>name</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-            </features>
-        </typeDescription>
-        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.StageT</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>

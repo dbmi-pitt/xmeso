@@ -33,9 +33,6 @@ BLOCK(SectionHeaderDetector) Document{} {
 BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
     ANY{-PARTOF(BREAK)} @SectionHeader {-> UNMARK(SectionHeader)};
 }
-BLOCK(SynopticCategoryFilter) Document{->ADDRETAINTYPE(BREAK,SynopticCategory)} {
-     ANY{-PARTOF(BREAK)}  @SynopticCategory {-> UNMARK(SynopticCategory)};
-}
 
 //
 // EndOfDocumentDetector

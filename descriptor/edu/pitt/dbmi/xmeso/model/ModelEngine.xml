@@ -354,7 +354,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept</type>
@@ -400,7 +399,6 @@
                     <type>edu.pitt.dbmi.xmeso.model.Model.PartHeader</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.Part</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoPart</type>
-                    <type>edu.pitt.dbmi.xmeso.model.Model.SynopticCategory</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken</type>
                     <type>edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept</type>

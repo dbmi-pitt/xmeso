@@ -17,7 +17,7 @@ WORDTABLE ultrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
 // Thereby, the created annotation does not cover the whole matched annotation. 
 // Instead, it only covers the text of the found occurrence. 
 // Optionally the MARKTABLE action is able to assign entries of the given table to features of the created annotation.
-// The case of the word is ignored if the length of the word exceeds 10
+// The case of the word is ignored if the length of the word exceeds 10, why 10?
 // Additionally, the char " " and  "-" are ignored
 BLOCK(NameEntityHistologicalType) Document {} { 
   Document{->MARKTABLE(XmesoHistologicalType, 1, histologicalTypeTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
@@ -41,6 +41,7 @@ BLOCK(NameEntityUltrastructuralFindings) Document {} {
   Document{->MARKTABLE(XmesoUltrastructuralFindings, 1, ultrastructuralFindingsTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
 }
 
+// This doesn't seem to be used?
 //
 // AssignSectionsAndPartsToNamedEntities
 //
