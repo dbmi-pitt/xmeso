@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Thu Sep 01 10:47:46 EDT 2016 */
+/* First created by JCasGen Fri Sep 02 12:16:30 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Thu Sep 01 10:47:46 EDT 2016
+ * Updated by JCasGen Fri Sep 02 12:16:30 EDT 2016
  * @generated */
 public class PartHeaderGenerator_Type extends Annotation_Type {
   /** @generated 
