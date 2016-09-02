@@ -106,3 +106,4 @@ Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity, XmesoNegatedConcept})}
 // Assigns slots values to extraction target template.
 // Theses are based on appearance of named entities in important sections
 Document{->EXEC(InformationExtractorAnnotationEngine, {XmesoCaseForm, XmesoTumorForm})};
+

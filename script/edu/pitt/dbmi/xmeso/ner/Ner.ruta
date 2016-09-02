@@ -53,7 +53,7 @@ STRING sectionNameVar = "Undefined";
 INT sectionLevelVar = -1;
 INT partNumberVar = -1;
 BLOCK(AssignSectionsAndPartsToNamedEntities) 
-    // The GETFEATURE action stores the value of the matched annotation's feature (first paramter) in the given variable (second parameter).
+    // The GETFEATURE action stores the value of the matched annotation's feature (first parameter) in the given variable (second parameter).
     Part{->GETFEATURE("sectionName", sectionNameVar),
            GETFEATURE("sectionLevel", sectionLevelVar),
            GETFEATURE("partNumber", partNumberVar)} {          
