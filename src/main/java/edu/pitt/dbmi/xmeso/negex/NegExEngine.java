@@ -12,7 +12,6 @@ public class NegExEngine {
 	private List<NegPhrase> negPhrases;
 
 	private final int scopeBoundaryLength = 6;
-	// These are the three names used in the negex dictionary file
 	private final String PSEUDO_NEG_PHRASES = "PSEUDO-NEG-PHRASES";
 	private final String PRE_NEG_PHRASES = "PRE-NEG-PHRASES";
 	private final String POST_NEG_PHRASES = "POST-NEG-PHRASES";
