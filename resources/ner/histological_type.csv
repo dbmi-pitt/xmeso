@@ -1,82 +1,43 @@
-Epithelial or epithelioid mesothelioma;SNOMED:65278006;Histological Type;0
-Epithelial Mesothelioma;SNOMED:65278006;Histological Type;1
-Epithelial malignant mesothelioma;SNOMED:65278006;Histological Type;1
-Epithelioid Mesothelioma;SNOMED:65278006;Histological Type;1
-Epithelioid mesothelioma;SNOMED:65278006;Histological Type;1
-Epithelioid mesothelioma, NOS;SNOMED:65278006;Histological Type;1
-Epithelioid mesothelioma, malignant;SNOMED:65278006;Histological Type;1
-Epithelioid mesothelioma, malignant (morphologic abnormality);SNOMED:65278006;Histological Type;1
-Malignant Epithelial Mesothelioma;SNOMED:65278006;Histological Type;1
-Malignant epithelioid mesothelioma;SNOMED:65278006;Histological Type;1
-epithelial mesothelioma;SNOMED:65278006;Histological Type;1
-epithelioid; mesothelioma;SNOMED:65278006;Histological Type;1
-mesothelioma, epithelial;SNOMED:65278006;Histological Type;1
-mesothelioma; epithelioid;SNOMED:65278006;Histological Type;1
 Sarcomatoid mesothelioma;SNOMED:399477001;Histological Type;0
-Fibrous mesothelioma;SNOMED:399477001;Histological Type;1
-Fibrous mesothelioma, NOS;SNOMED:399477001;Histological Type;1
-Fibrous mesothelioma, malignant;SNOMED:399477001;Histological Type;1
-Fibrous mesothelioma, malignant (morphologic abnormality);SNOMED:399477001;Histological Type;1
-Malignant fibrous mesothelioma;SNOMED:399477001;Histological Type;1
-Mesothelial sarcoma;SNOMED:399477001;Histological Type;1
-Sarcomatoid Mesothelioma;SNOMED:399477001;Histological Type;1
 Sarcomatoid mesothelioma (morphologic abnormality);SNOMED:399477001;Histological Type;1
-Spindled mesothelioma;SNOMED:399477001;Histological Type;1
-fibrous mesothelial sarcoma;SNOMED:399477001;Histological Type;1
-fibrous mesothelioma;SNOMED:399477001;Histological Type;1
-fibrous; mesothelioma;SNOMED:399477001;Histological Type;1
-mesothelial sarcoma;SNOMED:399477001;Histological Type;1
-mesothelial sarcoma, fibrous;SNOMED:399477001;Histological Type;1
-mesothelial sarcoma, sarcomatous;SNOMED:399477001;Histological Type;1
-Biphasic mesothelioma;SNOMED:30383009;Histological Type;0
-Biphasic Mesothelioma;SNOMED:30383009;Histological Type;1
-Malignant Biphasic Mesothelioma;SNOMED:30383009;Histological Type;1
-Malignant Mixed Mesothelioma;SNOMED:30383009;Histological Type;1
-Malignant biphasic mesothelioma;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic type;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic type, malignant;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic, NOS;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic, malignant;SNOMED:30383009;Histological Type;1
-Mesothelioma, biphasic, malignant (morphologic abnormality);SNOMED:30383009;Histological Type;1
-Mixed Mesothelioma;SNOMED:30383009;Histological Type;1
-biphasic; mesothelioma;SNOMED:30383009;Histological Type;1
-mesothelioma; biphasic;SNOMED:30383009;Histological Type;1
-Multicystic mesothelioma;SNOMED:128901009;Histological Type;0
-Cystic mesothelioma, benign;SNOMED:128901009;Histological Type;1
-Multicystic mesothelioma, benign;SNOMED:128901009;Histological Type;1
-Multicystic mesothelioma, benign (morphologic abnormality);SNOMED:128901009;Histological Type;1
 Papillary mesothelioma;SNOMED:86143001;Histological Type;0
-Glandular Papilloma;SNOMED:86143001;Histological Type;1
-Glandular papilloma;SNOMED:86143001;Histological Type;1
-ADENOMA, PAPILLARY, BENIGN;SNOMED:86143001;Histological Type;1
-Adenoma, Papillary;SNOMED:86143001;Histological Type;1
-Adenomas, Papillary;SNOMED:86143001;Histological Type;1
-Papillary Adenoma;SNOMED:86143001;Histological Type;1
-Papillary Adenomas;SNOMED:86143001;Histological Type;1
-Papillary adenoma;SNOMED:86143001;Histological Type;1
+Papillary adenoma;SNOMED:86143001;Histological Type;0
 Papillary adenoma (morphologic abnormality);SNOMED:86143001;Histological Type;1
-Papillary adenoma NOS;SNOMED:86143001;Histological Type;1
-Papillary adenoma, NOS;SNOMED:86143001;Histological Type;1
-papillary adenoma;SNOMED:86143001;Histological Type;1
+Glandular papilloma;SNOMED:86143001;Histological Type;1
+MARKEDLY ATYPICAL MESOTHELIAL;HIST_TYPE:OTHER;Histological Type;0
+Extent of tumor involvement not specified;SNOMED:399740008;Histological Type;0
+Tumour extent of involvement not specified;SNOMED:399740008;Histological Type;1
+Extent of tumor involvement not specified (finding);SNOMED:399740008;Histological Type;1
+Tumor extent of involvement not specified;SNOMED:399740008;Histological Type;1
+Extent of tumour involvement not specified;SNOMED:399740008;Histological Type;1
+Multicystic mesothelioma;SNOMED:128901009;Histological Type;0
+Multicystic mesothelioma, benign;SNOMED:128901009;Histological Type;0
+Multicystic mesothelioma, benign (morphologic abnormality);SNOMED:128901009;Histological Type;1
+Cystic mesothelioma, benign;SNOMED:128901009;Histological Type;1
+Unknown;HIST_TYPE:UNKNOWN;Histological Type;0
+Epithelioid;SNOMED:65278006;Histological Type;1
+Epithelial or epithelioid mesothelioma;SNOMED:65278006;Histological Type;0
+Epithelioid mesothelioma, malignant;SNOMED:65278006;Histological Type;0
+Epithelioid mesothelioma;SNOMED:65278006;Histological Type;1
+Epithelioid Type;SNOMED:65278006;Histological Type;1
+Epithelial mesothelioma;SNOMED:65278006;Histological Type;1
+Epithelioid mesothelioma, malignant (morphologic abnormality);SNOMED:65278006;Histological Type;1
+Malignant epithelioid mesothelioma;SNOMED:65278006;Histological Type;1
 Desmoplastic mesothelioma;SNOMED:388650006;Histological Type;0
-Desmoplastic Mesothelioma;SNOMED:388650006;Histological Type;1
 Desmoplastic mesothelioma (morphologic abnormality);SNOMED:388650006;Histological Type;1
 Cystic mesothelioma;SNOMED:86562005;Histological Type;0
-Cystic Mesothelioma;SNOMED:86562005;Histological Type;1
-Cystic Mesotheliomas;SNOMED:86562005;Histological Type;1
 Cystic mesothelioma (morphologic abnormality);SNOMED:86562005;Histological Type;1
-Intermediate Mesothelioma;SNOMED:86562005;Histological Type;1
-Mesothelioma, Cystic;SNOMED:86562005;Histological Type;1
-Mesothelioma, Cystic [Disease/Finding];SNOMED:86562005;Histological Type;1
-Mesotheliomas, Cystic;SNOMED:86562005;Histological Type;1
-Multicystic Mesothelioma;SNOMED:86562005;Histological Type;1
-[M] Cystic mesothelioma;SNOMED:86562005;Histological Type;1
-cystic; mesothelioma;SNOMED:86562005;Histological Type;1
-mesothelioma; cystic;SNOMED:86562005;Histological Type;1
-Not Specified;SNOMED:399740008;Histological Type;0
-Extent of tumor involvement not specified;SNOMED:399740008;Histological Type;1
-Extent of tumor involvement not specified (finding);SNOMED:399740008;Histological Type;1
-Extent of tumour involvement not specified;SNOMED:399740008;Histological Type;1
-Tumor extent of involvement not specified;SNOMED:399740008;Histological Type;1
-Tumour extent of involvement not specified;SNOMED:399740008;Histological Type;1
+Biphasic mesothelioma;SNOMED:30383009;Histological Type;0
+Biphasic tumor;SNOMED:30383009;Histological Type;0
+Biphasic malignant mesothelioma;SNOMED:30383009;Histological Type;0
+Mesothelioma, biphasic, malignant;SNOMED:30383009;Histological Type;0
+Mesothelioma, biphasic;SNOMED:30383009;Histological Type;1
+Malignant biphasic mesothelioma;SNOMED:30383009;Histological Type;1
+Mesothelioma, biphasic, malignant (morphologic abnormality);SNOMED:30383009;Histological Type;1
+Histological Type;None;Histological Type;0
+Fibrous mesothelioma;SNOMED:54443001;Histological Type;0
+Fibrous mesothelioma, malignant;SNOMED:54443001;Histological Type;0
+Sarcomatoid mesothelioma;SNOMED:54443001;Histological Type;1
+Desmoplastic mesothelioma;SNOMED:54443001;Histological Type;1
+Spindled mesothelioma;SNOMED:54443001;Histological Type;1
+Fibrous mesothelioma, malignant (morphologic abnormality);SNOMED:54443001;Histological Type;1
