@@ -21,25 +21,45 @@ WORDTABLE ultrastructuralFindingsTable = 'ner/ultrastructural_findings.csv';
 // Additionally, the char " " and  "-" are ignored, but but maximally 10 of them.
 BLOCK(NameEntityHistologicalType) Document {} { 
     // We don't really need the semanticType column in each dictionary file since we have each variable in its own file
-    Document{->MARKTABLE(XmesoHistologicalType, 1, histologicalTypeTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoHistologicalType, 1, histologicalTypeTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntityImmunohistochemicalProfile) Document {} { 
-    Document{->MARKTABLE(XmesoImmunoHistochemicalProfile, 1, immunohistochemicalProfileTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoImmunoHistochemicalProfile, 1, immunohistochemicalProfileTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntityTumorSite) Document {} { 
-    Document{->MARKTABLE(XmesoTumorSite, 1, tumorSiteTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoTumorSite, 1, tumorSiteTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntitySurgicalProcedure) Document {} { 
-    Document{->MARKTABLE(XmesoSurgicalProcedure, 1, surgicalProcedureTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoSurgicalProcedure, 1, surgicalProcedureTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntityTumorConfiguration) Document {} { 
-    Document{->MARKTABLE(XmesoTumorConfiguration, 1, tumorConfigurationTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoTumorConfiguration, 1, tumorConfigurationTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntityTumorDifferentiation) Document {} { 
-    Document{->MARKTABLE(XmesoTumorDifferentiation, 1, tumorDifferentiationTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoTumorDifferentiation, 1, tumorDifferentiationTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
+
 BLOCK(NameEntityUltrastructuralFindings) Document {} { 
-    Document{->MARKTABLE(XmesoUltrastructuralFindings, 1, ultrastructuralFindingsTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)};
+    Document{->
+        MARKTABLE(XmesoUltrastructuralFindings, 1, ultrastructuralFindingsTable, true, 0, " -", 10, "coveredText" = 1, "snomedCode" = 2, "semanticType" = 3, "codedPenalty" = 4)
+    };
 }
 
 // This doesn't seem to be used?
@@ -52,15 +72,17 @@ BLOCK(NameEntityUltrastructuralFindings) Document {} {
 STRING sectionNameVar = "Undefined";
 INT sectionLevelVar = -1;
 INT partNumberVar = -1;
-BLOCK(AssignSectionsAndPartsToNamedEntities) 
-    // The GETFEATURE action stores the value of the matched annotation's feature (first parameter) in the given variable (second parameter).
-    Part{->GETFEATURE("sectionName", sectionNameVar),
-           GETFEATURE("sectionLevel", sectionLevelVar),
-           GETFEATURE("partNumber", partNumberVar)} {          
-           // The SETFEATURE action sets the value of a feature of the matched complex structure.
-           XmesoNamedEntity{-> SETFEATURE("sectionName", sectionNameVar),
-                               SETFEATURE("sectionLevel", sectionLevelVar), 
-                               SETFEATURE("partNumber", partNumberVar)};
+BLOCK(AssignSectionsAndPartsToNamedEntities) Part{->
+    // The GETFEATURE action stores the value of the matched annotation's feature (first parameter) 
+    // in the given variable (second parameter).
+    GETFEATURE("sectionName", sectionNameVar),
+    GETFEATURE("sectionLevel", sectionLevelVar),
+    GETFEATURE("partNumber", partNumberVar)} {XmesoNamedEntity{-> 
+        // The SETFEATURE action sets the value of a feature of the matched complex structure.
+        SETFEATURE("sectionName", sectionNameVar),
+        SETFEATURE("sectionLevel", sectionLevelVar), 
+        SETFEATURE("partNumber", partNumberVar)
+    };
 }
             
 

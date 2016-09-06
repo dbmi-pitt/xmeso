@@ -34,6 +34,7 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
     // If the matching condition and the additional regular expression are fulfilled, 
     // then the action is executed, which creates a new annotation of the type "PartIndicator"
     BREAK W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)};
+    
     PartIndicator{-> CALL(Utilities.CleanBeneathRutas)};
 }
 
@@ -47,7 +48,8 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
 //
 BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE(SPECIAL)} {
     SPECIAL{REGEXP("\""), -PARTOF(PartIndicator)-> MARK(PartIndicator)} NUM{REGEXP(".{1,2}")} PERIOD;
-    PartIndicator{-> CALL(Utilities.CleanBeneathRutas)};
+    
+    PartIndicator {-> CALL(Utilities.CleanBeneathRutas)};
 }
 
 //
@@ -56,12 +58,12 @@ BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE
 // PARTS 1, 2, 3, and 4
 //
 BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} { 
-    PartIndicator
-        ((NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})(COMMA|SEMICOLON))+
+    PartIndicator ((NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})(COMMA|SEMICOLON))+
         (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
         (W{REGEXP("and|AND|And")})
-        (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
-        {-> CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
+        (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)}) {-> 
+        CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)
+    };              
 }
 
 //
@@ -70,13 +72,16 @@ BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} {
 // Parts 1 and 2:
 //
 BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} { 
-    PartIndicator 
-        (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
+    PartIndicator (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
         (W{REGEXP("and|AND|And")})
         (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
-        COLON
-        {-> CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
-    PartNumber {PARSE(partizerPartNum)-> SETFEATURE("partNumber", partizerPartNum)};
+        COLON {-> 
+        CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)
+    };   
+                   
+    PartNumber {PARSE(partizerPartNum)-> 
+        SETFEATURE("partNumber", partizerPartNum)
+    };
 }
 
 //
@@ -85,9 +90,9 @@ BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} {
 // Parts 1, 2, 4:
 //
 BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLON)} { 
-    PartIndicator 
-        (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})+
-        {-> CREATE(PartHeaderGenerator, 1, 2, "genNumber" = -1, "genCount" = -1)};              
+    PartIndicator (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})+ {-> 
+        CREATE(PartHeaderGenerator, 1, 2, "genNumber" = -1, "genCount" = -1)
+    };              
 }
 
 
@@ -99,8 +104,9 @@ BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLO
 BLOCK(PartHeaderDetector) Document{} { 
     (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
     (SPECIAL{REGEXP("-")}) 
-    (CAP)+ COLON
-    {-> CREATE(PartHeaderGenerator, 1, 4, "genNumber" = -1, "genCount" = -1)};              
+    (CAP)+ COLON {-> 
+        CREATE(PartHeaderGenerator, 1, 4, "genNumber" = -1, "genCount" = -1)
+    };              
 }
 
 //
@@ -112,9 +118,11 @@ BLOCK(PartHeaderDetectorRoman) Document{->ADDRETAINTYPE(BREAK)} {
     BREAK
     W{REGEXP("[IVX]{1,5}"), -PARTOF(PartHeaderGenerator) -> 
         MATCHEDTEXT(romanValueStore), 
-        CREATE(RomanPartNumber, 2, 2, "romanValue" = romanValueStore)}
-        PERIOD
-        {-> CREATE(PartHeaderGenerator, 2, 3, "genNumber" = -1, "genCount" = -1)};              
+        CREATE(RomanPartNumber, 2, 2, "romanValue" = romanValueStore)
+    }
+    PERIOD {-> 
+        CREATE(PartHeaderGenerator, 2, 3, "genNumber" = -1, "genCount" = -1)
+    };              
 }
 
 //
