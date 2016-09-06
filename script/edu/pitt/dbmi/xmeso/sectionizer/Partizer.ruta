@@ -49,7 +49,7 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
 BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE(SPECIAL)} {
     SPECIAL{REGEXP("\""), -PARTOF(PartIndicator)-> MARK(PartIndicator)} NUM{REGEXP(".{1,2}")} PERIOD;
     
-    PartIndicator {-> CALL(Utilities.CleanBeneathRutas)};
+    PartIndicator{-> CALL(Utilities.CleanBeneathRutas)};
 }
 
 //
@@ -174,12 +174,15 @@ BLOCK(PartNumberAssignerRoman) Document{} {
 //
 //
 BLOCK(TallyPartHeaderGenerators) Document {} {
-    Document {COUNT(PartHeaderGenerator,partizerGenTotal) -> 
-        ASSIGN(partizerGenNum,1)
+    Document {COUNT(PartHeaderGenerator, partizerGenTotal) -> 
+        // The ASSIGN action assigns the value of the passed expression to a variable of the same type.
+        // partizerGenNum starts from 1
+        ASSIGN(partizerGenNum, 1)
     };
     
     PartHeaderGenerator {->
         SETFEATURE("genNumber", partizerGenNum),
+        // Increase the partizerGenNum by 1
         ASSIGN(partizerGenNum, partizerGenNum + 1)
     };
     
