@@ -214,11 +214,12 @@ BLOCK(TallyPartHeaderGenerators) Document {} {
 // code.  There NERs are duplicated across common part
 // spans.
 //
-BLOCK(ProcessPartHeaderGenerator) PartHeaderGenerator {-> GETFEATURE("genNumber",partizerGenNum)} {
+BLOCK(ProcessPartHeaderGenerator) PartHeaderGenerator {-> GETFEATURE("genNumber", partizerGenNum)} {
     PartHeaderGenerator{
-        COUNT(PartNumber,partizerPartNum4GenTotal) ->
-        SETFEATURE("genCount",partizerPartNum4GenTotal),
-        ASSIGN(partizerPartNumSeq,1)
+        // The number of PartNumber annotation is counted and stored in the variable "partizerPartNum4GenTotal"
+        COUNT(PartNumber, partizerPartNum4GenTotal) ->
+            SETFEATURE("genCount", partizerPartNum4GenTotal),
+            ASSIGN(partizerPartNumSeq, 1)
     };
             
     PartNumber {PARTOF(PartHeaderGenerator) ->
@@ -244,8 +245,8 @@ BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
     };
     
     PartHeader{->
-        SETFEATURE("sectionName","UNASSIGNED"),
-        SETFEATURE("sectionLevel",-1)
+        SETFEATURE("sectionName", "UNASSIGNED"),
+        SETFEATURE("sectionLevel", -1)
     };
 }
 
