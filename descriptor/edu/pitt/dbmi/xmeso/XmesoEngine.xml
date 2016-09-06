@@ -303,7 +303,6 @@
                         <string>edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.negex.SentenceBoundaryDetectionEngine</string>
                         <string>edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine</string>
-                        <string>edu.pitt.dbmi.xmeso.decomposition.SentenceCreatorAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.partizer.PartCreatorAnnotationEngine</string>
                         <string>edu.pitt.dbmi.xmeso.negex.SentenceTokenizationEngine</string>

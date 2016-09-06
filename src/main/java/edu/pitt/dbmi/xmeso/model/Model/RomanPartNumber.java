@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Fri Sep 02 12:50:58 EDT 2016 */
+/* First created by JCasGen Tue Sep 06 15:35:51 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas; 
@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Tue Sep 06 11:14:50 EDT 2016
+ * Updated by JCasGen Tue Sep 06 15:35:51 EDT 2016
  * XML source: C:/Users/zhy19/workspace/xmeso/descriptor/edu/pitt/dbmi/xmeso/XmesoEngine.xml
  * @generated */
 public class RomanPartNumber extends PartNumber {

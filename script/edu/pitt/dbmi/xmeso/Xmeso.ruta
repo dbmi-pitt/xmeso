@@ -31,7 +31,6 @@ SCRIPT edu.pitt.dbmi.xmeso.avpairs.AvPairDetector;
 
 // UimaFit imports - the src/main/java annotation implementations, not Ruta
 UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.decomposition.SentenceCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.negex.SentenceBoundaryDetectionEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.negex.SentenceTokenizationEngine;
