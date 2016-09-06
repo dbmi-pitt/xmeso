@@ -25,8 +25,7 @@ BLOCK(SectionHeaderDetector) Document{} {
      
      SubsumableSectionHeader{-PARTOF(SectionHeader)-> TRANSFER(SectionHeader), 
                               UNMARK(SubsumableSectionHeader)};
-     SubsumableSectionHeader{PARTOF(SectionHeader)->
-                              UNMARK(SubsumableSectionHeader)};
+     SubsumableSectionHeader{PARTOF(SectionHeader)-> UNMARK(SubsumableSectionHeader)};
      SectionHeader{-> SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)};  
 }
 
@@ -53,12 +52,12 @@ BLOCK(EndOfDocumentDetector) Document{} {
 // section header begins
 //
 BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
-   BREAK @SectionHeader { -> 
+    BREAK @SectionHeader { -> 
 //                            LOG("Marking EndOfSection"),
-                            MARK(EndOfSection, 1)};
-   EndOfSection { -AFTER(SectionHeader) -> 
+                              MARK(EndOfSection, 1)};
+    EndOfSection { -AFTER(SectionHeader) -> 
 //                            LOG("UnMarking EndOfSection"),
-                            UNMARK(EndOfSection)};
+                              UNMARK(EndOfSection)};
 }
 
 //
@@ -68,15 +67,15 @@ BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
 // Section text.
 //
 BLOCK(SectionDetector) Document{} {
-   STRING cachedSectionName;
-   INT cachedSectionLevel;
-   SectionHeader{->  GETFEATURE("name", cachedSectionName),
+    STRING cachedSectionName;
+    INT cachedSectionLevel;
+    SectionHeader{-> GETFEATURE("name", cachedSectionName),
                      GETFEATURE("level", cachedSectionLevel)
-   } 
-   (ANY|FloatNum|UOM|XmesoSize|BREAK)+? {-PARTOF(Section)}
-   (EndOfSection | EndOfDocument) 
-      { -> 
+    };
+    (ANY|FloatNum|UOM|XmesoSize|BREAK)+? {-PARTOF(Section)}
+    (EndOfSection | EndOfDocument){-> 
 //      LOG("Creating section " + cachedSectionName),
-      CREATE(Section, 2, 3, "name" = cachedSectionName, "level" = cachedSectionLevel)};
+        CREATE(Section, 2, 3, "name" = cachedSectionName, "level" = cachedSectionLevel)
+    };
 }
 

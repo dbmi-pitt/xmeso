@@ -3,9 +3,9 @@ PACKAGE edu.pitt.dbmi.xmeso.floatnumdetector;
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
 BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
-  NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
-  NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
-  PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
+    NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
+    NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
+    PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
 }
 
 BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
@@ -46,7 +46,7 @@ BLOCK(MaximumSizeCalculator) XmesoSize{} {
 }
 
 BLOCK(DetectTnm) Document{} {
-   "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
+    "[pc]?(Tis|T[0-4])\\s*(N[0-4])\\s*(M[0xX])" -> StageTNM, 1 = StageT, 2 = StageN, 3 = StageM;
 }
 
 
