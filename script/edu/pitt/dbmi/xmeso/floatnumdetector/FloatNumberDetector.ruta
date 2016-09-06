@@ -3,16 +3,21 @@ PACKAGE edu.pitt.dbmi.xmeso.floatnumdetector;
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
 BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
+    // This rule matches on a number followed by a period then followed by a number again, 
+    // and annotates it as a FloatNum annotation.
+    // The two numerical expressions at the end of the mark action state that 
+    // the matched text of the first and the second rule elements are joined 
+    // to create the boundaries of the new annotation.
     NUM+ PERIOD NUM+{-> MARK(FloatNum, 1, 3)};
-    
-    NUM {PARTOF(FloatNum)-> UNMARK(NUM,true)};
-    
-    PERIOD {PARTOF(FloatNum)-> UNMARK(PERIOD,true)};
+    // Remove the NUM annotation if the number is part of a float number
+    NUM{PARTOF(FloatNum)-> UNMARK(NUM, true)};
+    // Remove the period annotation if the period is part of a float number
+    PERIOD{PARTOF(FloatNum)-> UNMARK(PERIOD, true)};
 }
 
-BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
+BLOCK(DetectUom) Document{->RETAINTYPE(BREAK, SPACE)} {
     (NUM|FloatNum) (SPACE|BREAK)+?    
-    @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
+    @W{REGEXP("[cm]m", true), -PARTOF(UOM)->MARK(UOM)} 
     ANY{-PARTOF(W)};
 }
 

@@ -49,6 +49,7 @@ BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
 // this is annotated here
 //
 BLOCK(EndOfDocumentDetector) Document{} {
+    // This rule annotates the last token of the document with the annotation EndOfDocument
     Document{->MARKLAST(EndOfDocument)};
     SPECIAL {REGEXP("\\$"), PARTOF(EndOfDocument) -> UNMARK(SPECIAL)};
 }
@@ -60,12 +61,14 @@ BLOCK(EndOfDocumentDetector) Document{} {
 // section header begins
 //
 BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
+    // The rule first searches for SectionHeader and then 
+    // checks whether there is a BREAK in front of the matched word.
     BREAK @SectionHeader {-> 
 //        LOG("Marking EndOfSection"),
         MARK(EndOfSection, 1)
     };
         
-    EndOfSection { -AFTER(SectionHeader) -> 
+    EndOfSection {-AFTER(SectionHeader) -> 
 //        LOG("UnMarking EndOfSection"),
         UNMARK(EndOfSection)
     };

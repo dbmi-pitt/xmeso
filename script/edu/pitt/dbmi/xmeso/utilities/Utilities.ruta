@@ -20,7 +20,7 @@ BLOCK(CleanBeneathXmeso) Document{} {
 // SPACE -spaces
 // SPECIAL - all other tokens and symbols
 // SW - lower case word
-BLOCK(CleanBeneathRutas) Document{->RETAINTYPE(CAP,COLON,COMMA,CW,PERIOD,SPACE,SPECIAL,SW)} {
+BLOCK(CleanBeneathRutas) Document{->RETAINTYPE(CAP, COLON, COMMA, CW, PERIOD, SPACE, SPECIAL, SW)} {
     // The UNMARK action removes the annotation of the given type overlapping the matched annotation
     CAP{PARTOF(Document)->UNMARK(CAP)};
     COLON{PARTOF(Document)->UNMARK(COLON)};
