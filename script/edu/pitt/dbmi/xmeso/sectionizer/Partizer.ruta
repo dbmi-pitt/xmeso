@@ -34,7 +34,7 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
     // If the matching condition and the additional regular expression are fulfilled, 
     // then the action is executed, which creates a new annotation of the type "PartIndicator"
     BREAK W{REGEXP("PARTS?|Parts?") -> MARK(PartIndicator)};
-    PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
+    PartIndicator{-> CALL(Utilities.CleanBeneathRutas)};
 }
 
 //
@@ -47,7 +47,7 @@ BLOCK(PartIndicatorDetector) Document{-> ADDRETAINTYPE(BREAK,SPECIAL)} {
 //
 BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE(SPECIAL)} {
     SPECIAL{REGEXP("\""), -PARTOF(PartIndicator)-> MARK(PartIndicator)} NUM{REGEXP(".{1,2}")} PERIOD;
-    PartIndicator{->CALL(Utilities.CleanBeneathRutas)};
+    PartIndicator{-> CALL(Utilities.CleanBeneathRutas)};
 }
 
 //
@@ -58,11 +58,10 @@ BLOCK (PartIndicatorDectorNyu) Document{-> REMOVERETAINTYPE(BREAK),ADDRETAINTYPE
 BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} { 
     PartIndicator
         ((NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})(COMMA|SEMICOLON))+
-         (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
-         (W{REGEXP("and|AND|And")})
-         (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
-                  { -> 
-                       CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
+        (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
+        (W{REGEXP("and|AND|And")})
+        (NUM{REGEXP(".{1,2}") -> CREATE(PartNumber)})
+        {-> CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
 }
 
 //
@@ -71,12 +70,12 @@ BLOCK(PartHeaderDetectorMultipleAnd) Document{-> REMOVERETAINTYPE(BREAK)} {
 // Parts 1 and 2:
 //
 BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} { 
-    PartIndicator (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
-                  (W{REGEXP("and|AND|And")})
-                  (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
-                  COLON
-                  { -> 
-                       CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
+    PartIndicator 
+        (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
+        (W{REGEXP("and|AND|And")})
+        (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
+        COLON
+        {-> CREATE(PartHeaderGenerator, 1, 5, "genNumber" = -1, "genCount" = -1)};              
     PartNumber {PARSE(partizerPartNum)-> SETFEATURE("partNumber", partizerPartNum)};
 }
 
@@ -88,9 +87,7 @@ BLOCK(PartHeaderDetectorTwo) Document{-> REMOVERETAINTYPE(BREAK)} {
 BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLON)} { 
     PartIndicator 
         (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})+
-        { -> 
-   
-             CREATE(PartHeaderGenerator, 1, 2, "genNumber" = -1, "genCount" = -1)};              
+        {-> CREATE(PartHeaderGenerator, 1, 2, "genNumber" = -1, "genCount" = -1)};              
 }
 
 
@@ -100,11 +97,10 @@ BLOCK(PartHeaderDetectorMultiple) Document{-> ADDFILTERTYPE(BREAK,COMMA,SEMICOLO
 // 1 - PROSTRATE:
 //
 BLOCK(PartHeaderDetector) Document{} { 
-        (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
-        (SPECIAL{REGEXP("-")}) 
-        (CAP)+ COLON
-        { -> 
-             CREATE(PartHeaderGenerator, 1, 4, "genNumber" = -1, "genCount" = -1)};              
+    (NUM{REGEXP(".{1,2}"), -PARTOF(PartHeaderGenerator) -> CREATE(PartNumber)})
+    (SPECIAL{REGEXP("-")}) 
+    (CAP)+ COLON
+    {-> CREATE(PartHeaderGenerator, 1, 4, "genNumber" = -1, "genCount" = -1)};              
 }
 
 //
@@ -113,12 +109,12 @@ BLOCK(PartHeaderDetector) Document{} {
 // Part II.
 //
 BLOCK(PartHeaderDetectorRoman) Document{->ADDRETAINTYPE(BREAK)} { 
-        BREAK
-        W{REGEXP("[IVX]{1,5}"), -PARTOF(PartHeaderGenerator)  
-            -> MATCHEDTEXT(romanValueStore), 
-               CREATE(RomanPartNumber, 2, 2, "romanValue" = romanValueStore)}
+    BREAK
+    W{REGEXP("[IVX]{1,5}"), -PARTOF(PartHeaderGenerator) -> 
+        MATCHEDTEXT(romanValueStore), 
+        CREATE(RomanPartNumber, 2, 2, "romanValue" = romanValueStore)}
         PERIOD
-        { -> CREATE(PartHeaderGenerator, 2, 3, "genNumber" = -1, "genCount" = -1)};              
+        {-> CREATE(PartHeaderGenerator, 2, 3, "genNumber" = -1, "genCount" = -1)};              
 }
 
 //
@@ -169,16 +165,19 @@ BLOCK(PartNumberAssignerRoman) Document{} {
 // report.
 //
 //
-BLOCK(TallyPartHeaderGenerators) 
-  Document {} {
-  Document {COUNT(PartHeaderGenerator,partizerGenTotal)
-    -> ASSIGN(partizerGenNum,1)};
-  PartHeaderGenerator {
-  ->
-    SETFEATURE("genNumber", partizerGenNum),
-    ASSIGN(partizerGenNum, partizerGenNum + 1)
+BLOCK(TallyPartHeaderGenerators) Document {} {
+    Document {COUNT(PartHeaderGenerator,partizerGenTotal) -> 
+        ASSIGN(partizerGenNum,1)
     };
-   PartHeaderGenerator {->CALL(Partizer.ProcessPartHeaderGenerator)};
+    
+    PartHeaderGenerator {->
+        SETFEATURE("genNumber", partizerGenNum),
+        ASSIGN(partizerGenNum, partizerGenNum + 1)
+    };
+    
+    PartHeaderGenerator {-> 
+        CALL(Partizer.ProcessPartHeaderGenerator)
+    };
 }
 
 //
@@ -204,19 +203,18 @@ BLOCK(TallyPartHeaderGenerators)
 // code.  There NERs are duplicated across common part
 // spans.
 //
-BLOCK(ProcessPartHeaderGenerator) 
-  PartHeaderGenerator {->GETFEATURE("genNumber",partizerGenNum)} {
-  PartHeaderGenerator {
-     COUNT(PartNumber,partizerPartNum4GenTotal)
-  ->
-    SETFEATURE("genCount",partizerPartNum4GenTotal),
-    ASSIGN(partizerPartNumSeq,1)};
-  PartNumber {PARTOF(PartHeaderGenerator)
-  ->
-  SETFEATURE("genNumber", partizerGenNum),
-  SETFEATURE("genSeq", partizerPartNumSeq),
-  ASSIGN(partizerPartNumSeq, partizerPartNumSeq + 1)
-  };
+BLOCK(ProcessPartHeaderGenerator) PartHeaderGenerator {-> GETFEATURE("genNumber",partizerGenNum)} {
+    PartHeaderGenerator{
+        COUNT(PartNumber,partizerPartNum4GenTotal) ->
+        SETFEATURE("genCount",partizerPartNum4GenTotal),
+        ASSIGN(partizerPartNumSeq,1)
+    };
+            
+    PartNumber {PARTOF(PartHeaderGenerator) ->
+        SETFEATURE("genNumber", partizerGenNum),
+        SETFEATURE("genSeq", partizerPartNumSeq),
+        ASSIGN(partizerPartNumSeq, partizerPartNumSeq + 1)
+    };
 }
 
 //
@@ -226,13 +224,18 @@ BLOCK(ProcessPartHeaderGenerator)
 // and can be cleaned after use
 //
 BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
-    PartHeaderGenerator {->
-            UNMARK(PartHeaderGenerator)};
-    PartNumber {->
-            UNMARK(PartNumber)};
-    PartHeader {->
-            SETFEATURE("sectionName","UNASSIGNED"),
-            SETFEATURE("sectionLevel",-1)};
+    PartHeaderGenerator{-> 
+        UNMARK(PartHeaderGenerator)
+    };
+    
+    PartNumber{-> 
+        UNMARK(PartNumber)
+    };
+    
+    PartHeader{->
+        SETFEATURE("sectionName","UNASSIGNED"),
+        SETFEATURE("sectionLevel",-1)
+    };
 }
 
 //
@@ -243,14 +246,17 @@ BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
 BLOCK(PartSectionNameAssigner) Section {} {
     STRING cachedSectionNameVar;
     INT cachedSectionLevelVar;
-    Section{ -> 
-                    GETFEATURE("name", cachedSectionNameVar),
-                    GETFEATURE("level", cachedSectionLevelVar),
-                    LOG("Cached variables from section")};
-    Part {PARTOF(Section) ->  
-                 SETFEATURE("sectionName", cachedSectionNameVar),
-                 SETFEATURE("sectionLevel", cachedSectionLevelVar)            
-             };
+    
+    Section{-> 
+        GETFEATURE("name", cachedSectionNameVar),
+        GETFEATURE("level", cachedSectionLevelVar),
+        LOG("Cached variables from section")
+    };
+    
+    Part{PARTOF(Section) ->  
+        SETFEATURE("sectionName", cachedSectionNameVar),
+        SETFEATURE("sectionLevel", cachedSectionLevelVar)            
+    };
 }
 
 //
@@ -259,7 +265,9 @@ BLOCK(PartSectionNameAssigner) Section {} {
 // Prints a message for each Part annotation
 //
 BLOCK(PartDiagnostics) Part{} {
-   Part{-> LOG("Pulling part for diagnostics.")};
+    Part{-> 
+        LOG("Pulling part for diagnostics.")
+    };
 }
 
 //
@@ -270,6 +278,8 @@ BLOCK(PartDiagnostics) Part{} {
 // section or document ends or trailing whitespace.
 //
 BLOCK(PartTrimmer) Part{} {
-   Part{->TRIM(BREAK,SPACE,EndOfDocument,EndOfSection)};
+    Part{-> 
+        TRIM(BREAK, SPACE, EndOfDocument, EndOfSection)
+    };
 }
 

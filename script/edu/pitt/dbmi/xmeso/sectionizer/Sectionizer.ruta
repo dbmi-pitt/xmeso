@@ -16,17 +16,25 @@ WORDTABLE sectionHeadersPassOne = 'sectionizer/section_headers_pass_one.csv';
 WORDTABLE sectionHeadersPassTwo = 'sectionizer/section_headers_pass_two.csv';
 
 BLOCK(SectionHeaderDetector) Document{} {
-     // The whole document is searched for all occurrences of the entries of the first column of the given table 'sectionHeadersPassOne'.
-     // For each occurrence, an annotation of the type SectionHeader is created and its feature 'name' is filled with 
-     // the entry of the second column, and its feature 'level' is filled with the entry of the third column.
-     Document{->MARKTABLE(SectionHeader, 1, sectionHeadersPassOne, true, 100, "", 1, "name" = 2, "level" = 3)};
+    // The whole document is searched for all occurrences of the entries of the first column of the given table 'sectionHeadersPassOne'.
+    // For each occurrence, an annotation of the type SectionHeader is created and its feature 'name' is filled with 
+    // the entry of the second column, and its feature 'level' is filled with the entry of the third column.
+    Document{->MARKTABLE(SectionHeader, 1, sectionHeadersPassOne, true, 100, "", 1, "name" = 2, "level" = 3)};
      
-     Document{->MARKTABLE(SubsumableSectionHeader, 1, sectionHeadersPassTwo, true, 100, "", 1, "name" = 2, "level" = 3)};
+    Document{->MARKTABLE(SubsumableSectionHeader, 1, sectionHeadersPassTwo, true, 100, "", 1, "name" = 2, "level" = 3)};
      
-     SubsumableSectionHeader{-PARTOF(SectionHeader)-> TRANSFER(SectionHeader), 
-                              UNMARK(SubsumableSectionHeader)};
-     SubsumableSectionHeader{PARTOF(SectionHeader)-> UNMARK(SubsumableSectionHeader)};
-     SectionHeader{-> SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)};  
+    SubsumableSectionHeader{-PARTOF(SectionHeader)-> 
+        TRANSFER(SectionHeader), 
+        UNMARK(SubsumableSectionHeader)
+    };
+        
+    SubsumableSectionHeader{PARTOF(SectionHeader)-> 
+        UNMARK(SubsumableSectionHeader)
+    };
+    
+    SectionHeader{-> 
+        SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)
+    };  
 }
 
 BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
@@ -52,12 +60,15 @@ BLOCK(EndOfDocumentDetector) Document{} {
 // section header begins
 //
 BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
-    BREAK @SectionHeader { -> 
-//                            LOG("Marking EndOfSection"),
-                              MARK(EndOfSection, 1)};
+    BREAK @SectionHeader {-> 
+//        LOG("Marking EndOfSection"),
+        MARK(EndOfSection, 1)
+    };
+        
     EndOfSection { -AFTER(SectionHeader) -> 
-//                            LOG("UnMarking EndOfSection"),
-                              UNMARK(EndOfSection)};
+//        LOG("UnMarking EndOfSection"),
+        UNMARK(EndOfSection)
+    };
 }
 
 //
@@ -69,9 +80,12 @@ BLOCK(EndOfSectionDetector) Document{->ADDRETAINTYPE(BREAK)} {
 BLOCK(SectionDetector) Document{} {
     STRING cachedSectionName;
     INT cachedSectionLevel;
-    SectionHeader{-> GETFEATURE("name", cachedSectionName),
-                     GETFEATURE("level", cachedSectionLevel)
+    
+    SectionHeader{-> 
+        GETFEATURE("name", cachedSectionName),
+        GETFEATURE("level", cachedSectionLevel)
     };
+    
     (ANY|FloatNum|UOM|XmesoSize|BREAK)+? {-PARTOF(Section)}
     (EndOfSection | EndOfDocument){-> 
 //      LOG("Creating section " + cachedSectionName),
