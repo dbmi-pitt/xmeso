@@ -45,6 +45,7 @@ UIMAFIT edu.pitt.dbmi.xmeso.ie.InformationExtractorAnnotationEngine;
 // Currently, only complete script files are supported.
 // Here the script block of DetectDeId in DeidCleaner.ruta script is executed
 Document{->CALL(DeidCleaner.DetectDeId)};
+// Once DeIdBannarAnnotation is annotated, UNMARK all annotations in that text
 DeIdBannarAnnotation{->CALL(Utilities.CleanBeneathRutas)};
 
 // Conflates floating point values, determines sizes as anchored by UOM (Units of measurement)
@@ -58,12 +59,14 @@ XmesoSize{->CALL(Utilities.CleanBeneathXmeso)};
 
 // Uses mesothelioma derived gazetter of section headers to delineate section text with the report
 // Sections are weighted by "importance"
+// Possible section headers are in the dictionary file
 Document{->CALL(Sectionizer.SectionHeaderDetector)};
 Document{->CALL(Sectionizer.SectionHeaderFilter)};
 SectionHeader{->CALL(Utilities.CleanBeneathRutas)};    
 Document{->CALL(Sectionizer.EndOfDocumentDetector)};
 EndOfDocument{->CALL(Utilities.CleanBeneathRutas)};
 Document{->CALL(Sectionizer.EndOfSectionDetector)};
+// Execute the SectionCreatorAnnotationEngine defined in src/main/java/edu/pitt/dbmi/xmeso/partizer/SectionCreatorAnnotationEngine.java
 Document{->EXEC(SectionCreatorAnnotationEngine, {Section})};
 
 // NER (Named Entity Recognition)
@@ -94,16 +97,21 @@ Document{->CALL(Partizer.PartHeaderDetectorRoman)};
 Document{->CALL(Partizer.PartNumberAssigner)};
 Document{->CALL(Partizer.PartNumberAssignerRoman)};
 Document{->CALL(Partizer.TallyPartHeaderGenerators)};
+// Execute the PartCreatorAnnotationEngine defined in src/main/java/edu/pitt/dbmi/xmeso/partizer/PartCreatorAnnotationEngine.java
 Document{->EXEC(PartCreatorAnnotationEngine, {Part})};
 
 // LINGPipe's Sentence Detector along with tokenization beneath as a prerequisite for NegEx implementation
+// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/negex/SentenceBoundaryDetectionEngine.java
 Document{->EXEC(SentenceBoundaryDetectionEngine, {XmesoSentence})};
+// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/negex/SentenceTokenizationEngine.java
 Document{->EXEC(SentenceTokenizationEngine, {XmesoSentenceToken})};
 
 // Implementation of Chapman's NegEx algorithm
+// Execute the NegExAnnotationEngine defined in src/main/java/edu/pitt/dbmi/xmeso/negex/NegExAnnotationEngine.java
 Document{->EXEC(NegExAnnotationEngine, {XmesoNamedEntity, XmesoNegatedConcept})};
 
 // Assigns slots values to extraction target template.
 // Theses are based on appearance of named entities in important sections
+// Execute the InformationExtractorAnnotationEngine defined in src/main/java/edu/pitt/dbmi/xmeso/ie/InformationExtractorAnnotationEngine.java
 Document{->EXEC(InformationExtractorAnnotationEngine, {XmesoCaseForm, XmesoTumorForm})};
 

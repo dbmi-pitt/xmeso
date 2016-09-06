@@ -21,9 +21,9 @@ BLOCK(DetectFloatNum) Document{->RETAINTYPE(SPACE)} {
 //
 // DetectUom (Units of measurement)
 //
-// Units in Pathology Reports are usually either mm or cm
+// Units in Pathology Reports are usually either mm or cm, not including cc?
 //
-BLOCK(DetectUom) Document{->RETAINTYPE(BREAK,SPACE)} {
+BLOCK(DetectUom) Document{->RETAINTYPE(BREAK, SPACE)} {
     (NUM|FloatNum) (SPACE|BREAK)+?    
     @W{REGEXP("[cm]m",true),-PARTOF(UOM)->MARK(UOM)} 
     ANY{-PARTOF(W)};
