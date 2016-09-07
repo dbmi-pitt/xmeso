@@ -29,14 +29,9 @@ BLOCK(DetectLymphNodesExamined) Document{} {
 // DetectSpecialStainProfile
 // http://www.miracalifesciences.com/publication/exactly-what-are-immunohistochemical-stains/
 //
-// A mention of special or immunohistochemical stains in
-// an important section triggers a yes response to 
-// the use of special stains.  If this rule becomes spurious
-// it might be improved by looking for actual stain mentions
+// A mention of FISH(Fluorescence in situ hybridization) in an important section 
+// triggers a yes response to the use of special stains.
 //  
 BLOCK(DetectSpecialStainProfile) Document{} {
-    W{REGEXP("(?i)SPECIAL|IMMUNOHISTOCHEMICAL")} 
-    W{REGEXP("(?i)STAINS?") -> 
-         CREATE(XmesoSpecialStain, 1, 2, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)
-    };
+    W{REGEXP("FISH") -> CREATE(XmesoSpecialStain, 1, 2, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)};
 }
