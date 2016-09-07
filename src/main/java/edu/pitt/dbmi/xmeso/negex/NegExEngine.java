@@ -223,7 +223,7 @@ public class NegExEngine {
 		while(scanner.hasNextLine()) {
 			String sentence = scanner.nextLine();
 			// Tab separated 
-			String[] conceptSpace = sentence.split("\t");
+			String[] conceptSpace = sentence.split(";");
 			NegPhrase phrase = new NegPhrase();
 			phrase.setNegationPhrase(conceptSpace[0]);
 			phrase.setNegationType(conceptSpace[1]);
