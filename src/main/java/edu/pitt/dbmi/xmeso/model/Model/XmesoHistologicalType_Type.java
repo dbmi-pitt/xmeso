@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Wed Sep 07 16:14:44 EDT 2016 */
+/* First created by JCasGen Wed Sep 07 16:18:03 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -11,7 +11,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Wed Sep 07 16:14:44 EDT 2016
+ * Updated by JCasGen Wed Sep 07 16:18:03 EDT 2016
  * @generated */
 public class XmesoHistologicalType_Type extends XmesoNamedEntity_Type {
   /** @generated 

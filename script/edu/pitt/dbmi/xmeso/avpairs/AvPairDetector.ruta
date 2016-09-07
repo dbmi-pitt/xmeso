@@ -33,5 +33,5 @@ BLOCK(DetectLymphNodesExamined) Document{} {
 // triggers a yes response to the use of special stains.
 //  
 BLOCK(DetectSpecialStainProfile) Document{} {
-    W{REGEXP("FISH") -> CREATE(XmesoSpecialStain, 1, 2, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)};
+    W{REGEXP("FISH") -> CREATE(XmesoSpecialStain, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)};
 }
