@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -15,7 +16,7 @@ import edu.pitt.dbmi.xmeso.model.Model.XmesoNegatedConcept;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken;
 
-public class NegExAnnotationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class NegExAnnotationEngine extends JCasAnnotator_ImplBase {
 
 	private NegExEngine negator;
 	private final String specialCharacterRemovalRegEx = "[^a-zA-Z0-9\\s\t]";
