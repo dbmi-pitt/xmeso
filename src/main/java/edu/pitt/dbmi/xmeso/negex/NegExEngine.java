@@ -20,13 +20,13 @@ public class NegExEngine {
 	public NegExEngine() {
 		negPhrases = new LinkedList<NegPhrase>();
 
-		// This finds the dictionary file from within the jar instead of relying on the file system absolute path
+		// This finds the dictionary file (word table) from within the jar instead of relying on the file system absolute path
 		// Must use the leading slash "/", which indicates absolute names
 		// http://www.javaworld.com/article/2077352/java-se/smartly-load-your-properties.html
-		InputStream negexDictionaryFileInputStream = this.getClass().getResourceAsStream("/negex/NegExDictionary.txt");
+		InputStream negexDictionaryFileInputStream = this.getClass().getResourceAsStream("/negex/NegExDictionary.csv");
 		
 		// Alternatively, we can also do this with No leading slash
-		//InputStream negexDictionaryFileInputStream = this.getClass().getClassLoader().getResourceAsStream("negex/NegExDictionary.txt");
+		//InputStream negexDictionaryFileInputStream = this.getClass().getClassLoader().getResourceAsStream("negex/NegExDictionary.csv");
 
 		initializeTerminology(negexDictionaryFileInputStream);
 	}
