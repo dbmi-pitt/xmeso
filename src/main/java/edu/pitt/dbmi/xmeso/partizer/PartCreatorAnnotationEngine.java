@@ -36,8 +36,7 @@ public class PartCreatorAnnotationEngine extends
 		}
 	};
 
-	private final TreeSet<Annotation> sPartSet = new TreeSet<Annotation>(
-			annotComparator);
+	private final TreeSet<Annotation> sPartSet = new TreeSet<Annotation>(annotComparator);
 
 	private final TreeSet<Integer> partNumbers = new TreeSet<Integer>();
 	private final TreeSet<Integer> sectionLevels = new TreeSet<Integer>();
@@ -74,8 +73,7 @@ public class PartCreatorAnnotationEngine extends
 				Annotation sAnnot = sPartIterator.next();
 				Annotation eAnnot = ePartIterator.next();
 				if (sAnnot instanceof PartHeaderGenerator) {
-					Collection<PartNumber> partNumAnnots = JCasUtil.selectCovered(
-							PartNumber.class, sAnnot);
+					Collection<PartNumber> partNumAnnots = JCasUtil.selectCovered(PartNumber.class, sAnnot);
 					for (PartNumber partNumAnnot : partNumAnnots) {
 						Part part = new Part(jCas);
 						partNumbers.add(partNumAnnot.getPartNumber());

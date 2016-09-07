@@ -32,8 +32,7 @@ public class SectionCreatorAnnotationEngine extends org.apache.uima.fit.componen
 		}
 	};
 
-	private final TreeSet<Annotation> sortedDelimiters = new TreeSet<Annotation>(
-			annotComparator);
+	private final TreeSet<Annotation> sortedDelimiters = new TreeSet<Annotation>(annotComparator);
 
 
 	@Override
@@ -48,8 +47,7 @@ public class SectionCreatorAnnotationEngine extends org.apache.uima.fit.componen
 		while (iterOne.hasNext() && iterTwo.hasNext()) {
 			Annotation annotOne = iterOne.next();
 			Annotation annotTwo = iterTwo.next();
-			if (annotOne instanceof SectionHeader && ((annotTwo instanceof EndOfSection) ||
-					(annotTwo instanceof EndOfDocument))) {			
+			if (annotOne instanceof SectionHeader && ((annotTwo instanceof EndOfSection) || (annotTwo instanceof EndOfDocument))) {			
 				int sPos = annotOne.getEnd();
 				int ePos = annotTwo.getEnd();
 				if (ePos - sPos > 0) {
