@@ -115,8 +115,7 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 				Annotation sAnnot = sPartIterator.next();
 				Annotation eAnnot = ePartIterator.next();
 				if (sAnnot instanceof PartHeaderGenerator) {
-					Collection<PartNumber> nes = JCasUtil.selectCovered(
-							PartNumber.class, sAnnot);
+					Collection<PartNumber> nes = JCasUtil.selectCovered(PartNumber.class, sAnnot);
 					for (PartNumber ne : nes) {
 						Part part = new Part(jCas);
 						partNumbers.add(ne.getPartNumber());
@@ -168,8 +167,7 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 
 	private void ftrXchangePartToNamedEntity(JCas jCas) {
 		for (Part part : JCasUtil.select(jCas, Part.class)) {
-			for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(
-					XmesoNamedEntity.class, part)) {
+			for (XmesoNamedEntity namedEntity : JCasUtil.selectCovered(XmesoNamedEntity.class, part)) {
 				namedEntity.setPartNumber(part.getPartNumber());
 				namedEntity.setSectionName(part.getSectionName());
 				namedEntity.setSectionLevel(part.getSectionLevel());
@@ -223,8 +221,7 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 	}
 
 	private void gatherCodePenalties(JCas jCas) {
-		for (XmesoNamedEntity namedEntity : JCasUtil.select(jCas,
-				XmesoNamedEntity.class)) {
+		for (XmesoNamedEntity namedEntity : JCasUtil.select(jCas, XmesoNamedEntity.class)) {
 			int codedPenalty = namedEntity.getCodedPenalty();
 			codedPenalties.add(codedPenalty);
 		}
@@ -259,43 +256,26 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 					if (isCurrent) {
 						String simpleClassName = namedEntity.getClass()
 								.getSimpleName();
-						if ("XmesoHistologicalType"
-								.equals(simpleClassName)) {
-							if (defaultTumorForm.getHistopathologicalType()
-									.equals(currentTumorForm
-											.getHistopathologicalType())) {
-								currentTumorForm
-										.setHistopathologicalType(namedEntity
-												.getConceptCode());
+						if ("XmesoHistologicalType".equals(simpleClassName)) {
+							if (defaultTumorForm.getHistopathologicalType().equals(currentTumorForm.getHistopathologicalType())) {
+								currentTumorForm.setHistopathologicalType(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoTumorSite".equals(simpleClassName)) {
-							if (defaultTumorForm.getTumorSite().equals(
-									currentTumorForm.getTumorSite())) {
-								currentTumorForm.setTumorSite(namedEntity
-										.getConceptCode());
+							if (defaultTumorForm.getTumorSite().equals(currentTumorForm.getTumorSite())) {
+								currentTumorForm.setTumorSite(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoTumorConfiguration"
 								.equals(simpleClassName)) {
-							if (defaultTumorForm.getTumorConfiguration()
-									.equals(currentTumorForm
-											.getTumorConfiguration())) {
-								currentTumorForm
-										.setTumorConfiguration(namedEntity
-												.getConceptCode());
+							if (defaultTumorForm.getTumorConfiguration().equals(currentTumorForm.getTumorConfiguration())) {
+								currentTumorForm.setTumorConfiguration(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoSize".equals(simpleClassName)) {
 							XmesoSize currentSize = (XmesoSize) namedEntity;
-							if (currentSize.getMaxDim() > currentTumorForm
-									.getSizeDimensionMax()) {
-								currentTumorForm.setSizeDimensionX(currentSize
-										.getDimOne());
-								currentTumorForm.setSizeDimensionY(currentSize
-										.getDimTwo());
-								currentTumorForm.setSizeDimensionZ(currentSize
-										.getDimThree());
-								currentTumorForm
-										.setSizeDimensionMax(currentSize
-												.getMaxDim());
+							if (currentSize.getMaxDim() > currentTumorForm.getSizeDimensionMax()) {
+								currentTumorForm.setSizeDimensionX(currentSize.getDimOne());
+								currentTumorForm.setSizeDimensionY(currentSize.getDimTwo());
+								currentTumorForm.setSizeDimensionZ(currentSize.getDimThree());
+								currentTumorForm.setSizeDimensionMax(currentSize.getMaxDim());
 							}
 						}
 					}
