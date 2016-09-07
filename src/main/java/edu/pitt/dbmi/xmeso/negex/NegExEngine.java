@@ -12,7 +12,9 @@ public class NegExEngine {
 	private List<NegPhrase> negPhrases;
 
 	private final int scopeBoundaryLength = 6;
+	
 	// These are the three names used in the negex dictionary file
+	// "STOP-WORDS" is also used in the dictionary file, but not processed here
 	private final String PSEUDO_NEG_PHRASES = "PSEUDO-NEG-PHRASES";
 	private final String PRE_NEG_PHRASES = "PRE-NEG-PHRASES";
 	private final String POST_NEG_PHRASES = "POST-NEG-PHRASES";
@@ -222,7 +224,7 @@ public class NegExEngine {
 		
 		while(scanner.hasNextLine()) {
 			String sentence = scanner.nextLine();
-			// Tab separated 
+			// Semi-colon separated 
 			String[] conceptSpace = sentence.split(";");
 			NegPhrase phrase = new NegPhrase();
 			phrase.setNegationPhrase(conceptSpace[0]);
