@@ -23,40 +23,13 @@ BLOCK(DetectLymphNodesExamined) Document{} {
          CREATE(XmesoLymphNodesExamined, 1, 2, "conceptCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)
     };
 }
- 
-// This is not correct at this point. 
-// Special stains has elements and each element has its own value as follow - Joe
-//[AE1/3 - 0]
-//[Ber-EP4 - 0]
-//[Calretinin - 0]
-//[CD10 - 0]
-//[CD31 - 0]
-//[CD44S - 0]
-//[CEA - 0]
-//[CK20 - 0]
-//[CK5/6 - 0]
-//[CK7 - 0]
-//[D2-40 - 0]
-//[E-cadherin - 0]
-//[Epithelial Membrane Antigen - 0]
-//[HBME-1 - 0]
-//[LeuM1 - 0]
-//[Mesothelin - 0]
-//[N-cadherin - 0]
-//[No Information - 0]
-//[Other - 0]
-//[PSAD - 0]
-//[TAG-72 - 0]
-//[Thrombomodulin - 0]
-//[TTF - 0]
-//[Unknown - 0]
-//[Vimentin - 0]
-//[WT1 - 0]
+
+
 //
 // DetectSpecialStainProfile
 // http://www.miracalifesciences.com/publication/exactly-what-are-immunohistochemical-stains/
 //
-// A mention of special or immunohistochemical stain in
+// A mention of special or immunohistochemical stains in
 // an important section triggers a yes response to 
 // the use of special stains.  If this rule becomes spurious
 // it might be improved by looking for actual stain mentions
@@ -67,18 +40,3 @@ BLOCK(DetectSpecialStainProfile) Document{} {
          CREATE(XmesoSpecialStain, 1, 2, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)
     };
 }
-
-// Will also need to add rules for Ultrastructural Findings
-// Ultrastructural Findings is different from special stains, 
-// it has one value from a list of values
-//[Acute Inflammation - 0]
-//[Changes of talc pleurodesis - 0]
-//[Chronic Inflammation - 0]
-//[Ferruginous Bodies - 0]
-//[Mixed Inflammation - 0]
-//[No Information - 0]
-//[None Identified - 0]
-//[Other - 0]
-//[Pleural Plaque - 0]
-//[Pulmonary Interstitial Fibrosis - 0]
-//[Unknown - 0]
