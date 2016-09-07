@@ -2,7 +2,8 @@ PACKAGE edu.pitt.dbmi.xmeso.avpairs;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
-//
+// This is a single value variable
+// 
 // DetectLymphNodesExamined
 //
 // A mention of lymph nodes in an important section
@@ -23,7 +24,8 @@ BLOCK(DetectLymphNodesExamined) Document{} {
     };
 }
  
-  
+// This is not correct at this point. 
+// Special stains has elements and each element has its own value - Joe
 //
 // DetectSpecialStainProfile
 // http://www.miracalifesciences.com/publication/exactly-what-are-immunohistochemical-stains/
@@ -39,3 +41,7 @@ BLOCK(DetectSpecialStainProfile) Document{} {
          CREATE(XmesoSpecialStain, 1, 2, "snomedCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)
     };
 }
+
+// Will also need to add rules for Ultrastructural Findings
+// Ultrastructural Findings is different from special stains, 
+// it has one value from a list of values
