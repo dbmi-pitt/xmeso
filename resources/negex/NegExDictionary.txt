@@ -84,6 +84,7 @@ did rule out for	PRE-NEG-PHRASES
 did rule the patient out	PRE-NEG-PHRASES
 did rule the patient out against	PRE-NEG-PHRASES
 did rule the patient out for	PRE-NEG-PHRASES
+fail to express	PRE-NEG-PHRASES
 fails to reveal	PRE-NEG-PHRASES
 free of	PRE-NEG-PHRASES
 negative for	PRE-NEG-PHRASES

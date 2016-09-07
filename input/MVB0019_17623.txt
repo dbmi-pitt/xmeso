@@ -1,0 +1,132 @@
+[Report de-identified (Safe-harbor compliant) by De-ID v.6.14.03]
+
+
+PATIENT HISTORY:
+Constrictive pericarditis.
+PRE-OP DIAGNOSIS:     Same.
+POST-OP DIAGNOSIS:      Same.
+PROCEDURE:          Pericardectomy, sternotomy.
+mam
+_______________________________________________________________
+FINAL DIAGNOSIS:
+PERICARDIUM, "PARIETAL PERICARDIUM", PERICARDECTOMY 
+A.          DIFFUSE MALIGNANT MESOTHELIOMA, TUBULOPAPILLARY TYPE.
+B.     CALCIFIED HYALINE PLAQUES. 
+C.     PORTIONS OF ATROPHIC THYMUS. 
+D.     SOLITARY LYMPH NODE WITH NO EVIDENCE OF METASTATIC MESOTHELIOMA.
+**INITIALS
+**INITIALS
+COMMENT:
+This case has been discussed with **NAME[M. ZZZ], M.D.  As indicated in that
+discussion, the pericardial biopsy shows a tubulopapillary proliferation of
+cytologically bland cuboidal cells, which infiltrate  submesothelial
+connective tissue and extend into the pericardial adipose tissue.  The cells
+fail to express neutral mucin with PAS/PAS-D stains and immunostains show that
+the neoplastic cells express WT1, nuclear calretinin, D240 and cytokeratin 5/6
+and fail to express carcinoembryonic antigen, TTF-1, Leu-M1, BER-3P4 and
+B72.3.  Overall this morphology is typical of a diffuse tubulopapillary
+malignant mesothelioma, which in the context of calcified hyaline plaques may
+be related to asbestos exposure.  
+**INITIALS
+     Pathologist:  **NAME[WWW M XXX], M.D.
+     Fellow/Chief Resident:  **NAME[VVV M. UUU], M.D.
+     Resident: **NAME[TTT M. SSS], M.D.
+     ** Report Electronically Signed Out **
+     By Pathologist:  **NAME[WWW M XXX], M.D.
+     **DATE[Oct 23 2006] 16:56
+My signature is attestation that I have personally reviewed the submitted
+material(s) and the final diagnosis reflects that evaluation.
+_______________________________________________________________
+GROSS DESCRIPTION:
+The specimen is received unfixed labeled with the patient's name, initials SA
+and "parietal pericardium".  The specimen consists of multiple tan-pink,
+irregular, rubbery fibromembranous portions of tissue with a scant amount of
+adipose tissue attached.  The specimens measure 12.0 x 5.0 x 2.5 cm in
+aggregate.  The entire specimen is submitted in cassettes labeled A through
+ZZ.
+mam
+**INITIALS
+MICROSCOPIC:
+Microscopic examination substantiates the above diagnosis. 
+ 
+The following statement applies to all immunohistochemistry, Insitu
+Hybridization Assays (ISH & FISH), Molecular Anatomic Pathology, and
+Immunofluorescent Testing:
+The testing was developed and its performance characteristics determined by
+the **INSTITUTION of Pathology, as required by the CLIA
+'88 regulations.  The testing has not been cleared or approved for the
+specific use by the U.S. Food and Drug Administration, but the FDA has
+determined such approval is not necessary for clinical use.
+HISTO TISSUE SUMMARY/SLIDES REVIEWED:
+Part 1: Parietal pericardium
+Taken: **DATE[Oct 20 2006] 00:00     Received: **DATE[Oct 20 2006] 14:47
+Stain/cnt     **NAME[RRR
+M&M] x 1     A
+H&E x 1     B
+H&E x 1     C
+ATTF x 1     D
+ATAG x 1     D
+ABEREP4 x 1     D
+ACALRET x 1     D
+CEA M x 1     D
+ANEG x 1     D
+ACK5/6 x 1     D
+D2-40 x 1     D
+H&E x 1     D
+LeuM1 x 1     D
+PAS x 1     D
+PASD x 1     D
+WT1 x 1     D
+H&E x 1     E
+H&E Recut x 8     F
+H&E x 1     F
+H&E x 1     G
+H&E x 1     H
+H&E x 1     I
+H&E x 1     J
+H&E x 1     K
+H&E x 1     L
+H&E x 1     M
+H&E x 1     N
+H&E x 1     O
+H&E x 1     P
+H&E x 1     Q
+H&E x 1     R
+H&E x 1     S
+H&E x 1     T
+H&E x 1     U
+H&E x 1     V
+H&E x 1     W
+H&E x 1     X
+H&E x 1     Y
+H&E x 1     Z
+H&E x 1     AA
+H&E x 1     BB
+H&E x 1     CC
+H&E x 1     DD
+H&E x 1     EE
+H&E x 1     FF
+H&E x 1     GG
+H&E x 1     HH
+H&E x 1     II
+H&E x 1     JJ
+H&E x 1     KK
+H&E x 1     LL
+H&E x 1     MM
+H&E x 1     NN
+H&E x 1     OO
+H&E x 1     PP
+H&E x 1     QQ
+H&E x 1     RR
+H&E x 1     SS
+H&E x 1     TT
+H&E x 1     UU
+H&E x 1     VV
+H&E x 1     WW
+H&E x 1     XX
+H&E x 1     YY
+H&E x 1     ZZ
+TC1
+
+
+

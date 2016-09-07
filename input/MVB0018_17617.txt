@@ -1,0 +1,122 @@
+[Report de-identified (Safe-harbor compliant) by De-ID v.6.14.03]
+
+
+PATIENT HISTORY:
+Not given.
+PRE-OP DIAGNOSIS: Right pleural effusion.
+POST-OP DIAGNOSIS: Same
+PROCEDURE: Right thoracoscopy; pleural biopsy; wedge resection lung mass with
+talc pleurodesis.
+_______________________________________________________________
+FINAL DIAGNOSIS:
+PARTS 1, 
+2, 3 & 4:  PLEURA, 3RIGHT PLEURA4, 3RIGHT PLEURAL BIOPSY4, 3RIGHT LUNG
+NODULE4, AND 3RIGHT PLEURA4,
+                MULTIPLE PLEURAL BIOPSIES WITH PLEURECTOMY 
+A.          DIFFUSE MALIGNANT MESOTHELIOMA, MIXED EPITHELIOID AND
+FIBROSARCOMATOUS TYPE.
+B.     HYALINE PLEURAL PLAQUE.
+**INITIALS
+**INITIALS
+COMMENT:
+The pleural biopsy shows a biphasic malignancy, with the epithelioid component
+consisting of tubulopapillary growth of cuboidal cells.  The epithelioid
+elements contain an in situ component within the pleura particularly noted in
+the Part 4 specimen.  In addition, there is a spindle cell component, with
+cytologically atypical spindle cells arranged in fascicles within a myxoid
+matrix, admixed with these epithelioid elements.
+Diastase predigested PAS stains fail to show evidence of intracytoplasmic
+neutral mucin.  Immunostains demonstrate that the neoplastic cells express
+Cytokeratin 5/6, nuclear Calretinin, nuclear WT1, and fail to express the
+following antigens:  Leu-M1, B72.3, BER EP4, TTF, and Carcinoembryonic
+Antigen.
+Overall, the histomorphology and the immunophenotype strongly support a
+diagnosis of diffuse malignant mesothelioma.
+**INITIALS
+     Pathologist:  **NAME[WWW M XXX], M.D.
+     Fellow/Chief Resident:  **NAME[VVV M. UUU], M.D.
+     Resident: **NAME[TTT M. SSS]
+     ** Report Electronically Signed Out **
+     By Pathologist:  **NAME[WWW M XXX], M.D.
+     **DATE[Oct 12 2005] 10:38
+My signature is attestation that I have personally reviewed the submitted
+material(s) and the final diagnosis reflects that evaluation.
+_______________________________________________________________
+GROSS DESCRIPTION:
+The specimen is received in four parts.
+Part 1 received fresh with the patient's name, initials JW, and labeled "right
+pleura," consists of a 3.0 x 2.0 x 0.5cm section of a pink yellow rubbery
+tissue, Representative portions of which are submitted following frozen
+section evaluation labeled 1A.
+Part 2 received fresh with the patient's name, initials JW, and labeled "right
+pleural biopsy," consists of four irregular portions of pink yellow, soft
+tissue, each 0.3 cm in greatest dimension and entirely submitted following
+frozen section evaluation labeled 2A.
+Part 3 received fresh with the patient's name, initials JW, and labeled "right
+lung nodule," consists of a 3.0 x 2.0 x 0.4cm resection of pink yellow, soft
+tissue.  Representative portions are submitted following frozen section
+evaluation labeled 3A.
+Part 4 received fresh with the patient's name, initials JW, and labeled "right
+pleura," consists of a single irregular portion of pink yellow, soft tissue,
+2.0 x 1.5 by 0.2 cm.  The specimen is entirely submitted labeled 4A.
+**INITIALS
+INTRAOPERATIVE CONSULTATION:
+  
+1FS: PLEURA, RIGHT, BIOPSY (frozen section)-
+A. DEFER
+B. DENSE FIBROUS TISSUE WITH CHRONIC INFLAMMATION AND ATYPICAL MESOTHELIAL
+CHANGES. (**NAME[RRR] M.D.)
+2FS: PLEURA, RIGHT, BIOPSY (frozen section)-
+A. NEOPLASM
+B. EPITHELIAL SPINDLE CELL NEOPLASM, FAVOR **NAME[CCC (RRR] M.D.)
+3FS: LUNG NODULE, RIGHT, PLEURAL BASED (frozen section)-
+A. NEOPLASM
+B. SPINDLE CELL NEOPLASM.  SUSPICIOUS FOR SPINDLE CELL COMPONENT OR
+**NAME[CCC (RRR] M.D.)  
+MICROSCOPIC:
+Microscopic examination substantiates the above diagnosis.
+caa
+ 
+The following statement applies to all immunohistochemistry, Insitu
+Hybridization Assays (ISH & FISH), Molecular Anatomic Pathology, and
+Immunofluorescent Testing:
+The testing was developed and its performance characteristics determined by
+the **INSTITUTION of Pathology, as required by the CLIA
+'88 regulations.  The testing has not been cleared or approved for the
+specific use by the U.S. Food and Drug Administration, but the FDA has
+determined such approval is not necessary for clinical use.
+HISTO TISSUE SUMMARY/SLIDES REVIEWED:
+Part 1: Right pleura for frozen section
+Taken: **DATE[Oct 8 2005] 15:48     Received: **DATE[Oct 8 2005] 15:48
+Stain/cnt     **NAME[QQQ
+M&M] x 1     A
+Part 2: Right pelural biopsy # 2 for frozens section
+Taken: **DATE[Oct 8 2005] 15:48     Received: **DATE[Oct 8 2005] 15:48
+Stain/cnt     **NAME[QQQ
+DDD] x 1     A
+ATAG x 1     A
+ABEREP4 x 1     A
+HBNKNC x 5     A
+ACALRET x 1     A
+CEA M x 1     A
+ANEG x 1     A
+ACK5/6 x 1     A
+H&E x 1     A
+LeuM1 x 1     A
+PAS x 1     A
+PASD x 1     A
+WT1 x 1     A
+Part 3: Right lung nodule for frozen section
+Taken: **DATE[Oct 8 2005] 15:48     Received: **DATE[Oct 8 2005] 15:48
+Stain/cnt     **NAME[QQQ
+M&M] x 1     A
+Part 4: Right pleura (perm)
+Taken: **DATE[Oct 8 2005] 14:55     Received: **DATE[Oct 9 2005] 08:51
+Stain/cnt     **NAME[QQQ]
+RHHENC x 2     A
+H&E Recut x 6     A
+H&E x 1     A
+TC1
+
+
+
