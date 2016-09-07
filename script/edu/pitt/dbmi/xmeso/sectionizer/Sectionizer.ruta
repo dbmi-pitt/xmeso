@@ -24,13 +24,16 @@ BLOCK(SectionHeaderDetector) Document{} {
     Document{->MARKTABLE(SubsumableSectionHeader, 1, sectionHeadersPassTwo, true, 100, "", 1, "name" = 2, "level" = 3)};
      
     SubsumableSectionHeader{-PARTOF(SectionHeader)-> 
+        // The TRANSFER action creates a new feature structure and adds all compatible features of the matched annotation.
         TRANSFER(SectionHeader), 
         UNMARK(SubsumableSectionHeader)
     };
         
     SubsumableSectionHeader{PARTOF(SectionHeader)-> UNMARK(SubsumableSectionHeader)};
-    
-    SectionHeader{-> SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)};  
+    // The SHIFT action can be used to change the offsets of an annotation.
+    // In this example, an annotation of the type "SectionHeader" is expanded 
+    // in order to cover the following COLON
+    SectionHeader{-> SHIFT(SectionHeader, 1, 2)} COLON{-PARTOF(SectionHeader)};  
 }
 
 BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
@@ -47,6 +50,7 @@ BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {
 BLOCK(EndOfDocumentDetector) Document{} {
     // This rule annotates the last token of the document with the annotation EndOfDocument
     Document{->MARKLAST(EndOfDocument)};
+    // SPECIAL indicates all other tokens and symbols
     SPECIAL {REGEXP("\\$"), PARTOF(EndOfDocument) -> UNMARK(SPECIAL)};
 }
 
