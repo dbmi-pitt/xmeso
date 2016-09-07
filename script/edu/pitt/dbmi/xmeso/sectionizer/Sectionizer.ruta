@@ -28,13 +28,9 @@ BLOCK(SectionHeaderDetector) Document{} {
         UNMARK(SubsumableSectionHeader)
     };
         
-    SubsumableSectionHeader{PARTOF(SectionHeader)-> 
-        UNMARK(SubsumableSectionHeader)
-    };
+    SubsumableSectionHeader{PARTOF(SectionHeader)-> UNMARK(SubsumableSectionHeader)};
     
-    SectionHeader{-> 
-        SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)
-    };  
+    SectionHeader{-> SHIFT(SectionHeader,1,2)} COLON{-PARTOF(SectionHeader)};  
 }
 
 BLOCK(SectionHeaderFilter) Document{->ADDRETAINTYPE(BREAK,SectionHeader)} {

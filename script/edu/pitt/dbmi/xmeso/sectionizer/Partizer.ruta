@@ -250,13 +250,9 @@ BLOCK(ProcessPartHeaderGenerator) PartHeaderGenerator {-> GETFEATURE("genNumber"
 // and can be cleaned after use
 //
 BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
-    PartHeaderGenerator{-> 
-        UNMARK(PartHeaderGenerator)
-    };
+    PartHeaderGenerator{-> UNMARK(PartHeaderGenerator)};
     
-    PartNumber{-> 
-        UNMARK(PartNumber)
-    };
+    PartNumber{-> UNMARK(PartNumber)};
     
     PartHeader{->
         SETFEATURE("sectionName", "UNASSIGNED"),
@@ -269,6 +265,7 @@ BLOCK(CleanPartGeneratorsAndNumbers) Document {} {
 //
 // Feature propogation from Section to enclosing Parts
 //
+// The contained rules are applied for Section annotation
 BLOCK(PartSectionNameAssigner) Section {} {
     STRING cachedSectionNameVar;
     INT cachedSectionLevelVar;
