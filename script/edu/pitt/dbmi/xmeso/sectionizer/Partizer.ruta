@@ -291,9 +291,7 @@ BLOCK(PartSectionNameAssigner) Section {} {
 // Prints a message for each Part annotation
 //
 BLOCK(PartDiagnostics) Part{} {
-    Part{-> 
-        LOG("Pulling part for diagnostics.")
-    };
+    Part{-> LOG("Pulling part for diagnostics.")};
 }
 
 //
@@ -304,8 +302,9 @@ BLOCK(PartDiagnostics) Part{} {
 // section or document ends or trailing whitespace.
 //
 BLOCK(PartTrimmer) Part{} {
-    Part{-> 
-        TRIM(BREAK, SPACE, EndOfDocument, EndOfSection)
-    };
+    // This rule removes all line breaks and spaces EndOfDocument, EndOfSection 
+    // at the end of the Part annotation
+    // and thus changes the offsets of the matched annotations.
+    Part{-> TRIM(BREAK, SPACE, EndOfDocument, EndOfSection)};
 }
 
