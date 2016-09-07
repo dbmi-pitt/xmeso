@@ -2,6 +2,9 @@ PACKAGE edu.pitt.dbmi.xmeso.avpairs;
 
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 
+// ner.ruta covers other case level elements:
+// Ultrastructural Findings, Immunohistochemically profile, Surgical procedure
+
 // This is a single value variable
 // 
 // DetectLymphNodesExamined
