@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Wed Sep 07 12:38:01 EDT 2016 */
+/* First created by JCasGen Wed Sep 07 14:14:36 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Wed Sep 07 12:38:01 EDT 2016
+ * Updated by JCasGen Wed Sep 07 14:14:36 EDT 2016
  * @generated */
 public class XmesoNamedEntity_Type extends Annotation_Type {
   /** @generated 
@@ -119,26 +119,26 @@ public class XmesoNamedEntity_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_snomedCode;
+  final Feature casFeat_conceptCode;
   /** @generated */
-  final int     casFeatCode_snomedCode;
+  final int     casFeatCode_conceptCode;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public String getSnomedCode(int addr) {
-        if (featOkTst && casFeat_snomedCode == null)
-      jcas.throwFeatMissing("snomedCode", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_snomedCode);
+  public String getConceptCode(int addr) {
+        if (featOkTst && casFeat_conceptCode == null)
+      jcas.throwFeatMissing("conceptCode", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_conceptCode);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setSnomedCode(int addr, String v) {
-        if (featOkTst && casFeat_snomedCode == null)
-      jcas.throwFeatMissing("snomedCode", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
-    ll_cas.ll_setStringValue(addr, casFeatCode_snomedCode, v);}
+  public void setConceptCode(int addr, String v) {
+        if (featOkTst && casFeat_conceptCode == null)
+      jcas.throwFeatMissing("conceptCode", "edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity");
+    ll_cas.ll_setStringValue(addr, casFeatCode_conceptCode, v);}
     
   
  
@@ -262,8 +262,8 @@ public class XmesoNamedEntity_Type extends Annotation_Type {
     casFeatCode_partNumber  = (null == casFeat_partNumber) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_partNumber).getCode();
 
  
-    casFeat_snomedCode = jcas.getRequiredFeatureDE(casType, "snomedCode", "uima.cas.String", featOkTst);
-    casFeatCode_snomedCode  = (null == casFeat_snomedCode) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_snomedCode).getCode();
+    casFeat_conceptCode = jcas.getRequiredFeatureDE(casType, "conceptCode", "uima.cas.String", featOkTst);
+    casFeatCode_conceptCode  = (null == casFeat_conceptCode) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_conceptCode).getCode();
 
  
     casFeat_coveredText = jcas.getRequiredFeatureDE(casType, "coveredText", "uima.cas.String", featOkTst);

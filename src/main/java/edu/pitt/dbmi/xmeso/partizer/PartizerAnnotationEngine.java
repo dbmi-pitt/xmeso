@@ -266,13 +266,13 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 											.getHistopathologicalType())) {
 								currentTumorForm
 										.setHistopathologicalType(namedEntity
-												.getSnomedCode());
+												.getConceptCode());
 							}
 						} else if ("XmesoTumorSite".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorSite().equals(
 									currentTumorForm.getTumorSite())) {
 								currentTumorForm.setTumorSite(namedEntity
-										.getSnomedCode());
+										.getConceptCode());
 							}
 						} else if ("XmesoTumorConfiguration"
 								.equals(simpleClassName)) {
@@ -281,7 +281,7 @@ public class PartizerAnnotationEngine extends org.apache.uima.fit.component.JCas
 											.getTumorConfiguration())) {
 								currentTumorForm
 										.setTumorConfiguration(namedEntity
-												.getSnomedCode());
+												.getConceptCode());
 							}
 						} else if ("XmesoSize".equals(simpleClassName)) {
 							XmesoSize currentSize = (XmesoSize) namedEntity;

@@ -39,7 +39,7 @@ DECLARE Annotation XmesoNamedEntity(
 	STRING sectionName,
 	INT sectionLevel,
 	INT partNumber,
-	STRING snomedCode,
+	STRING conceptCode,
 	STRING coveredText,
 	STRING semanticType,
 	INT codedPenalty,

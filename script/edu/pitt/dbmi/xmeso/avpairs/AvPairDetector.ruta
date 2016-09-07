@@ -20,7 +20,7 @@ BLOCK(DetectLymphNodesExamined) Document{} {
          // In this case, the two numerical expressions state that 
          // the matched text of the first and the second rule elements are joined to 
          // create the boundaries of the new annotation (XmesoLymphNodesExamined).
-         CREATE(XmesoLymphNodesExamined, 1, 2, "snomedCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)
+         CREATE(XmesoLymphNodesExamined, 1, 2, "conceptCode" = "PATH|LYMPH_EXAMINED:YES", "codedPenalty" = 1)
     };
 }
  
@@ -64,7 +64,7 @@ BLOCK(DetectLymphNodesExamined) Document{} {
 BLOCK(DetectSpecialStainProfile) Document{} {
     W{REGEXP("(?i)SPECIAL|IMMUNOHISTOCHEMICAL")} 
     W{REGEXP("(?i)STAINS?") -> 
-         CREATE(XmesoSpecialStain, 1, 2, "snomedCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)
+         CREATE(XmesoSpecialStain, 1, 2, "conceptCode" = "PATH|SPECIAL_STAIN:YES", "codedPenalty" = 1)
     };
 }
 

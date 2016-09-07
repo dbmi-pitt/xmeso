@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Wed Sep 07 12:38:01 EDT 2016 */
+/* First created by JCasGen Wed Sep 07 14:14:36 EDT 2016 */
 package edu.pitt.dbmi.xmeso.model.Model;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Type defined in edu.pitt.dbmi.xmeso.model.Model
- * Updated by JCasGen Wed Sep 07 12:38:01 EDT 2016
+ * Updated by JCasGen Wed Sep 07 14:14:36 EDT 2016
  * XML source: C:/Users/zhy19/workspace/xmeso/descriptor/edu/pitt/dbmi/xmeso/XmesoEngine.xml
  * @generated */
 public class StageT extends Annotation {

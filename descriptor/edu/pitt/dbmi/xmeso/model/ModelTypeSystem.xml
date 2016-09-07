@@ -365,6 +365,53 @@
             <supertypeName>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</supertypeName>
         </typeDescription>
         <typeDescription>
+            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</name>
+            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>sectionName</name>
+                    <description>sectionName</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>sectionLevel</name>
+                    <description>sectionLevel</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>partNumber</name>
+                    <description>partNumber</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>conceptCode</name>
+                    <description>conceptCode</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>coveredText</name>
+                    <description>coveredText</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>semanticType</name>
+                    <description>semanticType</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>codedPenalty</name>
+                    <description>codedPenalty</description>
+                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>isNegated</name>
+                    <description>isNegated</description>
+                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
             <name>edu.pitt.dbmi.xmeso.model.Model.XmesoSentence</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
@@ -501,53 +548,6 @@
             <name>edu.pitt.dbmi.xmeso.model.Model.UOM</name>
             <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
             <supertypeName>uima.tcas.Annotation</supertypeName>
-        </typeDescription>
-        <typeDescription>
-            <name>edu.pitt.dbmi.xmeso.model.Model.XmesoNamedEntity</name>
-            <description>Type defined in edu.pitt.dbmi.xmeso.model.Model</description>
-            <supertypeName>uima.tcas.Annotation</supertypeName>
-            <features>
-                <featureDescription>
-                    <name>sectionName</name>
-                    <description>sectionName</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>sectionLevel</name>
-                    <description>sectionLevel</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>partNumber</name>
-                    <description>partNumber</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>snomedCode</name>
-                    <description>snomedCode</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>coveredText</name>
-                    <description>coveredText</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>semanticType</name>
-                    <description>semanticType</description>
-                    <rangeTypeName>uima.cas.String</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>codedPenalty</name>
-                    <description>codedPenalty</description>
-                    <rangeTypeName>uima.cas.Integer</rangeTypeName>
-                </featureDescription>
-                <featureDescription>
-                    <name>isNegated</name>
-                    <description>isNegated</description>
-                    <rangeTypeName>uima.cas.Boolean</rangeTypeName>
-                </featureDescription>
-            </features>
         </typeDescription>
     </types>
 </typeSystemDescription>

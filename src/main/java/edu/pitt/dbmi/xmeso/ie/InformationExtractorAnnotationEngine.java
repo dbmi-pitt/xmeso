@@ -176,19 +176,19 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 					String simpleClassName = namedEntity.getClass().getSimpleName();
 					if (XmesoSurgicalProcedure.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getSurgicalProcedure().equals(defaultCaseForm.getSurgicalProcedure())) {
-							currentCaseForm.setSurgicalProcedure(namedEntity.getSnomedCode());
+							currentCaseForm.setSurgicalProcedure(namedEntity.getConceptCode());
 						}
 					} else if (XmesoUltrastructuralFindings.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getUltrastructuralFindings().equals(defaultCaseForm.getUltrastructuralFindings())) {
-							currentCaseForm.setUltrastructuralFindings(namedEntity.getSnomedCode());
+							currentCaseForm.setUltrastructuralFindings(namedEntity.getConceptCode());
 						}
 					} else if (XmesoLymphNodesExamined.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getLymphNodesExamined().equals(defaultCaseForm.getLymphNodesExamined())) {
-							currentCaseForm.setLymphNodesExamined(namedEntity.getSnomedCode());
+							currentCaseForm.setLymphNodesExamined(namedEntity.getConceptCode());
 						}
 					} else if (XmesoSpecialStain.class.getSimpleName().equals(simpleClassName)) {
 						if (currentCaseForm.getSpecialStain().equals(defaultCaseForm.getSpecialStain())) {
-							currentCaseForm.setSpecialStain(namedEntity.getSnomedCode());
+							currentCaseForm.setSpecialStain(namedEntity.getConceptCode());
 						}
 					}
 				}
@@ -224,19 +224,19 @@ public class InformationExtractorAnnotationEngine extends JCasAnnotator_ImplBase
 						String simpleClassName = namedEntity.getClass().getSimpleName();
 						if ("XmesoHistologicalType".equals(simpleClassName)) {
 							if (defaultTumorForm.getHistopathologicalType().equals(currentTumorForm.getHistopathologicalType())) {
-								currentTumorForm.setHistopathologicalType(namedEntity.getSnomedCode());
+								currentTumorForm.setHistopathologicalType(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoTumorSite".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorSite().equals(currentTumorForm.getTumorSite())) {
-								currentTumorForm.setTumorSite(namedEntity.getSnomedCode());
+								currentTumorForm.setTumorSite(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoTumorConfiguration".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorConfiguration().equals(currentTumorForm.getTumorConfiguration())) {
-								currentTumorForm.setTumorConfiguration(namedEntity.getSnomedCode());
+								currentTumorForm.setTumorConfiguration(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoTumorDifferentiation".equals(simpleClassName)) {
 							if (defaultTumorForm.getTumorDifferentiation().equals(currentTumorForm.getTumorDifferentiation())) {
-								currentTumorForm.setTumorDifferentiation(namedEntity.getSnomedCode());
+								currentTumorForm.setTumorDifferentiation(namedEntity.getConceptCode());
 							}
 						} else if ("XmesoSize".equals(simpleClassName)) {
 							XmesoSize currentSize = (XmesoSize) namedEntity;
