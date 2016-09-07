@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import edu.pitt.dbmi.xmeso.model.Model.Part;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;
 
-public class SentenceBoundaryDetectionEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class SentenceBoundaryDetectionEngine extends JCasAnnotator_ImplBase {
 
 	private SentenceDetectorConfigurator configurator; 
 	private SentenceDetector boundaryDetector;

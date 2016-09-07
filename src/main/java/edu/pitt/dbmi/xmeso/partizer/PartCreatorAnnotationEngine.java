@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -17,8 +18,7 @@ import edu.pitt.dbmi.xmeso.model.Model.PartHeaderGenerator;
 import edu.pitt.dbmi.xmeso.model.Model.PartNumber;
 import edu.pitt.dbmi.xmeso.model.Model.Section;
 
-public class PartCreatorAnnotationEngine extends
-		org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class PartCreatorAnnotationEngine extends JCasAnnotator_ImplBase {
 
 	/**
 	 * Given a set of PartHeaderGenerator Annotations covering a series of

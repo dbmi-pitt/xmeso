@@ -6,12 +6,13 @@ import java.util.regex.Pattern;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
 
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentence;
 import edu.pitt.dbmi.xmeso.model.Model.XmesoSentenceToken;
 
-public class SentenceTokenizationEngine extends org.apache.uima.fit.component.JCasAnnotator_ImplBase {
+public class SentenceTokenizationEngine extends JCasAnnotator_ImplBase {
 
 	private final String spaceSplitRegEx = "[^\\s]+";
 	private Pattern sentenceSplitter;
