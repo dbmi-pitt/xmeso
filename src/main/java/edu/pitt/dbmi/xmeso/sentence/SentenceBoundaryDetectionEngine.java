@@ -1,4 +1,4 @@
-package edu.pitt.dbmi.xmeso.negex;
+package edu.pitt.dbmi.xmeso.sentence;
 
 import java.util.Collection;
 import java.util.List;

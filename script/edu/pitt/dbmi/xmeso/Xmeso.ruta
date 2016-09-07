@@ -32,8 +32,8 @@ SCRIPT edu.pitt.dbmi.xmeso.avpairs.AvPairDetector;
 // UimaFit imports - the src/main/java annotation implementations, not Ruta
 UIMAFIT edu.pitt.dbmi.xmeso.negex.NegExAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartizerAnnotationEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.negex.SentenceBoundaryDetectionEngine;
-UIMAFIT edu.pitt.dbmi.xmeso.negex.SentenceTokenizationEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.sentence.SentenceBoundaryDetectionEngine;
+UIMAFIT edu.pitt.dbmi.xmeso.sentence.SentenceTokenizationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.SectionCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.partizer.PartCreatorAnnotationEngine;
 UIMAFIT edu.pitt.dbmi.xmeso.ie.InformationExtractorAnnotationEngine;
@@ -100,9 +100,9 @@ Document{->CALL(Partizer.TallyPartHeaderGenerators)};
 Document{->EXEC(PartCreatorAnnotationEngine, {Part})};
 
 // LINGPipe's Sentence Detector along with tokenization beneath as a prerequisite for NegEx implementation
-// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/negex/SentenceBoundaryDetectionEngine.java
+// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/entence/SentenceBoundaryDetectionEngine.java
 Document{->EXEC(SentenceBoundaryDetectionEngine, {XmesoSentence})};
-// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/negex/SentenceTokenizationEngine.java
+// Execute the SentenceBoundaryDetectionEngine defined in src/main/java/edu/pitt/dbmi/xmeso/entence/SentenceTokenizationEngine.java
 Document{->EXEC(SentenceTokenizationEngine, {XmesoSentenceToken})};
 
 // Implementation of Chapman's NegEx algorithm
