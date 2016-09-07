@@ -3,6 +3,20 @@ PACKAGE edu.pitt.dbmi.xmeso.sectionizer;
 SCRIPT edu.pitt.dbmi.xmeso.model.Model;
 SCRIPT edu.pitt.dbmi.xmeso.utilities.Utilities;
 
+// Variable declarations define new variables. There are 12 kinds of variables:
+// TYPE newTypeVariable;
+// TYPELIST newTypeList;
+// INT newIntegerVariable;
+// INTLIST newIntList;
+// FLOAT newFloatVariable;
+// FLOATLIST newFloatList;
+// DOUBLE newDoubleVariable;
+// DOUBLELIST newDoubleList;
+// STRING newStringVariable;
+// STRINGLIST newStringList;
+// BOOLEAN newBooleanVariable;
+// BOOLEANLIST newBooleanList;
+
 INT partizerGenNum = -1;
 INT partizerPartNum = -1; 
 INTLIST partizerPartNums;
