@@ -89,11 +89,6 @@
 			<artifactId>owlapi-distribution</artifactId>
 			<version>4.1.1</version>
  		</dependency>
-		<dependency><!-- Used by xmeso.decomposition SentenceDetectorConfigurator -->
-			<groupId>de.julielab</groupId>
-			<artifactId>aliasi-lingpipe</artifactId>
-			<version>4.1.0</version>
-		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
