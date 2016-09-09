@@ -154,23 +154,31 @@ And this command will have the following sample outputs in the terminal when eve
 
 ````
 Input data folder path: C:\Users\joe\XMESO_PITT
+
 Created provider record in XMESO_PROVIDER_DIMENSION table
-Processing report file Report_file_1.txt
+
+Total 4 report files will be processed
+
+[1/4] Processing report file Report_file_1.txt
 Created visit record for patient #1000000083 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_1.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_2.txt
+Successfully processed report file Report_file_1.txt and added extracted information to XMESO_OBSERVATION_FACT table
+
+[2/4] Processing report file Report_file_2.txt
 Created visit record for patient #1000000084 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_2.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_3.txt
+Successfully processed report file Report_file_2.txt and added extracted information to XMESO_OBSERVATION_FACT table
+
+[3/4] Processing report file Report_file_3.txt
 Created visit record for patient #1000000085 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_3.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
-Processing report file Report_file_4.txt
+Successfully processed report file Report_file_3.txt and added extracted information to XMESO_OBSERVATION_FACT table
+
+[4/4] Processing report file Report_file_4.txt
 Created visit record for patient #1000000086 in XMESO_VISIT_DIMENSION table
-Successfully processed report file Report_file_4.txt and added extracted information from report file to XMESO_OBSERVATION_FACT table
+Successfully processed report file Report_file_4.txt and added extracted information to XMESO_OBSERVATION_FACT table
+
 Finished processing all reports.
 Newly added 1 xmeso records into XMESO_PROVIDER_DIMENSION table
 Newly added 4 xmeso records into XMESO_VISIT_DIMENSION table
-Newly added 36 xmeso records into XMESO_OBSERVATION_FACT table
+Newly added 44 xmeso records into XMESO_OBSERVATION_FACT table
 ````
 Once finish running, new records will be added to the following I2B2 database staging tables:
 
