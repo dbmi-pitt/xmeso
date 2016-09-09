@@ -19,7 +19,8 @@ At this development stage, this Xmeso tool will extract six Data Elements over t
 | --- | --- |
 | Ultrastructural Findings | Histopathologic Type |
 | Lymph Nodes Examined | Tumor Configuration |
-| Special Stain Profile | Tumor Differentiation |
+| Special Stains (FISH) | Tumor Differentiation |
+| | Site of Tumor |
 
 ## Creating Database Schema and Tables
 
