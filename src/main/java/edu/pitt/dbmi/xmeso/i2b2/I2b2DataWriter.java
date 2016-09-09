@@ -355,7 +355,8 @@ public class I2b2DataWriter {
 		// We use the provider_id specified in the properties file
 		observationFactId.setProviderId(providerId);
 		observationFactId.setInstanceNum(instanceNum);
-		observationFactId.setModifierCd(null);
+		// Cannot insert NULL into XMESO_OBSERVATION_FACT "MODIFIER_CD" field
+		observationFactId.setModifierCd("@");
 		// Use today's date as the `START_DATE` in the XMESO_OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
