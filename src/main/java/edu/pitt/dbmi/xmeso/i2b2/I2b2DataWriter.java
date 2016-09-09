@@ -355,7 +355,7 @@ public class I2b2DataWriter {
 		// We use the provider_id specified in the properties file
 		observationFactId.setProviderId(providerId);
 		observationFactId.setInstanceNum(instanceNum);
-		observationFactId.setModifierCd("@");
+		observationFactId.setModifierCd(null);
 		// Use today's date as the `START_DATE` in the XMESO_OBSERVATION_FACT table
 		observationFactId.setStartDate(timeNow);
 
@@ -363,15 +363,15 @@ public class I2b2DataWriter {
 		ObservationFact observationFact = new ObservationFact();
 		
 		observationFact.setId(observationFactId);
-		observationFact.setValtypeCd("@");
-		observationFact.setTvalChar("@");
-		observationFact.setNvalNum(new BigDecimal(-1));
-		observationFact.setValueflagCd("@");
+		observationFact.setValtypeCd(null);
+		observationFact.setTvalChar(null);
+		observationFact.setNvalNum(null);
+		observationFact.setValueflagCd(null);
 		observationFact.setQuantityNum(new BigDecimal(1));
-		observationFact.setUnitsCd("@");
+		observationFact.setUnitsCd(null);
 		// Use today's date as the `END_DATE` in the XMESO_OBSERVATION_FACT table
 		observationFact.setEndDate(timeNow);
-		observationFact.setLocationCd("@");
+		observationFact.setLocationCd(null);
 		observationFact.setObservationBlob(null);
 		observationFact.setConfidenceNum(new BigDecimal(1.0));
 		// Use today's date as the `UPDATE_DATE`, `DOWNLOAD_DATE` and `IMPORT_DATE` in the XMESO_OBSERVATION_FACT table
