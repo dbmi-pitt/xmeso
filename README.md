@@ -131,6 +131,8 @@ REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
 15979,MVB0006,1000000086,1979-02-28,Report_file_4.txt
 ````
 
+Note: the `EVENT_DATE` must be in the format of "YYYY-MM-DD".
+
 The `reports/` folder contains all the surgical pathology reports. When executing the jar file,  these free text report files will be piped through the UIMA Ruta annotators. Resulting synoptics will populate i2b2 `XMESO_OBSERVATION_FACT` table as well as appropriate dimension tables.
 
 ## Executing the Jar

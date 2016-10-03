@@ -119,6 +119,7 @@ public class Xmeso {
 	private void createMappings() throws IOException {
 		/*
 		 * linkage.csv contains content looks like this:
+		 * Note: the `EVENT_DATE` must be in the format of "YYYY-MM-DD"
 		 * 
 			REPORT_ID,NMVB_ID,PATIENT_NUM,EVENT_DATE,REPORT_FILE
 			15869,MVB0002,1000000083,1991-12-31,Report_file_1.txt
