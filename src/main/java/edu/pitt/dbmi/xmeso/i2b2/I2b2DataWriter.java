@@ -126,10 +126,17 @@ public class I2b2DataWriter {
 			
 			PatientDimension newPatient = newPatient(patientNum);
 			dataSourceManager.getSession().saveOrUpdate(newPatient);
+
 			// Transaction
 			Transaction tx = dataSourceManager.getSession().beginTransaction();
-			dataSourceManager.getSession().flush();
-			tx.commit();
+			try {
+				dataSourceManager.getSession().saveOrUpdate(newPatient);
+				dataSourceManager.getSession().flush();
+				tx.commit();
+			} catch(Exception e) {
+				tx.rollback();
+			    throw e;
+			}
 			
 			System.out.println("Created fake patient information for patient #" + patientNum + " in XMESO_PATIENT_DIMENSION table");
 			
@@ -219,10 +226,15 @@ public class I2b2DataWriter {
 
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		// Insert into XMESO_PROVIDER_DIMENSION table
-		dataSourceManager.getSession().saveOrUpdate(providerDimension);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			// Insert into XMESO_PROVIDER_DIMENSION table
+			dataSourceManager.getSession().saveOrUpdate(providerDimension);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 		
 		System.out.println(System.lineSeparator());
 		System.out.println("Created provider record in XMESO_PROVIDER_DIMENSION table");
@@ -265,10 +277,14 @@ public class I2b2DataWriter {
 
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		// Insert into XMESO_VISIT_DIMENSION table
-		dataSourceManager.getSession().saveOrUpdate(visitDimension);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(visitDimension);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 		
 		System.out.println("Created visit record for patient #" + patientNum + " in XMESO_VISIT_DIMENSION table");
 	}
@@ -288,12 +304,17 @@ public class I2b2DataWriter {
 			System.out.println("Concept code " + code + " doesn't exist in XMESO_CONCEPT_DIMENSION table");
 			
 			ConceptDimension newConcept = newConcept(code);
-			
+
 			// Transaction
 			Transaction tx = dataSourceManager.getSession().beginTransaction();
-			dataSourceManager.getSession().saveOrUpdate(newConcept);
-			dataSourceManager.getSession().flush();
-			tx.commit();
+			try {
+				dataSourceManager.getSession().saveOrUpdate(newConcept);
+				dataSourceManager.getSession().flush();
+				tx.commit();
+			} catch(Exception e) {
+				tx.rollback();
+			    throw e;
+			}
 			
 			System.out.println("Created new concept code " + code + " in XMESO_CONCEPT_DIMENSION table");
 			
@@ -398,9 +419,14 @@ public class I2b2DataWriter {
 
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		dataSourceManager.getSession().saveOrUpdate(observationFact);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(observationFact);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 	}
 	
 	public void createReportInfo(int reportId, String reportFilename, Date reportDate) {
@@ -414,9 +440,14 @@ public class I2b2DataWriter {
 
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		dataSourceManager.getSession().saveOrUpdate(reportInfo);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(reportInfo);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 	}
 	
 	public void createReportCaseLevel(int reportId, String lymphNodesExamed, String specialStain, String ultrastructuralFindings) {
@@ -428,12 +459,17 @@ public class I2b2DataWriter {
 		reportCaseLevel.setSpecialStain(specialStain);
 		reportCaseLevel.setUltrastructuralFindings(ultrastructuralFindings);
 		reportCaseLevel.setSourcesystemCd(sourcesystemCd);
-		
+
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		dataSourceManager.getSession().saveOrUpdate(reportCaseLevel);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(reportCaseLevel);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 	}
 
 	public void createReportPartLevel(int reportId, long partNum, String siteOfTumor, String histologicalType, String tumorConfiguration, String tumorDifferentiationOrGrade) {
@@ -447,12 +483,17 @@ public class I2b2DataWriter {
 		reportPartLevel.setTumorConfiguration(tumorConfiguration);
 		reportPartLevel.setTumorDifferentiationOrGrade(tumorDifferentiationOrGrade);
 		reportPartLevel.setSourcesystemCd(sourcesystemCd);
-		
+
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
-		dataSourceManager.getSession().saveOrUpdate(reportPartLevel);
-		dataSourceManager.getSession().flush();
-		tx.commit();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(reportPartLevel);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
 	}
 
 }
