@@ -410,6 +410,7 @@ public class I2b2DataWriter {
 		reportInfo.setReportId(new BigDecimal(reportId));
 		reportInfo.setReportFilename(reportFilename);
 		reportInfo.setReportDate(reportDate);
+		reportInfo.setSourcesystemCd(sourcesystemCd);
 
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
@@ -426,6 +427,7 @@ public class I2b2DataWriter {
 		reportCaseLevel.setLymphNodesExamed(lymphNodesExamed);
 		reportCaseLevel.setSpecialStains(specialStains);
 		reportCaseLevel.setUltrastructuralFindings(ultrastructuralFindings);
+		reportCaseLevel.setSourcesystemCd(sourcesystemCd);
 		
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
@@ -444,6 +446,7 @@ public class I2b2DataWriter {
 		reportPartLevel.setHistologicalType(histologicalType);
 		reportPartLevel.setTumorConfiguration(tumorConfiguration);
 		reportPartLevel.setTumorDifferentiationOrGrade(tumorDifferentiationOrGrade);
+		reportPartLevel.setSourcesystemCd(sourcesystemCd);
 		
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
