@@ -15,7 +15,7 @@ public class ReportCaseLevel implements java.io.Serializable {
 
 	private BigDecimal reportId;
 	private String lymphNodesExamed;
-	private String specialStains;
+	private String specialStain;
 	private String ultrastructuralFindings;
 	private String sourcesystemCd;
 
@@ -25,12 +25,12 @@ public class ReportCaseLevel implements java.io.Serializable {
 	public ReportCaseLevel(
 			BigDecimal reportId, 
 			String lymphNodesExamed,
-			String specialStains,
+			String specialStain,
 			String ultrastructuralFindings,
 			String sourcesystemCd) {
 		this.reportId = reportId;
 		this.lymphNodesExamed = lymphNodesExamed;
-		this.specialStains = specialStains;
+		this.specialStain = specialStain;
 		this.ultrastructuralFindings = ultrastructuralFindings;
 		this.sourcesystemCd = sourcesystemCd;
 	}
@@ -54,13 +54,13 @@ public class ReportCaseLevel implements java.io.Serializable {
 		this.lymphNodesExamed = lymphNodesExamed;
 	}
 	
-	@Column(name = "SPECIAL_STAINS", nullable = false, length = 150)
-	public String getSpecialStains() {
-		return this.specialStains;
+	@Column(name = "SPECIAL_STAIN", nullable = false, length = 150)
+	public String getSpecialStain() {
+		return this.specialStain;
 	}
 
-	public void setSpecialStains(String specialStains) {
-		this.specialStains = specialStains;
+	public void setSpecialStain(String specialStain) {
+		this.specialStain = specialStain;
 	}
 	
 	@Column(name = "ULTRASTRUCTURAL_FINDINGS", nullable = false, length = 150)

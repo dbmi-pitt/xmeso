@@ -419,13 +419,13 @@ public class I2b2DataWriter {
 		tx.commit();
 	}
 	
-	public void createReportCaseLevel(int reportId, String lymphNodesExamed, String specialStains, String ultrastructuralFindings) {
+	public void createReportCaseLevel(int reportId, String lymphNodesExamed, String specialStain, String ultrastructuralFindings) {
 		// Create new report case level record
 		ReportCaseLevel reportCaseLevel = new ReportCaseLevel();
 		
 		reportCaseLevel.setReportId(new BigDecimal(reportId));
 		reportCaseLevel.setLymphNodesExamed(lymphNodesExamed);
-		reportCaseLevel.setSpecialStains(specialStains);
+		reportCaseLevel.setSpecialStain(specialStain);
 		reportCaseLevel.setUltrastructuralFindings(ultrastructuralFindings);
 		reportCaseLevel.setSourcesystemCd(sourcesystemCd);
 		
@@ -436,12 +436,12 @@ public class I2b2DataWriter {
 		tx.commit();
 	}
 
-	public void createReportPartLevel(int reportId, long partLabel, String siteOfTumor, String histologicalType, String tumorConfiguration, String tumorDifferentiationOrGrade) {
+	public void createReportPartLevel(int reportId, long partNum, String siteOfTumor, String histologicalType, String tumorConfiguration, String tumorDifferentiationOrGrade) {
 		// Create new report case level record
 		ReportPartLevel reportPartLevel = new ReportPartLevel();
 		
 		reportPartLevel.setReportId(new BigDecimal(reportId));
-		reportPartLevel.setPartLabel(partLabel);
+		reportPartLevel.setPartNum(partNum);
 		reportPartLevel.setSiteOfTumor(siteOfTumor);
 		reportPartLevel.setHistologicalType(histologicalType);
 		reportPartLevel.setTumorConfiguration(tumorConfiguration);

@@ -13,7 +13,7 @@ public class ReportPartLevel implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private BigDecimal reportId;
-	private long partLabel;
+	private long partNum;
 	private String siteOfTumor;
 	private String histologicalType;
 	private String tumorConfiguration;
@@ -25,14 +25,14 @@ public class ReportPartLevel implements java.io.Serializable {
 
 	public ReportPartLevel(
 			BigDecimal reportId, 
-			long partLabel,
+			long partNum,
 			String siteOfTumor,
 			String histologicalType,
 			String tumorConfiguration,
 			String tumorDifferentiationOrGrade,
 			String sourcesystemCd) {
 		this.reportId = reportId;
-		this.partLabel = partLabel;
+		this.partNum = partNum;
 		this.siteOfTumor = siteOfTumor;
 		this.histologicalType = histologicalType;
 		this.tumorConfiguration = tumorConfiguration;
@@ -49,13 +49,13 @@ public class ReportPartLevel implements java.io.Serializable {
 		this.reportId = reportId;
 	}
 
-	@Column(name = "PART_LABEL", nullable = false, precision = 18, scale = 0)
-	public long getPartLabel() {
-		return partLabel;
+	@Column(name = "PART_NUMBER", nullable = false, precision = 18, scale = 0)
+	public long getPartNum() {
+		return partNum;
 	}
 
-	public void setPartLabel(long partLabel) {
-		this.partLabel = partLabel;
+	public void setPartNum(long partNum) {
+		this.partNum = partNum;
 	}
 
 	@Column(name = "SITE_OF_TUMOR", nullable = false, length = 150)
