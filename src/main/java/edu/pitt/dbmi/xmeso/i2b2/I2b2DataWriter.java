@@ -17,6 +17,9 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimensionId;
 import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimensionId;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportCaseLevel;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportInfo;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportPartLevel;
 
 public class I2b2DataWriter {
 	
@@ -49,6 +52,11 @@ public class I2b2DataWriter {
     	eraseOldRecordsIfExist("XMESO_PROVIDER_DIMENSION");
     	eraseOldRecordsIfExist("XMESO_VISIT_DIMENSION");
     	eraseOldRecordsIfExist("XMESO_OBSERVATION_FACT");
+    	
+    	// QA tables
+    	eraseOldRecordsIfExist("XMESO_REPORT_INFO");
+    	eraseOldRecordsIfExist("XMESO_REPORT_CASE_LEVEL");
+    	eraseOldRecordsIfExist("XMESO_REPORT_PART_LEVEL");
 	}
     
     /**
@@ -80,6 +88,11 @@ public class I2b2DataWriter {
 		displayRowsAffected("XMESO_PROVIDER_DIMENSION");
 		displayRowsAffected("XMESO_VISIT_DIMENSION");
 		displayRowsAffected("XMESO_OBSERVATION_FACT");
+		
+		// QA tables
+		displayRowsAffected("XMESO_REPORT_INFO");
+		displayRowsAffected("XMESO_REPORT_CASE_LEVEL");
+		displayRowsAffected("XMESO_REPORT_PART_LEVEL");
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -386,6 +399,55 @@ public class I2b2DataWriter {
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
 		dataSourceManager.getSession().saveOrUpdate(observationFact);
+		dataSourceManager.getSession().flush();
+		tx.commit();
+	}
+	
+	public void createReportInfo(int reportId, String reportFilename, Date reportDate) {
+		// Create new report info record
+		ReportInfo reportInfo = new ReportInfo();
+		
+		reportInfo.setReportId(new BigDecimal(reportId));
+		reportInfo.setReportFilename(reportFilename);
+		reportInfo.setReportDate(reportDate);
+
+		// Transaction
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().saveOrUpdate(reportInfo);
+		dataSourceManager.getSession().flush();
+		tx.commit();
+	}
+	
+	public void createReportCaseLevel(int reportId, String lymphNodesExamed, String specialStains, String ultrastructuralFindings) {
+		// Create new report case level record
+		ReportCaseLevel reportCaseLevel = new ReportCaseLevel();
+		
+		reportCaseLevel.setReportId(new BigDecimal(reportId));
+		reportCaseLevel.setLymphNodesExamed(lymphNodesExamed);
+		reportCaseLevel.setSpecialStains(specialStains);
+		reportCaseLevel.setUltrastructuralFindings(ultrastructuralFindings);
+		
+		// Transaction
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().saveOrUpdate(reportCaseLevel);
+		dataSourceManager.getSession().flush();
+		tx.commit();
+	}
+
+	public void createReportPartLevel(int reportId, long partLabel, String siteOfTumor, String histologicalType, String tumorConfiguration, String tumorDifferentiationOrGrade) {
+		// Create new report case level record
+		ReportPartLevel reportPartLevel = new ReportPartLevel();
+		
+		reportPartLevel.setReportId(new BigDecimal(reportId));
+		reportPartLevel.setPartLabel(partLabel);
+		reportPartLevel.setSiteOfTumor(siteOfTumor);
+		reportPartLevel.setHistologicalType(histologicalType);
+		reportPartLevel.setTumorConfiguration(tumorConfiguration);
+		reportPartLevel.setTumorDifferentiationOrGrade(tumorDifferentiationOrGrade);
+		
+		// Transaction
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().saveOrUpdate(reportPartLevel);
 		dataSourceManager.getSession().flush();
 		tx.commit();
 	}

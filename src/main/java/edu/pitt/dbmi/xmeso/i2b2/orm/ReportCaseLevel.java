@@ -1,6 +1,7 @@
-package edu.pitt.dbmi.xmeso.qa.orm;
+package edu.pitt.dbmi.xmeso.i2b2.orm;
 
 import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ public class ReportCaseLevel implements java.io.Serializable {
 	private String lymphNodesExamed;
 	private String specialStains;
 	private String ultrastructuralFindings;
+	private String sourcesystemCd;
 
 	public ReportCaseLevel() {
 	}
@@ -24,11 +26,13 @@ public class ReportCaseLevel implements java.io.Serializable {
 			BigDecimal reportId, 
 			String lymphNodesExamed,
 			String specialStains,
-			String ultrastructuralFindings) {
+			String ultrastructuralFindings,
+			String sourcesystemCd) {
 		this.reportId = reportId;
 		this.lymphNodesExamed = lymphNodesExamed;
 		this.specialStains = specialStains;
 		this.ultrastructuralFindings = ultrastructuralFindings;
+		this.sourcesystemCd = sourcesystemCd;
 	}
 
 	@Id
@@ -66,6 +70,15 @@ public class ReportCaseLevel implements java.io.Serializable {
 
 	public void setUltrastructuralFindings(String ultrastructuralFindings) {
 		this.ultrastructuralFindings = ultrastructuralFindings;
+	}
+	
+	@Column(name = "SOURCESYSTEM_CD", length = 50)
+	public String getSourcesystemCd() {
+		return this.sourcesystemCd;
+	}
+
+	public void setSourcesystemCd(String sourcesystemCd) {
+		this.sourcesystemCd = sourcesystemCd;
 	}
 
 }

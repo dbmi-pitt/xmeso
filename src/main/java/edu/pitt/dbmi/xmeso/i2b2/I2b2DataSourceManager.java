@@ -20,6 +20,9 @@ import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
 import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.VisitDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportCaseLevel;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportInfo;
+import edu.pitt.dbmi.xmeso.i2b2.orm.ReportPartLevel;
 
 public class I2b2DataSourceManager {
 
@@ -55,6 +58,11 @@ public class I2b2DataSourceManager {
 		configuration.addAnnotatedClass(VisitDimension.class);
 		configuration.addAnnotatedClass(PatientDimension.class);
 		configuration.addAnnotatedClass(ConceptDimension.class);
+		
+		// QA tables
+		configuration.addAnnotatedClass(ReportInfo.class);
+		configuration.addAnnotatedClass(ReportCaseLevel.class);
+		configuration.addAnnotatedClass(ReportPartLevel.class);
 	}
 
 	/**

@@ -1,4 +1,4 @@
-package edu.pitt.dbmi.xmeso.qa.orm;
+package edu.pitt.dbmi.xmeso.i2b2.orm;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -19,6 +19,7 @@ public class ReportInfo implements java.io.Serializable {
 	private BigDecimal reportId;
 	private String reportFilename;
 	private Date reportDate;
+	private String sourcesystemCd;
 
 	public ReportInfo() {
 	}
@@ -26,10 +27,12 @@ public class ReportInfo implements java.io.Serializable {
 	public ReportInfo(
 			BigDecimal reportId, 
 			String reportFilename,
-			Date reportDate) {
+			Date reportDate,
+			String sourcesystemCd) {
 		this.reportId = reportId;
 		this.reportFilename = reportFilename;
 		this.reportDate = reportDate;
+		this.sourcesystemCd = sourcesystemCd;
 	}
 
 	@Id
@@ -61,4 +64,13 @@ public class ReportInfo implements java.io.Serializable {
 		this.reportDate = reportDate;
 	}
 
+	@Column(name = "SOURCESYSTEM_CD", length = 50)
+	public String getSourcesystemCd() {
+		return this.sourcesystemCd;
+	}
+
+	public void setSourcesystemCd(String sourcesystemCd) {
+		this.sourcesystemCd = sourcesystemCd;
+	}
+	
 }
