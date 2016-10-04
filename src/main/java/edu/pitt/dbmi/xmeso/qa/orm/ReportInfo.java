@@ -1,5 +1,6 @@
 package edu.pitt.dbmi.xmeso.qa.orm;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ public class ReportInfo implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String reportId;
+	private BigDecimal reportId;
 	private String reportFilename;
 	private Date reportDate;
 
@@ -23,7 +24,7 @@ public class ReportInfo implements java.io.Serializable {
 	}
 
 	public ReportInfo(
-			String reportId, 
+			BigDecimal reportId, 
 			String reportFilename,
 			Date reportDate) {
 		this.reportId = reportId;
@@ -32,16 +33,16 @@ public class ReportInfo implements java.io.Serializable {
 	}
 
 	@Id
-	@Column(name = "REPORT_ID", unique = true, nullable = false, length = 150)
-	public String getReportId() {
+	@Column(name = "REPORT_ID", unique = true, nullable = false, precision = 38, scale = 0)
+	public BigDecimal getReportId() {
 		return this.reportId;
 	}
 
-	public void setReportId(String reportId) {
+	public void setReportId(BigDecimal reportId) {
 		this.reportId = reportId;
 	}
 
-	@Column(name = "REPORT_FILENAME", nullable = false, length = 2100)
+	@Column(name = "REPORT_FILENAME", nullable = false, length = 150)
 	public String getReportFilename() {
 		return this.reportFilename;
 	}

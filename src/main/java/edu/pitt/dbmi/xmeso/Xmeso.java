@@ -234,8 +234,8 @@ public class Xmeso {
 			logger.debug("visit date ------- " + dateFormat.format(visitDate));
 
 			
-			// QA
-			qaDataWriter.createReportInfo(currentPatientId, reportFilename, visitDate);
+			// QA, add record into REPORT_INFO table
+			qaDataWriter.createReportInfo(Integer.parseInt(currentReportId), reportFilename, visitDate);
 			
 			// Establish the patient
 			// Fetch existing patient info if exists, otherwise create a fake patient record

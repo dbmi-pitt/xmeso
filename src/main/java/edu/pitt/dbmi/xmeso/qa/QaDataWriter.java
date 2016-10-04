@@ -74,11 +74,11 @@ public class QaDataWriter {
 		}
 	}
 	
-	public void createReportInfo(String reportId, String reportFilename, Date reportDate) {
+	public void createReportInfo(int reportId, String reportFilename, Date reportDate) {
 		// Create new report info record
 		ReportInfo reportInfo = new ReportInfo();
 		
-		reportInfo.setReportId(reportId);
+		reportInfo.setReportId(new BigDecimal(reportId));
 		reportInfo.setReportFilename(reportFilename);
 		reportInfo.setReportDate(reportDate);
 		
