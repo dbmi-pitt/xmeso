@@ -96,6 +96,8 @@ public class Xmeso {
 		// QA
 		qaDataSourceManager = new QaDataSourceManager(xmesoProperties);
 		qaDataWriter = new QaDataWriter(qaDataSourceManager);
+		// Delete old records (if exist) before inserting new ones
+		qaDataWriter.cleanOldRecordsIfExist();
 		
 		
 		// Value to be passed to instantiate the data writer
@@ -118,6 +120,8 @@ public class Xmeso {
 		processReports();
 		
 		// Notify the users that how many records are added into each table
+		qaDataWriter.resultsSummary();
+		
 		i2b2DataWriter.resultsSummary();
 
 		i2b2DataSourceManager.destroy();
@@ -285,18 +289,21 @@ public class Xmeso {
 	 * @param jCas
 	 */
 	private void populateCas(JCas jCas, String patientId, String reportId) {
-		// On this cycle we will extract six Data Elements over the report set:
+		// On this cycle we will extract the following Data Elements over the report set:
 		//
 		// Case level (whole report) information:
 		//		    - Ultrastructural Findings
 		//		    - Lymph Nodes Examined
 		//		    - Special Stain Profile
 		// Part (report part in each section) Level:
-		//		    - Histopathologic Type
+		//	        - Site of tumor
+		//		    - Histological Type
 		//		    - Tumor Configuration
 		//		    - Tumor Differentiation
 
 		// Case level information
+		// Case leve variables only appear once per report
+		// JCasUtil.select() returns a collection, in this case, the collection contains only one element
 		for (AnnotationFS caseFormFs : JCasUtil.select(jCas, XmesoCaseForm.class)) {
 			XmesoCaseForm caseForm = (XmesoCaseForm) caseFormFs;
 			// Other info (surgicalProcedure) can be used from InformationExtractorAnnotationEngine,
@@ -310,6 +317,9 @@ public class Xmeso {
 			logger.debug("specialStain = " + specialStain);
 			logger.debug("ultraStructuralFindings = " + ultraStructuralFindings);
 
+			// QA, add record into REPORT_CASE_LEVEL table
+			qaDataWriter.createReportCaseLevel(Integer.parseInt(reportId), lymphNodesExamined, specialStain, ultraStructuralFindings);
+			
 			// A concept found in one report may also appear in another report
 			// That's why we "fetch or create" to reuse previously added concepts
 			i2b2DataWriter.fetchOrCreateConcept(lymphNodesExamined);
@@ -328,6 +338,7 @@ public class Xmeso {
 
 		// TumorForm information
 
+		// Part level variables may have multiple occurrences, thus why we need the instance number
 		for (AnnotationFS tumorFormFS : JCasUtil.select(jCas, XmesoTumorForm.class)) {
 			XmesoTumorForm tumorForm = (XmesoTumorForm) tumorFormFS;
 			long currentPartNumber = Long.parseLong(tumorForm.getCurrentPart() + "");

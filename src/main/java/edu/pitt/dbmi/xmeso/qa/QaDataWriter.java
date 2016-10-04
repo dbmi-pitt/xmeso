@@ -2,10 +2,12 @@ package edu.pitt.dbmi.xmeso.qa;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
 import org.hibernate.SQLQuery;
 import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.qa.QaDataSourceManager;
+import edu.pitt.dbmi.xmeso.qa.orm.ReportCaseLevel;
 import edu.pitt.dbmi.xmeso.qa.orm.ReportInfo;
 
 public class QaDataWriter {
@@ -28,6 +30,7 @@ public class QaDataWriter {
      */
     public void cleanOldRecordsIfExist() {
     	eraseOldRecordsIfExist("XMESO_REPORT_INFO");
+    	eraseOldRecordsIfExist("XMESO_REPORT_CASE_LEVEL");
 	}
     
     /**
@@ -55,6 +58,7 @@ public class QaDataWriter {
 
 	public void resultsSummary() {
 		displayRowsAffected("XMESO_REPORT_INFO");
+		displayRowsAffected("XMESO_REPORT_CASE_LEVEL");
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -81,10 +85,26 @@ public class QaDataWriter {
 		reportInfo.setReportId(new BigDecimal(reportId));
 		reportInfo.setReportFilename(reportFilename);
 		reportInfo.setReportDate(reportDate);
-		
+
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
 		dataSourceManager.getSession().saveOrUpdate(reportInfo);
+		dataSourceManager.getSession().flush();
+		tx.commit();
+	}
+	
+	public void createReportCaseLevel(int reportId, String lymphNodesExamed, String specialStains, String ultrastructuralFindings) {
+		// Create new report case level record
+		ReportCaseLevel reportCaseLevel = new ReportCaseLevel();
+		
+		reportCaseLevel.setReportId(new BigDecimal(reportId));
+		reportCaseLevel.setLymphNodesExamed(lymphNodesExamed);
+		reportCaseLevel.setSpecialStains(specialStains);
+		reportCaseLevel.setUltrastructuralFindings(ultrastructuralFindings);
+		
+		// Transaction
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		dataSourceManager.getSession().saveOrUpdate(reportCaseLevel);
 		dataSourceManager.getSession().flush();
 		tx.commit();
 	}

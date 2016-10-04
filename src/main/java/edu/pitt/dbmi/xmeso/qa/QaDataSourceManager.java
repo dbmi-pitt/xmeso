@@ -15,6 +15,7 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import edu.pitt.dbmi.xmeso.qa.orm.ReportCaseLevel;
 import edu.pitt.dbmi.xmeso.qa.orm.ReportInfo;
 
 public class QaDataSourceManager {
@@ -47,6 +48,7 @@ public class QaDataSourceManager {
 
 		// Add entity beans
 		configuration.addAnnotatedClass(ReportInfo.class);
+		configuration.addAnnotatedClass(ReportCaseLevel.class);
 	}
 
 	/**

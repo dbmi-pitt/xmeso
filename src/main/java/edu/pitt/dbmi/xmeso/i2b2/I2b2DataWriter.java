@@ -203,11 +203,11 @@ public class I2b2DataWriter {
 		providerDimension.setImportDate(timeNow);
 		providerDimension.setSourcesystemCd(sourcesystemCd);
 		providerDimension.setUploadId(null);
-		
-		// Insert into XMESO_PROVIDER_DIMENSION table
-		dataSourceManager.getSession().saveOrUpdate(providerDimension);
+
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		// Insert into XMESO_PROVIDER_DIMENSION table
+		dataSourceManager.getSession().saveOrUpdate(providerDimension);
 		dataSourceManager.getSession().flush();
 		tx.commit();
 		
@@ -249,11 +249,11 @@ public class I2b2DataWriter {
 		visitDimension.setImportDate(timeNow);
 		visitDimension.setSourcesystemCd(sourcesystemCd);
 		visitDimension.setUploadId(null);
-		
-		// Insert into XMESO_VISIT_DIMENSION table
-		dataSourceManager.getSession().saveOrUpdate(visitDimension);
+
 		// Transaction
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		// Insert into XMESO_VISIT_DIMENSION table
+		dataSourceManager.getSession().saveOrUpdate(visitDimension);
 		dataSourceManager.getSession().flush();
 		tx.commit();
 		
@@ -275,9 +275,10 @@ public class I2b2DataWriter {
 			System.out.println("Concept code " + code + " doesn't exist in XMESO_CONCEPT_DIMENSION table");
 			
 			ConceptDimension newConcept = newConcept(code);
-			dataSourceManager.getSession().saveOrUpdate(newConcept);
+			
 			// Transaction
 			Transaction tx = dataSourceManager.getSession().beginTransaction();
+			dataSourceManager.getSession().saveOrUpdate(newConcept);
 			dataSourceManager.getSession().flush();
 			tx.commit();
 			
