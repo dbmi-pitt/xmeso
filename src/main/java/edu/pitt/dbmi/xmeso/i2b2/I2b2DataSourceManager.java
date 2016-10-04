@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.Giant;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
 import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ProviderDimension;
@@ -63,6 +64,9 @@ public class I2b2DataSourceManager {
 		configuration.addAnnotatedClass(ReportInfo.class);
 		configuration.addAnnotatedClass(ReportCaseLevel.class);
 		configuration.addAnnotatedClass(ReportPartLevel.class);
+		
+		// Giant
+		configuration.addAnnotatedClass(Giant.class);
 	}
 
 	/**

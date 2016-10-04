@@ -143,6 +143,17 @@
    ) ;
    
 --------------------------------------------------------
+--  DDL for Table XMESO_GIANT
+--------------------------------------------------------
+
+  CREATE TABLE "XMESO_GIANT" 
+   (	"REPORT_ID" NUMBER(38,0),
+	"MAP_ID" NUMBER(38,0),
+	"ANSWER" VARCHAR2(150),
+	"SOURCESYSTEM_CD" VARCHAR2(50)
+   ) ;
+   
+--------------------------------------------------------
 --  Constraints for Table XMESO_CONCEPT_DIMENSION
 --------------------------------------------------------
 
@@ -205,4 +216,12 @@
   ALTER TABLE "XMESO_REPORT_PART_LEVEL" MODIFY ("REPORT_ID" NOT NULL ENABLE);
   
   ALTER TABLE "XMESO_REPORT_PART_LEVEL" MODIFY ("PART_NUM" NOT NULL ENABLE);
+  
+--------------------------------------------------------
+--  Constraints for Table XMESO_GIANT
+--------------------------------------------------------
+
+  ALTER TABLE "XMESO_GIANT" MODIFY ("REPORT_ID" NOT NULL ENABLE);
+  
+  ALTER TABLE "XMESO_GIANT" MODIFY ("MAP_ID" NOT NULL ENABLE);
   

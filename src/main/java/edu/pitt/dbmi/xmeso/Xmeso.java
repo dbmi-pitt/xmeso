@@ -223,7 +223,7 @@ public class Xmeso {
 			logger.debug("visit date ------- " + dateFormat.format(visitDate));
 
 			
-			// QA, add record into REPORT_INFO table
+			// QA, add some metadata into REPORT_INFO table
 			i2b2DataWriter.createReportInfo(Integer.parseInt(currentReportId), reportFilename, visitDate);
 			
 			// Establish the patient
@@ -306,6 +306,11 @@ public class Xmeso {
 			// QA, add record into REPORT_CASE_LEVEL table
 			i2b2DataWriter.createReportCaseLevel(Integer.parseInt(reportId), lymphNodesExamined, specialStain, ultraStructuralFindings);
 			
+			// For Giant comparison
+			i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 839, lymphNodesExamined);
+			i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 841, specialStain);
+			i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 843, ultraStructuralFindings);
+			
 			// A concept found in one report may also appear in another report
 			// That's why we "fetch or create" to reuse previously added concepts
 			i2b2DataWriter.fetchOrCreateConcept(lymphNodesExamined);
@@ -343,6 +348,65 @@ public class Xmeso {
 
 			// QA, add record into REPORT_PART_LEVEL table
 			i2b2DataWriter.createReportPartLevel(Integer.parseInt(reportId), currentPartNumber, tumorSiteCode, histologicTypeCode, tumorConfigurationCode, tumorDifferentiationCode);
+			
+			// For Giant comparison
+			// Not sure if this can be done since we don't extract the label
+			if (currentPartNumber == 1) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 844, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 827, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 847, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 848, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 2) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 852, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 854, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 856, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 857, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 3) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 861, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 863, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 865, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 866, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 4) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 870, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 872, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 874, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 875, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 5) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 879, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 881, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 883, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 884, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 6) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 888, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 890, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 892, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 893, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 7) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 897, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 899, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 901, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 902, tumorDifferentiationCode);
+			}
+			
+			if (currentPartNumber == 8) {
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 906, tumorSiteCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 908, histologicTypeCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 910, tumorConfigurationCode);
+				i2b2DataWriter.createGiantRecord(Integer.parseInt(reportId), 911, tumorDifferentiationCode);
+			}
+			
 			
 			// Write into i2b2 database
 			i2b2DataWriter.fetchOrCreateConcept(tumorSiteCode);

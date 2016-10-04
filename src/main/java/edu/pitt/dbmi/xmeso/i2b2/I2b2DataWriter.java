@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 
 import edu.pitt.dbmi.xmeso.i2b2.I2b2DataSourceManager;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ConceptDimension;
+import edu.pitt.dbmi.xmeso.i2b2.orm.Giant;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFact;
 import edu.pitt.dbmi.xmeso.i2b2.orm.ObservationFactId;
 import edu.pitt.dbmi.xmeso.i2b2.orm.PatientDimension;
@@ -57,6 +58,9 @@ public class I2b2DataWriter {
     	eraseOldRecordsIfExist("XMESO_REPORT_INFO");
     	eraseOldRecordsIfExist("XMESO_REPORT_CASE_LEVEL");
     	eraseOldRecordsIfExist("XMESO_REPORT_PART_LEVEL");
+    	
+    	// Giant
+    	eraseOldRecordsIfExist("XMESO_GIANT");
 	}
     
     /**
@@ -93,6 +97,9 @@ public class I2b2DataWriter {
 		displayRowsAffected("XMESO_REPORT_INFO");
 		displayRowsAffected("XMESO_REPORT_CASE_LEVEL");
 		displayRowsAffected("XMESO_REPORT_PART_LEVEL");
+		
+		// Giant
+		displayRowsAffected("XMESO_GIANT");
 	}
 	
 	public void displayRowsAffected(String tableName) {
@@ -488,6 +495,27 @@ public class I2b2DataWriter {
 		Transaction tx = dataSourceManager.getSession().beginTransaction();
 		try {
 			dataSourceManager.getSession().saveOrUpdate(reportPartLevel);
+			dataSourceManager.getSession().flush();
+			tx.commit();
+		} catch(Exception e) {
+			tx.rollback();
+		    throw e;
+		}
+	}
+	
+	public void createGiantRecord(int reportId, int mapId, String answer) {
+		// Create new record for Giant
+		Giant giant = new Giant();
+		
+		giant.setReportId(new BigDecimal(reportId));
+		giant.setMapId(new BigDecimal(mapId));
+		giant.setAnswer(answer);
+		giant.setSourcesystemCd(sourcesystemCd);
+
+		// Transaction
+		Transaction tx = dataSourceManager.getSession().beginTransaction();
+		try {
+			dataSourceManager.getSession().saveOrUpdate(giant);
 			dataSourceManager.getSession().flush();
 			tx.commit();
 		} catch(Exception e) {
