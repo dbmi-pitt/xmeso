@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -40,6 +41,7 @@ public class ReportPartLevel implements java.io.Serializable {
 		this.sourcesystemCd = sourcesystemCd;
 	}
 
+	@Id
 	@Column(name = "REPORT_ID", nullable = false, precision = 38, scale = 0)
 	public BigDecimal getReportId() {
 		return reportId;

@@ -96,7 +96,7 @@ public class I2b2DataSourceManager {
 				session = sessionFactory.openSession();
 			}
 		} catch (Exception x) {
-			System.err.println("Failed to get database session.");
+			System.err.println("Xmeso failed to get database session! " + x);
 			session = null;
 		}
 		return session;
