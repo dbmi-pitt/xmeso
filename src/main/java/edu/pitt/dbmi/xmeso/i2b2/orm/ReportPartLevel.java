@@ -49,7 +49,7 @@ public class ReportPartLevel implements java.io.Serializable {
 		this.reportId = reportId;
 	}
 
-	@Column(name = "PART_NUMBER", nullable = false, precision = 18, scale = 0)
+	@Column(name = "PART_NUM", nullable = false, precision = 18, scale = 0)
 	public long getPartNum() {
 		return partNum;
 	}
