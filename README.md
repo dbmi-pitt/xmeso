@@ -13,13 +13,13 @@ Xmeso is implemented as a hybrid system of Apache Ruta Scripts and Apache Uima J
 Annotators. Ruta is essentially a Java Annotator under the hood but the Ruta Scripting
 language is unique in its expressivity.
 
-At this development stage, this Xmeso tool will extract six Data Elements over the report set:
+At this development stage, this Xmeso tool will extract six Data Variables/Elements over the report set:
 
-| Case Level | Part Level |
+| Case Level Variables | Part Level Variables |
 | --- | --- |
 | Ultrastructural Findings | Histopathologic Type |
 | Lymph Nodes Examined | Tumor Configuration |
-| Special Stains (FISH) | Tumor Differentiation |
+| Special Stain Profile (FISH) | Tumor Differentiation |
 | | Site of Tumor |
 
 ## Creating Database Schema and Tables
@@ -31,6 +31,12 @@ Before jumping to the configuration section, we'll first need to have the databa
 - `XMESO_CONCEPT_DIMENSION`
 - `XMESO_VISIT_DIMENSION`
 - `XMESO_PATIENT_DIMENSION`
+
+In order to compare the NLP extraction results with the manually annotated results, we'll also insert the records into the following tables:
+- `XMESO_REPORT_INFO`
+- `XMESO_REPORT_CASE_LEVEL`
+- `XMESO_REPORT_PART_LEVEL`
+- `XMESO_GIANT`
 
 These tables have the same structure as the formal i2b2 tables without the `XMESO_` prefix. But you won't see all the constraints since they are used for data staging purpose. 
 
